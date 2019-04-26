@@ -68,35 +68,29 @@ body {
 }
 
 .tiles article:nth-child(6n - 1):before {
-  background-color: #8ea9e8;
+  background-color: #292e3b;
 }
 
 .tiles article:nth-child(6n):before {
   background-color: #87c5a4;
 }
 
-.img-center-box {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-
 .img-center {
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 100px;
+
 }
 
-.academy {
-  background-image: url(../img/academy-logo.png);
-  height: 200px;
-  position: relative;
-  border: 3px solid green;
+.w-50{
+  width: 50%;
 }
 
-.swissangular {
-  background-image: url(../img/swissangular-logo.png);
-  border: 3px solid green;
+.w-25{
+  width: 25%;
+}
+
+.mb-10 {
+  margin-bottom: 10rem;
+}
+
+.projects {
+  background-color: #292e3b;
 }

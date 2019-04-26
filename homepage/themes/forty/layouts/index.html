@@ -13,9 +13,13 @@
 
 		{{ "<!-- Main -->" | safeHTML }}
 			<div id="main">
-
+				
 				{{ if .Site.Params.Tiles.enable }}
 					{{ partial "tile.html" . }}
+				{{ end }}
+
+				{{ if .Site.Params.Two.enable }}
+					{{ partial "projects.html" . }}
 				{{ end }}
 
 				{{ if .Site.Params.Two.enable }}
