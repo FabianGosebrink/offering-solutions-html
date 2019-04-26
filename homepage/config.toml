@@ -23,7 +23,7 @@ disqusShortname = ""
   description = "Angular and ASP.NET Core Consulting, Training and Courses"
 
   # Link custom assets relative to /static
-  custom_css = []
+  custom_css = ["css/custom.css"]
   custom_js  = []
   favicon    = "favicon.ico"
 
