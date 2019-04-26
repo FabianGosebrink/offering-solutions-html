@@ -8,7 +8,7 @@ theme = "forty"
 googleAnalytics = ""
 
 # Enter your disqus shortname to enable comments
-disqusShortname = ""
+disqusShortname = "offeringsolutions"
 
 [params]
   # You can use Markdown syntax for urls [text](//url.to/source)

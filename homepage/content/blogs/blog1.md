@@ -1,13 +1,12 @@
 ---
 title: 'Ipsum'
 description: ''
-slug: 'ipsum'
-image: pic10.jpg
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 keywords: ''
 categories:
   - ''
   - ''
-date: 2019-03-31
+date: 2019-04-26
 draft: false
 category: blog
 ---

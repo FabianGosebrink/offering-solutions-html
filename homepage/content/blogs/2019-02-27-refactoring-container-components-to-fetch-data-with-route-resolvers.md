@@ -1,15 +1,10 @@
 ---
 title: Refactoring Container Components to Fetch Data With Route Resolvers
 date: 2019-02-27
-author: Fabian Gosebrink
-layout: post
 tags: angular routeresolvers components
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
 ---
 
 In this blogpost I want to show an alternative way to provide data in a common container & presentational components relation inside an Angular application.

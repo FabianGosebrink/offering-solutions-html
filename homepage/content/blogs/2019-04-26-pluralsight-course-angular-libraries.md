@@ -1,15 +1,10 @@
 ---
 title: Announcing First Pluralsight Course About Angular Libraries
 date: 2019-04-26
-author: Fabian Gosebrink
-layout: post
 tags: angular pluralsight libraries
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+draft: false
+category: blog
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blogpost I want to announce my very first Pluralsight course "Structuring Angular Applications with Angular Libraries"
