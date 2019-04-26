@@ -76,14 +76,19 @@ body {
 }
 
 .img-center {
-
+  display: block;
+  margin: auto;
 }
 
-.w-50{
+.img-center > a {
+  border: none;
+}
+
+.w-50 {
   width: 50%;
 }
 
-.w-25{
+.w-25 {
   width: 25%;
 }
 

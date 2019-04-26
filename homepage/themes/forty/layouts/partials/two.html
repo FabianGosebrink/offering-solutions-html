@@ -10,6 +10,7 @@
       {{ range first 3 (where .Site.Pages "Params.category" "blog").ByDate.Reverse }}
       <div class="4u 12u$(medium)">
         <h3>{{ .Title }}</h3>
+        {{ .Params.Image }}
         <p>
           {{ .Content | safeHTML | truncate 100}}
         </p>
