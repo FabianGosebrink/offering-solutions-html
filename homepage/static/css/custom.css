@@ -1,45 +1,76 @@
 body {
-    background: #303138;
+  background: #303138;
 }
 
 .tiles article {
-    width: 50%;
+  width: 50%;
 }
 
-.tiles article:nth-child(4n - 1)  {
-    width: 50%;
+.tiles article:nth-child(4n - 1) {
+  width: 50%;
 }
-
 
 .tiles article:nth-child(4n - 2) {
-    width: 50%;
+  width: 50%;
 }
 
 #banner:after {
-    -moz-transition: opacity 2.5s ease;
-    -webkit-transition: opacity 2.5s ease;
-    -ms-transition: opacity 2.5s ease;
-    transition: opacity 2.5s ease;
-    -moz-transition-delay: 0.75s;
-    -webkit-transition-delay: 0.75s;
-    -ms-transition-delay: 0.75s;
-    transition-delay: 0.75s;
-    -moz-pointer-events: none;
-    -webkit-pointer-events: none;
-    -ms-pointer-events: none;
-    pointer-events: none;
-    background-color: #232635;
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: 0.6;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+  -moz-transition: opacity 2.5s ease;
+  -webkit-transition: opacity 2.5s ease;
+  -ms-transition: opacity 2.5s ease;
+  transition: opacity 2.5s ease;
+  -moz-transition-delay: 0.75s;
+  -webkit-transition-delay: 0.75s;
+  -ms-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+  -moz-pointer-events: none;
+  -webkit-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  background-color: #232635;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#banner.style2:after {
+  background-color: #33587a;
+}
+
+#menu {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #header .logo {
-    margin-top: 3px;
+  margin-top: 3px;
+}
+
+.tiles article:nth-child(6n - 5):before {
+  background-color: #33587a;
+}
+
+.tiles article:nth-child(6n - 4):before {
+  background-color: #273c64;
+}
+
+.tiles article:nth-child(6n - 3):before {
+  background-color: #5b6c7c;
+}
+
+.tiles article:nth-child(6n - 2):before {
+  background-color: #3e6986;
+}
+
+.tiles article:nth-child(6n - 1):before {
+  background-color: #8ea9e8;
+}
+
+.tiles article:nth-child(6n):before {
+  background-color: #87c5a4;
 }

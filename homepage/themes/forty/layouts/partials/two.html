@@ -1,12 +1,31 @@
 {{ "<!-- Two -->" | safeHTML}}
-    <section id="two">
-        <div class="inner">
-            <header class="major">
-                <h2>{{ .Site.Params.Two.title}}</h2>
-            </header>
-            <p>{{ .Site.Params.Two.subtitle }}</p>
-            <ul class="actions">
-                <li><a href="{{ .Site.Params.Two.url | absURL}}" class="button next">{{ .Site.Params.Two.buttonText }}</a></li>
-            </ul>
-        </div>
-    </section>
+<section id="two">
+  <div class="inner">
+    <header class="major">
+      <h2>{{ .Site.Params.Two.title}}</h2>
+    </header>
+    <p>{{ .Site.Params.Two.subtitle }}</p>
+    <div class="row">
+      <!-- Break -->
+      {{ range first 3 (where .Site.Pages "Params.category" "blog").ByDate.Reverse }}
+      <div class="4u 12u$(medium)">
+        <h3>{{ .Title }}</h3>
+        <p>
+          {{ .Content | safeHTML | truncate 100}}
+        </p>
+        <p><a href=""></a></p>
+      </div>
+      {{ end }}
+    </div>
+    <p></p>
+    <ul class="actions">
+      <li>
+        <a
+          href="{{ .Site.Params.Two.url | absURL}}"
+          class="button next"
+          >{{ .Site.Params.Two.buttonText }}</a
+        >
+      </li>
+    </ul>
+  </div>
+</section>

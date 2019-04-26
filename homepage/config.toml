@@ -90,25 +90,25 @@ disqusShortname = ""
     [[params.tiles.showcase]]
       title = "Development"
       subtitle = "Offering ASP.NET Core and Angular Development"
-      image = "pic01.jpg"
+      #image = "pic01.jpg"
       url = "#"
 
     [[params.tiles.showcase]]
       title = "Training"
       subtitle = "Get you and your team up and running in the latest web technologies with Angular, ASP.NET Core, Javascript and Typescript"
-      image = "pic02.jpg"
+      #image = "pic02.jpg"
       url = "https://developer-academy.ch"
 
     [[params.tiles.showcase]]
       title = "Consulting"
       subtitle = "Latest info and Best Practices all around web technologies with Angular, ASP.NET Core, Javascript and Typescript"
-      image = "pic03.jpg"
+      #image = "pic03.jpg"
       url = "#"
 
     [[params.tiles.showcase]]
       title = "Code Review"
       subtitle = "Let us discuss and talk about code..."
-      image = "pic04.jpg"
+     # image = "pic04.jpg"
       url = "#"
     # You can make more showcases by copy and pasting the code above
 
