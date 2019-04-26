@@ -1,6 +1,6 @@
 ---
 title: Refactoring Container Components to Fetch Data With Route Resolvers
-date: 2019-02-27 10:00
+date: 2019-02-27
 author: Fabian Gosebrink
 layout: post
 tags: angular routeresolvers components
@@ -16,11 +16,11 @@ In this blogpost I want to show an alternative way to provide data in a common c
 
 ## Content
 
--   [Container and presentational components](#container-and-presentational-components)
--   [Sample application on Github](#sample-application-on-github)
--   [Displaying data without route resolvers](#displaying-data-without-route-resolvers)
--   [Displaying data with route resolvers](#displaying-data-with-route-resolvers)
--   [Showing loading indicator when data gets resolved](#showing-loading-indicator-when-data-gets-resolved)
+- [Container and presentational components](#container-and-presentational-components)
+- [Sample application on Github](#sample-application-on-github)
+- [Displaying data without route resolvers](#displaying-data-without-route-resolvers)
+- [Displaying data with route resolvers](#displaying-data-with-route-resolvers)
+- [Showing loading indicator when data gets resolved](#showing-loading-indicator-when-data-gets-resolved)
 
 ## Container and presentational components
 
@@ -42,20 +42,20 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'app-container',
-    template: `
-        <app-presentational [data]="data$ | async"></app-presentational>
-    `,
-    styleUrls: ['./container.component.css'],
+  selector: 'app-container',
+  template: `
+    <app-presentational [data]="data$ | async"></app-presentational>
+  `,
+  styleUrls: ['./container.component.css']
 })
 export class ContainerComponent implements OnInit {
-    data$: Observable<any>;
+  data$: Observable<any>;
 
-    constructor(private readonly httpClient: HttpClient) {}
+  constructor(private readonly httpClient: HttpClient) {}
 
-    ngOnInit() {
-        this.data$ = this.httpClient.get('https://swapi.co/api/people/1');
-    }
+  ngOnInit() {
+    this.data$ = this.httpClient.get('https://swapi.co/api/people/1');
+  }
 }
 ```
 
@@ -108,17 +108,17 @@ For this first we have to introduce a route resolver
 ```ts
 import { Injectable } from '@angular/core';
 import {
-    Resolve,
-    ActivatedRouteSnapshot,
-    RouterStateSnapshot,
+  Resolve,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class DataResolver implements Resolve<any> {
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        return null; // to be added
-    }
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return null; // to be added
+  }
 }
 ```
 
@@ -130,18 +130,18 @@ Let us improve the resolver by letting it fetch some data
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-    ActivatedRouteSnapshot,
-    Resolve,
-    RouterStateSnapshot,
+  ActivatedRouteSnapshot,
+  Resolve,
+  RouterStateSnapshot
 } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class DataResolver implements Resolve<any> {
-    constructor(private readonly httpClient: HttpClient) {}
+  constructor(private readonly httpClient: HttpClient) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        return this.httpClient.get('https://swapi.co/api/people/1');
-    }
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return this.httpClient.get('https://swapi.co/api/people/1');
+  }
 }
 ```
 
@@ -206,18 +206,17 @@ This is fine for now, but how can the user see that something is happening if th
 ```ts
 @Injectable({ providedIn: 'root' })
 export class LoadingIndicatorService {
-    isLoading$: Observable<boolean>;
+  isLoading$: Observable<boolean>;
 
-    constructor(private router: Router) {
-        this.isLoading$ = this.router.events.pipe(
-            filter(
-                event =>
-                    event instanceof NavigationStart ||
-                    event instanceof NavigationEnd
-            ),
-            map(event => !!(event instanceof NavigationStart))
-        );
-    }
+  constructor(private router: Router) {
+    this.isLoading$ = this.router.events.pipe(
+      filter(
+        event =>
+          event instanceof NavigationStart || event instanceof NavigationEnd
+      ),
+      map(event => !!(event instanceof NavigationStart))
+    );
+  }
 }
 ```
 
@@ -227,23 +226,23 @@ In our app component we can inject this service and use the `isLoading$` to show
 
 ```ts
 @Component({
-    selector: 'app-root',
-    template: `
-        <a [routerLink]="['home']">Home</a> |
-        <a [routerLink]="['container']">Container</a>
+  selector: 'app-root',
+  template: `
+    <a [routerLink]="['home']">Home</a> |
+    <a [routerLink]="['container']">Container</a>
 
-        <ng-template #loading>Loading...</ng-template>
+    <ng-template #loading>Loading...</ng-template>
 
-        <router-outlet
-            *ngIf="!(loadingIndicatorService.isLoading$ | async); else loading"
-        ></router-outlet>
-    `,
-    styleUrls: ['./app.component.css'],
+    <router-outlet
+      *ngIf="!(loadingIndicatorService.isLoading$ | async); else loading"
+    ></router-outlet>
+  `,
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'route-resolvers';
+  title = 'route-resolvers';
 
-    constructor(public loadingIndicatorService: LoadingIndicatorService) {}
+  constructor(public loadingIndicatorService: LoadingIndicatorService) {}
 }
 ```
 

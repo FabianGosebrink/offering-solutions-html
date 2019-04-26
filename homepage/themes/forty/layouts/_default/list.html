@@ -27,14 +27,20 @@
         </section>
 
         <section id="two" class="spotlights">
-          {{ range.Pages }}
+          {{ range.Pages.ByDate.Reverse }}
           <section>
             <div class="content">
               <div class="inner">
-                <header class="major">
-                  <h3>{{ .Title }}</h3>
+                <header class="major-no-line">
+                  <h3>
+                    <a href="{{ .URL }}">{{ .Title }}</a>
+                  </h3>
                 </header>
-                <p>{{ .Description }}</p>
+                <p>
+                  {{ dateFormat "Monday, Jan 2, 2006" .Date }} | Tags:
+                  {{ .Params.Tags }}
+                </p>
+                <p>{{ .Description | safeHTML | truncate 100}}</p>
                 <ul class="actions">
                   <li><a href="{{ .URL }}" class="button">Read more</a></li>
                 </ul>

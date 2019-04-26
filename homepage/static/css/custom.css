@@ -122,3 +122,7 @@ body {
   letter-spacing: 0.25em;
   text-transform: uppercase;
 }
+
+header.major-no-line > :first-child:after {
+  content: '';
+}

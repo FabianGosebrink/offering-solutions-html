@@ -1,7 +1,7 @@
 ---
 id: 26
 title: Using the Crypto-Namespace to Generate Salts and Compare Passwords
-date: 2014-03-03T21:02:40+00:00
+date: 2014-03-03
 author: Fabian Gosebrink
 layout: post
 categories: articles

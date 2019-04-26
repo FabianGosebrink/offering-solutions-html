@@ -1,6 +1,6 @@
 ---
 title: Announcing First Pluralsight Course About Angular Libraries
-date: 2019-04-26 10:00
+date: 2019-04-26
 author: Fabian Gosebrink
 layout: post
 tags: angular pluralsight libraries
