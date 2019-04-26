@@ -52,8 +52,8 @@ disqusShortname = ""
       url = "blogs"
 
     [[params.navigation.links]]
-      name = "Elements"
-      url = "elements.html"
+      name = "About"
+      url = "about"
 
     # Add custom links here by uncommenting code below. To remove links just delete
     # the [[params.navigation.links]] map associated with that link. Copy and paste
@@ -89,27 +89,27 @@ disqusShortname = ""
     
     [[params.tiles.showcase]]
       title = "Development"
-      subtitle = "Ipsum Dolor Sit Amet"
+      subtitle = "Offering ASP.NET Core and Angular Development"
       image = "pic01.jpg"
-      url = "blogs/aliquam"
+      url = "#"
 
     [[params.tiles.showcase]]
       title = "Training"
-      subtitle = "Feugiat Amet Tempus"
+      subtitle = "Get you and your team up and running in the latest web technologies with Angular, ASP.NET Core, Javascript and Typescript"
       image = "pic02.jpg"
-      url = "blogs/tempus"
+      url = "https://developer-academy.ch"
 
     [[params.tiles.showcase]]
       title = "Consulting"
-      subtitle = "Lorem Etiam Nullam"
+      subtitle = "Latest info and Best Practices all around web technologies with Angular, ASP.NET Core, Javascript and Typescript"
       image = "pic03.jpg"
-      url = "blogs/magna"
+      url = "#"
 
     [[params.tiles.showcase]]
       title = "Code Review"
-      subtitle = "Nisl Sed Aliquam"
+      subtitle = "Let us discuss and talk about code..."
       image = "pic04.jpg"
-      url = "blogs/ipsum"
+      url = "#"
     # You can make more showcases by copy and pasting the code above
 
   [params.blog]
@@ -123,7 +123,7 @@ disqusShortname = ""
   [params.two]
     enable = true
     title = "Blogs"
-    subtitle = """In the blog you can read the latest articles about Angular, ASP.NET Core and latest tech journeys of a developer, trainer and teacher"""
+    subtitle = """In the blog you can read the latest articles about Angular, ASP.NET Core and latest tech journeys of a developer, trainer and teacher..."""
     buttonText = "To the blog"
     url = "blogs"
 
@@ -145,7 +145,7 @@ disqusShortname = ""
     # - send a dummy email yourself to confirm your account
     # - click the confirm link in the email from www.formspree.io
     # - you're done. Happy mailing!
-    # formEmail = "example@domain.com"
+    formEmail = "info@offering.solutions"
 
     # Contact Section
     # You can add multiple emails, phone numbers, or addresses
@@ -161,8 +161,8 @@ disqusShortname = ""
     [[params.contact.address]]
     title = "Address"
     street = "Street"
-    city = "City, ST 00000"
-    country = "Country"
+    city = "9016 Sankt Gallen"
+    country = "Switzerland"
 
   # Footer section
   [params.footer]
