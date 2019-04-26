@@ -7,7 +7,7 @@ keywords: ''
 categories:
   - ''
   - ''
-date: 2019-03-31T21:28:43-05:00
+date: 2019-03-31
 draft: false
 category: blog
 ---
