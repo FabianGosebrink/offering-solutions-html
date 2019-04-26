@@ -99,3 +99,26 @@ body {
 .projects {
   background-color: #292e3b;
 }
+
+.spotlights > section {
+  background-color: rgb(59, 77, 93);
+}
+
+.spotlights > section:nth-child(2n) {
+  background-color: rgb(67, 90, 110);
+}
+
+.spotlights > section > .image {
+  width: 100%;
+}
+
+.spotlights > section > .content {
+  width: 100%;
+}
+
+#banner > .inner .content-big p {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}

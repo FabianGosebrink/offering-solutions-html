@@ -10,11 +10,16 @@
       {{ range first 3 (where .Site.Pages "Params.category" "blog").ByDate.Reverse }}
       <div class="4u 12u$(medium)">
         <h3>{{ .Title }}</h3>
-        {{ .Params.Image }}
+        <img
+          src="{{ .Site.Params.baseURL }}/img/blogs/{{ .Params.image }}"
+          alt=""
+        />
         <p>
           {{ .Content | safeHTML | truncate 100}}
         </p>
-        <p><a href=""></a></p>
+        <p>
+          <a href="{{ .URL }}" class="button small">Read more</a>
+        </p>
       </div>
       {{ end }}
     </div>

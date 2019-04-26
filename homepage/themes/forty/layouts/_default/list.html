@@ -22,22 +22,13 @@
             <header class="major">
               <h1>{{ .Title }}</h1>
             </header>
-            <div class="content">
-              {{ .Content }}
-            </div>
+            <div class="content">{{ .Content }}</div>
           </div>
         </section>
 
         <section id="two" class="spotlights">
           {{ range.Pages }}
           <section>
-            <a href="{{ .URL }}" class="image">
-              <img
-                src="{{ .Site.Params.baseURL }}/img/{{ .Section }}/{{ .Params.image }}"
-                alt=""
-                data-position="center center"
-              />
-            </a>
             <div class="content">
               <div class="inner">
                 <header class="major">
