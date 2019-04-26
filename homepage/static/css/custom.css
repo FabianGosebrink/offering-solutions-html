@@ -74,3 +74,29 @@ body {
 .tiles article:nth-child(6n):before {
   background-color: #87c5a4;
 }
+
+.img-center-box {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.img-center {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 100px;
+}
+
+.academy {
+  background-image: url(../img/academy-logo.png);
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.swissangular {
+  background-image: url(../img/swissangular-logo.png);
+  border: 3px solid green;
+}
