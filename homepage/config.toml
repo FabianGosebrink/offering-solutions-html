@@ -41,7 +41,7 @@ disqusShortname = ""
     subtitle = "Fabian Gosebrink"
     menu = "Menu"
     # Optional logo as brand stored in img/
-    # logo = "logo.png"
+    logo = "offeringsolutions.png"
 
     [[params.navigation.links]]
       name = "Home"
@@ -78,7 +78,7 @@ disqusShortname = ""
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
     title = "Offering Solutions Software"
-    subtitle = "Angular && ASP.NET Core"
+    subtitle = """Angular // ASP.NET Core // Microsoft MVP // Pluralsight Author // Google Developer Expert """
     buttonText = "Get Started"
 
 
@@ -88,25 +88,25 @@ disqusShortname = ""
     # Display your showcases here.
     
     [[params.tiles.showcase]]
-      title = "Aliquam"
+      title = "Development"
       subtitle = "Ipsum Dolor Sit Amet"
       image = "pic01.jpg"
       url = "blogs/aliquam"
 
     [[params.tiles.showcase]]
-      title = "Tempus"
+      title = "Training"
       subtitle = "Feugiat Amet Tempus"
       image = "pic02.jpg"
       url = "blogs/tempus"
 
     [[params.tiles.showcase]]
-      title = "Magna"
+      title = "Consulting"
       subtitle = "Lorem Etiam Nullam"
       image = "pic03.jpg"
       url = "blogs/magna"
 
     [[params.tiles.showcase]]
-      title = "Ipsum"
+      title = "Code Review"
       subtitle = "Nisl Sed Aliquam"
       image = "pic04.jpg"
       url = "blogs/ipsum"
