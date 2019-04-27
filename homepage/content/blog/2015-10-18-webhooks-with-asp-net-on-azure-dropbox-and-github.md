@@ -1,16 +1,13 @@
 ---
-id: 971
 title: WebHooks with ASP.NET on Azure - DropBox and GitHub
 date: 2015-10-18
-author: Fabian Gosebrink
-layout: post
-tags: aspnet azure dropbox github visualstudio webhooks
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['aspnet', 'azure', 'webhooks']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2015/10/18/webhooks-with-asp-net-on-azure-dropbox-and-github/",
+]
 ---
 
 Hi,

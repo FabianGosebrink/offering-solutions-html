@@ -1,16 +1,13 @@
 ---
-id: 973
 title: WebAPI with ASP.NET Core 1.0 and ASP.NET
 date: 2015-09-02
-author: Fabian Gosebrink
-layout: post
-tags: aspnetcore web architecture webapi
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['aspnetcore']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2015/09/02/webapi-with-asp-net-core-1-0-and-asp-net/",
+]
 ---
 
 I just released two sample APIs on Github: WebAPI with ASP.NET Core and ASP.NET

@@ -1,17 +1,14 @@
 ---
 title: Angular and ASP.NET Core Starter
 date: 2016-01-25
-author: Fabian Gosebrink
-layout: post
-tags: angular aspnetcore vscode
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
-redirect_from:
-  - /blog/articles/2016/01/25/angular-and-asp-net-core-starter/
+tags: ['angular', 'aspnetcore']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/01/25/angular-2-asp-net-core-starter/",
+  "/blog/articles/2016/01/25/angular-and-asp-net-core-starter/"
+]
 ---
 
 With this bIog I want to give you an Angular and ASP.NET Core Starter.

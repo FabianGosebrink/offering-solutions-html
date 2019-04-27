@@ -1,15 +1,13 @@
 ---
 title: Microsoft TechDays 2016
 date: 2016-02-20
-author: Fabian Gosebrink
-layout: post
-tags: talks techdays microsoft speaking
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['microsoft', 'speaking']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/02/20/talk-on-the-microsoft-techdays-2016-in-baden/"
+]
 ---
 
 [TechDays 2016 Baden](https://www.microsoft.com/de-ch/events/techdays)

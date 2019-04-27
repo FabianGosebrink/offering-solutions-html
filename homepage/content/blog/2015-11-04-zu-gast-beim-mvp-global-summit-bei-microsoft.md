@@ -1,16 +1,13 @@
 ---
-id: 970
 title: Zu Gast beim MVP Global Summit bei Microsoft
 date: 2015-11-04
-author: Fabian Gosebrink
-layout: post
-tags: global mvp summit microsoft
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['microsoft', 'mvpsummit']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2015/11/04/zu-gast-beim-mvp-global-summit-bei-microsoft/",
+]
 ---
 
 Hi,
@@ -43,7 +40,5 @@ Jetzt müssen wir nur noch hoffen, dass die Lufthansa am Samstag nicht streikt. 
 Alles in allem ist das Event bisher ein absolutes Highlight und man kann nur alles dafür tun nächstes Jahr wieder dabei zu sein.
 
 Gruss
-
-&nbsp;
 
 Fabian

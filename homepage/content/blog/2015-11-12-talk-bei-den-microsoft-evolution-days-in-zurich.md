@@ -1,15 +1,13 @@
 ---
 title: Talk bei den Microsoft Evolution Days in Zürich
 date: 2015-11-12
-author: Fabian Gosebrink
-layout: post
-tags: angularjs restapi talks speaking
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['speaking']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2015/11/12/talk-bei-den-microsoft-evolution-days-in-zurich/",
+]
 ---
 
 Am 29. Oktober hielt ich einen Talk bei den Microsoft Evolution Days in Zürich, die Digicomp ausgerichtet hat. Ich habe einen <span id="snippet_meta" class="desc" contenteditable="true">Talk bei den Microsoft Evolution Days in Zürich</span> über AngularJs &amp; REST mit einer ASP.NET WebAPI gehalten. Die Folien gibts direkt bei [Digicomp](http://digiblog.s3-eu-central-1.amazonaws.com/app/1446644382/30_agularjs-und-rest_fabian-gosebrink.pdf). Alle Beispiele gibts auch auf [Github](https://github.com/FabianGosebrink).

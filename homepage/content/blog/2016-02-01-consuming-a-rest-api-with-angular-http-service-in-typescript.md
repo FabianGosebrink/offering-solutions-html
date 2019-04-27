@@ -1,15 +1,13 @@
 ---
 title: Consuming a REST API with Angular Http-Service in Typescript
 date: 2016-02-01
-author: Fabian Gosebrink
-layout: post
-tags: angular restapi typescript
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'aspnetcore']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/02/01/consuming-a-rest-api-with-angular-http-service-in-typescript/"
+]
 ---
 
 ### Updates

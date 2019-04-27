@@ -1,16 +1,13 @@
 ---
-id: 972
 title: Token Authentication with Claims and ASP.NET WebAPI
 date: 2015-10-03
-author: Fabian Gosebrink
-layout: post
-tags: aspnet authentication authorization claims oauthprovider roles
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['aspnet', 'authentication']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2015/10/03/token-authentication-with-claims-and-asp-net-webapi/",
+]
 ---
 
 In this post I would like to show you the most simple example about TToken Authentication with Claims and ASP.NET WebAPI.

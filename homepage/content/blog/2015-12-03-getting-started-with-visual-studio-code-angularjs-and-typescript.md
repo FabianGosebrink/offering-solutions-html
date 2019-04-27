@@ -1,15 +1,13 @@
 ---
 title: Getting started with Visual Studio Code, AngularJS and Typescript
 date: 2015-12-03
-author: Fabian Gosebrink
-layout: post
-tags: angularjs typescript vscode
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['aspnetmvc', 'typescript', 'vscode']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2015/12/03/getting-started-with-visual-studio-code-angularjs-and-typescript/",
+]
 ---
 
 This time I want to show you how getting started with Visual Studio Code, AngularJS and Typescript.

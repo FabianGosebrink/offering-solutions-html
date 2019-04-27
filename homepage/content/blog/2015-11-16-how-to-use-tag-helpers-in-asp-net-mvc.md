@@ -1,15 +1,13 @@
 ---
 title: How to use tag helpers in ASP.NET MVC
 date: 2015-11-16
-author: Fabian Gosebrink
-layout: post
-tags: aspnet mvc taghelpers
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['aspnetmvc', 'taghelpers']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2015/11/16/how-to-use-tag-helpers-in-asp-net-mvc/",
+]
 ---
 
 Hey,

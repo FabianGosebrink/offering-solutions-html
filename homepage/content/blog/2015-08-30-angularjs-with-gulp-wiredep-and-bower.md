@@ -1,16 +1,13 @@
 ---
-id: 974
 title: AngularJS with gulp, wiredep and bower
 date: 2015-08-30
-author: Fabian Gosebrink
-layout: post
-tags: angularjs bower github gulp wiredep
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angularjs', 'bower', 'gulp', 'wiredep']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/",
+]
 ---
 
 With this blogpost I want to show you how to use AngularJS with gulp, wiredep and bower to provide the files to an angular application.
