@@ -2,10 +2,21 @@
   ('use strict');
   var allblogs = [];
 
-  $('#blogsearch').keyup(function() {
+  $('#blogsearch').keyup(function(e) {
+    if (e.key === 'Escape') {
+      // escape key maps to keycode `27`
+      $('#blogPosts').html('');
+      return;
+    }
+
     var currentValue = $(this)
       .val()
       .toLowerCase();
+
+    if (!currentValue) {
+      $('#blogPosts').html('');
+      return;
+    }
 
     var openingHtml = '<ul>';
     var closingHtml = '</ul>';
