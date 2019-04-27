@@ -1,15 +1,13 @@
 ---
 title: Announcing 'Getting started with Angular and ASP.NET Core' blogpost for ng book
-date: 2018-08-09 10:00
-author: Fabian Gosebrink
-layout: post
-tags: angular aspnetcore
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2018-08-09
+tags: ['angular', 'aspnetcore']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2018/08/09/announcing-getting-started-with-angular-and-asp.net-core-blogpost-for-ng-book/",
+]
 ---
 
 I wanted to announce another blogpost I wrote for the famous "ng-book" called "Getting started with Angular and ASP.NET Core" and you can find it [here](http://blog.ng-book.com/getting-started-with-angular-and-asp-net-core/)

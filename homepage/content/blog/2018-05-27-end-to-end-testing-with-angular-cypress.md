@@ -1,15 +1,13 @@
 ---
 title: Start your end to end testing with Angular and Cypress
-date: 2018-05-27 10:00
-author: Fabian Gosebrink
-layout: post
-tags: angular endtoend cypress
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2018-05-27
+tags: ['angular', 'endtoend', 'cypress']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2018/05/27/end-to-end-testing-with-angular-cypress/",
+]
 ---
 
 In this blogpost we will cover how to get started with end to end testing using cypress and angular and the AngularCLI.
@@ -51,7 +49,10 @@ We have a form component which can throw the output of an added todo and a list 
   <app-todo-form (onAddTodo)="addTodo($event)"></app-todo-form>
 </p>
 <p>
-  <app-todo-list [items]="items" (onMarkAsDone)="markAsDone($event)"></app-todo-list>
+  <app-todo-list
+    [items]="items"
+    (onMarkAsDone)="markAsDone($event)"
+  ></app-todo-list>
 </p>
 ```
 
@@ -63,17 +64,17 @@ Every item gets a button beside it which can be clicked to mark the item as "don
 
 So even if it is a small todo application we have:
 
--   an input which we can type something in
--   a button which is not active when the input is empty
--   another button for each todo item to mark it as done
--   a todo list containing all the items no matter if they are marked as done or not
+- an input which we can type something in
+- a button which is not active when the input is empty
+- another button for each todo item to mark it as done
+- a todo list containing all the items no matter if they are marked as done or not
 
 So this is a nice scope to get started wich cypress. So lets go and write some tests for first checking only the title.
 
 ```html
 <head>
   <title>CypressTest - TodoApp</title>
-  <base href="/">
+  <base href="/" />
   <!-- ...-->
 </head>
 ```
@@ -115,8 +116,8 @@ Lets check if our "Add Todo" button contains the words "AddTodo"
 
 ```javascript
 it('Button has correct naming', () => {
-    cy.visit('http://localhost:4200');
-    cy.get('#addtodobutton').should('contain', 'Add Todo');
+  cy.visit('http://localhost:4200');
+  cy.get('#addtodobutton').should('contain', 'Add Todo');
 });
 ```
 
@@ -124,15 +125,15 @@ We do not want to write that `cy.visit('http://localhost:4200');` everytime, so 
 
 ```javascript
 describe('My First Test', () => {
-    beforeEach(function() {
-        cy.visit('http://localhost:4200');
-    });
+  beforeEach(function() {
+    cy.visit('http://localhost:4200');
+  });
 
-    // ...`
+  // ...`
 
-    it('Button has correct naming', () => {
-        cy.get('#addtodobutton').should('contain', 'Add Todo');
-    });
+  it('Button has correct naming', () => {
+    cy.get('#addtodobutton').should('contain', 'Add Todo');
+  });
 });
 ```
 
@@ -140,7 +141,7 @@ Lets also check if the button is disabled if nothing has been typed in yet:
 
 ```javascript
 it('Add Todo button is disabled when input is empty', () => {
-    cy.get('#addtodobutton').should('have.attr', 'disabled');
+  cy.get('#addtodobutton').should('have.attr', 'disabled');
 });
 ```
 
@@ -152,12 +153,12 @@ So let's test if we get the button first it has the disabled attribute. Then let
 
 ```javascript
 it('Add Todo button is enabled when input is not empty', () => {
-    cy.get('#addtodobutton')
-        .should('have.attr', 'disabled')
-        .get('#todoinput')
-        .type('SomeTodo')
-        .get('#addtodobutton')
-        .should('not.have.attr', 'disabled');
+  cy.get('#addtodobutton')
+    .should('have.attr', 'disabled')
+    .get('#todoinput')
+    .type('SomeTodo')
+    .get('#addtodobutton')
+    .should('not.have.attr', 'disabled');
 });
 ```
 
@@ -167,12 +168,12 @@ Let's get the todo, type something in, submit the complete form and see if the i
 
 ```javascript
 it('Submit Form should clear Input', () => {
-    cy.get('#todoinput')
-        .type('SomeTodo')
-        .get('#addtodoform')
-        .submit()
-        .get('#todoinput')
-        .should('have.value', '');
+  cy.get('#todoinput')
+    .type('SomeTodo')
+    .get('#addtodoform')
+    .submit()
+    .get('#todoinput')
+    .should('have.value', '');
 });
 ```
 
@@ -180,24 +181,24 @@ When getting the input we can type something in with the method "type('myText')"
 
 Lets test next if when we
 
--   get the input
--   enter something in the todo input
--   get the form
--   submit the form
--   grab the list items then which ...
--   ... should contain one item then
+- get the input
+- enter something in the todo input
+- get the form
+- submit the form
+- grab the list items then which ...
+- ... should contain one item then
 
 if we break up a test like this we can nearly overtake it 1:1 in our cypress test. Take a look:
 
 ```javascript
 it('After submitting form list should contain element', () => {
-    cy.get('#todoinput')
-        .type('SomeTodo')
-        .get('#addtodoform')
-        .submit()
-        .get('#todolist>li')
-        .its('length')
-        .should('be.eq', 1);
+  cy.get('#todoinput')
+    .type('SomeTodo')
+    .get('#addtodoform')
+    .submit()
+    .get('#todolist>li')
+    .its('length')
+    .should('be.eq', 1);
 });
 ```
 
@@ -205,15 +206,15 @@ To be complete now lets check if the item gets the correct css class appended if
 
 ```javascript
 it("After clicking 'done' the item should contain done css class", () => {
-    cy.get('#todoinput')
-        .type('SomeTodo')
-        .get('#addtodoform')
-        .submit()
-        .get('#doneButton')
-        .click()
-        .get('#todolist>li s')
-        .first()
-        .should('have.class', 'inactive');
+  cy.get('#todoinput')
+    .type('SomeTodo')
+    .get('#addtodoform')
+    .submit()
+    .get('#doneButton')
+    .click()
+    .get('#todolist>li s')
+    .first()
+    .should('have.class', 'inactive');
 });
 ```
 

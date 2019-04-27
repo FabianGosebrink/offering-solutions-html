@@ -5,6 +5,9 @@ tags: ['angular', 'pluralsight', 'libraries']
 draft: false
 category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+aliases: [
+    "/blog/articles/2019/04/26/pluralsight-course-angular-libraries/",
+]
 ---
 
 In this blogpost I want to announce my very first Pluralsight course "Structuring Angular Applications with Angular Libraries"

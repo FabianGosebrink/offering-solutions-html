@@ -5,6 +5,9 @@ tags: ['angular', 'routeresolvers', 'components']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
+aliases: [
+    "/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/",
+]
 ---
 
 In this blogpost I want to show an alternative way to provide data in a common container & presentational components relation inside an Angular application.

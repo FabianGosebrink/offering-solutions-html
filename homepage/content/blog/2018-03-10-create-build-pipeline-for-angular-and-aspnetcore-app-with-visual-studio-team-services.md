@@ -1,15 +1,13 @@
 ---
 title: Create a build pipeline for Angular and ASP.NET Core apps with Visual Studio Team Services
-date: 2018-03-08 10:02
-author: Fabian Gosebrink
-layout: post
-tags: angular aspnetcore vsts
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2018-03-08
+tags: ['angular', 'aspnetcore', 'vsts']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2018/03/08/create-build-pipeline-for-angular-and-aspnetcore-app-with-visual-studio-team-services/",
+]
 ---
 
 In this blogpost I want to describe how you can build up a build and release pipeline for your Angular and ASP.NET Core applications using Visual Studio Team Services.

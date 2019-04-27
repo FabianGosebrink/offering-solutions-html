@@ -1,15 +1,13 @@
 ---
 title: Starting with Angular and Microsoft's Face Recognition API
-date: 2018-04-23 10:00
-author: Fabian Gosebrink
-layout: post
-tags: angular microsoft faceapi
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2018-04-23
+tags: ['angular', 'microsoft', 'faceapi']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2018/04/23/starting-with-angular-and-microsoft-face-recognition-api/",
+]
 ---
 
 In this blogpost I want to give you a guidance to the first steps of starting with Microsoft's Face Recognition API and using it with Angular and the Angular CLI.
@@ -20,9 +18,9 @@ The first thing you need is a FaceAPI key which you can get here [FaceAPI](https
 
 Another useful links are:
 
--   [Obtaining Subscription Keys](https://docs.microsoft.com/de-de/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtosubscribe)
--   [Face API JavaScript Quickstarts](https://docs.microsoft.com/de-de/azure/cognitive-services/Face/quickstarts/javascript)
--   [Api Documentation - Face API - V1.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+- [Obtaining Subscription Keys](https://docs.microsoft.com/de-de/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtosubscribe)
+- [Face API JavaScript Quickstarts](https://docs.microsoft.com/de-de/azure/cognitive-services/Face/quickstarts/javascript)
+- [Api Documentation - Face API - V1.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
 
 The complete sourcecode for this blogpost can be found in my [GitHub](https://github.com/FabianGosebrink/angular-face-recognition-api). It is based on the Angular CLI and Bootstrap 4.
 
@@ -34,10 +32,10 @@ The goal of this blogpost or this private project I did was to consume the face 
 
 The questions I faced prior to this project were:
 
--   How do I communicate with the Face API?
--   How can I take a picture and POST it?
--   How can I read the response and display it?
--   How can I do all this with Angular
+- How do I communicate with the Face API?
+- How can I take a picture and POST it?
+- How can I read the response and display it?
+- How can I do all this with Angular
 
 ## Lets get coding
 
@@ -45,14 +43,14 @@ The first thing I took a look at was the communication with the API. If we see t
 
 ```javascript
 var uriBase =
-    'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
+  'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
 
 // Request parameters.
 var params = {
-    returnFaceId: 'true',
-    returnFaceLandmarks: 'false',
-    returnFaceAttributes:
-        'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise',
+  returnFaceId: 'true',
+  returnFaceLandmarks: 'false',
+  returnFaceAttributes:
+    'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'
 };
 
 // Display the image.
@@ -61,18 +59,18 @@ document.querySelector('#sourceImage').src = sourceImageUrl;
 
 // Perform the REST API call.
 $.ajax({
-    url: uriBase + '?' + $.param(params),
+  url: uriBase + '?' + $.param(params),
 
-    // Request headers.
-    beforeSend: function(xhrObj) {
-        xhrObj.setRequestHeader('Content-Type', 'application/json');
-        xhrObj.setRequestHeader('Ocp-Apim-Subscription-Key', subscriptionKey);
-    },
+  // Request headers.
+  beforeSend: function(xhrObj) {
+    xhrObj.setRequestHeader('Content-Type', 'application/json');
+    xhrObj.setRequestHeader('Ocp-Apim-Subscription-Key', subscriptionKey);
+  },
 
-    type: 'POST',
+  type: 'POST',
 
-    // Request body.
-    data: '{"url": ' + '"' + sourceImageUrl + '"}',
+  // Request body.
+  data: '{"url": ' + '"' + sourceImageUrl + '"}'
 });
 ```
 
@@ -106,11 +104,11 @@ But if we take a picture with a service from the camera we do not save it and ha
 ```javascript
 const context = canvasElement.getContext('2d');
 context.drawImage(
-    videoElement,
-    0,
-    0,
-    videoElement.videoWidth,
-    videoElement.videoHeight
+  videoElement,
+  0,
+  0,
+  videoElement.videoWidth,
+  videoElement.videoHeight
 );
 
 const url = canvasElement.toDataURL('image/png'); // base64 here

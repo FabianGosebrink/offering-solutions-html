@@ -5,6 +5,9 @@ tags: ['angular', 'indexeddb']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
+aliases: [
+    "/blog/articles/2018/11/21/online-offline-sync-angular-indexeddb/",
+]
 ---
 
 In this blogpost I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
