@@ -134,3 +134,7 @@ header.major-no-line > :first-child:after {
 .searchinput {
   background-color: rgb(59, 77, 93);
 }
+
+#blogPosts > ul {
+  list-style: none;
+}

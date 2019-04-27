@@ -16,7 +16,7 @@
         var html =
           '<li>' +
           "<a href='" +
-          element.uri +
+          element.url +
           "'>" +
           element.title +
           '</a></li>';
@@ -31,7 +31,6 @@
   });
 
   $(window).on('load', function() {
-    console.log('dadsadas');
     $.ajax({
       url: '/index.json',
       success: function(result) {
