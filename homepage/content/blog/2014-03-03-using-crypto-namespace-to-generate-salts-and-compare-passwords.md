@@ -1,16 +1,13 @@
 ---
-id: 26
 title: Using the Crypto-Namespace to Generate Salts and Compare Passwords
 date: 2014-03-03
-author: Fabian Gosebrink
-layout: post
-categories: articles
-tags: aspnet crypto hash salt
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
+tags: [ 'aspnet']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/03/03/using-crypto-namespace-to-generate-salts-and-compare-passwords/",
+]
 ---
 
 In this blogpost I want to show how to use the Crypto-Namespace to Generate Salts and Compare Passwords

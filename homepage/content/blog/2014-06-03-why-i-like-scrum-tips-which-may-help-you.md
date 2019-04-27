@@ -1,16 +1,13 @@
 ---
-id: 161
 title: Why I like SCRUM - Tips which may help you
-date: 2014-06-03T17:12:40+00:00
-author: Fabian Gosebrink
-layout: post
-tags: agile development management planning process retrospective scrum software tips
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2014-06-03
+tags: [ 'agile', 'scrum']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/06/03/why-i-like-scrum-tips-which-may-help-you/",
+]
 ---
 
 Hi, in this post I want to tell you why I like SCRUM - Tips which may help you

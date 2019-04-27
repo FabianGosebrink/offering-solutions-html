@@ -1,16 +1,13 @@
 ---
-id: 35
 title: How to install Ninject in ASP.NET WebAPI
-date: 2014-03-04T17:57:23+00:00
-author: Fabian Gosebrink
-layout: post
-categories: articles
-tags: aspnet depdendency dependencyinjection injection mvc ninject
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
+date: 2014-03-04
+tags: [ 'aspnet', 'ninject']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/03/04/install-ninject-asp-net-webapi/",
+]
 ---
 
 In this blogpost I want to show you how to install Ninject in ASP.NET WebAPI. Using Dependency-Injection is one of the most important things when implementing software. Code is much more testable and you have clearly ordered dependencies and an overview of what you injected where etc.

@@ -1,24 +1,21 @@
 ---
-id: 111
 title: How to include DotNet.HighCharts in ASP.NET MVC with ViewModels
-date: 2014-05-09T14:41:01+00:00
-author: Fabian Gosebrink
-layout: post
-tags: aspnet charts highcharts mvc viewmodel
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2014-05-09
+tags: [ 'aspnet', 'highcharts', 'mvc']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/05/09/how-to-include-dotnet-highcharts-in-asp-net-mvc-with-viewmodels/",
+]
 ---
 
 Hey,
 
 I want to show you how to include DotNet.HighCharts in ASP.NET MVC working with ViewModels.
-  
+
 A charting component is always very cool to see on your page and makes normal plain numbers good-looking.
-  
+
 Highcharts are available on Codeplex: <a title="DotNet-Highcharts" href="https://dotnethighcharts.codeplex.com/" target="_blank">DotNet.HighCharts</a>
 
 I will not dive into this whole ViewModel thing. This is something very common in ASP.NET MVC and can also bee seen in the second blog I am working on: <a href="http://blog.noser.com/why-and-how-to-avoid-viewbag-and-viewdata-in-asp-net-mvc/" target="_blank">How to avoid ViewBag and ViewData</a>

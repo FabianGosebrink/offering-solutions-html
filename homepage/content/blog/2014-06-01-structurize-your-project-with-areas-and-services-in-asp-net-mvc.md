@@ -1,16 +1,13 @@
 ---
-id: 143
 title: Structurize your project with areas and services in ASP.NET MVC
-date: 2014-06-01T06:39:56+00:00
-author: Fabian Gosebrink
-layout: post
-tags: areas aspnet mvc controllerservice services 
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2014-06-01
+tags: [ 'aspnet', 'areas', 'mvc']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/06/01/structurize-your-project-with-areas-and-services-in-asp-net-mvc/",
+]
 ---
 
 In this blogpost I want to show you one possible way to structurize your project with areas and services in ASP.NET MVC.
@@ -33,7 +30,7 @@ Do work with areas. Ever. I know in the beginning it seems useless to you becaus
 
 <span style="color: #808080;">When I started to do this I got problems sharing my partial views from the top-level “Shared”-Folder which is given to me from the MVC-Template.</span>
 
-<span style="color: #808080;"><a href="http://brockallen.com/2012/08/31/sharing-a-single-_viewstart-across-areas-in-asp-net-mvc/"><span style="color: #808080;">http://brockallen.com/2012/08/31/sharing-a-single-_viewstart-across-areas-in-asp-net-mvc/</span></a></span>
+<span style="color: #808080;"><a href="http://brockallen.com/2012/08/31/sharing-a-single-_viewstart-across-areas-in-asp-net-mvc/"><span style="color: #808080;">http://brockallen.com/2012/08/31/sharing-a-single-\_viewstart-across-areas-in-asp-net-mvc/</span></a></span>
 
 <span style="color: #808080;">Has a solution for this. So this should not be a problem for you anymore.</span>
 
@@ -42,8 +39,6 @@ Areas are adding a separate “room” for a special part of your website with i
 ![Structurize your project with areas and services in ASP.NET MVC]({{site.baseurl}}assets/articles/2014-06-01/518fb795-0f60-47a8-8312-5edebe28335b.png)
 
 Note: You can of course add areas and name them as you want. But I think it’s always good to have a first point where the user first “sees” your application. So remind to have an Area which is giving you this information on the first sight. So name it like “Home” (which is standard). But also “Start” or anything like this would be okay.
-
-
 
 **3)     ** **Area-Models**
 
@@ -61,8 +56,6 @@ So you are hiding all information here for someone who is looking at your soluti
 
 _Conclusion so far: Keep your models in the given “models”-folder the area is offering to you. Do add namespaces to actions you can to and summarize all view- and submitmodels in these folders. This gets a perfect overview of what your controller offers and you can find immediately what you are searching for, if you are searching for it. And \*only\* this. Nothing confusing._
 
-
-
 **4)     ** **Area-Views**
 
 If you added the folders like mentioned in the point before you should also have the views folder looking like the folder structure of your “models”-Folder
@@ -77,11 +70,7 @@ Here you can see again the clean folder structure which fits perfectly to the vi
 
 _Conclusion so far: We have now a clean models-folder and views which represent the models and the functionality of the application in this area part. You know the connections between them because of a clean naming and concern-separation.But their relations is also clear because of a clean naming._
 
-
-
 So now we have touched areas, views and models inside an area. Okay…the controller is missing. But before I go into this I have to get a step back:
-
-
 
 **5)     ** **Controller Services and the controller**
 

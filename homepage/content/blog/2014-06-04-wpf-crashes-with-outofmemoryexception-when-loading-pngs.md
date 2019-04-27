@@ -1,16 +1,13 @@
 ---
-id: 167
 title: WPF crashes with 'OutOfMemoryException' when loading PNGs in Windows 8.1
-date: 2014-06-04T16:05:34+00:00
-author: Fabian Gosebrink
-layout: post
-tags: exception images outofmemory pictures windows wpf
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2014-06-04
+tags: [ 'wpf']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/06/04/wpf-crashes-with-outofmemoryexception-when-loading-pngs/",
+]
 ---
 
 In this blogpost I want to show you the solution for an error I had today which I spent a lot of time on solving it. it was the case that WPF crashes with OutOfMemoryException when loading PNGs.

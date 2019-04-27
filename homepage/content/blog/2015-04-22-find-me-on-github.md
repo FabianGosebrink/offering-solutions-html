@@ -1,16 +1,13 @@
 ---
-id: 981
-title: Find me on GitHub
-date: 2015-04-22 17:53
-author: Fabian Gosebrink
-layout: post
-tags: github
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+title: WPF crashes with 'OutOfMemoryException' when loading PNGs in Windows 8.1
+date: 2015-04-22
+tags: [ 'github']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2015/04/22/find-me-on-github/",
+]
 ---
 
 I just wanted to mention that you can find me on GitHub from now on. I am available on GitHub with my personal profile.
@@ -25,7 +22,7 @@ Feel free to do pull requests and contribute on what I coded.
 
 ![Find me on GitHub]({{site.baseurl}}assets/articles/wp-content/uploads/2015/04/FabianGosebrinkGithub.jpg)
 
-Sometimes you will find a "_gitAssets"-Folder in my repos which are not for holding anything code specific but they hold pictures or anything used in the readme markdown. Just to ensure the repository is complete I would like to host them directly within the repository.
+Sometimes you will find a "\_gitAssets"-Folder in my repos which are not for holding anything code specific but they hold pictures or anything used in the readme markdown. Just to ensure the repository is complete I would like to host them directly within the repository.
 
 If anything is not working or not compiling at all please leave me a note because every repository shall be possible to get started right away.
 

@@ -1,16 +1,13 @@
 ---
-id: 92
 title: Deleting a Team Project on Visual Studio Team Services
-date: 2014-04-14T06:37:53+00:00
-author: Fabian Gosebrink
-layout: post
-tags: tfs visualstudio
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2014-04-14
+tags: [ 'vsts']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/04/14/deleting-a-team-project-on-visual-studio-team-services/",
+]
 ---
 
 In this bogpost I want to show you one possibility of deleting a Team Project on Visual Studio Team Services.

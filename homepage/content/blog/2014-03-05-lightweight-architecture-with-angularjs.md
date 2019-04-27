@@ -1,16 +1,13 @@
 ---
-id: 65
 title: Lightweight architecture with AngularJS
-date: 2014-03-05T17:17:51+00:00
-author: Fabian Gosebrink
-layout: post
-categories: articles
-tags: angularjs javascript webarchitecture 
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
+date: 2014-03-05
+tags: [ 'angularjs']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/03/05/lightweight-architecture-with-angularjs/",
+]
 ---
 
 During the last past days I have been to a conference in Germany and brought back several interesting things I want to share with you this time. (Here I have to say that my hotel did not have a spa. So everybody who wanted to get the latest hotel and spa tips is wrong here&#8230;so in case stop reading)
@@ -33,7 +30,7 @@ As I mentioned ASP.NET MVC gives us a great but server-sided-technology to build
 
 ### Angular.js
 
-Frameworks like Angular.js are nowadays able to build up a complete MV*-Framework completely down on your client. Everybody who thought that JavaScript is a language without any structure, namespaces etc. can with tools like angular see, that this is not true. Angular.Js is a google-pushed Framework (that’s a reason why MS is not providing it in its templates 😉 ) where code can be separated into your well known controllers, into services and, of course, into your view model for html-views. The Dependency injection comes native with angular.js! With that you are facing real client-side architecture. It’s an architecture to write client-side-applications. Not only websites.
+Frameworks like Angular.js are nowadays able to build up a complete MV\*-Framework completely down on your client. Everybody who thought that JavaScript is a language without any structure, namespaces etc. can with tools like angular see, that this is not true. Angular.Js is a google-pushed Framework (that’s a reason why MS is not providing it in its templates 😉 ) where code can be separated into your well known controllers, into services and, of course, into your view model for html-views. The Dependency injection comes native with angular.js! With that you are facing real client-side architecture. It’s an architecture to write client-side-applications. Not only websites.
 
 ![Lightweight architecture with AngularJS]({{site.baseurl}}assets/articles/2014-03-05/5ab97616-0c2c-4953-9bca-8f5c20415c45.png)
 
@@ -66,5 +63,3 @@ Let’s summarize: The patterns to build up applications with a good architectur
 On the mentioned historically view every C#-Developer has to face the new age with JavaScript as a language you have to pay attention to.
 
 Personally I think now that JavaScript is not a language without structure etc. It’s not like your good old C# with namespaces and classes and stuff but the frameworks in this direction are growing and getting better and better. So here is something moving. There is something growing. Let’s grow with it!
-
-

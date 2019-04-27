@@ -1,16 +1,13 @@
 ---
-id: 83
 title: Code-First with Entity Framework n:m relationship with additional information
-date: 2014-04-06T17:18:15+00:00
-author: Fabian Gosebrink
-layout: post
-tags: aspnet codefirst ef entityframework fluentapi relationships
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2014-04-06
+tags: [ 'aspnet', 'entityframework']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/04/06/code-first-with-entity-framework-nm-relationship-with-additional-information/",
+]
 ---
 
 In this blogpost I want to show you a way to realize code First with Entity Framework n:m relationship with additional information.
