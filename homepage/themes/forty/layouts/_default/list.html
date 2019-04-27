@@ -37,8 +37,7 @@
                       />
 
                       <div id="blogPosts"></div>
-
-          {{ $paginator := .Paginate (where .Site.Pages "Type" "blog") }}
+          {{ $paginator := .Paginate .Pages }}
           {{ range .Paginator.Pages.ByDate.Reverse }}
           <section>
             <div class="content">

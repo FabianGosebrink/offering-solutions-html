@@ -1,15 +1,10 @@
 ---
 title: Using UseClass, UseFactory, UseValue & UseExisting with treeshakable providers in Angular
-date: 2018-08-17 10:00
-author: Fabian Gosebrink
-layout: post
-tags: angular
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2018-08-17
+tags: ['angular']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
 ---
 
 In this blogpost I want to describe how to use the `useClass`, `useValue`, `useFactory`, `useExisting` providers in the new [treeshakable providers](https://angular.io/guide/providers) from Angular.
@@ -22,11 +17,11 @@ Everybody is talking about the `providedIn` property of the configuration object
 
 But the `providedIn` property is only one property of many which can describe how your service should be provided to your application. We got
 
--   [UseClass](#useclass)
--   [UseFactory](#usefactory)
--   [UseValue](#usevalue)
--   [UseExisting](#useexisting)
--   [Testing](#testing)
+- [UseClass](#useclass)
+- [UseFactory](#usefactory)
+- [UseValue](#usevalue)
+- [UseExisting](#useexisting)
+- [Testing](#testing)
 
 too.
 
@@ -34,10 +29,10 @@ Let us start having the [AngularCLI](https://cli.angular.io/) installed and scaf
 
 ```javascript
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root'
 })
 export class TestService {
-    constructor() {}
+  constructor() {}
 }
 ```
 
@@ -47,12 +42,12 @@ Lets modify the service like this
 
 ```javascript
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root'
 })
 export class TestService {
-    sayHello() {
-        console.log(`From TestService --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService --> Hello`);
+  }
 }
 ```
 
@@ -93,9 +88,9 @@ Lets add another class which is like the same service but has a different name.
 
 ```javascript
 export class TestService2 {
-    sayHello() {
-        console.log(`From TestService2 --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService2 --> Hello`);
+  }
 }
 ```
 
@@ -105,19 +100,19 @@ Lets use the `useClass` provider now. Modify the configuration object to our dec
 
 ```javascript
 export class TestService2 {
-    sayHello() {
-        console.log(`From TestService2 --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService2 --> Hello`);
+  }
 }
 
 @Injectable({
-    providedIn: 'root',
-    useClass: TestService2, // <-- add this line
+  providedIn: 'root',
+  useClass: TestService2 // <-- add this line
 })
 export class TestService {
-    sayHello() {
-        console.log(`From TestService --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService --> Hello`);
+  }
 }
 ```
 
@@ -141,27 +136,27 @@ So lets create a new service first with has the same method as the other service
 
 ```javascript
 export class TestService3 {
-    sayHello() {
-        console.log(`From TestService3 --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService3 --> Hello`);
+  }
 }
 
 export function xyzFactory() {
-    return new TestService3();
+  return new TestService3();
 }
 
 export class TestService2 {
-    // ...
+  // ...
 }
 
 @Injectable({
-    providedIn: 'root',
-    useFactory: xyzFactory,
+  providedIn: 'root',
+  useFactory: xyzFactory
 })
 export class TestService {
-    sayHello() {
-        console.log(`From TestService --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService --> Hello`);
+  }
 }
 ```
 
@@ -181,29 +176,29 @@ Let us assume that we have to have the `HttpClient` from `@angular/common/http` 
 
 ```javascript
 export class TestService3 {
-    sayHello() {
-        console.log(`From TestService3 --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService3 --> Hello`);
+  }
 }
 
 export function xyzFactory(http: HttpClient) {
-    console.log(!!http);
-    return new TestService3();
+  console.log(!!http);
+  return new TestService3();
 }
 
 export class TestService2 {
-    // ...
+  // ...
 }
 
 @Injectable({
-    providedIn: 'root',
-    useFactory: xyzFactory,
-    deps: [HttpClient],
+  providedIn: 'root',
+  useFactory: xyzFactory,
+  deps: [HttpClient]
 })
 export class TestService {
-    sayHello() {
-        console.log(`From TestService --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService --> Hello`);
+  }
 }
 ```
 
@@ -226,17 +221,17 @@ To test the service now - remember we did not change our app.component at all un
 
 ```javascript
 @Injectable({
-    providedIn: 'root',
-    useValue: {
-        sayHello: function() {
-            console.log('whuuuut??');
-        },
-    },
+  providedIn: 'root',
+  useValue: {
+    sayHello: function() {
+      console.log('whuuuut??');
+    }
+  }
 })
 export class TestService {
-    sayHello() {
-        console.log(`From TestService --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService --> Hello`);
+  }
 }
 ```
 
@@ -258,22 +253,22 @@ We already know `useClass`. You could easily provide a `ServiceB` and everybody 
 
 ```javascript
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root'
 })
 export class ServiceB {
-    sayHello() {
-        console.log(`From ServiceB --> Hello`);
-    }
+  sayHello() {
+    console.log(`From ServiceB --> Hello`);
+  }
 }
 
 @Injectable({
-    providedIn: 'root',
-    useClass: ServiceB,
+  providedIn: 'root',
+  useClass: ServiceB
 })
 export class ServiceA {
-    sayHello() {
-        console.log(`From ServiceA --> Hello`);
-    }
+  sayHello() {
+    console.log(`From ServiceA --> Hello`);
+  }
 }
 ```
 
@@ -281,22 +276,22 @@ will create two instances of your `ServiceB` class which might not be what you w
 
 ```javascript
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root'
 })
 export class TestService2 {
-    sayHello() {
-        console.log(`From TestService2 --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService2 --> Hello`);
+  }
 }
 
 @Injectable({
-    providedIn: 'root',
-    useExisting: TestService2,
+  providedIn: 'root',
+  useExisting: TestService2
 })
 export class TestService {
-    sayHello() {
-        console.log(`From TestService --> Hello`);
-    }
+  sayHello() {
+    console.log(`From TestService --> Hello`);
+  }
 }
 ```
 
@@ -322,15 +317,15 @@ import { TestBed, inject } from '@angular/core/testing';
 import { TestService } from './test.service';
 
 describe('TestService', () => {
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            providers: [TestService],
-        });
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [TestService]
     });
+  });
 
-    it('should be created', inject([TestService], (service: TestService) => {
-        expect(service).toBeTruthy();
-    }));
+  it('should be created', inject([TestService], (service: TestService) => {
+    expect(service).toBeTruthy();
+  }));
 });
 ```
 
@@ -341,14 +336,14 @@ import { TestBed } from '@angular/core/testing';
 import { TestService } from './test.service';
 
 describe('TestService', () => {
-    beforeEach(() => {
-        TestBed.configureTestingModule({});
-    });
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+  });
 
-    it('should be created', () => {
-        const service = TestBed.get(TestService);
-        expect(service).toBeTruthy();
-    });
+  it('should be created', () => {
+    const service = TestBed.get(TestService);
+    expect(service).toBeTruthy();
+  });
 });
 ```
 
@@ -406,22 +401,22 @@ Our test looks like this:
 
 ```javascript
 describe('ServiceToTest', () => {
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            providers: [
-                {
-                    provide: TestServiceWithHttp,
-                    useClass: TestServieWithoutHttp,
-                },
-                ServiceToTest,
-            ],
-        });
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: TestServiceWithHttp,
+          useClass: TestServieWithoutHttp
+        },
+        ServiceToTest
+      ]
     });
+  });
 
-    it('should be created', () => {
-        const serviceToTest: ServiceToTest = TestBed.get(ServiceToTest);
-        expect(serviceToTest).toBeTruthy();
-    });
+  it('should be created', () => {
+    const serviceToTest: ServiceToTest = TestBed.get(ServiceToTest);
+    expect(serviceToTest).toBeTruthy();
+  });
 });
 ```
 
@@ -439,32 +434,32 @@ So it turns out that Angular searches for the optional dependencies as well and 
 
 ```javascript
 describe('ServiceToTest', () => {
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            providers: [
-                {
-                    provide: TestServiceWithHttp,
-                    useClass: TestServieWithoutHttp,
-                },
-                { provide: OptionalServiceWithHttp, useValue: null }, // See this line?
-                ServiceToTest,
-            ],
-        });
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: TestServiceWithHttp,
+          useClass: TestServieWithoutHttp
+        },
+        { provide: OptionalServiceWithHttp, useValue: null }, // See this line?
+        ServiceToTest
+      ]
     });
+  });
 
-    it('should be created', () => {
-        const serviceToTest: ServiceToTest = TestBed.get(ServiceToTest);
-        expect(serviceToTest).toBeTruthy();
-    });
+  it('should be created', () => {
+    const serviceToTest: ServiceToTest = TestBed.get(ServiceToTest);
+    expect(serviceToTest).toBeTruthy();
+  });
 });
 ```
 
 ### Recap
 
--   `useClass`, `useValue`, `useFactory`, `useExisting` can be used with the new syntax mostly like before
--   The `TestBed` is "pre-provided" with all dependencies declared with `@Injectable({ providedIn: 'root' })`.
--   That can be a big surprise if you _thought you had to provide everything to `TestBed`_
--   It can bite you if you don’t _mock out optional dependencies_ too.
+- `useClass`, `useValue`, `useFactory`, `useExisting` can be used with the new syntax mostly like before
+- The `TestBed` is "pre-provided" with all dependencies declared with `@Injectable({ providedIn: 'root' })`.
+- That can be a big surprise if you _thought you had to provide everything to `TestBed`_
+- It can bite you if you don’t _mock out optional dependencies_ too.
 
 Big thanks to [@wardbell](https://twitter.com/wardbell) especially to point out the unit test scenarios.
 

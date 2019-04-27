@@ -1,15 +1,10 @@
 ---
 title: Online and Offline Sync with Angular and IndexedDb
-date: 2018-11-21 10:00
-author: Fabian Gosebrink
-layout: post
-tags: angular indexeddb online offline
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2018-11-21
+tags: ['angular', 'indexeddb']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
 ---
 
 In this blogpost I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
@@ -34,7 +29,7 @@ declare const window: any;
 
 @Injectable({ providedIn: 'root' })
 export class OnlineOfflineService {
-  
+
   get isOnline() {
     return !!window.navigator.onLine;
   }
@@ -104,7 +99,9 @@ export class Todo {
 <div>
   <ul style="list-style-type: none;">
     <li *ngFor="let item of todos" class="todo-item">
-      <span [ngClass]="{ inactive: item.done }">{% raw %}{{ item.value }}{% endraw %}</span>
+      <span [ngClass]="{ inactive: item.done }"
+        >{% raw %}{{ item.value }}{% endraw %}</span
+      >
 
       <button class="todo-item-button" (click)="markAsDone(item)">Done</button>
     </li>
@@ -248,8 +245,8 @@ export class TodoService {
 
 Now we can create methods to
 
-* add an item to the IndexedDB, and
-* send all items from the IndexedDb to the (imaginary) backend
+- add an item to the IndexedDB, and
+- send all items from the IndexedDb to the (imaginary) backend
 
 ```javascript
 private addToIndexedDb(todo: Todo) {
@@ -282,8 +279,8 @@ Sending the items however is getting all items, looping over it, sending it and 
 
 So there are two things left to do:
 
-* Adding the items to the IndexedDb in case of offline
-* when getting back online, sending allitems and deleting them locally
+- Adding the items to the IndexedDb in case of offline
+- when getting back online, sending allitems and deleting them locally
 
 First one can be achieved in our `AddTodo()` method. We can extend it asking for the online status:
 
@@ -356,7 +353,8 @@ Our `addTodo()` is calling our `todoService` which is handling our data storage 
 
 ```html
 <p>
-  current status: {% raw %}{{ onlineOfflineService.isOnline ? 'online' : 'offline' }}{% endraw %}
+  current status: {% raw %}{{ onlineOfflineService.isOnline ? 'online' :
+  'offline' }}{% endraw %}
 </p>
 <div>
   <form (ngSubmit)="addTodo()" [formGroup]="form">
@@ -367,7 +365,9 @@ Our `addTodo()` is calling our `todoService` which is handling our data storage 
 <div>
   <ul style="list-style-type: none;">
     <li *ngFor="let item of todos" class="todo-item">
-      <span [ngClass]="{ inactive: item.done }">{% raw %}{{ item.value }}{% endraw %}</span>
+      <span [ngClass]="{ inactive: item.done }"
+        >{% raw %}{{ item.value }}{% endraw %}</span
+      >
 
       <button class="todo-item-button" (click)="markAsDone(item)">Done</button>
     </li>

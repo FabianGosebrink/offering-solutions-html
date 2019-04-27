@@ -1,7 +1,7 @@
 # Site settings
 baseURL = "https://offering.solutions/"
 languageCode = "en-us"
-title = "Offering Solutions Software"
+title = "Offering Solutions Software by Fabian Gosebrink"
 theme = "forty"
 
 # Enter your tracking code to enable Google Analytics
@@ -19,7 +19,7 @@ disqusShortname = "offeringsolutions"
   # CSS class.
 
   # Provide your metadata here.
-  name = "Offering Solutions Software - Fabian Gosebrink"
+  name = "Offering Solutions Software by Fabian Gosebrink"
   description = "Angular and ASP.NET Core Consulting, Training and Courses"
 
   # Link custom assets relative to /static
