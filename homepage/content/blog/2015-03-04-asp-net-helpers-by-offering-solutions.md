@@ -1,16 +1,13 @@
 ---
-id: 984
 title: ASP.NET Helpers by Offering Solutions
 date: 2015-03-04
-author: Fabian Gosebrink
-layout: post
-tags: mvchelper nuget submitmodel viewmodel
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: [ 'nuget']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2015/03/04/asp-net-helpers-by-offering-solutions/",
+]
 ---
 
 I just released a new version of the ASP.NET Helpers by Offering Solutions:

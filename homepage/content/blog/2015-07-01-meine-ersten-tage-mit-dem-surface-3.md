@@ -1,16 +1,13 @@
 ---
-id: 977
 title: Meine ersten Tage mit dem Surface Pro 3
 date: 2015-07-01
-author: Fabian Gosebrink
-layout: post
-tags: microsoft surface3 pro
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['surface3', 'microsoft']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2015/07/01/meine-ersten-tage-mit-dem-surface-3/",
+]
 ---
 
 Nun ist es endlich da. Das Surface der dritten Generation. Ich habe mich ja schon drauf gefreut aber wenn es dann da ist, ist es natürlich nochmal was ganz anderes. Man hört ja so viel, man liest noch mehr und am Ende schimpfen alle auf die Kacheln. Mir völlig unverständlich, aber trotzdem habe ich gedacht, dass ich das Surface mal einem Review unterziehen kann. Die Ergebnisse davon will ich in diesem Beitrag beschreiben.

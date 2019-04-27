@@ -1,16 +1,13 @@
 ---
-id: 979
 title: ASP.NET WebAPI Datashaper to strip your json data
 date: 2015-05-30
-author: Fabian Gosebrink
-layout: post
-tags: datashaping github restapi webapi
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['datashaping', 'aspnet']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2015/05/30/asp-net-webapi-datashaper-to-strip-your-json-data/",
+]
 ---
 
 With this blogpost I want to introduce you the ASP.NET WebAPI Datashaper to strip your json data before sending it back to the client.

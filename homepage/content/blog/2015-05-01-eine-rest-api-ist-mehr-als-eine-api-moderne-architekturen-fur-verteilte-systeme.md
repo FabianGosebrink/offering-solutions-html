@@ -1,16 +1,13 @@
 ---
-id: 980
 title: Eine REST API ist mehr als eine API – Moderne Architekturen für verteilte Systeme
 date: 2015-05-01
-author: Fabian Gosebrink
-layout: post
-tags: angularjs architecture aspnet development spa
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: [ 'architecture', 'angularjs', 'aspnet']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2015/05/01/eine-rest-api-ist-mehr-als-eine-api-moderne-architekturen-fur-verteilte-systeme/",
+]
 ---
 
 In diesem Blogpost möchte ich zeigen, wie wichtig eine API heutzutage ist. Frei nach dem Motto: Eine REST API ist mehr als eine API – Moderne Architekturen für verteilte Systeme

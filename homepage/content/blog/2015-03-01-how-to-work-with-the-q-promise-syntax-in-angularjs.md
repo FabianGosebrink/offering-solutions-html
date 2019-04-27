@@ -1,16 +1,13 @@
 ---
-id: 985
 title: How to work with the q promise syntax in AngularJS
 date: 2015-03-01
-author: Fabian Gosebrink
-layout: post
-tags: angularjs architecture promises spa
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: [ 'angularjs']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2015/03/01/how-to-work-with-the-q-promise-syntax-in-angularjs/",
+]
 ---
 
 In this blogpost I want to show you how to work with the q promise syntax in AngularJS
