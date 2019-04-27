@@ -35,7 +35,6 @@
         resultListItems.push(html);
       }
     });
-    console.log(resultListItems.join(''));
     var result = openingHtml + resultListItems.join('') + closingHtml;
 
     $('#blogPosts').html(result);
@@ -46,7 +45,6 @@
       url: '/index.json',
       success: function(result) {
         allblogs = result;
-        console.log(result);
       }
     });
   });

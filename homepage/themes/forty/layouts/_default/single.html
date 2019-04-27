@@ -8,6 +8,11 @@
 
       {{ "<!-- Main -->" | safeHTML }}
       <div id="main" class="alt">
+        <div class="header">
+          <div class="progress-container">
+            <div class="progress-bar" id="scrollingbar"></div>
+          </div>
+        </div>
         <section id="banner" class="style2">
           <div class="inner">
             {{ if .Params.image }}

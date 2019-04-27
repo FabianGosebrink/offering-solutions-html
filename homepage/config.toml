@@ -23,8 +23,8 @@ disqusShortname = "offeringsolutions"
   description = "Angular and ASP.NET Core Consulting, Training and Courses"
 
   # Link custom assets relative to /static
-  custom_css = ["css/custom.css"]
-  custom_js  = ["js/search.js"]
+  custom_css = ["css/custom.css", "css/scrolling.css"]
+  custom_js  = ["js/search.js", "js/scrolling.js"]
   favicon    = "favicon.ico"
 
   # Just a custom image variable, please define it in .md files for content.
