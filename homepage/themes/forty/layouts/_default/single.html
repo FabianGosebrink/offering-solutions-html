@@ -13,7 +13,7 @@
             {{ if .Params.image }}
             <span class="image">
               <img
-                src="{{ .Site.Params.baseURL }}/img/blogs/{{ .Params.image }}"
+                src="{{ .Site.Params.baseURL }}/img/blog/{{ .Params.image }}"
                 alt=""
               />
             </span>
@@ -24,7 +24,7 @@
             <p>
               {{ partial "readingtime.html" . }}
 
-              <a href="{{ .Site.Params.baseURL }}/blogs/">back to all blogs</a>
+              <a href="{{ .Site.Params.baseURL }}/blog/">back to all blogs</a>
             </p>
           </div>
         </section>
