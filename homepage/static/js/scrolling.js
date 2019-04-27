@@ -1,12 +1,16 @@
 window.onscroll = function() {
-  setScrollbatValue();
+  var scrollingBar = document.getElementById('scrollingbar');
+
+  if (!!scrollingBar) {
+    setScrollbarValue(scrollingBar);
+  }
 };
 
-function setScrollbatValue() {
+function setScrollbarValue(scrollingBar) {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height =
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
-  document.getElementById('scrollingbar').style.width = scrolled + '%';
+  scrollingBar.style.width = scrolled + '%';
 }
