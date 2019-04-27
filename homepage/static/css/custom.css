@@ -126,3 +126,11 @@ body {
 header.major-no-line > :first-child:after {
   content: '';
 }
+
+.pagination {
+  text-align: center;
+}
+
+.searchinput {
+  background-color: rgb(59, 77, 93);
+}

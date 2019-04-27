@@ -27,7 +27,16 @@
         </section>
 
         <section id="two" class="spotlights">
-          {{ range.Pages.ByDate.Reverse }}
+            <input
+                        type="text"
+                        name="demo-name"
+                        class="searchinput"
+                        id="demo-name"
+                        value=""
+                        placeholder="Search blogs..."
+                      />
+          {{ $paginator := .Paginate (where .Site.Pages "Type" "blog") }}
+          {{ range .Paginator.Pages.ByDate.Reverse }}
           <section>
             <div class="content">
               <div class="inner">
@@ -39,11 +48,11 @@
                 <p>
                   {{ partial "readingtime.html" . }}
                   {{ dateFormat "Monday, Jan 2, 2006" .Date }}
-                  {{ if gt .Params.Tags 1 }} 
+                  {{ if gt .Params.Tags 1 }}
                   {{ range .Params.Tags }}
                   <a href="{{ delimit (slice "/tags/" (urlize .) $.Site.Params.ugly) "" | relURL }}">{{ . }}</a>
                   {{ end }}
-            
+          
                   {{ end }}
                 </p>
                 <p>{{ .Description | safeHTML | truncate 100}}</p>
@@ -55,6 +64,9 @@
           </section>
           {{ end }}
         </section>
+       
+      
+        {{ partial "pagination.html" . }}
       </div>
 
       {{ "<!-- Footer -->" | safeHTML}}

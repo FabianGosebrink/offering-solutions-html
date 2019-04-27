@@ -24,7 +24,7 @@ disqusShortname = "offeringsolutions"
 
   # Link custom assets relative to /static
   custom_css = ["css/custom.css"]
-  custom_js  = []
+  custom_js  = ["js/search.js"]
   favicon    = "favicon.ico"
 
   # Just a custom image variable, please define it in .md files for content.
@@ -48,8 +48,8 @@ disqusShortname = "offeringsolutions"
       url = "#"
 
     [[params.navigation.links]]
-      name = "Blogs"
-      url = "blogs"
+      name = "Blog"
+      url = "blog"
 
     # [[params.navigation.links]]
     #   name = "Personal Site"
@@ -123,10 +123,10 @@ disqusShortname = "offeringsolutions"
   # Section Type Two
   [params.two]
     enable = true
-    title = "Blogs"
+    title = "Blog"
     subtitle = """In the blog you can read the latest articles about Angular, ASP.NET Core and latest tech journeys of a developer, trainer and teacher..."""
     buttonText = "To the blog"
-    url = "blogs"
+    url = "blog"
 
 
   # Contact section
@@ -212,4 +212,7 @@ disqusShortname = "offeringsolutions"
       alt = "HTML5 UP"
 
 [permalinks]
-  blogs = "/blog/articles/:year/:month/:day/:title/"
+  blog = "/blog/articles/:year/:month/:day/:title/"
+
+[outputs]
+  home = ["HTML", "CSS", "RSS", "JSON"]
