@@ -1,16 +1,13 @@
 ---
-id: 996
 title: Impressions of the first ASP.NET MVC workshop
 date: 2014-08-10
-author: Fabian Gosebrink
-layout: post
-tags: aspnet workshop
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: [ 'aspnet', 'workshop']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/08/10/impressions-of-the-first-asp-net-mvc-workshop/",
+]
 ---
 
 In this blogpost I am doing a small recap to give you impressions of the first ASP.NET MVC workshop.

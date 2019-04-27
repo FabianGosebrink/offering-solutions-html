@@ -1,6 +1,6 @@
 ---
 title: Chat with Node.js, socket.io, AngularJS, flashing title and loading bar
-date: 2014-06-10
+date: 2014-07-02
 tags: [ 'angularjs', 'nodejs', 'socketio']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false

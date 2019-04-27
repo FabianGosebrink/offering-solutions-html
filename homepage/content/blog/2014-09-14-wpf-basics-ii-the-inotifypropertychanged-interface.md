@@ -1,16 +1,13 @@
 ---
-id: 994
 title: WPF Basics II - The INotifyPropertyChanged Interface
 date: 2014-09-14
-author: Fabian Gosebrink
-layout: post
-tags: basics databinding tutorial wpf
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: [ 'databinding', 'wpf']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/",
+]
 ---
 
 > UPDATE

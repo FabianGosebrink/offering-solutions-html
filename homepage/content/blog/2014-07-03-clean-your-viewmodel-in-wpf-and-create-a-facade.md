@@ -1,16 +1,13 @@
 ---
-id: 997
 title: Clean your viewmodel in WPF and create a facade
 date: 2014-07-03
-author: Fabian Gosebrink
-layout: post
-tags: architecture databinding facade inotifypropertychanged pattern provider services wpf
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: [ 'wpf']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/",
+]
 ---
 
 In this post I want to show you how to Clean your viewmodel in WPF and create a facade.

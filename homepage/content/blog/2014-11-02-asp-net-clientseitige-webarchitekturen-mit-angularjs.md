@@ -1,16 +1,13 @@
 ---
-id: 989
 title: ASP.NET - Clientseitige Webarchitekturen mit AngularJS
 date: 2014-11-02
-author: Fabian Gosebrink
-layout: post
-tags: angularjs entityframework solution web architecture
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: [ 'angularjs', 'aspnet']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/11/02/asp-net-clientseitige-webarchitekturen-mit-angularjs/",
+]
 ---
 
 ASP.NET MVC hat, wie der Name schon sagt, die MVC-Struktur auf dem Server etabliert und es ist somit möglich saubere Architekturen auf dem Server zu erstellen.
