@@ -1,7 +1,7 @@
 ---
 id: 986
 title: WPF CallMemberName for INotifyPropertyChanged
-date: 2015-02-08 23:08
+date: 2015-02-08
 author: Fabian Gosebrink
 layout: post
 tags: callMemberName inotifypropertychanged wpf

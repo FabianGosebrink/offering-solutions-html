@@ -1,6 +1,6 @@
 ---
 title: How you can organise gulp in your applications
-date: 2016-05-16 08:30
+date: 2016-05-16
 author: Fabian Gosebrink
 layout: post
 tags: gulp javascript
@@ -94,9 +94,9 @@ The gulp-file itself is now only containing the tasks and is consuming the confi
 
 ```javascript
 gulp.task('web-copy-index-to-webapp-folder', function(done) {
-    return gulp
-        .src(buildConfig.general.indexHtml)
-        .pipe(gulp.dest(buildConfig.targets.webAppOutputPath));
+  return gulp
+    .src(buildConfig.general.indexHtml)
+    .pipe(gulp.dest(buildConfig.targets.webAppOutputPath));
 });
 ```
 
@@ -127,15 +127,15 @@ var gulp = require('gulp');
 var runSeq = require('run-sequence');
 
 gulp.task('build:web:prod', function(done) {
-    runSeq(
-        'web-clean-webapp',
-        'web-copy-index-to-webapp-folder',
-        'web-copy-images-to-webapp-folder',
-        'web-copy-css-to-webapp-folder',
-        'web-concat-uglify-and-copy-vendor-scripts',
-        // all the other tasks
-        done
-    );
+  runSeq(
+    'web-clean-webapp',
+    'web-copy-index-to-webapp-folder',
+    'web-copy-images-to-webapp-folder',
+    'web-copy-css-to-webapp-folder',
+    'web-concat-uglify-and-copy-vendor-scripts',
+    // all the other tasks
+    done
+  );
 });
 ```
 
@@ -149,11 +149,11 @@ What we also did in this step is: We defined a _main task_! This task can be ref
 require('./gulpTasks/web');
 //...
 gulp.task('build:all', function(done) {
-    runSeq(
-        'build:web:prod',
-        // maybe other main build tasks
-        done
-    );
+  runSeq(
+    'build:web:prod',
+    // maybe other main build tasks
+    done
+  );
 });
 ```
 
@@ -212,23 +212,23 @@ One possibility would be going along and define some "main"-tasks and be more ge
 
 ```javascript
 function copySourcesTo(targetFolder) {
-    return gulp
-        .src(getSourceFiles(buildConfig.source.folder), {
-            base: buildConfig.source.folder,
-        })
-        .pipe(gulp.dest(targetFolder));
+  return gulp
+    .src(getSourceFiles(buildConfig.source.folder), {
+      base: buildConfig.source.folder
+    })
+    .pipe(gulp.dest(targetFolder));
 }
 
 function copyFromTo(sourceFolder, targetFolder) {
-    return gulp
-        .src(path.join(sourceFolder, '**', '*.*'))
-        .pipe(gulp.dest(targetFolder));
+  return gulp
+    .src(path.join(sourceFolder, '**', '*.*'))
+    .pipe(gulp.dest(targetFolder));
 }
 
 function cleanTemp(done) {
-    del(buildConfig.targets.tempFolder).then(function() {
-        done();
-    });
+  del(buildConfig.targets.tempFolder).then(function() {
+    done();
+  });
 }
 //...
 ```

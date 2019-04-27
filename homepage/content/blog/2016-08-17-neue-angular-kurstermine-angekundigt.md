@@ -1,6 +1,6 @@
 ---
 title: Neue Angular-Kurstermine angekündigt
-date: 2016-08-17 19:14
+date: 2016-08-17
 author: Fabian Gosebrink
 layout: post
 tags: angularjs courses digicomp
@@ -26,16 +26,16 @@ Am Ende schliessen wir den Kurs mit dem Testing und einem Review einer Beispiela
 
 Der Kurs beinhaltet also (nicht nur)
 
--   Einführung in das Ökosystem der modernen JavaScript-Entwicklung
--   Build-Tools, Automatisiertes Testing, Dependency-Management ...
--   Wichtige Konzepte der JavaScript Entwicklung
--   Closures, Prototypal Inheritance, Constructor Functions, Promises, Module Pattern, Client-Side MVC
--   Realisierung von dynamischen UIs mit AngularJS
--   Directives, Controllers, Modules, Expressions und Filters
--   Angular Services und Backend-Anbindung
--   Angular Routing
--   Custom Directives
--   Build-Automatisierung und Testing
+- Einführung in das Ökosystem der modernen JavaScript-Entwicklung
+- Build-Tools, Automatisiertes Testing, Dependency-Management ...
+- Wichtige Konzepte der JavaScript Entwicklung
+- Closures, Prototypal Inheritance, Constructor Functions, Promises, Module Pattern, Client-Side MVC
+- Realisierung von dynamischen UIs mit AngularJS
+- Directives, Controllers, Modules, Expressions und Filters
+- Angular Services und Backend-Anbindung
+- Angular Routing
+- Custom Directives
+- Build-Automatisierung und Testing
 
 Bis es soweit ist werde ich meine Angular-Unterlagen auf den neuesten Stand bringen um den Kursteilnehmern natürlich die neusten Features präsentieren zu können.
 

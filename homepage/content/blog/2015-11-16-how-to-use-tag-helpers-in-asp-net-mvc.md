@@ -1,6 +1,6 @@
 ---
 title: How to use tag helpers in ASP.NET MVC
-date: 2015-11-16 20:18
+date: 2015-11-16
 author: Fabian Gosebrink
 layout: post
 tags: aspnet mvc taghelpers

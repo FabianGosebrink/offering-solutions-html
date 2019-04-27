@@ -1,6 +1,6 @@
 ---
 title: Announcing ASP.NET Core WebAPI PacktPub Video Course
-date: 2017-08-13 00:15
+date: 2017-08-13
 author: Fabian Gosebrink
 layout: post
 tags: aspnetcore microphone recording screenrecording
@@ -25,39 +25,39 @@ With ASP.NET Core you can build cross platform web apis which I am describing in
 
 #### Section 1: Basics
 
--   The course overview
--   Exploring the REST principles
--   Getting to know ASP.NET Core
--   Exploring the .NET Command-line Interface
+- The course overview
+- Exploring the REST principles
+- Getting to know ASP.NET Core
+- Exploring the .NET Command-line Interface
 
 #### Section 2: Exploring ASP.NET Core
 
--   Creating a new ASP.NET Core project using Visual Studio 2017
--   What is middleware in ASP.NET Core?
--   Exploring the configuration of ASP.NET
--   Working with different environments in ASP.NET Core
+- Creating a new ASP.NET Core project using Visual Studio 2017
+- What is middleware in ASP.NET Core?
+- Exploring the configuration of ASP.NET
+- Working with different environments in ASP.NET Core
 
 #### Section 3: Building the First Endpoint with ASP.NET Core
 
--   Creating data storage with the Entity Framework Core
--   Creating the first endpoint
--   Adding and updating data
--   Partially updating and deleting data
+- Creating data storage with the Entity Framework Core
+- Creating the first endpoint
+- Adding and updating data
+- Partially updating and deleting data
 
 #### Section 4: ASP.NET Core WebAPI – The next steps
 
--   Formatters and Content Negotiation
--   Enable logging
--   Validation
--   Introducing API documentation
--   Adding paging, sorting, and filtering
--   Versioning your API
--   Authentication
+- Formatters and Content Negotiation
+- Enable logging
+- Validation
+- Introducing API documentation
+- Adding paging, sorting, and filtering
+- Versioning your API
+- Authentication
 
 #### Section 5: Deploying Web API
 
--   Deploying your WebAPI on Azure through Visual Studio
--   Deploying your WebAPI to a Docker Container
+- Deploying your WebAPI on Azure through Visual Studio
+- Deploying your WebAPI to a Docker Container
 
 ## Thanks
 

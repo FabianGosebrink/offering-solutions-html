@@ -1,6 +1,6 @@
 ---
 title: Recent Speaking Activities
-date: 2018-03-06 10:02
+date: 2018-03-06
 author: Fabian Gosebrink
 layout: post
 tags: speaking talks

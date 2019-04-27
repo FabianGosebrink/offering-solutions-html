@@ -1,6 +1,6 @@
 ---
 title: Testing an Angular Http Service
-date: 2017-10-02 18:12
+date: 2017-10-02
 author: Fabian Gosebrink
 layout: post
 tags: angular httpclient
@@ -58,12 +58,12 @@ import { TestBed } from '@angular/core/testing';
 import { CustomHttpService } from './http.service';
 
 describe('CustomHttpService', () => {
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            providers: [CustomHttpService],
-        });
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [CustomHttpService]
     });
+  });
 });
 ```
 
@@ -71,27 +71,27 @@ The next step is to hold the `CustomHttpService` itself and the `HttpTestingCont
 
 ```javascript
 import {
-    HttpClientTestingModule,
-    HttpTestingController,
+  HttpClientTestingModule,
+  HttpTestingController
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { CustomHttpService } from './http.service';
 
 describe('CustomHttpService', () => {
-    let service: CustomHttpService;
-    let httpMock: HttpTestingController;
+  let service: CustomHttpService;
+  let httpMock: HttpTestingController;
 
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            providers: [CustomHttpService],
-        });
-
-        // inject the service
-        service = TestBed.get(CustomHttpService);
-        httpMock = TestBed.get(HttpTestingController);
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [CustomHttpService]
     });
+
+    // inject the service
+    service = TestBed.get(CustomHttpService);
+    httpMock = TestBed.get(HttpTestingController);
+  });
 });
 ```
 
@@ -167,59 +167,59 @@ Lets do this:
 
 ```javascript
 it('should post the correct data', () => {
-    service.post <
-        any >
-        { firstname: 'firstname' }.subscribe((data: any) => {
-            expect(data.firstname).toBe('firstname');
-        });
-
-    const req = httpMock.expectOne(
-        `http://replace.with.api/anything`,
-        'post to api'
-    );
-    expect(req.request.method).toBe('POST');
-
-    req.flush({
-        firstname: 'firstname',
+  service.post <
+    any >
+    { firstname: 'firstname' }.subscribe((data: any) => {
+      expect(data.firstname).toBe('firstname');
     });
 
-    httpMock.verify();
+  const req = httpMock.expectOne(
+    `http://replace.with.api/anything`,
+    'post to api'
+  );
+  expect(req.request.method).toBe('POST');
+
+  req.flush({
+    firstname: 'firstname'
+  });
+
+  httpMock.verify();
 });
 
 it('should put the correct data', () => {
-    service.put <
-        any >
-        (3, { firstname: 'firstname' }).subscribe((data: any) => {
-            expect(data.firstname).toBe('firstname');
-        });
-
-    const req = httpMock.expectOne(
-        `http://replace.with.api/anything/3`,
-        'put to api'
-    );
-    expect(req.request.method).toBe('PUT');
-
-    req.flush({
-        firstname: 'firstname',
+  service.put <
+    any >
+    (3, { firstname: 'firstname' }).subscribe((data: any) => {
+      expect(data.firstname).toBe('firstname');
     });
 
-    httpMock.verify();
+  const req = httpMock.expectOne(
+    `http://replace.with.api/anything/3`,
+    'put to api'
+  );
+  expect(req.request.method).toBe('PUT');
+
+  req.flush({
+    firstname: 'firstname'
+  });
+
+  httpMock.verify();
 });
 
 it('should delete the correct data', () => {
-    service.delete(3).subscribe((data: any) => {
-        expect(data).toBe(3);
-    });
+  service.delete(3).subscribe((data: any) => {
+    expect(data).toBe(3);
+  });
 
-    const req = httpMock.expectOne(
-        `http://replace.with.api/anything/3`,
-        'delete to api'
-    );
-    expect(req.request.method).toBe('DELETE');
+  const req = httpMock.expectOne(
+    `http://replace.with.api/anything/3`,
+    'delete to api'
+  );
+  expect(req.request.method).toBe('DELETE');
 
-    req.flush(3);
+  req.flush(3);
 
-    httpMock.verify();
+  httpMock.verify();
 });
 ```
 

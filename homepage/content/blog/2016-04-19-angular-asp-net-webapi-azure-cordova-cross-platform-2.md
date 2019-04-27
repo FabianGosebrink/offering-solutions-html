@@ -1,6 +1,6 @@
 ---
 title: Angular, ASP.NET WebAPI, Azure & Cordova, Cross Platform – My Private Hackathon Part 1
-date: 2016-04-19 17:34
+date: 2016-04-19
 author: Fabian Gosebrink
 layout: post
 tags: angular aspnet azure cordova crossplatform gulp webapi

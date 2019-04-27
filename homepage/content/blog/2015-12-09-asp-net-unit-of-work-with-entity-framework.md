@@ -1,6 +1,6 @@
 ---
 title: ASP.NET Unit Of Work with Entity Framework
-date: 2015-12-09 21:37
+date: 2015-12-09
 author: Fabian Gosebrink
 layout: post
 tags: entityframework nuget unitofwork aspnet

@@ -1,7 +1,7 @@
 ---
 id: 975
 title: AngularJS NgResource Demo with ASP.NET WebAPI
-date: 2015-08-25 11:45
+date: 2015-08-25
 author: Fabian Gosebrink
 layout: post
 tags: angularjs github json ngresource webapi aspnet
@@ -17,7 +17,7 @@ In this blogpost I want to show a simple AngularJS NgResource Demo with ASP.NET 
 
 Code: [https://github.com/FabianGosebrink/ASPNET-WebAPI-AngularJs-NgResource-Demo](https://github.com/FabianGosebrink/ASPNET-WebAPI-AngularJs-NgResource-Demo)
 
-NgResource: [https://docs.AngularJS.org/api/ngResource/service/$resource](https://docs.AngularJS.org/api/ngResource/service/$resource)
+NgResource: [https://docs.AngularJS.org/api/ngResource/service/\$resource](https://docs.AngularJS.org/api/ngResource/service/$resource)
 
 #### The application
 
@@ -31,25 +31,25 @@ Before you can use angulars ng resource you have to include it into your applica
 
 ```javascript
 (function() {
-    'use strict';
-    angular
-        .module('AngularJSDemoApp', [
-            'ngRoute',
-            'ngAnimate',
-            'ngResource',
-            'ui.bootstrap',
-            'angular-loading-bar',
-            'toastr',
+  'use strict';
+  angular
+    .module('AngularJSDemoApp', [
+      'ngRoute',
+      'ngAnimate',
+      'ngResource',
+      'ui.bootstrap',
+      'angular-loading-bar',
+      'toastr',
 
-            'home.homeModule',
-            'contact.contactModule',
-        ])
-        .config([
-            'cfpLoadingBarProvider',
-            function(cfpLoadingBarProvider) {
-                cfpLoadingBarProvider.includeSpinner = false;
-            },
-        ]);
+      'home.homeModule',
+      'contact.contactModule'
+    ])
+    .config([
+      'cfpLoadingBarProvider',
+      function(cfpLoadingBarProvider) {
+        cfpLoadingBarProvider.includeSpinner = false;
+      }
+    ]);
 })();
 ```
 
@@ -59,17 +59,17 @@ After this you can inject the ngResource service provided by angular into your s
 
 ```javascript
 (function() {
-    'use strict';
-    angular.module('home.homeModule').factory('home.services.peopleService', [
-        '$resource',
-        function($resource) {
-            return $resource('api/home/:id', null, {
-                update: {
-                    method: 'PUT',
-                },
-            });
-        },
-    ]);
+  'use strict';
+  angular.module('home.homeModule').factory('home.services.peopleService', [
+    '$resource',
+    function($resource) {
+      return $resource('api/home/:id', null, {
+        update: {
+          method: 'PUT'
+        }
+      });
+    }
+  ]);
 })();
 ```
 
@@ -93,14 +93,14 @@ Querying all resources:
 
 ```javascript
 peopleService.query(
-    {},
-    function(data) {
-        //Success
-        vm.allPeople = data;
-    },
-    function() {
-        //Error
-    }
+  {},
+  function(data) {
+    //Success
+    vm.allPeople = data;
+  },
+  function() {
+    //Error
+  }
 );
 ```
 
@@ -108,13 +108,13 @@ Pay attention to the empty object we are passing in. You could add a single id h
 
 ```javascript
 peopleService.query(
-    { id: 4 },
-    function(data) {
-        //Success
-    },
-    function() {
-        //Error
-    }
+  { id: 4 },
+  function(data) {
+    //Success
+  },
+  function() {
+    //Error
+  }
 );
 ```
 
@@ -122,13 +122,13 @@ In case you want to add a new resource, a person in this case, you can just cal
 
 ```javascript
 peopleService.save(
-    vm.newPerson,
-    function(data) {
-        //Success
-    },
-    function(response) {
-        //Error
-    }
+  vm.newPerson,
+  function(data) {
+    //Success
+  },
+  function(response) {
+    //Error
+  }
 );
 ```
 
@@ -138,13 +138,13 @@ Deleting is self explaining:
 
 ```javascript
 peopleService.delete(
-    { id: personToDelete.Id },
-    function() {
-        // success
-    },
-    function() {
-        //Error
-    }
+  { id: personToDelete.Id },
+  function() {
+    // success
+  },
+  function() {
+    //Error
+  }
 );
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: Kurs - Frontend-Entwicklung mit AngularJS
-date: 2016-05-25 18:30
+date: 2016-05-25
 author: Fabian Gosebrink
 layout: post
 tags: angularjs courses training speaking talks

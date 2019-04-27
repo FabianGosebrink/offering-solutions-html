@@ -1,6 +1,6 @@
 ---
 title: Angular Ahead Of Time (AoT) compilation, lazy loading and treeshaking with webpack
-date: 2017-02-08 16:42
+date: 2017-02-08
 author: Fabian Gosebrink
 layout: post
 tags: angular webpack lazyloading treeshaking aot
@@ -24,12 +24,12 @@ If you want to enable lazy loading in your application with aot you first have t
 
 ```javascript
 export const AppRoutes: Routes = [
-    // normal routes
-    { path: 'food', loadChildren: './path/to/module.file#ModuleName' },
-    {
-        path: '**',
-        redirectTo: 'home',
-    },
+  // normal routes
+  { path: 'food', loadChildren: './path/to/module.file#ModuleName' },
+  {
+    path: '**',
+    redirectTo: 'home'
+  }
 ];
 ```
 
@@ -43,19 +43,19 @@ If you did this you have to remove the module import from the module import arra
 // imports
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        // other imports but NOT your lazy loaded module anymore
-        HomeModule,
-    ],
+  imports: [
+    BrowserModule,
+    // other imports but NOT your lazy loaded module anymore
+    HomeModule
+  ],
 
-    declarations: [AppComponent],
+  declarations: [AppComponent],
 
-    providers: [
-        // ...
-    ],
+  providers: [
+    // ...
+  ],
 
-    bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
@@ -70,22 +70,22 @@ After this you have to configure a seperate tsconfig-aot.json for Ahead Of Time 
 
 ```json
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "es2015",
-        "moduleResolution": "node",
-        "sourceMap": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "lib": ["es2015", "dom"],
-        "noImplicitAny": true,
-        "suppressImplicitAnyIndexErrors": true
-    },
-    "files": ["app/app.module.ts", "path/to/module.file", "app/main.ts"],
-    "angularCompilerOptions": {
-        "genDir": "aot",
-        "skipMetadataEmit": true
-    }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "files": ["app/app.module.ts", "path/to/module.file", "app/main.ts"],
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit": true
+  }
 }
 ```
 

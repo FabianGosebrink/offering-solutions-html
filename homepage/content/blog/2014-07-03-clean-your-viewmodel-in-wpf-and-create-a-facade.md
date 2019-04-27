@@ -1,7 +1,7 @@
 ---
 id: 997
 title: Clean your viewmodel in WPF and create a facade
-date: 2014-07-03 17:51
+date: 2014-07-03
 author: Fabian Gosebrink
 layout: post
 tags: architecture databinding facade inotifypropertychanged pattern provider services wpf

@@ -1,7 +1,7 @@
 ---
 id: 994
 title: WPF Basics II - The INotifyPropertyChanged Interface
-date: 2014-09-14 19:41
+date: 2014-09-14
 author: Fabian Gosebrink
 layout: post
 tags: basics databinding tutorial wpf
@@ -90,9 +90,9 @@ public class MainViewModel : INotifyPropertyChanged
 
 So everthing we do is throwing the event that something has changed with the name of the property as a string. If you let this run you will see that the UI refreshes and after 3 seconds the "hallelujah" is displayed. But this has some disadvantages:
 
--   We are throwing the event in the timer_elapsed. So only when **this** is done the property is refreshed
--   We are having the name of the property as a string in it. So renaming the property will mostly NOT rename the string. (Magic String). And the refresh does not work again.
--   Refreshing the UI is a base function. It should be outsourced in like a base file or something.
+- We are throwing the event in the timer_elapsed. So only when **this** is done the property is refreshed
+- We are having the name of the property as a string in it. So renaming the property will mostly NOT rename the string. (Magic String). And the refresh does not work again.
+- Refreshing the UI is a base function. It should be outsourced in like a base file or something.
 
 Lets tune this:
 

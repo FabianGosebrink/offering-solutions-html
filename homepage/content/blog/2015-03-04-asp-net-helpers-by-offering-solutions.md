@@ -1,7 +1,7 @@
 ---
 id: 984
 title: ASP.NET Helpers by Offering Solutions
-date: 2015-03-04 21:08
+date: 2015-03-04
 author: Fabian Gosebrink
 layout: post
 tags: mvchelper nuget submitmodel viewmodel
@@ -19,25 +19,25 @@ I just released a new version of the ASP.NET Helpers by Offering Solutions:
 
 which includes
 
--   ViewModelBase
--   SubmitModelBase
--   ModelValidator (for easier validation)
+- ViewModelBase
+- SubmitModelBase
+- ModelValidator (for easier validation)
 
 and features like
 
--   Nullcheck with Exception
--   Nullcheck with returning the type if not null, otherwise exception
--   Return bool value if something is null
--   Checking enumerable if its null or empty
--   Checks if a string is a timespan
--   Checks if a string is an email
--   Converts a string to datetime
--   Converts s tring to timespan
--   Checks a string for null, empty or a given lenght (e.g. for password purposes)
--   Checks if a HttpPostedFile has a specific format
--   Checks if a HttpPostedFile is an image
--   Checks if a string can be converted to double
--   Converts a string to double
+- Nullcheck with Exception
+- Nullcheck with returning the type if not null, otherwise exception
+- Return bool value if something is null
+- Checking enumerable if its null or empty
+- Checks if a string is a timespan
+- Checks if a string is an email
+- Converts a string to datetime
+- Converts s tring to timespan
+- Checks a string for null, empty or a given lenght (e.g. for password purposes)
+- Checks if a HttpPostedFile has a specific format
+- Checks if a HttpPostedFile is an image
+- Checks if a string can be converted to double
+- Converts a string to double
 
 Why ViewModels and Submitmodels you can read this [here](http://blog.noser.com/what-are-submitmodels-and-how-to-use-them/) and [here](http://blog.noser.com/why-and-how-to-avoid-viewbag-and-viewdata-in-asp-net-mvc/)
 

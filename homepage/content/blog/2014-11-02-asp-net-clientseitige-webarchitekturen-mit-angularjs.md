@@ -1,7 +1,7 @@
 ---
 id: 989
 title: ASP.NET - Clientseitige Webarchitekturen mit AngularJS
-date: 2014-11-02 07:05
+date: 2014-11-02
 author: Fabian Gosebrink
 layout: post
 tags: angularjs entityframework solution web architecture
@@ -33,7 +33,7 @@ In ihr enthalten ist ein Ordner für Bilder und Scripts, einer für Styles (css-
 
 ![ASP.NET - Clientseitige Webarchitekturen mit AngularJS]({{site.baseurl}}assets/articles/2014-11-02/adasdasdasd.jpg)
 
-Hier kann man auch schon die clientseitige Architektur bzw. deren Ansatz erkennen: der controllers-Folder bildet den „Namespace“ für Controller ab, der die gleiche Rolle spielt wie in ASP.NET-Anwendungen auch: Er nimmt die Anfragen vom UI entgegen und verarbeitet diese. Dazu arbeitet er mit dem Viewmodel, dass in Angular „$scope“ getauft wurde.
+Hier kann man auch schon die clientseitige Architektur bzw. deren Ansatz erkennen: der controllers-Folder bildet den „Namespace“ für Controller ab, der die gleiche Rolle spielt wie in ASP.NET-Anwendungen auch: Er nimmt die Anfragen vom UI entgegen und verarbeitet diese. Dazu arbeitet er mit dem Viewmodel, dass in Angular „\$scope“ getauft wurde.
 
 Die Services bieten eine Abstrahierung von etwaigen Aufgaben. Hier können Business-Services weggekapselt werden, die ihre eigenständigen Aufgaben haben. Auch Repositories sind denkbar. Auch in einem eigenen Namespace, wenn dies gewünscht ist. Durch die Dependency-Injection wäre das Aufteilen in verschiedene Klassen und Namespaces kein Problem.
 
@@ -41,9 +41,9 @@ App.js bietet uns den Start unserer Anwendung. Hier wird die App erstellt und ei
 
 ```javascript
 var firstApp = angular.module('firstApp', [
-    'ngRoute',
-    'ngResource',
-    'ui.bootstrap',
+  'ngRoute',
+  'ngResource',
+  'ui.bootstrap'
 ]);
 ```
 
@@ -60,42 +60,42 @@ Die Controller bei der Beispiel-Todo-App im Anhang befinden sich in einem sepera
 ![ASP.NET - Clientseitige Webarchitekturen mit AngularJS]({{site.baseurl}}assets/articles/2014-11-02/03.png)
 
 Hierbei kommen die oben genannten Aufgaben zum Tragen.
-  
+
 Der Todo-Service beispielsweise bietet die Funktionen zum Abrufen, Löschen und Hinzufügen an:
 
 ```javascript
 'use strict';
 firstApp.factory('todoService', function($http) {
-    var todoService = {};
+  var todoService = {};
 
-    var urlPrefix = '/api/Todo/';
+  var urlPrefix = '/api/Todo/';
 
-    var _addTodo = function(todoName) {
-        var data = { Name: todoName };
-        var promise = $http.post(urlPrefix + 'AddTodoItem', data);
-        return promise;
-    };
+  var _addTodo = function(todoName) {
+    var data = { Name: todoName };
+    var promise = $http.post(urlPrefix + 'AddTodoItem', data);
+    return promise;
+  };
 
-    var _deleteTodo = function(item) {
-        var promise = $http.post(urlPrefix + 'RemoveTodoItem', item);
-        return promise;
-    };
+  var _deleteTodo = function(item) {
+    var promise = $http.post(urlPrefix + 'RemoveTodoItem', item);
+    return promise;
+  };
 
-    var _getTodoItems = function() {
-        var promise = $http
-            .get(urlPrefix + 'GetAllTodoItems')
-            .then(function(results) {
-                //console.log(results);
-                return results.data;
-            });
-        return promise;
-    };
+  var _getTodoItems = function() {
+    var promise = $http
+      .get(urlPrefix + 'GetAllTodoItems')
+      .then(function(results) {
+        //console.log(results);
+        return results.data;
+      });
+    return promise;
+  };
 
-    todoService.getTodoItems = _getTodoItems;
-    todoService.addTodo = _addTodo;
-    todoService.deleteTodo = _deleteTodo;
+  todoService.getTodoItems = _getTodoItems;
+  todoService.addTodo = _addTodo;
+  todoService.deleteTodo = _deleteTodo;
 
-    return todoService;
+  return todoService;
 });
 ```
 
@@ -103,34 +103,34 @@ Durch die Registrierung auf der App-Variable „firstApp“ steht nun die Depend
 
 ```javascript
 firstApp.controller('todoController', function($scope, todoService) {
-    var _addTodo = function() {
-        todoService.addTodo($scope.TodoItem).then(
-            function() {
-                _getTodoItemAndSetOnScope();
-            },
-            function() {
-                alert('Error occured');
-            }
-        );
-    };
+  var _addTodo = function() {
+    todoService.addTodo($scope.TodoItem).then(
+      function() {
+        _getTodoItemAndSetOnScope();
+      },
+      function() {
+        alert('Error occured');
+      }
+    );
+  };
 
-    var _deleteTodo = function(item) {
-        todoService.deleteTodo(item).then(function() {
-            _getTodoItemAndSetOnScope();
-        });
-    };
+  var _deleteTodo = function(item) {
+    todoService.deleteTodo(item).then(function() {
+      _getTodoItemAndSetOnScope();
+    });
+  };
 
-    var _getTodoItemAndSetOnScope = function() {
-        todoService.getTodoItems().then(function(result) {
-            $scope.todoItems = result;
-        });
-    };
+  var _getTodoItemAndSetOnScope = function() {
+    todoService.getTodoItems().then(function(result) {
+      $scope.todoItems = result;
+    });
+  };
 
-    _getTodoItemAndSetOnScope();
+  _getTodoItemAndSetOnScope();
 
-    $scope.TodoItem = '';
-    $scope.AddTodo = _addTodo;
-    $scope.DeleteTodo = _deleteTodo;
+  $scope.TodoItem = '';
+  $scope.AddTodo = _addTodo;
+  $scope.DeleteTodo = _deleteTodo;
 });
 ```
 

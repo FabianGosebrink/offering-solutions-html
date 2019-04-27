@@ -1,6 +1,6 @@
 ---
 title: Getting started with Visual Studio Code, AngularJS and Typescript
-date: 2015-12-03 14:17
+date: 2015-12-03
 author: Fabian Gosebrink
 layout: post
 tags: angularjs typescript vscode

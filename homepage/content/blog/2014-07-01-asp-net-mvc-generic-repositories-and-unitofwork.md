@@ -1,16 +1,13 @@
 ---
-id: 999
 title: ASP.NET MVC - Generic Repositories and UnitOfWork
-date: 2014-07-01 08:00
-author: Fabian Gosebrink
-layout: post
-tags: aspnet mvc web architecture
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2014-07-01
+tags: [ 'aspnet', 'mvc']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/07/01/asp-net-mvc-generic-repositories-and-unitofwork/",
+]
 ---
 
 This is the third and the last blogpost regarding ASP.NET MVC Architecture.

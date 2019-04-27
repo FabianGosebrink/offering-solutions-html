@@ -1,6 +1,6 @@
 ---
 title: Angular, ASP.NET WebAPI, Azure & Cordova, Cross Platform – My Private Hackathon Part 2
-date: 2016-04-26 10:05
+date: 2016-04-26
 author: Fabian Gosebrink
 layout: post
 tags: angular aspnet azure cordova crossplatform gulp webapi
@@ -46,18 +46,18 @@ So the only interesting thing is the Food-Component which has two child Componen
 ```html
 <!-- Page Content -->
 <div class="container">
-    <!-- Introduction Row -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Foodlists
-                    <small>See all your food lists</small>
-                </h1>
-        </div>
+  <!-- Introduction Row -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">
+        Foodlists
+        <small>See all your food lists</small>
+      </h1>
     </div>
+  </div>
 
-    <foodListForm-component></foodListForm-component>
-    <foodlists-component></foodlists-component>
-
+  <foodListForm-component></foodListForm-component>
+  <foodlists-component></foodlists-component>
 </div>
 ```
 
@@ -111,17 +111,20 @@ and the template
 ```html
 <!-- Team Members Row -->
 <div class="row">
-    <div class="col-lg-12">
-        <h2 class="page-header">Your Lists  <small>{{allLists?.length}}</small></h2>
-    </div>
+  <div class="col-lg-12">
+    <h2 class="page-header">Your Lists <small>{{allLists?.length}}</small></h2>
+  </div>
 
-    <div class="col-lg-12">
-        <ul class="list-group">
-            <a *ngFor="let item of allLists; let i=index" [routerLink]="['/FoodListDetails', {id: item.Id}]">
-                <li class="list-group-item">{{item?.Name}}</li>
-            </a>
-        </ul>
-    </div>
+  <div class="col-lg-12">
+    <ul class="list-group">
+      <a
+        *ngFor="let item of allLists; let i=index"
+        [routerLink]="['/FoodListDetails', {id: item.Id}]"
+      >
+        <li class="list-group-item">{{item?.Name}}</li>
+      </a>
+    </ul>
+  </div>
 </div>
 ```
 
@@ -158,34 +161,30 @@ Further I took a decorator to hook into the creation of components to check if t
 
 ```javascript
 import {
-    CanActivate,
-    ComponentInstruction,
-    Router,
+  CanActivate,
+  ComponentInstruction,
+  Router
 } from '@angular/router-deprecated';
 import { Injector } from '@angular/core';
 import { appInjector } from '../shared/services/appInjector';
 import { StorageService } from '../shared/services/storage.service';
 
 export const NeedsAuthentication = () => {
-    return CanActivate(
-        (
-            to: ComponentInstruction,
-            from: ComponentInstruction,
-            target = ['/']
-        ) => {
-            let injector: Injector = appInjector();
-            let router: Router = injector.get(Router);
-            let storageService: StorageService = injector.get(StorageService);
+  return CanActivate(
+    (to: ComponentInstruction, from: ComponentInstruction, target = ['/']) => {
+      let injector: Injector = appInjector();
+      let router: Router = injector.get(Router);
+      let storageService: StorageService = injector.get(StorageService);
 
-            if (storageService.getItem('auth')) {
-                return true;
-            }
+      if (storageService.getItem('auth')) {
+        return true;
+      }
 
-            router.navigate(['/Login', { target }]);
+      router.navigate(['/Login', { target }]);
 
-            return false;
-        }
-    );
+      return false;
+    }
+  );
 };
 ```
 
@@ -235,7 +234,7 @@ require('./gulpTasks/electron');
 require('./gulpTasks/cordova');
 
 gulp.task('build:all', function(done) {
-    runSeq('build:web:prod', 'build:electron:prod', 'build:apps', done);
+  runSeq('build:web:prod', 'build:electron:prod', 'build:apps', done);
 });
 ```
 
@@ -243,15 +242,15 @@ For example here is the electron gulp file, which turns this application into an
 
 ```javascript
 gulp.task('build:electron:prod', function(done) {
-    runSeq(
-        'electron-clean-temp',
-        'electron-compile-with-webpack',
-        'electron-copy-index-to-temp-folder',
-        'electron-inject-in-html',
-        'electron-copy-assets-to-temp-folder',
-        'electron-build-win',
-        done
-    );
+  runSeq(
+    'electron-clean-temp',
+    'electron-compile-with-webpack',
+    'electron-copy-index-to-temp-folder',
+    'electron-inject-in-html',
+    'electron-copy-assets-to-temp-folder',
+    'electron-build-win',
+    done
+  );
 });
 ```
 
@@ -259,19 +258,19 @@ For cordova
 
 ```javascript
 gulp.task('build:apps', function(done) {
-    runSeq(
-        'cordova-clean-temp',
-        'cordova-copy-config-to-temp',
-        'cordova-copy-winstore-to-temp',
-        'cordova-copy-index-to-temp-folder',
-        'cordova-copy-images-to-temp-folder',
-        'cordova-compile-with-webpack',
-        'cordova-inject-in-html',
-        'cordova-build-windows', //  'cordova-build-android',
-        'cordova-clean-dist',
-        'cordova-copy-to-dist',
-        done
-    );
+  runSeq(
+    'cordova-clean-temp',
+    'cordova-copy-config-to-temp',
+    'cordova-copy-winstore-to-temp',
+    'cordova-copy-index-to-temp-folder',
+    'cordova-copy-images-to-temp-folder',
+    'cordova-compile-with-webpack',
+    'cordova-inject-in-html',
+    'cordova-build-windows', //  'cordova-build-android',
+    'cordova-clean-dist',
+    'cordova-copy-to-dist',
+    done
+  );
 });
 ```
 

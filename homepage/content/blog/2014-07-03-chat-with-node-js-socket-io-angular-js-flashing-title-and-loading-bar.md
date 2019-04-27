@@ -1,19 +1,16 @@
 ---
-id: 998
 title: Chat with Node.js, socket.io, AngularJS, flashing title and loading bar
-date: 2014-07-03 11:54
-author: Fabian Gosebrink
-layout: post
-tags: angularjs nodejs socketio
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2014-06-10
+tags: [ 'angularjs', 'nodejs', 'socketio']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/07/03/chat-with-node-js-socket-io-angular-js-flashing-title-and-loading-bar/",
+]
 ---
 
-Regarding to [this](http://blog.noser.com/node-js-chat-server/) post I want to show you how you can set up a chat with Node.js, socket.io, Angular.js, flashing title and loading bar. We will take a look into the lightweight architecture angular is giving you and how to set up the services and controllers the right way. Additionally we will use the loading-bar-module to give the user information about what his message is doing after sending it and we will flash the homepage title if a new message arrives. The communication is done with socket-io.js and we use jQuery for the basic javascript-things. Enjoy!
+In this blogpost I want to show you how you can set up a chat with Node.js, socket.io, Angular.js, flashing title and loading bar. We will take a look into the lightweight architecture angular is giving you and how to set up the services and controllers the right way. Additionally we will use the loading-bar-module to give the user information about what his message is doing after sending it and we will flash the homepage title if a new message arrives. The communication is done with socket-io.js and we use jQuery for the basic javascript-things. Enjoy!
 
 Check these links to get all these libs:
 
@@ -41,7 +38,7 @@ Additionally to this you need to have all your scripts loaded. In the end this l
 
 So what we see here is the head-information which is including everything (dont worry, we will get through most of these files during this post) we need to get the things going and the body. The body is giving us a div where we specify the controller "DemoController" and bind the messages we have in a simple html-list "li" with a simple angular-statement "ng-repeat".
 
-<span style="color: #999999;">Note: You need this "track by $index" as suffix because only with this the message-array can contain the same message multiple times. Without this the message itself would be a key and a key can not occur multiple times. See also <a href="https://docs.angularjs.org/error/ngRepeat/dupes"><span style="color: #999999;">here</span></a></span>
+<span style="color: #999999;">Note: You need this "track by \$index" as suffix because only with this the message-array can contain the same message multiple times. Without this the message itself would be a key and a key can not occur multiple times. See also <a href="https://docs.angularjs.org/error/ngRepeat/dupes"><span style="color: #999999;">here</span></a></span>
 
 The form below has a normal submit-action to be called when it gets submitted and we only give the form two input boxes (one for the name and one for the text) including binding it to the (not yet shown) viewmodel. It contains, of course, a button to submit the form. And this is it. You are done with your view.
 
@@ -51,18 +48,18 @@ Lets digg deeper and see the underlying controller. but before we do this, we ha
 
 ```javascript
 var app = angular.module('MessengerApp', [
-    'ngRoute',
-    'ngResource',
-    'ui.bootstrap',
-    'chieffancypants.loadingBar',
+  'ngRoute',
+  'ngResource',
+  'ui.bootstrap',
+  'chieffancypants.loadingBar'
 ]);
 app.config(function($routeProvider) {
-    $routeProvider
-        .when('', {
-            controller: 'DemoController',
-            templateUrl: './views/index.html',
-        })
-        .otherwise({ redirectTo: '/' });
+  $routeProvider
+    .when('', {
+      controller: 'DemoController',
+      templateUrl: './views/index.html'
+    })
+    .otherwise({ redirectTo: '/' });
 });
 ```
 
@@ -74,35 +71,35 @@ As mentioned in the view we have a controller called "DemoController". And becau
 
 ```javascript
 app.controller('DemoController', function(
-    $scope,
-    chatService,
-    cfpLoadingBar,
-    flashService
+  $scope,
+  chatService,
+  cfpLoadingBar,
+  flashService
 ) {
-    var _messages = [];
+  var _messages = [];
 
+  cfpLoadingBar.start();
+  var socket = io.connect('MyIp:MyPort');
+
+  var _sendMessage = function() {
     cfpLoadingBar.start();
-    var socket = io.connect('MyIp:MyPort');
-
-    var _sendMessage = function() {
-        cfpLoadingBar.start();
-        chatService.sendMessage(socket, $scope.name, $scope.messageText);
-        $scope.messageText = '';
-    };
-
-    socket.on('chat', function(data) {
-        $scope.messages.push(data.name + ': ' + data.text);
-        $scope.$apply();
-
-        flashService.flashWindow(data.name + ': ' + data.text, 10);
-        $('body').scrollTop($('body')[0].scrollHeight);
-        cfpLoadingBar.complete();
-    });
-
-    $scope.sendMessage = _sendMessage;
-    $scope.messages = _messages;
+    chatService.sendMessage(socket, $scope.name, $scope.messageText);
     $scope.messageText = '';
-    $scope.name = '';
+  };
+
+  socket.on('chat', function(data) {
+    $scope.messages.push(data.name + ': ' + data.text);
+    $scope.$apply();
+
+    flashService.flashWindow(data.name + ': ' + data.text, 10);
+    $('body').scrollTop($('body')[0].scrollHeight);
+    cfpLoadingBar.complete();
+  });
+
+  $scope.sendMessage = _sendMessage;
+  $scope.messages = _messages;
+  $scope.messageText = '';
+  $scope.name = '';
 });
 ```
 
@@ -112,11 +109,11 @@ Then we make an array of messages and connect to our socket via socket-io. "\_se
 
 The "socket.on(...)"-Method is like an eventhandler from socket.js. It is called when a new message gets received from the server. So everything we do here is :
 
--   Getting the object from the server
--   throw this new message into the message array ("$scope.messages.push")
--   giving it to the viewmodel and notify the viewmodel that there is something new ("$scope.$apply();")
--   Flashing the window through a flashservice, we will get to know later
--   scroll the body to the bottom so that everytime the latest message is shown in the browser
+- Getting the object from the server
+- throw this new message into the message array ("\$scope.messages.push")
+- giving it to the viewmodel and notify the viewmodel that there is something new ("$scope.$apply();")
+- Flashing the window through a flashservice, we will get to know later
+- scroll the body to the bottom so that everytime the latest message is shown in the browser
 
 After we created all our stuf we are ready to fill the scope-object which is given to the view (so its our viewmodel):
 
@@ -136,28 +133,28 @@ The services are like the base of our application because they are doing the rea
 ```javascript
 'use strict';
 app.factory('chatService', function(chatDataService) {
-    var chatService = {};
+  var chatService = {};
 
-    var _sendMessage = function(socket, name, stringToSend) {
-        return chatDataService.sendMessage(socket, name, stringToSend);
-    };
+  var _sendMessage = function(socket, name, stringToSend) {
+    return chatDataService.sendMessage(socket, name, stringToSend);
+  };
 
-    // public interface
-    chatService.sendMessage = _sendMessage;
+  // public interface
+  chatService.sendMessage = _sendMessage;
 
-    return chatService;
+  return chatService;
 });
 
 app.factory('chatDataService', function($http) {
-    var chatDataService = {};
+  var chatDataService = {};
 
-    var _sendMessage = function(socket, name, stringToSend) {
-        socket.emit('chat', { name: name, text: stringToSend });
-    };
+  var _sendMessage = function(socket, name, stringToSend) {
+    socket.emit('chat', { name: name, text: stringToSend });
+  };
 
-    chatDataService.sendMessage = _sendMessage;
+  chatDataService.sendMessage = _sendMessage;
 
-    return chatDataService;
+  return chatDataService;
 });
 ```
 
@@ -175,45 +172,45 @@ Due to the fact that the FlashService is only a nice2have-thing I will not refer
 ```javascript
 'use strict';
 app.factory('flashService', function() {
-    var flashService = {};
-    var original = document.title;
-    var timeout;
+  var flashService = {};
+  var original = document.title;
+  var timeout;
 
-    var _cancelFlashWindow = function(newMsg, howManyTimes) {
-        clearTimeout(timeout);
-        document.title = original;
-    };
+  var _cancelFlashWindow = function(newMsg, howManyTimes) {
+    clearTimeout(timeout);
+    document.title = original;
+  };
 
-    var _flashWindow = function(newMsg, howManyTimes) {
-        function step() {
-            document.title = document.title == original ? newMsg : original;
+  var _flashWindow = function(newMsg, howManyTimes) {
+    function step() {
+      document.title = document.title == original ? newMsg : original;
 
-            if (--howManyTimes > 0) {
-                timeout = setTimeout(step, 1000);
-            }
-        }
+      if (--howManyTimes > 0) {
+        timeout = setTimeout(step, 1000);
+      }
+    }
 
-        howManyTimes = parseInt(howManyTimes);
+    howManyTimes = parseInt(howManyTimes);
 
-        if (isNaN(howManyTimes)) {
-            howManyTimes = 5;
-        }
+    if (isNaN(howManyTimes)) {
+      howManyTimes = 5;
+    }
 
-        _cancelFlashWindow(timeout);
-        step();
-    };
+    _cancelFlashWindow(timeout);
+    step();
+  };
 
-    flashService.flashWindow = _flashWindow;
-    flashService.cancelFlashWindow = _cancelFlashWindow;
+  flashService.flashWindow = _flashWindow;
+  flashService.cancelFlashWindow = _cancelFlashWindow;
 
-    return flashService;
+  return flashService;
 });
 ```
 
 This service is offering us two methods
 
--   flashService.flashWindow = \_flashWindow; //Flashes the window with a message and a number of how many times the title shall flash
--   flashService.cancelFlashWindow = \_cancelFlashWindow; // is only cancelling the flash-progress
+- flashService.flashWindow = \_flashWindow; //Flashes the window with a message and a number of how many times the title shall flash
+- flashService.cancelFlashWindow = \_cancelFlashWindow; // is only cancelling the flash-progress
 
 To show you how this looks like in the file/folder-structure, see here:
 

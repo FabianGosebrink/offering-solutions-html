@@ -1,7 +1,7 @@
 ---
 id: 990
 title: Mach das Handy aus! Wie man maximal produktiv sein kann
-date: 2014-10-13 19:32
+date: 2014-10-13
 author: Fabian Gosebrink
 layout: post
 tags: life
@@ -23,9 +23,7 @@ Ich betreue in meiner Freizeit ein Forum, ich pflege einen Blog, lese viel über
 
 Ich bin mir aber ebenfalls sicher, dass diese Menschen auch mit Ablenkungen zu kämpfen haben, die sie bei der Arbeit behindern und/oder unterbrechen.
 
-
->Mein Tag hat 25 Stunden!
-
+> Mein Tag hat 25 Stunden!
 
 Ein Mittel, was ich sehr gerne und erfolgreich einsetze um das zu schaffen, was ich schaffen möchte, ist eigentlich sehr trivial aber gerade für Technikbegeisterte noch recht schwierig: Machen Sie das Handy aus! Mindestens eine Stunde am Tag. Das Handy hat einen Flugmodus. Der möchte aber auch benutzt werden. Probieren Sie den mal aus! Ein Wahnsinnsfeature! Eine Stunde am Tag. Facebook: Aus. Skype: Aus. Telegram, WhatsApp: Geht nicht mehr, weil der Flugmodus an ist. Telefon: Aus. Widmen Sie sich dem, was sie immer schon vorhatten. Dies muss nicht mal Arbeit sein, ganz im Gegenteil: Lesen Sie ein Buch oder gehen sie spazieren. Kaffee mit Freunden, laufen gehen, Wohnung putzen, Sport machen… Machen Sie das, für das Sie sonst nie Zeit finden. Machen Sie es für sich. Machen Sie es ausschliesslich für sich. Es ist erstaunlich, was man in einer Stunde alles schaffen kann. Es ist erstaunlich, wie schnell diese Stunde rumgeht und noch erstaunlicher ist es, wie zufrieden man sich nachher fühlt. Ihr Tag bekommt auf einmal 25 Stunden.
 
@@ -33,9 +31,7 @@ Für alle Skeptiker: Wenn irgendetwas passiert, was sie tangiert in genau der St
 
 Hierbei sei gesagt, dass sie natürlich das Abendessen beispielsweise mit der Liebsten (auch der Liebsten in Spe) nicht verpassen sollten. Auch der Hund muss eventuell vorher ausgeführt werden. Es nützt ja niemandem was, wenn sie das Buch zu Ende gelesen haben aber der Teppich ist anschliessend reif für die Reinigung.
 
-
->Einmal Handy mit Flugmodus, bitte!
-
+> Einmal Handy mit Flugmodus, bitte!
 
 Dennoch: Wenn Sie wissen wollen, wie das Wetter draussen ist: Machen Sie den Rollladen hoch statt auf Ihre App zu schauen!
 

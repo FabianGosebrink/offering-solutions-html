@@ -1,16 +1,13 @@
 ---
-id: 169
 title: Creating a business logic in ASP.NET MVC
-date: 2014-06-10T16:00:13+00:00
-author: Fabian Gosebrink
-layout: post
-tags: aspnet mvc web architecture 
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+date: 2014-06-10
+tags: [ 'aspnet', 'mvc']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2014/06/10/creating-a-business-logic-in-asp-net-mvc/",
+]
 ---
 
 In this bogpost I want to show you one possible way creating a business logic in ASP.NET MVC.
@@ -29,8 +26,6 @@ Further you probably want to give your controller-service functions which have a
 
 So these are only three reasons why you should work with services behind your controller service.
 
-
-
 **Area Services**
 
 These services are written in another tier, the “logic-tier” or “business-tier”; call it like you want to.
@@ -40,8 +35,6 @@ These services are written in another tier, the “logic-tier” or “business-
 Concrete example: You have a service which is giving you Chart-Data to display a chart in your view. You should have one service for this which is only build to work with and give you this data. Mostly you want this data to be generated out of anything in the database. This is perfect for a service. And because this service interacts directly with any area (you can inject the interface of the service wherever you want in you controller-services) I call them “AreaServices”.
 
 <span style="color: #808080;">Note. How to get along with DotNet Highcharts I am describing <a title="How to include DotNet.HighCharts in ASP.NET MVC with ViewModels" href="http://offering.solutions/blog/articles/2014/05/09/how-to-include-dotnet-highcharts-in-asp-net-mvc-with-viewmodels/" target="_blank"><span style="color: #808080;">here</span></a>.</span>
-
-
 
 ![ASP.NET MVC - Creating a business logic]({{site.baseurl}}assets/articles/2014-06-10/42abe410-8ef5-44a4-9794-ab531b8b3751.png)
 
@@ -69,9 +62,9 @@ Conclusion so far: Sometimes you have a lot of work to do with some database dat
 
 Another type of services? Oh come on! Well, what we touched was a type of service which interacts with the database and is very strongly connected to the application. But what about services which are…
 
-  * …not that connected to the application
-  * …could possibly stand alone (as a module)
-  * …are doing work which is not interacting with the database or at least not writing into it
+- …not that connected to the application
+- …could possibly stand alone (as a module)
+- …are doing work which is not interacting with the database or at least not writing into it
 
 Lets do another kind of service and call them _business services_. Examples for these business services are maybe a pdf-generator which generates you a pdf of data which is given to him. Or an email service which is sending emails from your application to the user. Or a calculator who is only feed with data and calculating some values.
 

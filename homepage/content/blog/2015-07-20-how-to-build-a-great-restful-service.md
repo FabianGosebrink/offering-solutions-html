@@ -1,7 +1,7 @@
 ---
 id: 976
 title: How to build a great RESTful Service
-date: 2015-07-20 21:13
+date: 2015-07-20
 author: Fabian Gosebrink
 layout: post
 tags: github restapi webapi aspnet

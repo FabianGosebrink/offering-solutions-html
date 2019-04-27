@@ -1,6 +1,6 @@
 ---
 title: Microsoft TechDays 2016
-date: 2016-02-20 11:30
+date: 2016-02-20
 author: Fabian Gosebrink
 layout: post
 tags: talks techdays microsoft speaking

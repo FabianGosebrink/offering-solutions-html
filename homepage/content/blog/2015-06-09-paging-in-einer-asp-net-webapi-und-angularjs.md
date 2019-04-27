@@ -1,7 +1,7 @@
 ---
 id: 978
 title: Paging in einer ASP.Net WebAPI und AngularJS
-date: 2015-06-09 12:14
+date: 2015-06-09
 author: Fabian Gosebrink
 layout: post
 tags: angularjs aspnet
@@ -99,48 +99,47 @@ Html:
 
 ```html
 <pagination
-ng-show="totalItems > maximalItemsPerPage"
-items-per-page="maximalItemsPerPage"
-total-items="totalItems"
-ng-model="currentPage"
-ng-change="pageChanged()"></pagination>
+  ng-show="totalItems > maximalItemsPerPage"
+  items-per-page="maximalItemsPerPage"
+  total-items="totalItems"
+  ng-model="currentPage"
+  ng-change="pageChanged()"
+></pagination>
 ```
 
 Hierbei wird die Leiste zum navigieren nur angezeigt, wenn die Anzahl der Items grösser ist als die, die maximal auf einer Seite angezeigt werden sollen.
 
 ```javascript
 myModule.controller('myController', [
-    '$scope',
-    'myRepository',
-    function($scope, myRepository) {
-        $scope.currentPage = 1;
-        $scope.maximalItemsPerPage = 5;
+  '$scope',
+  'myRepository',
+  function($scope, myRepository) {
+    $scope.currentPage = 1;
+    $scope.maximalItemsPerPage = 5;
 
-        var getMyItems = function(start, count) {
-            myRepository.getAllItems(start, count).then(
-                function(result) {
-                    //Success
-                    var totalPagesObject = JSON.parse(
-                        result.headers()['x-pagination']
-                    );
-                    $scope.totalItems = totalPagesObject.totalCount;
-                },
-                function() {
-                    //Error
-                }
-            );
-        };
+    var getMyItems = function(start, count) {
+      myRepository.getAllItems(start, count).then(
+        function(result) {
+          //Success
+          var totalPagesObject = JSON.parse(result.headers()['x-pagination']);
+          $scope.totalItems = totalPagesObject.totalCount;
+        },
+        function() {
+          //Error
+        }
+      );
+    };
 
-        //...
+    //...
 
-        $scope.pageChanged = function() {
-            console.log('Page changed to: ' + $scope.currentPage);
-            getMyItems(
-                ($scope.currentPage - 1) * $scope.maximalItemsPerPage,
-                $scope.maximalItemsPerPage
-            );
-        };
-    },
+    $scope.pageChanged = function() {
+      console.log('Page changed to: ' + $scope.currentPage);
+      getMyItems(
+        ($scope.currentPage - 1) * $scope.maximalItemsPerPage,
+        $scope.maximalItemsPerPage
+      );
+    };
+  }
 ]);
 ```
 

@@ -1,7 +1,7 @@
 ---
 id: 992
 title: Correct implementation of Commands in WPF
-date: 2014-10-01 17:32
+date: 2014-10-01
 author: Fabian Gosebrink
 layout: post
 tags: architecture commands wpf

@@ -1,7 +1,7 @@
 ---
 id: 981
 title: MyCSharp.de - Kooperation mit der Basta!
-date: 2015-04-24 17:30
+date: 2015-04-24
 author: Fabian Gosebrink
 layout: post
 tags: basta mycsharp
@@ -21,7 +21,7 @@ Ich freue mich wirklich zu sagen, dass das Team von MyCSharp.de und die Basta! e
 
 Was ist die BASTA!?
 
->Die BASTA! ist die führende unabhängige Konferenz für Microsoft-Technologien im deutschsprachigen Raum. Durch ihre einmalige Expertendichte, die Aktualität sowie ausgeprägte Praxisrelevanz gehört sie zu den jährlichen Pflichtterminen für Windows- und .NET-Entwickler, Architekten und Projektleiter. Das Konferenzprogramm umfasst die immer größere werdende Technologieplattform der Microsoft-Welt – und darüber hinaus.
+> Die BASTA! ist die führende unabhängige Konferenz für Microsoft-Technologien im deutschsprachigen Raum. Durch ihre einmalige Expertendichte, die Aktualität sowie ausgeprägte Praxisrelevanz gehört sie zu den jährlichen Pflichtterminen für Windows- und .NET-Entwickler, Architekten und Projektleiter. Das Konferenzprogramm umfasst die immer größere werdende Technologieplattform der Microsoft-Welt – und darüber hinaus.
 
 Siehe auch hier:
 

@@ -1,6 +1,6 @@
 ---
 title: How to implement a table filter in Angular
-date: 2016-11-21 21:16
+date: 2016-11-21
 author: Fabian Gosebrink
 layout: post
 tags: angular filter pipe tablefilter typescript
@@ -26,22 +26,22 @@ You can achieve this using a pipe:
 import { Pipe, PipeTransform, Injectable } from '@angular/core';
 
 @Pipe({
-    name: 'filter',
+  name: 'filter'
 })
 @Injectable()
 export class FilterPipe implements PipeTransform {
-    transform(items: any[], field: string, value: string): any[] {
-        if (!items) {
-            return [];
-        }
-        if (!field || !value) {
-            return items;
-        }
-
-        return items.filter(singleItem =>
-            singleItem[field].toLowerCase().includes(value.toLowerCase())
-        );
+  transform(items: any[], field: string, value: string): any[] {
+    if (!items) {
+      return [];
     }
+    if (!field || !value) {
+      return items;
+    }
+
+    return items.filter(singleItem =>
+      singleItem[field].toLowerCase().includes(value.toLowerCase())
+    );
+  }
 }
 ```
 
@@ -60,24 +60,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FilterPipe } from '../pipes/filter.pipe';
 
 @NgModule({
-    imports: [
-        // Modules
-        BrowserModule,
-    ],
+  imports: [
+    // Modules
+    BrowserModule
+  ],
 
-    declarations: [
-        // Components &amp; directives
-        FilterPipe,
-    ],
+  declarations: [
+    // Components &amp; directives
+    FilterPipe
+  ],
 
-    providers: [
-        // Services
-    ],
+  providers: [
+    // Services
+  ],
 
-    exports: [
-        // ...
-        FilterPipe,
-    ],
+  exports: [
+    // ...
+    FilterPipe
+  ]
 })
 export class SharedModule {}
 ```
@@ -92,20 +92,20 @@ import { SharedModule } from './modules/shared.module';
 // ...
 
 @NgModule({
-    imports: [
-        // ...
-        SharedModule,
-    ],
+  imports: [
+    // ...
+    SharedModule
+  ],
 
-    declarations: [
-        // ...
-    ],
+  declarations: [
+    // ...
+  ],
 
-    providers: [
-        // ...
-    ],
+  providers: [
+    // ...
+  ],
 
-    bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
@@ -131,26 +131,36 @@ export class FoodListComponent {
 
 ```html
 <form>
-    <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
-            <input type="text" class="form-control" name="searchString" placeholder="Type to search..." [(ngModel)]="searchString">
-        </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="glyphicon glyphicon-search"></i>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        name="searchString"
+        placeholder="Type to search..."
+        [(ngModel)]="searchString"
+      />
     </div>
+  </div>
 </form>
 
 <table class="table">
-    <tr>
-        <th>Name</th>
-        <th>Calories</th>
-        <th class="text-right">Actions</th>
-    </tr>
-    <tr *ngFor="let food of foods | filter : 'name' : searchString; let i = index">
-        <td class="text-left">
-            {{food.name}}
-        </td>
-        // ...
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th>Calories</th>
+    <th class="text-right">Actions</th>
+  </tr>
+  <tr
+    *ngFor="let food of foods | filter : 'name' : searchString; let i = index"
+  >
+    <td class="text-left">
+      {{food.name}}
+    </td>
+    // ...
+  </tr>
 </table>
 ```
 

@@ -1,7 +1,7 @@
 ---
 id: 979
 title: ASP.NET WebAPI Datashaper to strip your json data
-date: 2015-05-30 18:23
+date: 2015-05-30
 author: Fabian Gosebrink
 layout: post
 tags: datashaping github restapi webapi
@@ -45,7 +45,7 @@ in the end which is going to apply the list of Properties to your data.
 
 This can be useful if you wnat to display a table of your data with only selected fields. You do not have to have every property from your model onto the client and display it. You only need specific fields which you can strip out with this package.
 
-This is equivalent to the OData "$select"-Query option. But this package gives you the opportunity to get the same behaviour without using OData. But if you are interested you should take a look onto [Odata](http://www.odata.org/), too.
+This is equivalent to the OData "\$select"-Query option. But this package gives you the opportunity to get the same behaviour without using OData. But if you are interested you should take a look onto [Odata](http://www.odata.org/), too.
 
 Here is an example
 

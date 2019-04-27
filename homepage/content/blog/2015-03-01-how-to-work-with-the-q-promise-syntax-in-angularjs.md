@@ -1,7 +1,7 @@
 ---
 id: 985
 title: How to work with the q promise syntax in AngularJS
-date: 2015-03-01 03:27
+date: 2015-03-01
 author: Fabian Gosebrink
 layout: post
 tags: angularjs architecture promises spa
@@ -23,12 +23,12 @@ Very cool, hm?
 
 ```javascript
 $http.get('/here/goes/my/Api').then(
-    function(result) {
-        // Success
-    },
-    function() {
-        // Error
-    }
+  function(result) {
+    // Success
+  },
+  function() {
+    // Error
+  }
 );
 ```
 
@@ -44,14 +44,14 @@ Repository:
 
 ```javascript
 $http.get('/here/goes/my/Api').then(
-    function(result) {
-        // Success
-        return 'good';
-    },
-    function() {
-        // Error
-        return 'bad';
-    }
+  function(result) {
+    // Success
+    return 'good';
+  },
+  function() {
+    // Error
+    return 'bad';
+  }
 );
 ```
 
@@ -59,14 +59,14 @@ and your controller could be like:
 
 ```javascript
 function loadMyData() {
-    var result = myRepository.getSomeData($routeParams.id);
+  var result = myRepository.getSomeData($routeParams.id);
 
-    if (result == 'good') {
-        //Success
-    }
-    if (result == 'bad') {
-        //Error
-    }
+  if (result == 'good') {
+    //Success
+  }
+  if (result == 'bad') {
+    //Error
+  }
 }
 ```
 
@@ -98,7 +98,7 @@ var _getMyData = function () {
 }
 ```
 
-So the $q-sign gives us the possibility to access our promise and store it in a variable called "deferred" here. And in case of an error, we keep this promise alive, resolving it positively and on top of that we are passing our data in it which shall be available to whoever is going to resolve this promise from the outside. This is what "deferred.resolve(result);" does. But in case of an error we reject the promise. So again: We are keeping it, but we are telling the caller "This promise was not resolved positive". In the last line we are returning our promise.
+So the \$q-sign gives us the possibility to access our promise and store it in a variable called "deferred" here. And in case of an error, we keep this promise alive, resolving it positively and on top of that we are passing our data in it which shall be available to whoever is going to resolve this promise from the outside. This is what "deferred.resolve(result);" does. But in case of an error we reject the promise. So again: We are keeping it, but we are telling the caller "This promise was not resolved positive". In the last line we are returning our promise.
 
 The advantage now is that an outside caller can react on it with the same syntax he already knows, the "then(success/error)"-thing. Because this function shown above returns a normal promise!
 

@@ -1,6 +1,6 @@
 ---
 title: Working with Angular Template Forms
-date: 2017-01-14 13:49
+date: 2017-01-14
 author: Fabian Gosebrink
 layout: post
 tags: angular forms templatedriven
@@ -52,7 +52,10 @@ Now we add the bootstrap cdn to our `index.html`.
 {% raw %}
 
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  />
 </head>
 
 {% endraw %}
@@ -64,8 +67,8 @@ Out app.component.html simply looks like this:
 {% raw %}
 
 <div class="container">
-    <h1>{{title}}</h1>
-    <form-component></form-component>
+  <h1>{{title}}</h1>
+  <form-component></form-component>
 </div>
 
 {% endraw %}
@@ -79,11 +82,16 @@ So our `form.component.html` looks like this now:
 
 ```html
 <form>
-    <div class="form-group">
-        <label for="exampleInputName">Name</label>
-        <input type="name" class="form-control" id="exampleInputName" placeholder="Name">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+  <div class="form-group">
+    <label for="exampleInputName">Name</label>
+    <input
+      type="name"
+      class="form-control"
+      id="exampleInputName"
+      placeholder="Name"
+    />
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
 ```
 
@@ -144,9 +152,15 @@ We take the `ngModel`-directive to tell the field "Hey, this thing I give you he
 
 ```html
 <div class="container">
-    <!--...-->
-     <input type="name" class="form-control" id="exampleInputName" placeholder="Name" ngModel>
-    <!--...-->
+  <!--...-->
+  <input
+    type="name"
+    class="form-control"
+    id="exampleInputName"
+    placeholder="Name"
+    ngModel
+  />
+  <!--...-->
 </div>
 ```
 
@@ -159,13 +173,13 @@ We can do this by adding a variable in the template with the "#"-Sign and taggin
 This means:
 
 ```html
-<form>
+<form></form>
 ```
 
 becomes to
 
 ```html
-<form #myform="ngForm">
+<form #myform="ngForm"></form>
 ```
 
 We have introduced a variable and assign the complete form to it. Angular introduced this `ngForm` for us in the background, we are only catching it up and take a variable to make it accessible. Now we are able to ask the form for its state! This variable is called a template reference variable.
@@ -174,9 +188,16 @@ What we want is to see the state of our form. We achieve that by adding the ngMo
 
 ```html
 <div class="container">
-    <!--...-->
-     <input type="text" class="form-control" id="exampleInputName" placeholder="Name" ngModel name="name">
-    <!--...-->
+  <!--...-->
+  <input
+    type="text"
+    class="form-control"
+    id="exampleInputName"
+    placeholder="Name"
+    ngModel
+    name="name"
+  />
+  <!--...-->
 </div>
 ```
 
@@ -189,14 +210,21 @@ like this:
 ```html
 {% raw %}
 
-<p> {{ myform.value | json }} </p>
+<p>{{ myform.value | json }}</p>
 
 <form #myform="ngForm">
-    <div class="form-group">
-        <label for="exampleInputName">Name</label>
-        <input type="text" class="form-control" id="exampleInputName" placeholder="Name" ngModel name="name">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+  <div class="form-group">
+    <label for="exampleInputName">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputName"
+      placeholder="Name"
+      ngModel
+      name="name"
+    />
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
 {% endraw %}
@@ -217,7 +245,7 @@ Therefore we have to intruduce some kind of databinding. As we know that databin
 We could do the property binding like this
 
 ```html
- <input ... [ngModel]="model.name" name="name">
+<input ... [ngModel]="model.name" name="name" />
 ```
 
 Then Angular would take this ngModel directive and connect it to a property on our component called "model.name".
@@ -229,7 +257,7 @@ When the initial value is set from the component the value would be reflected in
 To get the model also changed when the user types something in we have to introduce two way binding like this:
 
 ```html
- <input ... [(ngModel)]="model.name" name="name">
+<input ... [(ngModel)]="model.name" name="name" />
 ```
 
 So the forms state would now reflect the changes into the forms state _and_ into the model we want to work with when submitting. In addition to that the initial state is set because we create a model on the constructor.
@@ -270,11 +298,19 @@ Lets face the "valid" and "invalid" for a second. We can apply a normal HTML `re
 
 ```html
 <form #myform="ngForm">
-    <div class="form-group">
-        <label for="exampleInputName">Name</label>
-        <input type="text" class="form-control" id="exampleInputName" placeholder="Name" [(ngModel)]="model.name" name="name" required>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+  <div class="form-group">
+    <label for="exampleInputName">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputName"
+      placeholder="Name"
+      [(ngModel)]="model.name"
+      name="name"
+      required
+    />
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
 ```
 
@@ -282,15 +318,24 @@ So we can go ahead and for example disable the submit button and show a message 
 
 ```html
 <form #myform="ngForm">
-    <div class="form-group">
-        <label for="exampleInputName">Name</label>
-        <input type="text" class="form-control" id="exampleInputName" placeholder="Name" [(ngModel)]="model.name" name="name" required>
-    </div>
+  <div class="form-group">
+    <label for="exampleInputName">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputName"
+      placeholder="Name"
+      [(ngModel)]="model.name"
+      name="name"
+      required
+    />
+  </div>
 
-    <span *ngIf="!myform.form.valid">Check your form</span>
+  <span *ngIf="!myform.form.valid">Check your form</span>
 
-    <button type="submit" class="btn btn-default" [disabled]="!myform.form.valid">Submit</button>
-
+  <button type="submit" class="btn btn-default" [disabled]="!myform.form.valid">
+    Submit
+  </button>
 </form>
 ```
 
@@ -299,24 +344,43 @@ So this gives us the possibility to ask the form for some variables Angular give
 We can also do this whole template variable thing on a control itself and ask the simple control for its state instead of the whole form. The same properties which are valid for the form apply also on the control. Therefore we have to grab our ngModel-directive again and assign it to a template variable to make the control, or better: the model assigned to this control, accessible.
 
 ```html
- <input type="text" class="form-control" id="exampleInputName" placeholder="Name" [(ngModel)]="model.name" name="name" required #name="ngModel">
+<input
+  type="text"
+  class="form-control"
+  id="exampleInputName"
+  placeholder="Name"
+  [(ngModel)]="model.name"
+  name="name"
+  required
+  #name="ngModel"
+/>
 ```
 
 Now we can ask for the state of this control in the same way like the form:
 
 ```html
 <form #myform="ngForm">
-    <div class="form-group">
-        <label for="exampleInputName">Name</label>
-        <input type="text" class="form-control" id="exampleInputName" placeholder="Name" [(ngModel)]="model.name" name="name" required #name="ngModel">
-    </div>
+  <div class="form-group">
+    <label for="exampleInputName">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputName"
+      placeholder="Name"
+      [(ngModel)]="model.name"
+      name="name"
+      required
+      #name="ngModel"
+    />
+  </div>
 
-    <span *ngIf="!name.valid">name is invalid</span>
+  <span *ngIf="!name.valid">name is invalid</span>
 
-    <span *ngIf="!myform.form.valid">Check your form</span>
+  <span *ngIf="!myform.form.valid">Check your form</span>
 
-    <button type="submit" class="btn btn-default" [disabled]="!myform.form.valid">Submit</button>
-
+  <button type="submit" class="btn btn-default" [disabled]="!myform.form.valid">
+    Submit
+  </button>
 </form>
 ```
 
@@ -332,15 +396,27 @@ Our button at the end of the form is currently set to submit the form. But we do
 <p>{{myform.value | json}}</p>
 
 <form #myform="ngForm" (ngSubmit)="alertMyFormModel()">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ngModel name="email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      placeholder="Email"
+      ngModel
+      name="email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="Password"
+    />
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
 {% endraw %}

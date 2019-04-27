@@ -1,7 +1,7 @@
 ---
 id: 972
 title: Token Authentication with Claims and ASP.NET WebAPI
-date: 2015-10-03T12:20:52+00:00
+date: 2015-10-03
 author: Fabian Gosebrink
 layout: post
 tags: aspnet authentication authorization claims oauthprovider roles

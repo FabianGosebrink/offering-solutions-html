@@ -1,6 +1,6 @@
 ---
 title: How to create an ASP.NET Core WebAPI
-date: 2016-07-29 18:31
+date: 2016-07-29
 author: Fabian Gosebrink
 layout: post
 tags: aspnetcore webapi

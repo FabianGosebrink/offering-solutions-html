@@ -1,6 +1,6 @@
 ---
 title: Get started with ASP.NET Core and Entity Framework 6
-date: 2015-12-13 20:20
+date: 2015-12-13
 author: Fabian Gosebrink
 layout: post
 tags: aspnetcore mvc automapper codefirst database context entityframework json webapi

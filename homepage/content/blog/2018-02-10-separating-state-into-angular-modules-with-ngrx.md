@@ -1,6 +1,6 @@
 ---
 title: Separating state into angular modules with ngrx
-date: 2018-02-10 10:02
+date: 2018-02-10
 author: Fabian Gosebrink
 layout: post
 tags: angular ngrx
@@ -34,13 +34,13 @@ The app's application state interface then looks like
 
 ```javascript
 interface ApplicationState {
-    currentlyLoading: boolean;
-    customerList: any[];
+  currentlyLoading: boolean;
+  customerList: any[];
 }
 
 export const initialState: ApplicationState = {
-    currentlyLoading: false,
-    customerList: [],
+  currentlyLoading: false,
+  customerList: []
 };
 ```
 
@@ -48,19 +48,19 @@ A reducer could manipulate this state like
 
 ```javascript
 export function appReducer(
-    state: ApplicationState = initialState,
-    action: Action
+  state: ApplicationState = initialState,
+  action: Action
 ): ApplicationState {
-    switch (action.type) {
-        case ANYACTION:
-            return {
-                ...state,
-                // modify properties here
-            };
-        // more actions
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case ANYACTION:
+      return {
+        ...state
+        // modify properties here
+      };
+    // more actions
+    default:
+      return state;
+  }
 }
 ```
 
@@ -68,10 +68,10 @@ which we can then use in our as follows:
 
 ```javascript
 @NgModule({
-    imports: [
-        BrowserModule,
-        StoreModule.forRoot({ applicationState: appReducer }),
-    ],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot({ applicationState: appReducer })
+  ]
 })
 export class AppModule {}
 ```
@@ -181,13 +181,13 @@ Luckily, Ngrx already provides a good mechanism for us to apply parts of the sta
 
 ```javascript
 interface CustomerState {
-    currentlyLoading: boolean;
-    customerList: any[];
+  currentlyLoading: boolean;
+  customerList: any[];
 }
 
 export const initialState: CustomerState = {
-    currentlyLoading: false,
-    customerList: [],
+  currentlyLoading: false,
+  customerList: []
 };
 ```
 
@@ -195,12 +195,12 @@ app.module.ts
 
 ```javascript
 @NgModule({
-    imports: [
-        BrowserModule,
-        StoreModule.forRoot({
-            /* an empty object here for this time */
-        }),
-    ],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot({
+      /* an empty object here for this time */
+    })
+  ]
 })
 export class AppModule {}
 ```
@@ -209,14 +209,14 @@ customer.module.ts
 
 ```javascript
 @NgModule({
-    imports: [
-        StoreModule.forFeature('customerFeature', {
-            customer: customerReducer,
-        }),
-    ],
-    exports: [],
-    declarations: [],
-    providers: [],
+  imports: [
+    StoreModule.forFeature('customerFeature', {
+      customer: customerReducer
+    })
+  ],
+  exports: [],
+  declarations: [],
+  providers: []
 })
 export class CustomerModule {}
 ```
@@ -227,7 +227,7 @@ The interesting part is the `forFeature` method above. Let's take a look at this
 
 ```javascript
 StoreModule.forFeature('customerFeature', {
-    customer: customerReducer,
+  customer: customerReducer
 });
 ```
 

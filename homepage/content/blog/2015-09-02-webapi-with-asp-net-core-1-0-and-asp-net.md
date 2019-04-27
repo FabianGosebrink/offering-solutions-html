@@ -1,7 +1,7 @@
 ---
 id: 973
 title: WebAPI with ASP.NET Core 1.0 and ASP.NET
-date: 2015-09-02 17:04
+date: 2015-09-02
 author: Fabian Gosebrink
 layout: post
 tags: aspnetcore web architecture webapi

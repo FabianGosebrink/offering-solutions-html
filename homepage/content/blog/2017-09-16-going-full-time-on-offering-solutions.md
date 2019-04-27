@@ -1,6 +1,6 @@
 ---
 title: Going full time on offering solutions
-date: 2017-09-16 18:12
+date: 2017-09-16
 author: Fabian Gosebrink
 layout: post
 tags: offering solutions

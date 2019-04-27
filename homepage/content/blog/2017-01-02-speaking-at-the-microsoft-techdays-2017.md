@@ -1,6 +1,6 @@
 ---
 title: Speaking at the Microsoft TechDays 2017
-date: 2017-01-02 10:08
+date: 2017-01-02
 author: Fabian Gosebrink
 layout: post
 tags: microsoft speaking techdays

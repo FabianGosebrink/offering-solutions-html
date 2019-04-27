@@ -1,6 +1,6 @@
 ---
 title: Consuming a REST API with Angular Http-Service in Typescript
-date: 2016-02-01 12:23
+date: 2016-02-01
 author: Fabian Gosebrink
 layout: post
 tags: angular restapi typescript

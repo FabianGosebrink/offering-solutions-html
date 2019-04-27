@@ -1,7 +1,7 @@
 ---
 id: 977
 title: Meine ersten Tage mit dem Surface Pro 3
-date: 2015-07-01 06:00
+date: 2015-07-01
 author: Fabian Gosebrink
 layout: post
 tags: microsoft surface3 pro

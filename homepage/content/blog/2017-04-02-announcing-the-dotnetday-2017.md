@@ -1,6 +1,6 @@
 ---
 title: Announcing the .NET Day 2017
-date: 2017-04-02 19:12
+date: 2017-04-02
 author: Fabian Gosebrink
 layout: post
 tags: angular azure conference

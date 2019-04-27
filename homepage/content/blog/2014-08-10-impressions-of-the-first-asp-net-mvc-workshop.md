@@ -1,7 +1,7 @@
 ---
 id: 996
 title: Impressions of the first ASP.NET MVC workshop
-date: 2014-08-10 16:38
+date: 2014-08-10
 author: Fabian Gosebrink
 layout: post
 tags: aspnet workshop

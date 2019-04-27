@@ -1,6 +1,6 @@
 ---
 title: How to set up Angular and Webpack in Visual Studio with ASP.NET Core
-date: 2016-08-27 16:58
+date: 2016-08-27
 author: Fabian Gosebrink
 layout: post
 tags: aspnetcore visualstudio webpack devserver
@@ -219,76 +219,76 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: {
-        app: './angularApp/app/main.ts',
-    },
-    devtool: 'cheap-module-eval-source-map',
-    performance: {
-        hints: false,
-    },
-    resolve: {
-        extensions: ['.ts', '.js', '.json'],
-    },
-    output: {
-        path: path.join(__dirname, 'wwwroot'),
-        filename: 'js/[name].bundle.js',
-    },
+  entry: {
+    app: './angularApp/app/main.ts'
+  },
+  devtool: 'cheap-module-eval-source-map',
+  performance: {
+    hints: false
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.json']
+  },
+  output: {
+    path: path.join(__dirname, 'wwwroot'),
+    filename: 'js/[name].bundle.js'
+  },
 
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                use: [
-                    'awesome-typescript-loader',
-                    'angular-router-loader',
-                    'angular2-template-loader',
-                    'source-map-loader',
-                    'tslint-loader',
-                ],
-            },
-            {
-                test: /\.html$/,
-                use: 'html-loader',
-            },
-            {
-                test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$/,
-                use: 'file-loader?name=assets/[name].[ext]',
-            },
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader',
-                }),
-            },
-        ],
-    },
-    plugins: [
-        new ExtractTextPlugin('css/[name].bundle.css'),
-        new webpack.optimize.ModuleConcatenationPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['app', 'vendor', 'polyfills'],
-        }),
-        new CleanWebpackPlugin([
-            './wwwroot/js/',
-            './wwwroot/css/',
-            './wwwroot/assets/',
-            './wwwroot/index.html',
-        ]),
-        new webpack.ContextReplacementPlugin(
-            /angular(\\|\/)core(\\|\/)@angular/,
-            path.resolve(__dirname, '../src')
-        ),
-        new webpack.ProvidePlugin({
-            jQuery: 'jquery',
-            $: 'jquery',
-            jquery: 'jquery',
-        }),
-    ],
-    devServer: {
-        historyApiFallback: true,
-        stats: 'minimal',
-    },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: [
+          'awesome-typescript-loader',
+          'angular-router-loader',
+          'angular2-template-loader',
+          'source-map-loader',
+          'tslint-loader'
+        ]
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader'
+      },
+      {
+        test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$/,
+        use: 'file-loader?name=assets/[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('css/[name].bundle.css'),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['app', 'vendor', 'polyfills']
+    }),
+    new CleanWebpackPlugin([
+      './wwwroot/js/',
+      './wwwroot/css/',
+      './wwwroot/assets/',
+      './wwwroot/index.html'
+    ]),
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)@angular/,
+      path.resolve(__dirname, '../src')
+    ),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery'
+    })
+  ],
+  devServer: {
+    historyApiFallback: true,
+    stats: 'minimal'
+  }
 };
 ```
 
@@ -391,18 +391,17 @@ Lets take a look into this index.html:
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <base href="/" />
     <title>ASP.NET Core Angular Webpack Demo</title>
-<link href="css/app.bundle.css" rel="stylesheet"></head>
+    <link href="css/app.bundle.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <my-app>Loading...</my-app>
-<script type="text/javascript" src="js/polyfills.bundle.js">
-</script>
-<script type="text/javascript" src="js/app.bundle.js"></script></body>
-
+    <script type="text/javascript" src="js/polyfills.bundle.js"></script>
+    <script type="text/javascript" src="js/app.bundle.js"></script>
+  </body>
 </html>
 ```
 
@@ -530,8 +529,8 @@ All we need to do now is creating a switch which says "if you are development, u
 
 ```javascript
 module.exports = function(env) {
-    console.log(env);
-    return require(`./webpack.${env}.js`);
+  console.log(env);
+  return require(`./webpack.${env}.js`);
 };
 ```
 
@@ -556,33 +555,33 @@ Copy the whole content from the webpack.dev.json to the prod.json and simply add
 ```javascript
 // AoT plugin.
 new ngToolsWebpack.AotPlugin({
-    tsConfigPath: './tsconfig-aot.json',
+  tsConfigPath: './tsconfig-aot.json'
 }),
-    new ExtractTextPlugin('css/[name]-[hash:6].bundle.css'),
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-        name: ['app', 'vendor', 'polyfills'],
-    }),
-    // inject in index.html
-    new HtmlWebpackPlugin({
-        template: './angularApp/index.html',
-        inject: 'body',
-        filename: 'index.html',
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false,
-        },
-        output: {
-            comments: false,
-        },
-        sourceMap: true,
-    }),
-    new webpack.ProvidePlugin({
-        jQuery: 'jquery',
-        $: 'jquery',
-        jquery: 'jquery',
-    });
+  new ExtractTextPlugin('css/[name]-[hash:6].bundle.css'),
+  new webpack.optimize.ModuleConcatenationPlugin(),
+  new webpack.optimize.CommonsChunkPlugin({
+    name: ['app', 'vendor', 'polyfills']
+  }),
+  // inject in index.html
+  new HtmlWebpackPlugin({
+    template: './angularApp/index.html',
+    inject: 'body',
+    filename: 'index.html'
+  }),
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    },
+    output: {
+      comments: false
+    },
+    sourceMap: true
+  }),
+  new webpack.ProvidePlugin({
+    jQuery: 'jquery',
+    $: 'jquery',
+    jquery: 'jquery'
+  });
 ```
 
 If you now let the prod-task run the files will be treated as ever but they are uglified as well.

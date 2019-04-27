@@ -1,7 +1,7 @@
 ---
 id: 995
 title: How to make first steps of Databinding in WPF
-date: 2014-09-02 03:24
+date: 2014-09-02
 author: Fabian Gosebrink
 layout: post
 tags: basics databinding tutorial wpf
@@ -25,13 +25,13 @@ In the last time the MV\*-Pattern was really getting pushed and was established 
 
 Advantages are:
 
--   Changing the UI without changing the logic: The UI changes more often than the logic. What if green is more "stylish" than the good old "blue"? It has to be changed, but all the things you show stay the same. Just because something looks different you are not showing different information.
+- Changing the UI without changing the logic: The UI changes more often than the logic. What if green is more "stylish" than the good old "blue"? It has to be changed, but all the things you show stay the same. Just because something looks different you are not showing different information.
 
--   Testability of the logic: Because logic gets more modular it can be well tested. You do not need to know about your view or how it looks like. The only thing your tests are interested in are the output-information.
+- Testability of the logic: Because logic gets more modular it can be well tested. You do not need to know about your view or how it looks like. The only thing your tests are interested in are the output-information.
 
--   Better overview: You can not only seperate the UI and the logic, you can also see it in the code. you have no UI-Code in your logic and no logic-code in your UI.
+- Better overview: You can not only seperate the UI and the logic, you can also see it in the code. you have no UI-Code in your logic and no logic-code in your UI.
 
--   Different Teams: Also in SCRUM or whatever you use you can easily divide the work into several parts. UI Designers can only focus on their work, while programmers code (and test) the work completetly different. The touching points are only made because of the DataBinding.
+- Different Teams: Also in SCRUM or whatever you use you can easily divide the work into several parts. UI Designers can only focus on their work, while programmers code (and test) the work completetly different. The touching points are only made because of the DataBinding.
 
 ### Theoretically: What are we doing?
 

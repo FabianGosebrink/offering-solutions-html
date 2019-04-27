@@ -1,6 +1,6 @@
 ---
 title: Kooperation von MyCSharp.de und der BASTA!
-date: 2016-07-20 18:05
+date: 2016-07-20
 author: Fabian Gosebrink
 layout: post
 tags: basta mycsharp

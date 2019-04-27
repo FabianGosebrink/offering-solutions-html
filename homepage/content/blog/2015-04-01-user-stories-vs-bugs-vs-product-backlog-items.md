@@ -1,7 +1,7 @@
 ---
 id: 982
 title: User Stories vs Bugs vs Product Backlog Items
-date: 2015-04-01 04:00
+date: 2015-04-01
 author: Fabian Gosebrink
 layout: post
 tags: bug productbacklog item scrum userstory
@@ -19,9 +19,9 @@ Der Product-Backlog ist eines der wichtigsten Artefakte im Scrum-Prozess und woh
 
 In ihm sammeln sich alle Ideen, alle Anforderungen und Gedankenblitze, die der Kunde oder auch der Entwickler beim Arbeiten mit einem Produkt haben. Egal ob ausgereift oder fern in der Zukunft: Der Product-Backlog bietet zukünftigen Arbeiten an einem Produkt ein Zuhause.
 
->*Dieses Zuhause ist ein **lebendes** Artefakt. Durch Refinements werden seine Einträge darin gepflegt und sortiert.*
+> _Dieses Zuhause ist ein **lebendes** Artefakt. Durch Refinements werden seine Einträge darin gepflegt und sortiert._
 
-Oft werde ich Zeuge einer Diskussion, die davon handelt, was der Product-Backlog wirklich beinhaltet? Sind die enthaltenen Einträge ganz naheliegend *Product-Backlog-Items*? Oder sind es *User Stories*? Und dürfen Bugs auch eine Rolle spielen, auch wenn sie weder User-Story noch PBI sind?
+Oft werde ich Zeuge einer Diskussion, die davon handelt, was der Product-Backlog wirklich beinhaltet? Sind die enthaltenen Einträge ganz naheliegend _Product-Backlog-Items_? Oder sind es _User Stories_? Und dürfen Bugs auch eine Rolle spielen, auch wenn sie weder User-Story noch PBI sind?
 
 Für mich beschreibt ein Product-Backlog-Item erstmal einen Eintrag im Product-Backlog. Nicht mehr und nicht weniger. Dies ist etwas, was für das fertige Produkt getan werden muss, aber es ist erstmal keine User-Story und es ist kein Bug o.ä. Schaut man sich den Product-Backlog jedoch näher an, muss man unterscheiden. Allein schon, um alles, was der Eintrag hergeben soll so aussehen zu lassen, dass er möglichst viele Informationen enthält, ohne das „Wie setzen wir es um“ zu beantworten.
 
@@ -30,7 +30,7 @@ Für mich beschreibt ein Product-Backlog-Item erstmal einen Eintrag im Product-B
 Eine User-Story beschreibt ein fehlendes Feature eines Produkts und gibt dem Team Informationen und einen Kontext zu diesem Feature. Die Schreibweise „As a … [someone] want[s] … to …, so that…“ enthält so viele nützliche Dinge, dass das Team …
 
 1.  … das Problem erkennt
-2.  … das Verhalten der Software *nach* dem Problem versteht
+2.  … das Verhalten der Software _nach_ dem Problem versteht
 3.  … die Möglichkeit gibt, eventuell etwas besseres vorzuschlagen
 
 All diese Punkte wären ohne die Formulierung, die im Übrigen nur einen Satz umfasst, in der Kürze nicht möglich. Eine User-Story gibt immer genug Kontext, eine Umgebung, wenn auch nur gedanklich, um das Team in die Situation von jemandem zu versetzen, das Problem zu verstehen und das Zielverhalten zu erkennen. Nur so kann man das Knowhow im Team durch Scrum nutzen und vielleicht eine besser Lösung finden.
@@ -49,11 +49,11 @@ Bugs haben meistens eine Menge Informationen. Dazu gehören Schritte zum Nachste
 
 Product-Backlog-Items sind meiner Ansicht nach Sachen, die in sich schon so informativ gereift sind, dass jedes Umformulieren keinen Mehrwert mehr erzeugen würde.
 
-„*Reduziere die Ladezeit der Seite xyz beim erstmaligen Laden auf unter eine Sekunde*“ wäre ein Kandidat, der keine User-Story verdienen würde. Es ist klar, was gemacht werden muss, der Kontext ergibt sich ebenso. Die Frage „Wie wird es umgesetzt“ bleibt beim Team, die Anforderung ist absolut klar.
+„_Reduziere die Ladezeit der Seite xyz beim erstmaligen Laden auf unter eine Sekunde_“ wäre ein Kandidat, der keine User-Story verdienen würde. Es ist klar, was gemacht werden muss, der Kontext ergibt sich ebenso. Die Frage „Wie wird es umgesetzt“ bleibt beim Team, die Anforderung ist absolut klar.
 
 **Zusammenfassung**
 
-Ein Product-Backlog hat von aussen gesehen viele Einträge. Eben Product-Backlog-Items. Diese können User-Stories sein, sie können Bugs sein. Oder eben Product-Backlog-Items bleiben. Man muss unterscheiden. Am Besten im Refinement im Team oder in der Diskussion. Wichtig ist, dass zwischen den verschiedenen Formen unterschieden wird und dass die Information, *was* getan werden muss, zweifelsohne übermittelt werden ohne die Frage zu beantworten, *wie* das Item umgesetzt werden soll. Der Kontext für das Team muss gegeben sein. Dies kann und sollte aber auch über Refinements geschehen. Der Product-Backlog ist ein lebendes Artefakt und sollte es durch die dynamik in den Items bleiben und so ein geeignetes Ort für Anforderungen und Wünsche jeder Art bieten. So bleibt er interessant und wird hoffentlich in Zukunft nicht mehr so sehr unterschätzt ;)
+Ein Product-Backlog hat von aussen gesehen viele Einträge. Eben Product-Backlog-Items. Diese können User-Stories sein, sie können Bugs sein. Oder eben Product-Backlog-Items bleiben. Man muss unterscheiden. Am Besten im Refinement im Team oder in der Diskussion. Wichtig ist, dass zwischen den verschiedenen Formen unterschieden wird und dass die Information, _was_ getan werden muss, zweifelsohne übermittelt werden ohne die Frage zu beantworten, _wie_ das Item umgesetzt werden soll. Der Kontext für das Team muss gegeben sein. Dies kann und sollte aber auch über Refinements geschehen. Der Product-Backlog ist ein lebendes Artefakt und sollte es durch die dynamik in den Items bleiben und so ein geeignetes Ort für Anforderungen und Wünsche jeder Art bieten. So bleibt er interessant und wird hoffentlich in Zukunft nicht mehr so sehr unterschätzt ;)
 
 Links:
 

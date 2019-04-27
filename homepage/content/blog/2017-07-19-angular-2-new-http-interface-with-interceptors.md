@@ -1,6 +1,6 @@
 ---
 title: Angular - New HTTP interface with interceptors
-date: 2017-07-19 19:55
+date: 2017-07-19
 author: Fabian Gosebrink
 layout: post
 tags: angular http REST
@@ -147,21 +147,21 @@ Let us add an interceptor which is just logging the requests. This is just a cla
 ```javascript
 import { Injectable } from '@angular/core';
 import {
-    HttpEvent,
-    HttpInterceptor,
-    HttpHandler,
-    HttpRequest,
+  HttpEvent,
+  HttpInterceptor,
+  HttpHandler,
+  HttpRequest
 } from '@angular/common/http';
 
 @Injectable()
 export class MyFirstInterceptor implements HttpInterceptor {
-    intercept(
-        req: HttpRequest<any>,
-        next: HttpHandler
-    ): Observable<HttpEvent<any>> {
-        console.log(req);
-        return next.handle(req);
-    }
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    console.log(req);
+    return next.handle(req);
+  }
 }
 ```
 
@@ -169,12 +169,12 @@ and of course we have ot reigster it on the module
 
 ```javascript
 providers: [
-    // ...
-    {
-        provide: HTTP_INTERCEPTORS,
-        useClass: MyFirstInterceptor,
-        multi: true,
-    },
+  // ...
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: MyFirstInterceptor,
+    multi: true
+  }
 ];
 ```
 

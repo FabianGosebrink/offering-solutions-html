@@ -1,6 +1,6 @@
 ---
 title: Writing custom validators in Angular
-date: 2016-05-10 17:42
+date: 2016-05-10
 author: Fabian Gosebrink
 layout: post
 tags: angular customvalidation
@@ -24,14 +24,25 @@ Let's have a form first:
 
 ```html
 <form #f="ngForm">
-
-    <div class="form-group">
-        <label for="calories">Calories</label>
-        <input type="text" class="form-control" id="calories" placeholder="Calories" [(ngModel)]="foodItem.calories"
-             name="calories">
-
-    </div>
-    <button type="button" class="btn btn-default" (click)="AddOrUpdateFood()" [disabled]="!f?.valid">Submit</button>
+  <div class="form-group">
+    <label for="calories">Calories</label>
+    <input
+      type="text"
+      class="form-control"
+      id="calories"
+      placeholder="Calories"
+      [(ngModel)]="foodItem.calories"
+      name="calories"
+    />
+  </div>
+  <button
+    type="button"
+    class="btn btn-default"
+    (click)="AddOrUpdateFood()"
+    [disabled]="!f?.valid"
+  >
+    Submit
+  </button>
 </form>
 ```
 
@@ -46,30 +57,30 @@ import { Directive, forwardRef, Attribute } from '@angular/core';
 import { Validator, FormControl, NG_VALIDATORS } from '@angular/forms';
 
 @Directive({
-    selector:
-        '[isNumber][formControlName],[isNumber][formControl],[isNumber][ngModel]',
-    providers: [
-        {
-            provide: NG_VALIDATORS,
-            useExisting: forwardRef(() => IsNumberValidator),
-            multi: true,
-        },
-    ],
+  selector:
+    '[isNumber][formControlName],[isNumber][formControl],[isNumber][ngModel]',
+  providers: [
+    {
+      provide: NG_VALIDATORS,
+      useExisting: forwardRef(() => IsNumberValidator),
+      multi: true
+    }
+  ]
 })
 export class IsNumberValidator implements Validator {
-    validate(c: FormControl): { [key: string]: any } {
-        if (isNaN(+c.value)) {
-            // console.log(c.value + " is not a number");
-            return {
-                isNumber: {
-                    valid: false,
-                },
-            };
+  validate(c: FormControl): { [key: string]: any } {
+    if (isNaN(+c.value)) {
+      // console.log(c.value + " is not a number");
+      return {
+        isNumber: {
+          valid: false
         }
-
-        // console.log(c.value + " is a number");
-        return null;
+      };
     }
+
+    // console.log(c.value + " is a number");
+    return null;
+  }
 }
 ```
 
@@ -85,23 +96,23 @@ import { IsNumberValidator } from '../validators/isNumber.validator';
 import { IsInRangeValidator } from '../validators/isInRange.validator';
 
 @NgModule({
-    imports: [
-        // Modules
-        BrowserModule,
-    ],
+  imports: [
+    // Modules
+    BrowserModule
+  ],
 
-    declarations: [
-        // Components &amp; directives
+  declarations: [
+    // Components &amp; directives
 
-        IsNumberValidator,
-        IsInRangeValidator,
-    ],
+    IsNumberValidator,
+    IsInRangeValidator
+  ],
 
-    providers: [
-        // Services
-    ],
+  providers: [
+    // Services
+  ],
 
-    exports: [IsNumberValidator, IsInRangeValidator],
+  exports: [IsNumberValidator, IsInRangeValidator]
 })
 export class SharedModule {}
 ```
@@ -114,20 +125,20 @@ and in our app.module:
 import { SharedModule } from './modules/shared.module';
 
 @NgModule({
-    imports: [
-        // ...
-        SharedModule,
-    ],
+  imports: [
+    // ...
+    SharedModule
+  ],
 
-    declarations: [
-        // ...
-    ],
+  declarations: [
+    // ...
+  ],
 
-    providers: [
-        // ...
-    ],
+  providers: [
+    // ...
+  ],
 
-    bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
@@ -136,13 +147,26 @@ We can use it in the form like
 
 ```html
 <form #f="ngForm">
-    <div class="form-group">
-        <label for="calories">Calories</label>
-        <input type="text" class="form-control" id="calories" placeholder="Calories" [(ngModel)]="foodItem.calories"
-            isNumber name="calories">
-
-    </div>
-    <button type="button" class="btn btn-default" (click)="AddOrUpdateFood()" [disabled]="!f?.valid">Submit</button>
+  <div class="form-group">
+    <label for="calories">Calories</label>
+    <input
+      type="text"
+      class="form-control"
+      id="calories"
+      placeholder="Calories"
+      [(ngModel)]="foodItem.calories"
+      isNumber
+      name="calories"
+    />
+  </div>
+  <button
+    type="button"
+    class="btn btn-default"
+    (click)="AddOrUpdateFood()"
+    [disabled]="!f?.valid"
+  >
+    Submit
+  </button>
 </form>
 ```
 
@@ -158,17 +182,31 @@ to the form and check if the variable we introduced is valid with
 
 ```html
 <form #f="ngForm">
-    <div class="form-group">
-        <label for="calories">Calories</label>
-        <input type="text" class="form-control" id="calories" placeholder="Calories" [(ngModel)]="foodItem.calories"
-            isNumber name="calories" #calories="ngModel">
+  <div class="form-group">
+    <label for="calories">Calories</label>
+    <input
+      type="text"
+      class="form-control"
+      id="calories"
+      placeholder="Calories"
+      [(ngModel)]="foodItem.calories"
+      isNumber
+      name="calories"
+      #calories="ngModel"
+    />
 
     <div *ngIf="!calories.valid" class="alert alert-danger">
-            Field is not valid
-        </div>
-
+      Field is not valid
     </div>
-    <button type="button" class="btn btn-default" (click)="AddOrUpdateFood()" [disabled]="!f?.valid">Submit</button>
+  </div>
+  <button
+    type="button"
+    class="btn btn-default"
+    (click)="AddOrUpdateFood()"
+    [disabled]="!f?.valid"
+  >
+    Submit
+  </button>
 </form>
 ```
 
@@ -176,20 +214,42 @@ But it would be nice to show _specific_ error messages to the users and not onl
 
 ```html
 <form #f="ngForm" novalidate>
-    <div class="form-group">
-        <label for="calories">Calories</label>
-        <input type="text" class="form-control" id="calories" placeholder="Calories" [(ngModel)]="currentFood.calories" required
-            isNumber name="calories" #calories="ngModel">
+  <div class="form-group">
+    <label for="calories">Calories</label>
+    <input
+      type="text"
+      class="form-control"
+      id="calories"
+      placeholder="Calories"
+      [(ngModel)]="currentFood.calories"
+      required
+      isNumber
+      name="calories"
+      #calories="ngModel"
+    />
 
-        <div *ngIf="calories.errors?.required &amp;&amp; (calories?.dirty &amp;&amp; !f.submitted)" class="alert alert-danger">
-            *
-        </div>
-
-        <div *ngIf="calories.errors?.isNumber &amp;&amp; (calories?.dirty &amp;&amp; !f.submitted)" class="alert alert-danger">
-            Please enter a number in a valid range
-        </div>
+    <div
+      *ngIf="calories.errors?.required &amp;&amp; (calories?.dirty &amp;&amp; !f.submitted)"
+      class="alert alert-danger"
+    >
+      *
     </div>
-    <button type="submit" class="btn btn-default" (click)="AddOrUpdateFood()" [disabled]="!f?.valid">Submit</button>
+
+    <div
+      *ngIf="calories.errors?.isNumber &amp;&amp; (calories?.dirty &amp;&amp; !f.submitted)"
+      class="alert alert-danger"
+    >
+      Please enter a number in a valid range
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-default"
+    (click)="AddOrUpdateFood()"
+    [disabled]="!f?.valid"
+  >
+    Submit
+  </button>
 </form>
 ```
 

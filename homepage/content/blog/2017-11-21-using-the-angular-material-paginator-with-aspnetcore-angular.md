@@ -1,6 +1,6 @@
 ---
 title: Using the Angular Material Paginator with ASP.NET Core and Angular
-date: 2017-11-21 17:15
+date: 2017-11-21
 author: Fabian Gosebrink
 layout: post
 tags: aspnetcore angular material paging
@@ -22,14 +22,14 @@ You can find the code here: [https://github.com/FabianGosebrink/ASPNETCore-Angul
 
 1. [What is HATEOAS](#getstarted)
 2. [The Backend](#thebackend)
-    1. [Customer Controller](#customercontroller)
+   1. [Customer Controller](#customercontroller)
 3. [The Frontend](#thefrontend)
-    1. [PaginationService](#paginationservice)
-    2. [HttpBaseService](#httpbaseservice)
-    3. [The Components](#thecomponents)
-    4. [Include in module](#module)
-    5. [ListComponent](#listcomponent)
-    6. [OverviewComponent](#overviewcomponent)
+   1. [PaginationService](#paginationservice)
+   2. [HttpBaseService](#httpbaseservice)
+   3. [The Components](#thecomponents)
+   4. [Include in module](#module)
+   5. [ListComponent](#listcomponent)
+   6. [OverviewComponent](#overviewcomponent)
 4. [Links](#links)
 
 ## <a name="getstarted">Get started</a>

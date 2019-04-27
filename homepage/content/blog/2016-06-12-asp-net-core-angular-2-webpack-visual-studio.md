@@ -1,6 +1,6 @@
 ---
 title: ASP.NET Core and Angular with Webpack and Visual Studio
-date: 2016-06-12 22:10
+date: 2016-06-12
 author: Fabian Gosebrink
 layout: post
 tags: angular aspnetcore webpack
@@ -11,7 +11,7 @@ subclass: 'post tag-speeches'
 disqus: true
 categories: articles
 redirect_from:
-    - /blog/articles/2016/06/12/asp-net-core-angular-webpack-visual-studio/
+  - /blog/articles/2016/06/12/asp-net-core-angular-webpack-visual-studio/
 ---
 
 This article shows how to use ASP.NET Core and Angular with webpack and Visual Studio. Both the client and the server side of the application is implemented inside one ASP.NET Core project which makes it easier to deploy.
@@ -156,9 +156,9 @@ The Webpack config file was created using the excellent github repository [https
 var environment = (process.env.NODE_ENV || 'development').trim();
 
 if (environment === 'development') {
-    module.exports = require('./webpack.dev.js');
+  module.exports = require('./webpack.dev.js');
 } else {
-    module.exports = require('./webpack.prod.js');
+  module.exports = require('./webpack.prod.js');
 }
 ```
 
@@ -177,87 +177,87 @@ var helpers = require('./webpack.helpers');
 console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
 
 module.exports = {
-    devtool: 'source-map',
-    performance: {
-        hints: false,
-    },
-    entry: {
-        polyfills: './angularApp/polyfills.ts',
-        vendor: './angularApp/vendor.ts',
-        app: './angularApp/main.ts',
-    },
+  devtool: 'source-map',
+  performance: {
+    hints: false
+  },
+  entry: {
+    polyfills: './angularApp/polyfills.ts',
+    vendor: './angularApp/vendor.ts',
+    app: './angularApp/main.ts'
+  },
 
-    output: {
-        path: __dirname + '/wwwroot/',
-        filename: 'dist/[name].bundle.js',
-        chunkFilename: 'dist/[id].chunk.js',
-        publicPath: '/',
-    },
+  output: {
+    path: __dirname + '/wwwroot/',
+    filename: 'dist/[name].bundle.js',
+    chunkFilename: 'dist/[id].chunk.js',
+    publicPath: '/'
+  },
 
-    resolve: {
-        extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
-    },
+  resolve: {
+    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
+  },
 
-    devServer: {
-        historyApiFallback: true,
-        contentBase: path.join(__dirname, '/wwwroot/'),
-        watchOptions: {
-            aggregateTimeout: 300,
-            poll: 1000,
-        },
-    },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: path.join(__dirname, '/wwwroot/'),
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000
+    }
+  },
 
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                loaders: [
-                    'awesome-typescript-loader',
-                    'angular-router-loader',
-                    'angular2-template-loader',
-                    'source-map-loader',
-                    'tslint-loader',
-                ],
-            },
-            {
-                test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
-                loader: 'file-loader?name=assets/[name]-[hash:6].[ext]',
-            },
-            {
-                test: /favicon.ico$/,
-                loader: 'file-loader?name=/[name].[ext]',
-            },
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader',
-            },
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader'],
-            },
-            {
-                test: /\.html$/,
-                loader: 'raw-loader',
-            },
-        ],
-        exprContextCritical: false,
-    },
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'polyfills'] }),
-
-        new CleanWebpackPlugin(['./wwwroot/dist', './wwwroot/assets']),
-
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            inject: 'body',
-            template: 'angularApp/index.html',
-        }),
-
-        new CopyWebpackPlugin([
-            { from: './angularApp/images/*.*', to: 'assets/', flatten: true },
-        ]),
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        loaders: [
+          'awesome-typescript-loader',
+          'angular-router-loader',
+          'angular2-template-loader',
+          'source-map-loader',
+          'tslint-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
+        loader: 'file-loader?name=assets/[name]-[hash:6].[ext]'
+      },
+      {
+        test: /favicon.ico$/,
+        loader: 'file-loader?name=/[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw-loader'
+      }
     ],
+    exprContextCritical: false
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'polyfills'] }),
+
+    new CleanWebpackPlugin(['./wwwroot/dist', './wwwroot/assets']),
+
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      inject: 'body',
+      template: 'angularApp/index.html'
+    }),
+
+    new CopyWebpackPlugin([
+      { from: './angularApp/images/*.*', to: 'assets/', flatten: true }
+    ])
+  ]
 };
 ```
 
@@ -276,89 +276,89 @@ var helpers = require('./webpack.helpers');
 console.log('@@@@@@@@@ USING PRODUCTION @@@@@@@@@@@@@@@');
 
 module.exports = {
-    entry: {
-        vendor: './angularApp/vendor.ts',
-        polyfills: './angularApp/polyfills.ts',
-        app: './angularApp/main-aot.ts', // AoT compilation
-    },
+  entry: {
+    vendor: './angularApp/vendor.ts',
+    polyfills: './angularApp/polyfills.ts',
+    app: './angularApp/main-aot.ts' // AoT compilation
+  },
 
-    output: {
-        path: './wwwroot/',
-        filename: 'dist/[name].[hash].bundle.js',
-        chunkFilename: 'dist/[id].[hash].chunk.js',
-        publicPath: '/',
-    },
+  output: {
+    path: './wwwroot/',
+    filename: 'dist/[name].[hash].bundle.js',
+    chunkFilename: 'dist/[id].[hash].chunk.js',
+    publicPath: '/'
+  },
 
-    resolve: {
-        extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
-    },
+  resolve: {
+    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
+  },
 
-    devServer: {
-        historyApiFallback: true,
-        stats: 'minimal',
-        outputPath: path.join(__dirname, 'wwwroot/'),
-    },
+  devServer: {
+    historyApiFallback: true,
+    stats: 'minimal',
+    outputPath: path.join(__dirname, 'wwwroot/')
+  },
 
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                loaders: [
-                    'awesome-typescript-loader',
-                    'angular-router-loader?aot=true&genDir=aot/',
-                ],
-            },
-            {
-                test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
-                loader: 'file-loader?name=assets/[name]-[hash:6].[ext]',
-            },
-            {
-                test: /favicon.ico$/,
-                loader: 'file-loader?name=/[name].[ext]',
-            },
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader',
-            },
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader'],
-            },
-            {
-                test: /\.html$/,
-                loader: 'raw-loader',
-            },
-        ],
-        exprContextCritical: false,
-    },
-
-    plugins: [
-        new CleanWebpackPlugin(['./wwwroot/dist', './wwwroot/assets']),
-        new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-            },
-            output: {
-                comments: false,
-            },
-            sourceMap: false,
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['vendor', 'polyfills'],
-        }),
-
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            inject: 'body',
-            template: 'angularApp/index.html',
-        }),
-
-        new CopyWebpackPlugin([
-            { from: './angularApp/images/*.*', to: 'assets/', flatten: true },
-        ]),
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        loaders: [
+          'awesome-typescript-loader',
+          'angular-router-loader?aot=true&genDir=aot/'
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
+        loader: 'file-loader?name=assets/[name]-[hash:6].[ext]'
+      },
+      {
+        test: /favicon.ico$/,
+        loader: 'file-loader?name=/[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw-loader'
+      }
     ],
+    exprContextCritical: false
+  },
+
+  plugins: [
+    new CleanWebpackPlugin(['./wwwroot/dist', './wwwroot/assets']),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      },
+      sourceMap: false
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'polyfills']
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      inject: 'body',
+      template: 'angularApp/index.html'
+    }),
+
+    new CopyWebpackPlugin([
+      { from: './angularApp/images/*.*', to: 'assets/', flatten: true }
+    ])
+  ]
 };
 ```
 
@@ -488,7 +488,7 @@ The plugins you are providing in the end are necessary to configure how the file
 
 ```javascript
 plugins: [
-    //...loaders here
+  //...loaders here
 ];
 ```
 
@@ -499,10 +499,10 @@ The index.html contains all the references required for the Angular client. The 
 Source index.html file in the angularApp/public folder:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <base href="./">
+  <head>
+    <base href="./" />
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -511,21 +511,20 @@ Source index.html file in the angularApp/public folder:
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-</head>
-<body>
+  </head>
+  <body>
     <my-app>Loading...</my-app>
-</body>
+  </body>
 </html>
 ```
 
 And the produced build file in the wwwroot folder. The script for the app has been added using Webpack. Hashes are used in a production build for cache busting.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <base href="./">
+  <head>
+    <base href="./" />
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -535,12 +534,12 @@ And the produced build file in the wwwroot folder. The script for the app has be
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
     <my-app>Loading...</my-app>
-<script type="text/javascript" src="/dist/app.bundle.js"></script></body>
+    <script type="text/javascript" src="/dist/app.bundle.js"></script>
+  </body>
 </html>
 ```
 

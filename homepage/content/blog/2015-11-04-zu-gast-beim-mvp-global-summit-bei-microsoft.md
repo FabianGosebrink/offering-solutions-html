@@ -1,7 +1,7 @@
 ---
 id: 970
 title: Zu Gast beim MVP Global Summit bei Microsoft
-date: 2015-11-04 17:36
+date: 2015-11-04
 author: Fabian Gosebrink
 layout: post
 tags: global mvp summit microsoft

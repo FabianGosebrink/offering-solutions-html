@@ -1,7 +1,7 @@
 ---
 id: 993
 title: Unterhaltsame Meetings in SCRUM
-date: 2014-09-18 19:00
+date: 2014-09-18
 author: Fabian Gosebrink
 layout: post
 tags: agile development scrum team teamwork
@@ -19,7 +19,7 @@ Entwickler mögen meist keine Meetings. Meetings halten sie von der Arbeit ab. D
 
 Im Folgenden möchte ich Tipps erläutern, die solche Meetings zwar nicht aus der Welt schaffen aber sie zumindest anders oder "saftiger" machen können. Ob (erfolgreich) getestet oder nur als Gedankenanstoss: Ich hoffe die folgenden Punkte bieten eine gute Grundlage zum Nachmachen und zum darauf aufbauen.
 
->SCRUM ist keine One-Man-Show
+> SCRUM ist keine One-Man-Show
 
 ### Was lange währt...
 
@@ -31,7 +31,7 @@ Meetings gehören in Timeboxen. Das ist kein genereller Ansatz aber gerade bei d
 
 Beispiel: Das Grooming wird als Meeting eingeführt und das Team ist anfangs skeptisch. Nach einem Vorschlag das Grooming „nur“ 60 Minuten abzuhalten willigten alle ein. Natürlich ist dies zu wenig für einen langen Sprint. Dies wird deutlich wenn das Meeting penibel nach 60 Minuten zum Ende gebracht wird. Aber wenn das Meeting richtig genutzt (vorbereiten!) und durchgeführt wird (alle Teilnehmer anwesend, etc.), wird der Nutzen schnell klar. In einer folgenden Retro kam auf, dass das Grooming viel zu kurz ist: Das Team bespricht die Lösung und einigt sich selbstständig auf ein zwei Stunden dauerndes Meeting. Somit wurde der Sinn erkannt und die Initiative, das Meeting abzuhalten und den Product-Backlog zu pflegen, kam vom Team aus.
 
->Ist die Familienpizza viel zu gross für den Sprint, muss sie eventuell aufgeteilt werden
+> Ist die Familienpizza viel zu gross für den Sprint, muss sie eventuell aufgeteilt werden
 
 ### Abwechslung
 
@@ -45,7 +45,7 @@ Ein Planungsmeeting dauert meistens sehr lange: Wieso nicht mit einem Rätsel st
 
 Das Daily-Standup-Meeting ist ein Meeting im Stehen: Investieren sie in ein billiges Mikrophon und machen sie eine Moderation draus. Derjenige, der spricht, muss in das Mikro sprechen. Das stärkt das Team und ist ausserdem lustig. Zumindest für die anderen ;)
 
->Das Team organisiert sich selbst
+> Das Team organisiert sich selbst
 
 ### Ergebnisse
 

@@ -1,7 +1,7 @@
 ---
 id: 983
 title: How to modularize your angular application
-date: 2015-03-17 04:43
+date: 2015-03-17
 author: Fabian Gosebrink
 layout: post
 tags: angularjs modules
@@ -21,7 +21,7 @@ Well one of the killer features for me in angular is its modularization. Even wh
 
 ```javascript
 var app = angular.module('TestApp', [
-    //...
+  //...
 ]);
 ```
 
@@ -41,25 +41,25 @@ And register your services on these modules.
 var homeModule = angular.module('home.homeModule', ['ngRoute']);
 
 homeModule.config(function($routeProvider) {
-    $routeProvider
-        .when('/', {
-            controller: 'home.controllers.homeController',
-            templateUrl: '/app/Home/Templates/overview.html',
-        })
-        .otherwise({ redirectTo: '/' });
+  $routeProvider
+    .when('/', {
+      controller: 'home.controllers.homeController',
+      templateUrl: '/app/Home/Templates/overview.html'
+    })
+    .otherwise({ redirectTo: '/' });
 });
 ```
 
 ```javascript
 'use strict';
 homeModule.controller('home.controllers.homeController', [
-    '$scope',
-    'home.services.peopleService',
-    'toaster',
-    'cfpLoadingBar',
-    function($scope, peopleService, toaster, cfpLoadingBar) {
-        //...
-    },
+  '$scope',
+  'home.services.peopleService',
+  'toaster',
+  'cfpLoadingBar',
+  function($scope, peopleService, toaster, cfpLoadingBar) {
+    //...
+  }
 ]);
 ```
 
@@ -67,13 +67,13 @@ Then you have to load your modules in your app like this:
 
 ```javascript
 var app = angular.module('TestApp', [
-    'ngRoute',
-    'ngResource',
-    'toaster',
-    'chieffancypants.loadingBar',
+  'ngRoute',
+  'ngResource',
+  'toaster',
+  'chieffancypants.loadingBar',
 
-    'home.homeModule',
-    'contact.contactModule',
+  'home.homeModule',
+  'contact.contactModule'
 ]);
 ```
 

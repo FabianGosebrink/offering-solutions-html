@@ -1,7 +1,7 @@
 ---
 id: 987
 title: Jeder braucht einen Scrum-Master!
-date: 2015-01-20 08:00
+date: 2015-01-20
 author: Fabian Gosebrink
 layout: post
 tags: scrum master

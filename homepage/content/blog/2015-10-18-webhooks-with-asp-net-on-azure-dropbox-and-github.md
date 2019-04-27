@@ -1,7 +1,7 @@
 ---
 id: 971
 title: WebHooks with ASP.NET on Azure - DropBox and GitHub
-date: 2015-10-18 19:50
+date: 2015-10-18
 author: Fabian Gosebrink
 layout: post
 tags: aspnet azure dropbox github visualstudio webhooks
@@ -84,11 +84,11 @@ Be sure to call this register method from your app start. In this case I use Owi
 
 ```html
 <configuration>
-    <appSettings>
+  <appSettings>
     <add key="MS_WebHookReceiverSecret_GitHub" value="[MyGitHubKey]" />
     <add key="MS_WebHookReceiverSecret_Dropbox" value="[MyDropBoxAppKey]" />
-    </appSettings>
-    ...
+  </appSettings>
+  ...
 </configuration>
 ```
 

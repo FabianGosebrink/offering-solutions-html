@@ -1,6 +1,6 @@
 ---
 title: Moving your Angular application from SystemJS to Webpack
-date: 2017-02-26 16:46
+date: 2017-02-26
 author: Fabian Gosebrink
 layout: post
 tags: angular systemjs webpack
@@ -232,8 +232,8 @@ We will set the environment from the outside later. To consume it in your applic
 
 ```javascript
 module.exports = function(env) {
-    console.log(env);
-    return require(`./webpack.${env}.js`);
+  console.log(env);
+  return require(`./webpack.${env}.js`);
 };
 ```
 

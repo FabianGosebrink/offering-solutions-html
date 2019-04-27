@@ -1,6 +1,6 @@
 ---
 title: CRUD operations in Angular with ASP.NET Core and HATEOAS
-date: 2017-11-29 18:40
+date: 2017-11-29
 author: Fabian Gosebrink
 layout: post
 tags: aspnetcore angular material hateoas
@@ -28,11 +28,11 @@ You can find the code here: [https://github.com/FabianGosebrink/ASPNETCore-Angul
 
 1. [What is HATEOAS](#whatishateoas)
 2. [The Backend](#thebackend)
-    1. [Customer Controller](#customercontroller)
-    2. [The response](#theresponse)
+   1. [Customer Controller](#customercontroller)
+   2. [The response](#theresponse)
 3. [The Frontend](#thefrontend)
-    1. [The data services](#thedataservicesfrontend)
-    2. [The components](#thecomponents)
+   1. [The data services](#thedataservicesfrontend)
+   2. [The components](#thecomponents)
 4. [Links](#links)
 
 ## <a name="whatishateoas">What is HATEOAS</a>
@@ -279,53 +279,53 @@ So if we now start the WebAPI with `dotnet run` and fire a request to the endpoi
 
 ```json
 {
-    "value": [
+  "value": [
+    {
+      "id": 1,
+      "name": "Phil Collins",
+      "created": "2017-11-17T20:23:36.2179591+01:00",
+      "links": [
         {
-            "id": 1,
-            "name": "Phil Collins",
-            "created": "2017-11-17T20:23:36.2179591+01:00",
-            "links": [
-                {
-                    "href": "http://localhost:5000/api/customers/1",
-                    "rel": "self",
-                    "method": "GET"
-                },
-                {
-                    "href": "http://localhost:5000/api/customers/1",
-                    "rel": "delete",
-                    "method": "DELETE"
-                },
-                {
-                    "href": "http://localhost:5000/api/customers",
-                    "rel": "create",
-                    "method": "POST"
-                },
-                {
-                    "href": "http://localhost:5000/api/customers/1",
-                    "rel": "update",
-                    "method": "PUT"
-                }
-            ]
-        }
-        // ... more of values here
-    ],
-    "links": [
-        {
-            "href": "http://localhost:5000/api/customers?pagecount=50&page=1&orderby=Name",
-            "rel": "self",
-            "method": "GET"
+          "href": "http://localhost:5000/api/customers/1",
+          "rel": "self",
+          "method": "GET"
         },
         {
-            "href": "http://localhost:5000/api/customers?pagecount=50&page=1&orderby=Name",
-            "rel": "first",
-            "method": "GET"
+          "href": "http://localhost:5000/api/customers/1",
+          "rel": "delete",
+          "method": "DELETE"
         },
         {
-            "href": "http://localhost:5000/api/customers?pagecount=50&page=1&orderby=Name",
-            "rel": "last",
-            "method": "GET"
+          "href": "http://localhost:5000/api/customers",
+          "rel": "create",
+          "method": "POST"
+        },
+        {
+          "href": "http://localhost:5000/api/customers/1",
+          "rel": "update",
+          "method": "PUT"
         }
-    ]
+      ]
+    }
+    // ... more of values here
+  ],
+  "links": [
+    {
+      "href": "http://localhost:5000/api/customers?pagecount=50&page=1&orderby=Name",
+      "rel": "self",
+      "method": "GET"
+    },
+    {
+      "href": "http://localhost:5000/api/customers?pagecount=50&page=1&orderby=Name",
+      "rel": "first",
+      "method": "GET"
+    },
+    {
+      "href": "http://localhost:5000/api/customers?pagecount=50&page=1&orderby=Name",
+      "rel": "last",
+      "method": "GET"
+    }
+  ]
 }
 ```
 
@@ -335,9 +335,9 @@ Because of the `QueryParameters` we can also fire a requeste like `http://localh
 
 The frontend application is implemented using AngularCLI and Angular Material. The SPA application has 3 modules:
 
--   core - Provides the base services to the application
--   customer - Has all customer related components such as the list and the details
--   app - the application module
+- core - Provides the base services to the application
+- customer - Has all customer related components such as the list and the details
+- app - the application module
 
 which you can see in the repository.
 
@@ -391,27 +391,27 @@ The specific `CustomerDataService` then exposes only one method by extending the
 ```javascript
 @Injectable()
 export class CustomerDataService extends HttpBaseService {
-    fireRequest(customer: Customer, method: string) {
-        const links = customer.links
-            ? customer.links.find(x => x.method === method)
-            : null;
+  fireRequest(customer: Customer, method: string) {
+    const links = customer.links
+      ? customer.links.find(x => x.method === method)
+      : null;
 
-        switch (method) {
-            case 'DELETE': {
-                return super.delete(links.href);
-            }
-            case 'POST': {
-                return super.add < Customer > customer;
-            }
-            case 'PUT': {
-                return super.update < Customer > (links.href, customer);
-            }
-            default: {
-                console.log(`${links.method} not found!!!`);
-                break;
-            }
-        }
+    switch (method) {
+      case 'DELETE': {
+        return super.delete(links.href);
+      }
+      case 'POST': {
+        return super.add < Customer > customer;
+      }
+      case 'PUT': {
+        return super.update < Customer > (links.href, customer);
+      }
+      default: {
+        console.log(`${links.method} not found!!!`);
+        break;
+      }
     }
+  }
 }
 ```
 

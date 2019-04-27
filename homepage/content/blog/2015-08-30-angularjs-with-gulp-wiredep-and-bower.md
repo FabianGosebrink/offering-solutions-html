@@ -1,7 +1,7 @@
 ---
 id: 974
 title: AngularJS with gulp, wiredep and bower
-date: 2015-08-30 11:18
+date: 2015-08-30
 author: Fabian Gosebrink
 layout: post
 tags: angularjs bower github gulp wiredep
@@ -33,28 +33,28 @@ var inject = require('gulp-inject');
 var config = require('./gulp.config')();
 
 gulp.task('vet', function() {
-    return gulp
-        .src(config.srcJSFiles)
-        .pipe(jscs())
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish', { verbose: true }));
+  return gulp
+    .src(config.srcJSFiles)
+    .pipe(jscs())
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish', { verbose: true }));
 });
 
 gulp.task('injectJsIntoIndex', ['vet'], function() {
-    var wiredep = require('wiredep').stream;
-    var options = config.getWiredepDefaultOptions();
+  var wiredep = require('wiredep').stream;
+  var options = config.getWiredepDefaultOptions();
 
-    var target = gulp.src(config.targetIndexHtmlFile);
-    var sources = gulp.src(config.srcJSFiles);
+  var target = gulp.src(config.targetIndexHtmlFile);
+  var sources = gulp.src(config.srcJSFiles);
 
-    return target
-        .pipe(
-            inject(sources, {
-                addRootSlash: false,
-            })
-        )
-        .pipe(wiredep(options))
-        .pipe(gulp.dest(config.root));
+  return target
+    .pipe(
+      inject(sources, {
+        addRootSlash: false
+      })
+    )
+    .pipe(wiredep(options))
+    .pipe(gulp.dest(config.root));
 });
 ```
 
@@ -66,34 +66,34 @@ The gulp-config is seperated:
 
 ```javascript
 module.exports = function() {
-    var config = {
-        srcJSFiles: [
-            './app/*.js',
-            './app/*/*.js',
-            './app/*/*/*.js',
-            '!./node_modules/**/*.js',
-        ],
-        targetIndexHtmlFile: 'index.html',
-        root: './',
+  var config = {
+    srcJSFiles: [
+      './app/*.js',
+      './app/*/*.js',
+      './app/*/*/*.js',
+      '!./node_modules/**/*.js'
+    ],
+    targetIndexHtmlFile: 'index.html',
+    root: './',
 
-        bower: {
-            json: require('./bower.json'),
-            directory: './libs',
-            ignorePath: '../..',
-        },
+    bower: {
+      json: require('./bower.json'),
+      directory: './libs',
+      ignorePath: '../..'
+    }
+  };
+
+  config.getWiredepDefaultOptions = function() {
+    var options = {
+      bowerJson: config.bower.json,
+      directory: config.bower.directory,
+      ignorePath: config.bower.ignorePath
     };
 
-    config.getWiredepDefaultOptions = function() {
-        var options = {
-            bowerJson: config.bower.json,
-            directory: config.bower.directory,
-            ignorePath: config.bower.ignorePath,
-        };
+    return options;
+  };
 
-        return options;
-    };
-
-    return config;
+  return config;
 };
 ```
 

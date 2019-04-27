@@ -1,6 +1,6 @@
 ---
 title: Cross Platform Builds with Angular, Gulp and Webpack
-date: 2016-06-17 19:09
+date: 2016-06-17
 author: Fabian Gosebrink
 layout: post
 tags: angular gulp webpack
@@ -11,7 +11,7 @@ subclass: 'post tag-speeches'
 disqus: true
 categories: articles
 redirect_from:
-    - /blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/
+  - /blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/
 ---
 
 In this blogpost I want to show how to create Cross Platform Builds with Angular, Gulp and Webpack
@@ -58,56 +58,56 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        polyfills: './app/polyfills.ts',
-        vendor: './app/vendor.ts',
-        app: './app/main.ts',
-    },
-    resolve: {
-        extensions: ['', '.ts', '.js', '.css', '.html'],
-    },
-    output: {
-        filename: '[name].bundle.js',
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.ts$/,
-                loader: 'ts',
-            },
-            {
-                test: /\.html$/,
-                loader: 'html',
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'file?name=fonts/[name].[hash].[ext]',
-            },
-            {
-                test: /\.css$/,
-                exclude: './app',
-                loader: ExtractTextPlugin.extract('style', 'css?sourceMap'),
-            },
-            {
-                test: /\.css$/,
-                include: './app',
-                loader: 'raw',
-            },
-        ],
-    },
-    plugins: [
-        new ExtractTextPlugin('[name].bundle.css'),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['app', 'vendor', 'polyfills'],
-        }),
-        new HtmlWebpackPlugin({
-            template: './index.html',
-        }),
-    ],
-    devServer: {
-        historyApiFallback: true,
-        stats: 'minimal',
-    },
+  entry: {
+    polyfills: './app/polyfills.ts',
+    vendor: './app/vendor.ts',
+    app: './app/main.ts'
+  },
+  resolve: {
+    extensions: ['', '.ts', '.js', '.css', '.html']
+  },
+  output: {
+    filename: '[name].bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.ts$/,
+        loader: 'ts'
+      },
+      {
+        test: /\.html$/,
+        loader: 'html'
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+        loader: 'file?name=fonts/[name].[hash].[ext]'
+      },
+      {
+        test: /\.css$/,
+        exclude: './app',
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+      },
+      {
+        test: /\.css$/,
+        include: './app',
+        loader: 'raw'
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('[name].bundle.css'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['app', 'vendor', 'polyfills']
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    })
+  ],
+  devServer: {
+    historyApiFallback: true,
+    stats: 'minimal'
+  }
 };
 ```
 
@@ -147,10 +147,10 @@ But how to deal with gulp? Well...there is an npm package...;) It's called `webp
 
 ```javascript
 gulp.task('web-compile-with-webpack', function() {
-    return gulp
-        .src('./app/main.js')
-        .pipe(webpack(require('../webpack.config.js')))
-        .pipe(gulp.dest('../.temp/webapp/'));
+  return gulp
+    .src('./app/main.js')
+    .pipe(webpack(require('../webpack.config.js')))
+    .pipe(gulp.dest('../.temp/webapp/'));
 });
 ```
 
@@ -162,44 +162,40 @@ Because we also have a dev-server from webpack in the repository above we will h
 
 ```html
 <html>
-
-<head>
+  <head>
     <title>FoodChooser Angular 2</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="vendor.bundle.css">
-    <link rel="stylesheet" href="app.bundle.css">
+    <link rel="stylesheet" href="vendor.bundle.css" />
+    <link rel="stylesheet" href="app.bundle.css" />
     <!-- endinject -->
+  </head>
 
-</head>
+  <!-- 3. Display the application -->
 
-<!-- 3. Display the application -->
-
-<body>
+  <body>
     <foodChooser-app>Loading...</foodChooser-app>
-</body>
+  </body>
 
-<script src="cordova.js"></script>
+  <script src="cordova.js"></script>
 
-<!-- inject:js -->
-<script src="polyfills.bundle.js"></script>
+  <!-- inject:js -->
+  <script src="polyfills.bundle.js"></script>
 
-<script src="vendor.bundle.js"></script>
+  <script src="vendor.bundle.js"></script>
 
-<script src="app.bundle.js"></script>
-<!-- endinject -->
+  <script src="app.bundle.js"></script>
+  <!-- endinject -->
 
-<script>
-    <!-- Toggle Hamburger Menu on mobile -->
-    $(document).on('click','.navbar-collapse.in',function(e) {
-    if( $(e.target).is('a') &amp;&amp; $(e.target).attr('class') != 'dropdown-toggle' ) {
-        $(this).collapse('hide');
-    }
-});
-
-</script>
-
+  <script>
+        <!-- Toggle Hamburger Menu on mobile -->
+        $(document).on('click','.navbar-collapse.in',function(e) {
+        if( $(e.target).is('a') &amp;&amp; $(e.target).attr('class') != 'dropdown-toggle' ) {
+            $(this).collapse('hide');
+        }
+    });
+  </script>
 </html>
 ```
 
@@ -207,15 +203,15 @@ The complete tasks for the web solution are:
 
 ```javascript
 gulp.task('build:web:prod', function(done) {
-    runSeq(
-        'web-clean-temp-folder', // cleans the temp folder
-        'web-compile-with-webpack', // compiles the sources with webpack
-        'web-copy-index-to-webapp-temp-folder', // copies the index.html to the temp folder
-        'web-inject-in-html', // injects the webpack-output into the index.html with gulp
-        'web-clean-dist-folder', // clean the dist folder first...
-        'web-copy-to-dist', // copy it
-        done
-    );
+  runSeq(
+    'web-clean-temp-folder', // cleans the temp folder
+    'web-compile-with-webpack', // compiles the sources with webpack
+    'web-copy-index-to-webapp-temp-folder', // copies the index.html to the temp folder
+    'web-inject-in-html', // injects the webpack-output into the index.html with gulp
+    'web-clean-dist-folder', // clean the dist folder first...
+    'web-copy-to-dist', // copy it
+    done
+  );
 });
 ```
 
@@ -272,15 +268,15 @@ See the required steps fo r e.g. a cordova-build here:
 
 ```javascript
 gulp.task('build:electron:prod', function(done) {
-    runSeq(
-        'electron-clean-temp',
-        'electron-compile-with-webpack',
-        'electron-copy-index-to-temp-folder',
-        'electron-inject-in-html',
-        'electron-copy-assets-to-temp-folder',
-        'electron-build-win',
-        done
-    );
+  runSeq(
+    'electron-clean-temp',
+    'electron-compile-with-webpack',
+    'electron-copy-index-to-temp-folder',
+    'electron-inject-in-html',
+    'electron-copy-assets-to-temp-folder',
+    'electron-build-win',
+    done
+  );
 });
 ```
 

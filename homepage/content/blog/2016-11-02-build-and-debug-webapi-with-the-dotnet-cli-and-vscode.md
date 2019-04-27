@@ -1,6 +1,6 @@
 ---
 title: Build and debug a WebAPI with the Dotnet CLI and VSCode
-date: 2016-11-02 09:30
+date: 2016-11-02
 author: Fabian Gosebrink
 layout: post
 tags: aspnetcore dotnet cli webapi
@@ -38,7 +38,6 @@ Modify the dotnetcliwebapi.csproj to this:
 
 ```html
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
@@ -53,9 +52,11 @@ Modify the dotnetcliwebapi.csproj to this:
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    <DotNetCliToolReference
+      Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools"
+      Version="2.0.0"
+    />
   </ItemGroup>
-
 </Project>
 ```
 

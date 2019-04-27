@@ -1,7 +1,7 @@
 ---
 id: 980
 title: Eine REST API ist mehr als eine API – Moderne Architekturen für verteilte Systeme
-date: 2015-05-01 17:35
+date: 2015-05-01
 author: Fabian Gosebrink
 layout: post
 tags: angularjs architecture aspnet development spa
@@ -19,13 +19,13 @@ In der heutigen Zeit ist es absolut unabdingbar eine Software, die man für inte
 
 Völlig unabhängig der eingesetzten Technologie (ASP.NET WebAPI, AngularJS, Xamarin, ASP.NET MVC, etc.) möchte ich mit diesem Blog einen Schritt zurückgehen und den Blick auf die Architektur lenken, die moderne Software-Lösungen voranbringen können. Hierbei werde ich zwar auch Technologien als Beispiel erwähnen, diese sind aber nur als Beispiel zu betrachten. Die Lösungen in dieser Hinsicht sind sicherlich vielfältiger als das hier geschriebene.
 
-### *Die ganze Welt schreibt Apis*
+### _Die ganze Welt schreibt Apis_
 
 Trotz dem gemeinsamen Fakt, dass vom Kunden maximale Verfügbarkeit gefordert wird, sind Lösungen in diesem Bereich sehr individuell anzusehen. Kunde A braucht eine Lösung in einer bestimmten Richtung, für Kunde B ist wiederum etwas anderes interessant, etc.
 
 Was viele gemeinsam haben ist jedoch, dass sie Daten aus einer bestimmten Quelle beziehen und ablegen und auf dem anderen Ende anzeigen müssen. Hierbei verwendet man heutzutage REST-APIs. Auf einer Entwicklerkonferenz habe ich ein Zitat aufgeschnappt, was mich nicht mehr loslässt:
 
->„Die ganze Welt schreibt APIs“
+> „Die ganze Welt schreibt APIs“
 
 Egal mit welcher Lösung man auf die Datensenke zugreift, also welche Anwendung der Kunde wünscht, ist es doch das Beste, man hat ein einheitliche Schnittstelle, gegen die man implementieren kann, die alle Operationen zur Verfügung stellt, die der Kunde braucht. Hierbei rede ich nicht nur von Daten, die abgerufen und abgelegt werden können. Hierbei geht es auch um Sortierungen, Paging, Datashaping, Autorisierung, Authentifizierung und und und. Moderne APIs stellen so etwas standardmässig zur Verfügung. Je nachdem ob der Client dies benutzen muss oder nicht: Die Funktionalität sollte auf jeden Fall implementiert sein. Wer weiss schon, welcher Client mit meiner Api kommuniziert? Die API sollte auf einem einheitlichen Standard basieren. Hier bietet sich der Standard an, der sich seit Jahren durchgesetzt hat: REST. Die API kann Http-Calls interpretieren und wie gewünscht auch mit einer entsprechenden Inhalt antworten.
 
@@ -41,9 +41,9 @@ Vor dem Hintergrund ist nun die einzige Anforderung an einen Client nur noch, da
 
 Die Clients könne vielfältig und in verschiedenen Sprachen entwickelt worden sein.
 
-*Web: Asp.Net MVC, JavaScript (bspw. AngularJS)*
-*Mobile: Xamarin, Native, AngularJS*
-*Desktop: WPF, AngularJS (Node WebKit)*
+_Web: Asp.Net MVC, JavaScript (bspw. AngularJS)_
+_Mobile: Xamarin, Native, AngularJS_
+_Desktop: WPF, AngularJS (Node WebKit)_
 
 ![2]({{site.baseurl}}assets/articles/wp-content/uploads/2015/05/2.png)
 

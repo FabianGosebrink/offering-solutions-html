@@ -1,6 +1,6 @@
 ---
 title: Talk bei den Microsoft Evolution Days in Zürich
-date: 2015-11-12 21:42
+date: 2015-11-12
 author: Fabian Gosebrink
 layout: post
 tags: angularjs restapi talks speaking
@@ -42,7 +42,7 @@ Diese Folie beschreibt wohl das, was AngularJS so mächtig macht. Das Framework 
 ![Folie41]({{site.baseurl}}assets/articles/wp-content/uploads/2015/11/Folie41.png)
 ![Folie44]({{site.baseurl}}assets/articles/wp-content/uploads/2015/11/Folie44.png)
 
-"$scope" ist wohl das Wort, was bei vielen ein Erleichtern auslöst. Es entspricht etwa dem ViewModel, welches man schon von anderen Applikationsarten kennt. Hierauf kann man im AngularJS Funktionen und Werte definieren, die man dann von der View aus via DataBinding konsumieren kann.
+"\$scope" ist wohl das Wort, was bei vielen ein Erleichtern auslöst. Es entspricht etwa dem ViewModel, welches man schon von anderen Applikationsarten kennt. Hierauf kann man im AngularJS Funktionen und Werte definieren, die man dann von der View aus via DataBinding konsumieren kann.
 
 ![Folie59]({{site.baseurl}}assets/articles/wp-content/uploads/2015/11/Folie59.png)
 

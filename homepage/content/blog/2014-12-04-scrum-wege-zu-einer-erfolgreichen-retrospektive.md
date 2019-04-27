@@ -1,7 +1,7 @@
 ---
 id: 988
 title: SCRUM - Wege zu einer erfolgreichen Retrospektive
-date: 2014-12-04 07:05
+date: 2014-12-04
 author: Fabian Gosebrink
 layout: post
 tags: retrospektive scrum

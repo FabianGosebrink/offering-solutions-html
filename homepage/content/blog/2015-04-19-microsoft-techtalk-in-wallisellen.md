@@ -1,7 +1,7 @@
 ---
 id: 981
 title: Microsoft TechTalk in Wallisellen
-date: 2015-04-19 17:52
+date: 2015-04-19
 author: Fabian Gosebrink
 layout: post
 tags: microsoft techtalk wallisellen talks speaking

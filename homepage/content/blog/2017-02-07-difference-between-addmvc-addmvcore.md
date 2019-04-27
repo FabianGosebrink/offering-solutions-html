@@ -1,6 +1,6 @@
 ---
 title: The difference between AddMvc() and AddMvcCore()
-date: 2017-02-07 20:49
+date: 2017-02-07
 author: Fabian Gosebrink
 layout: post
 tags: aspnet aspnetcore
@@ -46,30 +46,30 @@ brings
 
 ```javascript
 [
-    {
-        id: 1,
-        street: 'Street1',
-        city: 'Town1',
-        zipCode: 1234,
-    },
-    {
-        id: 2,
-        street: 'Street2',
-        city: 'Town2',
-        zipCode: 1234,
-    },
-    {
-        id: 3,
-        street: 'Street3',
-        city: 'Town3',
-        zipCode: 1234,
-    },
-    {
-        id: 4,
-        street: 'Street4',
-        city: 'Town4',
-        zipCode: 1234,
-    },
+  {
+    id: 1,
+    street: 'Street1',
+    city: 'Town1',
+    zipCode: 1234
+  },
+  {
+    id: 2,
+    street: 'Street2',
+    city: 'Town2',
+    zipCode: 1234
+  },
+  {
+    id: 3,
+    street: 'Street3',
+    city: 'Town3',
+    zipCode: 1234
+  },
+  {
+    id: 4,
+    street: 'Street4',
+    city: 'Town4',
+    zipCode: 1234
+  }
 ];
 ```
 

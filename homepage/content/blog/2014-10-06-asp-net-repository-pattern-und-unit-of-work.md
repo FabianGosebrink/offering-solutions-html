@@ -1,7 +1,7 @@
 ---
 id: 991
 title: ASP.NET Repository Pattern und Unit of Work
-date: 2014-10-06 20:39
+date: 2014-10-06
 author: Fabian Gosebrink
 layout: post
 tags: aspnet unitofwork
@@ -33,8 +33,7 @@ Das Repository-Pattern sieht vor, dass jedes Objekt (sei es ein Kunde, ein Artik
 
 Gerade bei Webapplikationen gilt: Datenbank-Anfragen sind teuer. Das sind sie wirklich: Denn je nachdem wie viele Anfragen abgesetzt werden kosten diese Zeit. Rechenzeit für den Server, den Anwender kostet dies Zeit, die er am und im Browser merkt und und und. Gerade im Cloud-Bereich wird dies sofort in bares Geld umgewandelt.
 
-> *Definition des Repository-Patterns von Fowler:*
- > _Vermittelt mit Hilfe einer Collection-artigen Schnittstelle für den Zugriff auf Domänenobjekte zwischen den Domänen- und Daten-Mapping-Schichten_
+> _Definition des Repository-Patterns von Fowler:_ > _Vermittelt mit Hilfe einer Collection-artigen Schnittstelle für den Zugriff auf Domänenobjekte zwischen den Domänen- und Daten-Mapping-Schichten_
 
 Die Vorteile des Patterns sind zum einen die vereinfachten Unit-Tests. Man kann jedes Repositoryeinfach testen und so auf seine korrekte Funktionalität überprüfen. Weiter bieten Repositories eine zentrale Anlaufstelle für Datenbankoperationen. Eine gemeinsame Schnittstelle gegenüber den Datenhaltungs-Schichten. Zudem bietet es einen Punkt, an dem man beispielsweise Mechanismen wie Caching implementieren kann.
 
