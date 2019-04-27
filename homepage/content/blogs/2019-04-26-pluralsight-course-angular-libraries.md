@@ -1,7 +1,7 @@
 ---
 title: Announcing First Pluralsight Course About Angular Libraries
 date: 2019-04-26
-tags: angular pluralsight libraries
+tags: ['angular', 'pluralsight', 'libraries']
 draft: false
 category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg

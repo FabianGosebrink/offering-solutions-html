@@ -22,6 +22,8 @@
               <h1>{{ .Title }}</h1>
             </header>
             <p>
+              {{ partial "readingtime.html" . }}
+
               <a href="{{ .Site.Params.baseURL }}/blogs/">back to all blogs</a>
             </p>
           </div>

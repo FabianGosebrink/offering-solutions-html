@@ -173,28 +173,38 @@ disqusShortname = "offeringsolutions"
     # Uses font awesome icons
     [[params.footer.social]]
       icon = "fa-twitter"
-      url= "https://www.twitter.com"
+      url= "https://twitter.com/FabianGosebrink"
       label = "Twitter"
 
     [[params.footer.social]]
       icon = "fa-twitter"
-      url= "https://www.twitter.com"
+      url= "https://twitter.com/OfferingSolu"
       label = "Twitter"
 
    [[params.footer.social]]
       icon = "fa-github"
-      url= "https://www.github.com"
+      url= "https://github.com/FabianGosebrink"
       label = "GitHub"
     
     [[params.footer.social]]
       icon = "fa-github"
-      url= "https://www.github.com"
+      url= "https://github.com/OfferingSolutions"
       label = "GitHub"
 
     [[params.footer.social]]
       icon = "fa-linkedin"
-      url= "https://www.linkedin.com"
+      url= "https://www.linkedin.com/in/fabian-gosebrink-71023a88"
       label = "LinkedIn"
+
+       [[params.footer.social]]
+      icon = "fa-xing"
+      url= "https://www.xing.com/profile/Fabian_Gosebrink"
+      label = "Xing"
+
+      [[params.footer.social]]
+      icon = "fa-windows"
+      url= "https://mvp.microsoft.com/en-us/PublicProfile/5001666?fullName=Fabian%20%20Gosebrink"
+      label = "Microsoft"
 
     [[params.footer.quicklinks]]
       text = "Design: "

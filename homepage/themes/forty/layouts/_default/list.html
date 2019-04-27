@@ -37,8 +37,11 @@
                   </h3>
                 </header>
                 <p>
-                  {{ dateFormat "Monday, Jan 2, 2006" .Date }} | Tags:
-                  {{ .Params.Tags }}
+                  {{ partial "readingtime.html" . }}
+                  {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+                  {{ if gt .Params.Tags 1 }}
+                  | Tags: {{ delimit .Params.tags ", " }}
+                  {{ end }}
                 </p>
                 <p>{{ .Description | safeHTML | truncate 100}}</p>
                 <ul class="actions">
