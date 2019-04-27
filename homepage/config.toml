@@ -51,9 +51,9 @@ disqusShortname = "offeringsolutions"
       name = "Blogs"
       url = "blogs"
 
-    [[params.navigation.links]]
-      name = "About"
-      url = "about"
+    # [[params.navigation.links]]
+    #   name = "Personal Site"
+    #   url = "about"
 
     # Add custom links here by uncommenting code below. To remove links just delete
     # the [[params.navigation.links]] map associated with that link. Copy and paste
@@ -63,9 +63,9 @@ disqusShortname = "offeringsolutions"
     #    url = "UrlOfLink"
 
     # Button Style 1
-    # [[params.navigation.button1]]
-    #   name = "Get Started"
-    #   url = "blogs"
+    [[params.navigation.button2]]
+      name = "To Personal Site"
+      url = "https://fabian-gosebrink.com"
 
     # Button Style 2
    #  [[params.navigation.button2]]

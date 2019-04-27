@@ -39,8 +39,11 @@
                 <p>
                   {{ partial "readingtime.html" . }}
                   {{ dateFormat "Monday, Jan 2, 2006" .Date }}
-                  {{ if gt .Params.Tags 1 }}
-                  | Tags: {{ delimit .Params.tags ", " }}
+                  {{ if gt .Params.Tags 1 }} 
+                  {{ range .Params.Tags }}
+                  <a href="{{ delimit (slice "/tags/" (urlize .) $.Site.Params.ugly) "" | relURL }}">{{ . }}</a>
+                  {{ end }}
+            
                   {{ end }}
                 </p>
                 <p>{{ .Description | safeHTML | truncate 100}}</p>
