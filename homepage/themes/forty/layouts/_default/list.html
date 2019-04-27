@@ -29,12 +29,15 @@
         <section id="two" class="spotlights">
             <input
                         type="text"
-                        name="demo-name"
+                        name="blogsearch"
                         class="searchinput"
-                        id="demo-name"
+                        id="blogsearch"
                         value=""
                         placeholder="Search blogs..."
                       />
+
+                      <div id="blogPosts"></div>
+
           {{ $paginator := .Paginate (where .Site.Pages "Type" "blog") }}
           {{ range .Paginator.Pages.ByDate.Reverse }}
           <section>
