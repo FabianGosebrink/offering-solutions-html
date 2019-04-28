@@ -6,7 +6,8 @@
  {{ else }}
  <meta property="og:type" content="website">
  {{ end }}
- <meta property="og:description" content="{{ .Description }}">
+
+ <meta property="og:description" content="{{ .Summary }}">
  <meta property="og:url" content="{{ .Permalink }}">
  <meta property="og:site_name" content="{{ .Site.Title }}">
  <meta property="og:locale" content="en_US" />
@@ -15,8 +16,6 @@
  {{ range .Params.tags }}
  <meta property="og:tags" content="{{ . }}">
  {{ end }}
- <!-- End of Open Graph -->
- <!-- Start of Twitter -->
 
  <meta name="twitter:site" content="@FabianGosebrink">
  <meta name="twitter:creator" content="@FabianGosebrink">
@@ -27,9 +26,7 @@
  <meta name="twitter:card" content="summary_large_image" />
  <meta name="twitter:image" content="{{ .Site.Params.baseURL }}/img/blog/{{ .Params.image }}" /> {{ else }}
  <meta name="twitter:title" content="{{ .Site.Title }}" />
- <meta name="twitter:description" content="{{ .Description }}" /> 
  {{ end }}
- <!-- End of Twitter -->
 
 
 <!-- 
