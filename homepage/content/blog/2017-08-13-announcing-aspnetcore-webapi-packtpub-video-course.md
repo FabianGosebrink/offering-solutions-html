@@ -1,15 +1,13 @@
 ---
 title: Announcing ASP.NET Core WebAPI PacktPub Video Course
 date: 2017-08-13
-author: Fabian Gosebrink
-layout: post
-tags: aspnetcore microphone recording screenrecording
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['aspnetcore', 'recording']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2017/08/13/announcing-aspnetcore-webapi-packtpub-video-course/"
+]
 ---
 
 I am very proud and really happy to announce that my video course "RESTful Web services with ASP.NET Core" was published on _Packt_. You can find it here:

@@ -1,15 +1,13 @@
 ---
 title: Angular - New HTTP interface with interceptors
 date: 2017-07-19
-author: Fabian Gosebrink
-layout: post
-tags: angular http REST
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'http']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2017/07/19/angular-2-new-http-interface-with-interceptors/"
+]
 ---
 
 In this blogpost I want to explore the latest HTTP interface from angular which was introduced in Angular 4.3.

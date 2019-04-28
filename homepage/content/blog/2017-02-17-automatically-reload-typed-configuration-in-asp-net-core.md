@@ -1,15 +1,13 @@
 ---
 title: Automatically reload typed configuration in ASP.NET Core
 date: 2017-02-17
-author: Fabian Gosebrink
-layout: post
-tags: ioptionssnapshot aspnetcore
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['aspnetcore', 'configuration']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2017/02/17/automatically-reload-typed-configuration-in-asp-net-core/"
+]
 ---
 
 In this article I want to explore IOptionsSnapshot and show how to work with IOptionsSnapshot in ASP.NET Core 1.1.

@@ -1,15 +1,13 @@
 ---
 title: The difference between AddMvc() and AddMvcCore()
 date: 2017-02-07
-author: Fabian Gosebrink
-layout: post
-tags: aspnet aspnetcore
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['aspnet', 'aspnetcore']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2017/02/07/difference-between-addmvc-addmvcore/"
+]
 ---
 
 In this blogpost I want to show you difference between the ASP.NET Core methods `AddMvc()` and `AddMvcCore()` when working with ASP.NET Core.

@@ -1,15 +1,13 @@
 ---
 title: Separating state into angular modules with ngrx
 date: 2018-02-10
-author: Fabian Gosebrink
-layout: post
-tags: angular ngrx
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'ngrx']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/"
+]
 ---
 
 In this blogpost I want to give you an explanation of the state tree of ngrx if you are working with a state and how to separate it into different modules.

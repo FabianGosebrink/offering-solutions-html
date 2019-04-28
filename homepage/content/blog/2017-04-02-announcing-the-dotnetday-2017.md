@@ -1,15 +1,13 @@
 ---
 title: Announcing the .NET Day 2017
 date: 2017-04-02
-author: Fabian Gosebrink
-layout: post
-tags: angular azure conference
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'azure', 'conference', 'speaking']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2017/04/02/announcing-the-dotnetday-2017/"
+]
 ---
 
 I am very happy to announce the .NET Day 2017 in Switzerland! In this blogpost I want to give you a small background information on this, how this idea came up and about the current status.

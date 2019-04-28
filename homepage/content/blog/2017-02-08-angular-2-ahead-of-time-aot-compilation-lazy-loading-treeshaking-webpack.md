@@ -1,15 +1,13 @@
 ---
 title: Angular Ahead Of Time (AoT) compilation, lazy loading and treeshaking with webpack
 date: 2017-02-08
-author: Fabian Gosebrink
-layout: post
-tags: angular webpack lazyloading treeshaking aot
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'webpack', 'lazyloading', 'treeshaking', 'aot']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2017/02/08/angular-2-ahead-of-time-aot-compilation-lazy-loading-treeshaking-webpack/"
+]
 ---
 
 In this blogpost I want to show you how to get Ahead Of Time compilation enabled with lazy loading in combination with webpack 2.

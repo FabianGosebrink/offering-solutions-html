@@ -1,15 +1,13 @@
 ---
 title: Moving your Angular application from SystemJS to Webpack
 date: 2017-02-26
-author: Fabian Gosebrink
-layout: post
-tags: angular systemjs webpack
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'systemjs', 'webpack']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2017/02/26/moving-from-systemjs-to-webpack-angular-2/"
+]
 ---
 
 In this blogpost I want to show you how you can move from an existing Angular application using systemjs to an application with webpack.

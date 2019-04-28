@@ -1,15 +1,13 @@
 ---
 title: Using the Angular Material Paginator with ASP.NET Core and Angular
 date: 2017-11-21
-author: Fabian Gosebrink
-layout: post
-tags: aspnetcore angular material paging
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'material', 'aspnetcore']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2017/11/21/using-the-angular-material-paginator-with-aspnetcore-angular/"
+]
 ---
 
 In this blogpost I want to show you how to use Angular Material with Angular to use a table with paging which is driven by an ASP.NET Core WebAPI.

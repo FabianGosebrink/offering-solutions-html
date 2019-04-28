@@ -1,15 +1,13 @@
 ---
 title: Lessons learnt from organising a conference
 date: 2017-07-18
-author: Fabian Gosebrink
-layout: post
-tags: angular azure conference angular dotnet
-logo: 'assets/images/logo_small.png'
-navigation: true
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'azure', 'conference', 'speaking']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2017/07/18/things-i-learned-from-organising-a-conference/"
+]
 ---
 
 It has been quiet here for a while... :-)

@@ -1,15 +1,13 @@
 ---
 title: Speaking at the Microsoft TechDays 2017
 date: 2017-01-02
-author: Fabian Gosebrink
-layout: post
-tags: microsoft speaking techdays
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['speaking', 'microsoft']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2017/01/02/speaking-at-the-microsoft-techdays-2017/"
+]
 ---
 
 I am very proud to announce that I will be speaking at the Microsoft TechDays 2017 about Angular and ASP.NET Core.
