@@ -8,20 +8,20 @@
 	<title>{{ .Title }}{{ if not .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
 	{{ "<!-- Stylesheets -->" | safeHTML }}
 	<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="{{ "css/main.css"}}"/>
+	<link rel="stylesheet" href="{{ "css/main.css" | absURL}}"/>
 	<!--[if lte IE 9]><link rel="stylesheet" href="{{ "css/ie9.css" }}"/><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="{{ "css/ie8.css" }}"/><![endif]-->
 
 	{{ range .Site.Params.custom_css }}
-		<link rel="stylesheet" href="{{ . }}">
+		<link rel="stylesheet" href="{{ . | absURL }}">
 	{{ end }}
 
 	{{ "<!-- Custom Fonts -->" | safeHTML }}
-	<link href="{{ "css/font-awesome.min.css" }}" rel="stylesheet" type="text/css">
+	<link href="{{ "css/font-awesome.min.css" | absURL }}" rel="stylesheet" type="text/css">
 
 	{{ with .Site.Params.favicon }}
-	<link rel="shortcut icon" type="image/x-icon" href="{{ .  }}">
-	<link rel="icon" type="image/x-icon" href="{{ . }}">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ . | absURL }}">
+	<link rel="icon" type="image/x-icon" href="{{ . | absURL }}">
 	{{ end }}
 
 	{{ "<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->" | safeHTML }}
