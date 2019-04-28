@@ -253,7 +253,7 @@ But it would be nice to show _specific_ error messages to the users and not onl
 
 And that's basically it.
 
-![Angular2CustomValidators]({{site.baseurl}}assets/articles/wp-content/uploads/2016/05/Angular2CustomValidators.jpg)
+![Angular2CustomValidators](/img/articles/wp-content/uploads/2016/05/Angular2CustomValidators.jpg)
 
 HTH
 

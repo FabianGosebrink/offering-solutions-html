@@ -25,7 +25,7 @@ Code can be found here: [https://github.com/FabianGosebrink/Foodchooser-ASPNET-A
 
 The folder structure is very important but also one of the most discussed in the internet I think ;). Mine looks like the following:
 
-![Angular2 webpack]({{site.baseurl}}assets/articles/wp-content/uploads/2016/06/folderStructure.png)
+![Angular2 webpack](/img/articles/wp-content/uploads/2016/06/folderStructure.png)
 
 Whereas "app" contains my Angular 2 application and the other files and folders speak for theirselves.
 
@@ -45,7 +45,7 @@ The solution (or at least one of them) is webpack. Webpack is slightly different
 
 Now I want to show you the files which can make this whole thing possible. See the "gulptasks"-folder to divide the responsibilities of building each target platform.
 
-![angular2 webpack]({{site.baseurl}}assets/articles/wp-content/uploads/2016/06/gulpFiles.png)
+![angular2 webpack](/img/articles/wp-content/uploads/2016/06/gulpFiles.png)
 
 ### webpack.config.js
 
@@ -257,7 +257,7 @@ After we run this the index.html looks quite the same:
 
 But this time the sources got injected. See the dist folder here:
 
-![dist]({{site.baseurl}}assets/articles/wp-content/uploads/2016/06/dist.png)
+![dist](/img/articles/wp-content/uploads/2016/06/dist.png)
 
 With this approach we can go ahead as usual when building electron or cordova-things with gulp.
 

@@ -12,7 +12,7 @@ aliases: [
 
 In diesem Blogpost stelle ich meinen Kurs: _Frontend-Entwicklung mit AngularJS_ vor.
 
-![Angular_With_Digicomp]({{site.baseurl}}assets/images/Angular_With_Digicomp.png)
+![Angular_With_Digicomp](/img/images/Angular_With_Digicomp.png)
 
 Anfang dieses Jahres kam Digicomp auf mich zu und hat mich gefragt ob ich neben meinen Talks auch mal einen Kurs geben möchte. Natürlich habe ich nicht "Nein" gesagt.
 

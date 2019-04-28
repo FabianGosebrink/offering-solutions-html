@@ -70,7 +70,7 @@ public class Project
 You should have a normal DatabaseContext with all your entities on it and your model-creating-stuff using the FluentAPI.
 Nothing new until here. I am always hiding things in namespaces, so in my root-folder I am creating a "Repositories"-Folder which is hiding all my Repo-stuff.
 
-![ASP.NET MVC - Generic Repositories and UnitOfWork]({{site.baseurl}}assets/articles/2014-07-01/11.png)
+![ASP.NET MVC - Generic Repositories and UnitOfWork](/img/articles/2014-07-01/11.png)
 
 Let’s go into this in detail:
 For offering the same operations on every entity we have we need something like a base-class (with interface) which offers us everything we can do with an object (CRUD with a little bit more. Let’s call it CRUD+ ;) ).
@@ -373,17 +373,17 @@ The `GetGenericRepository()` can be used if you would like to have standard CRUD
 The `GetCustomRepository()` can give you back the custom repository which you have implemented because you want to have like other functions or for any other reason. You just have to implement its interface and offer it through the UoW-Interface.
 You can also do extended interfaces, if you want to extend the CRUD-Methods because they are not enough.
 
-![ASP.NET MVC - Generic Repositories and UnitOfWork]({{site.baseurl}}assets/articles/2014-07-01/21.png)
+![ASP.NET MVC - Generic Repositories and UnitOfWork](/img/articles/2014-07-01/21.png)
 
 Just let the repository-interface inherit from your repositorybase-interface and the class from the repositorybase-implementation. Because the methods are virtual you can override them or just add new functions.
 You can provide it again with the normal UoW-Interface:
 
-![ASP.NET MVC - Generic Repositories and UnitOfWork]({{site.baseurl}}assets/articles/2014-07-01/31.png)
+![ASP.NET MVC - Generic Repositories and UnitOfWork](/img/articles/2014-07-01/31.png)
 
 Now you have a generic repository which you can user for every entity. Its extendable with very few steps and you are also free if you want to use own repositories.
 Wrapped in namespaces this it how it could look to you:
 
-![ASP.NET MVC - Generic Repositories and UnitOfWork]({{site.baseurl}}assets/articles/2014-07-01/41.png)
+![ASP.NET MVC - Generic Repositories and UnitOfWork](/img/articles/2014-07-01/41.png)
 
 You can use it now from the outside with
 

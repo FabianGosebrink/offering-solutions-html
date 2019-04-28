@@ -12,7 +12,7 @@ aliases: [
 
 In diesem Blogpost möchte ich das ASP.NET Repository Pattern and Unit of Work vorstellen. In einem Informationssystem (z.B. Webapplikation) hat man normalerweise immer dasselbe Problem: Irgendwie muss man Daten persistieren und von der Oberfläche im Browser in die Datenbank hin- und wieder zurückschieben. Und dies findet man beinahe bei jedem Objekt (Person, Artikel, Blogeintrage, etc.). Vor allem fällt nach einer Zeit auf, dass die Operationen immer dieselben sind: **C**reate/**R**ead/**U**pdate und **D**elete geben sich die Klinke in die Hand. Dies sind die sogenannten CRUD-Operationen.
 
-![ASP.NET Repository Pattern und Unit of Work]({{site.baseurl}}assets/articles/2014-10-06/01.png)
+![ASP.NET Repository Pattern und Unit of Work](/img/articles/2014-10-06/01.png)
 
 Um diese Datenoperationen so einfach, so sinnvoll und so übersichtlich wie möglich zu halten bietet sich das Repository- in der Kombination mit dem UnitOfWork-Pattern an. Vor allem, aber nicht nur, im Web-Bereich.
 
@@ -34,11 +34,11 @@ Gerade bei Webapplikationen gilt: Datenbank-Anfragen sind teuer. Das sind sie wi
 
 Die Vorteile des Patterns sind zum einen die vereinfachten Unit-Tests. Man kann jedes Repositoryeinfach testen und so auf seine korrekte Funktionalität überprüfen. Weiter bieten Repositories eine zentrale Anlaufstelle für Datenbankoperationen. Eine gemeinsame Schnittstelle gegenüber den Datenhaltungs-Schichten. Zudem bietet es einen Punkt, an dem man beispielsweise Mechanismen wie Caching implementieren kann.
 
-![ASP.NET Repository Pattern und Unit of Work]({{site.baseurl}}assets/articles/2014-10-06/02.png)
+![ASP.NET Repository Pattern und Unit of Work](/img/articles/2014-10-06/02.png)
 
 Trotzdem hat man immernoch das „Problem“, dass man jede Abfrage direkt, also unverzüglich, an die Datenbank sendet.
 
-![ASP.NET Repository Pattern und Unit of Work]({{site.baseurl}}assets/articles/2014-10-06/03.png)
+![ASP.NET Repository Pattern und Unit of Work](/img/articles/2014-10-06/03.png)
 
 **UnitOfWork:**
 
@@ -52,19 +52,19 @@ Nebenbei: Jeder, der das EntityFramework bisher benutzt hat, hat das UnitOfWork-
 
 Im Folgenden möchte ich so eine Implementierung vorstellen und ein Nuget-Paket von mir vorstellen, das die Arbeit mit dem UnitOfWork so einfach wie möglich macht.
 
-![ASP.NET Repository Pattern und Unit of Work]({{site.baseurl}}assets/articles/2014-10-06/04.png)
+![ASP.NET Repository Pattern und Unit of Work](/img/articles/2014-10-06/04.png)
 
 Benutzung des UnitOfWorks:
 
-![ASP.NET Repository Pattern und Unit of Work]({{site.baseurl}}assets/articles/2014-10-06/05.png)
+![ASP.NET Repository Pattern und Unit of Work](/img/articles/2014-10-06/05.png)
 
 Hierbei werden die Repositories im Prinzip generisch und implizit vom UnitOfWork zur Verfügung gestellt. Aber um das Testing zu verbessern und eine bessere Aufteilung zu gewährleisten kann und sollte man eigene Klassen für die Repositories erstellen und nutzen.
 
-![ASP.NET Repository Pattern und Unit of Work]({{site.baseurl}}assets/articles/2014-10-06/06.png)
+![ASP.NET Repository Pattern und Unit of Work](/img/articles/2014-10-06/06.png)
 
 Eine mögliche Aufteilung im Projekt könnte wie folgt aussehen (Am Beispiel eines Blog-Repositories)
 
-![ASP.NET Repository Pattern und Unit of Work]({{site.baseurl}}assets/articles/2014-10-06/07.png)
+![ASP.NET Repository Pattern und Unit of Work](/img/articles/2014-10-06/07.png)
 
 Verwendung könnte beispielsweise sein:
 

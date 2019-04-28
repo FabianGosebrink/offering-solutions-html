@@ -32,7 +32,7 @@ I think the best practice here is to seperate gulp itself on the one hand and th
 
 The `gulpfile.js` only contains the tasks whereas a file named like `gulp.config.js` is containing all your files, (temp-)paths, ... .
 
-![How you can organise gulp in your applications]({{site.baseurl}}assets/articles/wp-content/uploads/2016/05/gulpAndConfigFile.png 'gulptask folder')
+![How you can organise gulp in your applications](/img/articles/wp-content/uploads/2016/05/gulpAndConfigFile.png 'gulptask folder')
 
 You can include your config file in the gulpfile like this:
 
@@ -104,7 +104,7 @@ This makes the gulp tasks more generic.
 
 I've seen many ways how people organise the gulp tasks but it turned out for me it was the best way to have a folder called "gulpTasks" (or similar) where I put all my gulptasks in. I've seen this on many other repositories and also on conferences etc. It's always good to have a folder encapsulating all your gulpTasks like this:
 
-![alt text]({{site.baseurl}}assets/articles/wp-content/uploads/2016/05/folderGulpTasks.png 'gulptask folder')
+![alt text](/img/articles/wp-content/uploads/2016/05/folderGulpTasks.png 'gulptask folder')
 
 Here I seperate all the different systems I want to have an output for.
 
@@ -200,7 +200,7 @@ gulp.task('help', taskListing.withFilters(/-/));
 
 Which brings the following output:
 
-![tasks output]({{site.baseurl}}assets/articles/wp-content/uploads/2016/05/gulpTasks.png 'gulp task output')
+![tasks output](/img/articles/wp-content/uploads/2016/05/gulpTasks.png 'gulp task output')
 
 ## Further steps
 

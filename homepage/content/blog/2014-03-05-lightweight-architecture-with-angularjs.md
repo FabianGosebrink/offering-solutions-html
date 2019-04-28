@@ -32,27 +32,27 @@ As I mentioned ASP.NET MVC gives us a great but server-sided-technology to build
 
 Frameworks like Angular.js are nowadays able to build up a complete MV\*-Framework completely down on your client. Everybody who thought that JavaScript is a language without any structure, namespaces etc. can with tools like angular see, that this is not true. Angular.Js is a google-pushed Framework (that’s a reason why MS is not providing it in its templates 😉 ) where code can be separated into your well known controllers, into services and, of course, into your view model for html-views. The Dependency injection comes native with angular.js! With that you are facing real client-side architecture. It’s an architecture to write client-side-applications. Not only websites.
 
-![Lightweight architecture with AngularJS]({{site.baseurl}}assets/articles/2014-03-05/5ab97616-0c2c-4953-9bca-8f5c20415c45.png)
+![Lightweight architecture with AngularJS](/img/articles/2014-03-05/5ab97616-0c2c-4953-9bca-8f5c20415c45.png)
 
 The following screenshots shows an example of a view iterating over persons, which are called from a WebApi over services (see the following screenshots).
 
-![Lightweight architecture with AngularJS]({{site.baseurl}}assets/articles/2014-03-05/f45c07ec-ef2b-4369-86ac-786ec18ab1ee.png)
+![Lightweight architecture with AngularJS](/img/articles/2014-03-05/f45c07ec-ef2b-4369-86ac-786ec18ab1ee.png)
 
 The controller gets the “scope” injected, which is an angular.js-word for representing the view model. Here the persons are called from the service and set in the corresponding property.
 
-![Lightweight architecture with AngularJS]({{site.baseurl}}assets/articles/2014-03-05/d76d36a2-13d9-4bf4-9a1d-42a29d36536f.png)
+![Lightweight architecture with AngularJS](/img/articles/2014-03-05/d76d36a2-13d9-4bf4-9a1d-42a29d36536f.png)
 
 Here the services for the communication to the WebAPi are shown. I only divided the service which gets injected to the controller from the one who really gets the data. Theoretically this could be one single service.
 
-![Lightweight architecture with AngularJS]({{site.baseurl}}assets/articles/2014-03-05/d7b243d3-9c6e-48dd-9e16-37ee9f27127d.png)
+![Lightweight architecture with AngularJS](/img/articles/2014-03-05/d7b243d3-9c6e-48dd-9e16-37ee9f27127d.png)
 
 Your corresponding WebApi could look like:
 
-![Lightweight architecture with AngularJS]({{site.baseurl}}assets/articles/2014-03-05/a3bc7793-7ecf-4bcc-9121-e26908d668dc.png)
+![Lightweight architecture with AngularJS](/img/articles/2014-03-05/a3bc7793-7ecf-4bcc-9121-e26908d668dc.png)
 
 The last piece which fits everything together to get a real feeling of client-based-architecture is the routing, which you can navigate to your application with without having the feeling there is a server behind.
 
-![Lightweight architecture with AngularJS]({{site.baseurl}}assets/articles/2014-03-05/874e9c02-d238-4cc9-afca-686785cd9397.png)
+![Lightweight architecture with AngularJS](/img/articles/2014-03-05/874e9c02-d238-4cc9-afca-686785cd9397.png)
 
 With this angular.js-concept and WebAPI in the back you can get your information online, take it to your client and work with it. Navigation is client-based. Every behavior but the source of information is based on the client.
 

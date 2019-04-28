@@ -27,11 +27,11 @@ Find the code here:
 
 Select "File" --> "New Project”
 
-![How to set up Angular 2 and Webpack in Visual Studio with ASP.NET Core]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Clipboard01.jpg)
+![How to set up Angular 2 and Webpack in Visual Studio with ASP.NET Core](/img/articles/wp-content/uploads/2016/08/Clipboard01.jpg)
 
 And create a new project. In this case we name it "Angular2WebpackStarter". After creating you can take the empty template like this:
 
-![How to set up Angular 2 and Webpack in Visual Studio with ASP.NET Core]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Clipboard02.jpg)
+![How to set up Angular 2 and Webpack in Visual Studio with ASP.NET Core](/img/articles/wp-content/uploads/2016/08/Clipboard02.jpg)
 
 Make sure you have installed the latest typescript nuget package because we will need it later to work with angular and visual studio 2017.
 
@@ -153,7 +153,7 @@ Is configuring your tsc compiler. Whenever your run the “tsc” command from t
 
 Next we are going to fill the angularApp folder. Here we are going to be lazy. We are taking the [quickstart repo from angular.io](https://github.com/angular/quickstart) and copy the files we need form there. For the sake of simplicity we will only take the [app.module](https://github.com/angular/quickstart/blob/master/src/app/) to get things going. To be structured its best you create an app folder inside to place your code there.
 
-![Zwischenablage02]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Zwischenablage02.jpg)
+![Zwischenablage02](/img/articles/wp-content/uploads/2016/08/Zwischenablage02.jpg)
 
 But to start we need an index.html. And for webpack to be prepared we need an entrypoint for the polyfills and the vendor files we need for our app. Lets add these files.
 
@@ -345,7 +345,7 @@ Run npm install or let VS do this for you.
 
 Now that you've done this open up the Task Runner Explorer in Visual Studio and let the "Run - Development" go:
 
-![Zwischenablage04]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Zwischenablage04.jpg)
+![Zwischenablage04](/img/articles/wp-content/uploads/2016/08/Zwischenablage04.jpg)
 
 Et voila: our wwwroot-folder got filled with our entire app (or with what we have got so far). But there is one thing missing: The index.html!
 
@@ -382,7 +382,7 @@ at the top of the page. We need to include what we want to use ;)
 
 let it run again:
 
-![Zwischenablage05]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Zwischenablage05.jpg)
+![Zwischenablage05](/img/articles/wp-content/uploads/2016/08/Zwischenablage05.jpg)
 
 Lets take a look into this index.html:
 
@@ -481,7 +481,7 @@ public class Startup
 
 Now we have an index.html and we can press the play-button in Visual Studio:
 
-![Zwischenablage06]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Zwischenablage06.jpg)
+![Zwischenablage06](/img/articles/wp-content/uploads/2016/08/Zwischenablage06.jpg)
 
 So it is working!!
 
@@ -497,17 +497,17 @@ You can now change the "npm start" command but we will simply make another one l
 
 Now open a commandline to the level of your package.json and type "npm run startWebpackDevServer":
 
-![Zwischenablage07]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Zwischenablage07.jpg)
+![Zwischenablage07](/img/articles/wp-content/uploads/2016/08/Zwischenablage07.jpg)
 
 Let it open and browse to "localhost:8080"
 
-![Zwischenablage08]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Zwischenablage08.jpg)
+![Zwischenablage08](/img/articles/wp-content/uploads/2016/08/Zwischenablage08.jpg)
 
 There your app appears!
 
 So lets take a look how this behaves if we change a file...
 
-![Animation]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Animation.gif)
+![Animation](/img/articles/wp-content/uploads/2016/08/Animation.gif)
 
 Okay great.
 
@@ -517,7 +517,7 @@ Now lets go ahead and build this thing up to use development and production buil
 
 Lets take a closer look to what we did when we first ran our webpack:
 
-![How to set up Angular and Webpack in Visual Studio with ASP.NET Core]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Zwischenablage09.jpg)
+![How to set up Angular and Webpack in Visual Studio with ASP.NET Core](/img/articles/wp-content/uploads/2016/08/Zwischenablage09.jpg)
 
 There webpack is setting the variable "env" to "development". Lets use that!!!
 
@@ -536,7 +536,7 @@ So THIS is our new entrypoint for webpack, the new webpack.config.json!!
 
 Create a file which is called "webpack.prod.js" which will be our production file in the future. You should now have something like this:
 
-![How to set up Angular and Webpack in Visual Studio with ASP.NET Core]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Zwischenablage10.jpg)
+![How to set up Angular and Webpack in Visual Studio with ASP.NET Core](/img/articles/wp-content/uploads/2016/08/Zwischenablage10.jpg)
 
 To test this put a simple console.log in the production file like:
 
@@ -544,7 +544,7 @@ To test this put a simple console.log in the production file like:
 
 and let it run:
 
-![Zwischenablage11]({{site.baseurl}}assets/articles/wp-content/uploads/2016/08/Zwischenablage11.jpg)
+![Zwischenablage11](/img/articles/wp-content/uploads/2016/08/Zwischenablage11.jpg)
 
 So now lets pimp the production a bit. Its mostly the same we have so far for dev, but we need a little more plugins. Maybe the one to uglify the js [UglifyJsPlugin](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin) and to delete the files in the wwwroot first "[Clean for webpack](https://github.com/johnagan/clean-webpack-plugin)".
 

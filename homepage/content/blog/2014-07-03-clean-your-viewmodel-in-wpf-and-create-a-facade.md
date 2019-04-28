@@ -68,7 +68,7 @@ of course you would give the viewmodel other values and it would grow like hell.
 
 So lets introduce a service to do some work (a normal calculation with the result of 23 in my example):
 
-![clean your viewmodel in WPF and create a facade]({{site.baseurl}}assets/articles/2014-07-03/1.jpg)
+![clean your viewmodel in WPF and create a facade](/img/articles/2014-07-03/1.jpg)
 
 ```csharp
 namespace WPFViewModelAsFacade
@@ -194,10 +194,10 @@ Note: Your viewmodel does not have to implement INotifypropertyChanged then. If 
 
 If you think further it would be better to seperate the service one again and getting a provider between the service, which is doing the real job and the class/interface, which is giving the data to the outside world. This provider (or however you call it) can then be offered in the viewmodel and you would bind first over this one. But for now this should be it, I think you got my point ;) .
 
-![clean your viewmodel in WPF and create a facade]({{site.baseurl}}assets/articles/2014-07-03/2.jpg)
-![clean your viewmodel in WPF and create a facade]({{site.baseurl}}assets/articles/2014-07-03/Facade.jpg)
+![clean your viewmodel in WPF and create a facade](/img/articles/2014-07-03/2.jpg)
+![clean your viewmodel in WPF and create a facade](/img/articles/2014-07-03/Facade.jpg)
 
-[WPFViewModelAsFacade Solution]({{site.baseurl}}assets/articles/2014-07-03/WpfViewModelAsFacade.zip)
+[WPFViewModelAsFacade Solution](/img/articles/2014-07-03/WpfViewModelAsFacade.zip)
 
 ```
 

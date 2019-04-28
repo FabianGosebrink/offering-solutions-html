@@ -23,9 +23,9 @@ Please read this readme and think of executing `Add-Migration [MyMigrationName]`
 
 The database should now be visible inside your SQL Server Management Studio.
 
-![ASP.NET CORE 1.0 with Entity Framework Core]({{site.baseurl}}assets/articles/wp-content/uploads/2016/07/database.jpg)
+![ASP.NET CORE 1.0 with Entity Framework Core](/img/articles/wp-content/uploads/2016/07/database.jpg)
 
-![ASP.NET CORE 1.0 with Entity Framework Core]({{site.baseurl}}assets/articles/wp-content/uploads/2016/07/folderstructure.jpg)
+![ASP.NET CORE 1.0 with Entity Framework Core](/img/articles/wp-content/uploads/2016/07/folderstructure.jpg)
 
 ## Project.json
 
@@ -152,7 +152,7 @@ In the DbContext you pass the DbSet of your Entites as you are used to it when w
 
 If you now run the solution you can perform CRUD operations for example via postman, angular etc...
 
-![ASP.NET CORE 1.0 with Entity Framework Core]({{site.baseurl}}assets/articles/wp-content/uploads/2016/07/postmandatabase.jpg)
+![ASP.NET CORE 1.0 with Entity Framework Core](/img/articles/wp-content/uploads/2016/07/postmandatabase.jpg)
 
 ## Links
 

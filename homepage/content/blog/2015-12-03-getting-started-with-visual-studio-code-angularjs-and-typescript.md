@@ -52,14 +52,14 @@ Now you can write and compile Typescript files. :-)
 
 In Visual Studio Code if you now press the CRTL-SHIFT-B-Buttons you should trigger Visual Studio Code to compile your written files. If you create a taskrunner Visual Studio Code generates a .vscode-folder with a "tasks.json" in it.
 
-![Getting started with Visual Studio Code, AngularJS and Typescript]({{site.baseurl}}assets/articles/wp-content/uploads/2015/12/tyepscript01.jpg)
+![Getting started with Visual Studio Code, AngularJS and Typescript](/img/articles/wp-content/uploads/2015/12/tyepscript01.jpg)
 
 See that the "args" is not containing any files explicitly. That triggers the taskrunner to compile the whole code. Not only several files.
 
 If you now type Typescript-code in a \*.ts file, save it and compile you will see a progress running in vs code for a short time. After this your file should be compiled into Typescript and appear in Visual Studio Code since Visual Studio Code is file based.
 
-![Getting started with Visual Studio Code, AngularJS and Typescript]({{site.baseurl}}assets/articles/wp-content/uploads/2015/12/tyepscript02.jpg)
-![Getting started with Visual Studio Code, AngularJS and Typescript]({{site.baseurl}}assets/articles/wp-content/uploads/2015/12/tyepscript03.jpg)
+![Getting started with Visual Studio Code, AngularJS and Typescript](/img/articles/wp-content/uploads/2015/12/tyepscript02.jpg)
+![Getting started with Visual Studio Code, AngularJS and Typescript](/img/articles/wp-content/uploads/2015/12/tyepscript03.jpg)
 
 > If you do NOT see any compiled js/ts-files checking your typescript version is always a good hint.
 
@@ -71,7 +71,7 @@ If you want to get also started with AngularJs (and have installed the tsd like 
 
 which causes the Typescript Definition Manager (tsd) to install the \*.d.ts files for AngularJs. The resolve parameter resolves all dependencies angular has (like jQuery in this case).
 
-![Getting started with Visual Studio Code, Angular and Typescript]({{site.baseurl}}assets/articles/wp-content/uploads/2015/12/tyepscript04.jpg)
+![Getting started with Visual Studio Code, Angular and Typescript](/img/articles/wp-content/uploads/2015/12/tyepscript04.jpg)
 
 As you can see the typings-folder was generated with a "tsd.d.ts" file which holds the references and a tsd.json on the root of the application which holds all installed plugins for our project. This gets updated every time you install a new typescript.d-reference.
 

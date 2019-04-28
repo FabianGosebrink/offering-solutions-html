@@ -34,12 +34,12 @@ Getting started:
 
 First make sure you included a reference to the tag helpers in your project.json
 
-![TagHelpers_1]({{site.baseurl}}assets/articles/wp-content/uploads/2015/11/TagHelpers_1.png)
+![TagHelpers_1](/img/articles/wp-content/uploads/2015/11/TagHelpers_1.png)
 
 And Because tag helpers do not throw an exception if you use them and they do not work you should also include a \_ViewImports.cshtml which is responsible to load all extra functionality to your views. You can simply add it via the context menu Add --> New Item.
 
-![TagHelpers_2]({{site.baseurl}}assets/articles/wp-content/uploads/2015/11/TagHelpers_2.png)
-![TagHelpers_3]({{site.baseurl}}assets/articles/wp-content/uploads/2015/11/TagHelpers_3.png)
+![TagHelpers_2](/img/articles/wp-content/uploads/2015/11/TagHelpers_2.png)
+![TagHelpers_3](/img/articles/wp-content/uploads/2015/11/TagHelpers_3.png)
 
 Now all the cshtml files are able to handle ASP.NET-TagHelpers which get easily in your html like this:
 

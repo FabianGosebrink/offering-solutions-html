@@ -28,7 +28,7 @@ Inside this blog I want to loose a few words about how I wrote them what the pit
 
 The application is divieded into several components with its child components. Due to the fact that the application is not that big at all there is no huge hierarchy.
 
-![Angular 2, ASP.NET WebAPI, Azure & Cordova, Cross Platform]({{site.baseurl}}assets/articles/wp-content/uploads/2016/04/SiteMap.png)
+![Angular 2, ASP.NET WebAPI, Azure & Cordova, Cross Platform](/img/articles/wp-content/uploads/2016/04/SiteMap.png)
 
 So the only interesting thing is the Food-Component which has two child Components "FoodForm" and "FoodList".
 
