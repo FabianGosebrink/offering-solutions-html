@@ -44,7 +44,7 @@
     $.ajax({
       url: '/index.json',
       success: function(result) {
-        allblogs = result;
+        allblogs = JSON.parse(result);
       }
     });
   });
