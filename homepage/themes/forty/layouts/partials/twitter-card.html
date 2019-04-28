@@ -1,0 +1,37 @@
+ <!-- Start of Open Graph -->
+ <meta property="og:title" content="{{ .Title }}">
+ {{ if .IsPage }}
+ <meta property="og:type" content="article">
+ <meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}">
+ {{ else }}
+ <meta property="og:type" content="website">
+ {{ end }}
+ <meta property="og:description" content="{{ .Description }}">
+ <meta property="og:url" content="{{ .Permalink }}">
+ <meta property="og:site_name" content="{{ .Site.Title }}">
+ <meta property="og:locale" content="en_US" />
+ <meta property="og:image" content="{{ .Site.Params.baseURL }}/img/blog/{{ .Params.image }}">
+ 
+ {{ range .Params.tags }}
+ <meta property="og:tags" content="{{ . }}">
+ {{ end }}
+ <!-- End of Open Graph -->
+ <!-- Start of Twitter -->
+
+ <meta name="twitter:site" content="@FabianGosebrink">
+ <meta name="twitter:creator" content="@FabianGosebrink">
+ {{ if .IsPage }}
+ <meta name="twitter:description" content="{{ .Summary }}" />
+ <meta name="twitter:title" content="{{ .Title }}" />
+ <meta name="twitter:text:title" content="{{ .Title }}" />
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:image" content="{{ .Site.Params.baseURL }}/img/blog/{{ .Params.image }}" /> {{ else }}
+ <meta name="twitter:title" content="{{ .Site.Title }}" />
+ <meta name="twitter:description" content="{{ .Description }}" /> 
+ {{ end }}
+ <!-- End of Twitter -->
+
+
+<!-- 
+<meta property="og:description" content="This article shows how to implement Azure Service Bus filters for topic subscriptions used in an ASP.NET Core API application. The application uses the Microsoft.Azure.ServiceBus NuGet package for …" />
+ -->
