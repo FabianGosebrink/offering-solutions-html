@@ -1,15 +1,13 @@
 ---
 title: Writing custom validators in Angular
 date: 2016-05-10
-author: Fabian Gosebrink
-layout: post
-tags: angular customvalidation
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/05/10/writing-custom-validators-in-angular-2/"
+]
 ---
 
 In this blogpost I want to show you how you are writing custom validators in Angular.

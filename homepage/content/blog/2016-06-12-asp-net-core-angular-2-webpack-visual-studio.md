@@ -1,17 +1,14 @@
 ---
 title: ASP.NET Core and Angular with Webpack and Visual Studio
 date: 2016-06-12
-author: Fabian Gosebrink
-layout: post
-tags: angular aspnetcore webpack
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
-redirect_from:
-  - /blog/articles/2016/06/12/asp-net-core-angular-webpack-visual-studio/
+tags: ['angular', 'aspnetcore']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/06/12/asp-net-core-angular-webpack-visual-studio/",
+  "/blog/articles/2016/06/12/asp-net-core-angular-2-webpack-visual-studio/"
+]
 ---
 
 This article shows how to use ASP.NET Core and Angular with webpack and Visual Studio. Both the client and the server side of the application is implemented inside one ASP.NET Core project which makes it easier to deploy.

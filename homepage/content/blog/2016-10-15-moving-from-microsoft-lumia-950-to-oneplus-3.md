@@ -1,15 +1,13 @@
 ---
 title: Moving from Microsoft Lumia 950 to OnePlus 3
 date: 2016-10-15
-author: Fabian Gosebrink
-layout: post
-tags: microsoft lumia mobile oneplus phones
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['lumia', 'oneplus', 'mobile']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/10/15/moving-from-microsoft-lumia-950-to-oneplus-3/"
+]
 ---
 
 In this blogpost I want to share the experience I made moving from Microsoft Lumia 950 to OnePlus 3.

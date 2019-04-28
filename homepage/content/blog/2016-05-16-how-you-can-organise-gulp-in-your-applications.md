@@ -1,15 +1,13 @@
 ---
 title: How you can organise gulp in your applications
 date: 2016-05-16
-author: Fabian Gosebrink
-layout: post
-tags: gulp javascript
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'gulp']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/"
+]
 ---
 
 In this blogpost I want to show one possibility of organising your gulp tasks in a way that you as a developer can find them quickly and print them to the console in an ordered way.

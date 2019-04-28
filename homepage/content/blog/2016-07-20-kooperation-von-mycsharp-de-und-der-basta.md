@@ -1,15 +1,13 @@
 ---
 title: Kooperation von MyCSharp.de und der BASTA!
 date: 2016-07-20
-author: Fabian Gosebrink
-layout: post
-tags: basta mycsharp
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['basta', 'mycsharp']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2016/07/20/kooperation-von-mycsharp-de-und-der-basta/"
+]
 ---
 
 Ich freue mich wieder sehr anzukündigen, dass es erneut zu einer Kooperation von MyCSharp.de und der BASTA! gekommen ist. Die zweite dieses Jahr :)

@@ -1,15 +1,13 @@
 ---
 title: How to debug an Angular application with Chrome and VS Code
 date: 2016-10-16
-author: Fabian Gosebrink
-layout: post
-tags: debug angular chrome vscode
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'chrome', 'vscode']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/10/16/how-to-debug-an-angular-application-with-chrome-and-vs-code/"
+]
 ---
 
 In this blogpost I want to show you how to debug an Angular application with Chrome and VS Code.

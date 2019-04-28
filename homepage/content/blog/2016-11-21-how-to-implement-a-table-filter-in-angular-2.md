@@ -1,15 +1,13 @@
 ---
 title: How to implement a table filter in Angular
 date: 2016-11-21
-author: Fabian Gosebrink
-layout: post
-tags: angular filter pipe tablefilter typescript
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angular', 'filter']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/11/21/how-to-implement-a-table-filter-in-angular-2/"
+]
 ---
 
 In this post I want to show you how to implement a table filter in Angular.

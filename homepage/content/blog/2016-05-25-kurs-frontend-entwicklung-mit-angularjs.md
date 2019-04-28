@@ -1,15 +1,13 @@
 ---
 title: Kurs - Frontend-Entwicklung mit AngularJS
 date: 2016-05-25
-author: Fabian Gosebrink
-layout: post
-tags: angularjs courses training speaking talks
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['angularjs', 'courses', 'training']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/05/25/kurs-frontend-entwicklung-mit-angularjs/"
+]
 ---
 
 In diesem Blogpost stelle ich meinen Kurs: _Frontend-Entwicklung mit AngularJS_ vor.

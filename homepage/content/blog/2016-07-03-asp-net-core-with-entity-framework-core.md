@@ -1,17 +1,14 @@
 ---
 title: ASP.NET Core 1.0 with Entity Framework Core
 date: 2016-07-03
-author: Fabian Gosebrink
-layout: post
-tags: aspnetcore entityframeworkcore
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
-redirect_from:
-  - /blog/articles/2016/07/03/asp-net-core-1-0-with-entity-framework-core/
+tags: ['aspnetcore', 'entityframeworkcore']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/07/03/asp-net-core-1-0-with-entity-framework-core/",
+  "/blog/articles/2016/07/03/asp-net-core-with-entity-framework-core/"
+]
 ---
 
 In this repository I want to show the first steps with Entity Framework Core and ASP.NET Core 1.0.

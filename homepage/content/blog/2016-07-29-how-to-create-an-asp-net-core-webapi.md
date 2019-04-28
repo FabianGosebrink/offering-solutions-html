@@ -1,15 +1,13 @@
 ---
 title: How to create an ASP.NET Core WebAPI
 date: 2016-07-29
-author: Fabian Gosebrink
-layout: post
-tags: aspnetcore webapi
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['aspnetcore', 'webapi']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2016/07/29/how-to-create-an-asp-net-core-webapi/"
+]
 ---
 
 In this blogpost I want to show you how to create an ASP.NET Core WebAPI. We will use a custom mapper (you could use AutoMapper for this instead, a repository which is a singleton in this blog here and we will use the normal CRUD operations to Create, Read, Update and Delete in the "database" here.

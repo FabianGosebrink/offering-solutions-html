@@ -1,15 +1,13 @@
 ---
 title: How I started recording my first Video training
 date: 2016-11-29
-author: Fabian Gosebrink
-layout: post
-tags: channel9 microphone recording screenrecording
-logo: 'assets/images/logo_small.png'
-navigation: True
-cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
-subclass: 'post tag-speeches'
-disqus: true
-categories: articles
+tags: ['recording', 'training']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+  "/blog/articles/2016/11/29/how-i-started-recording-my-first-video-training/"
+]
 ---
 
 In this blogpost I want to describe how I started recording my first Video training and tell you about the experiences I made during the recording.
