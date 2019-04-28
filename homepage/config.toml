@@ -215,4 +215,4 @@ disqusShortname = "offeringsolutions"
   blog = "/blog/articles/:year/:month/:day/:title/"
 
 [outputs]
-  home = ["HTML", "CSS", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON"]

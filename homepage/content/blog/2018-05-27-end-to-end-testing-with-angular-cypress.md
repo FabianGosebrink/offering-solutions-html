@@ -42,7 +42,7 @@ If you now start the cypress tests you will notice that cypress created a folder
 The application is rather simple and is just a Todo-List which we want to test end-to-end.
 We have a form component which can throw the output of an added todo and a list component which can mark items as "done" and expects a list of items as input.
 
-![Todoapplication](/img\articles\2018-05-29\todo-cypress.gif)
+![Todoapplication](/img/articles/2018-05-29/todo-cypress.gif)
 
 ```html
 <p>
@@ -222,7 +222,7 @@ What I personally extremely like is that you can step through your tests via vir
 
 Please check out the complete API [here](https://docs.cypress.io/api/introduction/api.html).
 
-![todo-application-snapshots](/img\articles\2018-05-29\todo-cypress_2.gif)
+![todo-application-snapshots](/img/articles/2018-05-29/todo-cypress_2.gif)
 
 I hope I could give a a sneap peek on how easy it is to write end-to-end-tests with cypress.
 
