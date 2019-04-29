@@ -2,9 +2,11 @@
     <section id="one" class="tiles">
         {{ range .Site.Params.Tiles.showcase }}
         <article>
+            {{ if .image }}
             <span class="image">
                 <img src="{{ .Site.Params.baseURL }}img/{{ .image }}" alt="" />
             </span>
+            {{ end }}
             <header class="major">
                 <h3><a href="{{ .url | absURL }}" class="link">{{ .title }}</a></h3>
                 <p>{{ .subtitle }}</p>
