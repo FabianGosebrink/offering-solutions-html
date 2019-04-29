@@ -44,7 +44,11 @@
     $.ajax({
       url: '/index.json',
       success: function(result) {
-        allblogs = JSON.parse(result);
+        if (Array.isArray(result)) {
+          allblogs = result;
+        } else {
+          allblogs = JSON.parse(result);
+        }
       }
     });
   });
