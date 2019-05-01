@@ -1,0 +1,69 @@
+<html>
+  {{ "<!-- Header -->" | safeHTML }}
+  {{ partial "header.html" . }}
+
+  <body>
+    {{ "<!-- Wrapper -->" | safeHTML }}
+    <div id="wrapper">
+      {{ partial "nav.html" . }}
+
+      {{ "<!-- Main -->" | safeHTML }}
+      <div id="main">
+        <section id="banner" class="style2">
+          <div class="inner">
+            {{ if .Params.image }}
+            <span class="image">
+              <img
+                src="{{ .Site.Params.baseURL }}/img/{{ .Params.image }}"
+                alt=""
+              />
+            </span>
+            {{ end }}
+            <header class="major">
+              <h1>{{ .Title }}</h1>
+            </header>
+            <div class="content">{{ .Content }}</div>
+          </div>
+        </section>
+
+        <section id="two" class="spotlights">
+          {{ $paginator := .Paginate .Pages }}
+          {{ range.Paginator.Pages.ByDate.Reverse }}
+          <section>
+            <div class="content">
+              <div class="inner">
+                <header class="major-no-line">
+                  <h3>
+                    <a href="{{ .URL }}">{{ .Title }}</a>
+                  </h3>
+                </header>
+                <p>
+                  {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+                </p>
+                <p>{{ .Description | safeHTML | truncate 100}}</p>
+                <ul class="actions">
+                  <li>
+                    <a href="{{ "adads" | relURL }}" class="button"
+                      >To the slides</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          {{ end }}
+        </section>
+
+        {{ partial "pagination.html" . }}
+      </div>
+
+      {{ "<!-- Footer -->" | safeHTML}}
+      {{ if .Site.Params.footer.enable }}
+      {{ partial "footer.html" . }}
+      {{ end }}
+    </div>
+
+    {{ "<!-- Scripts -->" | safeHTML}}
+    {{ partial "js.html" . }}
+  </body>
+</html>
