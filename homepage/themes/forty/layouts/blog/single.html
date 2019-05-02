@@ -26,6 +26,12 @@
             <header class="major">
               <h1>{{ .Title }}</h1>
             </header>
+            <h6>{{ dateFormat "Monday, Jan 2, 2006" .Date }}</h6>
+            <p>
+              {{ partial "readingtime.html" . }}
+
+              <a href="{{ .Site.Params.baseURL }}/blog/">back to all blogs</a>
+            </p>
           </div>
         </section>
 

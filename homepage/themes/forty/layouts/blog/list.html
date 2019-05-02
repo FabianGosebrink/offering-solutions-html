@@ -27,8 +27,16 @@
         </section>
 
         <section id="two" class="spotlights">
-        
+            <input
+                        type="text"
+                        name="blogsearch"
+                        class="searchinput"
+                        id="blogsearch"
+                        value=""
+                        placeholder="Search blogs..."
+                      />
 
+                      <div id="blogPosts"></div>
           {{ $paginator := .Paginate .Pages }}
           {{ range .Paginator.Pages.ByDate.Reverse }}
           <section>
@@ -40,6 +48,7 @@
                   </h3>
                 </header>
                 <p>
+                  {{ partial "readingtime.html" . }}
                   {{ dateFormat "Monday, Jan 2, 2006" .Date }}
                   {{ if gt .Params.Tags 1 }}
                   {{ range .Params.Tags }}
