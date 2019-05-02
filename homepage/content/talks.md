@@ -13,6 +13,8 @@ category: noblog
 
 [slides](https://speakerdeck.com/fabiangosebrink/javascript-testing-made-easy-using-the-example-of-an-angular-application)
 
+---
+
 ### Echte Cross-Plattform-Anwendungen mit Cordova, Electron und Angular
 
 #### 27.09.2018 - BASTA! - Mainz
@@ -20,6 +22,8 @@ category: noblog
 **Keywords:** angular, cordova, electron, web, cross platform
 
 [slides](https://speakerdeck.com/fabiangosebrink/die-moderne-web-toolchain-webpack-npm-und-yarn-linting-und-co)
+
+---
 
 ### Die moderne Web-Toolchain: webpack, npm und Yarn, Linting und Co.
 
@@ -29,6 +33,8 @@ category: noblog
 
 [slides](https://speakerdeck.com/fabiangosebrink/die-moderne-web-toolchain-webpack-npm-und-yarn-linting-und-co)
 
+---
+
 ### Modern WebAPIS with ASP.NET Core
 
 #### 25.06.2018 - DWX 2018 - Nürnberg
@@ -36,6 +42,8 @@ category: noblog
 **Keywords:** aspnetcore, web, development
 
 [slides](https://speakerdeck.com/fabiangosebrink/modern-webapis-with-asp-dot-net-core)
+
+---
 
 ### Real Time web applications with Angular and ASP.NET Core SignalR
 
@@ -45,6 +53,8 @@ category: noblog
 
 [slides](https://speakerdeck.com/fabiangosebrink/real-time-web-applications-with-angular-and-asp-dot-net-core-signalr)
 
+---
+
 ### Angular Testing made easy
 
 #### 21.03.2018 - Angular Days - München
@@ -52,6 +62,8 @@ category: noblog
 **Keywords:** angular, testing, javascript, web, development
 
 [slides](https://speakerdeck.com/fabiangosebrink/angular-testing-made-easy)
+
+---
 
 ### From Zero to Azure with Angular
 
@@ -61,6 +73,8 @@ category: noblog
 
 [slides](https://speakerdeck.com/fabiangosebrink/from-zero-to-azure-with-angular)
 
+---
+
 ### Mehr als nur Web: Cross-Plattform-Anwendungen mit Angular, Electron und Cordova
 
 #### 21.02.2018 - BASTA! Spring 2018
@@ -69,6 +83,8 @@ category: noblog
 
 [slides](https://speakerdeck.com/fabiangosebrink/cross-platform-applications-with-angular-electron-and-cordova-1)
 
+---
+
 ### Modern web Toolchain
 
 #### 21.02.2018 - BASTA! Spring 2018
@@ -76,6 +92,8 @@ category: noblog
 **Keywords:** javascript, web, development
 
 [slides](https://speakerdeck.com/fabiangosebrink/modern-web-toolchain)
+
+---
 
 ### Modern web Toolchain
 
@@ -85,6 +103,8 @@ category: noblog
 
 [slides](https://speakerdeck.com/fabiangosebrink/modern-web-toolchain)
 
+---
+
 ### Angular Testing von A bis Z
 
 #### 11.10.2017 - Angular Days - Berlin
@@ -92,6 +112,8 @@ category: noblog
 **Keywords:** angular, testing, javascript, web, development
 
 [slides](https://speakerdeck.com/fabiangosebrink/angular-testing-von-a-bis-z)
+
+---
 
 ### Fenster überall: Desktopanwendungen mit Angular und Electron
 
@@ -101,17 +123,23 @@ category: noblog
 
 [slides](https://speakerdeck.com/fabiangosebrink/fenster-uberall-desktopanwendungen-mit-angular-und-electron)
 
+---
+
 ### Webentwicklung mit ASP.NET Core WebAPI & Angular
 
 #### 19.09.2017 - Advanced Developers Conference
 
 **Keywords:** angular, asp.net core, web, development
 
+---
+
 ### Cross-Plattform WebAPIs mit ASP.NET Core
 
 #### 19.09.2017 - Advanced Developers Conference - Köln
 
 **Keywords:** asp.net core, web, development
+
+---
 
 ### Businessanwendungen für jedes System mit ASP.NET Core und Angular
 
@@ -121,6 +149,8 @@ category: noblog
 
 [slides](http://dotnetday.ch/assets/slides/fabiangosebrink/slides.pdf)
 
+---
+
 ### ANGULAR MIT ASP.NET CORE WEBAPI
 
 #### 25.04.2017 - Sarganserland, FL, GR Softwareentwickler Meetup
@@ -128,6 +158,8 @@ category: noblog
 **Keywords:** angular, asp.net core, web, development
 
 [slides](https://www.meetup.com/de-DE/SuedostCH-Softwareentwickler-Meetup/events/238381245/)
+
+---
 
 ### CROSS-PLATFORM WEBAPIS MIT DER DOTNET CLI UND ASP.NET CORE
 
@@ -137,6 +169,8 @@ category: noblog
 
 [slides](https://www.meetup.com/de-DE/Microsoft-Solutions-User-Group-Switzerland/events/23838639)
 
+---
+
 ### ANGULAR AND C# .NET AS BACKEND
 
 #### 28.02.2017 - Angular Basel
@@ -144,6 +178,8 @@ category: noblog
 **Keywords:** angular, asp.net core, web, development
 
 [slides](https://www.meetup.com/de-DE/Angular-Basel/events/237185605/)
+
+---
 
 ### ASP.NET CORE & ANGULAR IN BUSINESS APPLICATIONS
 
@@ -153,11 +189,15 @@ category: noblog
 
 [slides](https://onedrive.live.com/?cid=F09241BC1B18E50E&id=F09241BC1B18E50E%21437&parId=F09241BC1B18E50E%21429&o=OneUp)
 
+---
+
 ### MODERNE WEBENTWICKLUNG MIT COMPONENT BASED DESIGN
 
 #### 17.01.2017 - Noser Engineering
 
 **Keywords:** angular, asp.net, web, development
+
+---
 
 ### HOW TO WRITE A WEBAPI WITH ASP.NET CORE
 
@@ -167,11 +207,15 @@ category: noblog
 
 [slides](https://www.meetup.com/de-DE/Basel-NET-User-Group/events/235435601/)
 
+---
+
 ### WEBENTWICKLUNG MIT ANGULAR 2 UND ASP.NET CORE
 
 #### 02.06.2016 - Noser Engineering
 
 **Keywords:** angular, asp.net core, web, development
+
+---
 
 ### WEBENTWICKLUNG MIT ANGULAR 2, SIGNALR UND ASP.NET CORE
 
@@ -179,17 +223,23 @@ category: noblog
 
 **Keywords:** angular, asp.net core, web, signalr, development
 
+---
+
 ### ANGULARJS & REST/WEBAPI (WITH X-PLATFORM DEVELOPMENT)
 
 #### 13.01.2016 - Noser Engineering
 
 **Keywords:** angular, asp.net, web, development, x-platform
 
+---
+
 ### WEBENTWICKLUNG MIT ANGULARJS & REST/WEBAPI
 
 #### 29.10.2015 - Microsoft Evolution Day
 
 **Keywords:** angular, asp.net, web, development
+
+---
 
 ### WEBENTWICKLUNG MIT ASP.NET & ANGULARJS
 
@@ -199,6 +249,8 @@ category: noblog
 
 [slides](https://speakerdeck.com/fabiangosebrink/angularjs-and-asp-dot-net-webapi)
 
+---
+
 ### WEBENTWICKLUNG MIT ASP.NET & ANGULARJS
 
 #### 19.03.2015 - Microsoft Techtalk (Wallisellen)
@@ -207,11 +259,15 @@ category: noblog
 
 [slides](https://speakerdeck.com/fabiangosebrink/angularjs-and-asp-dot-net-webapi)
 
+---
+
 ### SCRUM - AGILE DEVELOPMENT
 
 #### 02.03.2015 - Hochschule Rapperswil
 
 **Keywords:** agile, development, scrum
+
+---
 
 ### ASP.NET MVC WORKSHOP
 
