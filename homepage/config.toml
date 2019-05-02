@@ -51,9 +51,9 @@ disqusShortname = "offeringsolutions"
       name = "Blog"
       url = "blog"
 
-    # [[params.navigation.links]]
-    #   name = "Personal Site"
-    #   url = "about"
+    [[params.navigation.links]]
+      name = "Talks"
+      url = "talks"
 
     # Add custom links here by uncommenting code below. To remove links just delete
     # the [[params.navigation.links]] map associated with that link. Copy and paste
