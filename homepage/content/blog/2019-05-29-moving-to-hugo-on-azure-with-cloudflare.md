@@ -13,7 +13,7 @@ In this blogpost I want to describe how I moved my complete company homepage and
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-# The Situation in the past
+## The Situation in the past
 
 As my company homepage and my blog have been two projects in the past I had two different repositories for both which were lying on azure dev ops (html page) and on github.com (blog).
 
@@ -27,17 +27,59 @@ I also ran the bash shell on Windows to have a linux system which was running je
 So my plan was to: 
 
 * Find a solution which hosts my website _and_ my blog for one look and feel.
-* migrating my blog from jekyll to hugo, so using huog for all of it: website and blog.
-* moving the domain from one.com to godaddy and host it on azure instead if one.com
+* migrating my blog from jekyll to hugo, so using hugo for all of it: website and blog.
+* moving the domain from one.com to godaddy and host it on azure instead of one.com
 * adding a CI/CD pipeline in Azure DevOps to continually build and deploy my hugo site
 * using cloudflare as a DNS to improve caching and speed and reduce costs for the azure web service
 * costs should be managable. 
 
-And the time I had was one weekend...so lets go :-)
+And the time I had was one weekend...so lets go :-) I will mention the steps I did one by one.
 
-Step 1: Finding a theme
+## Finding a theme
 
-That was one of the hardest parts to be honest. I wanted a clean (for me) nice looking theme which was covering the basic information and was able to display a list of blogs including a simple single page for one single blogpost. I thought [forty](https://themes.gohugo.io/forty/) would fit very well.
+That was one of the hardest parts to be honest. I wanted a clean (for me) nice looking theme which was covering the basic information and was able to display a list of blogs including a simple single page for one single blogpost. I thought [forty](https://themes.gohugo.io/forty/) would fit very well. So I went for that one.
 
+## Installing Hugo and adapting the theme
 
-## Tuning it
+Hugo can be installed very quickly. Find the instructions [here](https://gohugo.io/getting-started/installing/). I used Chocolatey to install it and getting it up and running was really easy.
+
+I tweaked the theme a bit, added all my picutres, adapted colors (mostly with google chromes dev tools) and overwrote the css etc. So web developer things which we a re doing :) At some point "my" design was looking good so I could start adapting all my content.
+
+## Moving from jekyll to hugo
+
+Here is the thing: This was the most unspectacular thing in the whole process of migration from A to B. I just copied over the *.md files and had to modify the markdown metainformation in the header. Which was also because I did not want to use the old design but introduced a completely new one.
+
+Old (Jekyll)
+
+```
+---
+title: Refactoring Container Components to Fetch Data With Route Resolvers
+date: 2019-02-27 10:00
+author: Fabian Gosebrink
+layout: post
+tags: angular routeresolvers components
+logo: 'assets/images/logo_small.png'
+navigation: true
+cover: 'assets/images/aerial-view-of-laptop-and-notebook_bw_osc.jpg'
+subclass: 'post tag-speeches'
+disqus: true
+categories: articles
+---
+```
+new (hugo)
+
+```
+---
+title: Refactoring Container Components to Fetch Data With Route Resolvers
+date: 2019-02-27
+tags: ['angular', 'routeresolvers', 'components']
+image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+draft: false
+category: blog
+aliases: [
+    "/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/",
+]
+---
+```
+
+I had to get a little into the new markdown structure 
