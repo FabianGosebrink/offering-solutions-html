@@ -18,7 +18,7 @@
             {{ if .Params.image }}
             <span class="image">
               <img
-                src="{{ .Site.Params.baseURL }}/img/blog/{{ .Params.image }}"
+                src="{{ .Site.Params.cdnbaseurl }}img/blog/{{ .Params.image }}"
                 alt=""
               />
             </span>
@@ -39,7 +39,7 @@
         <section id="one">
           <div class="inner">
             <!-- {{ if .Params.image }}
-                                <span class="image main"><img src="{{ .Site.Params.baseURL }}/img/{{ .Section }}/{{ .Params.image }}" alt="" /></span>
+                                <span class="image main"><img src="{{ .Site.Params.cdnbaseurl }}/img/{{ .Section }}/{{ .Params.image }}" alt="" /></span>
                             {{ end }} -->
 
             {{ .Content }}
