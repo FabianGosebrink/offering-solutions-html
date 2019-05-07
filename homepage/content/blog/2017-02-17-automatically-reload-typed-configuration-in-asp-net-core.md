@@ -41,13 +41,11 @@ Startup.cs
 myConfig.json
 
 ```javascript
-{% raw %}
 {
   "Person": {
     "Firstname" : "John Doe"
   }
 }
-{% endraw %}
 ```
 
 This leads us to the class
@@ -164,9 +162,9 @@ namespace WebApplication6.Controllers
 Index.cshtml
 
 ```csharp
-{% raw %}
+
 <h3>@(ViewData["FirstName"])</h3>
-{% endraw %}
+
 ```
 
 If you now start the web application via `dotnet run` and you change the configuration without restarting the application, hit F5 to refresh the browser you see the new values.
