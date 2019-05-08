@@ -1,5 +1,5 @@
 ---
-title: Moving to hugo on azure with cloudflare
+title: Hosting an hugo site on azure with cloudflare, godaddy and CDN
 date: 2019-04-26
 tags: ['cloudflare', 'azure', 'hugo']
 draft: true
@@ -31,6 +31,7 @@ So my plan was to:
 * moving the domain from one.com to godaddy and host it on azure instead of one.com
 * adding a CI/CD pipeline in Azure DevOps to continually build and deploy my hugo site
 * using cloudflare as a DNS to improve caching and speed and reduce costs for the azure web service
+* using azure storage to work as cdn for static files like *.js, *.css, and images
 * costs should be managable. 
 
 And the time I had was one weekend...so lets go :-) I will mention the steps I did one by one.
@@ -47,7 +48,7 @@ I tweaked the theme a bit, added all my picutres, adapted colors (mostly with go
 
 ## Moving from jekyll to hugo
 
-Here is the thing: This was the most unspectacular thing in the whole process of migration from A to B. I just copied over the *.md files and had to modify the markdown metainformation in the header. Which was also because I did not want to use the old design but introduced a completely new one.
+Here is the thing: This was the most unspectacular part in the whole process of migrating from A to B. I just copied over the *.md files and had to modify the markdown metainformation in the header. Which was also because I did not want to use the old design but introduced a completely new one.
 
 Old (Jekyll)
 
@@ -82,4 +83,40 @@ aliases: [
 ---
 ```
 
-I had to get a little into the new markdown structure 
+I had to get a little into the new markdown structure and into how hugo handles files. I did the migration of the markdown files all manually which took a while, but for me it was the fastest way.
+
+With `hugo server -D` a local webserver is started and you can access to complete page at `localhost:1313` in my case. This made it very easy to see the outcome, also because hugo is very very fast in reloading, which was one of the main reason for me to switch.
+
+I had to migrate the `.toml` file a bit and do a little html here and css there. But even for a non designer like me this was totally managable. But I think this also depends on how far you want to go with your theme.
+
+Compared to jekyll I think that hugo is a little hard to get in and has a steep lernaing courve which I haven't mastered yet. However, with some searching and trial-error I got where I wanted to and could build up my site.
+
+I put everything up to github which you can find here.
+
+So at the end of that chapter my blog was totally fine running locally.
+
+## Preparing Azure
+
+As the overview is best in resourcegroups and the scosts can be seen best per resourcegroup I created a complete new one in Azure. I added four things into it:
+
+* A web service to host my site
+* A storage account to act as cdn later
+* xxx
+* yyy
+
+As these things were ready I wanted to next build up the CI/CD pipeline for the blog and homepage in Azure Devops.
+
+## Building a CI/CD pipeline for the blog
+
+In Azure Devops I created a new CI/CD pipeline by clicking on
+
+
+## Moving the domain to GoDaddy
+
+## Adding Cloudflare
+
+## Adding the CDN to Hugo
+
+## Modifying the CI/CD pipeline to deploy to cdn and app service 
+
+## Adding the correct Caching Headers<>
