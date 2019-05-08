@@ -1,18 +1,18 @@
 {{ "<!-- Scripts -->" | safeHTML}}
     {{ "<!-- jQuery -->" | safeHTML }}
-    <script src="{{ "js/jquery.min.js"| absURL }}"></script>
-    <script src="{{ "js/jquery.scrolly.min.js"| absURL }}"></script>
-    <script src="{{ "js/jquery.scrollex.min.js"| absURL }}"></script>
-    <script src="{{ "js/skel.min.js"| absURL }}"></script>
-    <script src="{{ "js/util.js"| absURL }}"></script>
+    <script src="{{ .Site.Params.cdnbaseurl }}js/jquery.min.js"></script>
+    <script src="{{ .Site.Params.cdnbaseurl }}js/jquery.scrolly.min.js"></script>
+    <script src="{{ .Site.Params.cdnbaseurl }}js/jquery.scrollex.min.js"></script>
+    <script src="{{ .Site.Params.cdnbaseurl }}js/skel.min.js"></script>
+    <script src="{{ .Site.Params.cdnbaseurl }}js/util.js"></script>
 
-    <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+    <!--[if lte IE 8]><script src="{{ .Site.Params.cdnbaseurl }}js/ie/respond.min.js"></script><![endif]-->
 
     {{ "<!-- Main JS -->" | safeHTML }}
-    <script src="{{ "js/main.js"| absURL }}"></script>
+    <script src="{{ .Site.Params.cdnbaseurl }}js/main.js"></script>
 
     {{ template "_internal/google_analytics_async.html" . }}
 
     {{ range .Site.Params.custom_js }}
-        <script src="{{ . | absURL }}"></script>
+        <script src="{{ $.Site.Params.cdnbaseurl }}{{ . }}"></script>
     {{ end }}

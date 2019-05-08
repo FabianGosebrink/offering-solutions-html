@@ -47,7 +47,6 @@ Now lets got create a simple form. For this I will grab bootstraps most simple f
 Now we add the bootstrap cdn to our `index.html`.
 
 ```html
-{% raw %}
 
 <head>
   <link
@@ -56,20 +55,17 @@ Now we add the bootstrap cdn to our `index.html`.
   />
 </head>
 
-{% endraw %}
 ```
 
 Out app.component.html simply looks like this:
 
 ```html
-{% raw %}
 
 <div class="container">
   <h1>{{title}}</h1>
   <form-component></form-component>
 </div>
 
-{% endraw %}
 ```
 
 ### Introducing the Form
@@ -206,7 +202,6 @@ With those three things we can ask the form about its state with
 like this:
 
 ```html
-{% raw %}
 
 <p>{{ myform.value | json }}</p>
 
@@ -225,15 +220,12 @@ like this:
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
-{% endraw %}
 ```
 
 The ngModel directive is forcing Angular to persist the state of the form to the form object. So we read it with
 
 ```javascript
-{% raw %}
 {{ myform.value | json }}
-{% endraw %}
 ```
 
 But further to that it is doing nothing. We got our state only persisted to the form. We want to interact with our model, right?
@@ -269,7 +261,6 @@ We can use the forms template reference variable also to check some properties o
 We can check the following states on the form :
 
 ```javascript
-{% raw %}
 
 <!-- if user touched every field of the form -->
 <p>{{myform.form.touched}}</p>
@@ -289,7 +280,6 @@ We can check the following states on the form :
 <!-- form is invalid -->
 <p>{{myform.form.invalid}}</p>
 
-{% endraw %}
 ```
 
 Lets face the "valid" and "invalid" for a second. We can apply a normal HTML `required` attribute at one control just to have a reason why a form should be valid or invalid.
@@ -387,7 +377,6 @@ Now we can ask for the state of this control in the same way like the form:
 Our button at the end of the form is currently set to submit the form. But we do not catch the submitting so far. So lets do that.
 
 ```html
-{% raw %}
 
 <h4>Form Value</h4>
 
@@ -417,7 +406,6 @@ Our button at the end of the form is currently set to submit the form. But we do
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
-{% endraw %}
 ```
 
 We introduced the ngSubmit-directive and assigned it a function we have to implement on our component.

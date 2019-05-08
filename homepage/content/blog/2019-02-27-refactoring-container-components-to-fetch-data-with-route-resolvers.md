@@ -60,7 +60,6 @@ export class ContainerComponent implements OnInit {
 here our container component is hosting the presentational component and fetches the data, passing it into the presentational component with an async directive.
 
 ```ts
-{% raw %}
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -77,7 +76,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PresentationalComponent implements OnInit {
   @Input() data: any;
 }
-{% endraw %}
 ```
 
 The presentational component can receive the data via the `@Input()` decorator and displays the data plain as json.
@@ -181,7 +179,6 @@ ngOnInit() {
 The difference now is that the `ContainerComponent` is only displayed when the data is already fetched. This means we can get rid of the `else` case in the `ngIf/else` construct:
 
 ```ts
-{% raw %}
 @Component({
   selector: 'app-presentational',
   template: `
@@ -194,7 +191,7 @@ The difference now is that the `ContainerComponent` is only displayed when the d
 export class PresentationalComponent {
   @Input() data: any;
 }
-{% endraw %}
+
 ```
 
 ## Showing loading indicator when data gets resolved
