@@ -91,7 +91,7 @@ export class Todo {
 
 ```html
 <div style="text-align:center">
-  <h1>Welcome to {% raw %}{{ title }}{% endraw %}!</h1>
+  <h1>Welcome to {{ title }}!</h1>
 </div>
 <div>
   <form (ngSubmit)="addTodo()" [formGroup]="form">
@@ -103,7 +103,7 @@ export class Todo {
   <ul style="list-style-type: none;">
     <li *ngFor="let item of todos" class="todo-item">
       <span [ngClass]="{ inactive: item.done }"
-        >{% raw %}{{ item.value }}{% endraw %}</span
+        >{{ item.value }}</span
       >
 
       <button class="todo-item-button" (click)="markAsDone(item)">Done</button>
@@ -356,8 +356,8 @@ Our `addTodo()` is calling our `todoService` which is handling our data storage 
 
 ```html
 <p>
-  current status: {% raw %}{{ onlineOfflineService.isOnline ? 'online' :
-  'offline' }}{% endraw %}
+  current status: {{ onlineOfflineService.isOnline ? 'online' :
+  'offline' }}
 </p>
 <div>
   <form (ngSubmit)="addTodo()" [formGroup]="form">
@@ -369,7 +369,7 @@ Our `addTodo()` is calling our `todoService` which is handling our data storage 
   <ul style="list-style-type: none;">
     <li *ngFor="let item of todos" class="todo-item">
       <span [ngClass]="{ inactive: item.done }"
-        >{% raw %}{{ item.value }}{% endraw %}</span
+        >{{ item.value }}</span
       >
 
       <button class="todo-item-button" (click)="markAsDone(item)">Done</button>
