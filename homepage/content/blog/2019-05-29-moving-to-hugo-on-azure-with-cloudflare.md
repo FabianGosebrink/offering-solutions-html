@@ -89,9 +89,9 @@ With `hugo server -D` a local webserver is started and you can access to complet
 
 I had to migrate the `.toml` file a bit and do a little html here and css there. But even for a non designer like me this was totally managable. But I think this also depends on how far you want to go with your theme.
 
-Compared to jekyll I think that hugo is a little hard to get in and has a steep lernaing courve which I haven't mastered yet. However, with some searching and trial-error I got where I wanted to and could build up my site.
+Compared to jekyll I think that hugo is a little hard to get in and has a steep learning courve which I haven't mastered completely yet. However, with some searching and trial-error I got where I wanted to and could build up my site.
 
-I put everything up to github which you can find here.
+I put everything up to github which you can find here: [https://github.com/FabianGosebrink/offering-solutions-html](https://github.com/FabianGosebrink/offering-solutions-html)
 
 So at the end of that chapter my blog was totally fine running locally.
 
@@ -110,7 +110,27 @@ As these things were ready I wanted to next build up the CI/CD pipeline for the 
 
 ## Building a CI/CD pipeline for the blog
 
-In Azure Devops I created a new CI/CD pipeline by clicking on
+In Azure Devops which you can access via `https://dev.azure.com/<yourusername>/` I created a new CI/CD pipeline by clicking on the `Create new project` in the upper right corner and connected it to my existing github project.
+
+For generating the site I used a build task which build my site running the needed hugo commands. You can find the extension here: [Visual Studio Marketplace Hugo extension](https://marketplace.visualstudio.com/items?itemName=giuliovdev.hugo-extension).
+
+![CICD-1](https://cdn.offering.solutions/img/articles/2019-05-29/cicd-1.png)
+
+So the source of my hugo site is the folder `homepage` and the destination is `homepage/public`. This is the folder all files are build to. I am overwriting the `BaseUrl` with the domain `https:/offering.solutions`. I would have to do this as in my `config.toml` file the `baseURL = "https://offering.solutions/"` is already set to the correct domain. It was more just to try it out a bit :)
+
+As next step I had to divide the files which are going to be deployed to the cdn on azure and the files which are going to be deployed to the main domain web service on azure.
+
+So in the next two steps the files form the public folder are separated.
+
+![CICD-2](https://cdn.offering.solutions/img/articles/2019-05-29/cicd-2.png)
+
+To the folder `homepage/public/dist-cdn` I am copying over all the static files like images, fonts, css and javascript.
+
+![CICD-3](https://cdn.offering.solutions/img/articles/2019-05-29/cicd-3.png)
+
+As in the `dist-blog` folder all the other files are getting copied.
+
+In the end I have to publish the two artifacts `blog` and `cdn` to make them available to my release manager where I pick them up and release them to Azure.
 
 ## Adding the custom domain to the web service
 
