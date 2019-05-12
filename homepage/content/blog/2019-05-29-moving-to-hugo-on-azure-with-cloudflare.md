@@ -110,10 +110,16 @@ As these things were ready I wanted to next build up the CI/CD pipeline for the 
 
 In Azure Devops I created a new CI/CD pipeline by clicking on
 
+## Adding the custom domain to the web service
+
 
 ## Moving the domain to GoDaddy
 
+To move my old domain to godaddy I canceled my subscription at one.com and they gave me a code I could use to move the domain.
+
 ## Adding Cloudflare
+
+Cloud
 
 ## Adding the CDN to Hugo
 
