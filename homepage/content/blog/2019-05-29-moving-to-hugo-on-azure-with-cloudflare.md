@@ -12,7 +12,6 @@ In this blogpost I want to describe how I moved my complete company homepage and
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Thinking about moving my blog from jekyll to <a href="https://twitter.com/GoHugoIO?ref_src=twsrc%5Etfw">@GoHugoIO</a>...</p>&mdash; Fabian Gosebrink @ 🏠🇨🇭 (@FabianGosebrink) <a href="https://twitter.com/FabianGosebrink/status/1118459324395921408?ref_src=twsrc%5Etfw">April 17, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
 ## The Situation in the past
 
 As my company homepage and my blog have been two projects in the past I had two different repositories for both which were lying on azure dev ops (html page) and on github.com (blog).
@@ -24,15 +23,15 @@ The site was hosted on one.com including the domain. I am very satisfied with on
 Also the build time from my jekyll blog was incredible: 30 seconds when saving a blog until I saw the changes was definetly too much. I know that it does not sound that long, but if you are working on a page and are used to an instant refresh which you get normally 30 seconds is way too much for a simple blogpost.
 I also ran the bash shell on Windows to have a linux system which was running jekyll fast, but it also took around 10 seconds to rebuild my blog...and I was tired of that.
 
-So my plan was to: 
+So my plan was to:
 
-* Find a solution which hosts my website _and_ my blog for one look and feel.
-* migrating my blog from jekyll to hugo, so using hugo for all of it: website and blog.
-* moving the domain from one.com to godaddy and host it on azure instead of one.com
-* adding a CI/CD pipeline in Azure DevOps to continually build and deploy my hugo site
-* using cloudflare as a DNS to improve caching and speed and reduce costs for the azure web service
-* using azure storage to work as cdn for static files like *.js, *.css, and images
-* costs should be managable. 
+- Find a solution which hosts my website _and_ my blog for one look and feel.
+- migrating my blog from jekyll to hugo, so using hugo for all of it: website and blog.
+- moving the domain from one.com to godaddy and host it on azure instead of one.com
+- adding a CI/CD pipeline in Azure DevOps to continually build and deploy my hugo site
+- using cloudflare as a DNS to improve caching and speed and reduce costs for the azure web service
+- using azure storage to work as cdn for static files like _.js, _.css, and images
+- costs should be managable.
 
 And the time I had was one weekend...so lets go :-) I will mention the steps I did one by one.
 
@@ -48,7 +47,7 @@ I tweaked the theme a bit, added all my picutres, adapted colors (mostly with go
 
 ## Moving from jekyll to hugo
 
-Here is the thing: This was the most unspectacular part in the whole process of migrating from A to B. I just copied over the *.md files and had to modify the markdown metainformation in the header. Which was also because I did not want to use the old design but introduced a completely new one.
+Here is the thing: This was the most unspectacular part in the whole process of migrating from A to B. I just copied over the \*.md files and had to modify the markdown metainformation in the header. Which was also because I did not want to use the old design but introduced a completely new one.
 
 Old (Jekyll)
 
@@ -67,6 +66,7 @@ disqus: true
 categories: articles
 ---
 ```
+
 new (hugo)
 
 ```
@@ -97,12 +97,14 @@ So at the end of that chapter my blog was totally fine running locally.
 
 ## Preparing Azure
 
-As the overview is best in resourcegroups and the scosts can be seen best per resourcegroup I created a complete new one in Azure. I added four things into it:
+As the overview is best in resource groups and the costs can be seen best per resourcegroup I created a complete new one in Azure. I added four things into it:
 
-* A web service to host my site
-* A storage account to act as cdn later
-* xxx
-* yyy
+- A app service to host my site
+- A storage account to act as cdn later
+- Application insights (were added automatically)
+- An App Service Plan (Which is needed anyway)
+
+![Azure resourcegroup](https://cdn.offering.solutions/img/articles/2019-05-29/resourcegroup.png)
 
 As these things were ready I wanted to next build up the CI/CD pipeline for the blog and homepage in Azure Devops.
 
@@ -111,7 +113,6 @@ As these things were ready I wanted to next build up the CI/CD pipeline for the 
 In Azure Devops I created a new CI/CD pipeline by clicking on
 
 ## Adding the custom domain to the web service
-
 
 ## Moving the domain to GoDaddy
 
@@ -123,6 +124,6 @@ Cloud
 
 ## Adding the CDN to Hugo
 
-## Modifying the CI/CD pipeline to deploy to cdn and app service 
+## Modifying the CI/CD pipeline to deploy to cdn and app service
 
 ## Adding the correct Caching Headers<>
