@@ -132,6 +132,20 @@ As in the `dist-blog` folder all the other files are getting copied.
 
 In the end I have to publish the two artifacts `blog` and `cdn` to make them available to my release manager where I pick them up and release them to Azure.
 
+## Modifying the CI/CD pipeline to deploy to cdn and app service
+
+In the release manager I am referring to the dropped outputs now and moving the one to the cdn and the other to the azure web service.
+
+![release manager first pic](https://cdn.offering.solutions/img/articles/2019-05-29/release-1.png)
+
+![release manager second pic](https://cdn.offering.solutions/img/articles/2019-05-29/release-2.png)
+
+With enabled Conitinuous Integration everytime I check in on master a new build and release is triggered. Perfect. 
+
+## Modifying the CDN
+
+
+
 ## Adding the custom domain to the web service
 
 ## Moving the domain to GoDaddy
@@ -143,7 +157,5 @@ To move my old domain to godaddy I canceled my subscription at one.com and they 
 Cloud
 
 ## Adding the CDN to Hugo
-
-## Modifying the CI/CD pipeline to deploy to cdn and app service
 
 ## Adding the correct Caching Headers<>
