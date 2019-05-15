@@ -144,18 +144,44 @@ With enabled Conitinuous Integration everytime I check in on master a new build 
 
 ## Modifying the CDN
 
+As seen in the pictures in the cdn we are deploying in a ... called "web$". Let us create that thing next. So inside Azure go into the Blob Storage you have just created.
+
 
 
 ## Adding the custom domain to the web service
 
-## Moving the domain to GoDaddy
+To move my old domain to godaddy I canceled my subscription at one.com and they gave me a code I could use to move the domain to godaddy. I just filled out the form and could take all the domains over.
 
-To move my old domain to godaddy I canceled my subscription at one.com and they gave me a code I could use to move the domain.
+In Azure then I could add the custom domains for the cdn and the normal web service like this:
 
-## Adding Cloudflare
+Adding the custom domain to the normal web service
+Adding the custom domain to the cdn
 
-Cloud
+## Adding and configuring Cloudflare
+
+Cloudflare offers you a protection and caching as well as SSL updates etc. If you have not worked with it so far it is realy wort a look.
+
+Moving to cloudflare is really easy. Just add the domain which should be added, cloudflare is taking over all the entries. After that you have to tell godaddy to use the nameservers from cloudflare. So this is an easy part.
 
 ## Adding the CDN to Hugo
 
+In Hugo I had to add the cdn as a variable and use it whereever needed. So in my `config.toml` I had to add 
+
+```
+...
+[params]
+  ...
+  cdnbaseurl = "https://cdn.offering.solutions/"
+```
+
+using it then in the normla hugo manner with
+
+```
+<link rel="stylesheet" href="{{ .Site.Params.cdnbaseurl }}css/main.css"/>
+```
+
+for example.
+
 ## Adding the correct Caching Headers<>
+
+With the script of Benjamin Abt
