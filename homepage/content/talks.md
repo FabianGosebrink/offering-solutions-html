@@ -5,6 +5,16 @@ draft: false
 category: noblog
 ---
 
+### State Management in Angular with NgRx Stores and Effects
+
+#### 14.05.2019 - International Javascript Conference
+
+**Keywords:** angular, ngrx
+
+[slides](https://speakerdeck.com/fabiangosebrink/state-management-in-angular-with-ngrx-stores-and-effects)
+
+---
+
 ### JavaScript Testing leicht gemacht am Beispiel von Angular
 
 #### 27.02.2019 - BASTA! - Frankfurt
