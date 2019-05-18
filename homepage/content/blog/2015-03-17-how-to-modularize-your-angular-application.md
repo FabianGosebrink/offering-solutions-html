@@ -24,13 +24,13 @@ var app = angular.module('TestApp', [
 
 Now we could add all our services, and controllers to our defined app. Which would make them all accessable. Behind the scenes angularJS uses dependency injection to offer us our parts of our software and these services are singletons, so they are accessable everywhere out of the box.
 
-![Folie30](/img/articles/wp-content/uploads/2015/02/Folie30.jpg)
+![Folie30](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/02/Folie30.jpg)
 
 But this is not a nice architecture and we are not using modularization. You do not have an overview of you application when you are using at your application.js file. You are using angularJS to build architectures, so lets do so!
 
 Go and build a folder for every Module you want to create:
 
-![Folders](/img/articles/wp-content/uploads/2015/02/Folders.png)
+![Folders](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/02/Folders.png)
 
 And register your services on these modules.
 
@@ -74,7 +74,7 @@ var app = angular.module('TestApp', [
 ]);
 ```
 
-![How to modularize your angular application](/img/articles/wp-content/uploads/2015/02/Folie31.jpg)
+![How to modularize your angular application](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/02/Folie31.jpg)
 
 With this you have your application divided in modules and you can add or remove the modules as you want with no effort. You can also easily see which modules your application is based on.
 

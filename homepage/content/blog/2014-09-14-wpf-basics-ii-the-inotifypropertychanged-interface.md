@@ -97,7 +97,7 @@ Lets tune this:
 2.  We will make this function generic expecting a lambda-Expression to erase the magic string
 3.  We will call the refreshing thing in the setter of the property itself. Then its getting refreshed everytime someone in the code sets it.
 
-![WPF Basics II - The INotifyPropertyChanged Interface](/img/articles/2014-09-14/INotify_I.jpg)
+![WPF Basics II - The INotifyPropertyChanged Interface](https://cdn.offering.solutions/img/articles/2014-09-14/INotify_I.jpg)
 
 which looks like:
 
@@ -170,7 +170,7 @@ Lets tune this a little bit: The viewmodel does a lot of work. It does not have 
 
 First we do a NameProvider, which gives us the name. In my case again with a timer to see the UI changing. Normally this could be a service or something else without a timer. Could be anything which triggers the UI to change (not only) after a piece of work.
 
-![WPF Basics II - The INotifyPropertyChanged Interface](/img/articles/2014-09-14/INotify_II.jpg)
+![WPF Basics II - The INotifyPropertyChanged Interface](https://cdn.offering.solutions/img/articles/2014-09-14/INotify_II.jpg)
 
 ```csharp
 public class NameProviderImpl : NotifyPropertyChangedBase, INameProvider
@@ -248,6 +248,6 @@ Now we have to change the binding a bit. Because now the viewmodel is giving us 
 
 Run this and you will see the result stays the same: After three seconds our string is displayed.
 
-![WPF Basics II - The INotifyPropertyChanged Interface](/img/articles/2014-09-14/INotify_III.jpg)
+![WPF Basics II - The INotifyPropertyChanged Interface](https://cdn.offering.solutions/img/articles/2014-09-14/INotify_III.jpg)
 
 So what we did now is: Getting our Viewmodel nice and clean. It gives us an overview of services and providers which the UI can use. It does not inherit from NotifyPropertyChangedBase. You saw how flexible databinding is. Not only with strings but you can bind also lists of objects etc.

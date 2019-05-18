@@ -13,7 +13,7 @@ aliases: [
 
 This article shows how to use ASP.NET Core and Angular with webpack and Visual Studio. Both the client and the server side of the application is implemented inside one ASP.NET Core project which makes it easier to deploy.
 
-![vs_webpack_angular2](/img/articles/wp-content/uploads/2016/06/vs_webpack_angular2.png)
+![vs_webpack_angular2](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/06/vs_webpack_angular2.png)
 
 **Code:** [https://github.com/damienbod/Angular2WebpackVisualStudio](https://github.com/damienbod/Angular2WebpackVisualStudio)
 

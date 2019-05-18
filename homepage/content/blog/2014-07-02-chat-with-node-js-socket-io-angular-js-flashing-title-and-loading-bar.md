@@ -26,7 +26,7 @@ The folder structure in angular.js is, in my opinion, very important because it 
 
 So I always make an app-folder which holds all my angular-logic in it and a views folder which encapsulated my views (surprise! ;) ). Within my app folder I have folders for my services, controllers (which are important for the angular-stuff) and for css-files and 3rd-party scripts which is only called "scripts" here. I am trying to do like I would do the namespaces in C#, perhaps you recognized this ;)
 
-![1](/img/articles/2014-07-03/1-1.jpg)
+![1](https://cdn.offering.solutions/img/articles/2014-07-03/1-1.jpg)
 
 ### The View
 
@@ -34,7 +34,7 @@ Well, to build up a view for a chat client you can do everything you can think o
 
 Additionally to this you need to have all your scripts loaded. In the end this looks something like this:
 
-![2](/img/articles/2014-07-03/2.png)
+![2](https://cdn.offering.solutions/img/articles/2014-07-03/2.png)
 
 So what we see here is the head-information which is including everything (dont worry, we will get through most of these files during this post) we need to get the things going and the body. The body is giving us a div where we specify the controller "DemoController" and bind the messages we have in a simple html-list "li" with a simple angular-statement "ng-repeat".
 
@@ -214,12 +214,12 @@ This service is offering us two methods
 
 To show you how this looks like in the file/folder-structure, see here:
 
-![4](/img/articles/2014-07-03/4.jpg)
-![3](/img/articles/2014-07-03/3.jpg)
+![4](https://cdn.offering.solutions/img/articles/2014-07-03/4.jpg)
+![3](https://cdn.offering.solutions/img/articles/2014-07-03/3.jpg)
 
 So this was it. This is all you need to get a chat client going. If you include all the angular-files and giving the client the correct IP I am sure you will get the chat going in a second. (Dont forget to load the [server](http://blog.noser.com/node-js-chat-server/))
 Thanks for reading.
 
 Fabian
 
-[chatclient_angular](/img/articles/2014-07-03/chatclient_angular.zip)
+[chatclient_angular](https://cdn.offering.solutions/img/articles/2014-07-03/chatclient_angular.zip)

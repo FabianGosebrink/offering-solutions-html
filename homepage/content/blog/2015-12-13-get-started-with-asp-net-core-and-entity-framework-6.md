@@ -22,7 +22,7 @@ If you start with the new templates for ASP.NET 5 you will notice in a short tim
 
 First of all you need to start an new project with the new ASP.NET like this:
 
-![Ef6Example](/img/articles/wp-content/uploads/2015/12/Ef6Example.jpg)
+![Ef6Example](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/12/Ef6Example.jpg)
 
 This will create you a new nearly empty solution following the new standards with all configs in \*.json files and so on.
 
@@ -34,19 +34,19 @@ The first step we a re going to do is adding the dependency of the Entity Framew
 
 at the end of you dependencies section like this:
 
-![Ef6Example_02](/img/articles/wp-content/uploads/2015/12/Ef6Example_02.jpg)
+![Ef6Example_02](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/12/Ef6Example_02.jpg)
 
 This will get Visual Studio 2015 to update your dependencies including the Entity Framework.
 
 Now you can create a new class named like your Context. in this case this will be "MyEf6EntityFrameworkContext".
 
-![Ef6Example_03](/img/articles/wp-content/uploads/2015/12/Ef6Example_03.jpg)
+![Ef6Example_03](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/12/Ef6Example_03.jpg)
 
 Be sure to use the "base"-functionality, because we will need it when passing the connectionstring to the context reading it out of the \*.json file.
 
 Back in our Startup.cs-File we are including a file called "appsettings.json". Lets go and add our Connectionstring to this file:
 
-![Ef6Example_04](/img/articles/wp-content/uploads/2015/12/Ef6Example_04.jpg)
+![Ef6Example_04](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/12/Ef6Example_04.jpg)
 
 This should look quite familiar because of the connectionstring you knew from the web.config in the previous asp.net-versions.
 
@@ -271,11 +271,11 @@ public class MyModelController : Controller
 
 Thats it. If you now going to use the DatabaseContext it will create the database for you with the new ASP.NET Core.
 
-![Ef6Example_05](/img/articles/wp-content/uploads/2015/12/Ef6Example_05.jpg)
+![Ef6Example_05](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/12/Ef6Example_05.jpg)
 
 You can now go ahead and add an item with e.g. postman:
 
-![Ef6Example_06](/img/articles/wp-content/uploads/2015/12/Ef6Example_06.jpg)
+![Ef6Example_06](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/12/Ef6Example_06.jpg)
 
 and it will be stored in the database:
 

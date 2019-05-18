@@ -237,7 +237,7 @@ You can browse all the source code in the repository [here](https://github.com/F
 The result is an application which takes a picture, sends it to an API and then displays the result in a table but you can also see the full response if you want.
 Have fun :)
 
-![AngularFaceRecoginitionApi](/img/articles/2018-04-28/2018-04-28-13_36_07-AngularFaceRecoginitionApi.jpg)
+![AngularFaceRecoginitionApi](https://cdn.offering.solutions/img/articles/2018-04-28/2018-04-28-13_36_07-AngularFaceRecoginitionApi.jpg)
 
 ## Links
 

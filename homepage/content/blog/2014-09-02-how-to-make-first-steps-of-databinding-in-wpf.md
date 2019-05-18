@@ -80,7 +80,7 @@ public class MainViewModel
 
 Remeber: This is an external class. It has "nothing" to do (yet) with the UI. There is no connection until here. In a project this could look like this:
 
-![How to make first steps of Databinding in WPF](/img/articles/2014-09-02/DataBinding1.jpg)
+![How to make first steps of Databinding in WPF](https://cdn.offering.solutions/img/articles/2014-09-02/DataBinding1.jpg)
 
 The viewmodel offers all data it wants to show to the view (and perhaps some more ;) ). These data are offered with properties.
 
@@ -103,7 +103,7 @@ public partial class MainWindow : Window
 
 And there you go. Now the view does know about the datacontext which is completely seperated. It is offering the information about properties and if you press F5 to run the solution you should see something like this:
 
-![How to make first steps of Databinding in WPF](/img/articles/2014-09-02/DataBinding2.jpg)
+![How to make first steps of Databinding in WPF](https://cdn.offering.solutions/img/articles/2014-09-02/DataBinding2.jpg)
 
 Now what we did is a normal Hello-World-Label. Depending on the UI-container (ItemControls, Comboboxes,...) you can bind whatever you want to the UI.
 
@@ -176,7 +176,7 @@ Now that the viewmodel is our Datacontext it can access every property on it. So
 
 But if you run this you only see the namespace and the name of the classes. Why this? Because the only thing you give to the ItemsControl is the list of persons. From where should it know what to do with it? It just calls the "ToString()"-Extension on "object" and gets the Namespace and the name of the class.
 
-![How to make first steps of Databinding in WPF](/img/articles/2014-09-02/List1.jpg)
+![How to make first steps of Databinding in WPF](https://cdn.offering.solutions/img/articles/2014-09-02/List1.jpg)
 
 So lets tell the UI how to treat the objects. This can be done with an Itemtemplate.
 
@@ -205,7 +205,7 @@ The Itemtemplate now tells the object how to appear. In my case these are just t
 
 Great. After telling this let this thing run and see the result:
 
-![How to make first steps of Databinding in WPF](/img/articles/2014-09-02/List2.jpg)
+![How to make first steps of Databinding in WPF](https://cdn.offering.solutions/img/articles/2014-09-02/List2.jpg)
 
 Have fun
 

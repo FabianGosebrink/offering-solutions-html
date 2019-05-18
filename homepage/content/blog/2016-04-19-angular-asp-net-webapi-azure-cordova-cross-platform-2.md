@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-![foodchooser](/img/articles/wp-content/uploads/2016/04/foodchooser.jpg)
+![foodchooser](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/04/foodchooser.jpg)
 
 ### Motivation
 

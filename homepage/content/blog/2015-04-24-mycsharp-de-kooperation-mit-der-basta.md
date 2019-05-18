@@ -14,7 +14,7 @@ MyCSharp.de - Kooperation mit der Basta!
 
 Ich freue mich wirklich zu sagen, dass das Team von MyCSharp.de und die Basta! eine Kooperation eingegangen sind und MyCSharp.de Partner der Basta! wird.
 
-![MyCSharp.de - Kooperation mit der Basta!](/img/articles/wp-content/uploads/2015/04/Basta-Banner.png)
+![MyCSharp.de - Kooperation mit der Basta!](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/04/Basta-Banner.png)
 
 Was ist die BASTA!?
 
