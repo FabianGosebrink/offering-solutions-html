@@ -140,11 +140,11 @@ In the release manager I am referring to the dropped outputs now and moving the 
 
 ![release manager second pic](https://cdn.offering.solutions/img/articles/2019-05-29/release-2.png)
 
-With enabled Conitinuous Integration everytime I check in on master a new build and release is triggered. Perfect. 
+With enabled Conitinuous Integration everytime I check in on master a new build and release is triggered. Perfect.
 
 ## Modifying the CDN
 
-
+Test
 
 ## Adding the custom domain to the web service
 
