@@ -130,6 +130,8 @@ To the folder `homepage/public/dist-cdn` I am copying over all the static files 
 
 As in the `dist-blog` folder all the other files are getting copied.
 
+To trigger a build everytime I check something into master branch I enable the "Continuous Integration" in the "Triggers" Tab at the checkbox "Enable Continuous Integration"
+
 In the end I have to publish the two artifacts `blog` and `cdn` to make them available to my release manager where I pick them up and release them to Azure.
 
 ## Modifying the CI/CD pipeline to deploy to cdn and app service
