@@ -108,6 +108,12 @@ As the overview is best in resource groups and the costs can be seen best per re
 
 As these things were ready I wanted to next build up the CI/CD pipeline for the blog and homepage in Azure Devops.
 
+## Preparing the cdn
+
+In the CDN I did a new container called `$web` where I would upload all the files.
+
+![cdn container](https://cdn.offering.solutions/img/articles/2019-05-29/cdn-container.png)
+
 ## Building a CI/CD pipeline for the blog
 
 In Azure Devops which you can access via `https://dev.azure.com/<yourusername>/` I created a new CI/CD pipeline by clicking on the `Create new project` in the upper right corner and connected it to my existing github project.
@@ -142,17 +148,19 @@ In the release manager I am referring to the dropped outputs now and moving the 
 
 ![release manager second pic](https://cdn.offering.solutions/img/articles/2019-05-29/release-2.png)
 
-With enabled Conitinuous Integration everytime I check in on master a new build and release is triggered. Perfect.
+With enabled Conitinuous Integration everytime I check in on master a new build and release is triggered. Perfect!
 
-## Modifying the CDN
+## Moving the domain to GoDaddy and adding cloudflare
 
-Test
+To move my old domain to godaddy I canceled my subscription at one.com and they gave me a code I could use to move the domain. In GoDaddy I logged in and used this link [https://www.godaddy.com/domains/domain-transfer](https://www.godaddy.com/domains/domain-transfer) to transfer my domain.
+
+After I did this I went to cloudflare and signed in as well. I added my domain and controlled everything from there then. In GoDaddy I added the cloudflare nameservers like this:
+
+![Godaddy nameservers](https://cdn.offering.solutions/img/articles/2019-05-29/godaddy.png)
 
 ## Adding the custom domain to the web service
 
-## Moving the domain to GoDaddy
-
-To move my old domain to godaddy I canceled my subscription at one.com and they gave me a code I could use to move the domain.
+So in Azure
 
 ## Adding Cloudflare
 
