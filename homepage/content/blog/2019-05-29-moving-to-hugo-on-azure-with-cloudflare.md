@@ -174,7 +174,9 @@ And the custom domains for the app service like this. If you want to know how to
 
 Of course in Cloudflare I added these mappings then as we use the cloudflare nameservers and not the ones from godaddy anymore.
 
-![cloudflare-mappings](https://cdn.offering.solutions/img/articles/2019-05-29/cloudflare-mappings.png)
+![cloudflare-mappings](https://cdn.offering.solutions/img/articles/2019-05-29/cloudflare-mappings.png).
+
+Notice that the `cdn.offeringsolutions` is pointing to my custom domain of the azure cdn blob storage and the `offering.solutions`, `www.offering.solutions` is pointing to the azure web service.
 
 ## Adding the CDN to Hugo
 
