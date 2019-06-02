@@ -165,7 +165,16 @@ So in Azure I added the custom domain names to the web service. I used the guid 
 I added the CDN custom domain like this:
 
 ![customdomain cdn](https://cdn.offering.solutions/img/articles/2019-05-29/customdomain-cdn.png)
-![customdomain-appservice ](https://cdn.offering.solutions/img/articles/2019-05-29/customdomain-appservice.png)
+
+And the custom domains for the app service like this. If you want to know how to exactly add them refer to the guide above.
+
+> Do not be scared about the "Not Secure" in the picture. This means, that no SSL certificate has been added. We will serve our page with cloudflare and ssl in the end.
+
+![customdomain-appservice](https://cdn.offering.solutions/img/articles/2019-05-29/customdomain-appservice.png)
+
+Of course in Cloudflare I added these mappings then as we use the cloudflare nameservers and not the ones from godaddy anymore.
+
+![cloudflare-mappings](https://cdn.offering.solutions/img/articles/2019-05-29/cloudflare-mappings.png)
 
 ## Adding the CDN to Hugo
 
