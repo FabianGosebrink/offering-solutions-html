@@ -160,11 +160,12 @@ After I did this I went to cloudflare and signed in as well. I added my domain a
 
 ## Adding the custom domain to the web service
 
-So in Azure
+So in Azure I added the custom domain names to the web service. I used the guid here [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain).
 
-## Adding Cloudflare
+I added the CDN custom domain like this:
 
-Cloud
+![customdomain cdn](https://cdn.offering.solutions/img/articles/2019-05-29/customdomain-cdn.png)
+![customdomain-appservice ](https://cdn.offering.solutions/img/articles/2019-05-29/customdomain-appservice.png)
 
 ## Adding the CDN to Hugo
 
