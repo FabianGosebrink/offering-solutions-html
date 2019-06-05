@@ -140,7 +140,7 @@ To trigger a build everytime I check something into master branch I enable the "
 
 In the end I have to publish the two artifacts `blog` and `cdn` to make them available to my release manager where I pick them up and release them to Azure.
 
-## Modifying the CI/CD pipeline to deploy to cdn and app service
+## Modifying the CI/CD pipeline to deploy to CDN and App Service
 
 In the release manager I am referring to the dropped outputs now and moving the one to the cdn and the other to the azure web service.
 
@@ -148,13 +148,13 @@ In the release manager I am referring to the dropped outputs now and moving the 
 
 ![release manager second pic](https://cdn.offering.solutions/img/articles/2019-05-29/release-2.png)
 
-With enabled Conitinuous Integration everytime I check in on master a new build and release is triggered. Perfect!
+With enabled Conitinuous Integration everytime I check in a new build and release is triggered. Perfect!
 
 ## Moving the domain to GoDaddy and adding cloudflare
 
 To move my old domain to godaddy I canceled my subscription at one.com and they gave me a code I could use to move the domain. In GoDaddy I logged in and used this link [https://www.godaddy.com/domains/domain-transfer](https://www.godaddy.com/domains/domain-transfer) to transfer my domain.
 
-After I did this I went to cloudflare and signed in as well. I added my domain and controlled everything from there then. In GoDaddy I added the cloudflare nameservers like this:
+After I did this I went to Cloudflare (see below) and signed in as well. I added my domain and controlled everything from there then. In GoDaddy I added the cloudflare nameservers like this:
 
 ![Godaddy nameservers](https://cdn.offering.solutions/img/articles/2019-05-29/godaddy.png)
 
@@ -172,7 +172,7 @@ And the custom domains for the app service like this. If you want to know how to
 
 ![customdomain-appservice](https://cdn.offering.solutions/img/articles/2019-05-29/customdomain-appservice.png)
 
-Of course in Cloudflare I added these mappings then as we use the cloudflare nameservers and not the ones from godaddy anymore.
+Of course in Cloudflare I added these mappings then as we use the Cloudflare nameservers and not the ones from godaddy anymore.
 
 ![cloudflare-mappings](https://cdn.offering.solutions/img/articles/2019-05-29/cloudflare-mappings.png).
 
@@ -180,4 +180,23 @@ Notice that the `cdn.offeringsolutions` is pointing to my custom domain of the a
 
 ## Adding the CDN to Hugo
 
-## Adding the correct Caching Headers<>
+In hugo itself I had to pay attention to provide the correct domain of the cdn like this in the `config.toml` file.
+
+```
+# Site settings
+baseURL = "https://offering.solutions/"
+
+[params]
+  cdnbaseurl = "https://cdn.offering.solutions/"
+
+```
+
+## Adding the correct Caching
+
+So to serve as much as we can from the cache I went into Cloudflare and modified the caching up to 12 hours (which is not much, but read further)
+
+![cloudflare-cache](https://cdn.offering.solutions/img/articles/2019-05-29/caching.png)
+
+So the "Browser Cache Expiration" setting tells that it will fall back to the setting which is given in cliudflare but respect the caching headers if they are set. I wanted to try that out and was searching for a way to modify my cache headers on the cdn on azure because this is where all the static files are coming from.
+
+With the help of Benjamin Abt I got a script which was doing exactly that for me with the Azure CLI.
