@@ -211,8 +211,12 @@ The Azure App Service Deploy stayed the same but I removed the old task of deplo
 az storage blob upload-batch --account-name offeringsolutionscdn --destination $web --source $(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn --content-cache-control "public, max-age=2592000"
 ```
 
+Where `$(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn` refers to the name of the artifact getting dropped out.
+
 Show picture of rls pipeline
 
-Show Cahing on CDN Azure
+Show Caching on CDN Azure
 
 Show Caching in the browser
+
+## The costs
