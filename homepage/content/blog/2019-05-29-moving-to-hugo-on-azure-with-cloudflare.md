@@ -213,10 +213,12 @@ az storage blob upload-batch --account-name offeringsolutionscdn --destination $
 
 Where `$(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn` refers to the name of the artifact getting dropped out.
 
-Show picture of rls pipeline
+![new release pipeline](https://cdn.offering.solutions/img/articles/2019-05-29/new-rls-pipeline.png)
 
 Show Caching on CDN Azure
 
 Show Caching in the browser
 
 ## The costs
+
+nr
