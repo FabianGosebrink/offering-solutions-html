@@ -208,7 +208,7 @@ With the help of [Benjamin Abt](https://twitter.com/abt_benjamin) I got a script
 The Azure App Service Deploy stayed the same but I removed the old task of deploying the files to the blog and used the azure cli instead with the following script
 
 ```
-az storage blob upload-batch --account-name offeringsolutionscdn --destination $web --source $(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn --content-cache-control "public, max-age=2592000"
+az storage blob upload-batch --account-name <storage-account-name-here> --destination <container-here> --source $(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn --content-cache-control "public, max-age=2592000"
 ```
 
 Where `$(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn` refers to the name of the artifact getting dropped out.
