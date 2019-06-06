@@ -1,5 +1,5 @@
 ---
-title: Hosting an hugo site on azure with cloudflare, godaddy and CDN
+title: Hosting Hugo on azure with cloudflare, godaddy and Azure Blob Storage
 date: 2019-04-26
 tags: ['cloudflare', 'azure', 'hugo']
 draft: true
@@ -7,33 +7,33 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blogpost I want to describe how I moved my complete company homepage and my blog from static handwritten html and jekyll to a hugo solution which is hosted on azure and uses cloudflare as DNS, has a CI/CD pipe line and is hosted on github.
+In this blogpost I want to describe how I moved my complete company homepage and my blog from static handwritten html and jekyll to a hugo solution which is hosted on azure and uses cloudflare as DNS, has a CI/CD pipeline and is hosted on azure.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Thinking about moving my blog from jekyll to <a href="https://twitter.com/GoHugoIO?ref_src=twsrc%5Etfw">@GoHugoIO</a>...</p>&mdash; Fabian Gosebrink @ 🏠🇨🇭 (@FabianGosebrink) <a href="https://twitter.com/FabianGosebrink/status/1118459324395921408?ref_src=twsrc%5Etfw">April 17, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## The Situation in the past
 
-As my company homepage and my blog have been two projects in the past I had two different repositories for both which were lying on azure dev ops (html page) and on github.com (blog).
+As my company homepage and my blog have been two projects in the past I had two different repositories for both which were lying on an azure devops git repo (html page) and on github.com (blog).
 
-The blog was a jekyll blog which was creating my sites statically and then deployed to the same webserver as my website was hostes. The both repositories had two different ci/cd pipelines on dev.azure.com and if I check in one of them, the build was triggered and either the blog was deployed in a subfolder or the website was deployed to root. But they just did not have the same look and feel as this was grown historically.
+The blog was a jekyll blog which was creating my html pages from markdown and then deployed to the same webserver as my website was hosted. The both repositories had two different CI/CD pipelines on dev.azure.com and if I checked in one of them, the build was triggered and either the blog was deployed in a subfolder or the website was deployed to root. But they just did not have the same look and feel as this was grown historically.
 
-The site was hosted on one.com including the domain. I am very satisfied with one.com. It ran all the time without any problem, support was good, had no pain with it. But I could not change the nameservers and because of that not use cloudflare. And I wanted to host my site on azure.com and find a good solution to combine site and blog in one.
+The site was hosted on one.com including the domain. I am very satisfied with one.com. It ran all the time without any problem, support was good, had no pain with it. But I could not change the nameservers and because of that not use cloudflare. And I wanted to host my site on azure.com to get a feeling of this, better integration and find a good solution to combine site and blog in one.
 
 Also the build time from my jekyll blog was incredible: 30 seconds when saving a blog until I saw the changes was definetly too much. I know that it does not sound that long, but if you are working on a page and are used to an instant refresh which you get normally 30 seconds is way too much for a simple blogpost.
-I also ran the bash shell on Windows to have a linux system which was running jekyll fast, but it also took around 10 seconds to rebuild my blog...and I was tired of that.
+I also ran the bash shell on Windows to have a linux system which was running jekyll faster but it also took around 10 seconds to rebuild my blog...and I was tired of that.
 
 So my plan was to:
 
 - Find a solution which hosts my website _and_ my blog for one look and feel.
-- migrating my blog from jekyll to hugo, so using hugo for all of it: website and blog.
-- moving the domain from one.com to godaddy and host it on azure instead of one.com
-- adding a CI/CD pipeline in Azure DevOps to continually build and deploy my hugo site
-- using cloudflare as a DNS to improve caching and speed and reduce costs for the azure web service
-- using azure storage to work as cdn for static files like _.js, _.css, and images
-- costs should be managable.
+- Migrating my blog from jekyll to hugo, so using hugo for all of it: website and blog.
+- Moving the domain from one.com to godaddy and host it on azure instead of one.com
+- Adding a CI/CD pipeline in Azure DevOps to continually build and deploy my hugo site
+- Using cloudflare as a DNS to improve caching and speed and reduce costs for the azure web service
+- Using azure blob storage to work as cdn for static files like _.js, _.css, and images
+- Costs should be managable.
 
-And the time I had was one weekend...so lets go :-) I will mention the steps I did one by one.
+And the time I had was one weekend...so lets go :-)
 
 ## Finding a theme
 
@@ -43,7 +43,7 @@ That was one of the hardest parts to be honest. I wanted a clean (for me) nice l
 
 Hugo can be installed very quickly. Find the instructions [here](https://gohugo.io/getting-started/installing/). I used Chocolatey to install it and getting it up and running was really easy.
 
-I tweaked the theme a bit, added all my picutres, adapted colors (mostly with google chromes dev tools) and overwrote the css etc. So web developer things which we a re doing :) At some point "my" design was looking good so I could start adapting all my content.
+I tweaked the theme a bit, added all my pictures, adapted colors (mostly with google chromes dev tools) and overwrote the css etc. So web developer things which we are doing :) At some point "my" design was looking good so I could start adapting all my content.
 
 ## Moving from jekyll to hugo
 
@@ -83,9 +83,9 @@ aliases: [
 ---
 ```
 
-I had to get a little into the new markdown structure and into how hugo handles files. I did the migration of the markdown files all manually which took a while, but for me it was the fastest way.
+I had to get a little into the new markdown structure and into how hugo handles files. I did the migration of the markdown files all manually which took a while but for me it was the fastest way.
 
-With `hugo server -D` a local webserver is started and you can access to complete page at `localhost:1313` in my case. This made it very easy to see the outcome, also because hugo is very very fast in reloading, which was one of the main reason for me to switch.
+With `hugo server -D` a local webserver is started and you can access to complete page at `localhost:1313` in my case. This made it very easy to see the outcome, also because hugo is very very fast in reloading which was one of the main reason for me to switch.
 
 I had to migrate the `.toml` file a bit and do a little html here and css there. But even for a non designer like me this was totally managable. But I think this also depends on how far you want to go with your theme.
 
@@ -102,7 +102,7 @@ As the overview is best in resource groups and the costs can be seen best per re
 - A app service to host my site
 - A storage account to act as cdn later
 - Application insights (were added automatically)
-- An App Service Plan (Which is needed anyway)
+- An App Service Plan (which is needed anyway)
 
 ![Azure resourcegroup](https://cdn.offering.solutions/img/articles/2019-05-29/resourcegroup.png)
 
@@ -122,11 +122,11 @@ For generating the site I used a build task which build my site running the need
 
 ![CICD-1](https://cdn.offering.solutions/img/articles/2019-05-29/cicd-1.png)
 
-So the source of my hugo site is the folder `homepage` and the destination is `homepage/public`. This is the folder all files are build to. I am overwriting the `BaseUrl` with the domain `https:/offering.solutions`. I would have to do this as in my `config.toml` file the `baseURL = "https://offering.solutions/"` is already set to the correct domain. It was more just to try it out a bit :)
+So the source of my hugo site is the folder `homepage` and the destination is `homepage/public`. This is the folder all files are build to. I am overwriting the `BaseUrl` with the domain `https://offering.solutions`. I would not have to do this as in my `config.toml` file the `baseURL = "https://offering.solutions/"` is already set to the correct domain. It was more just to try it out a bit :)
 
 As next step I had to divide the files which are going to be deployed to the cdn on azure and the files which are going to be deployed to the main domain web service on azure.
 
-So in the next two steps the files form the public folder are separated.
+So in the next two steps the files from the `public` folder are separated.
 
 ![CICD-2](https://cdn.offering.solutions/img/articles/2019-05-29/cicd-2.png)
 
@@ -136,7 +136,7 @@ To the folder `homepage/public/dist-cdn` I am copying over all the static files 
 
 As in the `dist-blog` folder all the other files are getting copied.
 
-To trigger a build everytime I check something into master branch I enable the "Continuous Integration" in the "Triggers" Tab at the checkbox "Enable Continuous Integration"
+To trigger a build everytime I check something into the repo I enable the "Continuous Integration" in the "Triggers" Tab at the checkbox "Enable Continuous Integration"
 
 In the end I have to publish the two artifacts `blog` and `cdn` to make them available to my release manager where I pick them up and release them to Azure.
 
@@ -150,6 +150,8 @@ In the release manager I am referring to the dropped outputs now and moving the 
 
 With enabled Conitinuous Integration everytime I check in a new build and release is triggered. Perfect!
 
+So now my new blog is available under the `azurewebsites` domain. Time to move the domain, too.
+
 ## Moving the domain to GoDaddy and adding cloudflare
 
 To move my old domain to godaddy I canceled my subscription at one.com and they gave me a code I could use to move the domain. In GoDaddy I logged in and used this link [https://www.godaddy.com/domains/domain-transfer](https://www.godaddy.com/domains/domain-transfer) to transfer my domain.
@@ -160,7 +162,7 @@ After I did this I went to Cloudflare (see below) and signed in as well. I added
 
 ## Adding the custom domain to the web service
 
-So in Azure I added the custom domain names to the web service. I used the guid here [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain).
+So in Azure I added the custom domain names to the web service. I used the guide from the docs here [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain).
 
 I added the CDN custom domain like this:
 
@@ -176,7 +178,7 @@ Of course in Cloudflare I added these mappings then as we use the Cloudflare nam
 
 ![cloudflare-mappings](https://cdn.offering.solutions/img/articles/2019-05-29/cloudflare-mappings.png).
 
-Notice that the `cdn.offeringsolutions` is pointing to my custom domain of the azure cdn blob storage and the `offering.solutions`, `www.offering.solutions` is pointing to the azure web service.
+Notice that the `cdn.offeringsolutions` is pointing to my custom domain of the azure cdn blob storage and the `offering.solutions` and `www.offering.solutions` is pointing to the azure web service.
 
 ## Adding the CDN to Hugo
 
@@ -191,12 +193,26 @@ baseURL = "https://offering.solutions/"
 
 ```
 
-## Adding the correct Caching
+After I have done this I replaced all the references to the pictures in my blogposts to send the requests to the cdn as all static files are living there now.
+
+## Adding the correct caching
 
 So to serve as much as we can from the cache I went into Cloudflare and modified the caching up to 12 hours (which is not much, but read further)
 
 ![cloudflare-cache](https://cdn.offering.solutions/img/articles/2019-05-29/caching.png)
 
-So the "Browser Cache Expiration" setting tells that it will fall back to the setting which is given in cliudflare but respect the caching headers if they are set. I wanted to try that out and was searching for a way to modify my cache headers on the cdn on azure because this is where all the static files are coming from.
+So the "Browser Cache Expiration" setting tells that it will fall back to the setting which is given in cloudflare but respect the caching headers if they are set. I wanted to try that out and was searching for a way to modify my cache headers on the cdn on azure because this is where all the static files are coming from.
 
-With the help of Benjamin Abt I got a script which was doing exactly that for me with the Azure CLI.
+With the help of [Benjamin Abt](https://twitter.com/abt_benjamin) I got a script which was doing exactly that for me with the Azure CLI. So I wanted to improve my release pipeline to do that automatically for me.
+
+The Azure App Service Deploy stayed the same but I removed the old task of deploying the files to the blog and used the azure cli instead with the following script
+
+```
+az storage blob upload-batch --account-name offeringsolutionscdn --destination $web --source $(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn --content-cache-control "public, max-age=2592000"
+```
+
+Show picture of rls pipeline
+
+Show Cahing on CDN Azure
+
+Show Caching in the browser
