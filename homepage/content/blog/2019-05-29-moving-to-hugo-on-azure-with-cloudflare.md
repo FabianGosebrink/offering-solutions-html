@@ -215,10 +215,20 @@ Where `$(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn` refers 
 
 ![new release pipeline](https://cdn.offering.solutions/img/articles/2019-05-29/new-rls-pipeline.png)
 
-Show Caching on CDN Azure
+The files on Azure can now be inpected with the correct values which were set when uploading them:
 
-Show Caching in the browser
+![azure-cache](https://cdn.offering.solutions/img/articles/2019-05-29/azure-cache.png)
+
+![browser-cache](https://cdn.offering.solutions/img/articles/2019-05-29/browser-cache.png)
 
 ## The costs
 
-nr
+So last but not least let us talk about what the whole thing costs in one month. For this, let us first look at some data from cloudflare:
+
+![cloudflare-stats](https://cdn.offering.solutions/img/articles/2019-05-29/cloudflare-stats.png)
+
+In the last 30 days the site had about 450 k requests with nearly 80% cached. That is pretty cool! From 8 GB 6 GB were served out of the cache.
+
+But what does the costs say in Azure? Let us hit the resource group we created in the beginning and take a look at the costs of the May 2019.
+
+![azure-pricing](https://cdn.offering.solutions/img/articles/2019-05-29/azure-pricing.png)
