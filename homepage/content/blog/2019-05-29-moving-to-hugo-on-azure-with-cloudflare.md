@@ -227,7 +227,7 @@ So last but not least let us talk about what the whole thing costs in one month.
 
 ![cloudflare-stats](https://cdn.offering.solutions/img/articles/2019-05-29/cloudflare-stats.png)
 
-In the last 30 days the site had about 450 k requests with nearly 80% cached. That is pretty cool! From 8 GB 6 GB were served out of the cache.
+In the last 30 days the site delivered 8GB with nearly 80% cached. That is pretty cool! From 8 GB 6 GB were served out of the cache.
 
 But what does the costs say in Azure? Let us hit the resource group we created in the beginning and take a look at the costs of the May 2019.
 
