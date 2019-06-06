@@ -108,6 +108,8 @@ As the overview is best in resource groups and the costs can be seen best per re
 
 As these things were ready I wanted to next build up the CI/CD pipeline for the blog and homepage in Azure Devops.
 
+I choose an Azure App Service for my blog because a blob storage _must_ have a subdomain and I want it to be available via `http://offering.solutions/` without subdomains and a blob storage is case sensitive which is bad for getting recognized by search engines, so I went for an app service instead but 
+
 ## Preparing the cdn
 
 In the CDN I did a new container called `$web` where I would upload all the files.
