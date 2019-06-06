@@ -232,3 +232,43 @@ In the last 30 days the site had about 450 k requests with nearly 80% cached. Th
 But what does the costs say in Azure? Let us hit the resource group we created in the beginning and take a look at the costs of the May 2019.
 
 ![azure-pricing](https://cdn.offering.solutions/img/articles/2019-05-29/azure-pricing.png)
+
+So in the complete month May 2019 the whole website costed 9.74 CHF which is about 8.73 Euro or 9.86 USD. As I got a MSDN Subscription this totally lies in the scope of my free amount which I can spend over the months. So actually I am running it for free.
+
+Of course you have to add the domain `offering.solutions` to it which is 25 CHF a year. So calculation the whole costs of this my website and domain cost me approcimately 144 CHF a year including a cloud based solution, the domain, CI/CD, a CDN etc.
+
+For me this is, until now, a perfect solution.
+
+## Conclusion
+
+So in the beginning we wanted to fullfill the following points:
+
+- Find a solution which hosts my website _and_ my blog for one look and feel.
+
+Did that with hugo and Azure
+
+- Migrating my blog from jekyll to hugo, so using hugo for all of it: website and blog.
+
+Done by migration all in one repository
+
+- Moving the domain from one.com to godaddy and host it on azure instead of one.com
+
+Did taht with godaddy domains and the domains registered on azure as custom domains.
+
+- Adding a CI/CD pipeline in Azure DevOps to continually build and deploy my hugo site
+
+Done via Azure DevOps, Azure CLI and a Github Repo.
+
+- Using cloudflare as a DNS to improve caching and speed and reduce costs for the azure web service
+
+Also done that, Cloudflare acting as a DNS and takes care about the caching.
+
+- Using azure blob storage to work as cdn for static files like _.js, _.css, and images
+
+Did a separate artifact and released that one to the blob storage we used to serve static files.
+
+- Costs should be managable.
+
+The costs are very managable and if I encounter a higher cost during the time I would add cost allerts etc, so I have full control.
+
+In the end I am very happy with the solution because it gives me full control by having nearly everthing automated. I really like the outcome. Once again, thanks [Benjamin Abt](https://twitter.com/abt_benjamin) for the help at this.
