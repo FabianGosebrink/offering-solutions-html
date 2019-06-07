@@ -104,11 +104,11 @@ As the overview is best in resource groups and the costs can be seen best per re
 - Application insights (were added automatically)
 - An App Service Plan (which is needed anyway)
 
-![Azure resourcegroup](https://cdn.offering.solutions/img/articles/2019-05-29/resourcegroup.png)
+![Azure resourcegroup](https://cdn.offering.solutions/img/articles/2019-05-29/resource-group.png)
 
 As these things were ready I wanted to next build up the CI/CD pipeline for the blog and homepage in Azure Devops.
 
-I choose an Azure App Service for my blog because a blob storage _must_ have a subdomain and I want it to be available via `http://offering.solutions/` without subdomains and a blob storage is case sensitive which is bad for getting recognized by search engines, so I went for an app service instead but 
+I choose an Azure App Service for my blog because a blob storage _must_ have a subdomain and I want it to be available via `http://offering.solutions/` without subdomains and a blob storage is case sensitive which is bad for getting recognized by search engines, so I went for an app service instead but
 
 ## Preparing the cdn
 
@@ -215,7 +215,7 @@ az storage blob upload-batch --account-name <storage-account-name-here> --destin
 
 Where `$(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn` refers to the name of the artifact getting dropped out.
 
-![new release pipeline](https://cdn.offering.solutions/img/articles/2019-05-29/new-rls-pipeline.png)
+![new release pipeline](https://cdn.offering.solutions/img/articles/2019-05-29/new-rls-pipeline-2.png)
 
 The files on Azure can now be inpected with the correct values which were set when uploading them:
 
@@ -227,7 +227,7 @@ The files on Azure can now be inpected with the correct values which were set wh
 
 So last but not least let us talk about what the whole thing costs in one month. For this, let us first look at some data from cloudflare:
 
-![cloudflare-stats](https://cdn.offering.solutions/img/articles/2019-05-29/cloudflare-stats.png)
+![cloudflare-stats](https://cdn.offering.solutions/img/articles/2019-05-29/cloudflare-stats-2.png)
 
 In the last 30 days the site delivered 8GB with nearly 80% cached. That is pretty cool! From 8 GB 6 GB were served out of the cache.
 
