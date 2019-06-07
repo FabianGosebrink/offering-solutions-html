@@ -108,11 +108,11 @@ As the overview is best in resource groups and the costs can be seen best per re
 
 As these things were ready I wanted to next build up the CI/CD pipeline for the blog and homepage in Azure Devops.
 
-I choose an Azure App Service for my blog because a blob storage _must_ have a subdomain and I want it to be available via `http://offering.solutions/` without subdomains and a blob storage is case sensitive which is bad for getting recognized by search engines, so I went for an app service instead but
+I choose an Azure App Service for my blog because a blob storage _must_ have a subdomain and I want the page to be available via `http://offering.solutions/` without subdomains and a blob storage is case sensitive which is bad for getting recognized by search engines, so I went for an app service instead but wanted to use a blog storage to work as a "cdn"-like service to provide my static files.
 
-## Preparing the cdn
+## Preparing the static files
 
-In the CDN I did a new container called `$web` where I would upload all the files.
+In the Azure Blob Storage I did a new container called `$web` where I upload all the files.
 
 ![cdn container](https://cdn.offering.solutions/img/articles/2019-05-29/cdn-container.png)
 
@@ -126,7 +126,7 @@ For generating the site I used a build task which build my site running the need
 
 So the source of my hugo site is the folder `homepage` and the destination is `homepage/public`. This is the folder all files are build to. I am overwriting the `BaseUrl` with the domain `https://offering.solutions`. I would not have to do this as in my `config.toml` file the `baseURL = "https://offering.solutions/"` is already set to the correct domain. It was more just to try it out a bit :)
 
-As next step I had to divide the files which are going to be deployed to the cdn on azure and the files which are going to be deployed to the main domain web service on azure.
+As next step I had to divide the files which are going to be deployed to the azure blob service and the files which are going to be deployed to the main domain web service on azure.
 
 So in the next two steps the files from the `public` folder are separated.
 
@@ -142,7 +142,7 @@ To trigger a build everytime I check something into the repo I enable the "Conti
 
 In the end I have to publish the two artifacts `blog` and `cdn` to make them available to my release manager where I pick them up and release them to Azure.
 
-## Modifying the CI/CD pipeline to deploy to CDN and App Service
+## Modifying the CI/CD pipeline to deploy to Blob Service and App Service
 
 In the release manager I am referring to the dropped outputs now and moving the one to the cdn and the other to the azure web service.
 
@@ -166,7 +166,7 @@ After I did this I went to Cloudflare (see below) and signed in as well. I added
 
 So in Azure I added the custom domain names to the web service. I used the guide from the docs here [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain).
 
-I added the CDN custom domain like this:
+I added the static custom domain like this:
 
 ![customdomain cdn](https://cdn.offering.solutions/img/articles/2019-05-29/customdomain-cdn.png)
 
@@ -203,7 +203,7 @@ So to serve as much as we can from the cache I went into Cloudflare and modified
 
 ![cloudflare-cache](https://cdn.offering.solutions/img/articles/2019-05-29/caching.png)
 
-So the "Browser Cache Expiration" setting tells that it will fall back to the setting which is given in cloudflare but respect the caching headers if they are set. I wanted to try that out and was searching for a way to modify my cache headers on the cdn on azure because this is where all the static files are coming from.
+So the "Browser Cache Expiration" setting tells that it will fall back to the setting which is given in cloudflare but respect the caching headers if they are set. I wanted to try that out and was searching for a way to modify my cache headers on the static files on azure because this is where all the static files are coming from.
 
 With the help of [Benjamin Abt](https://twitter.com/abt_benjamin) I got a script which was doing exactly that for me with the Azure CLI. So I wanted to improve my release pipeline to do that automatically for me.
 
