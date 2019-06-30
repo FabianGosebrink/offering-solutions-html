@@ -32,3 +32,9 @@ After:
 "@ngrx/effects": "^8.0.1",
 "@ngrx/store": "^8.0.1",
 ```
+
+What I maybe love the most about the new ngrx version is the `createAction` method which can be imported from `@ngrx/store` 
+
+```
+import { createAction, props } from '@ngrx/store';
+```
