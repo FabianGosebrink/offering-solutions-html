@@ -129,7 +129,7 @@ IMHO I think this is easier to handle.
 
 ## Updating the effects
 
-Before in the old versions we pipes into the action stream and filtered the actions which are interesting for that effect with the `ofType` decorator like this:
+Before in the old versions we piped into the action stream and filtered the actions which are interesting for that effect with the `ofType` decorator like this:
 
 ```
   @Effect()
@@ -148,7 +148,7 @@ Before in the old versions we pipes into the action stream and filtered the acti
   );
 ```
 
-Now effects are created with the `createEffect(...)` method which can also be imported from `import { ..., createEffect } from '@ngrx/effects';`. Having done that we are calling the mthod with the appropriate fat arrow function to pass
+Now effects are created with the `createEffect(...)` method which can also be imported from `import { ..., createEffect } from '@ngrx/effects';`. Also the `@Effect()` Decorator is gone. Having done that we are calling the method with the appropriate fat arrow function to pass
 
 ```
 import { Actions, ofType, createEffect } from '@ngrx/effects';
@@ -169,7 +169,11 @@ import { Actions, ofType, createEffect } from '@ngrx/effects';
 
 ```
 
-Please note that I named the parameter in the created action `loadAllTodosFinished` `payload` and therefore I have to create a new object and fill the parameter `payload` with the result of the service method which I named `todos` here.
+Please note that I named the parameter in the created action `payload` and therefore I have to create a new object and fill the parameter `payload` with the result of the service method which I named `todos` here.
+
+```
+map(todos => todoActions.loadAllTodosFinished({ payload: todos })),
+```
 
 If you would create the action like
 
@@ -219,7 +223,7 @@ export function myReducer(
 }
 ```
 
-turns to a new usage of the `on()` method
+turns to a new usage of the `on(...)` method
 
 ```
 import { createReducer, on, Action } from '@ngrx/store';
@@ -352,7 +356,7 @@ export function todoReducer(
 }
 ```
 
-You can see in the github that I had multiple actions in the switch/case statement as I wanted to activate the loading boolean as reaction to mutiple actions. Of course you can do this with the `on(...)` method, too. So my new reducer was:
+You can see in the github that I had multiple actions in the switch/case statement as I wanted to activate the loading boolean as reaction to mutiple actions. Of course you can do this with the `on(...)` method, too. So my new reducer is:
 
 ```
 const todoReducerInternal = createReducer(
@@ -440,3 +444,7 @@ And that is it! You can check the links at the beginning of this post. This Post
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I always encourage writing. Even if there are other articles on the same topic, you bring a different perspective which is highly valued! Feel free to reference mine in yours if you want but not necessary.</p>&mdash; Wes (@wesgrimes) <a href="https://twitter.com/wesgrimes/status/1143974157295804416?ref_src=twsrc%5Etfw">June 26, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I hope this helps anyone.
+
+Fabian
