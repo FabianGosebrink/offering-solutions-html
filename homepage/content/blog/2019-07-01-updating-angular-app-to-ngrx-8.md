@@ -1,5 +1,5 @@
 ---
-title: Updating  to ngrx 8
+title: Updating your angular app to NgRx 8
 date: 2019-06-07
 tags: ['cloudflare', 'azure', 'hugo']
 draft: true
