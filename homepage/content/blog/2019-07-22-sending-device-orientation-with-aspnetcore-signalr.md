@@ -43,7 +43,7 @@ public void ConfigureServices(IServiceCollection services)
 }`
 ```
 
-In the `Configure` method I added MVC to the pipeline as wel as using the CORS policy. The important part is the mapping of the Hub `MotionHub` to the url `/motion` 
+In the `Configure` method I added MVC to the pipeline as wel as using the CORS policy. The important part is the mapping of the Hub `MotionHub` to the url `/motion`
 
 ```csharp
 app.UseSignalR(routes =>
@@ -108,9 +108,15 @@ public class MotionDto
 
 ## The frontend in pure javascript
 
-This time for me it was important not to use any framework - except signalr - but instead rely on the plain device motion API from HTML and working with it in plain Javascript. 
+This time for me it was important not to use any framework - except SignalR - but instead rely on the plain device motion API from HTML and working with it in plain Javascript.
 
-So the first thing was to check if the browser support the device motion or not.
+I installed the SignalR library from npm [https://www.npmjs.com/package/@aspnet/signalr](https://www.npmjs.com/package/@aspnet/signalr) with
+
+```
+npm install @aspnet/signalr
+```
+
+So the first thing was to check if the browser supports the device motion or not.
 
 ```js
 if ('DeviceOrientationEvent' in window) {
@@ -192,5 +198,52 @@ So here first I am registering on the event `motionupdated` this time. In the ca
 
 After this I am starting the connection and listen for the events.
 
-So everytime an event is read from the device API the handler is getting called and is invoking the SignalR Action if the connection exists. 
+So everytime an event is read from the device API the handler is getting called and is invoking the SignalR action if the connection exists.
 
+The only thing that is missing now is the `index.html` part. This is perhaps the most unspectacular part as we just have an `<img>` with the logo and including the `signalr.js` file and the `motion.js` which covers all the logic.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    //...
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>gamma</td>
+        <td id="gamma"></td>
+      </tr>
+      <tr>
+        <td>beta</td>
+        <td id="beta"></td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td id="alpha"></td>
+      </tr>
+    </table>
+
+    <div>
+      Hold me steady:
+      <input type="checkbox" id="freeze" onclick="toggleFreeze()" />
+
+      <p id="text" style="display:none">You are freezed</p>
+    </div>
+
+    <div>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
+        id="imgLogo"
+      />
+    </div>
+
+    <script src="signalr.js"></script>
+    <script src="motion.js"></script>
+  </body>
+</html>
+```
+
+I also installed a lightweight webserver to make this all hosting. If you upload that and access it with your mobile phone you can move the picture with your hpone just like that :)
+
+![device-orientation-video](https://github.com/FabianGosebrink/device-orientation-signalr/blob/master/.github/video.gif)
