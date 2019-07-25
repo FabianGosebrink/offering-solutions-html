@@ -1,8 +1,8 @@
 ---
 title: Using the Device Orientation API with ASP.NET Core SignalR
-date: 2019-07-22
+date: 2019-07-25
 tags: ['aspnetcore', 'signalr', 'javascript']
-draft: true
+draft: false
 category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
