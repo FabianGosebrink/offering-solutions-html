@@ -43,7 +43,7 @@ public void ConfigureServices(IServiceCollection services)
 }`
 ```
 
-In the `Configure` method I added MVC to the pipeline as wel as using the CORS policy. The important part is the mapping of the Hub `MotionHub` to the url `/motion`
+In the `Configure` method I added MVC to the pipeline as well as using the CORS policy. The important part is the mapping of the Hub `MotionHub` to the url `/motion`
 
 ```csharp
 app.UseSignalR(routes =>
@@ -83,7 +83,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 ### Implementing the SignalR Hub
 
-The Hub is pretty easy as it only provides one method which can be calles from the outside which broadcasts the new motion data:
+The Hub is pretty easy as it only provides one method which can be called from the outside which broadcasts the new motion data:
 
 ```csharp
 public class MotionHub : Hub
