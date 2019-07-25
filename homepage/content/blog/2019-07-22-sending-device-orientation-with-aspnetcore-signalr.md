@@ -109,3 +109,88 @@ public class MotionDto
 ## The frontend in pure javascript
 
 This time for me it was important not to use any framework - except signalr - but instead rely on the plain device motion API from HTML and working with it in plain Javascript. 
+
+So the first thing was to check if the browser support the device motion or not.
+
+```js
+if ('DeviceOrientationEvent' in window) {
+  window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+  // establishing SignalR Connection
+} else {
+  document.getElementById('logoContainer').innerText =
+    'Device Orientation API not supported.';
+}
+```
+
+The method `deviceOrientationHandler` is getting passed the eventData coming from the device orientation and is updating the text on the HTML which we will see later, but is also invoking the SignalR method if the connection exists.
+
+```js
+function deviceOrientationHandler(eventData) {
+  var gamma = eventData.gamma;
+  var beta = eventData.beta;
+  var alpha = eventData.alpha;
+
+  if (signalrConnectionExists()) {
+    signalRConnection
+      .invoke('MySuperDuperAction', { alpha, beta, gamma })
+      .catch(err => console.error(err.toString()));
+  }
+
+  setTextOnElement('gamma', Math.round(gamma));
+  setTextOnElement('beta', Math.round(beta));
+  setTextOnElement('alpha', Math.round(alpha));
+}
+```
+
+Let us check the SignalR connection next.
+
+So in beside adding the orientationhandler I also added and called a method to establish the SignalR connection.
+
+```js
+var signalRConnection = null;
+
+if ('DeviceOrientationEvent' in window) {
+  window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+  establishSignalR();
+} else {
+  document.getElementById('logoContainer').innerText =
+    'Device Orientation API not supported.';
+}
+
+// ...
+
+function establishSignalR() {
+  signalRConnection = createSignalConnection(
+    'https://motiondevice.azurewebsites.net/motion'
+  );
+
+  signalRConnection.on('motionUpdated', data => {
+    console.log(data);
+
+    if (!freezeMyself) {
+      turnLogo(data.beta, data.gamma);
+    }
+  });
+
+  signalRConnection.start().then(function() {
+    console.log('connected');
+    console.log(signalRConnection.state);
+  });
+}
+
+function turnLogo(beta, gamma) {
+  var logo = document.getElementById(logoId);
+  logo.style.webkitTransform =
+    'rotate(' + gamma + 'deg) rotate3d(1,0,0, ' + beta * -1 + 'deg)';
+  logo.style.MozTransform = 'rotate(' + gamma + 'deg)';
+  logo.style.transform =
+    'rotate(' + gamma + 'deg) rotate3d(1,0,0, ' + beta * -1 + 'deg)';
+}
+```
+
+So here first I am registering on the event `motionupdated` this time. In the callback method I call the `turnLogo` method which will just apply the `beta` and `gamma` properties to the logo.
+
+After this I am starting the connection and listen for the events.
+
+So everytime an event is read from the device API the handler is getting called and is invoking the SignalR Action if the connection exists. 
+
