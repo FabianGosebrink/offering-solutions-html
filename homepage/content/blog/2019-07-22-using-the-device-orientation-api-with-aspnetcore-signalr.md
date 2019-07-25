@@ -1,5 +1,5 @@
 ---
-title: Sending Device Orientation Over ASP.NET Core SignalR
+title: Using the Device Orientation API with ASP.NET Core SignalR
 date: 2019-07-22
 tags: ['aspnetcore', 'signalr', 'javascript']
 draft: true
