@@ -10,9 +10,9 @@
       {{ range first 3 (where .Site.Pages "Params.category" "blog").ByDate.Reverse }}
       <div class="4u 12u$(medium)">
         <h3>
-          <a href="{{ .URL }}">{{ .Title }}</a>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
         </h3>
-        <a href="{{ .URL }}"
+        <a href="{{ .Permalink }}"
           ><img
             src="{{ .Site.Params.cdnbaseurl }}img/blog/{{ .Params.image }}"
             alt=""
@@ -21,7 +21,7 @@
           {{ .Content | safeHTML | truncate 100}}
         </p>
         <p>
-          <a href="{{ .URL }}" class="button small">Read more</a>
+          <a href="{{ .Permalink }}" class="button small">Read more</a>
         </p>
       </div>
       {{ end }}

@@ -44,7 +44,7 @@
               <div class="inner">
                 <header class="major-no-line">
                   <h3>
-                    <a href="{{ .URL }}">{{ .Title }}</a>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
                   </h3>
                 </header>
                 <p>
@@ -59,7 +59,7 @@
                 </p>
                 <p>{{ .Description | safeHTML | truncate 100}}</p>
                 <ul class="actions">
-                  <li><a href="{{ .URL }}" class="button">Read more</a></li>
+                  <li><a href="{{ .Permalink }}" class="button">Read more</a></li>
                 </ul>
               </div>
             </div>
