@@ -13,7 +13,8 @@ In this blogpost I want to give a short overview about my upcoming speaking acti
 
 With collaborated forces of different UserGroups around Zürich we are presenting a meetup to have the .NET Conf local in Zürich. I will give a short introduction about what is new in ASP.NET Core 3.0. Meetups are usually a nice place to get started.
 
-Link:
+Link: [https://www.meetup.com/dotnet-zurich/events/263786513/](https://www.meetup.com/dotnet-zurich/events/263786513/)
+
 Topic: What is new in ASP.NET Core 3.0
 
 ## 07.10.2019 ngRome
