@@ -5,6 +5,80 @@ draft: false
 category: noblog
 ---
 
+### Statemanagement in Angular with NgRx Stores & Effects Workshop
+
+#### 16.10.2019 - Web Developer Conference (WDC) Hamburg
+
+**Keywords:** angular, ngrx
+
+---
+
+### Angular Architekturen with Angular Libraries
+
+#### 15.10.2019 - Web Developer Conference (WDC) Hamburg
+
+**Keywords:** Angular, Libraries, Architecture
+
+[slides](https://speakerdeck.com/fabiangosebrink/angular-architekturen-with-angular-libraries)
+
+---
+
+### Testing made easy
+
+#### 09.10.2019 - AngularDays in Berlin Workshop
+
+**Keywords:** Angular, Testing
+
+[slides](https://speakerdeck.com/fabiangosebrink/angular-testing-made-easy)
+
+---
+
+### Architecting Angular Apps With Angular Libraries
+
+#### 07.10.2019 - NgRome
+
+**Keywords:** Angular, Libraries, Architecture
+
+[slides](https://speakerdeck.com/fabiangosebrink/architecting-angular-applications-with-angular-libraries)
+
+---
+
+### What is new in ASP.NET Core 3.0
+
+#### 04.10.2019 - .NET Conf Zurich
+
+**Keywords:** ASP.NET Core
+
+---
+
+### Mobile and Desktop Cross-Plattform with Electron und Cordova - an introduction
+
+#### 25.09.2019 - BASTA! Mainz
+
+**Keywords:** angular, ASP.NET, SignalR, Cordova, Electron
+
+[slides](https://speakerdeck.com/fabiangosebrink/mobile-and-desktop-cross-plattform-with-electron-and-cordova-an-introduction)
+
+---
+
+### Creating Realtime Cross-Platform Applications with Angular, ASP.NET Core & SignalR
+
+#### 25.06.2019 - DWX Nürnberg
+
+**Keywords:** angular, ASP.NET, SignalR, Cordova, Electron
+
+[slides](https://speakerdeck.com/fabiangosebrink/real-time-web-applications-with-angular-and-asp-dot-net-core-signalr)
+
+---
+
+### ASP.NET Core SignalR Azure SignalR Service Scale out
+
+#### 23.05.2019 - Noser Team Day Bern
+
+**Keywords:** ASP.NET SignalR
+
+---
+
 ### State Management in Angular with NgRx Stores and Effects
 
 #### 14.05.2019 - International Javascript Conference
