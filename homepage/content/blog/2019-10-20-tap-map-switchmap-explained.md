@@ -34,7 +34,7 @@ Let us get to the first operator.
 
 ## Tap
 
-Probably the easiest one is the `tap` operator as he is used for side effects inside a stream. So this operator can be used to do something inside a stream and returning the same observable as it was used on. Like a plain isolated side effect.
+The first one is the `tap` operator and it is used for side effects inside a stream. So this operator can be used to do something inside a stream and returning the same observable as it was used on. It runs a method to emit a plain isolated side effect.
 
 ```js
 import { from } from "rxjs";
@@ -45,7 +45,7 @@ from([1, 2, 3])
   .subscribe(item => console.log(item));
 ```
 
-You can pass the `tap` operator up to three methods which all have the `void` return type because the original observable stays untouched. But that does not mean that you can not manipulate the items in the stream. 
+You can pass the `tap` operator up to three methods which all have the `void` return type. The original observable stays untouched. But that does not mean that you can not manipulate the items in the stream. 
 
 Let us use reference types inside a `tap` operator. When using reference types the `tap` operator can modify the properties on the value you pass in.
 
