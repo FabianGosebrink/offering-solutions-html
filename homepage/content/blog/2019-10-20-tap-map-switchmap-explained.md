@@ -34,7 +34,7 @@ Let us get to the first operator.
 
 ## Tap
 
-Probably the easiest one is the `tap` operator as he is used for side effects inside a stream. So this operator can be used to do something inside a stream without affecting the result or the outcome of the stream. Like a plain isolated side effect.
+Probably the easiest one is the `tap` operator as he is used for side effects inside a stream. So this operator can be used to do something inside a stream and returning the same observable as it was used on. Like a plain isolated side effect.
 
 ```js
 import { from } from "rxjs";
@@ -45,15 +45,30 @@ from([1, 2, 3])
   .subscribe(item => console.log(item));
 ```
 
-The output is exactly the same! So the tap operator is only doing a side effect and returning the original value. Let us try that out with something like this
+You can pass the `tap` operator up to three methods which all have the `void` return type because the original observable stays untouched. But that does not mean that you can not manipulate the items in the stream. 
+
+Let us use reference types inside a `tap` operator. When using reference types the `tap` operator can modify the properties on the value you pass in.
 
 ```js
-from([1, 2, 3])
-  .pipe(tap(item => item + 2))
-  .subscribe(item => console.log(item));
+const objects = [
+  { id: 1, name: "Fabian" },
+  { id: 2, name: "Jan-Niklas" },
+]
+
+const source$ = from(objects).pipe(
+ tap(item => item.name = item.name + "_2")
+)
+.subscribe(x => console.log(x));
+
+```
+Outcome:
+
+```
+  { id: 1, name: "Fabian_2" }
+  { id: 2, name: "Jan-Niklas_2" }
 ```
 
-What we are doing here is that we are modifying the item we get passed in the `tap` operator and modify it by adding `2` to it. Check the outcome in the console, it still stays the same: `1,2,3`. So the `tap` operator does not modify the items in the stream but is just a neat little side effect.
+So the `tap` operator does run the callback for each item it is used on, is used for side effects but returns an observable identical to the one from the source.
 
 ## Map
 
