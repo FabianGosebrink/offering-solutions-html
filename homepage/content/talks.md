@@ -5,6 +5,46 @@ draft: false
 category: noblog
 ---
 
+### Better Angular Architectures with Libraries
+
+#### 27.11.2019 - Web Zurich UG Meetup
+
+**Keywords:** Angular, Libraries, Architecture
+
+---
+
+### End-To-End : Distributed Systems with ASP.NET Core and Angular - Master Class
+
+#### 25.11.2019 - DDC Köln (Workshop)
+
+**Keywords:** Angular, ASP.NET Core
+
+---
+
+### End-To-End : Distributed Systems with ASP.NET Core and Angular - Master Class
+
+#### 20.11.2019 - NgPoland Warschau (Workshop)
+
+**Keywords:** Angular, ASP.NET Core
+
+---
+
+### Real time messaging with Angular and ASP.NET Core SignalR
+
+#### 27.10.2019 - Google GDE Summit - Silicon Valley
+
+**Keywords:** Angular, SignalR
+
+---
+
+### Professional Angular architectures with Angular libraries
+
+#### 23.10.2019 - iJS München
+
+**Keywords:** Angular, Libraries, Architecture
+
+---
+
 ### Statemanagement in Angular with NgRx Stores & Effects Workshop
 
 #### 16.10.2019 - Web Developer Conference (WDC) Hamburg
