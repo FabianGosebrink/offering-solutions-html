@@ -61,6 +61,14 @@ category: noblog
 
 ---
 
+### Mobile & Desktop: Cross-Plattform with Electron and Cordova
+
+#### 15.10.2019 - Web Developer Conference (WDC) Hamburg
+
+**Keywords:** Angular, ASP.NET, SignalR, Cordova, Electron
+
+---
+
 ### Angular Architekturen with Angular Libraries
 
 #### 15.10.2019 - Web Developer Conference (WDC) Hamburg
@@ -103,7 +111,7 @@ category: noblog
 
 #### 25.09.2019 - BASTA! Mainz
 
-**Keywords:** angular, ASP.NET, SignalR, Cordova, Electron
+**Keywords:** Angular, ASP.NET Core, SignalR, Cordova, Electron
 
 [slides](https://speakerdeck.com/fabiangosebrink/mobile-and-desktop-cross-plattform-with-electron-and-cordova-an-introduction)
 
