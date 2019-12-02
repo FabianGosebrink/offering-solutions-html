@@ -21,6 +21,14 @@ category: noblog
 
 ---
 
+### End-To-End : Real time messaging with Angular and ASP.NET Core SignalR
+
+#### 21.11.2019 - NgPoland Warschau (Workshop)
+
+**Keywords:** Angular, ASP.NET Core SignalR
+
+---
+
 ### End-To-End : Distributed Systems with ASP.NET Core and Angular - Master Class
 
 #### 20.11.2019 - NgPoland Warschau (Workshop)
@@ -33,7 +41,7 @@ category: noblog
 
 #### 27.10.2019 - Google GDE Summit - Silicon Valley
 
-**Keywords:** Angular, SignalR
+**Keywords:** Angular, ASP.NET Core SignalR
 
 ---
 
