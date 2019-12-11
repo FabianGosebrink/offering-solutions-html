@@ -30,23 +30,17 @@ After doing this the extension created a new folder (if you do not have it alrea
 
 ```javascript
 {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome against localhost, with sourcemaps",
             "type": "chrome",
             "request": "launch",
+            "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080",
-            "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
-        },
-        {
-            "name": "Attach to Chrome, with sourcemaps",
-            "type": "chrome",
-            "request": "attach",
-            "port": 9222,
-            "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
@@ -54,42 +48,32 @@ After doing this the extension created a new folder (if you do not have it alrea
 
 Our folder strucutre tells us that the files are served from the root.
 
-So, the "webRoot”: “\${workspaceRoot}”” setting is good to go for us. We will open a new Chrome instance but it needs an existing running server. So, if you use something like lite-server, you can easily type “lite-server” at the root of your web application or place it in your NPM command chain in the “NPM Start” command. This is what I did.
+So, the `"webRoot”: “\${workspaceRoot}””` setting is good to go for us. We will open a new Chrome instance but it needs an existing running server. So we have to start our angular application with `npm start` or the `ng serve` command in another console.
 But before we go we need to adjust the urls where the server is running on and the url where the Chrome instance is starting.
 
-So replace the port in the config file with the port from your lite-server. In my cae thats "3000". This is how your config look like then:
+So replace the port in the config file with the port from your angular application. In my cae thats "4200". This is how your config look like then:
 
 ```javascript
 {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome against localhost, with sourcemaps",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:3000",
-            "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
-        },
-        {
-            "name": "Attach to Chrome, with sourcemaps",
-            "type": "chrome",
-            "request": "attach",
-            "port": 9222,
-            "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
 ```
 
-Then start the lite server and just hit "play"
+If the server is running just hit "play" in VSCode and the breakpoint should be hit. If not, it might not be attached, so just hit refresh in the browser.
 
-![How to debug an Angular application with Chrome and VS Code](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/HowtodebuganAngular2applicationwithChromeandVSCode_04.jpg)
-
-![How to debug an Angular application with Chrome and VS Code](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/HowtodebuganAngular2applicationwithChromeandVSCode-1024x608.gif)
-
-Chrome starts and you can debug your page in VS Code. Of course you can also confugre Chrome to attach directly. See here for examples:
+Chrome starts and you can debug your page in VS Code. Of course you can also configure Chrome to attach directly. See here for examples:
 
 [https://github.com/Microsoft/vscode-chrome-debug/wiki/Examples](https://github.com/Microsoft/vscode-chrome-debug/wiki/Examples)
 
