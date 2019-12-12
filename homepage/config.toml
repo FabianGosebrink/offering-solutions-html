@@ -162,7 +162,8 @@ disqusShortname = "offeringsolutions"
 
     [[params.contact.address]]
     title = "Address"
-    street = "Street"
+    name = "Offering Solutions Software GmbH"
+    street = "Kesselhaldenstrasse 72"
     city = "9016 Sankt Gallen"
     country = "Switzerland"
 
