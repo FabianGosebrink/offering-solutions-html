@@ -71,4 +71,18 @@ import { AppComponent } from './app.component';
 export class AppModule {}
 ```
 
-Now we can use the components which are getting exported from that library. 
+Now we can use the libraries components which are getting exported from that library inside our application.
+
+## Configuration
+
+If you now want to pass configuration to your library you have two ways: First one is to have this configuration statically if you already know what your library should deal with.
+
+```js
+const config = {
+    name: 'Fabian'
+}
+```
+
+...could be a possible configuration which can get passed into the library.
+
+On the other side you may have a dynamic configuration in terms of not knowing the configuration before you start the application when you for example read it from a backend getting back a configuration json which then should get passed into the library. I call this one a dynamic configuration in the article here.
