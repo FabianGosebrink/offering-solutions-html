@@ -28,3 +28,47 @@ ng new configuring-libraries --createApplication=false
 The `--createApplication=false` creates only the workspace files but does not add an application on root level. This gives usmore flexibility and overwiew when working with libs and apps inside this workspace.
 
 Now let us add an application with `ng generate app consumerApp` and a library with `ng generate library lib-to-configure`.
+
+We now have a `projects` folder created with two applications in it.
+
+```
+└── projects
+    ├── consumerApp
+    └── lib-to-configure
+```
+
+In the `lib-to-configure` library we will find a scaffolded module like this:
+
+```
+import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { LibToConfigureComponent } from './lib-to-configure.component';
+
+@NgModule({
+  declarations: [LibToConfigureComponent],
+  imports: [CommonModule],
+  exports: [LibToConfigureComponent]
+})
+export class LibToConfigureModule { }
+```
+
+If we want to use the library we have to import this module into our apps module by adding it to the `imports` array of the `app.module.ts`.
+
+```
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    LibToConfigureModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+Now we can use the components which are getting exported from that library. 
