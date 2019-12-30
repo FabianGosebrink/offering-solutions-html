@@ -17,6 +17,8 @@ This works pretty fine but if you want to make the libraries more flexible you c
 
 In the following blogpost I want to share two ways of configuring Angular Libraries and how that work in code.
 
+Github: [https://github.com/FabianGosebrink/angular-library-configuration](https://github.com/FabianGosebrink/angular-library-configuration)
+
 ## Preparation
 
 First of all we can create a new Angular project with
