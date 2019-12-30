@@ -181,3 +181,175 @@ export class AppModule {}
 If you build the lib now and start the application using the component from the lib the `ngOnInit()` method prints `{ name: "Fabian" }` to the console.
 
 Nice, so we know how to pass a static configuration to a library.
+
+### Dynamic Configuration
+
+Things get a little more complex if we do not know the configuration at the startup time of our application which means it is dynamic. We do not have a static JSON object we can simply pass down the lib. Let us target that next.
+
+For this let us take a quick look what we can pass down to the providers array in the library in the `forRoot` method. The `providers` array takes a `Provider` type! We can use this one to expect it from the consuming application and we can provide a default config in case we as a library do not get given one configuration. This makes the configuration more flexible because we are not passing the static config, but a class which provides us the configuration object.
+
+For this first of all in the `lib-configuration.ts` introduce a class which is the type for what we are gonna use:
+
+```js
+import {  Provider } from '@angular/core';
+
+export class LibToConfigureConfiguration {
+  name: string;
+}
+
+export class LibConfiguration {
+  config?: Provider;
+}
+```
+
+Next, let us write a `LibConfigurationProvider` as an abstract class which provides a property which represents the configuration then and let us create a default configuration `DefaultLibConfiguration` which is used if the consuming app does not pass a config down to the library:
+
+```js
+import { Injectable, Provider } from '@angular/core';
+
+export class LibToConfigureConfiguration {
+  name: string;
+}
+
+@Injectable({ providedIn: 'root' })
+export abstract class LibConfigurationProvider {
+  abstract get config(): LibToConfigureConfiguration;
+}
+
+@Injectable({ providedIn: 'root' })
+export class DefaultLibConfiguration extends LibConfigurationProvider {
+  get config(): LibToConfigureConfiguration {
+    // return default config
+    return { name: `Fallback` };
+  }
+}
+
+export class LibConfiguration {
+  config?: Provider;
+}
+```
+
+In the `LibToConfigureModule`, so the module of the library, we are expanding it a bit. The `forRoot` method now expects a `LibConfiguration` with the `config` property on it which is of the `Provider` Type.
+
+```js
+import {   LibConfiguration } from './lib-configuration';
+
+static forRoot(libConfiguration: LibConfiguration = {}): ModuleWithProviders {
+  return {
+    ngModule: LibToConfigureModule,
+    providers: [
+      libConfiguration.config
+    ]
+  };
+}
+```
+
+Which makes it possible for the consuming app to provide a class as a config. But now we have to implement the fallback to the default as well by modifying the providers array like:
+
+```js
+import {
+  LibConfiguration,
+  LibConfigurationProvider,
+  DefaultLibConfiguration
+} from './lib-configuration';
+
+static forRoot(libConfiguration: LibConfiguration = {}): ModuleWithProviders {
+  return {
+    ngModule: LibToConfigureModule,
+    providers: [
+      libConfiguration.config || {
+        provide: LibConfigurationProvider,
+        useClass: DefaultLibConfiguration
+      }
+    ]
+  };
+}
+```
+
+As we provide the `LibConfigurationProvider` now we have to modify our components in the lib to expect this `LibConfigurationProvider` instead of the config.
+
+```js
+import { Component, OnInit } from '@angular/core';
+import {
+  LibConfigurationProvider,
+  LibToConfigureConfiguration
+} from './lib-configuration';
+
+@Component({
+  selector: 'lib-libToConfigure',
+  template: `
+    <p>
+      lib-to-configure works!
+    </p>
+  `,
+  styles: []
+})
+export class LibToConfigureComponent implements OnInit {
+  constructor(public configurationProvider: LibConfigurationProvider) {}
+
+  ngOnInit() {
+    console.log(this.configurationProvider.config);
+  }
+}
+```
+
+The `LibConfigurationProvider` exposes a property `config` which hold the configuration.
+
+If you build the library now and import the `LibToConfigureModule` in the consuming application with a `forRoot()` method with _no_ parameters you should see the default config printed in to console.
+
+```cmd
+{ name: "Fallback"}
+```
+
+Now let us tweak our consuming application to pass the correct configuration down to the lib. We need to create a class which implements the `LibConfigurationProvider` again to fulfill the abstract contract providing a `config` Property. This config property is of the type `LibToConfigureConfiguration`. All of the types and classes are being exported from the libs `public-api.ts`
+
+```js
+export class ConfigFromApp implements LibConfigurationProvider {
+  get config(): LibToConfigureConfiguration {
+    return { name: 'Fabian' };
+  }
+}
+```
+
+Now we are passing down this configuration in the `forRoot` as a parameter
+
+```js
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  LibConfigurationProvider,
+  LibToConfigureConfiguration,
+  LibToConfigureModule
+} from 'lib-to-configure';
+import { AppComponent } from './app.component';
+
+export class ConfigFromApp implements LibConfigurationProvider {
+  get config(): LibToConfigureConfiguration {
+    return { name: 'Fabian' };
+  }
+}
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    LibToConfigureModule.forRoot({
+      config: {
+        provide: LibConfigurationProvider,
+        useClass: ConfigFromApp
+      }
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+If you check the console in the browser now you can see that
+
+```cmd
+{ name: "Fabian"}
+```
+
+is printed. So nice, this works!
