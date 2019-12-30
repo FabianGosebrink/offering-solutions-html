@@ -9,13 +9,13 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this article I want to explain two possible ways to configure Angular libraries.
 
-With libraries we have a convenient way to seperate logic which is used multiple times across more than one application or libraries can define our architecture especially when working with a monorepo.
+With libraries we have a convenient way to separate logic which is used multiple times across more than one application or libraries can define our architecture especially when working with a monorepo.
 
 Libraries build a standalone codebase where complete modules with all its services, components etc. can be stored away and can be included into your Angular app.
 
 This works pretty fine but if you want to make the libraries more flexible you can pass a configuration into that library to make the library work as you need it based on values the consuming application provides.
 
-In the following blogpost I want to share two ways of configuring Angular Libraries and how that work in code.
+In the following blog post I want to share two ways of configuring Angular Libraries and how that work in code.
 
 Github: [https://github.com/FabianGosebrink/angular-library-configuration](https://github.com/FabianGosebrink/angular-library-configuration)
 
@@ -27,7 +27,7 @@ First of all we can create a new Angular project with
 ng new configuring-libraries --createApplication=false
 ```
 
-The `--createApplication=false` creates only the workspace files but does not add an application on root level. This gives usmore flexibility and overwiew when working with libs and apps inside this workspace.
+The `--createApplication=false` creates only the workspace files but does not add an application on root level. This gives us more flexibility and overview when working with libs and apps inside this workspace.
 
 Now let us add an application with `ng generate app consumerApp` and a library with `ng generate library lib-to-configure`.
 
@@ -96,7 +96,7 @@ export class LibToConfigureConfiguration {
 }
 ```
 
-In the `public-api` export the file to make it visibile to the outside world:
+In the `public-api` export the file to make it visible to the outside world:
 
 ```js
 export * from './lib/lib-configuration'; // <-- Add this line
@@ -354,7 +354,7 @@ If you check the console in the browser now you can see that
 { name: "Fabian"}
 ```
 
-is printed. So nice, this works! But the config is still "static" in the way it gets provided dynamically, but the object itself is provided as a static onject still. So let us add the `APP_INITIALIZER` to read the config at startup time.
+is printed. So nice, this works! But the config is still "static" in the way it gets provided dynamically, but the object itself is provided as a static object still. So let us add the `APP_INITIALIZER` to read the config at startup time.
 
 ## Adding the APP_INITIALIZER
 
@@ -472,7 +472,7 @@ export function initApp(configurationStore: ConfigurationStore) {
 export class AppModule {}
 ```
 
-> Of course you can add the `Http` Dependency here as well if you want to, but we will cover that after we wrapped everyting up so far with the promise solution.
+> Of course you can add the `Http` Dependency here as well if you want to, but we will cover that after we wrapped everything up so far with the promise solution.
 
 If we now add the `APP_INITIALIZER` to the providers array we will use the `initApp` method and pass the `ConfigurationStore` as a dependency
 
@@ -525,7 +525,7 @@ export function initApp(configurationStore: ConfigurationStore) {
 export class AppModule {}
 ```
 
-If you now check your app it should be starting after two seconds and the console should rpint
+If you now check your app it should be starting after two seconds and the console should print
 
 ```cmd
 { name: "Fabian"}
