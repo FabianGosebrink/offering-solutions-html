@@ -352,4 +352,235 @@ If you check the console in the browser now you can see that
 { name: "Fabian"}
 ```
 
-is printed. So nice, this works!
+is printed. So nice, this works! But the config is still "static" in the way it gets provided dynamically, but the object itself is provided as a static onject still. So let us add the `APP_INITIALIZER` to read the config at startup time.
+
+## Adding the APP_INITIALIZER
+
+The `APP_INITIALIZER` provides the possibility to run a method before the complete angular application starts which is the perfect place for asking for a configuration and then bootstrapping the application.
+
+Lets prepare the introduction of the `APP_INITIALIZER` a bit:
+
+First we will build a new class which is responsible for storing the configuration once we have read it from wherever we gonna read it, most likely over http.
+
+```js
+import { NgModule, APP_INITIALIZER, Injectable } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  LibConfigurationProvider,
+  LibToConfigureConfiguration,
+  LibToConfigureModule
+} from 'lib-to-configure';
+import { AppComponent } from './app.component';
+
+@Injectable({ providedIn: 'root' })
+export class ConfigurationStore {
+  private internalConfig: LibToConfigureConfiguration;
+
+  setConfig(config: LibToConfigureConfiguration) {
+    this.internalConfig = config;
+  }
+
+  getConfig() {
+    return this.internalConfig;
+  }
+}
+
+export class ConfigFromApp implements LibConfigurationProvider {
+  // ...
+}
+
+@NgModule({
+  // ...
+})
+export class AppModule {}
+
+```
+
+This class only holds the configuration privately and provides it through a method `getConfig()`.
+
+We modify the `ConfigFromApp` class which is now gonna use the `ConfigurationStore`
+
+```js
+import { NgModule, APP_INITIALIZER, Injectable } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  LibConfigurationProvider,
+  LibToConfigureConfiguration,
+  LibToConfigureModule
+} from 'lib-to-configure';
+import { AppComponent } from './app.component';
+
+@Injectable({ providedIn: 'root' })
+export class ConfigurationStore {
+ // ...
+}
+
+@Injectable({ providedIn: 'root' })
+export class ConfigFromApp implements LibConfigurationProvider {
+  constructor(private configStore: ConfigurationStore) {}
+
+  get config(): LibToConfigureConfiguration {
+    return this.configStore.getConfig();
+  }
+}
+
+@NgModule({
+  // ...
+})
+export class AppModule {}
+
+```
+
+Next we add a init method which is getting called at the beginning of our app. The method has the store as dependency and sets the configuration when it gets it from a specific endpoint, in our case it is just a promise which gets resolved after two seconds:
+
+```js
+import { NgModule, APP_INITIALIZER, Injectable } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  LibConfigurationProvider,
+  LibToConfigureConfiguration,
+  LibToConfigureModule
+} from 'lib-to-configure';
+import { AppComponent } from './app.component';
+
+@Injectable({ providedIn: 'root' })
+export class ConfigurationStore {
+  // ...
+}
+
+@Injectable({ providedIn: 'root' })
+export class ConfigFromApp implements LibConfigurationProvider {
+  // ...
+}
+
+export function initApp(configurationStore: ConfigurationStore) {
+  return () => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        configurationStore.setConfig({ name: 'Fabian' });
+        resolve();
+      }, 2000);
+    });
+  };
+}
+
+@NgModule({
+  // ...
+})
+export class AppModule {}
+```
+
+> Of course you can add the `Http` Dependency here as well if you want to, but we will cover that after we wrapped everyting up so far with the promise solution.
+
+If we now add the `APP_INITIALIZER` to the providers array we will use the `initApp` method and pass the `ConfigurationStore` as a dependency
+
+```js
+import { NgModule, APP_INITIALIZER, Injectable } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  LibConfigurationProvider,
+  LibToConfigureConfiguration,
+  LibToConfigureModule
+} from 'lib-to-configure';
+import { AppComponent } from './app.component';
+
+@Injectable({ providedIn: 'root' })
+export class ConfigurationStore {
+  // ...
+}
+
+@Injectable({ providedIn: 'root' })
+export class ConfigFromApp implements LibConfigurationProvider {
+  // ...
+}
+
+export function initApp(configurationStore: ConfigurationStore) {
+  // ...
+}
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    LibToConfigureModule.forRoot({
+      config: {
+        provide: LibConfigurationProvider,
+        useClass: ConfigFromApp
+      }
+    })
+  ],
+  providers: [
+    /* ADD THIS */
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initApp,
+      multi: true,
+      deps: [ConfigurationStore]
+    }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+If you now check your app it should be starting after two seconds and the console should rpint
+
+```cmd
+{ name: "Fabian"}
+```
+
+through the component in the library.
+
+## Adding Http
+
+To get this scenario more real world we can add the `HttpClient` as a dependency as well
+
+```js
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+// ...
+
+export function initAppWithHttp(
+  configurationStore: ConfigurationStore,
+  httpClient: HttpClient
+) {
+  return () => {
+    return httpClient
+      .get('https://my-super-url-to-get-the-config-from')
+      .toPromise()
+      .then(config => {
+        configurationStore.setConfig(config);
+      });
+  };
+}
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    HttpClientModule, // <-- Add this
+    LibToConfigureModule.forRoot({
+      config: {
+        provide: LibConfigurationProvider,
+        useClass: ConfigFromApp
+      }
+    })
+    // LibToConfigureModule.forRoot()
+  ],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initAppWithHttp,
+      multi: true,
+      deps: [ConfigurationStore, HttpClient] // <-- Add this
+    }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+And that is it. Hope it helps.
+
+Thanks
+
+Fabian
