@@ -39,7 +39,7 @@ We now have a `projects` folder created with two applications in it.
 
 In the `lib-to-configure` library we will find a scaffolded module like this:
 
-```
+```js
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { LibToConfigureComponent } from './lib-to-configure.component';
@@ -49,22 +49,19 @@ import { LibToConfigureComponent } from './lib-to-configure.component';
   imports: [CommonModule],
   exports: [LibToConfigureComponent]
 })
-export class LibToConfigureModule { }
+export class LibToConfigureModule {}
 ```
 
 If we want to use the library we have to import this module into our apps module by adding it to the `imports` array of the `app.module.ts`.
 
-```
+```js
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    LibToConfigureModule
-  ],
+  imports: [BrowserModule, LibToConfigureModule],
   providers: [],
   bootstrap: [AppComponent]
 })
@@ -79,10 +76,108 @@ If you now want to pass configuration to your library you have two ways: First o
 
 ```js
 const config = {
-    name: 'Fabian'
-}
+  name: 'Fabian'
+};
 ```
 
 ...could be a possible configuration which can get passed into the library.
 
 On the other side you may have a dynamic configuration in terms of not knowing the configuration before you start the application when you for example read it from a backend getting back a configuration json which then should get passed into the library. I call this one a dynamic configuration in the article here.
+
+### Static configuration
+
+If you want to pass a static configuration object in a library you first can create a file called `lib-configuration.ts` and place it inside the `lib` folder f your library. It contains the configuration you want to provide to the outside world:
+
+```js
+export class LibToConfigureConfiguration {
+  name: string;
+}
+```
+
+In the `public-api` export the file to make it visibile to the outside world:
+
+```js
+export * from './lib/lib-configuration'; // <-- Add this line
+export * from './lib/lib-to-configure.component';
+export * from './lib/lib-to-configure.module';
+export * from './lib/lib-to-configure.service';
+```
+
+Having done that we need to configure our lib to receive the config from the outside. For this, we will add a `forRoot(...)` method to the libraries module which will return the configured module and expect the static configuration object.
+
+```js
+import { LibToConfigureConfiguration } from './lib-configuration';
+
+@NgModule({
+  /*...*/
+})
+export class LibToConfigureModule {
+  static forRoot(
+    libConfiguration: LibToConfigureConfiguration
+  ): ModuleWithProviders {
+    return {
+      ngModule: LibToConfigureModule,
+      providers: [
+        {
+          provide: LibToConfigureConfiguration,
+          useValue: libConfiguration
+        }
+      ]
+    };
+  }
+}
+```
+
+With this we can now receive the class and inject it in the consuming maybe components like
+
+```js
+import { Component, OnInit } from '@angular/core';
+import {
+  LibConfigurationProvider,
+  LibToConfigureConfiguration
+} from './lib-configuration';
+
+@Component({
+  selector: 'lib-libToConfigure',
+  template: `
+    <p>
+      lib-to-configure works!
+    </p>
+  `,
+  styles: []
+})
+export class LibToConfigureComponent implements OnInit {
+
+  ngOnInit() {
+    console.log(this.libToConfigureConfiguration);
+  }
+
+  constructor(
+    private readonly libToConfigureConfiguration: LibToConfigureConfiguration
+  ) {}
+}
+
+```
+
+which will print the current configuration to the console.
+
+As the last step we have to call the `forRoot()` method and pass it some configuration. So in the `consumerApp` we will change the `app.module.ts` to
+
+```js
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { LibToConfigureModule } from 'lib-to-configure';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, LibToConfigureModule.forRoot({ name: 'Fabian' })],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+If you build the lib now and start the application using the component from the lib the `ngOnInit()` method prints `{ name: "Fabian" }` to the console.
+
+Nice, so we know how to pass a static configuration to a library.
