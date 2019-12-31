@@ -1,5 +1,5 @@
 ---
-title: How to configure Angular libraries
+title: Configuring Angular libraries
 date: 2019-12-31
 tags: ['angular', 'libraries', 'configuration']
 draft: false
