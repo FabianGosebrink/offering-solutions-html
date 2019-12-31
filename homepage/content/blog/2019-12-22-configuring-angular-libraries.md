@@ -188,9 +188,9 @@ Nice, so we know how to pass a static configuration to a library.
 
 Things get a little more complex if we do not know the configuration at the startup time of our application which means it is dynamic. We do not have a static JSON object we can simply pass down the lib. Let us target that next.
 
-For this let us take a quick look what we can pass down to the providers array in the library in the `forRoot` method. The `providers` array takes a `Provider` type! We can use this one to expect it from the consuming application and we can provide a default config in case we as a library do not get given one configuration. This makes the configuration more flexible because we are not passing the static config, but a class which provides us the configuration object.
+For this let us take a quick look what we can pass down to the providers array in the library in the `forRoot` method. The `providers` array takes a `Provider` type! We can use this one to expect it from the consuming application and we can provide a default config in case we as a library do not get given a configuration at all. This makes the configuration more flexible because we are not passing the static config, but a class which provides us the configuration object.
 
-For this first of all in the `lib-configuration.ts` introduce a class which is the type for what we are gonna use:
+For this first of all in the `lib-configuration.ts` introduce a class which is the type for what we are gonna use for holding hte provider called `config`. This one is options `config?` so that you can pass it but do not have to! We will introduce the fallback logic later in this article.
 
 ```js
 import {  Provider } from '@angular/core';
@@ -199,6 +199,7 @@ export class LibToConfigureConfiguration {
   name: string;
 }
 
+/* ADD THIS */
 export class LibConfiguration {
   config?: Provider;
 }
