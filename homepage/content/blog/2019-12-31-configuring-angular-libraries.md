@@ -105,6 +105,8 @@ export * from './lib/lib-to-configure.module';
 export * from './lib/lib-to-configure.service';
 ```
 
+> The `public-api.ts` is like an interface to the consuming applications. Everything you export here can be imported from the library in a consuming app via ES6 `import` statement. if you do not export it via this file, it will be private.
+
 Having done that we need to configure our lib to receive the config from the outside. For this, we will add a `forRoot(...)` method to the libraries module which will return the configured module and expect the static configuration object.
 
 ```js
