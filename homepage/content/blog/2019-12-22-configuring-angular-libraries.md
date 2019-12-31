@@ -363,7 +363,7 @@ The `APP_INITIALIZER` provides the possibility to run a method before the comple
 
 Lets prepare the introduction of the `APP_INITIALIZER` a bit:
 
-First we will build a new class which is responsible for storing the configuration once we have read it from wherever we gonna read it, most likely over http.
+First we will build a new class `ConfigurationStore` which is responsible for storing the configuration once we have read it from wherever we gonna read it, most likely over http.
 
 ```js
 import { NgModule, APP_INITIALIZER, Injectable } from '@angular/core';
