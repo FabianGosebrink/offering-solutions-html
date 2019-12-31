@@ -54,7 +54,7 @@ import { LibToConfigureComponent } from './lib-to-configure.component';
 export class LibToConfigureModule {}
 ```
 
-If we want to use the library we have to import this module into our apps module by adding it to the `imports` array of the `app.module.ts`.
+If we want to use the library we have to import this module into our `consumerApp`s `AppModule` by adding it to the `imports` array of the `app.module.ts`.
 
 ```js
 import { NgModule } from '@angular/core';
