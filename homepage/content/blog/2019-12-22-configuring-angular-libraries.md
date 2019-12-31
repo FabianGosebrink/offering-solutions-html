@@ -163,7 +163,7 @@ export class LibToConfigureComponent implements OnInit {
 
 which will print the current configuration to the console.
 
-As the last step we have to call the `forRoot()` method and pass it some configuration. So in the `consumerApp` we will change the `app.module.ts` to
+As the last step we have to call the `forRoot()` method in the `consumerApp` and pass it some configuration. So in the `consumerApp` we will change the `app.module.ts` to
 
 ```js
 import { NgModule } from '@angular/core';
