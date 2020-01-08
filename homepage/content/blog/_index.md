@@ -7,4 +7,4 @@ draft: false
 category: blog
 ---
 
-Blogs about Angular, ASP.NET Core and a journey in tech...
+Blogs about Angular, ASP.NET Core and a journey in tech
