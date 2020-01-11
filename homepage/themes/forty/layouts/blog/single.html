@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
   {{ partial "blog-header.html" . }}
   <body>
     {{ "<!-- Wrapper -->" | safeHTML }}
@@ -19,7 +19,7 @@
             <span class="image">
               <img
                 src="{{ .Site.Params.cdnbaseurl }}img/blog/{{ .Params.image }}"
-                alt=""
+                alt="defaultSingleImage"
               />
             </span>
             {{ end }}
