@@ -16,3 +16,5 @@
     {{ range .Site.Params.custom_js }}
         <script src="{{ $.Site.Params.cdnbaseurl }}{{ . }}"></script>
     {{ end }}
+
+    {{ partial "google-analytics.html" . }}
