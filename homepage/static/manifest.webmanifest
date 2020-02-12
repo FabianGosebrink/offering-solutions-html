@@ -1,0 +1,25 @@
+{
+	"dir" : "ltr",
+	"lang" : "en-us",
+	"name" : "Offering Solutions Software by Fabian Gosebrink",
+	"scope" : "/",
+	"display" : "browser",
+	"start_url" : "https://offering.solutions/",
+	"short_name" : "Offering Solutions",
+	"theme_color" : "transparent",
+	"description" : "Angular and ASP.NET Core Consulting, Training and Courses",
+	"orientation" : "any",
+	"background_color" : "transparent",
+	"related_applications" : "",
+	"prefer_related_applications" : "false",
+	"icons" : [
+		{
+			"src": "https://offering.solutions/favicon.ico",
+			"sizes": "16x16"
+		},
+		{
+			"src": "https://offering.solutions/favicon.ico",
+			"sizes": "16x16"
+		}],
+	"generated" : "true"
+}

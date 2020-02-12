@@ -1,11 +1,11 @@
 <head>
 	<meta charset="utf-8" />
+	<title>{{ if .IsHome }} {{ .Site.Title }} {{ else }}{{ .Title }}{{ end }}</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="{{ .Summary | safeHTML }}">
 	{{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
 	{{ hugo.Generator }}
-	<title>{{ if .IsHome }} {{ .Site.Title }} {{else }}{{ .Title }}{{ end }}</title>
 	{{ "<!-- Stylesheets -->" | safeHTML }}
 	<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="{{ .Site.Params.cdnbaseurl }}css/main.css"/>

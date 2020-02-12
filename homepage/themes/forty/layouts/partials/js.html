@@ -1,20 +1,39 @@
 {{ "<!-- Scripts -->" | safeHTML}}
-    {{ "<!-- jQuery -->" | safeHTML }}
-    <script src="{{ .Site.Params.cdnbaseurl }}js/jquery.min.js"></script>
-    <script src="{{ .Site.Params.cdnbaseurl }}js/jquery.scrolly.min.js"></script>
-    <script src="{{ .Site.Params.cdnbaseurl }}js/jquery.scrollex.min.js"></script>
-    <script src="{{ .Site.Params.cdnbaseurl }}js/skel.min.js"></script>
-    <script src="{{ .Site.Params.cdnbaseurl }}js/util.js"></script>
+{{ "<!-- jQuery -->" | safeHTML }}
+<script src="{{ .Site.Params.cdnbaseurl }}js/jquery.min.js"></script>
+<script src="{{ .Site.Params.cdnbaseurl }}js/jquery.scrolly.min.js"></script>
+<script src="{{ .Site.Params.cdnbaseurl }}js/jquery.scrollex.min.js"></script>
+<script src="{{ .Site.Params.cdnbaseurl }}js/skel.min.js"></script>
+<script src="{{ .Site.Params.cdnbaseurl }}js/util.js"></script>
 
-    <!--[if lte IE 8]><script src="{{ .Site.Params.cdnbaseurl }}js/ie/respond.min.js"></script><![endif]-->
+<!--[if lte IE 8]><script src="{{ .Site.Params.cdnbaseurl }}js/ie/respond.min.js"></script><![endif]-->
 
-    {{ "<!-- Main JS -->" | safeHTML }}
-    <script src="{{ .Site.Params.cdnbaseurl }}js/main.js"></script>
+{{ "<!-- Main JS -->" | safeHTML }}
+<script src="{{ .Site.Params.cdnbaseurl }}js/main.js"></script>
 
-    {{ template "_internal/google_analytics_async.html" . }}
+{{ template "_internal/google_analytics_async.html" . }}
 
-    {{ range .Site.Params.custom_js }}
-        <script src="{{ $.Site.Params.cdnbaseurl }}{{ . }}"></script>
-    {{ end }}
+{{ range .Site.Params.custom_js }}
+    <script src="{{ $.Site.Params.cdnbaseurl }}{{ . }}"></script>
+{{ end }}
 
-    {{ partial "google-analytics.html" . }}
+
+<script>
+if ("serviceWorker" in navigator) {
+if (navigator.serviceWorker.controller) {
+console.log("active service worker found, no need to register");
+} else {
+// Register the service worker
+navigator.serviceWorker
+  .register("pwabuilder-sw.js", {
+    scope: "./"
+  })
+  .then(function (reg) {
+    console.log("Service worker has been registered for scope: " + reg.scope);
+  });
+}
+}
+
+</script>
+
+{{ partial "google-analytics.html" . }}
