@@ -1,5 +1,5 @@
 ---
-title: Updating Nx Workspace from Karma Workspace to Jest
+title: Updating Nx Workspace from Karma to Jest
 date: 2020-03-01
 tags: ['angular', 'nx', 'karma', 'jest']
 draft: false
