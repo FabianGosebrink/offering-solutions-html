@@ -1,6 +1,6 @@
 ---
 title: Migrating an Nx Workspace from Karma to Jest
-date: 2020-03-01
+date: 2020-03-02
 tags: ['angular', 'nx', 'karma', 'jest']
 draft: false
 category: blog
