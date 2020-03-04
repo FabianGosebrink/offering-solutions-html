@@ -12,8 +12,8 @@ aliases: [
 
 ### Updates
 
-19.09.2018 - Updated Angular Syntax
-19.08.2017 - Updated to ASP.NET Core 2.0 & new HttpClientModule
+* 19.09.2018 - Updated Angular Syntax
+* 19.08.2017 - Updated to ASP.NET Core 2.0 & new HttpClientModule
 
 ### Blogpost
 
@@ -27,17 +27,13 @@ Now I want to show you an example dataservice to call your favourite API.
 
 ### Configuration
 
-Its always a good thing if you have your configuration seperated stored anywhere in your application. I always go for a file like "app.constants.ts" where I store all my values. If anything changes there, like a version of the api which is stored in the url or the endpoint/server whatever, I can do those changes immediatelly at one point.
+Its always a good thing if you have your configuration seperated stored anywhere in your application. I always go for the environment file where I store all my values. If anything changes there, like a version of the api which is stored in the url or the endpoint/server whatever, I can do those changes immediatelly at one point.
 
 ```javascript
-import { Injectable } from '@angular/core';
-
-@Injectable()
-export class Configuration {
-    public server = 'http://localhost:5000/';
-    public apiUrl = 'api/';
-    public serverWithApiUrl = this.server + this.apiUrl;
-}
+export const environment = {
+    server: 'http://localhost:5000/',
+    apiUrl: 'api/';
+};
 ```
 
 Notice the injectable attribute to generate the metadata to make the service available through DI in other modules.
@@ -55,8 +51,7 @@ import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { Configuration } from '../../app.constants';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class DataService {
@@ -64,29 +59,29 @@ export class DataService {
     private actionUrl: string;
 
     constructor(private http: HttpClient, private configuration: Configuration) {
-        this.actionUrl = configuration.serverWithApiUrl + 'values/';
+        this.actionUrl = `${environment.server}${environment.apiUrl}values/`;
     }
 
-    public getAll<T>(): Observable<T> {
+    getAll<T>(): Observable<T> {
         return this.http.get<T>(this.actionUrl);
     }
 
-    public getSingle<T>(id: number): Observable<T> {
+    getSingle<T>(id: number): Observable<T> {
         return this.http.get<T>(this.actionUrl + id);
     }
 
-    public add<T>(itemName: string): Observable<T> {
-        const toAdd = { ItemName: itemName };
+    add<T>(itemName: string): Observable<T> {
+        const toAdd = { itemName };
 
         return this.http.post<T>(this.actionUrl, toAdd);
     }
 
-    public update<T>(id: number, itemToUpdate: any): Observable<T> {
+    update<T>(id: number, itemToUpdate: any): Observable<T> {
         return this.http
             .put<T>(this.actionUrl + id, itemToUpdate);
     }
 
-    public delete<T>(id: number): Observable<T> {
+    delete<T>(id: number): Observable<T> {
         return this.http.delete<T>(this.actionUrl + id);
     }
 }
@@ -104,6 +99,12 @@ export class CustomInterceptor implements HttpInterceptor {
         return next.handle(req);
     }
 }
+```
+
+Do not forget to add your interceptor like
+
+```javascript
+{ provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor, multi: true },
 ```
 
 This dataservice gets the configuration we just did and the HTTP-Service via DI. We included it over the new module-loading-syntax.
@@ -126,8 +127,8 @@ import { DataService } from '../../shared/services/dataService';
 
 export class HomeComponent implements OnInit {
 
-    public message: string;
-    public values: any[];
+    message: string;
+    values: any[];
 
     constructor(
         private dataService: DataService,
