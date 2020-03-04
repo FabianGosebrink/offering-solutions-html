@@ -16,7 +16,7 @@ Code: [https://github.com/FabianGosebrink/ASPNETCore-Angular-Ngrx/blob/master/c
 
 A table in your application is maybe one of the most used controls. So is a filter for the table.
 
-![In this post I want to show you how to implement a table filter in Angular2](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/filter-1024x133.jpg)
+![In this post I want to show you how to implement a table filter in Angular](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/filter-1024x133.jpg)
 
 You can achieve this using a pipe:
 
@@ -51,16 +51,14 @@ After implementing this the pipe has to be registered on a module to make it ava
 
 ```javascript
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 // ...
-
 import { FilterPipe } from '../pipes/filter.pipe';
 
 @NgModule({
   imports: [
     // Modules
-    BrowserModule
+    CommonModule
   ],
 
   declarations: [
@@ -84,6 +82,7 @@ AppModule:
 
 ```javascript
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 // ...
 import { SharedModule } from './modules/shared.module';
 
@@ -92,17 +91,9 @@ import { SharedModule } from './modules/shared.module';
 @NgModule({
   imports: [
     // ...
+    BrowserModule,
     SharedModule
   ],
-
-  declarations: [
-    // ...
-  ],
-
-  providers: [
-    // ...
-  ],
-
   bootstrap: [AppComponent]
 })
 export class AppModule {}
@@ -115,13 +106,14 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 // ...
 
 @Component({
-    selector: 'foodList',
-    templateUrl: 'app/components/foodList/foodList.component.html'
+    selector: 'app-foodlist',
+    templateUrl: './food-list.component.html',
+    styleUrls: ['./food-list.component.css'],
 })
 
 export class FoodListComponent {
-    public foodItem: FoodItem;
-    public searchString: string;
+    foodItem: FoodItem;
+    searchString: string;
 
     // ...
 }
@@ -164,7 +156,7 @@ export class FoodListComponent {
 
 Now the table is filtered after the field "name" by the string which is typed into the searchString-input.
 
-![In this post I want to show you how to implement a table filter in Angular2](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/searchFilter-1024x316.gif)
+![In this post I want to show you how to implement a table filter in Angular](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/searchFilter-1024x316.gif)
 
 HTH
 
