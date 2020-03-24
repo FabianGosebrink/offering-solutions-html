@@ -23,7 +23,7 @@ To prepare VSCode open an instance and press `Ctrl + ,` to enter the settings. S
 "terminal.external.windowsExec": "C:\\Users\\Fabian\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
 ```
 
-> This is of course my local PC, you path may differ.
+> This is of course my local PC, your path may differ.
 
 ## Windows Terminal
 
