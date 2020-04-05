@@ -143,7 +143,7 @@ export function executeSchematic(host: Tree, context: SchematicContext): Rule {
 
 > The abstraction on this level makes it easier to migrate to a nx plugin later.
 
-Now think about the actions you have to perform based on what you schematic should do. For me there are two types of actions. Those who are modifying the root workspace (files like the angular.json for general properties or root files which are _not_ inside a specific project) and actions which are transforming files which exist in a specific project or `angular.json` but _for a specific project_.
+Now think about the actions you have to perform based on what you schematic should do. For me there are two types of actions. Those who are modifying the root workspace (files like the angular.json for general properties or root files which are _not_ inside a specific project) and actions which are transforming files which exist in a specific project or `angular.json` but _for one or multiple specific projects_.
 
 This leads me to two folders `root-actions` and `project-actions`. Each of them gets an `index.ts` file in it again.
 
@@ -222,13 +222,16 @@ import { deleteProjectFiles } from './delete-project-files';
 
 export function getRulesForProjects() {
   let projectRules: Rule[] = [];
-
+  // Maybe iterate over all projects, fetch all of them and execute the actions
+  // per project
   projectRules.push(deleteProjectFiles());
   // maybe push other actions in sequence?
 
   return projectRules;
 }
 ```
+
+> The `project-actions/index.ts` file is the place where you can iterate over all the project actions and execute them _per project_.
 
 Let us do the same with the `root-actions` and the `update-angularjson.ts`. This time we are gonna receive the workspace which we modify to have an example of custom parameters and those which are getting passed fro the schematics.
 
