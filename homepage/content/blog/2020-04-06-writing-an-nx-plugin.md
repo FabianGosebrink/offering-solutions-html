@@ -336,7 +336,7 @@ export function myFirst(_options: any): Rule {
 
 To provide the executing via `ng add` to your schematic enter the file `collection.json` and add the `ng add` as follows:
 
-```js
+```json
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
@@ -350,14 +350,13 @@ To provide the executing via `ng add` to your schematic enter the file `collecti
     }
   }
 }
-
 ```
 
 ## Building your schematic
 
 To build your schematic locally you can add the following scripts in the `scripts` section of your `package.json`.
 
-```js
+```json
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc -p tsconfig.json --watch",
@@ -561,3 +560,58 @@ export default function (options: MyFirstPluginSchematicSchema): Rule {
   };
 }
 ```
+
+Now merge the `collection.json`, too by adding `ng add` support
+
+```json
+{
+  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "name": "my-first-plugin",
+  "version": "0.0.1",
+  "schematics": {
+    "myFirstPlugin": {
+      "factory": "./src/schematics/my-first-plugin/schematic",
+      "schema": "./src/schematics/my-first-plugin/schema.json",
+      "description": "my-first-plugin schematic"
+    },
+    "ng-add": {
+      "description": "my-first-plugin schematic",
+      "factory": "./src/schematics/my-first-plugin/schematic"
+    }
+  }
+}
+```
+
+## Building your schematic locally
+
+You can build your nx plugin with the nx command `nx build my-first-plugin`
+
+```json
+{
+  //...
+  "scripts": {
+    //...
+    "build:my:first:plugin": "nx build my-first-plugin"
+    //...
+  }
+  //...
+}
+```
+
+which will create a `dist` folder with your nx plugin.
+
+## Testing the plugin locally
+
+In general testing stays the same with the difference that we will use a nx workspace this time to test our schematic and we will use the artifact from our `dist` folder. but the commands stay the same.
+
+So create an nx workspace as described on [https://nx.dev](https://nx.dev) and link your schematic with the `npm link` command and _use the path from your distribution from the nx plugin_.
+
+Now you can see if it works or not and maybe modify it.
+
+## Next Steps
+
+At this point it would be nice to look at the amazing methods the nx team provides to us and maybe for your next schematic or nx plugin start with the scaffolded template immediately. The methods are really helpful. Consider taking a look!
+
+## Releasing it to npm
+
+TBD
