@@ -334,4 +334,8 @@ export function myFirst(_options: any): Rule {
 
 ## Testing your schematic locally
 
+TBD
+
 ## Turning the schematic in an nx plugin
+
+TBD
