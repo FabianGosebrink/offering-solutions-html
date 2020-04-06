@@ -7,7 +7,7 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blogpost I would like to explain how you can write a schematic and turn it into an nx plugin or turn an existing schematic into an nx plugin.
+In this blog post I would like to explain how you can write a schematic and turn it into an nx plugin or turn an existing schematic into an nx plugin.
 
 ## Knowledge Prerequisites
 
@@ -21,7 +21,7 @@ We will however cover the get started things to ramp you up.
 
 ## What is a schematic?
 
-In general a schematic can help you to create, move, delete, ... files automatically inside your angular or nx workspace. It can help you to stay organised and automates tasks you would normally do manually. Schematics are pretty powerful and the possibilities are endless.
+In general a schematic can help you to create, move, delete, ... files automatically inside your angular or nx workspace. It can help you to stay organized and automates tasks you would normally do manually. Schematics are pretty powerful and the possibilities are endless.
 
 In the following we are going to
 
@@ -87,7 +87,7 @@ import {
 export function myFirst(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
     const arrayOfRules: Rule[] = [];
-    // modifiying the tree in several rules
+    // modifying the tree in several rules
     return chain(arrayOfRules);
   };
 }
@@ -115,7 +115,7 @@ Let us create an `actions` folder and an `index.ts` inside of it.
 └── tsconfig.json
 ```
 
-Now let us extract the inner code into a method to the new created `actions/index.ts` file and call it from the existing outter `my-first/index.ts` file.
+Now let us extract the inner code into a method to the new created `actions/index.ts` file and call it from the existing outer `my-first/index.ts` file.
 
 Code of `my-first/index.ts`
 
@@ -142,7 +142,7 @@ import {
 
 export function executeSchematic(host: Tree, context: SchematicContext): Rule {
   const arrayOfRules: Rule[] = [];
-  // modifiying the tree in several rules
+  // modifying the tree in several rules
   return chain(arrayOfRules);
 }
 ```
@@ -203,7 +203,7 @@ Create the file `update-angularjson.ts` inside the `root-actions` folder and the
 └── tsconfig.json
 ```
 
-Inside the files we are exporting a function which exports a `Rule` again getting passed the parametes we get given from the schematic itself.
+Inside the files we are exporting a function which exports a `Rule` again getting passed the parameters we get given from the schematic itself.
 
 Code of `delete-project-files.ts`
 
@@ -259,7 +259,7 @@ export function updateAngularJson(
 }
 ```
 
-The code of the corresponsing index file is closely the same
+The code of the corresponding index file is closely the same
 
 Code of `project-actions/index.ts`
 
@@ -392,7 +392,7 @@ Pay attention that this is the workspace you are gonna test you schematics with.
 
 Having done that: Commit! have a "clean" workspace. I am not saying to push it, just have the workspace clean that you can see what the schematic did. Checking the file changes is very easy like this.
 
-Now you can link your schematic into your workspace to run it locally. Therefore run the `npm link` command _from the workspace you want to test on with the path \_to your `package.json` of the schematic withour the `package.json` filename_.
+Now you can link your schematic into your workspace to run it locally. Therefore run the `npm link` command _from the workspace you want to test on with the path to your `package.json` of the schematic without the `package.json` filename_.
 
 ```cmd
 npm link path/to/my/schematics/packagejson
