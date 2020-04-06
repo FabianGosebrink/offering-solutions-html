@@ -72,7 +72,7 @@ I was doing a schematic lately (which we will get to later on) but basically eve
 
 So make a list of which actions should be performed, because this has a direct influence of what we are going to write down in code!
 
-Because beside returning a single `Rule` we can also chain them as the `@angular-devkit/schematics` package is providing methods to combine rules and so on.
+Because beside returning a single `Rule` we can also chain them as the `@angular-devkit/schematics` package is providing methods to for example combine rules.
 
 So what also works is
 
@@ -93,7 +93,7 @@ export function myFirst(_options: any): Rule {
 }
 ```
 
-See where this is gonna lead us? With `chain()` we have the possibility to run several rules one after another. That is a perfect fir if we want to break our task into smaller actions!
+See where this is gonna lead us? With `chain()` we have the possibility to run several rules one after another. That is a perfect fit if we want to break our task into smaller actions!
 
 ## Preparing the schematic
 
@@ -149,7 +149,7 @@ export function executeSchematic(host: Tree, context: SchematicContext): Rule {
 
 > The abstraction on this level makes it easier to migrate to a nx plugin later.
 
-Now think about the actions you have to perform based on what you schematic should do. For me there are two types of actions. Those who are modifying the root workspace (files like the angular.json for general properties or root files which are _not_ inside a specific project) and actions which are transforming files which exist in a specific project or `angular.json` but _for one or multiple specific projects_.
+Now think about the actions you have to perform based on what your schematic should do. For me there are two types of actions. Those who are modifying the root workspace (files like the `angular.json` file for general properties or root files which are _not_ inside a specific project) and actions which are transforming files which exist in a specific project or the `angular.json` file but _for project specific properties_.
 
 This leads me to two folders `root-actions` and `project-actions`. Each of them gets an `index.ts` file in it again.
 
