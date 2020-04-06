@@ -332,9 +332,81 @@ export function myFirst(_options: any): Rule {
 }
 ```
 
+## Adding `ng add` support
+
+To provide the executing via `ng add` to your schematic enter the file `collection.json` and add the `ng add` as follows:
+
+```js
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "my-first": {
+      "description": "A blank schematic.",
+      "factory": "./my-first/index#myFirst"
+    },
+    "ng-add": {
+      "description": "A blank schematic.",
+      "factory": "./my-first/index#myFirst"
+    }
+  }
+}
+
+```
+
+## Building your schematic
+
+To build your schematic locally you can add the following scripts in the `scripts` section of your `package.json`.
+
+```js
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -p tsconfig.json --watch",
+  },
+```
+
+The `npm run build` command will build you schematic locally and create your `*.js` files.
+
 ## Testing your schematic locally
 
-TBD
+If you want to test your schematic locally you can do this using the
+
+```cmd
+npm link
+```
+
+command.
+
+So first create a new workspace with the AngularCLI with
+
+```cmd
+ng new myWorkspace --createApplication=false
+```
+
+and then
+
+```cmd
+ng g app myApp
+```
+
+Pay attention that this is the workspace you are gonna test you schematics with. So bring it in the position that you can apply your changes.
+
+Having done that: Commit! have a "clean" workspace. I am not saying to push it, just have the workspace clean that you can see what the schematic did. Checking the file changes is very easy like this.
+
+Now you can link your schematic into your workspace to run it locally. Therefore run the `npm link` command _from the workspace you want to test on with the path \_to your `package.json` of the schematic withour the `package.json` filename_.
+
+```cmd
+npm link path/to/my/schematics/packagejson
+```
+
+After linking it you can use the previously added `ng add` support.
+
+```cmd
+ng add my-first
+```
+
+After it ran through you can see what is has done in your workspace by comparing the differences with git for example.
+
+_*Make sure to always build your schematic and execute `npm link <path>` before executing it again with `ng add` when testing new changes*_
 
 ## Turning the schematic in an nx plugin
 
