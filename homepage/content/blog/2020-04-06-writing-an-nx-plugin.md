@@ -410,4 +410,154 @@ _*Make sure to always build your schematic and execute `npm link <path>` before 
 
 ## Turning the schematic in an nx plugin
 
-TBD
+At this point you should have a running schematic which does everything to your workspace as needed. Let us move this one into an nx plugin with the nx cli.
+
+It would be helpful to get a feeling of nx plugins by reading this guide [https://nx.dev/angular/guides/nx-plugin](https://nx.dev/angular/guides/nx-plugin)
+
+So we start off a blank ground by and create a new nx plugin with
+
+```cmd
+npx create-nx-plugin exampleorg --pluginName myFirstPlugin
+```
+
+this creates a workspace with a pre configured plugin called `my-first-plugin`. Inside of the `libs/my-first-plugin/src` folder you can see a `schematics` folder. This is where we gonna place our created schematic to turn it into an nx plugin.
+
+> We will not cover how we can use the `builders` here beside the schematics. However the builders are very powerful and you should really consider taking a look at them in the link given above.
+
+In the `libs\my-first-plugin\src\schematics\my-first-plugin\schematic.ts` file you can see a default function at the bottom which gets executed if the plugin is gonna be called
+
+```js
+export default function (options: MyFirstPluginSchematicSchema): Rule {
+  return chain([
+    /* actions */
+  ]);
+}
+```
+
+And the Nx Team provides incredibly useful methods like
+
+```js
+ updateWorkspace(workspace => {
+      workspace.projects
+        .add({
+          name: normalizedOptions.projectName,
+          root: normalizedOptions.projectRoot,
+          sourceRoot: `${normalizedOptions.projectRoot}/src`,
+          projectType
+        })
+        .targets.add({
+          name: 'build',
+          builder: '@exampleorg/my-first-plugin:build'
+        });
+    }),
+
+```
+
+or
+
+```js
+ addProjectToNxJsonInTree(normalizedOptions.projectName, {
+      tags: normalizedOptions.parsedTags
+    }),
+```
+
+Which we could use to achieve our goals with our schematic. However this time we gonna stick to what we have and just provide our existing schematic as an nx plugin.
+
+First we can take the complete `actions` folder of our schematic and paste it into the `libs\my-first-plugin\src\schematics\my-first-plugin\` folder.
+
+```
+.
+├── apps
+│   ...
+├── libs
+│   ├── my-first-plugin
+│   │   ├── src
+│   │   │   ├── builders
+│   │   │   │   └── ...
+│   │   │   ├── schematics
+│   │   │   │   └── my-first-plugin
+│   │   │   │       ├── actions                     <<< paste this ...
+│   │   │   │       │   ├── project-actions
+│   │   │   │       │   │   ├── delete-project-files.ts
+│   │   │   │       │   │   └── index.ts
+│   │   │   │       │   ├── root-actions
+│   │   │   │       │   │   ├── index.ts
+│   │   │   │       │   │   └── update-angularjson.ts
+│   │   │   │       │   └── index.ts                <<< ... w/ entry point
+│   │   │   │       ├── files
+│   │   │   │       │   └── ...
+│   │   │   │       ├── schema.json
+│   │   │   │       ├── schematic.spec.ts
+│   │   │   │       └── schematic.ts
+│   │   │   └── index.ts
+│   │   ├── .eslintrc
+│   │   ├── builders.json
+│   │   ├── collection.json
+│   │   ├── jest.config.js
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── tsconfig.json
+│   │   ├── tsconfig.lib.json
+│   │   └── tsconfig.spec.json
+│   └── .gitkeep
+├── tools
+│   ├── ...
+├── ...
+...
+```
+
+As we have defined an entry point in our schematic in the `index.ts` file
+
+Code of `libs\my-first-plugin\src\schematics\my-first-plugin\actions\index.ts`
+
+```js
+import {
+  chain,
+  SchematicContext,
+  Tree,
+  SchematicsException,
+} from '@angular-devkit/schematics';
+import { getRulesForProjects } from './project-actions';
+import { getRulesForWorkspaceRoot } from './root-actions';
+
+export function executeSchematic(host: Tree, context: SchematicContext) {
+  const workspace = getAngularWorkspace(host);
+
+  const projectAndLibActions = getRulesForProjects();
+  const workspaceActions = getRulesForWorkspaceRoot(workspace);
+  const rulesToApply = [...projectAndLibActions, ...workspaceActions];
+
+  return chain(rulesToApply);
+}
+
+export function getAngularWorkspace(tree: Tree) {
+  const workspaceConfig = tree.read(`angular.json`);
+
+  if (!workspaceConfig) {
+    throw new SchematicsException(
+      'Could not find Angular workspace configuration'
+    );
+  }
+
+  const workspaceContent = workspaceConfig.toString();
+  const workspace = JSON.parse(workspaceContent);
+
+  return workspace;
+}
+```
+
+We can call that one from the default function from our nx plugin.
+
+Code of `libs\my-first-plugin\src\schematics\my-first-plugin\schematic.ts`
+
+```js
+import { Tree, Rule, SchematicContext } from '@angular-devkit/schematics';
+import { MyFirstPluginSchematicSchema } from './schema';
+import { executeSchematic } from './actions';
+
+export default function (options: MyFirstPluginSchematicSchema): Rule {
+  return (host: Tree, context: SchematicContext) => {
+    return executeSchematic(host, context);
+  };
+}
+```
