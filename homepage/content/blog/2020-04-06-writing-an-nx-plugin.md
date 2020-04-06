@@ -174,7 +174,7 @@ This leads me to two folders `root-actions` and `project-actions`. Each of them 
 └── tsconfig.json
 ```
 
-## Build specific Actions
+## Building specific Actions
 
 Now it is time to build specific actions which are gonna execute _something_ you want to. Let us for example update the `angular.json` file on root as an action and as a project action we delete some files which are no longer needed inside a project folder.
 
@@ -203,12 +203,12 @@ Create the file `update-angularjson.ts` inside the `root-actions` folder and the
 └── tsconfig.json
 ```
 
-inside the files we are exporting a function which exports a `Rule` again getting passed the parametes we get given from the schematic itself
+Inside the files we are exporting a function which exports a `Rule` again getting passed the parametes we get given from the schematic itself.
 
 Code of `delete-project-files.ts`
 
 ```js
-export function deleteProjectFiles(/* Params _you_ want to give in */): Rule {
+export function deleteProjectFiles(/* Params _you_ want to pass in */): Rule {
   return (tree: Tree, _context: SchematicContext) => {
     // modify the Tree with tree.delete(path);
     // or whatever you want to do in the action :-)
@@ -218,7 +218,7 @@ export function deleteProjectFiles(/* Params _you_ want to give in */): Rule {
 }
 ```
 
-and in the `project-actions/index.ts` file we give it a point where all the actions are gonna be collected and put in order:
+and in the `project-actions/index.ts` file we give it a place where all the actions are gonna be collected and put in order:
 
 Code of `project-actions/index.ts`
 
@@ -237,7 +237,7 @@ export function getRulesForProjects() {
 }
 ```
 
-> The `project-actions/index.ts` file is the place where you can iterate over all the project actions and execute them _per project_.
+> The `project-actions/index.ts` file is the place where you can iterate over all the projects in the workspace and execute them _per project_.
 
 Let us do the same with the `root-actions` and the `update-angularjson.ts`. This time we are gonna receive the workspace which we modify to have an example of custom parameters and those which are getting passed fro the schematics.
 
@@ -280,7 +280,7 @@ export function getRulesForWorkspaceRoot(
 }
 ```
 
-in the `actions/index.ts` file we are collection the actions from `project-actions` and `root-actions` now and call the `chain()` method with the actions as param.
+In the `actions/index.ts` file we are collecting the actions from `project-actions` and `root-actions` now and call the `chain()` method with the actions array as param.
 
 ```js
 import {
@@ -318,7 +318,7 @@ export function getAngularWorkspace(tree: Tree) {
 }
 ```
 
-and from the `my-first/index.ts` file we only have to call our new created method like this:
+and from the `my-first/index.ts` file we only have to pass the corresponding arguments to our new created method like this:
 
 Code of `my-first/index.ts`
 
