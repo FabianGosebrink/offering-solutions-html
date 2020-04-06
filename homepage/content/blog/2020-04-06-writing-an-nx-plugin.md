@@ -9,26 +9,30 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this blogpost I would like to explain how you can write a schematic and turn it into an nx plugin or turn an existing schematic into an nx plugin.
 
+## Knowledge Prerequisites
+
 There are a lot of blogposts out there which deal with how you can get started writing a schematic in much more detail as we do not cover this here one more time in depth. Be sure to check out:
 
 - [https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2](https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2)
 - [https://brianflove.com/2018/12/11/angular-schematics-tutorial/](https://brianflove.com/2018/12/11/angular-schematics-tutorial/)
 - [https://medium.com/@tomastrajan/total-guide-to-custom-angular-schematics-5c50cf90cdb4](https://medium.com/@tomastrajan/total-guide-to-custom-angular-schematics-5c50cf90cdb4)
 
-We will however cover the get started things.
+We will however cover the get started things to ramp you up.
 
-In general a schematic can help you to create, move, delete, ... files automatically for you. it can help you to stay organised and automates tasks you would normally do manually inside your angular project or workspace. Schematics are pretty powerful and the possibilities are endless.
+## What is a schematic?
 
-in the following we are going to
+In general a schematic can help you to create, move, delete, ... files automatically inside your angular or nx workspace. It can help you to stay organised and automates tasks you would normally do manually. Schematics are pretty powerful and the possibilities are endless.
+
+In the following we are going to
 
 1. Create our first schematic
-2. Turn it into an nx plugin
-3. Test it locally
+2. Test it locally
+3. Turn it into an nx plugin
 4. Release it to npm
 
 ## Creating a schematic
 
-After installing the `@angular-devkit/schematics-cli` we can work with the cli command globally and execute `schematics` where we want to. If we want to create a schematic we can run
+After installing the `@angular-devkit/schematics-cli` we can work with the cli command globally and execute `schematics` in the console. If we want to create a schematic we can run
 
 ```cmd
 schematics blank --name=my-first
@@ -46,9 +50,9 @@ export function myFirst(_options: any): Rule {
 }
 ```
 
-The `Tree` is like the projection of a workspace, an AngularCLI workspace for example. So with providing methods like `create(...)`, `delete(...)`, `exists(...)`, `overwrite(...)` etc. it is possible to modify the workspace the schematic is running on and move files around. Perfect fit.
+The `Tree` is like the projection of a file system of a workspace, an AngularCLI or an nx workspace for example. So with providing methods like `create(...)`, `delete(...)`, `exists(...)`, `overwrite(...)` etc. it is possible to modify the workspace the schematic is running on and move files around. Perfect fit.
 
-But take a closer look. The method `myFirst()` is returning a `Rule`. What is getting returned is another anonymous function taking the `Tree` and a `context` as parameter and returning the unmodified `Tree` again.
+But take a closer look. The method `myFirst()` is returning a `Rule`. What is getting returned is another anonymous function taking the `Tree` and a `context` as parameter and returning - in this case - the unmodified `Tree` again.
 
 That works, because if we take a deeper look the `Rule` type is specified as this
 
@@ -56,7 +60,9 @@ That works, because if we take a deeper look the `Rule` type is specified as thi
 Rule = (tree: Tree, context: SchematicContext) => Tree | Observable<Tree> | Rule | Promise<void> | Promise<Rule> | void;
 ```
 
-Perfect, let us think about what we want to achieve here.
+A `Rule` is a function which returns a `Tree`, `Observable<Tree>` or the mentioned return types above.
+
+So far so good. But before we start let us think of what we want to achieve with our schematic here.
 
 ## Separating into smaller actions
 
