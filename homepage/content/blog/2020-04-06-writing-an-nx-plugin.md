@@ -614,4 +614,25 @@ At this point it would be nice to look at the amazing methods the nx team provid
 
 ## Releasing it to npm
 
-TBD
+If you want to release the plugin to npm you can use the npm commands as usual. Running `npm publish` from the `dist/<your-package>` folder. I can recommend you [https://www.npmjs.com/package/release-it](https://www.npmjs.com/package/release-it) to make the release process as smooth as possible. In my `package.json` I always have a release script like this
+
+Code taken from [https://github.com/FabianGosebrink/nx-protractor-to-cypress](https://github.com/FabianGosebrink/nx-protractor-to-cypress)
+
+```json
+{
+  "scripts": {
+    "build:nx:protractor:to:cypress": "nx build nx-protractor-to-cypress && npm run copy:files",
+    "build:nx:protractor:to:cypress:watch": "nx build nx-protractor-to-cypress -- --watch",
+    "release:dryrun": "npm run release -- --dry-run",
+    "release": "npm run build:nx:protractor:to:cypress && cd dist/libs/nx-protractor-to-cypress && release-it"
+  }
+
+  //...
+}
+```
+
+That is it! I hope this journey did help you a bit.
+
+Thanks for reading
+
+Fabian
