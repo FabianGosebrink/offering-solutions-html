@@ -1,13 +1,12 @@
 ---
 title: Clean your viewmodel in WPF and create a facade
 date: 2014-07-03
-tags: [ 'wpf']
+tags: ['wpf']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/",
-]
+aliases:
+  ['/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/']
 ---
 
 In this post I want to show you how to Clean your viewmodel in WPF and create a facade.
@@ -190,9 +189,9 @@ We are now bind on our service "." our property. Its the same with Commands. Com
 
 If you do this your viewmodel gets a complete facade and you can change the services underneath without touching the viewmodel. So every testcase you write for the viewmodel would be untouched :)
 
-Note: Your viewmodel does not have to implement INotifypropertyChanged then. If you make classes/interfaces which are providing informations to the UI these classes are the only ones who have to implement INotifyPropertyChanged.
+Note: Your viewmodel does not have to implement `INotifypropertyChanged` then. If you make classes/interfaces which are providing information to the UI these classes are the only ones who have to implement INotifyPropertyChanged.
 
-If you think further it would be better to seperate the service one again and getting a provider between the service, which is doing the real job and the class/interface, which is giving the data to the outside world. This provider (or however you call it) can then be offered in the viewmodel and you would bind first over this one. But for now this should be it, I think you got my point ;) .
+If you think further it would be better to separate the service one again and getting a provider between the service, which is doing the real job and the class/interface, which is giving the data to the outside world. This provider (or however you call it) can then be offered in the viewmodel and you would bind first over this one. But for now this should be it, I think you got my point ;) .
 
 ![clean your viewmodel in WPF and create a facade](https://cdn.offering.solutions/img/articles/2014-07-03/2.jpg)
 ![clean your viewmodel in WPF and create a facade](https://cdn.offering.solutions/img/articles/2014-07-03/Facade.jpg)

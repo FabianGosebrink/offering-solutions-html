@@ -37,11 +37,15 @@
 
         <!-- One -->
         <section id="one">
+          <div class="center">
+            <span class="image pluralsight-logo" title="Check out my pluralsight courses">
+                <a href="https://app.pluralsight.com/profile/author/fabian-gosebrink" style="border-bottom: none;" target="_blank">
+                  <img src="{{ .Site.Params.cdnbaseurl }}/img/PS_logo_F-01.png" alt="" />
+                </a>
+            </span> 
+          </div>
+          <div class="divider"></div>
           <div class="inner">
-            <!-- {{ if .Params.image }}
-                                <span class="image main"><img src="{{ .Site.Params.cdnbaseurl }}/img/{{ .Section }}/{{ .Params.image }}" alt="" /></span>
-                            {{ end }} -->
-
             {{ .Content }}
           </div>
         </section>
