@@ -1,6 +1,6 @@
 ---
-title: TBD
-date: 2020-03-24
+title: Creating an Angular schematic and turn it into an nx plugin
+date: 2020-04-08
 tags: ['nx', 'plugin']
 draft: false
 category: blog
@@ -11,7 +11,7 @@ In this blog post I would like to explain how you can write a schematic and turn
 
 ## Knowledge Prerequisites
 
-There are a lot of blogposts out there which deal with how you can get started writing a schematic in much more detail as we do not cover this here one more time in depth. Be sure to check out:
+There are a lot of blog posts out there which deal with how you can get started writing a schematic in much more detail as we do not cover this here one more time in depth. Be sure to check out:
 
 - [https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2](https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2)
 - [https://brianflove.com/2018/12/11/angular-schematics-tutorial/](https://brianflove.com/2018/12/11/angular-schematics-tutorial/)
@@ -25,10 +25,18 @@ In general a schematic can help you to create, move, delete, ... files automatic
 
 In the following we are going to
 
-1. Create our first schematic
-2. Test it locally
-3. Turn it into an nx plugin
-4. Release it to npm
+1. [Create our first schematic](#creating-a-schematic)
+1. [Separating into smaller actions](#separating-into-smaller-actions)
+1. [Preparing the schematic](#preparing-the-schematic)
+1. [Building specific Actions](#building-specific-actions)
+1. [Adding ng add support](#adding-ng-add-support)
+1. [Building your schematic](#building-your-schematic)
+1. [Testing your schematic locally](#testing-your-schematic-locally)
+1. [Turning the schematic in an nx plugin](#turning-the-schematic-in-an-nx-plugin)
+1. [Building your schematic locally](#building-your-schematic-locally)
+1. [Testing the plugin locally](#testing-the-plugin-locally)
+1. [Next Steps](#next-steps)
+1. [Releasing it to npm](#releasing-it-to-npm)
 
 ## Creating a schematic
 
