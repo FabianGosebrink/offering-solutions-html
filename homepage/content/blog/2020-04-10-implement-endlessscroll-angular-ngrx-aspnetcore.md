@@ -295,6 +295,231 @@ export const error = createAction(
 );
 ```
 
-The `payload` taken from the `getItemsComplete` action is a simple `Item[]`.
+The `payload` taken from the `getItemsComplete` action is a simple `Item[]` which it takes the action with it.
 
 #### Adding the effects
+
+Before we go to the reducer let's us add the effects as we have the service already and can connect the effects with the actions and the service easily.
+
+The `getAllItems$` effect is pretty straight forward as we filter the `action$` stream with our action call the service and return the `getItemsComplete` action.
+
+```ts
+getAllItems$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType(appActions.getItems),
+    switchMap(() =>
+      this.apiService.getAllItems().pipe(
+        map((result) => appActions.getItemsComplete({ payload: result })),
+        catchError((error) =>
+          of(appActions.error({ payload: JSON.stringify(error) }))
+        )
+      )
+    )
+  )
+);
+```
+
+The `getMoreItems$` does _not_ take any parameters from the outside (which we could absolutely extend it to) but for getting the items to skip - because they are already loaded and we want to fetch the _next_ 20 items we use the `withLatestFrom()` operator. In it we are asking the store about the length of the current items, so what we have right now is what we want to skip. We will write the selector later, just read on 😊😊
+
+```ts
+getMoreItems$ = createEffect(() =>
+  this.actions$.pipe(
+    // Filter all actions and only let `getMoreItems` through
+    ofType(appActions.getMoreItems),
+
+    // Ask the store about the length o the items we already have
+    withLatestFrom(this.store.pipe(select(selectAllItemsLength))),
+
+    // map the result we have only into the skip, because we are currently only interested in that
+    map(([{}, skip]) => skip),
+
+    // hang on the first observable and resolve it, take the skip parameter out
+    // and return another observable to keep the stream like always.
+    switchMap((skip) =>
+      this.apiService.getAllItems({ skip }).pipe(
+        map((result) => appActions.getItemsComplete({ payload: result })),
+        catchError((error) =>
+          of(appActions.error({ payload: JSON.stringify(error) }))
+        )
+      )
+    )
+  )
+);
+```
+
+In the `.getAllItems({ skip })` we are passing in the filter object giving the skip parameter which will be read from the backend.
+
+Complete effects are then:
+
+```ts
+export class ItemEffects {
+  constructor(
+    private actions$: Actions,
+    private store: Store<any>,
+    private apiService: ItemsApiService
+  ) {}
+
+  getAllItems$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(appActions.getItems),
+      switchMap(() =>
+        this.apiService.getAllItems().pipe(
+          map((result) => appActions.getItemsComplete({ payload: result })),
+          catchError((error) =>
+            of(appActions.error({ payload: JSON.stringify(error) }))
+          )
+        )
+      )
+    )
+  );
+
+  getMoreItems$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(appActions.getMoreItems),
+      withLatestFrom(this.store.pipe(select(selectAllItemsLength))),
+      map(([{}, skip]) => skip),
+      switchMap((skip) =>
+        this.apiService.getAllItems({ skip }).pipe(
+          map((result) => appActions.getItemsComplete({ payload: result })),
+          catchError((error) =>
+            of(appActions.error({ payload: JSON.stringify(error) }))
+          )
+        )
+      )
+    )
+  );
+
+  error$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(appActions.error),
+        tap((error) => console.log(error))
+      ),
+    { dispatch: false }
+  );
+}
+```
+
+#### Adding the reducer
+
+The reducer is basically simple and makes it pretty easy to combine the items we already have with the new ones which were coming. This is one of the reasons I think ngrx fits very well to the solve of the problem of an endless scroll here.
+
+```ts
+import { createReducer, on } from '@ngrx/store';
+import * as appActions from './item.actions';
+import { Item } from '../item';
+
+export interface AppState {
+  itemState: ItemState;
+}
+
+export interface ItemState {
+  items: Item[];
+  loading: boolean;
+}
+
+export const initialState: ItemState = {
+  items: [],
+  loading: false,
+};
+
+export const itemReducer = createReducer(
+  initialState,
+
+  on(appActions.getItems, (state) => {
+    return {
+      ...state,
+      loading: true,
+    };
+  }),
+
+  on(appActions.getItemsComplete, (state, { payload }) => {
+    return {
+      ...state,
+      items: [...state.items, ...payload],
+      loading: false,
+    };
+  })
+);
+```
+
+First we define an `AppState` to have a representation of the state of our complete app. We will use this one later when we compose the selectors.
+
+The concrete state is the `ItemState` which only has an `items` and a `loading` property. One can be an array, the other one is boolean indicating wether we are currently loading items or not.
+
+The reducer itself first sets `loading` to `true` every time we ask for some items, so when the action `getItems` comes around.
+
+The action `getItemsComplete` however takes the payload and uses the spread operator to set the new items just at the bottom of a new array. The top are the old items we already have.
+
+```ts
+on(appActions.getItemsComplete, (state, { payload }) => {
+  return {
+    ...state,
+    items: [...state.items, ...payload],
+    loading: false,
+  };
+});
+```
+
+Is nice and simple imho and we have a simple interface to our components now, because the state itself only hold one array with n items in it.
+
+To make it easier for the components (and developers) let us ...
+
+#### Add the selectors
+
+The selectors are very powerful (I love them since I got into them a bit) and give us like an api to our store. So this is where the logic is if we want to ask for state slices, combine them, filter them etc.
+
+First we need to ask our `AppState` to give us the part where the feature is: Underneath the property `itemState`. So we write a selector for this little part of logic:
+
+```ts
+export const selectItemState = (state: fromReducer.AppState) => state.itemState;
+```
+
+We can use this one to ask for allItems, for the length of all items (because our effects need it, remember?) and we can ask for the `loading` property.
+
+```ts
+import * as fromReducer from './item.reducer';
+import { createSelector } from '@ngrx/store';
+
+export const selectItemState = (state: fromReducer.AppState) => state.itemState;
+
+export const selectAllItems = createSelector(
+  selectItemState,
+  (state: fromReducer.ItemState) => state.items
+);
+
+export const selectAllItemsLength = createSelector(
+  selectItemState,
+  (state: fromReducer.ItemState) => state.items.length
+);
+
+export const selectIsLoading = createSelector(
+  selectItemState,
+  (state: fromReducer.ItemState) => state.loading
+);
+```
+
+Having done that we have the `index.ts` file left. I like to use this file to combine things and resolve them clearly, making the registration in the `AppModule` or wherever needed more precise and clear. The import is just `import ... from '../store';` then instead having wild imports all around the app.
+
+In the `index.ts` file can prepare the array which we have to register in the `EffectsModule(...)` in the `AppModule` and we can define what we want to pass into the `StoreModule.forRoot(...)`.
+
+So this is what the file is looking like
+
+```ts
+import { ItemEffects } from './item.effects';
+import { ActionReducerMap } from '@ngrx/store';
+import { AppState, itemReducer } from './item.reducer';
+
+export * from './item.selectors';
+
+export const itemEffects = [ItemEffects];
+export const appReducers: ActionReducerMap<AppState> = {
+  itemState: itemReducer,
+};
+```
+
+Alright, we are almost done.
+
+#### Registering ngrx in the AppModule
+
+Basically we have two things to consider here: The `StoreModule` and the `EffectsModule`
