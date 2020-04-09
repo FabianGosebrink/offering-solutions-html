@@ -426,7 +426,7 @@ export const initialState: ItemState = {
 export const itemReducer = createReducer(
   initialState,
 
-  on(appActions.getItems, (state) => {
+  on(appActions.getItems, appActions.getMoreItems, (state) => {
     return {
       ...state,
       loading: true,
@@ -447,7 +447,7 @@ First we define an `AppState` to have a representation of the state of our compl
 
 The concrete state is the `ItemState` which only has an `items` and a `loading` property. One can be an array, the other one is boolean indicating wether we are currently loading items or not.
 
-The reducer itself first sets `loading` to `true` every time we ask for some items, so when the action `getItems` comes around.
+The reducer itself first sets `loading` to `true` every time we ask for some items, so when the action `getItems` or `getMoreItems` comes around.
 
 The action `getItemsComplete` however takes the payload and uses the spread operator to set the new items just at the bottom of a new array. The top are the old items we already have.
 
@@ -511,8 +511,9 @@ import { ActionReducerMap } from '@ngrx/store';
 import { AppState, itemReducer } from './item.reducer';
 
 export * from './item.selectors';
+export * from './item.actions';
 
-export const itemEffects = [ItemEffects];
+export const appEffects = [ItemEffects];
 export const appReducers: ActionReducerMap<AppState> = {
   itemState: itemReducer,
 };
@@ -522,4 +523,115 @@ Alright, we are almost done.
 
 #### Registering ngrx in the AppModule
 
-Basically we have two things to consider here: The `StoreModule` and the `EffectsModule`
+Basically we have two things to consider here: The `StoreModule` and the `EffectsModule`. Because we prepared everything in the `store/index.ts` file we can make our lives very easy here:
+
+```ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { itemEffects, appReducers } from './store';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot(appReducers), // register the AppState
+    EffectsModule.forRoot(appEffects), // register the Effects
+    HttpClientModule,
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+### Consuming ngrx in the component
+
+The component is the part where we get to our selectors and dispatch the actions in this case.
+
+```ts
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Item } from './item';
+import { Store, select } from '@ngrx/store';
+import { selectAllItems, selectIsLoading, getItems } from './store';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent implements OnInit {
+  items$: Observable<Item[]>;
+  isloading$: Observable<boolean>;
+  title = 'endlessscrollngrx';
+
+  constructor(private store: Store<any>) {}
+
+  ngOnInit() {
+    this.items$ = this.store.pipe(select(selectAllItems));
+    this.isloading$ = this.store.pipe(select(selectIsLoading));
+
+    this.store.dispatch(getItems());
+  }
+}
+```
+
+We expose two properties `items$` and `isloading$` here. Both of them are receiving their info from the store through the selectors we implemented and we are dispatching the initial action of `getItems()`.
+
+Now if we want to check if the user scrolled we can use the `window.onscroll` event and calculate if we have to load more items. If yes we dispatch the action of `getMoreItems()` which then uses the length of the items in the store in the effects etc. You get the idea. 😀
+
+```ts
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Item } from './item';
+import { Store, select } from '@ngrx/store';
+import {
+  selectAllItems,
+  selectIsLoading,
+  getItems,
+  getMoreItems,
+} from './store';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent implements OnInit {
+  items$: Observable<Item[]>;
+  isloading$: Observable<boolean>;
+  title = 'endlessscrollngrx';
+
+  constructor(private store: Store<any>) {}
+
+  ngOnInit() {
+    this.items$ = this.store.pipe(select(selectAllItems));
+    this.isloading$ = this.store.pipe(select(selectIsLoading));
+
+    this.store.dispatch(getItems());
+
+    // ADD THIS
+    window.onscroll = () => {
+      const scrollHeight = document.body.scrollHeight;
+      const totalHeight = window.scrollY + window.innerHeight;
+
+      if (totalHeight >= scrollHeight) {
+        this.store.dispatch(getMoreItems());
+      }
+    };
+  }
+}
+```
+
+You can not run the backend in the `server` folder with `dotnet run` to start the api, the frontend can be started with `npm start` in the `client` folder and there you should see an endless scroll :)
+
+Happy scrolling!
+
+Code is on github (see at the beginning of the article)
+
+HTH
+
+Fabian
