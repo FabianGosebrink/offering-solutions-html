@@ -225,7 +225,7 @@ import { EffectsModule } from '@ngrx/effects';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    // ----
+    // ---
     StoreModule.forRoot(),
     EffectsModule.forRoot(),
     // ---
@@ -242,7 +242,9 @@ After having done this we will create a `store` folder and create the files
 - item.effects.ts
 - item.reducer.ts
 - item.selectors.ts
+
   and
+
 - index.ts
 
 to the folder.
@@ -268,3 +270,31 @@ to the folder.
 ├── styles.css
 └── test.ts
 ```
+
+#### Adding the actions
+
+Let us first define the actions we can dispatch to the store. First of all we need an action to get all items `getItems`. So far so good. We will define one more action to separate the call when more actions should be loaded to the initial call, let us call it `getMoreItems`. We will need an action for successful completion with a payload and an error action. That's it. Here we go!
+
+```ts
+import { createAction, props } from '@ngrx/store';
+import { Item } from '../item';
+
+const prefix = `[Home]`;
+
+export const getItems = createAction(`${prefix} getItems`);
+export const getMoreItems = createAction(`${prefix} getMoreItems`);
+
+export const getItemsComplete = createAction(
+  `${prefix} getItemsComplete`,
+  props<{ payload: Item[] }>()
+);
+
+export const error = createAction(
+  `${prefix} homeError`,
+  props<{ payload: any }>()
+);
+```
+
+The `payload` taken from the `getItemsComplete` action is a simple `Item[]`.
+
+#### Adding the effects
