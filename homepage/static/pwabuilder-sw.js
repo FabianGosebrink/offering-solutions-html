@@ -11,7 +11,8 @@ self.addEventListener("install", function (event) {
 
   event.waitUntil(
     caches.open(CACHE).then(function (cache) {
-      console.log("Cached offline page during install");     
+      console.log("Cached offline page during install");
+
       return cache.add(offlineFallbackPage);
     })
   );
@@ -23,18 +24,18 @@ self.addEventListener("fetch", function (event) {
 
   event.respondWith(
     fetch(event.request)
-      .then(function (response) {
-        console.log("add page to offline cache: " + response.url);
+    .then(function (response) {
+      console.log("add page to offline cache: " + response.url);
 
-        // If request was success, add or update it in the cache
-        event.waitUntil(updateCache(event.request, response.clone()));
+      // If request was success, add or update it in the cache
+      event.waitUntil(updateCache(event.request, response.clone()));
 
-        return response;
-      })
-      .catch(function (error) {        
-        console.log("Network request Failed. Serving content from cache: " + error);
-        return fromCache(event.request);
-      })
+      return response;
+    })
+    .catch(function (error) {
+      console.log("Network request Failed. Serving content from cache: " + error);
+      return fromCache(event.request);
+    })
   );
 });
 
