@@ -7,9 +7,9 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blog post I want to show how you can implement an endless scroll feature with Angular,Ngrx and ASP.NET Core in the backend.
+In this blog post I want to show how you can implement an endless scroll feature with Angular, Ngrx and ASP.NET Core in the backend.
 
-All the code in the repository is only for demo purposes. Do not organize your files etc. like this in a productive app. It shows the concepts however and I hope you can use it in your apps!
+All the code in the repository is only for demo purposes. It shows the concepts however and I hope you can use it in your apps!
 
 Code is here [https://github.com/FabianGosebrink/angular-ngrx-endlessscroll](https://github.com/FabianGosebrink/angular-ngrx-endlessscroll)
 
@@ -87,7 +87,7 @@ public class Filter
 
 ```
 
-The `Skip` and `Take` properties are useful for shaping the data later on.
+The `Skip` and `Take` properties are useful for shaping the amount of data later on.
 
 Next we create a new file `ValuesController.cs` and model it like this
 
@@ -130,7 +130,7 @@ With `dotnet watch run` we can start our webapi and just keep it running. When s
 
 For the Frontend we will create a new app with `ng new endlessscrollngrx` in a separate `client` folder.
 
-First we will create the interfaces for the types we are sending around like `Item` and `ItemFilter.
+First we will create the interfaces for the types we are sending around like `Item` and `ItemFilter`.
 
 ```ts
 export interface Item {
@@ -463,7 +463,7 @@ on(appActions.getItemsComplete, (state, { payload }) => {
 
 Is nice and simple imho and we have a simple interface to our components now, because the state itself only hold one array with n items in it.
 
-To make it easier for the components (and developers) let us ...
+To make it easier for the components (and developers) let us turn to the selectors.
 
 #### Add the selectors
 
@@ -625,6 +625,25 @@ export class AppComponent implements OnInit {
   }
 }
 ```
+
+The template is consuming the public properties right now.
+
+```html
+<h1>{{ title }}</h1>
+
+<div *ngIf="items$ | async as items">
+  <ul>
+    <li *ngFor="let item of items">
+      <span>
+        {{ item.id }} <br />
+        {{ item.value }}
+      </span>
+    </li>
+  </ul>
+</div>
+```
+
+We are using the `async` pipe to resolve the observable and iterating over the `items` with an unordered list.
 
 You can not run the backend in the `server` folder with `dotnet run` to start the api, the frontend can be started with `npm start` in the `client` folder and there you should see an endless scroll :)
 
