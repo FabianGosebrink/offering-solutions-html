@@ -13,9 +13,8 @@ In this blog post I would like to explain how you can write a schematic and turn
 
 There are a lot of blog posts out there which deal with how you can get started writing a schematic in much more detail as we do not cover this here one more time in depth. Be sure to check out:
 
-- [https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2](https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2)
-- [https://brianflove.com/2018/12/11/angular-schematics-tutorial/](https://brianflove.com/2018/12/11/angular-schematics-tutorial/)
-- [https://medium.com/@tomastrajan/total-guide-to-custom-angular-schematics-5c50cf90cdb4](https://medium.com/@tomastrajan/total-guide-to-custom-angular-schematics-5c50cf90cdb4)
+- [Schematics — An Introduction](https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2)
+- [Total Guide To Custom Angular Schematics](https://medium.com/@tomastrajan/total-guide-to-custom-angular-schematics-5c50cf90cdb4)
 
 We will however cover the get started things to ramp you up.
 
