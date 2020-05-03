@@ -1,5 +1,5 @@
 ---
-title: Validating single & multiple controls in Angular Reactive forms
+title: Validating Single & Multiple Controls in Angular Reactive Forms
 date: 2020-05-04
 tags: ['angular', 'reactiveforms', 'validation']
 draft: false
