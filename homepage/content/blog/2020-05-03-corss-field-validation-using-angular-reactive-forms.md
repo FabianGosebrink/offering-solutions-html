@@ -1,5 +1,5 @@
 ---
-title: Validating Single & Multiple Controls in Angular Reactive Forms
+title: Cross Field Validation Using Angular Reactive Forms
 date: 2020-05-03
 tags: ['angular', 'reactiveforms', 'validation']
 draft: false
