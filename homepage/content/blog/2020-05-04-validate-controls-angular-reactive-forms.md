@@ -11,9 +11,7 @@ In this blog post I would like to describe how you can add validation to multipl
 
 This powerful features let you validate not just a single form control but instead you can validate one form control against the value from another control. Let us see how we can do this.
 
-The sourcecode is of course on Github and you can copy paste the examples along.
-
-[Github](https://github.com/FabianGosebrink/angular-reactive-forms-validation)
+The sourcecode is of course on Github and you can copy paste the examples along: [Github](https://github.com/FabianGosebrink/angular-reactive-forms-validation)
 
 - [Preparation](#preparation)
 - [Form validity](#form-validity)
