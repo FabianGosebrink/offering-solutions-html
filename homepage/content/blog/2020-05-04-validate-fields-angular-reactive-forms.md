@@ -13,6 +13,20 @@ This powerful features let you validate not just a single form control but inste
 
 The sourcecode is of course on Github and you can copy paste the examples along.
 
+[Github](https://github.com/FabianGosebrink/angular-reactive-forms-validation)
+
+- [Preparation](#preparation)
+- [Form validity](#form-validity)
+- [Adding custom validators to a single form control](#adding-custom-validators-to-a-single-form-control)
+- [Errors on `FormControl` vs. `FormGroup`](#errors-on-formcontrol-vs-formgroup)
+- [Adding Cross control validators](#adding-cross-control-validators)
+  - [Implementing the validator](#writing-the-validator)
+  - [Adding the validator to the form](#adding-the-validator-to-the-form)
+  - [Showing the errors in the template](#showing-the-errors-in-the-template)
+  - [Passing the age threshold into the validator](#passing-the-age-threshold-into-the-validator)
+
+## Preparation
+
 We are starting off with a simple form looking like this
 
 ```ts
@@ -163,7 +177,7 @@ The errors are written into an `errors` property on the `FormGroup` or `FormCont
 
 All fun and games until here so let us add cross control validators to achieve that you can only request access to room 2 and room 3 when you are over 18 years old. For this we need the age control, need to see if its value is equal/over 18 dependent on what the user has chosen in the room control. So here are two controls involved now: `age` and `rooms`.
 
-### Writing the validator
+### Implementing the validator
 
 The validators we wrote until here are all directly applied to the control. The cross control validator gets applied to the `FormGroup` because it has to cover multiple controls and not a single one. This also means, that every error we write out is written into the `FormGroups` error property. And not on the `FormControl`s one. You can however access the control and set its error with the `<Control>.setError({ ... })` method.
 
