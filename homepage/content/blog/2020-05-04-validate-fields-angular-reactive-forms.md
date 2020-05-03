@@ -20,7 +20,7 @@ The sourcecode is of course on Github and you can copy paste the examples along.
 - [Adding custom validators to a single form control](#adding-custom-validators-to-a-single-form-control)
 - [Errors on `FormControl` vs. `FormGroup`](#errors-on-formcontrol-vs-formgroup)
 - [Adding Cross control validators](#adding-cross-control-validators)
-  - [Implementing the validator](#writing-the-validator)
+  - [Implementing the validator](#implementing-the-validator)
   - [Adding the validator to the form](#adding-the-validator-to-the-form)
   - [Showing the errors in the template](#showing-the-errors-in-the-template)
   - [Passing the age threshold into the validator](#passing-the-age-threshold-into-the-validator)
