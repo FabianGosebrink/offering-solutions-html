@@ -1,5 +1,5 @@
 ---
-title: Validating multiple fields in Angular Reactive forms with Cross Field Validation
+title: Validating single and multiple fields in Angular Reactive forms
 date: 2020-05-04
 tags: ['angular', 'reactiveforms', 'validation']
 draft: false
@@ -103,7 +103,7 @@ The `profileForm` as a `FormGroup` is valid, when _all_ of it's controls are val
 
 The `FormGroup` then collects those values and if _all_ of them are valid, it sets the form to `valid`. This is what we check with the `profileForm.valid` to disable the button.
 
-## Adding custom validators for a single form control
+## Adding custom validators to a single form control
 
 There are a lot of blog posts out there telling you how to write a custom validator. But let us cover this shortly: A custom validator is a function which returns `null` or an object `{ ... }` in case everything is okay (`null`) or there are errors. `{ /* errors go in here */ }`.
 
@@ -347,3 +347,45 @@ Angular Material sets the `<mat-error>...</mat-error>` when the `FormGroup` or `
   </mat-error>
 </form>
 ```
+
+### Passing the age threshold into the validator
+
+As we have extracted the validator we can pass the threshold of `18` to the validator as a parameter
+
+```ts
+export class RoomOver18Validator {
+  public onlyAccessRoomsOver18(minAge: number): ValidatorFn {
+    return (formGroup: FormGroup) => {
+      //...
+
+      if (ageValue >= minAge) {
+        return null;
+      }
+
+      // ...
+    };
+  }
+}
+```
+
+and when registering the validator we can pass the `minAge` as a parameter from the outside
+
+```ts
+ngOnInit() {
+  this.profileForm = this.formBuilder.group(
+    {
+      //...
+    },
+    {
+      validators: [this.roomOver18Validator.onlyAccessRoomsOver18(18)],
+      updateOn: 'blur',
+    }
+  );
+}
+```
+
+That is basically it.
+
+HTH
+
+Fabian
