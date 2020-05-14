@@ -110,7 +110,7 @@ namespace StsServerIdentity
 
 ## The Resource API with ASP.NET Core
 
-In the API you want to secure in the `Startup.cs` file you can add the sts server you have and fconfigure it as the following
+In the API you want to secure in the `Startup.cs` file you can add the sts server you have and configure it as the following
 
 ```cs
 using IdentityServer4.AccessTokenValidation;
@@ -236,6 +236,7 @@ npm install angular-auth-oidc-client
 After having done that in our `app.module.ts` we have to provide a configuration to configure our app matching the config on the sts
 
 ```ts
+import { OidcConfigService, AuthModule } from 'angular-auth-oidc-client';
 /* imports */
 
 export function configureAuth(oidcConfigService: OidcConfigService) {
@@ -258,9 +259,7 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'forbidden', component: UnauthorizedComponent },
+      // routes
     ]),
     AuthModule.forRoot(),
   ],
@@ -279,3 +278,87 @@ export class AppModule {}
 ```
 
 We have activated the silent renew here using refresh tokens. So the token renew will be handled for us not using an iframe in this case but a silent renew with a refresh token approach.
+
+I made myself an `auth.service.ts` which is encapsulating the `OidcSecurityService` from the lib
+
+```ts
+import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
+
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+  constructor(private oidcSecurityService: OidcSecurityService) {}
+
+  get isLoggedIn() {
+    return this.oidcSecurityService.isAuthenticated$;
+  }
+
+  get token() {
+    return this.oidcSecurityService.getToken();
+  }
+
+  get userData() {
+    return this.oidcSecurityService.userData$;
+  }
+
+  checkAuth() {
+    return this.oidcSecurityService.checkAuth();
+  }
+
+  doLogin() {
+    return of(this.oidcSecurityService.authorize());
+  }
+
+  signOut() {
+    this.oidcSecurityService.logoff();
+  }
+}
+```
+
+In the `AppComponent`, because we redirect to it after the login, we have to call the `checkAuth()` method. I am doing this in the ``OnInit()`.
+
+```ts
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent implements OnInit {
+  loggedIn$: Observable<boolean>;
+  userData$: Observable<any>;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.loggedIn$ = this.authService.isLoggedIn();
+    this.userData$ = this.authService.userData();
+    this.authService
+      .checkAuth()
+      .subscribe((isAuthenticated) =>
+        console.log('Are we authenticated?', isAuthenticated)
+      );
+  }
+
+  logout() {
+    this.authService.signOut();
+  }
+
+  login() {
+    this.authService.doLogin();
+  }
+}
+```
+
+```html
+<div *ngIf="loggedIn$ | async as isLoggedIn; else noAuth">
+  <button (click)="logout()">Logout</button>
+  Is Authenticated: {{ isLoggedIn }}
+</div>
+
+<ng-template #noAuth>
+  <button (click)="login()">Login</button>
+</ng-template>
+```
+
+After having called the `doLogin()` method we are redirected to our sts, when we get back the `checkAuth()` method is called again and returning if we are authenticated or not.
