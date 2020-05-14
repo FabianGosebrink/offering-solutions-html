@@ -7,9 +7,9 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blog post I want to describe how you can add a login to your Angular App and secure it with OpenID Connect (OIDC) and OAuth2 to access an ASP.NET Core WebAPI.
+In this blog post I want to describe how you can add a login to your Angular App and secure it with OpenID Connect (OIDC) and OAuth2 to access an ASP.NET Core WebAPI with an Identity Server.
 
-> Disclaimer: In this blog we will use an Angular library which I wrote some parts of. The principles are best practice and uses a standard which can be applied to any Angular application no matter what libraries you use.
+> Disclaimer: In this blog we will use an Angular library which I wrote some parts of. But the principles are best practice and uses a standard which can be applied to any Angular application no matter what libraries you use.
 
 ## The Situation
 
@@ -97,7 +97,7 @@ namespace StsServerIdentity
 
                     AllowedGrantTypes = GrantTypes.Code,
                     RequirePkce = true,
-                    AllowedScopes = { "openid", "profile", "email", "taler_api" },
+                    AllowedScopes = { "openid", "profile", "email", "hooray_Api" },
 
                     AllowOfflineAccess = true,
                     RefreshTokenUsage = TokenUsage.OneTimeOnly
@@ -107,3 +107,175 @@ namespace StsServerIdentity
     }
 }
 ```
+
+## The Resource API with ASP.NET Core
+
+In the API you want to secure in the `Startup.cs` file you can add the sts server you have and fconfigure it as the following
+
+```cs
+using IdentityServer4.AccessTokenValidation;
+// ...
+
+namespace BetterMeetup.Api
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public void ConfigureServices(IServiceCollection services)
+        {
+            // all the services
+
+            services.AddControllers()
+                .AddNewtonsoftJson()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
+
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                         .AddIdentityServerAuthentication(options =>
+                         {
+                             options.Authority = "https://offeringsolutions-sts.azurewebsites.net";
+                             options.ApiName = "gettogetherapi";
+                             options.ApiSecret = "gettogetherapiSecret";
+                         });
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            // ...
+            app.UseHttpsRedirection();
+            app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
+    }
+}
+
+```
+
+Make sure to install the NuGet Package
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    //...
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    //...
+  </ItemGroup>
+</Project>
+```
+
+In the controllers then you can use the [Authorize] Attribute maybe combined with the `[AllowAnonymous]` attribute to secure complete controller and/or actions.
+
+```cs
+[Authorize]
+[ApiController]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
+public class GroupsController : ControllerBase
+{
+    private readonly IGroupsControllerService _controllerService;
+
+    public GroupsController(IGroupsControllerService controllerService)
+    {
+        _controllerService = controllerService;
+    }
+
+    [AllowAnonymous]
+    [HttpGet(Name = nameof(GetAllGroups))]
+    public ActionResult GetAllGroups([FromQuery] GroupsQueryParameters queryParameters)
+    {
+        var result = _controllerService.GetAll(queryParameters);
+
+        return Ok(result);
+    }
+
+    [HttpGet]
+    [Route("{groupLinkName}", Name = nameof(GetSingleGroup))]
+    public ActionResult GetSingleGroup(string groupLinkName)
+    {
+        var result = _controllerService.GetGroupPerLinkName(groupLinkName);
+
+        if (result == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(result);
+    }
+}
+```
+
+## The Angular App
+
+Alright, as we are having the sts and the API configured we can go to our Angular application and configure this to match the config on the sts.
+
+You can install the library `angular-auth-oidc-client` with
+
+```
+npm install angular-auth-oidc-client
+```
+
+After having done that in our `app.module.ts` we have to provide a configuration to configure our app matching the config on the sts
+
+```ts
+/* imports */
+
+export function configureAuth(oidcConfigService: OidcConfigService) {
+  return () =>
+    oidcConfigService.withConfig({
+      stsServer: 'https://link-to-your-sts-server/',
+      redirectUrl: window.location.origin,
+      postLogoutRedirectUri: window.location.origin,
+      clientId: 'angularClientForHoorayApi',
+      scope: 'openid profile email offline_access hooray_Api',
+      responseType: 'code',
+      silentRenew: true,
+      useRefreshToken: true,
+      renewTimeBeforeTokenExpiresInSeconds: 30,
+    });
+}
+
+@NgModule({
+  declarations: [AppComponent, HomeComponent, UnauthorizedComponent],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'forbidden', component: UnauthorizedComponent },
+    ]),
+    AuthModule.forRoot(),
+  ],
+  providers: [
+    OidcConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: configureAuth,
+      deps: [OidcConfigService],
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+We have activated the silent renew here using refresh tokens. So the token renew will be handled for us not using an iframe in this case but a silent renew with a refresh token approach.
