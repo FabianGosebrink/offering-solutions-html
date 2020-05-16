@@ -361,4 +361,39 @@ export class AppComponent implements OnInit {
 </ng-template>
 ```
 
-After having called the `doLogin()` method we are redirected to our sts, when we get back the `checkAuth()` method is called again and returning if we are authenticated or not.
+After having called the `doLogin()` method we are redirected to our sts. When we get back the `checkAuth()` method is called again and returning if we are authenticated or not. It also sets all the tokens and needed values.
+
+### Sending the token on "every" request
+
+Basically it is not recommended to send the token on _-\_every_ request. only send the token to endpoints you really need to send them to. So if we do an interceptor.
+
+```typescript
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+  private secureRoutes = ['http://my.route.io/secureapi'];
+
+  constructor(private oidcSecurityService: OidcSecurityService) {}
+
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    // Ensure we send the token only to routes which are secured
+    if (!this.secureRoutes.find((x) => req.url.startsWith(x))) {
+      return next.handle(request);
+    }
+
+    const token = this.oidcSecurityService.getToken();
+
+    if (!token) {
+      return next.handle(request);
+    }
+
+    request = request.clone({
+      headers: request.headers.set('Authorization', 'Bearer ' + token),
+    });
+
+    return next.handle(request);
+  }
+}
+```
