@@ -13,13 +13,13 @@ In this blog post I want to describe how you can add a login to your Angular App
 
 ## The Situation
 
-In this Scenario we have three parties playing with each other: On the one side we have the REST Api which we want to secure and only let the request come through which come from an authenticated source. This is in this case an ASP.NET Core WebAPI using the `[Authorize]` attribute to secure complete controllers or several methods.
+In this Scenario we have three applications interacting with each other. There is a REST API which can only be accessed using a valid access token which was created to use with the API. The Web API is secured using the [Authorize] attribute and secures complete controllers or several individual methods if required.
 
-On the other side we have the Single Page Application (SPA) which is an Angular Application in this case. It is responsible for sending the requests with all information needed to get it processes as REST is stateless and it talks to the REST backend we just mentioned.
+The UI client is a Single Page Application (SPA) implemented using Angular. It is responsible for sending the requests with all information needed to process and display the UI. The REST API is stateless.
 
-The third player in this game is the Security Token Service (STS). In this case this is an ASP.NET Core MVC application which holds the configuration to connect the SPA with the REST Api.
+The third application is the Security Token Service (STS). In this case it is an ASP.NET Core MVC application implemented using IdentityServer4 which holds the configuration to secure the SPA and the REST API and allow the SPA to request data from the API.
 
-So what we will implement is an Angular Client, who is redirected to the STS. The user is being asked for username and password, has to check all the information he wants to provide and gets two tokens. One for the identity (OpenID Connect - Id Token) and one the access to the REST API (Access Token, OAuth). After collection those tokens the SPA can add those tokens to the requests where needed and ask for protected data.
+We will implement an Angular Client, which is redirected to the STS to authenticate. The user is then asked for username and password on the STS, never the SPA application. You could setup MFA if required or federate to another STS. If the authentication is successful, the STS returns two tokens, an access token and an identity token. This process is implemented using OpenID Connect Code Flow with PKCE. (Proof Key for Code Exchange). The access token is never used in the client UI. The access token is only intended for usage with the API. The access token can have a form. The identity token is for the client application, ie the Angular SPA and this is a JWT token. The token can contain the claims required for the UI, or you can send the claims in the user data request.
 
 ## The Security Token Server
 
