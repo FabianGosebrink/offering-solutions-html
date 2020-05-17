@@ -370,7 +370,7 @@ Basically it is not recommended to send the token on _-\_every_ request. only se
 ```typescript
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  private secureRoutes = ['http://my.route.io/secureapi'];
+  private secureRoutes = ['route-to-your-api'];
 
   constructor(private oidcSecurityService: OidcSecurityService) {}
 
