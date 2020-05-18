@@ -1,5 +1,5 @@
 ---
-title: Authentication & Authorization with OAuth2, OIDC with Angular and ASP.NET Core
+title: Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2
 date: 2020-05-18
 tags: ['angular', 'authentication', 'authorization', 'aspnetcore']
 draft: false
