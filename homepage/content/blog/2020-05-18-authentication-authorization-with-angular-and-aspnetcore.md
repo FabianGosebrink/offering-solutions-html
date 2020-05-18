@@ -1,6 +1,6 @@
 ---
 title: Authentication & Authorization with OAuth2, OIDC with Angular and ASP.NET Core
-date: 2020-05-03
+date: 2020-05-18
 tags: ['angular', 'authentication', 'authorization', 'aspnetcore']
 draft: false
 category: blog
@@ -15,7 +15,7 @@ Code can be found here [Angular OAuth2 OIDC Sample with ASP.NET Core](https://gi
 
 ## The Situation
 
-In this Scenario we have three applications interacting with each other. There is a REST API which can only be accessed using a valid access token which was created to use with the API. The Web API is secured using the [Authorize] attribute and secures complete controllers or several individual methods if required.
+In this Scenario we have three applications interacting with each other. There is a REST API which can only be accessed using a valid access token which was created to use with the API. The Web API is secured using the `[Authorize]` attribute and secures complete controllers or several individual methods if required.
 
 The UI client is a Single Page Application (SPA) implemented using Angular. It is responsible for sending the requests with all information needed to process and display the UI. The REST API is stateless.
 
