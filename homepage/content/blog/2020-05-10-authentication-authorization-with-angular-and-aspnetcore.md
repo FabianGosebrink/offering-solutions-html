@@ -128,34 +128,49 @@ namespace BetterMeetup.Api
         public IConfiguration Configuration { get; }
 
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+                // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // all the services
-
-            services.AddControllers()
-                .AddNewtonsoftJson()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-
+            services.AddControllers();
 
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                          .AddIdentityServerAuthentication(options =>
                          {
                              options.Authority = "https://offeringsolutions-sts.azurewebsites.net";
-                             options.ApiName = "gettogetherapi";
-                             options.ApiSecret = "gettogetherapiSecret";
+                             options.ApiName = "hoorayApi";
+                             options.ApiSecret = "hoorayApiSecret";
                          });
+
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // ...
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
             app.UseHttpsRedirection();
+            app.UseCors("AllowAllOrigins");
+
             app.UseRouting();
+
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -185,40 +200,19 @@ Make sure to install the NuGet Package
 In the controllers then you can use the [Authorize] Attribute maybe combined with the `[AllowAnonymous]` attribute to secure complete controller and/or actions.
 
 ```cs
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
 [Authorize]
 [ApiController]
-[ApiVersion("1.0")]
-[Route("api/v{version:apiVersion}/[controller]")]
-public class GroupsController : ControllerBase
+[Route("api/[controller]")]
+public class SecureValuesController : ControllerBase
 {
-    private readonly IGroupsControllerService _controllerService;
-
-    public GroupsController(IGroupsControllerService controllerService)
+    [HttpGet(Name = nameof(GetAll))]
+    public ActionResult GetAll()
     {
-        _controllerService = controllerService;
-    }
-
-    [AllowAnonymous]
-    [HttpGet(Name = nameof(GetAllGroups))]
-    public ActionResult GetAllGroups([FromQuery] GroupsQueryParameters queryParameters)
-    {
-        var result = _controllerService.GetAll(queryParameters);
-
-        return Ok(result);
-    }
-
-    [HttpGet]
-    [Route("{groupLinkName}", Name = nameof(GetSingleGroup))]
-    public ActionResult GetSingleGroup(string groupLinkName)
-    {
-        var result = _controllerService.GetGroupPerLinkName(groupLinkName);
-
-        if (result == null)
-        {
-            return NotFound();
-        }
-
-        return Ok(result);
+        var genesisMember = new { Id = 1, FirstName = "Phil", LastName = "Collins" };
+        return Ok(genesisMember);
     }
 }
 ```
@@ -236,13 +230,20 @@ npm install angular-auth-oidc-client
 After having done that in our `app.module.ts` we have to provide a configuration to configure our app matching the config on the sts
 
 ```ts
-import { OidcConfigService, AuthModule } from 'angular-auth-oidc-client';
-/* imports */
+import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AuthModule, OidcConfigService } from 'angular-auth-oidc-client';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 export function configureAuth(oidcConfigService: OidcConfigService) {
   return () =>
     oidcConfigService.withConfig({
-      stsServer: 'https://link-to-your-sts-server/',
+      stsServer: 'https://offeringsolutions-sts.azurewebsites.net',
       redirectUrl: window.location.origin,
       postLogoutRedirectUri: window.location.origin,
       clientId: 'angularClientForHoorayApi',
@@ -250,7 +251,6 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
       responseType: 'code',
       silentRenew: true,
       useRefreshToken: true,
-      renewTimeBeforeTokenExpiresInSeconds: 30,
     });
 }
 
@@ -259,9 +259,12 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      // routes
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'unauthorized', component: UnauthorizedComponent },
     ]),
     AuthModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [
     OidcConfigService,
@@ -269,6 +272,11 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
       provide: APP_INITIALIZER,
       useFactory: configureAuth,
       deps: [OidcConfigService],
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
       multi: true,
     },
   ],
@@ -316,74 +324,131 @@ export class AuthService {
 }
 ```
 
-In the `AppComponent`, because we redirect to it after the login, we have to call the `checkAuth()` method. I am doing this in the ``OnInit()`.
+In the `AppComponent`, because we redirect to it after the login, we have to call the `checkAuth()` method. I am doing this in the `OnInit()`.
 
 ```ts
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './auth.service';
+
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  templateUrl: 'app.component.html',
 })
 export class AppComponent implements OnInit {
-  loggedIn$: Observable<boolean>;
-  userData$: Observable<any>;
-
-  constructor(private authService: AuthService) {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit() {
-    this.loggedIn$ = this.authService.isLoggedIn();
-    this.userData$ = this.authService.userData();
     this.authService
       .checkAuth()
       .subscribe((isAuthenticated) =>
-        console.log('Are we authenticated?', isAuthenticated)
+        console.log('app authenticated', isAuthenticated)
       );
-  }
-
-  logout() {
-    this.authService.signOut();
-  }
-
-  login() {
-    this.authService.doLogin();
   }
 }
 ```
 
 ```html
-<div *ngIf="loggedIn$ | async as isLoggedIn; else noAuth">
+<h2>Sample Code Flow with refresh tokens</h2>
+
+<router-outlet></router-outlet>
+```
+
+In the `HomeComponent` we are showing the information, handle the login and call the API.
+
+```ts
+import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.component.html',
+})
+export class HomeComponent implements OnInit {
+  userData$: Observable<any>;
+  secretData$: Observable<any>;
+  isAuthenticated$: Observable<boolean>;
+  constructor(
+    private authService: AuthService,
+    private httpClient: HttpClient
+  ) {}
+
+  ngOnInit() {
+    this.userData$ = this.authService.userData;
+    this.isAuthenticated$ = this.authService.isLoggedIn;
+
+    this.secretData$ = this.httpClient
+      .get('https://localhost:5001/api/securevalues')
+      .pipe(catchError((error) => of(error)));
+  }
+
+  login() {
+    this.authService.doLogin();
+  }
+
+  logout() {
+    this.authService.signOut();
+  }
+}
+```
+
+```html
+<div>Welcome to home Route</div>
+
+<div *ngIf="isAuthenticated$ | async as isAuthenticated; else noAuth">
   <button (click)="logout()">Logout</button>
-  Is Authenticated: {{ isLoggedIn }}
+  <hr />
+
+  <br />
+
+  Is Authenticated: {{ isAuthenticated }}
+
+  <br />
+  userData
+  <pre>{{ userData$ | async | json }}</pre>
+
+  <br />
 </div>
 
 <ng-template #noAuth>
   <button (click)="login()">Login</button>
+  <hr />
 </ng-template>
+
+<pre>
+  {{ secretData$ | async | json }}
+</pre>
 ```
 
 After having called the `doLogin()` method we are redirected to our sts. When we get back the `checkAuth()` method is called again and returning if we are authenticated or not. It also sets all the tokens and needed values.
 
 ### Sending the token on "every" request
 
-Basically it is not recommended to send the token on _-\_every_ request. only send the token to endpoints you really need to send them to. So if we do an interceptor.
+Basically it is not recommended to send the token on _every_ request. only send the token to endpoints you really need to send them to. So if we do an interceptor.
 
 ```typescript
+import {
+  HttpInterceptor,
+  HttpRequest,
+  HttpHandler,
+} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { AuthService } from './auth.service';
+
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  private secureRoutes = ['route-to-your-api'];
+  private secureRoutes = ['https://localhost:5001/api'];
 
-  constructor(private oidcSecurityService: OidcSecurityService) {}
+  constructor(private authService: AuthService) {}
 
-  intercept(
-    req: HttpRequest<any>,
-    next: HttpHandler
-  ): Observable<HttpEvent<any>> {
-    // Ensure we send the token only to routes which are secured
-    if (!this.secureRoutes.find((x) => req.url.startsWith(x))) {
+  intercept(request: HttpRequest<any>, next: HttpHandler) {
+    if (!this.secureRoutes.find((x) => request.url.startsWith(x))) {
       return next.handle(request);
     }
 
-    const token = this.oidcSecurityService.getToken();
+    const token = this.authService.token;
 
     if (!token) {
       return next.handle(request);
