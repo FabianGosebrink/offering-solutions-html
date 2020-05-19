@@ -118,7 +118,7 @@ In the API you want to secure in the `Startup.cs` file you can add the sts serve
 using IdentityServer4.AccessTokenValidation;
 // ...
 
-namespace BetterMeetup.Api
+namespace server
 {
     public class Startup
     {
