@@ -15,13 +15,13 @@ Code can be found here [Angular OAuth2 OIDC Sample with ASP.NET Core](https://gi
 
 ## The Situation
 
-In this Scenario we have three applications interacting with each other. There is a REST API which can only be accessed using a valid access token which was created to use with the API. The Web API is secured using the `[Authorize]` attribute and secures complete controllers or several individual methods if required.
+In this scenario we have three applications interacting with each other. There is a REST API which can only be accessed using a valid access token which was created to be used with the API. The Web API is secured using the `[Authorize]` attribute and secures complete controllers or several individual methods if required.
 
 The UI client is a Single Page Application (SPA) implemented using Angular. It is responsible for sending the requests with all information needed to process and display the UI. The REST API is stateless.
 
 The third application is the Security Token Service (STS). In this case it is an ASP.NET Core MVC application implemented using IdentityServer4 which holds the configuration to secure the SPA and the REST API and allow the SPA to request data from the API.
 
-We will implement an Angular Client, which is redirected to the STS to authenticate. The user is then asked for username and password on the STS, never the SPA application. You could setup MFA if required or federate to another STS. If the authentication is successful, the STS returns two tokens, an access token and an identity token. This process is implemented using OpenID Connect Code Flow with PKCE. (Proof Key for Code Exchange). The access token is never used in the client UI. The access token is only intended for usage with the API. The access token can have a form. The identity token is for the client application, ie the Angular SPA and this is a JWT token. The token can contain the claims required for the UI, or you can send the claims in the user data request.
+We will implement an Angular Client, which is redirected to the STS to authenticate. The user is then asked for username and password on the STS, never the SPA application. You could setup MFA if required or federate to another STS. If the authentication is successful, the STS returns two tokens, an access token and an identity token. This process is implemented using OpenID Connect Code Flow with PKCE. (Proof Key for Code Exchange). The access token is never used in the client UI. It is only intended for usage with the API. The access token can have a form. The identity token is for the client application, ie the Angular SPA and this is a JWT token. The token can contain the claims required for the UI, or you can send the claims in the user data request.
 
 ## The Security Token Server
 
@@ -138,6 +138,7 @@ namespace BetterMeetup.Api
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                          .AddIdentityServerAuthentication(options =>
                          {
+                             // replace with your STS address
                              options.Authority = "https://offeringsolutions-sts.azurewebsites.net";
                              options.ApiName = "hoorayApi";
                              options.ApiSecret = "hoorayApiSecret";
@@ -199,7 +200,7 @@ Make sure to install the NuGet Package
 </Project>
 ```
 
-In the controllers then you can use the [Authorize] Attribute maybe combined with the `[AllowAnonymous]` attribute to secure complete controller and/or actions.
+In the controllers then you can use the `[Authorize]` attribute to secure and maybe combine it with the `[AllowAnonymous]` attribute to make several action accessible again.
 
 ```cs
 using Microsoft.AspNetCore.Authorization;
@@ -221,15 +222,15 @@ public class SecureValuesController : ControllerBase
 
 ## The Angular App
 
-Alright, as we are having the sts and the API configured we can go to our Angular application and configure this to match the config on the sts.
+As we are having the sts and the API configured we can go to our Angular application and configure it to match the config on the STS.
 
-You can install the library `angular-auth-oidc-client` with
+You can install the library [angular-auth-oidc-client](https://github.com/damienbod/angular-auth-oidc-client) with
 
 ```
 npm install angular-auth-oidc-client
 ```
 
-After having done that in our `app.module.ts` we have to provide a configuration to configure our app matching the config on the sts
+After having done that in our `app.module.ts` we have to provide a configuration to configure our app matching the config on the STS
 
 ```ts
 import { APP_INITIALIZER, NgModule } from '@angular/core';
@@ -337,7 +338,7 @@ import { AuthService } from './auth.service';
   templateUrl: 'app.component.html',
 })
 export class AppComponent implements OnInit {
-  constructor(public authService: AuthService) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.authService
@@ -372,6 +373,7 @@ export class HomeComponent implements OnInit {
   userData$: Observable<any>;
   secretData$: Observable<any>;
   isAuthenticated$: Observable<boolean>;
+
   constructor(
     private authService: AuthService,
     private httpClient: HttpClient
@@ -428,9 +430,9 @@ After having called the `doLogin()` method we are redirected to our sts. When we
 
 ### Sending the token on "every" request
 
-Basically it is not recommended to send the token on _every_ request. only send the token to endpoints you really need to send them to. So if we do an interceptor.
+Basically it is not recommended to send the token on _every_ request. Only send the token to endpoints you really need to send them to. So if we do an interceptor we are comparing the route the request goes to to a set of routes which should be secured.
 
-```typescript
+```ts
 import {
   HttpInterceptor,
   HttpRequest,
