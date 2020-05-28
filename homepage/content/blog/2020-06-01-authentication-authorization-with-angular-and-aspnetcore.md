@@ -17,6 +17,23 @@ In this pst we are gonna focus on the configuration and the Angular Application 
 
 The code can be found here [https://github.com/FabianGosebrink/angular-oauth2-oidc-sample/tree/master/client/angular-oidc-oauth2-ngrx](https://github.com/FabianGosebrink/angular-oauth2-oidc-sample/tree/master/client/angular-oidc-oauth2-ngrx)
 
+## TOC
+
+- [Adding the stores](#adding-the-stores)
+- [Adding the auth actions](#separating-into-smaller-actions)
+- [Creating the auth state and reducer](#separating-into-smaller-actions)
+- [Adding the auth service](#separating-into-smaller-actions)
+- [Creating the auth effects](#separating-into-smaller-actions)
+- [Adding the auth selectors](#separating-into-smaller-actions)
+- [Creating the store for data](#separating-into-smaller-actions)
+- [Building an app state](#separating-into-smaller-actions)
+- [Registering the AppState on the AppModule](#separating-into-smaller-actions)
+- [Using the store in the application](#separating-into-smaller-actions)
+  - [AppComponent](#separating-into-smaller-actions)
+  - [ProtectedComponent](#separating-into-smaller-actions)
+  - [Adding the AuthGuard](#separating-into-smaller-actions)
+  - [Adding the Interceptor](#separating-into-smaller-actions)
+
 ## Adding the stores
 
 We will add two stores to the sample angular application: one for holding the authentication state `auth` and one for providing and getting the data, called `data`.
