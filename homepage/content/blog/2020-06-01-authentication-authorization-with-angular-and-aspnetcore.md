@@ -20,19 +20,19 @@ The code can be found here [https://github.com/FabianGosebrink/angular-oauth2-oi
 ## TOC
 
 - [Adding the stores](#adding-the-stores)
-- [Adding the auth actions](#separating-into-smaller-actions)
-- [Creating the auth state and reducer](#separating-into-smaller-actions)
-- [Adding the auth service](#separating-into-smaller-actions)
-- [Creating the auth effects](#separating-into-smaller-actions)
-- [Adding the auth selectors](#separating-into-smaller-actions)
-- [Creating the store for data](#separating-into-smaller-actions)
-- [Building an app state](#separating-into-smaller-actions)
-- [Registering the AppState on the AppModule](#separating-into-smaller-actions)
-- [Using the store in the application](#separating-into-smaller-actions)
-  - [AppComponent](#separating-into-smaller-actions)
-  - [ProtectedComponent](#separating-into-smaller-actions)
-  - [Adding the AuthGuard](#separating-into-smaller-actions)
-  - [Adding the Interceptor](#separating-into-smaller-actions)
+- [Adding the auth actions](#adding-the-auth-actions)
+- [Creating the auth state and reducer](#creating-the-auth-state-and-reducer)
+- [Adding the auth service](#adding-the-auth-service)
+- [Creating the auth effects](#creating-the-auth-effects)
+- [Adding the auth selectors](#adding-the-auth-selectors)
+- [Creating the store for data](#creating-the-store-for-data)
+- [Building an app state](#building-an-app-state)
+- [Registering the AppState on the AppModule](#registering-the-app-state-on-the-app-module)
+- [Using the store in the application](#using-the-store-in-the-application)
+  - [AppComponent](#app-component)
+  - [ProtectedComponent](#protected-component)
+  - [Adding the AuthGuard](#adding-the-auth-guard)
+  - [Adding the Interceptor](#adding-the-interceptor)
 
 ## Adding the stores
 
