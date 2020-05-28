@@ -124,3 +124,194 @@ export function authReducer(state: AuthState | undefined, action: Action) {
 ```
 
 In the end we are exporting the `authReducer` with a function.
+
+Before we now head to the corresponding effects we have to add the service with methods the effects can call.
+
+## Adding the auth service
+
+Install the lib `angular-auth-oidc-client` with
+
+```cmd
+npm install angular-auth-oidc-client
+```
+
+Having done this we can create an `auth.service.ts` file in a `services` folder and abstract the usage of the library.
+
+```ts
+import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
+
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+  constructor(private oidcSecurityService: OidcSecurityService) {}
+
+  get isLoggedIn() {
+    return this.oidcSecurityService.isAuthenticated$;
+  }
+
+  get token() {
+    return this.oidcSecurityService.getToken();
+  }
+
+  get userData() {
+    return this.oidcSecurityService.userData$;
+  }
+
+  checkAuth() {
+    return this.oidcSecurityService.checkAuth();
+  }
+
+  doLogin() {
+    return of(this.oidcSecurityService.authorize());
+  }
+
+  signOut() {
+    this.oidcSecurityService.logoffAndRevokeTokens();
+  }
+}
+```
+
+Your folder should now look like this
+
+```
+.
+
+├── services
+│   ├── auth.service.ts
+├── store
+│   ├── auth
+│   │   ├── auth.actions.ts
+│   │   ├── auth.reducer.ts
+│   │   └── index.ts
+│   ├── data
+│   │   └── index.ts
+│   └── index.ts
+
+```
+
+Now we can build the effects for the authentication:
+
+## Creating the auth effects
+
+For the actions we have we will add the corresponding effects and inject the `AuthService` we just created. If we navigate away from our app to an external source (like the STS in this case when logging in and out) we have to config the actions with `{ dispatch: false }` to clarify that we will NOT return an action to the actions stream inside our app.
+
+So when the action `login` is dispatched we react with calling `doLogin()` from our `AuthService`. as this redirects, we configure it with `{ dispatch: false }`
+
+```ts
+login$ = createEffect(
+  () =>
+    this.actions$.pipe(
+      ofType(fromAuthActions.login),
+      switchMap(() => this.authService.doLogin())
+    ),
+  { dispatch: false }
+);
+```
+
+The `checkAuth` action is called everytime we want to check whether we are authenticated or not. It is also called when the application starts so we will react to that accordingly as well, returning the corresponding `...Complete` action.
+
+```ts
+checkauth$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType(fromAuthActions.checkAuth),
+    switchMap(() =>
+      this.authService
+        .checkAuth()
+        .pipe(
+          map((isLoggedIn) => fromAuthActions.checkAuthComplete({ isLoggedIn }))
+        )
+    )
+  )
+);
+
+checkAuthComplete$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType(fromAuthActions.checkAuthComplete),
+    switchMap(({ isLoggedIn }) => {
+      if (isLoggedIn) {
+        return this.authService.userData.pipe(
+          map((profile) =>
+            fromAuthActions.loginComplete({ profile, isLoggedIn })
+          )
+        );
+      }
+      return of(fromAuthActions.logoutComplete());
+    })
+  )
+);
+```
+
+If the `checkAuthComplete` action is returning `true` for `isLoggedIn` we are asking the service for the userData with `this.authService.userData` and return the `loginComplete` action with both `profile` and `isLoggedIn` on it. This gets handled by the reducer then and sets the state accordingly.
+
+The `logout` action will call the `signOut` method on the `AuthService` and handle that event then. Putting it together these are our effects:
+
+```ts
+/* imports */
+
+@Injectable()
+export class AuthEffects {
+  constructor(
+    private actions$: Actions,
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  login$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(fromAuthActions.login),
+        switchMap(() => this.authService.doLogin())
+      ),
+    { dispatch: false }
+  );
+
+  checkauth$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromAuthActions.checkAuth),
+      switchMap(() =>
+        this.authService
+          .checkAuth()
+          .pipe(
+            map((isLoggedIn) =>
+              fromAuthActions.checkAuthComplete({ isLoggedIn })
+            )
+          )
+      )
+    )
+  );
+
+  checkAuthComplete$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromAuthActions.checkAuthComplete),
+      switchMap(({ isLoggedIn }) => {
+        if (isLoggedIn) {
+          return this.authService.userData.pipe(
+            map((profile) =>
+              fromAuthActions.loginComplete({ profile, isLoggedIn })
+            )
+          );
+        }
+        return of(fromAuthActions.logoutComplete());
+      })
+    )
+  );
+
+  logout$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromAuthActions.logout),
+      tap(() => this.authService.signOut()),
+      map(() => fromAuthActions.logoutComplete())
+    )
+  );
+
+  logoutComplete$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(fromAuthActions.logoutComplete),
+        tap(() => this.router.navigate(['/']))
+      ),
+    { dispatch: false }
+  );
+}
+```
