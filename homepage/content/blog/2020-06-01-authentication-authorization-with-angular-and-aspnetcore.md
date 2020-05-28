@@ -492,7 +492,7 @@ We can register the appstate on the `AppModule` now with the `StoreModule` and `
 
 ```ts
 /* imports */
-import { appReducer, appEffects } from './store';
+import { appReducer, appEffects } from './store'; // importing from `store/index.ts`
 
 export function configureAuth(oidcConfigService: OidcConfigService) {
   return () =>
@@ -526,4 +526,189 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
 export class AppModule {}
 ```
 
+Now that the store is ready we have to use it in our app.
+
 ## Using the store in the application
+
+To use the store in our app we added four components to our app.
+
+- AppComponent (initial loading point for our application)
+- HomeComponent (Landing page for the app)
+- ProtectedComponent (Loading protected data and can not be navigated to when not authenticated --> Guard)
+- Unauthorized (As the sts will redirect us to an `unauthorized` route we provide the appropriate route)
+
+We can connect them with this routes
+
+```ts
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'protected',
+    component: ProtectedComponent,
+    canActivate: [AuthorizationGuard],
+  },
+  { path: 'unauthorized', component: UnauthorizedComponent },
+];
+```
+
+The `HomeComponent` and the `UnauthorizedComponent` are just static and contain no data. Interesting is the `ProtectedComponent` and the `AppComponent`
+
+### AppComponent
+
+The `AppComponent` as initial entry point will check for the authentication state and set the properties accordingly.
+
+```ts
+export class AppComponent implements OnInit {
+  isAuthenticated$: Observable<boolean>;
+  constructor(private store: Store<any>) {}
+
+  ngOnInit() {
+    this.store.dispatch(checkAuth());
+
+    this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
+  }
+
+  login() {
+    this.store.dispatch(login());
+  }
+
+  logout() {
+    this.store.dispatch(logout());
+  }
+}
+```
+
+In its template we give the possibility to sing in and our as well as the router outlet showing the main page and - later on - the protected page.
+
+```html
+<h2>Authentication with ngrx</h2>
+
+<div *ngIf="isAuthenticated$ | async as isAuthenticated; else noAuth">
+  <a [routerLink]="'home'">home</a> |
+  <a [routerLink]="'protected'">protected</a> |
+
+  <button (click)="logout()">Logout</button>
+</div>
+
+<ng-template #noAuth>
+  <a [routerLink]="'home'">home</a> |
+  <button (click)="login()">Login</button>
+  <hr />
+</ng-template>
+
+<router-outlet></router-outlet>
+```
+
+### ProtectedComponent
+
+The `ProtectedComponent` can only be accessed when the user is authenticated and calls the data from the ASP.NET Core API which was secured.
+
+```ts
+/* imports */
+import { selectuserInfo, getData, selectData } from '../store';
+
+export class ProtectedComponent implements OnInit {
+  secretData$: Observable<any>;
+  userData$: Observable<any>;
+
+  constructor(private store: Store<any>) {}
+
+  ngOnInit(): void {
+    this.userData$ = this.store.pipe(select(selectuserInfo));
+    this.secretData$ = this.store.pipe(select(selectData));
+    this.store.dispatch(getData());
+  }
+}
+```
+
+```html
+<p>protected works!</p>
+
+<h2>Userdata</h2>
+<div *ngIf="userData$ | async as userData">{{ userData | json }}</div>
+
+<hr />
+<h2>Secret Data</h2>
+<div *ngIf="secretData$ | async as secretData">{{ secretData | json }}</div>
+```
+
+Due to the NgRx store this is very nice and clean.
+
+### Adding the AuthGuard
+
+To save the `protected` route with a guard we can use the `AuthService` again as he exposes if we are authenticated or not.
+
+```ts
+/* imports */
+
+@Injectable({ providedIn: 'root' })
+export class AuthorizationGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean> {
+    return this.authService.isLoggedIn.pipe(
+      map((isAuthorized: boolean) => {
+        if (!isAuthorized) {
+          this.router.navigate(['/unauthorized']);
+          return false;
+        }
+
+        return true;
+      })
+    );
+  }
+}
+```
+
+The guard is used in the routes like we have seen before
+
+```ts
+{
+    path: 'protected',
+    component: ProtectedComponent,
+    canActivate: [AuthorizationGuard],
+},
+```
+
+### Adding the Interceptor
+
+We added the interceptor in the last post already, but for completeness we will mention it again here. The interceptor checks the route if it is in the array of secured routes and will add the token if it is available, then handle the request.
+
+```ts
+/* imports */
+
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+  private secureRoutes = ['https://localhost:5001/api'];
+
+  constructor(private authService: AuthService) {}
+
+  intercept(request: HttpRequest<any>, next: HttpHandler) {
+    if (!this.secureRoutes.find((x) => request.url.startsWith(x))) {
+      return next.handle(request);
+    }
+
+    const token = this.authService.token;
+
+    if (!token) {
+      return next.handle(request);
+    }
+
+    request = request.clone({
+      headers: request.headers.set('Authorization', 'Bearer ' + token),
+    });
+
+    return next.handle(request);
+  }
+}
+```
+
+That is it! I hope you enjoyed reading it.
+
+HTH
+
+Fabian
