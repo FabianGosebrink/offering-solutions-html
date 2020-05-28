@@ -315,3 +315,215 @@ export class AuthEffects {
   );
 }
 ```
+
+So bascically we have everything prepared now! What is missing are the selectors to get a nicer access to the values form our store.
+
+## Adding the auth selectors
+
+We just have two properties to provide here and we will wrap them in their according selectors. Place them in a file called `auth.selectors.ts` in the `store/auth` folder. We are using the `authFeatureName` variable now exposed by the reducer to create a featureSelector returning the auth part of the state we are interested in and then create the selectors for the specific properties.
+
+```ts
+import { AuthState, authFeatureName } from './auth.reducer';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+
+export const getAuthFeatureState = createFeatureSelector(authFeatureName);
+
+export const selectIsAuthenticated = createSelector(
+  getAuthFeatureState,
+  (state: AuthState) => state.isLoggedIn
+);
+
+export const selectUserInfo = createSelector(
+  getAuthFeatureState,
+  (state: AuthState) => state.profile
+);
+```
+
+The `index.ts` file is just exporting all the stuff we did.
+
+```ts
+export * from './auth.actions';
+export * from './auth.effects';
+export * from './auth.reducer';
+export * from './auth.selectors';
+```
+
+```
+.
+├── services
+│   ├── auth.service.ts
+├── store
+│   ├── auth
+│   │   ├── auth.actions.ts
+│   │   ├── auth.effects.ts
+│   │   ├── auth.reducer.ts
+│   │   ├── auth.selectors.ts
+│   │   └── index.ts
+│   ├── data
+│   │   └── index.ts
+│   └── index.ts
+```
+
+## Creating the store for data
+
+Basically we are using the same files and techniques for getting the data from the server in the end using a `data.service.ts` which is also placed in the `services` folder. We are adding only one (two with the complete action) action inside the action file, a reducer, the effect for getting the http data and the selector for selecting the data from the state.
+
+```ts
+import { createAction, props } from '@ngrx/store';
+
+export const getData = createAction('[Data] getData');
+export const getDataComplete = createAction(
+  '[Data] getDataComplete',
+  props<{ data: any }>()
+);
+```
+
+```ts
+export class DataEffects {
+  constructor(private actions$: Actions, private dataService: DataService) {}
+
+  getData$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromDataActions.getData),
+      switchMap(() =>
+        this.dataService
+          .getData()
+          .pipe(map((data) => fromDataActions.getDataComplete({ data })))
+      )
+    )
+  );
+}
+```
+
+```ts
+export const dataFeatureName = 'data';
+
+export interface DataState {
+  data: any;
+}
+
+export const initialDataState: DataState = {
+  data: null,
+};
+
+const dataReducerInternal = createReducer(
+  initialDataState,
+
+  on(dataActions.getDataComplete, (state, { data }) => {
+    return {
+      ...state,
+      data,
+    };
+  })
+);
+
+export function dataReducer(state: DataState | undefined, action: Action) {
+  return dataReducerInternal(state, action);
+}
+```
+
+```ts
+export const getDataFeatureState = createFeatureSelector(dataFeatureName);
+
+export const selectData = createSelector(
+  getDataFeatureState,
+  (state: DataState) => state.data
+);
+```
+
+and the `data.service.ts` is firing the http request and returning the observable.
+
+```ts
+@Injectable({ providedIn: 'root' })
+export class DataService {
+  constructor(private httpClient: HttpClient) {}
+
+  getData() {
+    return this.httpClient
+      .get('https://localhost:5001/api/securevalues')
+      .pipe(catchError((error) => of(error)));
+  }
+}
+```
+
+```
+.
+├── services
+│   ├── auth.service.ts
+│   └── data.service.ts
+├── store
+│   ├── auth
+│   │   ├── auth.actions.ts
+│   │   ├── auth.effects.ts
+│   │   ├── auth.reducer.ts
+│   │   ├── auth.selectors.ts
+│   │   └── index.ts
+│   ├── data
+│   │   ├── data.actions.ts
+│   │   ├── data.effects.ts
+│   │   ├── data.reducer.ts
+│   │   ├── data.selectors.ts
+│   │   └── index.ts
+│   └── index.ts
+```
+
+## Building an app state
+
+The main barrel file `store/index.ts` is used to gather all the states and effects and to provide an app state to the `AppModule` which we can register.
+
+```ts
+import { authReducer, AuthEffects } from './auth';
+import { DataEffects, dataReducer } from './data';
+
+export * from './auth';
+export * from './data';
+
+export const appReducer = {
+  auth: authReducer,
+  data: dataReducer,
+};
+
+export const appEffects = [AuthEffects, DataEffects];
+```
+
+## Registering the AppState on the AppModule
+
+We can register the appstate on the `AppModule` now with the `StoreModule` and `EffectsModule` as well as configure our authentication.
+
+```ts
+/* imports */
+import { appReducer, appEffects } from './store';
+
+export function configureAuth(oidcConfigService: OidcConfigService) {
+  return () =>
+    oidcConfigService.withConfig({
+      /*config*/
+    });
+}
+
+@NgModule({
+  declarations: [
+    ...
+  ],
+  imports: [
+    ...
+    AuthModule.forRoot(),
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot(appEffects),
+    HttpClientModule,
+  ],
+  providers: [
+    OidcConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: configureAuth,
+      deps: [OidcConfigService],
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+## Using the store in the application
