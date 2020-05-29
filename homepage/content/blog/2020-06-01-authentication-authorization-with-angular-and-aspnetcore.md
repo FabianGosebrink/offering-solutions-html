@@ -1,5 +1,5 @@
 ---
-title: Authentication in Angular with Ngrx and ASP.NET Core
+title: Authentication in Angular with NgRx and ASP.NET Core
 date: 2020-06-01
 tags: ['angular', 'authentication', 'authorization', 'ngrx', 'aspnetcore']
 draft: false
@@ -599,7 +599,7 @@ export class AppComponent implements OnInit {
 In its template we give the possibility to sing in and our as well as the router outlet showing the main page and - later on - the protected page.
 
 ```html
-<h2>Authentication with ngrx</h2>
+<h2>Authentication with NgRx</h2>
 
 <div *ngIf="isAuthenticated$ | async as isAuthenticated; else noAuth">
   <a [routerLink]="'home'">home</a> |
