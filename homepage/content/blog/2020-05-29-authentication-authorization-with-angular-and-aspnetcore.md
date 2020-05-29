@@ -1,6 +1,6 @@
 ---
 title: Authentication in Angular with NgRx and ASP.NET Core
-date: 2020-06-01
+date: 2020-05-29
 tags: ['angular', 'authentication', 'authorization', 'ngrx', 'aspnetcore']
 draft: false
 category: blog
