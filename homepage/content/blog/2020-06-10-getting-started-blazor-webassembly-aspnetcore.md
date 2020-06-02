@@ -123,3 +123,81 @@ If no route matches, it falls back to a `<NotFound></NotFound>` tag.
   </NotFound>
 </Router>
 ```
+
+The `_Imports.razor` defines all the namespaces which should be used in the client. If some namespace can not be used in your client project maybe it is missing here.
+
+## The NavMenu
+
+The mavigation is a component in the `Shared` folder and provides the navigation. This is the first thing we are going to change as we will have a simple [Bootstrap starter template](https://getbootstrap.com/docs/4.5/examples/starter-template/). So we will change the content of this file to this.
+
+```html
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+          Home
+        </NavLink>
+      </li>
+      <li class="nav-item">
+        <NavLink class="nav-link" href="todo" Match="NavLinkMatch.Prefix">
+          Todo
+        </NavLink>
+      </li>
+    </ul>
+  </div>
+</nav>
+```
+
+We only need two links in the top menu. The links are provided with the `<NavLink></NavLink>` [Docs NavLink component](https://docs.microsoft.com/en-us/aspnet/core/blazor/routing?view=aspnetcore-3.1#navlink-component) component as it supports adding an `active` css class on the active link based on the route. So this is why our navigation item will look active and not inactive (greyed out).
+
+## The MainLayout
+
+The first file we are going to change is the `Mainlayout`. This layout is the base layout as used in the `app.razor` component and defines the basic layout and where the content (aka the body) should be rendered.
+
+We will only use the Navigation here and render the body in its place
+
+```html
+@inherits LayoutComponentBase
+
+<NavMenu />
+@Body
+```
+
+The `@Body` placeholder is the place where the content, so the component the route points at, will be placed in or rendered.
+
+## Blazor Pages
+
+The `Pages` folder holds all main pages which can be addressed via routing. Pages can use different components. The `Index.razor` is the main starting point as it defines the route `/` on top of the file. We will replace it with the template from the bootstrap starter component.
+
+```html
+@page "/"
+
+<main role="main" class="container">
+  <div class="starter-template">
+    <h1>Bootstrap starter template</h1>
+    <p class="lead">
+      Use this document as a way to quickly start any new project.<br />
+      All you get is this text and a mostly barebones HTML document.
+    </p>
+  </div>
+</main>
+<!-- /.container -->
+```
+
+This is plain html except the first line `@page "/"` which tell the router _when the route / applies, render this page_. All good.
+
+So we can add our `Todo` feature exactly here.
