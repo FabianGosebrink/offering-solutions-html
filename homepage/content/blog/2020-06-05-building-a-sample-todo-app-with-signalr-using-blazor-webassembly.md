@@ -1,5 +1,5 @@
 ---
-title: Building a Sample Todo App in Blazor with Signalr
+title: Building a Sample Todo App with Signalr Using Blazor WebAssembly
 date: 2020-06-05
 tags: ['blazor', 'webassembly', 'aspnetcore']
 draft: false
@@ -12,6 +12,8 @@ In this blog post I want to show how to get started with ASP.NET Core Blazor by 
 Let's get started.
 
 > We will only cover the frontend here, the backend is a simple ASP.NET Core WebAPI which you can see in the github Repository.
+
+[https://github.com/FabianGosebrink/blazor-todo-app](https://github.com/FabianGosebrink/blazor-todo-app)
 
 ## TOC
 
@@ -28,8 +30,6 @@ Let's get started.
   - [Todo Form Component](#todo-form-component)
   - [Todo Component](#todo-component)
 - [Adding SignalR](#adding-signalr)
-
-[https://github.com/FabianGosebrink/blazor-todo-app](https://github.com/FabianGosebrink/blazor-todo-app)
 
 ## Prerequisites
 
