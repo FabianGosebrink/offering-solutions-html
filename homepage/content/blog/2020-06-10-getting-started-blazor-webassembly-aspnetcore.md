@@ -11,6 +11,10 @@ In this blog post I want to show how to get started with ASP.NET Core Blazor by 
 
 Let's get started.
 
+> We will only cover the frontend here, the backend is a simple ASP.NET Core WebAPI which you can see in the github Repository.
+
+[https://github.com/FabianGosebrink/blazor-todo-app](https://github.com/FabianGosebrink/blazor-todo-app)
+
 ## Prerequisites
 
 Make sure you have installed all of the listed software underneath. This is very important as without them the application does not work.
@@ -418,4 +422,306 @@ Lastly we of course have to add the input field where we bind the value of the n
 
 The todo component is glueing it all together. It hosts both other components, reacts to events and calls the `TodoService` when needed.
 
+We will _not_ take the HTTP responses of adding and updating the items here as we will add this via SignalR later.
+
+The `Todo.razor.cs` again gets a partial class inheriting from `ComponentBase` and we inject the `TodoService` via propertyInjection.
+
+The `OnInitializedAsync` method is called when the component is initialized and received all parameters. So this is a good spot to get all the data. We get the data from http and bind it to a property we initialize with an empty list to avoid errors.
+
+```cs
+public partial class Todo : ComponentBase
+{
+    [Inject]
+    private TodoService todoService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        todoModels = await todoService.GetTodos();
+    }
+
+    public List<TodoDto> todoModels = new List<TodoDto>();
+}
+```
+
+As we know that the other two components throw events we want to react to them and provide the appropriate methods in this class as well. When a todo gets added we call the `AddTodo` method from the `TodoService` and when a Todo got updated - you guessed it - we call the `UpdateTodo` Method with the parameter from the service.
+
+```cs
+public partial class Todo : ComponentBase
+{
+    [Inject]
+    private TodoService todoService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        todoModels = await todoService.GetTodos();
+    }
+
+    public List<TodoDto> todoModels = new List<TodoDto>();
+
+    private async Task AddTodo(TodoDto todoModel)
+    {
+        await todoService.AddTodo(todoModel);
+    }
+
+    private async Task UpdateTodo(TodoDto todoModel)
+    {
+        await todoService.UpdateTodo(todoModel);
+    }
+}
+```
+
+Alright having done that we have to call the methods when the components throw a specific event. We already implemented that in the components, so now let us call the methods we just created.
+
+We make this component accessible via the route `/todo`. The component then loads the other two components: The form and the list.
+
+```html
+@page "/todo"
+
+<main role="main" class="container">
+  <h3>Todo App</h3>
+
+  <div>
+    <BlazorTodoApp.Client.Pages.Todo.TodoForm></BlazorTodoApp.Client.Pages.Todo.TodoForm>
+  </div>
+  <div class="mt-3">
+    <BlazorTodoApp.Client.Pages.Todo.TodoList></BlazorTodoApp.Client.Pages.Todo.TodoList>
+  </div>
+</main>
+<!-- /.container -->
+```
+
+All what is missing now is that we pass parameters down to the list and receive events from the list and the form. We can do this using the `EventCallback`s property names and bind to it with the `@` prefix.
+
+```html
+@page "/todo"
+
+<main role="main" class="container">
+  <h3>Todo App</h3>
+
+  <div>
+    <BlazorTodoApp.Client.Pages.Todo.TodoForm
+      TodoAdded="AddTodo"
+    ></BlazorTodoApp.Client.Pages.Todo.TodoForm>
+  </div>
+  <div class="mt-3">
+    <BlazorTodoApp.Client.Pages.Todo.TodoList
+      TodoModels="todoModels"
+      TodoUpdated="UpdateTodo"
+    ></BlazorTodoApp.Client.Pages.Todo.TodoList>
+  </div>
+</main>
+<!-- /.container -->
+<!-- /.container -->
+```
+
+If the `TodoForm` throws the `TodoAdded` event, we will call the method `AddTodo`. Same with the list, just another method and event then.
+The list gets passed the models as well to display them.
+
+That is it so far!
+
+If you start the server of the example now you can see that nothing happens so far. This is because we are not receiving the added entries and display them. Let us do this with SignalR to also keep other browser instances up to date.
+
 ## Adding SignalR
+
+To add SignalR we have to enable the compression and map the hub we have to create at server side. the hub is empty as we are not invoking methods from the client but the server itself will send the events over the hub.
+
+```cs
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.SignalR;
+
+namespace BlazorTodoApp.Server.Hubs
+{
+    public class TodoHub : Hub
+    {
+    }
+}
+```
+
+We just have to enable compression and map the hub route.
+
+```cs
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSignalR();
+    // ...
+    services.AddResponseCompression(opts =>
+    {
+        opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+            new[] { "application/octet-stream" });
+    });
+}
+```
+
+```cs
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.UseResponseCompression();
+
+    // ...
+
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapControllers();
+        endpoints.MapHub<ChatHub>("/chatHub");
+        endpoints.MapFallbackToFile("index.html");
+    });
+}
+```
+
+Having done that let the server send the events when an Todo is added or updated. In your backend inject the `IHubContext<TodoHub>` and send the events when the action is called.
+
+```cs
+namespace BlazorTodoApp.Server.Controllers
+{
+    // ...
+    public class TodosController : ControllerBase
+    {
+        private readonly IHubContext<TodoHub> _todoHubContext;
+
+        public TodosController(IHubContext<TodoHub> todoHubContext)
+        {
+            _todoHubContext = todoHubContext;
+            // ...
+        }
+
+        [HttpPost(Name = nameof(AddTodo))]
+        public ActionResult AddTodo([FromBody] TodoCreateDto todoCreateDto)
+        {
+            // ...
+            _todoHubContext.Clients.All.SendAsync("TodoAdded", dto);
+            // ...
+        }
+
+        [HttpPut]
+        [Route("{id}", Name = nameof(UpdateTodo))]
+        public ActionResult<TodoDto> UpdateTodo(Guid id, [FromBody] TodoUpdateDto updateDto)
+        {
+             // ...
+
+            _todoHubContext.Clients.All.SendAsync("TodoUpdated", updatedTodo);
+
+             // ...
+        }
+
+        [HttpDelete]
+        [Route("{id}", Name = nameof(DeleteTodo))]
+        public ActionResult DeleteTodo(Guid id)
+        {
+             // ...
+
+            _todoHubContext.Clients.All.SendAsync("TodoDeleted", id);
+
+             // ...
+        }
+    }
+}
+
+```
+
+Now we have to react to this on client side.
+
+We can enhance the `TodoService` and create the hub connection, register to the events and then start the connection (in this order!). The service throws events to the outside using the `EventHandler` again. When the server throws an action we are getting passed the todo as parameter and can just throw the event with the argument from the server.
+
+```cs
+// ...
+using Microsoft.AspNetCore.SignalR.Client;
+
+namespace BlazorTodoApp.Client.Services
+{
+    public class TodoService
+    {
+       // ...
+        private HubConnection _hubConnection;
+        private readonly string _todoEndpointUrl ;
+        private readonly string _todoApi = "api/todos/";
+        private readonly string _baseUrl = "https://localhost:5001/";
+
+        public EventHandler<TodoDto> TodoAdded;
+        public EventHandler<Guid> TodoDeleted;
+        public EventHandler<TodoDto> TodoUpdated;
+
+
+        public TodoService(HttpClient client)
+        {
+            _client = client;
+            _todoEndpointUrl = $"{_baseUrl}{_todoApi}";
+        }
+
+        public async Task InitSignalR()
+        {
+            _hubConnection = new HubConnectionBuilder()
+               .WithUrl($"{_baseUrl}todoHub")
+               .Build();
+
+            RegisterActions();
+
+            await _hubConnection.StartAsync();
+        }
+
+        // ...
+
+        private void RegisterActions()
+        {
+            _hubConnection.On<TodoDto>("TodoAdded", (todo) =>
+            {
+                TodoAdded?.Invoke(this, todo);
+            });
+
+            _hubConnection.On<TodoDto>("TodoUpdated", (todo) =>
+            {
+                TodoUpdated?.Invoke(this, todo);
+            });
+
+            _hubConnection.On<Guid>("TodoDeleted", (id) =>
+            {
+                TodoDeleted?.Invoke(this, id);
+            });
+        }
+    }
+}
+```
+
+In our `Todo.razor` component, which takes care of all the data communication, we can react to those events now with adding eventhandlers and call the `InitSignalR` method we just created in the service. We are calling the `StateHasChanged()` method to ensure the components get triggered to re-render.
+
+```cs
+public partial class Todo : ComponentBase
+{
+    [Inject]
+    private TodoService todoService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        todoModels = await todoService.GetTodos();
+        todoService.TodoAdded += HandleTodoAdded;
+        todoService.TodoUpdated += HandleTodoUpdated;
+        await todoService.InitSignalR();
+    }
+
+    public List<TodoDto> todoModels = new List<TodoDto>();
+
+    // ...
+
+    private async void HandleTodoAdded(object sender, TodoDto args)
+    {
+        todoModels = await todoService.GetTodos();
+        StateHasChanged();
+    }
+
+    private void HandleTodoUpdated(object sender, TodoDto args)
+    {
+        var existingTodo = todoModels.FirstOrDefault(x => x.Id == args.Id);
+
+        var index = todoModels.IndexOf(existingTodo);
+        todoModels[index] = args;
+        StateHasChanged();
+    }
+
+    // ...
+}
+```
+
+If you now start the example [https://github.com/FabianGosebrink/blazor-todo-app](https://github.com/FabianGosebrink/blazor-todo-app) you should have a working Todo application with ASP.NET Core Blazor, Container and Presentational Components and SignalR.
+
+I hope this helps.
+
+Fabian
