@@ -357,14 +357,19 @@ We also add an `input` typed as a checkbox and bind the `.Done` property to it. 
 <h3>TodoList</h3>
 
 <ul class="list-group">
-    @foreach (var TodoModel in TodoModels)
-    {
-    <li class="list-group-item" style="color:@(TodoModel.Done ? "lightgray" : "inherit");">
-
-        <input type="checkbox" checked="@TodoModel.Done" @onchange="e => ToggleDone(TodoModel)">
-        @TodoModel.Value
-    </li>
-    }
+  @foreach (var TodoModel in TodoModels) {
+  <li
+    class="list-group-item"
+    style="color:@(TodoModel.Done ? 'lightgray' : 'inherit');"
+  >
+    <input
+      type="checkbox"
+      checked="@TodoModel.Done"
+      @onchange="e => ToggleDone(TodoModel)"
+    />
+    @TodoModel.Value
+  </li>
+  }
 </ul>
 ```
 
