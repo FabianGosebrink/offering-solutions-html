@@ -201,3 +201,107 @@ The `Pages` folder holds all main pages which can be addressed via routing. Page
 This is plain html except the first line `@page "/"` which tell the router _when the route / applies, render this page_. All good.
 
 So we can add our `Todo` feature exactly here.
+
+Before we do this we should create a `TodoService`.
+
+## Adding the communication service
+
+The service is responsible for handling the communication acting as a repository for getting and updating the todo items.
+
+First we create a file called `TodoService.cs` and inject the `HttpClient` into the constructor. We add the `JsonSerializerOptions` and build up our endpoint address.
+
+```cs
+public class TodoService
+{
+    private readonly HttpClient _client;
+    private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions()
+    {
+        PropertyNameCaseInsensitive = true
+    };
+
+    private readonly string _todoEndpointUrl ;
+    private readonly string _todoApi = "api/todos/";
+    private readonly string _baseUrl = "https://localhost:5001/";
+
+    public TodoService(HttpClient client)
+    {
+        _client = client;
+        _todoEndpointUrl = $"{_baseUrl}{_todoApi}";
+    }
+}
+```
+
+Now we can add the method to add a Todo. We send a POST request to the endpoint with a `TodoDto` in the body. The `TodoDto` lies in a project called `BlazorTodoAoo.Shared` and can be used from server and client then. We return the new created tode item in case the caller of the method needs it.
+
+```cs
+public async Task<TodoDto> AddTodo(TodoDto createDto)
+{
+    var response = await _client.PostAsJsonAsync(_todoEndpointUrl, createDto);
+
+    response.EnsureSuccessStatusCode();
+
+    using var responseStream = await response.Content.ReadAsStreamAsync();
+    return await JsonSerializer.DeserializeAsync<TodoDto>(responseStream, _jsonOptions);
+}
+```
+
+Getting the todo items looks quite the same. We just fire a GET request to the url we created
+
+```cs
+public async Task<List<TodoDto>> GetTodos()
+{
+    var response = await _client.GetAsync(_todoEndpointUrl);
+
+    response.EnsureSuccessStatusCode();
+
+    using var responseStream = await response.Content.ReadAsStreamAsync();
+    return await JsonSerializer.DeserializeAsync<List<TodoDto>>(responseStream, _jsonOptions);
+}
+```
+
+Updating a Todo is pretty straight forward as well using a PUT request.
+
+```cs
+public async Task<TodoDto> UpdateTodo(TodoDto updateDto)
+{
+    var response = await _client.PutAsJsonAsync($"{_todoEndpointUrl}{updateDto.Id}", updateDto);
+
+    response.EnsureSuccessStatusCode();
+
+    using var responseStream = await response.Content.ReadAsStreamAsync();
+    return await JsonSerializer.DeserializeAsync<TodoDto>(responseStream, _jsonOptions);
+}
+```
+
+## Adding the components
+
+Create a folder called `Todo`. Inside of that folder we create three razor components: `Todo.razor`, `TodoForm.razor` and `TodoList.razor`.
+Also add the corresponding classes to the files called `Todo.razor.cs`, `TodoForm.razor.cs` and `TodoList.razor.cs`. These files are automatically recognized by Visual Studio to be the corresponding classes to the components.
+
+What we want to build is:
+
+```
+
+                   +-------------------+
+                   |                   |
+                   |                   |
+        +--------> |       Todo        | <--------+
+        |          |                   |          |
+        |          |                   |          |
+        |          +-------------------+          |
+        |                                         |
+        v                                         v
++-------+---------+                    +----------+------+
+|                 |                    |                 |
+|                 |                    |                 |
+|    TodoList     |                    |    TodoForm     |
+|                 |                    |                 |
+|                 |                    |                 |
+|                 |                    |                 |
++-----------------+                    +-----------------+
+
+```
+
+`TodoList` throws an event iff an item is marked as done and gets given the current todo items as parameter. The todo form throws an event with the new todo item to the todo component which communicates to the API then.
+
+## Adding SignalR
