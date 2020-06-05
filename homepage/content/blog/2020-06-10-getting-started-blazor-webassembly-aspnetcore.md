@@ -304,4 +304,118 @@ What we want to build is:
 
 `TodoList` throws an event iff an item is marked as done and gets given the current todo items as parameter. The todo form throws an event with the new todo item to the todo component which communicates to the API then.
 
+### Todo List Component
+
+The `TodoList.razor` takes a list of items from the outside and displays them. It acts as a presentational component not worrying about where the data comes from but to display it correctly.
+
+In its csharp file we implement an partial class inheriting from the `ComponentBase` class. Inside f this we can define Properties with the `[Parameter]` attribute which describes this is a property we can bind data to or get data from (`EventCallback`). We can fire the event to the outside world by invoking the event callback.
+
+```cs
+public partial class TodoList : ComponentBase
+{
+    [Parameter]
+    public List<TodoDto> TodoModels { get; set; }
+
+    [Parameter]
+    public EventCallback<TodoDto> TodoUpdated { get; set; }
+
+    private void ToggleDone(TodoDto todoDto)
+    {
+        todoDto.Done = !todoDto.Done;
+        TodoUpdated.InvokeAsync(todoDto);
+    }
+}
+```
+
+The method `ToggleDone` takes a `TodoDto` as parameter, changes the `Done` property and fires the event to the outside then.
+
+In the html we can iterate over the passed in `TodoModels` and display them in ul/li tags from the used bootstrap framework.
+
+We also add an `input` typed as a checkbox and bind the `.Done` property to it. If it changes, we call the `ToggleDone` method we just implemented.
+
+```html
+<h3>TodoList</h3>
+
+<ul class="list-group">
+    @foreach (var TodoModel in TodoModels)
+    {
+    <li class="list-group-item" style="color:@(TodoModel.Done ? "lightgray" : "inherit");">
+
+        <input type="checkbox" checked="@TodoModel.Done" @onchange="e => ToggleDone(TodoModel)">
+        @TodoModel.Value
+    </li>
+    }
+</ul>
+```
+
+## Todo Form Component
+
+The form component is responsible for providing a form the user can add a todo with. We again create a partial class with an `EventCallback` which fires if a new todo was being added and provide an internal TodoItem which can be filled.
+
+```cs
+public partial class TodoForm : ComponentBase
+{
+    [Parameter]
+    public EventCallback<TodoDto> TodoAdded { get; set; }
+
+    private TodoDto todoModel = new TodoDto();
+
+    private void HandleValidSubmit()
+    {
+        this.TodoAdded.InvokeAsync(new TodoDto() { Value = todoModel.Value });
+    }
+}
+```
+
+In the html we create a from using Blazors `EditForm` passing the model we just provided from the cs class. On a valid submit we call the `HandleValidSubmit` method.
+
+```html
+<EditForm Model="@todoModel" OnValidSubmit="HandleValidSubmit">
+  ...
+</EditForm>
+```
+
+Inside of the form we add a button with the type `submit` (otherwise the form des not get submitted) and we disable it when the current value of the model is not present.
+
+```html
+<EditForm Model="@todoModel" OnValidSubmit="HandleValidSubmit">
+  <DataAnnotationsValidator />
+  <ValidationSummary />
+
+  <InputText
+    id="name"
+    @bind-Value="todoModel.Value"
+    class="form-control form-control-lg"
+    type="text"
+    placeholder="Groceries, washing car..."
+  />
+</EditForm>
+```
+
+Lastly we of course have to add the input field where we bind the value of the new created todo item to. For this we use the `InputText` component of Blazors Framework again.
+
+```html
+<EditForm Model="@todoModel" OnValidSubmit="HandleValidSubmit">
+  <InputText
+    id="name"
+    @bind-Value="todoModel.Value"
+    class="form-control form-control-lg"
+    type="text"
+    placeholder="Groceries, washing car..."
+  />
+
+  <button
+    type="submit"
+    class="btn btn-primary mt-1"
+    disabled="@(String.IsNullOrWhiteSpace(todoModel.Value))"
+  >
+    Submit
+  </button>
+</EditForm>
+```
+
+## Todo Component
+
+The todo component is glueing it all together. It hosts both other components, reacts to events and calls the `TodoService` when needed.
+
 ## Adding SignalR
