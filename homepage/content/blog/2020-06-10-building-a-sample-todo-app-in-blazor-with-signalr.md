@@ -1,5 +1,5 @@
 ---
-title: Getting started with ASP.NET Core Blazor
+title: Building a Sample Todo App in Blazor with Signalr
 date: 2020-06-10
 tags: ['blazor', 'webassembly', 'aspnetcore']
 draft: false
