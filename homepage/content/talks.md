@@ -5,11 +5,19 @@ draft: false
 category: noblog
 ---
 
+### Erstellen von modernen Web-APIs mit ASP.NET Core 3
+
+#### 25.02.2020 - BASTA! Frankfurt
+
+**Keywords:** angular, Libraries, Architecture
+
+---
+
 ### Better Angular Architectures with Libraries
 
 #### 27.11.2019 - Web Zurich UG Meetup
 
-**Keywords:** Angular, Libraries, Architecture
+**Keywords:** angular, Libraries, Architecture
 
 ---
 
@@ -17,7 +25,7 @@ category: noblog
 
 #### 25.11.2019 - DDC Köln (Workshop)
 
-**Keywords:** Angular, ASP.NET Core
+**Keywords:** angular, ASP.NET Core
 
 ---
 
@@ -25,7 +33,7 @@ category: noblog
 
 #### 21.11.2019 - NgPoland Warschau (Workshop)
 
-**Keywords:** Angular, ASP.NET Core SignalR
+**Keywords:** angular, ASP.NET Core SignalR
 
 ---
 
@@ -33,7 +41,7 @@ category: noblog
 
 #### 20.11.2019 - NgPoland Warschau (Workshop)
 
-**Keywords:** Angular, ASP.NET Core
+**Keywords:** angular, ASP.NET Core
 
 ---
 
@@ -41,7 +49,7 @@ category: noblog
 
 #### 27.10.2019 - Google GDE Summit - Silicon Valley
 
-**Keywords:** Angular, ASP.NET Core SignalR
+**Keywords:** angular, ASP.NET Core SignalR
 
 ---
 
@@ -49,7 +57,7 @@ category: noblog
 
 #### 23.10.2019 - iJS München
 
-**Keywords:** Angular, Libraries, Architecture
+**Keywords:** angular, Libraries, Architecture
 
 ---
 
@@ -65,7 +73,7 @@ category: noblog
 
 #### 15.10.2019 - Web Developer Conference (WDC) Hamburg
 
-**Keywords:** Angular, ASP.NET, SignalR, Cordova, Electron
+**Keywords:** angular, ASP.NET, SignalR, Cordova, Electron
 
 ---
 
@@ -73,7 +81,7 @@ category: noblog
 
 #### 15.10.2019 - Web Developer Conference (WDC) Hamburg
 
-**Keywords:** Angular, Libraries, Architecture
+**Keywords:** angular, Libraries, Architecture
 
 [slides](https://speakerdeck.com/fabiangosebrink/angular-architekturen-with-angular-libraries)
 
@@ -83,7 +91,7 @@ category: noblog
 
 #### 09.10.2019 - AngularDays in Berlin Workshop
 
-**Keywords:** Angular, Testing
+**Keywords:** angular, Testing
 
 [slides](https://speakerdeck.com/fabiangosebrink/angular-testing-made-easy)
 
@@ -93,7 +101,7 @@ category: noblog
 
 #### 07.10.2019 - NgRome
 
-**Keywords:** Angular, Libraries, Architecture
+**Keywords:** angular, Libraries, Architecture
 
 [slides](https://speakerdeck.com/fabiangosebrink/architecting-angular-applications-with-angular-libraries)
 
@@ -111,7 +119,7 @@ category: noblog
 
 #### 25.09.2019 - BASTA! Mainz
 
-**Keywords:** Angular, ASP.NET Core, SignalR, Cordova, Electron
+**Keywords:** angular, ASP.NET Core, SignalR, Cordova, Electron
 
 [slides](https://speakerdeck.com/fabiangosebrink/mobile-and-desktop-cross-plattform-with-electron-and-cordova-an-introduction)
 
