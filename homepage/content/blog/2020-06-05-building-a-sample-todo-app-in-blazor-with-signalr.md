@@ -27,7 +27,7 @@ Let's get started.
   - [Todo List Component](#todo-list-component)
   - [Todo Form Component](#todo-form-component)
   - [Todo Component](#todo-component)
-- [Adding SignalR](#adding-signal-r)
+- [Adding SignalR](#adding-signalr)
 
 [https://github.com/FabianGosebrink/blazor-todo-app](https://github.com/FabianGosebrink/blazor-todo-app)
 
