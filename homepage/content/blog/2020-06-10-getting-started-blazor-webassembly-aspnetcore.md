@@ -11,6 +11,22 @@ In this blog post I want to show how to get started with ASP.NET Core Blazor by 
 
 Let's get started.
 
+## TOC
+
+- [Prerequisites](#prerequisites)
+- [Scaffolding the client project](#scaffolding-the-client-project)
+- [Deleting not used Files](#deleting-not-used-files)
+- [Examine the files](#examine-the-files)
+- [The NavMenu](#the-nav-menu)
+- [The MainLayout](#the-main-layout)
+- [Blazor Pages](#blazor-pages)
+- [Adding the communication service](#adding-the-communication-service)
+- [Adding the components](#adding-the-components)
+  - [Todo List Component](#todo-list-component)
+  - [Todo Form Component](#todo-form-component)
+  - [Todo Component](#todo-component)
+- [Adding SignalR](#adding-signal-r)
+
 > We will only cover the frontend here, the backend is a simple ASP.NET Core WebAPI which you can see in the github Repository.
 
 [https://github.com/FabianGosebrink/blazor-todo-app](https://github.com/FabianGosebrink/blazor-todo-app)
@@ -352,7 +368,7 @@ We also add an `input` typed as a checkbox and bind the `.Done` property to it. 
 </ul>
 ```
 
-## Todo Form Component
+### Todo Form Component
 
 The form component is responsible for providing a form the user can add a todo with. We again create a partial class with an `EventCallback` which fires if a new todo was being added and provide an internal TodoItem which can be filled.
 
@@ -418,7 +434,7 @@ Lastly we of course have to add the input field where we bind the value of the n
 </EditForm>
 ```
 
-## Todo Component
+### Todo Component
 
 The todo component is glueing it all together. It hosts both other components, reacts to events and calls the `TodoService` when needed.
 
