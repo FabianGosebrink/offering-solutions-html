@@ -4,9 +4,7 @@
   <body>
     {{ "<!-- Wrapper -->" | safeHTML }}
     <div id="wrapper">
-      {{ partial "nav.html" . }}
-
-      {{ "<!-- Main -->" | safeHTML }}
+      {{ partial "nav.html" . }} {{ "<!-- Main -->" | safeHTML }}
       <div id="main" class="alt">
         <div class="bottom">
           <div class="progress-container">
@@ -38,30 +36,35 @@
         <!-- One -->
         <section id="one">
           <div class="center">
-            <span class="image pluralsight-logo" title="Check out my pluralsight courses">
-                <a href="https://app.pluralsight.com/profile/author/fabian-gosebrink" style="border-bottom: none;" target="_blank">
-                  <img src="{{ .Site.Params.cdnbaseurl }}/img/PS_logo_F-01.png" alt="" />
-                </a>
-            </span> 
+            <span
+              class="image pluralsight-logo"
+              title="Check out my pluralsight courses"
+            >
+              <a
+                href="https://app.pluralsight.com/profile/author/fabian-gosebrink"
+                style="border-bottom: none;"
+                target="_blank"
+              >
+                <img
+                  src="{{ .Site.Params.cdnbaseurl }}/img/PS_logo_F-01.png"
+                  alt="pluralsightlogo"
+                />
+              </a>
+            </span>
           </div>
           <div class="divider"></div>
           <div class="inner">
             {{ .Content }}
           </div>
         </section>
-        {{ "<!-- Disqus Inject -->" | safeHTML }}
-        {{ if .Site.DisqusShortname }}
-        {{ partial "disqus.html" . }}
-        {{ end }}
+        {{ "<!-- Disqus Inject -->" | safeHTML }} {{ if .Site.DisqusShortname }}
+        {{ partial "disqus.html" . }} {{ end }}
       </div>
 
-      {{ "<!-- Footer -->" | safeHTML}}
-      {{ if .Site.Params.footer.enable }}
-      {{ partial "footer.html" . }}
-      {{ end }}
+      {{ "<!-- Footer -->" | safeHTML}} {{ if .Site.Params.footer.enable }} {{
+      partial "footer.html" . }} {{ end }}
     </div>
 
-    {{ "<!-- Scripts -->" | safeHTML}}
-    {{ partial "js.html" . }}
+    {{ "<!-- Scripts -->" | safeHTML}} {{ partial "js.html" . }}
   </body>
 </html>

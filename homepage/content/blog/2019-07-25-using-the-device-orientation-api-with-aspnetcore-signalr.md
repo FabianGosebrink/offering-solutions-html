@@ -139,7 +139,7 @@ function deviceOrientationHandler(eventData) {
   if (signalrConnectionExists()) {
     signalRConnection
       .invoke('MySuperDuperAction', { alpha, beta, gamma })
-      .catch(err => console.error(err.toString()));
+      .catch((err) => console.error(err.toString()));
   }
 
   setTextOnElement('gamma', Math.round(gamma));
@@ -170,7 +170,7 @@ function establishSignalR() {
     'https://motiondevice.azurewebsites.net/motion'
   );
 
-  signalRConnection.on('motionUpdated', data => {
+  signalRConnection.on('motionUpdated', (data) => {
     console.log(data);
 
     if (!freezeMyself) {
@@ -178,7 +178,7 @@ function establishSignalR() {
     }
   });
 
-  signalRConnection.start().then(function() {
+  signalRConnection.start().then(function () {
     console.log('connected');
     console.log(signalRConnection.state);
   });
@@ -235,6 +235,7 @@ The only thing that is missing now is the `index.html` part. This is perhaps the
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
         id="imgLogo"
+        alt="javascriptLogo"
       />
     </div>
 

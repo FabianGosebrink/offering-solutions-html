@@ -14,7 +14,7 @@ All the code in the repository is only for demo purposes. It shows the concepts 
 Code is here [https://github.com/FabianGosebrink/angular-ngrx-endlessscroll](https://github.com/FabianGosebrink/angular-ngrx-endlessscroll)
 
 <p align="center">
-  <img src="https://github.com/FabianGosebrink/angular-ngrx-endlessscroll/blob/master/.github/endlessscroll-2.gif">
+  <img src="https://github.com/FabianGosebrink/angular-ngrx-endlessscroll/blob/master/.github/endlessscroll-2.gif" alt="endlessscroll">
 </p>
 
 ## Creating the ASP.NET Core backend
