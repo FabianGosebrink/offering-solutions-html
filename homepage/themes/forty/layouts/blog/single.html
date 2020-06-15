@@ -61,8 +61,7 @@
         {{ partial "disqus.html" . }} {{ end }}
       </div>
 
-      {{ "<!-- Footer -->" | safeHTML}} {{ if .Site.Params.footer.enable }} {{
-      partial "footer.html" . }} {{ end }}
+      {{ "<!-- Footer -->" | safeHTML}} {{ if .Site.Params.footer.enable }} {{ partial "footer.html" . }} {{ end }}
     </div>
 
     {{ "<!-- Scripts -->" | safeHTML}} {{ partial "js.html" . }}
