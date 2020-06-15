@@ -53,7 +53,7 @@ disqusShortname = "offeringsolutions"
       url = "blog"
 
     [[params.navigation.links]]
-      name = "Talks"
+      name = "Speaking"
       url = "talks"
 
     # Add custom links here by uncommenting code below. To remove links just delete

@@ -7,22 +7,15 @@
     <p>{{ .Site.Params.Two.subtitle }}</p>
     <div class="row">
       <!-- Break -->
-      {{ range first 3 (where .Site.Pages "Params.category" "blog").ByDate.Reverse }}
-      <div class="4u 12u$(medium)">
-        <h3>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h3>
-        <a href="{{ .Permalink }}"
-          ><img
-            src="{{ .Site.Params.cdnbaseurl }}img/blog/{{ .Params.image }}"
-            alt="blogimage"
-        /></a>
-        <p>
-          {{ .Content | safeHTML | truncate 100}}
-        </p>
-        <p>
-          <a href="{{ .Permalink }}" class="button small">Read more</a>
-        </p>
+      {{ range first 12 (where .Site.Pages "Params.category" "blog").ByDate.Reverse }}
+      <div class="12u blog-short">
+        <div class="blog-short-title"><a href="{{ .Permalink }}">{{ .Title }} </a> </div>
+        <span class="blog-short-description"> 
+          <a href="{{ .Permalink }}">{{ .Content | safeHTML | truncate 150}}</a>
+        </span>
+        <div class="blog-short-date"> 
+            {{ dateFormat "Jan 2, 2006" .Date }} - reading time {{ .ReadingTime }} {{ .Scratch.Get "readingTime" }}
+          </div>
       </div>
       {{ end }}
     </div>

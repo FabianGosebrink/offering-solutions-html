@@ -48,8 +48,32 @@ body {
 }
 
 #header .logo {
-  margin-top: 3px;
+  margin-top: 1em;
+  min-width: 20%;
 }
+
+.blog-short {
+  margin: 25px 0px;
+}
+
+.blog-short > span > a > p {
+  margin:0px;
+}
+
+.blog-short-title {
+  font-size: 2.3rem;
+  cursor: pointer;
+}
+
+.blog-short-description {
+  font-size: 1.2rem;
+}
+
+.blog-short-date {
+  font-size: 1rem;
+}
+
+
 
 .tiles article:nth-child(6n - 5):before {
   background-color: #33587a;
