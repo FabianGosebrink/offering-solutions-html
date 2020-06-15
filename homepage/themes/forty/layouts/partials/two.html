@@ -11,7 +11,7 @@
       <div class="12u blog-short">
         <div class="blog-short-title"><a href="{{ .Permalink }}">{{ .Title }} </a> </div>
         <span class="blog-short-description"> 
-          <a href="{{ .Permalink }}">{{ .Content | safeHTML | truncate 150}}</a>
+          <a href="{{ .Permalink }}">{{ .Content | safeHTML | truncate 125}}</a>
         </span>
         <div class="blog-short-date"> 
             {{ dateFormat "Jan 2, 2006" .Date }} - reading time {{ .ReadingTime }} {{ .Scratch.Get "readingTime" }}
