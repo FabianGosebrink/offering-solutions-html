@@ -24,6 +24,18 @@
 	<link rel="icon" type="image/x-icon" href="{{ . | absURL }}">
 	{{ end }}
 
+	<!-- ios support -->
+	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-72x72.png" />
+	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-96x96.png" />
+	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-128x128.png" />
+	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-144x144.png" />
+	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-152x152.png" />
+	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-192x192.png" />
+	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-384x384.png" />
+	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-512x512.png" />
+	<meta name="apple-mobile-web-app-status-bar" content="#33587a" />
+	<meta name="theme-color" content="#33587a" />
+
 	{{ "<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->" | safeHTML }}
 	{{ "<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->" | safeHTML }}
 	{{ "<!--[if lt IE 9]>" | safeHTML }}
