@@ -10,7 +10,6 @@
 	"description" : "Angular and ASP.NET Core Consulting, Training and Courses",
 	"orientation" : "any",
 	"background_color" : "#33587a",
-	"prefer_related_applications" : "false",
 	"icons": [
 		{
 		  "src": "https://cdn.offering.solutions/img/icon-72x72.png",
