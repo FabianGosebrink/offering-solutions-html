@@ -156,7 +156,7 @@
 					if ($link.length > 0) {
 
 						$x = $link.clone()
-							.text('link')
+							.text('')
 							.addClass('primary')
 							.appendTo($this);
 
