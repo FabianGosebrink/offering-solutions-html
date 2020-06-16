@@ -506,8 +506,6 @@ Source index.html file in the angularApp/public folder:
     <title>Angular Webpack Template</title>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <my-app>Loading...</my-app>
@@ -528,8 +526,6 @@ And the produced build file in the wwwroot folder. The script for the app has be
     <title>Angular Webpack Template</title>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/bootstrap.css" />
   </head>
