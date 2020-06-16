@@ -12,14 +12,17 @@
 	"background_color" : "transparent",
 	"related_applications" : "",
 	"prefer_related_applications" : "false",
-	"icons" : [
+	"icons": [
 		{
-			"src": "https://offering.solutions/favicon.ico",
-			"sizes": "16x16"
+		  "src": "https://cdn.offering.solutions/img/offeringsolutions.png",
+		  "type": "image/png",
+		  "sizes": "192x192"
 		},
 		{
-			"src": "https://offering.solutions/favicon.ico",
-			"sizes": "16x16"
-		}],
+		  "src": "https://cdn.offering.solutions/img/offeringsolutions.png",
+		  "type": "image/png",
+		  "sizes": "512x512"
+		}
+	  ],
 	"generated" : "true"
 }
