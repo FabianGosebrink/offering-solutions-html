@@ -4,7 +4,7 @@
 	"name" : "Offering Solutions Software by Fabian Gosebrink",
 	"scope" : "/",
 	"display" : "standalone",
-	"start_url" : "/",
+    "start_url": "https://offering.solutions/",
 	"short_name" : "Offering Solutions",
 	"theme_color" : "#33587a",
 	"description" : "Angular and ASP.NET Core Consulting, Training and Courses",
@@ -52,5 +52,5 @@
 		  "type": "image/png"
 		}
 	  ],
-	"generated" : "true"
+	"url": "https://offering.solutions"
 }
