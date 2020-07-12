@@ -5,16 +5,14 @@ tags: ['speaking', 'microsoft']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2017/01/02/speaking-at-the-microsoft-techdays-2017/"
-]
+aliases: ['/blog/articles/2017/01/02/speaking-at-the-microsoft-techdays-2017/']
 ---
 
 I am very proud to announce that I will be speaking at the Microsoft TechDays 2017 about Angular and ASP.NET Core.
 
 This is the second time I am attending to the Microsoft TechDays. The last time was 2016 and it was a blast - I really enjoyed it.
 
-![Speaking at the Microsoft TechDays 2017](https://cdn.offering.solutions/img/articles/wp-content/uploads/2017/01/C0Q_kTCUcAABfwL-1024x536.jpg)
+![Speaking at the Microsoft TechDays 2017](/img/articles/wp-content/uploads/2017/01/C0Q_kTCUcAABfwL-1024x536.jpg)
 
 In my session which is placed as the last one at the second day, I will get you introduced to ASP.NET Core and how to use it. We will look at general facts around ASP.NET Core as well as the Startup-File, Middlewares and of course an ASP.NET Core WebAPI and the implementation of the HTTP-Verbs.
 

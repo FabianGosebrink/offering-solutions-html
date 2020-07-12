@@ -5,9 +5,8 @@ tags: ['microsoft', 'speaking']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/02/20/talk-on-the-microsoft-techdays-2016-in-baden/"
-]
+aliases:
+  ['/blog/articles/2016/02/20/talk-on-the-microsoft-techdays-2016-in-baden/']
 ---
 
 [TechDays 2016 Baden](https://www.microsoft.com/de-ch/events/techdays)
@@ -16,7 +15,7 @@ aliases: [
 
 I just got the feedback from Microsoft and my talk was rated with 4.5 in Content and 4.6 in Speaker Performance. This means it was rated as the best Talk at the TechDays. Im really happy to read that so thanks to everybody who was in the audience :)
 
-![Feedback](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/02/Feedback.jpg)
+![Feedback](/img/articles/wp-content/uploads/2016/02/Feedback.jpg)
 
 Hope to see you again on some events.
 

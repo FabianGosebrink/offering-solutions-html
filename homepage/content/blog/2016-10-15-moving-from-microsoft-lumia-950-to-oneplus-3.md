@@ -5,9 +5,8 @@ tags: ['lumia', 'oneplus', 'mobile']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/10/15/moving-from-microsoft-lumia-950-to-oneplus-3/"
-]
+aliases:
+  ['/blog/articles/2016/10/15/moving-from-microsoft-lumia-950-to-oneplus-3/']
 ---
 
 In this blogpost I want to share the experience I made moving from Microsoft Lumia 950 to OnePlus 3.
@@ -16,7 +15,7 @@ In this blogpost I want to share the experience I made moving from Microsoft L
 
 Let me clarify that first: I have always been a WP &amp; Lumia-Lover. I had Windows Phones right from the start and never had another phone ever before. So for me it was clear to also jump to the newest one, the 950, and I was sure to love it. But I changed my mind because of several reasons. Let me explain them to you and of course explain you my experiences with my newest phone, the OnePlus3, here.
 
-![dsc_6520](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/DSC_6520.jpg)
+![dsc_6520](/img/articles/wp-content/uploads/2016/10/DSC_6520.jpg)
 
 ### The first doubts
 
@@ -50,13 +49,13 @@ After a short talk with a friend of mine who already has the phone ([Benjamin Ab
 
 It arrived and the first impression was good. It was not overwhelming and not bad. Again: Do not get me wrong, the phone looked awesome! But so did the Lumia 950. There was no "WOW WHAT A PHONE"-Moment there. The 950 set the standard very very high especially looking at the outward appearance.
 
-![dsc_6517](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/DSC_6517.jpg)
+![dsc_6517](/img/articles/wp-content/uploads/2016/10/DSC_6517.jpg)
 
 I booted it and began to invest in how to get my complete Microsoft environment onto Android. My first walking steps if you want.
 
 It turned out that this was not a big deal because Microsoft has alsmost everything you need available for Android. So this was okay. And as I started to work with the phone I realised: Wow, it is freaking fast!!!
 
-![dsc_6521](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/DSC_6521-1024x683.jpg)
+![dsc_6521](/img/articles/wp-content/uploads/2016/10/DSC_6521-1024x683.jpg)
 
 ### Speed
 
@@ -64,13 +63,13 @@ The speed of the phone was really one of the first things that made me stunning.
 
 So the speed was one thing which was very impressive. But I can not say that it is Android itself or the Hardware. But in the end I do not care about what it actually is: Its fast and that is what counts.
 
-![dsc_6524](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/DSC_6524-1024x683.jpg)
+![dsc_6524](/img/articles/wp-content/uploads/2016/10/DSC_6524-1024x683.jpg)
 
 ### Apps
 
 This paragraph now might put a smile on every not-windows-phone-user. But I began to explore and enjoy apps on my mobile device. Which was, like I mentioned, not unfamiliar to me because the 950 HAD Apps (against all rumours there are no apps for the Lumia), but not that many and not that useful ones. I can now have a look into my bank account, I can use a better twitter app, skype, slack, outlook, news-apps, parkkingcard for the place I am living...all this can done via app now. Before most of those apps I use now where not build for windows mobile. And I did not know what I missed because all of the Microsft apps are still there.
 
-![dsc_6518](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/DSC_6518.jpg)
+![dsc_6518](/img/articles/wp-content/uploads/2016/10/DSC_6518.jpg)
 
 ### Internet Data
 
@@ -80,7 +79,7 @@ Another thing I noticed was the data usage of the OnePlus3 or better: of the app
 
 The hardware is also pretty great on both devices. But the OP3 has aluminium which just looks a bit nicer and it has got this notification slider on the side where I can choose which notifications shall come through by only slide this button up and down. This was really impressive. Also the fingerprint sensor I mentioned is cool.
 
-![dsc_6519](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/DSC_6519.jpg)
+![dsc_6519](/img/articles/wp-content/uploads/2016/10/DSC_6519.jpg)
 
 ### What I miss...
 
@@ -92,7 +91,7 @@ The next thing I do not miss directly but it shows me that from my last experien
 
 Also the mentioned camera is a little bit prominent on the back of the phone. I do not care a lot because a friend of mine is sewing me bags for my phone everytime I got a new one so it is covered a little bit, but the Microsoft Lumia solved this problem a little better.
 
-![dsc_6522](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/DSC_6522.jpg)
+![dsc_6522](/img/articles/wp-content/uploads/2016/10/DSC_6522.jpg)
 
 ### Conclusion
 

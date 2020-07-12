@@ -5,9 +5,8 @@ tags: ['angularjs', 'aspnet']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2015/08/25/angularjs-ngresource-demo-with-asp-net-webapi/",
-]
+aliases:
+  ['/blog/articles/2015/08/25/angularjs-ngresource-demo-with-asp-net-webapi/']
 ---
 
 In this blogpost I want to show a simple AngularJS NgResource Demo with ASP.NET WebAPI querying data as JSON.
@@ -20,14 +19,14 @@ NgResource: [https://docs.AngularJS.org/api/ngResource/service/\$resource](http
 
 The application follows the "normal" way of seperating the data access also on client side into services.
 
-![AngularJS NgResource Demo with ASP.NET WebAPI](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/08/folders.png)
+![AngularJS NgResource Demo with ASP.NET WebAPI](/img/articles/wp-content/uploads/2015/08/folders.png)
 
 #### Preparation:
 
 Before you can use angulars ng resource you have to include it into your application like this:
 
 ```javascript
-(function() {
+(function () {
   'use strict';
   angular
     .module('AngularJSDemoApp', [
@@ -39,13 +38,13 @@ Before you can use angulars ng resource you have to include it into your applica
       'toastr',
 
       'home.homeModule',
-      'contact.contactModule'
+      'contact.contactModule',
     ])
     .config([
       'cfpLoadingBarProvider',
-      function(cfpLoadingBarProvider) {
+      function (cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = false;
-      }
+      },
     ]);
 })();
 ```
@@ -55,17 +54,17 @@ So here you are providing "ngResource" to your app.
 After this you can inject the ngResource service provided by angular into your services:
 
 ```javascript
-(function() {
+(function () {
   'use strict';
   angular.module('home.homeModule').factory('home.services.peopleService', [
     '$resource',
-    function($resource) {
+    function ($resource) {
       return $resource('api/home/:id', null, {
         update: {
-          method: 'PUT'
-        }
+          method: 'PUT',
+        },
       });
-    }
+    },
   ]);
 })();
 ```
@@ -91,11 +90,11 @@ Querying all resources:
 ```javascript
 peopleService.query(
   {},
-  function(data) {
+  function (data) {
     //Success
     vm.allPeople = data;
   },
-  function() {
+  function () {
     //Error
   }
 );
@@ -106,10 +105,10 @@ Pay attention to the empty object we are passing in. You could add a single id h
 ```javascript
 peopleService.query(
   { id: 4 },
-  function(data) {
+  function (data) {
     //Success
   },
-  function() {
+  function () {
     //Error
   }
 );
@@ -120,10 +119,10 @@ In case you want to add a new resource, a person in this case, you can just cal
 ```javascript
 peopleService.save(
   vm.newPerson,
-  function(data) {
+  function (data) {
     //Success
   },
-  function(response) {
+  function (response) {
     //Error
   }
 );
@@ -136,10 +135,10 @@ Deleting is self explaining:
 ```javascript
 peopleService.delete(
   { id: personToDelete.Id },
-  function() {
+  function () {
     // success
   },
-  function() {
+  function () {
     //Error
   }
 );

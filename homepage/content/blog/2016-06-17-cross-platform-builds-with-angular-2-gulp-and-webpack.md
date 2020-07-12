@@ -5,10 +5,11 @@ tags: ['angular', 'gulp', 'webpack']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/",
-  "/blog/articles/2016/06/17/cross-platform-builds-with-angular-2-gulp-and-webpack/"
-]
+aliases:
+  [
+    '/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/',
+    '/blog/articles/2016/06/17/cross-platform-builds-with-angular-2-gulp-and-webpack/',
+  ]
 ---
 
 In this blogpost I want to show how to create Cross Platform Builds with Angular, Gulp and Webpack
@@ -25,7 +26,7 @@ Code can be found here: [https://github.com/FabianGosebrink/Foodchooser-ASPNET-A
 
 The folder structure is very important but also one of the most discussed in the internet I think ;). Mine looks like the following:
 
-![Angular2 webpack](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/06/folderStructure.png)
+![Angular2 webpack](/img/articles/wp-content/uploads/2016/06/folderStructure.png)
 
 Whereas "app" contains my Angular 2 application and the other files and folders speak for theirselves.
 
@@ -45,7 +46,7 @@ The solution (or at least one of them) is webpack. Webpack is slightly different
 
 Now I want to show you the files which can make this whole thing possible. See the "gulptasks"-folder to divide the responsibilities of building each target platform.
 
-![angular2 webpack](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/06/gulpFiles.png)
+![angular2 webpack](/img/articles/wp-content/uploads/2016/06/gulpFiles.png)
 
 ### webpack.config.js
 
@@ -58,53 +59,53 @@ module.exports = {
   entry: {
     polyfills: './app/polyfills.ts',
     vendor: './app/vendor.ts',
-    app: './app/main.ts'
+    app: './app/main.ts',
   },
   resolve: {
-    extensions: ['', '.ts', '.js', '.css', '.html']
+    extensions: ['', '.ts', '.js', '.css', '.html'],
   },
   output: {
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
   },
   module: {
     loaders: [
       {
         test: /\.ts$/,
-        loader: 'ts'
+        loader: 'ts',
       },
       {
         test: /\.html$/,
-        loader: 'html'
+        loader: 'html',
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file?name=fonts/[name].[hash].[ext]'
+        loader: 'file?name=fonts/[name].[hash].[ext]',
       },
       {
         test: /\.css$/,
         exclude: './app',
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap'),
       },
       {
         test: /\.css$/,
         include: './app',
-        loader: 'raw'
-      }
-    ]
+        loader: 'raw',
+      },
+    ],
   },
   plugins: [
     new ExtractTextPlugin('[name].bundle.css'),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
+      name: ['app', 'vendor', 'polyfills'],
     }),
     new HtmlWebpackPlugin({
-      template: './index.html'
-    })
+      template: './index.html',
+    }),
   ],
   devServer: {
     historyApiFallback: true,
-    stats: 'minimal'
-  }
+    stats: 'minimal',
+  },
 };
 ```
 
@@ -143,7 +144,7 @@ The plugins section then sticks together every operation we do with the files. S
 But how to deal with gulp? Well...there is an npm package...;) It's called `webpack-stream` and allows us to do tasks like this:
 
 ```javascript
-gulp.task('web-compile-with-webpack', function() {
+gulp.task('web-compile-with-webpack', function () {
   return gulp
     .src('./app/main.js')
     .pipe(webpack(require('../webpack.config.js')))
@@ -199,7 +200,7 @@ Because we also have a dev-server from webpack in the repository above we will h
 The complete tasks for the web solution are:
 
 ```javascript
-gulp.task('build:web:prod', function(done) {
+gulp.task('build:web:prod', function (done) {
   runSeq(
     'web-clean-temp-folder', // cleans the temp folder
     'web-compile-with-webpack', // compiles the sources with webpack
@@ -257,14 +258,14 @@ After we run this the index.html looks quite the same:
 
 But this time the sources got injected. See the dist folder here:
 
-![dist](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/06/dist.png)
+![dist](/img/articles/wp-content/uploads/2016/06/dist.png)
 
 With this approach we can go ahead as usual when building electron or cordova-things with gulp.
 
 See the required steps fo r e.g. a cordova-build here:
 
 ```javascript
-gulp.task('build:electron:prod', function(done) {
+gulp.task('build:electron:prod', function (done) {
   runSeq(
     'electron-clean-temp',
     'electron-compile-with-webpack',

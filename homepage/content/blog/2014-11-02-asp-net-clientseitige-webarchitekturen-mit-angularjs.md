@@ -1,13 +1,14 @@
 ---
 title: ASP.NET - Clientseitige Webarchitekturen mit AngularJS
 date: 2014-11-02
-tags: [ 'angularjs', 'aspnet']
+tags: ['angularjs', 'aspnet']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2014/11/02/asp-net-clientseitige-webarchitekturen-mit-angularjs/",
-]
+aliases:
+  [
+    '/blog/articles/2014/11/02/asp-net-clientseitige-webarchitekturen-mit-angularjs/',
+  ]
 ---
 
 ASP.NET MVC hat, wie der Name schon sagt, die MVC-Struktur auf dem Server etabliert und es ist somit möglich saubere Architekturen auf dem Server zu erstellen.
@@ -24,11 +25,11 @@ Im Folgenden möchte ich eine beispielhafte Architektur aufzeigen und erläutern
 
 Die Struktur bzw Architektur der Client-Applikation liegt in einem Verzeichnis „app“ im root-Verzeichnis der Anwendung.
 
-![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://cdn.offering.solutions/img/articles/2014-11-02/01.png)
+![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](/img/articles/2014-11-02/01.png)
 
 In ihr enthalten ist ein Ordner für Bilder und Scripts, einer für Styles (css-Dateien) und für die Views. Der Skript-Ordner beinhaltet die eigentliche Applikation:
 
-![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://cdn.offering.solutions/img/articles/2014-11-02/adasdasdasd.jpg)
+![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](/img/articles/2014-11-02/adasdasdasd.jpg)
 
 Hier kann man auch schon die clientseitige Architektur bzw. deren Ansatz erkennen: der controllers-Folder bildet den „Namespace“ für Controller ab, der die gleiche Rolle spielt wie in ASP.NET-Anwendungen auch: Er nimmt die Anfragen vom UI entgegen und verarbeitet diese. Dazu arbeitet er mit dem Viewmodel, dass in Angular „\$scope“ getauft wurde.
 
@@ -40,7 +41,7 @@ App.js bietet uns den Start unserer Anwendung. Hier wird die App erstellt und ei
 var firstApp = angular.module('firstApp', [
   'ngRoute',
   'ngResource',
-  'ui.bootstrap'
+  'ui.bootstrap',
 ]);
 ```
 
@@ -50,11 +51,11 @@ Die Controller bieten nun die Möglichkeit, direkt mit dem Viewmodel zu arbeiten
 
 Der Controller versorgt den Scope und empfängt seinerseits Daten aus einem Repository, einem Service etc. Die Datenquelle kann beliebig sein, eben auch eine REST-Schnittstelle. Hierbei würde wiederum ASP.NET WebAPI zum Zuge kommen können.
 
-![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://cdn.offering.solutions/img/articles/2014-11-02/10.png)
+![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](/img/articles/2014-11-02/10.png)
 
 Die Controller bei der Beispiel-Todo-App im Anhang befinden sich in einem seperaten Namespace „controllers“, die Services dazu in einem Namespace „services“.
 
-![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://cdn.offering.solutions/img/articles/2014-11-02/03.png)
+![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](/img/articles/2014-11-02/03.png)
 
 Hierbei kommen die oben genannten Aufgaben zum Tragen.
 
@@ -62,26 +63,26 @@ Der Todo-Service beispielsweise bietet die Funktionen zum Abrufen, Löschen und 
 
 ```javascript
 'use strict';
-firstApp.factory('todoService', function($http) {
+firstApp.factory('todoService', function ($http) {
   var todoService = {};
 
   var urlPrefix = '/api/Todo/';
 
-  var _addTodo = function(todoName) {
+  var _addTodo = function (todoName) {
     var data = { Name: todoName };
     var promise = $http.post(urlPrefix + 'AddTodoItem', data);
     return promise;
   };
 
-  var _deleteTodo = function(item) {
+  var _deleteTodo = function (item) {
     var promise = $http.post(urlPrefix + 'RemoveTodoItem', item);
     return promise;
   };
 
-  var _getTodoItems = function() {
+  var _getTodoItems = function () {
     var promise = $http
       .get(urlPrefix + 'GetAllTodoItems')
-      .then(function(results) {
+      .then(function (results) {
         //console.log(results);
         return results.data;
       });
@@ -99,26 +100,26 @@ firstApp.factory('todoService', function($http) {
 Durch die Registrierung auf der App-Variable „firstApp“ steht nun die Dependency Injection zur Verfügung, die es möglich macht, den Service im Controller zu injecten. Der Controller kann nun die Methoden in Anspruch nehmen.
 
 ```javascript
-firstApp.controller('todoController', function($scope, todoService) {
-  var _addTodo = function() {
+firstApp.controller('todoController', function ($scope, todoService) {
+  var _addTodo = function () {
     todoService.addTodo($scope.TodoItem).then(
-      function() {
+      function () {
         _getTodoItemAndSetOnScope();
       },
-      function() {
+      function () {
         alert('Error occured');
       }
     );
   };
 
-  var _deleteTodo = function(item) {
-    todoService.deleteTodo(item).then(function() {
+  var _deleteTodo = function (item) {
+    todoService.deleteTodo(item).then(function () {
       _getTodoItemAndSetOnScope();
     });
   };
 
-  var _getTodoItemAndSetOnScope = function() {
-    todoService.getTodoItems().then(function(result) {
+  var _getTodoItemAndSetOnScope = function () {
+    todoService.getTodoItems().then(function (result) {
       $scope.todoItems = result;
     });
   };
@@ -134,7 +135,7 @@ firstApp.controller('todoController', function($scope, todoService) {
 Er setzt die Informationen auf dem scope und gibt diese zurück an die View. Diese bekommt per
 
 ```javascript
-ng-controller="todoController"
+ng - controller = 'todoController';
 ```
 
 den Controller mitgeteilt und kann so das konsumieren, was der Controller auf dem Scope setzt. Beispielsweise:

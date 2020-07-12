@@ -5,14 +5,12 @@ tags: ['angularjs', 'courses']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2016/08/17/neue-angular-kurstermine-angekundigt/"
-]
+aliases: ['/blog/articles/2016/08/17/neue-angular-kurstermine-angekundigt/']
 ---
 
 In diesem Blogpost möchte ich bekanntgeben, dass [Digicomp](https://www.digicomp.ch/) neue Kurstermine angekündigt hat, die ich als Trainer betreuen und durchführen darf :) . Die Kurse finden in Bern statt, je nach Teilnehmern auch in Basel und Zürich.
 
-<a href="http://offering.solutions/assets/images/Angular_With_Digicomp.png" target="_blank" rel="https://www.digicomp.ch/weiterbildung/softwareentwicklungs-trainings/webentwicklung/javascript-kurse-und-workshops/frontend-entwicklung-mit-angularjs">![Neue Angular-Kurstermine angekündigt](https://cdn.offering.solutions/img/images/Angular_With_Digicomp.png)</a>
+<a href="http://offering.solutions/assets/images/Angular_With_Digicomp.png" target="_blank" rel="https://www.digicomp.ch/weiterbildung/softwareentwicklungs-trainings/webentwicklung/javascript-kurse-und-workshops/frontend-entwicklung-mit-angularjs">![Neue Angular-Kurstermine angekündigt](https://offering.solutions/img/images/Angular_With_Digicomp.png)</a>
 
 [Zu den Kursterminen](https://www.digicomp.ch/weiterbildung/softwareentwicklungs-trainings/webentwicklung/javascript-kurse-und-workshops/frontend-entwicklung-mit-angularjs)
 

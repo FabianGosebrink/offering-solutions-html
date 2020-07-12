@@ -5,12 +5,13 @@ tags: ['angular', 'aspnet', 'crossplatform']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2016/04/19/angular-asp-net-webapi-azure-cordova-cross-platform-2/"
-]
+aliases:
+  [
+    '/blog/articles/2016/04/19/angular-asp-net-webapi-azure-cordova-cross-platform-2/',
+  ]
 ---
 
-![foodchooser](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/04/foodchooser.jpg)
+![foodchooser](/img/articles/wp-content/uploads/2016/04/foodchooser.jpg)
 
 ### Motivation
 

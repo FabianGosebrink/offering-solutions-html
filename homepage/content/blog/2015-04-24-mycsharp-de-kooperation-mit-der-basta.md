@@ -1,20 +1,18 @@
 ---
 title: MyCSharp.de - Kooperation mit der Basta!
 date: 2015-04-24
-tags: [ 'basta', 'mycsharp']
+tags: ['basta', 'mycsharp']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2015/04/24/mycsharp-de-kooperation-mit-der-basta/",
-]
+aliases: ['/blog/articles/2015/04/24/mycsharp-de-kooperation-mit-der-basta/']
 ---
 
 MyCSharp.de - Kooperation mit der Basta!
 
 Ich freue mich wirklich zu sagen, dass das Team von MyCSharp.de und die Basta! eine Kooperation eingegangen sind und MyCSharp.de Partner der Basta! wird.
 
-![MyCSharp.de - Kooperation mit der Basta!](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/04/Basta-Banner.png)
+![MyCSharp.de - Kooperation mit der Basta!](/img/articles/wp-content/uploads/2015/04/Basta-Banner.png)
 
 Was ist die BASTA!?
 

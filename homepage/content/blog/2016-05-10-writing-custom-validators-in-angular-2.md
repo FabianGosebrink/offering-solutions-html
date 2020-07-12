@@ -5,9 +5,7 @@ tags: ['angular']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/05/10/writing-custom-validators-in-angular-2/"
-]
+aliases: ['/blog/articles/2016/05/10/writing-custom-validators-in-angular-2/']
 ---
 
 In this blogpost I want to show you how you are writing custom validators in Angular.
@@ -61,9 +59,9 @@ import { Validator, FormControl, NG_VALIDATORS } from '@angular/forms';
     {
       provide: NG_VALIDATORS,
       useExisting: forwardRef(() => IsNumberValidator),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class IsNumberValidator implements Validator {
   validate(c: FormControl): { [key: string]: any } {
@@ -71,8 +69,8 @@ export class IsNumberValidator implements Validator {
       // console.log(c.value + " is not a number");
       return {
         isNumber: {
-          valid: false
-        }
+          valid: false,
+        },
       };
     }
 
@@ -96,21 +94,21 @@ import { IsInRangeValidator } from '../validators/isInRange.validator';
 @NgModule({
   imports: [
     // Modules
-    BrowserModule
+    BrowserModule,
   ],
 
   declarations: [
     // Components &amp; directives
 
     IsNumberValidator,
-    IsInRangeValidator
+    IsInRangeValidator,
   ],
 
   providers: [
     // Services
   ],
 
-  exports: [IsNumberValidator, IsInRangeValidator]
+  exports: [IsNumberValidator, IsInRangeValidator],
 })
 export class SharedModule {}
 ```
@@ -125,7 +123,7 @@ import { SharedModule } from './modules/shared.module';
 @NgModule({
   imports: [
     // ...
-    SharedModule
+    SharedModule,
   ],
 
   declarations: [
@@ -136,7 +134,7 @@ import { SharedModule } from './modules/shared.module';
     // ...
   ],
 
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -253,7 +251,7 @@ But it would be nice to show _specific_ error messages to the users and not onl
 
 And that's basically it.
 
-![Angular2CustomValidators](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/Angular2CustomValidators.jpg)
+![Angular2CustomValidators](/img/articles/wp-content/uploads/2016/05/Angular2CustomValidators.jpg)
 
 HTH
 

@@ -1,18 +1,16 @@
 ---
 title: Why I like SCRUM - Tips which may help you
 date: 2014-06-03
-tags: [ 'agile', 'scrum']
+tags: ['agile', 'scrum']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2014/06/03/why-i-like-scrum-tips-which-may-help-you/",
-]
+aliases: ['/blog/articles/2014/06/03/why-i-like-scrum-tips-which-may-help-you/']
 ---
 
 Hi, in this post I want to tell you why I like SCRUM - Tips which may help you
 
-![Why I like SCRUM - Tips which may help you](https://cdn.offering.solutions/img/articles/2014-06-03/08570960-945a-48e4-980d-ef95447107ea.png)
+![Why I like SCRUM - Tips which may help you](/img/articles/2014-06-03/08570960-945a-48e4-980d-ef95447107ea.png)
 
 After I started to be interested in agile management processes, SCRUM took nearly all of my attention and I often hear that people do not understand it or do not know how to get along with it. If your company wants to work with SCRUM you should get an idea of it and learn it. If you do so, this seems quite all right here and you can stop reading. But if you have any doubts about it please read further. If you are not into it and asking yourself the question “Why should I get along with this thing? Processes come and go. It will pass. With or without me”: Read this post. I will try to give you tips for your SCRUM experience and tell you why I like SCRUM. No, let me push this: I love it. There you go:
 

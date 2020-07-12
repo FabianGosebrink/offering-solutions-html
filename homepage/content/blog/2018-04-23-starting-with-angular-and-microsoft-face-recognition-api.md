@@ -5,9 +5,10 @@ tags: ['angular', 'microsoft', 'faceapi']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2018/04/23/starting-with-angular-and-microsoft-face-recognition-api/",
-]
+aliases:
+  [
+    '/blog/articles/2018/04/23/starting-with-angular-and-microsoft-face-recognition-api/',
+  ]
 ---
 
 In this blogpost I want to give you a guidance to the first steps of starting with Microsoft's Face Recognition API and using it with Angular and the Angular CLI.
@@ -50,7 +51,7 @@ var params = {
   returnFaceId: 'true',
   returnFaceLandmarks: 'false',
   returnFaceAttributes:
-    'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'
+    'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise',
 };
 
 // Display the image.
@@ -62,7 +63,7 @@ $.ajax({
   url: uriBase + '?' + $.param(params),
 
   // Request headers.
-  beforeSend: function(xhrObj) {
+  beforeSend: function (xhrObj) {
     xhrObj.setRequestHeader('Content-Type', 'application/json');
     xhrObj.setRequestHeader('Ocp-Apim-Subscription-Key', subscriptionKey);
   },
@@ -70,7 +71,7 @@ $.ajax({
   type: 'POST',
 
   // Request body.
-  data: '{"url": ' + '"' + sourceImageUrl + '"}'
+  data: '{"url": ' + '"' + sourceImageUrl + '"}',
 });
 ```
 
@@ -237,7 +238,7 @@ You can browse all the source code in the repository [here](https://github.com/F
 The result is an application which takes a picture, sends it to an API and then displays the result in a table but you can also see the full response if you want.
 Have fun :)
 
-![AngularFaceRecoginitionApi](https://cdn.offering.solutions/img/articles/2018-04-28/2018-04-28-13_36_07-AngularFaceRecoginitionApi.jpg)
+![AngularFaceRecoginitionApi](/img/articles/2018-04-28/2018-04-28-13_36_07-AngularFaceRecoginitionApi.jpg)
 
 ## Links
 

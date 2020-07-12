@@ -1,13 +1,14 @@
 ---
 title: Structurize your project with areas and services in ASP.NET MVC
 date: 2014-06-01
-tags: [ 'aspnet', 'areas', 'mvc']
+tags: ['aspnet', 'areas', 'mvc']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2014/06/01/structurize-your-project-with-areas-and-services-in-asp-net-mvc/",
-]
+aliases:
+  [
+    '/blog/articles/2014/06/01/structurize-your-project-with-areas-and-services-in-asp-net-mvc/',
+  ]
 ---
 
 In this blogpost I want to show you one possible way to structurize your project with areas and services in ASP.NET MVC.
@@ -36,7 +37,7 @@ Do work with areas. Ever. I know in the beginning it seems useless to you becaus
 
 Areas are adding a separate “room” for a special part of your website with its own controller, models and views.
 
-![Structurize your project with areas and services in ASP.NET MVC](https://cdn.offering.solutions/img/articles/2014-06-01/518fb795-0f60-47a8-8312-5edebe28335b.png)
+![Structurize your project with areas and services in ASP.NET MVC](/img/articles/2014-06-01/518fb795-0f60-47a8-8312-5edebe28335b.png)
 
 Note: You can of course add areas and name them as you want. But I think it’s always good to have a first point where the user first “sees” your application. So remind to have an Area which is giving you this information on the first sight. So name it like “Home” (which is standard). But also “Start” or anything like this would be okay.
 
@@ -48,7 +49,7 @@ In point 1 I mentioned the view- and submitmodels you have to give your view the
 
 You can lay them down in the models-folder. But do not do this on the top-level. Well, you can do this. But I am a fan of namespaces. So I do add a folder for each action I have in the controller (if they have own view-and submitmodels) and add them into this folder.
 
-![Structurize your project with areas and services in ASP.NET MVC](https://cdn.offering.solutions/img/articles/2014-06-01/357eb813-fd76-41dd-b9c6-8bfeaa25ccae.png)
+![Structurize your project with areas and services in ASP.NET MVC](/img/articles/2014-06-01/357eb813-fd76-41dd-b9c6-8bfeaa25ccae.png)
 
 In this screenshot you see an area called “Projects” because it’s only handling everything which is connected to a project-object which can be handled in this web-application. For every action I added a namespace. In this namespace every single viewmodel and submitmodel can be found.
 
@@ -60,11 +61,11 @@ _Conclusion so far: Keep your models in the given “models”-folder the area i
 
 If you added the folders like mentioned in the point before you should also have the views folder looking like the folder structure of your “models”-Folder
 
-![Structurize your project with areas and services in ASP.NET MVC](https://cdn.offering.solutions/img/articles/2014-06-01/35e36f7e-028e-49fd-845a-4ff70ac5147f.png)
+![Structurize your project with areas and services in ASP.NET MVC](/img/articles/2014-06-01/35e36f7e-028e-49fd-845a-4ff70ac5147f.png)
 
 This is good so far. Nothing confusing and everybody gets the idea of what is offered here. Every view has exactly the name of what it offers to the user. Here nothing has to be done so far. Looks clean and nice.
 
-![Structurize your project with areas and services in ASP.NET MVC](https://cdn.offering.solutions/img/articles/2014-06-01/309ab2b9-f3df-4258-9557-b0ce87e33335.png)
+![Structurize your project with areas and services in ASP.NET MVC](/img/articles/2014-06-01/309ab2b9-f3df-4258-9557-b0ce87e33335.png)
 
 Here you can see again the clean folder structure which fits perfectly to the views. For each view you or someone else finds the information immediately. And it presents the fact, that every viewmodels is connected to a view.
 
@@ -78,7 +79,7 @@ We know that the controller receives the requests from your client and handles t
 
 That is why I am using Services inside areas. Such a service works really near the area and has an interface, which is only providing all the methods the controller needs. Nothing more and nothing less. This service also knows view- and submitmodels. This is why the folder is placed beside the models-Folder.
 
-![Structurize your project with areas and services in ASP.NET MVC](https://cdn.offering.solutions/img/articles/2014-06-01/f68f4fa0-7922-4196-9d8f-e9d3105145a5.png)
+![Structurize your project with areas and services in ASP.NET MVC](/img/articles/2014-06-01/f68f4fa0-7922-4196-9d8f-e9d3105145a5.png)
 
 Here on the first sight you only have the interface of the controller service without seeing the real implementation on it. The service is offering everything to the controller what the controller really needs.
 
@@ -86,11 +87,11 @@ Example:
 
 Controller Code:
 
-![Structurize your project with areas and services in ASP.NET MVC](https://cdn.offering.solutions/img/articles/2014-06-01/089027b4-b577-4ae8-853c-accc685f102d.png)
+![Structurize your project with areas and services in ASP.NET MVC](/img/articles/2014-06-01/089027b4-b577-4ae8-853c-accc685f102d.png)
 
 Service-Interface:
 
-![Structurize your project with areas and services in ASP.NET MVC](https://cdn.offering.solutions/img/articles/2014-06-01/f83d4d16-84bc-48a4-8528-d597b7b0672a.png)
+![Structurize your project with areas and services in ASP.NET MVC](/img/articles/2014-06-01/f83d4d16-84bc-48a4-8528-d597b7b0672a.png)
 
 Here you see that in the controller you have only one call to the service which is doing all the work for you. So the controller has only to get the requests, call the method and gives back the result. He does not care about what is in your viewmodel (like errormessages, sucessmessages, etc.)
 
@@ -104,7 +105,7 @@ If you look at the code, you see the next thing I am doing to get a separation o
 
 Every(!) viewmodel gets a factory which gets the viewmodel everything it needs. This is why I have another folder in my service-namespace called “Factories”. I hide this information inside the service namespace because the factories are only used inside this service and nowhere else.
 
-![Structurize your project with areas and services in ASP.NET MVC](https://cdn.offering.solutions/img/articles/2014-06-01/375c85e6-9c17-4768-ba88-28bb635cd7b5.png)
+![Structurize your project with areas and services in ASP.NET MVC](/img/articles/2014-06-01/375c85e6-9c17-4768-ba88-28bb635cd7b5.png)
 
 All the factories are getting injected everything they need to build up the requested viewmodel and every viewmodel has its own factory. So you can test the viewmodels perfectly and one is not related to the other.
 
@@ -112,7 +113,7 @@ All the factories are getting injected everything they need to build up the requ
 
 To summarize, this is how an area could look like:
 
-![Structurize your project with areas and services in ASP.NET MVC](https://cdn.offering.solutions/img/articles/2014-06-01/6fdc0f3b-9843-49f2-8060-dabef9f4e150.png)
+![Structurize your project with areas and services in ASP.NET MVC](/img/articles/2014-06-01/6fdc0f3b-9843-49f2-8060-dabef9f4e150.png)
 
 You have your view which is presenting everything it needs from the viewmodel, which is stored in the models-namespace. The controller has only a minimum of logic in it: Getting requests, calling his service and giving the result back. The controller service is handling everything for the controller by using factories to create viewmodels etc.
 

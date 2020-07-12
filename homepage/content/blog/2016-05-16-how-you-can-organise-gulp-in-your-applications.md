@@ -5,9 +5,8 @@ tags: ['angular', 'gulp']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/"
-]
+aliases:
+  ['/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/']
 ---
 
 In this blogpost I want to show one possibility of organising your gulp tasks in a way that you as a developer can find them quickly and print them to the console in an ordered way.
@@ -32,7 +31,7 @@ I think the best practice here is to seperate gulp itself on the one hand and th
 
 The `gulpfile.js` only contains the tasks whereas a file named like `gulp.config.js` is containing all your files, (temp-)paths, ... .
 
-![How you can organise gulp in your applications](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/gulpAndConfigFile.png 'gulptask folder')
+![How you can organise gulp in your applications](/img/articles/wp-content/uploads/2016/05/gulpAndConfigFile.png 'gulptask folder')
 
 You can include your config file in the gulpfile like this:
 
@@ -91,7 +90,7 @@ It is only containing all the files, paths and general information you want to u
 The gulp-file itself is now only containing the tasks and is consuming the config file.
 
 ```javascript
-gulp.task('web-copy-index-to-webapp-folder', function(done) {
+gulp.task('web-copy-index-to-webapp-folder', function (done) {
   return gulp
     .src(buildConfig.general.indexHtml)
     .pipe(gulp.dest(buildConfig.targets.webAppOutputPath));
@@ -104,7 +103,7 @@ This makes the gulp tasks more generic.
 
 I've seen many ways how people organise the gulp tasks but it turned out for me it was the best way to have a folder called "gulpTasks" (or similar) where I put all my gulptasks in. I've seen this on many other repositories and also on conferences etc. It's always good to have a folder encapsulating all your gulpTasks like this:
 
-![alt text](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/folderGulpTasks.png 'gulptask folder')
+![alt text](/img/articles/wp-content/uploads/2016/05/folderGulpTasks.png 'gulptask folder')
 
 Here I seperate all the different systems I want to have an output for.
 
@@ -124,7 +123,7 @@ Therefore you need to install a `run-sequence`-plugin available [here](https://w
 var gulp = require('gulp');
 var runSeq = require('run-sequence');
 
-gulp.task('build:web:prod', function(done) {
+gulp.task('build:web:prod', function (done) {
   runSeq(
     'web-clean-webapp',
     'web-copy-index-to-webapp-folder',
@@ -146,7 +145,7 @@ What we also did in this step is: We defined a _main task_! This task can be ref
 ```javascript
 require('./gulpTasks/web');
 //...
-gulp.task('build:all', function(done) {
+gulp.task('build:all', function (done) {
   runSeq(
     'build:web:prod',
     // maybe other main build tasks
@@ -200,7 +199,7 @@ gulp.task('help', taskListing.withFilters(/-/));
 
 Which brings the following output:
 
-![tasks output](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/gulpTasks.png 'gulp task output')
+![tasks output](/img/articles/wp-content/uploads/2016/05/gulpTasks.png 'gulp task output')
 
 ## Further steps
 
@@ -212,7 +211,7 @@ One possibility would be going along and define some "main"-tasks and be more ge
 function copySourcesTo(targetFolder) {
   return gulp
     .src(getSourceFiles(buildConfig.source.folder), {
-      base: buildConfig.source.folder
+      base: buildConfig.source.folder,
     })
     .pipe(gulp.dest(targetFolder));
 }
@@ -224,7 +223,7 @@ function copyFromTo(sourceFolder, targetFolder) {
 }
 
 function cleanTemp(done) {
-  del(buildConfig.targets.tempFolder).then(function() {
+  del(buildConfig.targets.tempFolder).then(function () {
     done();
   });
 }

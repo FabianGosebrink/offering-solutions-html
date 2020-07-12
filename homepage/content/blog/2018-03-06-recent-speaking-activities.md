@@ -5,9 +5,7 @@ tags: ['speaking']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2018/03/06/recent-speaking-activities/"
-]
+aliases: ['/blog/articles/2018/03/06/recent-speaking-activities/']
 ---
 
 In this blogpost I want to recap my recent speaking activities and provide you some short information and slides to have it all in a go.
@@ -18,8 +16,8 @@ I spoke at the BASTA! Spring 2018 in Frankfurt two times. The first talk on Wedn
 
 <script async class="speakerdeck-embed" data-id="0b8c3f2d0c0c4626a7bb4ec961811ce6" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
-![Basta Picture 1](https://cdn.offering.solutions/img/articles/2018-03-06/25629336177_5a847ded2a_o.jpg)
-![Basta Picture 1](https://cdn.offering.solutions/img/articles/2018-03-06/26629153398_08537cede7_o.jpg)
+![Basta Picture 1](/img/articles/2018-03-06/25629336177_5a847ded2a_o.jpg)
+![Basta Picture 1](/img/articles/2018-03-06/26629153398_08537cede7_o.jpg)
 
 The second talk at the BASTA! was about the modern web toolchain. There we went through all the tooling and all the frameworks and tools you probably have to face if you are getting started with web development nowadays. You can get the slides for that right here
 

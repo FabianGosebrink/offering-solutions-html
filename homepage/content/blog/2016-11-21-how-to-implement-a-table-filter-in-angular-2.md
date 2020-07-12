@@ -5,9 +5,8 @@ tags: ['angular', 'filter']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/11/21/how-to-implement-a-table-filter-in-angular-2/"
-]
+aliases:
+  ['/blog/articles/2016/11/21/how-to-implement-a-table-filter-in-angular-2/']
 ---
 
 In this post I want to show you how to implement a table filter in Angular.
@@ -16,7 +15,7 @@ Code: [https://github.com/FabianGosebrink/ASPNETCore-Angular-Ngrx/blob/master/c
 
 A table in your application is maybe one of the most used controls. So is a filter for the table.
 
-![In this post I want to show you how to implement a table filter in Angular](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/filter-1024x133.jpg)
+![In this post I want to show you how to implement a table filter in Angular](/img/articles/wp-content/uploads/2016/11/filter-1024x133.jpg)
 
 You can achieve this using a pipe:
 
@@ -24,7 +23,7 @@ You can achieve this using a pipe:
 import { Pipe, PipeTransform, Injectable } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
 })
 @Injectable()
 export class FilterPipe implements PipeTransform {
@@ -36,7 +35,7 @@ export class FilterPipe implements PipeTransform {
       return items;
     }
 
-    return items.filter(singleItem =>
+    return items.filter((singleItem) =>
       singleItem[field].toLowerCase().includes(value.toLowerCase())
     );
   }
@@ -58,12 +57,12 @@ import { FilterPipe } from '../pipes/filter.pipe';
 @NgModule({
   imports: [
     // Modules
-    CommonModule
+    CommonModule,
   ],
 
   declarations: [
     // Components &amp; directives
-    FilterPipe
+    FilterPipe,
   ],
 
   providers: [
@@ -72,8 +71,8 @@ import { FilterPipe } from '../pipes/filter.pipe';
 
   exports: [
     // ...
-    FilterPipe
-  ]
+    FilterPipe,
+  ],
 })
 export class SharedModule {}
 ```
@@ -92,9 +91,9 @@ import { SharedModule } from './modules/shared.module';
   imports: [
     // ...
     BrowserModule,
-    SharedModule
+    SharedModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -106,16 +105,15 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 // ...
 
 @Component({
-    selector: 'app-foodlist',
-    templateUrl: './food-list.component.html',
-    styleUrls: ['./food-list.component.css'],
+  selector: 'app-foodlist',
+  templateUrl: './food-list.component.html',
+  styleUrls: ['./food-list.component.css'],
 })
-
 export class FoodListComponent {
-    foodItem: FoodItem;
-    searchString: string;
+  foodItem: FoodItem;
+  searchString: string;
 
-    // ...
+  // ...
 }
 ```
 
@@ -156,7 +154,7 @@ export class FoodListComponent {
 
 Now the table is filtered after the field "name" by the string which is typed into the searchString-input.
 
-![In this post I want to show you how to implement a table filter in Angular](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/searchFilter-1024x316.gif)
+![In this post I want to show you how to implement a table filter in Angular](/img/articles/wp-content/uploads/2016/11/searchFilter-1024x316.gif)
 
 HTH
 

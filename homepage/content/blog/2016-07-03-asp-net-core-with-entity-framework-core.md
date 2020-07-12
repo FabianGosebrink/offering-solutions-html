@@ -5,10 +5,11 @@ tags: ['aspnetcore', 'entityframeworkcore']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/07/03/asp-net-core-1-0-with-entity-framework-core/",
-  "/blog/articles/2016/07/03/asp-net-core-with-entity-framework-core/"
-]
+aliases:
+  [
+    '/blog/articles/2016/07/03/asp-net-core-1-0-with-entity-framework-core/',
+    '/blog/articles/2016/07/03/asp-net-core-with-entity-framework-core/',
+  ]
 ---
 
 In this repository I want to show the first steps with Entity Framework Core and ASP.NET Core 1.0.
@@ -23,9 +24,9 @@ Please read this readme and think of executing `Add-Migration [MyMigrationName]`
 
 The database should now be visible inside your SQL Server Management Studio.
 
-![ASP.NET CORE 1.0 with Entity Framework Core](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/07/database.jpg)
+![ASP.NET CORE 1.0 with Entity Framework Core](/img/articles/wp-content/uploads/2016/07/database.jpg)
 
-![ASP.NET CORE 1.0 with Entity Framework Core](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/07/folderstructure.jpg)
+![ASP.NET CORE 1.0 with Entity Framework Core](/img/articles/wp-content/uploads/2016/07/folderstructure.jpg)
 
 ## Project.json
 
@@ -152,7 +153,7 @@ In the DbContext you pass the DbSet of your Entites as you are used to it when w
 
 If you now run the solution you can perform CRUD operations for example via postman, angular etc...
 
-![ASP.NET CORE 1.0 with Entity Framework Core](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/07/postmandatabase.jpg)
+![ASP.NET CORE 1.0 with Entity Framework Core](/img/articles/wp-content/uploads/2016/07/postmandatabase.jpg)
 
 ## Links
 

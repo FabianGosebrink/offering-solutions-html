@@ -5,9 +5,8 @@ tags: ['angular', 'endtoend', 'cypress', 'travisci']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2018/06/01/running-cypress-tests-in-angular-with-travis-ci/",
-]
+aliases:
+  ['/blog/articles/2018/06/01/running-cypress-tests-in-angular-with-travis-ci/']
 ---
 
 In the last blogpost I explained how to get started with cypress tests. The next step would be running these tests in a Continuous Integration and Continuous Delivery (CI and CD) environment. The advantage of this is that with every commit the tests are being executed automatically and you get feedback about wether your application is still doing good or not automatically.
@@ -123,7 +122,7 @@ First, we set the language to node_js defining the version afterwards. The `inst
 
 If you connected your github repository to travis and added this file with the next checkin the build should automatically trigger and your cypress tests should run automatically.
 
-![CypressTravis](https://cdn.offering.solutions/img/articles/2018-06-01/cypress-travis.gif)
+![CypressTravis](/img/articles/2018-06-01/cypress-travis.gif)
 
 HTH
 

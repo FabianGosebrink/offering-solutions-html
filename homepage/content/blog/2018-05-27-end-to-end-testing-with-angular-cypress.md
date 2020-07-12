@@ -5,9 +5,7 @@ tags: ['angular', 'endtoend', 'cypress']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2018/05/27/end-to-end-testing-with-angular-cypress/",
-]
+aliases: ['/blog/articles/2018/05/27/end-to-end-testing-with-angular-cypress/']
 ---
 
 In this blogpost we will cover how to get started with end to end testing using cypress and angular and the AngularCLI.
@@ -42,7 +40,7 @@ If you now start the cypress tests you will notice that cypress created a folder
 The application is rather simple and is just a Todo-List which we want to test end-to-end.
 We have a form component which can throw the output of an added todo and a list component which can mark items as "done" and expects a list of items as input.
 
-![Todoapplication](https://cdn.offering.solutions/img/articles/2018-05-29/todo-cypress.gif)
+![Todoapplication](/img/articles/2018-05-29/todo-cypress.gif)
 
 ```html
 <p>
@@ -125,7 +123,7 @@ We do not want to write that `cy.visit('http://localhost:4200');` everytime, so 
 
 ```javascript
 describe('My First Test', () => {
-  beforeEach(function() {
+  beforeEach(function () {
     cy.visit('http://localhost:4200');
   });
 
@@ -222,7 +220,7 @@ What I personally extremely like is that you can step through your tests via vir
 
 Please check out the complete API [here](https://docs.cypress.io/api/introduction/api.html).
 
-![todo-application-snapshots](https://cdn.offering.solutions/img/articles/2018-05-29/todo-cypress_2.gif)
+![todo-application-snapshots](/img/articles/2018-05-29/todo-cypress_2.gif)
 
 I hope I could give a a sneap peek on how easy it is to write end-to-end-tests with cypress.
 

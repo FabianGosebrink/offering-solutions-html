@@ -5,9 +5,7 @@ tags: ['aspnetcore', 'webapi']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2016/07/29/how-to-create-an-asp-net-core-webapi/"
-]
+aliases: ['/blog/articles/2016/07/29/how-to-create-an-asp-net-core-webapi/']
 ---
 
 In this blogpost I want to show you how to create an ASP.NET Core WebAPI. We will use a custom mapper (you could use AutoMapper for this instead, a repository which is a singleton in this blog here and we will use the normal CRUD operations to Create, Read, Update and Delete in the "database" here.
@@ -16,8 +14,8 @@ Code here [https://github.com/FabianGosebrink/ASPNETCore-WebAPI-Sample](https://
 
 ### Visual Studio
 
-![AspNetCoreWebApi0](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/07/AspNetCoreWebApi0.jpg)
-![AspNetCoreWebApi02](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/07/AspNetCoreWebApi02.jpg)
+![AspNetCoreWebApi0](/img/articles/wp-content/uploads/2016/07/AspNetCoreWebApi0.jpg)
+![AspNetCoreWebApi02](/img/articles/wp-content/uploads/2016/07/AspNetCoreWebApi02.jpg)
 
 We will start with the ASP.NET Startup-File
 
@@ -456,6 +454,6 @@ public class HouseController : Controller
 
 Now we can go ahead and test this with a tool like postman or whatever:
 
-![Create an ASP.NET Core 1.1 WebAPI](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/07/AspNetCoreWebApi1.jpg)
+![Create an ASP.NET Core 1.1 WebAPI](/img/articles/wp-content/uploads/2016/07/AspNetCoreWebApi1.jpg)
 
-![AspNetCoreWebApi3](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/07/AspNetCoreWebApi3.jpg)
+![AspNetCoreWebApi3](/img/articles/wp-content/uploads/2016/07/AspNetCoreWebApi3.jpg)

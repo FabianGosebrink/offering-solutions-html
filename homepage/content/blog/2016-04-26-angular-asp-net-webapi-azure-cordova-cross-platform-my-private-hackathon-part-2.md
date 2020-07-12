@@ -5,9 +5,10 @@ tags: ['angular', 'aspnet', 'crossplatform']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/04/26/angular-asp-net-webapi-azure-cordova-cross-platform-my-private-hackathon-part-2/"
-]
+aliases:
+  [
+    '/blog/articles/2016/04/26/angular-asp-net-webapi-azure-cordova-cross-platform-my-private-hackathon-part-2/',
+  ]
 ---
 
 In the last [blogpost](http://offering.solutions/blog/articles/2016/04/19/angular-asp-net-webapi-azure-cordova-cross-platform-2/)I lost a few words about the REST-API the FoodChooser is talking to. In this blog I want to talk about the clients I developed. This is: Angular, ASP.NET WebAPI, Azure & Cordova, Cross Platform – My Private Hackathon Part 2.
@@ -28,7 +29,7 @@ Inside this blog I want to loose a few words about how I wrote them what the pit
 
 The application is divieded into several components with its child components. Due to the fact that the application is not that big at all there is no huge hierarchy.
 
-![Angular 2, ASP.NET WebAPI, Azure & Cordova, Cross Platform](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/04/SiteMap.png)
+![Angular 2, ASP.NET WebAPI, Azure & Cordova, Cross Platform](/img/articles/wp-content/uploads/2016/04/SiteMap.png)
 
 So the only interesting thing is the Food-Component which has two child Components "FoodForm" and "FoodList".
 
@@ -161,7 +162,7 @@ Further I took a decorator to hook into the creation of components to check if t
 import {
   CanActivate,
   ComponentInstruction,
-  Router
+  Router,
 } from '@angular/router-deprecated';
 import { Injector } from '@angular/core';
 import { appInjector } from '../shared/services/appInjector';
@@ -231,7 +232,7 @@ require('./gulpTasks/web');
 require('./gulpTasks/electron');
 require('./gulpTasks/cordova');
 
-gulp.task('build:all', function(done) {
+gulp.task('build:all', function (done) {
   runSeq('build:web:prod', 'build:electron:prod', 'build:apps', done);
 });
 ```
@@ -239,7 +240,7 @@ gulp.task('build:all', function(done) {
 For example here is the electron gulp file, which turns this application into an exe
 
 ```javascript
-gulp.task('build:electron:prod', function(done) {
+gulp.task('build:electron:prod', function (done) {
   runSeq(
     'electron-clean-temp',
     'electron-compile-with-webpack',
@@ -255,7 +256,7 @@ gulp.task('build:electron:prod', function(done) {
 For cordova
 
 ```javascript
-gulp.task('build:apps', function(done) {
+gulp.task('build:apps', function (done) {
   runSeq(
     'cordova-clean-temp',
     'cordova-copy-config-to-temp',

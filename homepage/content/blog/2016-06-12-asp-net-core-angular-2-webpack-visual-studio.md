@@ -5,15 +5,16 @@ tags: ['angular', 'aspnetcore']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/06/12/asp-net-core-angular-webpack-visual-studio/",
-  "/blog/articles/2016/06/12/asp-net-core-angular-2-webpack-visual-studio/"
-]
+aliases:
+  [
+    '/blog/articles/2016/06/12/asp-net-core-angular-webpack-visual-studio/',
+    '/blog/articles/2016/06/12/asp-net-core-angular-2-webpack-visual-studio/',
+  ]
 ---
 
 This article shows how to use ASP.NET Core and Angular with webpack and Visual Studio. Both the client and the server side of the application is implemented inside one ASP.NET Core project which makes it easier to deploy.
 
-![vs_webpack_angular2](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/06/vs_webpack_angular2.png)
+![vs_webpack_angular2](/img/articles/wp-content/uploads/2016/06/vs_webpack_angular2.png)
 
 **Code:** [https://github.com/damienbod/Angular2WebpackVisualStudio](https://github.com/damienbod/Angular2WebpackVisualStudio)
 
@@ -176,23 +177,23 @@ console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
 module.exports = {
   devtool: 'source-map',
   performance: {
-    hints: false
+    hints: false,
   },
   entry: {
     polyfills: './angularApp/polyfills.ts',
     vendor: './angularApp/vendor.ts',
-    app: './angularApp/main.ts'
+    app: './angularApp/main.ts',
   },
 
   output: {
     path: __dirname + '/wwwroot/',
     filename: 'dist/[name].bundle.js',
     chunkFilename: 'dist/[id].chunk.js',
-    publicPath: '/'
+    publicPath: '/',
   },
 
   resolve: {
-    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
+    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
   },
 
   devServer: {
@@ -200,8 +201,8 @@ module.exports = {
     contentBase: path.join(__dirname, '/wwwroot/'),
     watchOptions: {
       aggregateTimeout: 300,
-      poll: 1000
-    }
+      poll: 1000,
+    },
   },
 
   module: {
@@ -213,32 +214,32 @@ module.exports = {
           'angular-router-loader',
           'angular2-template-loader',
           'source-map-loader',
-          'tslint-loader'
-        ]
+          'tslint-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
-        loader: 'file-loader?name=assets/[name]-[hash:6].[ext]'
+        loader: 'file-loader?name=assets/[name]-[hash:6].[ext]',
       },
       {
         test: /favicon.ico$/,
-        loader: 'file-loader?name=/[name].[ext]'
+        loader: 'file-loader?name=/[name].[ext]',
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader',
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.html$/,
-        loader: 'raw-loader'
-      }
+        loader: 'raw-loader',
+      },
     ],
-    exprContextCritical: false
+    exprContextCritical: false,
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'polyfills'] }),
@@ -248,13 +249,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       inject: 'body',
-      template: 'angularApp/index.html'
+      template: 'angularApp/index.html',
     }),
 
     new CopyWebpackPlugin([
-      { from: './angularApp/images/*.*', to: 'assets/', flatten: true }
-    ])
-  ]
+      { from: './angularApp/images/*.*', to: 'assets/', flatten: true },
+    ]),
+  ],
 };
 ```
 
@@ -276,24 +277,24 @@ module.exports = {
   entry: {
     vendor: './angularApp/vendor.ts',
     polyfills: './angularApp/polyfills.ts',
-    app: './angularApp/main-aot.ts' // AoT compilation
+    app: './angularApp/main-aot.ts', // AoT compilation
   },
 
   output: {
     path: './wwwroot/',
     filename: 'dist/[name].[hash].bundle.js',
     chunkFilename: 'dist/[id].[hash].chunk.js',
-    publicPath: '/'
+    publicPath: '/',
   },
 
   resolve: {
-    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
+    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
   },
 
   devServer: {
     historyApiFallback: true,
     stats: 'minimal',
-    outputPath: path.join(__dirname, 'wwwroot/')
+    outputPath: path.join(__dirname, 'wwwroot/'),
   },
 
   module: {
@@ -302,32 +303,32 @@ module.exports = {
         test: /\.ts$/,
         loaders: [
           'awesome-typescript-loader',
-          'angular-router-loader?aot=true&genDir=aot/'
-        ]
+          'angular-router-loader?aot=true&genDir=aot/',
+        ],
       },
       {
         test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
-        loader: 'file-loader?name=assets/[name]-[hash:6].[ext]'
+        loader: 'file-loader?name=assets/[name]-[hash:6].[ext]',
       },
       {
         test: /favicon.ico$/,
-        loader: 'file-loader?name=/[name].[ext]'
+        loader: 'file-loader?name=/[name].[ext]',
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader',
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.html$/,
-        loader: 'raw-loader'
-      }
+        loader: 'raw-loader',
+      },
     ],
-    exprContextCritical: false
+    exprContextCritical: false,
   },
 
   plugins: [
@@ -335,27 +336,27 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
       },
       output: {
-        comments: false
+        comments: false,
       },
-      sourceMap: false
+      sourceMap: false,
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor', 'polyfills']
+      name: ['vendor', 'polyfills'],
     }),
 
     new HtmlWebpackPlugin({
       filename: 'index.html',
       inject: 'body',
-      template: 'angularApp/index.html'
+      template: 'angularApp/index.html',
     }),
 
     new CopyWebpackPlugin([
-      { from: './angularApp/images/*.*', to: 'assets/', flatten: true }
-    ])
-  ]
+      { from: './angularApp/images/*.*', to: 'assets/', flatten: true },
+    ]),
+  ],
 };
 ```
 

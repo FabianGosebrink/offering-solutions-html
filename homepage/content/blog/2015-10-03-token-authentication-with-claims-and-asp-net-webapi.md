@@ -5,9 +5,10 @@ tags: ['aspnet', 'authentication']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2015/10/03/token-authentication-with-claims-and-asp-net-webapi/",
-]
+aliases:
+  [
+    '/blog/articles/2015/10/03/token-authentication-with-claims-and-asp-net-webapi/',
+  ]
 ---
 
 In this post I would like to show you the most simple example about TToken Authentication with Claims and ASP.NET WebAPI.
@@ -81,14 +82,14 @@ But how to consume it?
 
 So we have created the enpoint...lets request it with a POST-Request. (I am using Postman here)
 
-![1](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/1.jpg)
+![1](/img/articles/wp-content/uploads/2015/10/1.jpg)
 
 So send a post request to the token enpoint we created. Take a look at the "x-www-form-urlencoded" which is very important! Also see the "grant_type" which is set to "password". Without this you will not reach the token endpoint. username and password are equal due to the fact we check it for equality in your OAuthProvider we introduced before.
 
-![2](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/2.jpg)
+![2](/img/articles/wp-content/uploads/2015/10/2.jpg)
 Also check that in the Headers-Section we set the content-type to "application/x-www-form-encoded". Firing this request reaches the endpoint and is giving us a valid token:
 
-![3](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/31.jpg)
+![3](/img/articles/wp-content/uploads/2015/10/31.jpg)
 
 There you go. if we now copy this token and send it to a controller we tagged with the [authorize]-Attribute like this:
 
@@ -108,7 +109,7 @@ public class ValuesController : ApiController
 }
 ```
 
-![Token Authentication with Claims and ASP.NET WebAPI](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/41.jpg)
+![Token Authentication with Claims and ASP.NET WebAPI](/img/articles/wp-content/uploads/2015/10/41.jpg)
 
 Note that we added the "Authorization".Header with the "Bearer" and the token we just received. We can send it and receive the protected resource.
 

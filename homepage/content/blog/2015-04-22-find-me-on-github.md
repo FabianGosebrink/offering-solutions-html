@@ -1,13 +1,11 @@
 ---
 title: WPF crashes with 'OutOfMemoryException' when loading PNGs in Windows 8.1
 date: 2015-04-22
-tags: [ 'github']
+tags: ['github']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2015/04/22/find-me-on-github/",
-]
+aliases: ['/blog/articles/2015/04/22/find-me-on-github/']
 ---
 
 I just wanted to mention that you can find me on GitHub from now on. I am available on GitHub with my personal profile.
@@ -20,7 +18,7 @@ Feel free to do pull requests and contribute on what I coded.
 
 [https://github.com/FabianGosebrink](https://github.com/FabianGosebrink)
 
-![Find me on GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/04/FabianGosebrinkGithub.jpg)
+![Find me on GitHub](/img/articles/wp-content/uploads/2015/04/FabianGosebrinkGithub.jpg)
 
 Sometimes you will find a "\_gitAssets"-Folder in my repos which are not for holding anything code specific but they hold pictures or anything used in the readme markdown. Just to ensure the repository is complete I would like to host them directly within the repository.
 

@@ -1,13 +1,11 @@
 ---
 title: Creating a business logic in ASP.NET MVC
 date: 2014-06-10
-tags: [ 'aspnet', 'mvc']
+tags: ['aspnet', 'mvc']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2014/06/10/creating-a-business-logic-in-asp-net-mvc/",
-]
+aliases: ['/blog/articles/2014/06/10/creating-a-business-logic-in-asp-net-mvc/']
 ---
 
 In this bogpost I want to show you one possible way creating a business logic in ASP.NET MVC.
@@ -36,7 +34,7 @@ Concrete example: You have a service which is giving you Chart-Data to display a
 
 <span style="color: #808080;">Note. How to get along with DotNet Highcharts I am describing <a title="How to include DotNet.HighCharts in ASP.NET MVC with ViewModels" href="http://offering.solutions/blog/articles/2014/05/09/how-to-include-dotnet-highcharts-in-asp-net-mvc-with-viewmodels/" target="_blank"><span style="color: #808080;">here</span></a>.</span>
 
-![ASP.NET MVC - Creating a business logic](https://cdn.offering.solutions/img/articles/2014-06-10/42abe410-8ef5-44a4-9794-ab531b8b3751.png)
+![ASP.NET MVC - Creating a business logic](/img/articles/2014-06-10/42abe410-8ef5-44a4-9794-ab531b8b3751.png)
 
 Here you see an area service called “ChartService” which is, when you collapse the whole thing, only visible to the outside through his interface (information hiding, I mentioned this in part I of this article here). His _Impl_-namespace contains the direct implementation. Everything which is connected to this service also takes place in this namespace, as long as it’s only needed there. In this case we have a special factory which creates the chart (interface/impl) and a very “stupid” container class “ChartData” which summarizes the data for a chart.
 
@@ -44,9 +42,9 @@ Note: this could be any worker service for you. I just choose this one because i
 
 Let’s see some code:
 
-![ASP.NET MVC - Creating a business logic](https://cdn.offering.solutions/img/articles/2014-06-10/eeb62a78-705e-44eb-a404-07fbaa25cbb1.png)
+![ASP.NET MVC - Creating a business logic](/img/articles/2014-06-10/eeb62a78-705e-44eb-a404-07fbaa25cbb1.png)
 
-![ASP.NET MVC - Creating a business logic](https://cdn.offering.solutions/img/articles/2014-06-10/065fd0da-6b2b-4515-9521-7ae6c58e434c.png)
+![ASP.NET MVC - Creating a business logic](/img/articles/2014-06-10/065fd0da-6b2b-4515-9521-7ae6c58e434c.png)
 
 You see that this service knows the factory and just calls it after he collects the data from the database.
 
@@ -56,7 +54,7 @@ The point is: You are having a tier which is calling the database, collecting in
 
 Conclusion so far: Sometimes you have a lot of work to do with some database data or your requests are a little bit more complex. So do separate this in services which can be called from your areas/controller-services. This is the first part of the middle-tier.
 
-![ASP.NET MVC - Creating a business logic](https://cdn.offering.solutions/img/articles/2014-06-10/cfe740e3-d82b-4dd4-9aa6-c6442e0a29f5.png)
+![ASP.NET MVC - Creating a business logic](/img/articles/2014-06-10/cfe740e3-d82b-4dd4-9aa6-c6442e0a29f5.png)
 
 **Business services**
 
@@ -70,7 +68,7 @@ Lets do another kind of service and call them _business services_. Examples for 
 
 These “worker services” are doing some work which stands a little bit beside the normal CRUD-operations you normally have in a web application.
 
-![ASP.NET MVC - Creating a business logic](https://cdn.offering.solutions/img/articles/2014-06-10/579ec6cf-55e4-43c4-98d3-44927c68a9c3.png)
+![ASP.NET MVC - Creating a business logic](/img/articles/2014-06-10/579ec6cf-55e4-43c4-98d3-44927c68a9c3.png)
 
 In this example you see two services which represent classical business services and are only worker-bees producing an outcome of something you give them. Here you can have a little, but normally you have no database-contact. If you have this, this is only reading data. Never writing something into it.
 
@@ -78,7 +76,7 @@ On the screenshot you also see the namespaces “Impl” which hides the impleme
 
 So we are extending our logic-layer with the business services and have now area services and business services in it.
 
-![ASP.NET MVC - Creating a business logic](https://cdn.offering.solutions/img/articles/2014-06-10/ef98f768-1b25-4196-a477-9e9e7f15d424.png)
+![ASP.NET MVC - Creating a business logic](/img/articles/2014-06-10/ef98f768-1b25-4196-a477-9e9e7f15d424.png)
 
 Of course these services can and should be provided in different projects to have several dlls. But with this, every layer should have an api-project to represent it and this api-dll should be referenced from the projects which needs it.
 

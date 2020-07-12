@@ -5,16 +5,15 @@ tags: ['microsoft', 'mvpsummit']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2015/11/04/zu-gast-beim-mvp-global-summit-bei-microsoft/",
-]
+aliases:
+  ['/blog/articles/2015/11/04/zu-gast-beim-mvp-global-summit-bei-microsoft/']
 ---
 
 Hi,
 
 heute ist Halbzeit. Die Hälfte ist vorbei und ich hab gedacht, dass dies ein guter Zeitpunkt ist um mal das erste Fazit von meinem ersten MVP Global Summit zu ziehen.
 
-![Zu Gast beim MVP Global Summit bei Microsoft](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/IMG-20151104-WA0001.jpg)
+![Zu Gast beim MVP Global Summit bei Microsoft](/img/articles/wp-content/uploads/2015/11/IMG-20151104-WA0001.jpg)
 
 Was ich hier im Global Summit erleben und erfahren darf hätte ich mir so niemals ausgemalt. Der Flug war sehr lang, aber das Event ist es mehr als Wert.
 
