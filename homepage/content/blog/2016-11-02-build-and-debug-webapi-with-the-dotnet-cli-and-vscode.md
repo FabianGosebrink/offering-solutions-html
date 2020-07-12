@@ -29,7 +29,7 @@ First you have to download the dotnet CLI
 
 You can check if the CLI is running correctly by typing "dotnet" into your cmd. Something like this should appear:
 
-![buildawebapiwithvscodeandthedotnetcli_01](/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_01.jpg)</a>
+![buildawebapiwithvscodeandthedotnetcli_01](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_01.jpg)</a>
 
 Now we can type "code ." to start Visual Studio Code and add some content.
 
@@ -163,7 +163,7 @@ namespace DotnetcliWebApi
 
 If you now type "dotnet run" your api starts.
 
-![buildawebapiwithvscodeandthedotnetcli_02](/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_02.jpg)
+![buildawebapiwithvscodeandthedotnetcli_02](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_02.jpg)
 
 That was easy, right?
 
@@ -173,7 +173,7 @@ Lets add some content.
 
 Add the folders and files:
 
-![buildawebapiwithvscodeandthedotnetcli_03](/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_03.jpg)
+![buildawebapiwithvscodeandthedotnetcli_03](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_03.jpg)
 
 The repository can be found here:
 
@@ -208,19 +208,19 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 If you now type "dotnet build" it should build everyting. The warnings are because of we ware doing nothing with the exception variable. You should handle them anyhow in a real world project.
 
-![Build and debug WebAPI with the Dotnet CLI and VSCode](/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_04.jpg)
+![Build and debug WebAPI with the Dotnet CLI and VSCode](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_04.jpg)
 
 If you now do "dotnet run" on your console, your webapi starts up and you can use it:
 
-![Build and debug WebAPI with the Dotnet CLI and VSCode](/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_05-1024x555.jpg)
+![Build and debug WebAPI with the Dotnet CLI and VSCode](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_05-1024x555.jpg)
 
 ### Debugging
 
 We can now also debug the webapi with vscode. Therefore you only have to cancel the running process first and then hit the start button in the debug tab from vscode:
 
-![Build and debug a WebAPI with the Dotnet CLI and VSCode](/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_06-1024x555.jpg)
+![Build and debug a WebAPI with the Dotnet CLI and VSCode](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_06-1024x555.jpg)
 
-![Build and debug a WebAPI with the Dotnet CLI and VSCode](/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_07-1024x553.jpg)
+![Build and debug a WebAPI with the Dotnet CLI and VSCode](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/BuildaWebAPIwithVSCodeandtheDotNetCLI_07-1024x553.jpg)
 
 So this is it. You now have built a ASP.NET WebAPI only with the dotnet cli and Visual Studio Code (vscode)
 

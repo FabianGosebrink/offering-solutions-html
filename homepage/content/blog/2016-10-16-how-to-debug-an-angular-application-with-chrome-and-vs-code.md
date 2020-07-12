@@ -21,11 +21,11 @@ You can find it here
 
 or search in the extensions tab for the plugin directly:
 
-![How to debug an Angular application with Chrome and VS Code](/img/articles/wp-content/uploads/2016/10/HowtodebuganAngular2applicationwithChromeandVSCode_01.jpg)
+![How to debug an Angular application with Chrome and VS Code](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/HowtodebuganAngular2applicationwithChromeandVSCode_01.jpg)
 
 After installing you probably have to enable the plugin and restart VS Code but in the end you will see your folder structure like normal. Then head over to the debug tab and press the button for creating you an new configuration and select the "Chrome" environment.
 
-![How to debug an Angular application with Chrome and VS Code](/img/articles/wp-content/uploads/2016/10/HowtodebuganAngular2applicationwithChromeandVSCode_02-1024x276.jpg)
+![How to debug an Angular application with Chrome and VS Code](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/HowtodebuganAngular2applicationwithChromeandVSCode_02-1024x276.jpg)
 
 After doing this the extension created a new folder (if you do not have it already) called ".vscode" and a "launch.json" in it initially looking like this:
 

@@ -21,13 +21,13 @@ First log into your VSTS account by typing something like in the browser and ent
 
 Then navigate to your normal administration site on the upper right corner by selection the rack-wheel.
 
-![Deleting a Team Project on Visual Studio Team Services](/img/articles/2014-04-14/86d30c51-7e99-4f27-b8b9-95dc01d70f34.png)
+![Deleting a Team Project on Visual Studio Team Services](https://cdn.offering.solutions/img/articles/2014-04-14/86d30c51-7e99-4f27-b8b9-95dc01d70f34.png)
 
 Then normally you would go to the team administration page and try to delete it:
 
-![Deleting a Team Project on Visual Studio Team Services](/img/articles/2014-04-14/617af661-7546-4198-8760-396d4faff02b.png)
+![Deleting a Team Project on Visual Studio Team Services](https://cdn.offering.solutions/img/articles/2014-04-14/617af661-7546-4198-8760-396d4faff02b.png)
 
-![Deleting a Team Project on Visual Studio Team Services](/img/articles/2014-04-14/874048f6-0be0-4d2b-b032-02aa182f5f57.png)
+![Deleting a Team Project on Visual Studio Team Services](https://cdn.offering.solutions/img/articles/2014-04-14/874048f6-0be0-4d2b-b032-02aa182f5f57.png)
 
 But as you see: Even if you are an adminsitrator of the project it is grayed out.
 
@@ -35,11 +35,11 @@ But as you see: Even if you are an adminsitrator of the project it is grayed out
 
 If you navigate to your accounts administration page, do NOT go into a projects-administration site. Choose the collection-administrative site instead!
 
-![Deleting a Team Project on Visual Studio Team Services](/img/articles/2014-04-14/97e130d0-5477-4745-a409-cd53bc3e8c1a.png)
+![Deleting a Team Project on Visual Studio Team Services](https://cdn.offering.solutions/img/articles/2014-04-14/97e130d0-5477-4745-a409-cd53bc3e8c1a.png)
 
 There you can easily delete your project:
 
-![Deleting a Team Project on Visual Studio Team Services](/img/articles/2014-04-14/ed78b714-3ef0-400a-8f41-b253cfd3f925.png)
+![Deleting a Team Project on Visual Studio Team Services](https://cdn.offering.solutions/img/articles/2014-04-14/ed78b714-3ef0-400a-8f41-b253cfd3f925.png)
 
 I think it is not that easy to delete an existing team project. But to keep the VSTS clean and in good order this might be a useful hint to someone.
 

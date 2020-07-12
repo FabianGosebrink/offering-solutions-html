@@ -15,7 +15,7 @@ Even when I am not doing it in my current project at work I am very interested i
 
 Last Saturday my preparation for a very special workshop for me ended and I was glad to give five students the first ASP.NET MVC-workshop at the university Albstadt-Sigmaringen. (One of them had to leave 5 minutes earlier, so do not be confused while seeing only four students on the picture ;) )
 
-![Workshop_1](/img/articles/2014-08-10/Workshop_1.png)
+![Workshop_1](https://cdn.offering.solutions/img/articles/2014-08-10/Workshop_1.png)
 
 We started shortly after ten o’clock (because I know that students can be late sometime ;)) and we were talking about Asp.NET MVC for four hours with a one hour break in the middle.
 
@@ -29,7 +29,7 @@ Also routing was a topic at this workshop and how it is connected to Asp.NET MVC
 
 One of the points which were most important to me getting into the students heads was the viewmodel-principle. So we made a lot of examples and the students finally did a practical work for themselves in groups. So they were getting to know what they just saw up in the front and could manifest the presented stuff.
 
-![Workshop_2](/img/articles/2014-08-10/Workshop_2.png)
+![Workshop_2](https://cdn.offering.solutions/img/articles/2014-08-10/Workshop_2.png)
 
 External libraries have also been a topic. So the entity Framework was mentioned with the code-first approach and the students learned how to create database without building complicated SQL statements and saving data into it with different software-patterns.
 
@@ -39,7 +39,7 @@ After the lunch-break we were digging deeper into Asp.NET MVC and created a blog
 
 We also touched the role-, and user-based authentication and authorization and exploring in which way we can use the Microsoft-given things. Also the advantages and disadvantages were mentioned and we discussed a way to solve the problems you can have sometimes while implementing a web application.
 
-![Impressions of the first ASP.NET MVC workshop](/img/articles/2014-08-10/Workshop_3.png)
+![Impressions of the first ASP.NET MVC workshop](https://cdn.offering.solutions/img/articles/2014-08-10/Workshop_3.png)
 
 In the end our blog was completely ready with all Create-Read-Update and Delete-Actions (CRUD) which are needed for a modern internet application.
 

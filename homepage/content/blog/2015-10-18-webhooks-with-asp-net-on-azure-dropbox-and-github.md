@@ -27,12 +27,12 @@ First of all we take the current stable Version of WebAPI 2.2 and create a new p
 
 After this you can either install the Nuget-Packages for DropBox and GitHub support seperately ([here](https://www.nuget.org/packages/Microsoft.AspNet.WebHooks.Receivers.Dropbox/1.2.0-beta3a) and [here](https://www.nuget.org/packages/Microsoft.AspNet.WebHooks.Receivers.GitHub/1.2.0-beta3a)), or you can install the extension for Visual Studio which can be found here. (Tools --> Extensions and Updates):
 
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/11.jpg)
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/11.jpg)
 
 once installed you will be able to add new services like this:
 
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/21.jpg)
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/32.jpg)
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/21.jpg)
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/32.jpg)
 
 But before we do so, lets prepare GitHub and DropBox to send events when something is happening.
 
@@ -42,11 +42,11 @@ How Github is prepared you can see on the posted link above. But once again: [he
 
 First check this link: [Apps for DropBox ](https://www.dropbox.com/developers/apps)and create a new app which is responsible for invoking the WebHooks.
 
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/42.jpg) I chose the whole DropBox-thing for this example.
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/42.jpg) I chose the whole DropBox-thing for this example.
 
 After creating this new app we are interested in the details of this app. Click on it and you will ssee something like this:
 
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/5.jpg)
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/5.jpg)
 
 We are interested in the secret for your app and in the link we define for the target of our WebHooks.
 
@@ -54,15 +54,15 @@ We are interested in the secret for your app and in the link we define for the t
 
 Once we have the secret we can go back to our Visual Studio and select the both WebHook receivers we want to create: GitHub and DropBox.
 
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/6.jpg)
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/6.jpg)
 
 Add your secrets here and click finish:
 
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/7.jpg)
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/7.jpg)
 
 If everything worked fine the extension created everything for you: The handlers, the startup cofnig which can be in addition to your existing config and it updated the Web.config-file with your settings.
 
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/8.jpg)
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/8.jpg)
 
 ```csharp
 namespace WebHooksExample
@@ -112,7 +112,7 @@ public class DropboxWebHookHandler : WebHookHandler
 
 Once you have done this your app is ready for deploying it to Azure. Deploy it (Right-clikc your project in Visual Studio and deploy) and check the values in the application settings using portal.azure.com:
 
-[WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/9.jpg)
+[WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/9.jpg)
 
 There your two secrets should appear now. If not: Get them in there manually. The keys are
 `MS_WebHookReceiverSecret_GitHub`
@@ -127,13 +127,13 @@ is the form. So in our case this is:
 
 `https://[host]/api/webhooks/incoming/dropbox`
 
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/10.jpg)
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/10.jpg)
 
 After a short check this should be working and get the state "Enabled" from DropBox.
 
 If you now change something in your entire dropbox-space the webhook should be triggered like this:
 
-![WebHooks with ASP.NET on Azure - DropBox and GitHub](/img/articles/wp-content/uploads/2015/10/111.jpg)
+![WebHooks with ASP.NET on Azure - DropBox and GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/111.jpg)
 
 If you only want to watch a specific part of your dropbox you have to spcify this in your app. Above we selected "Full Dropbox".
 

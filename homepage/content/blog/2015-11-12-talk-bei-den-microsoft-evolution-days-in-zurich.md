@@ -24,24 +24,24 @@ Natürlich bedanke ich mich bei Digicomp und Microsoft, dass ich auf dem Event r
 
 Hier ein Auszug aus den Folien:
 
-![Folie12](/img/articles/wp-content/uploads/2015/11/Folie12.png)
+![Folie12](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/Folie12.png)
 
 Ich denke es ist wichtig klarzustellen, dass "REST" nicht gleich "WebAPI" ist. REST ist eine Form, die ein Web-Service erfüllen kann. ASP.NET WebAPI ist eine Technologie, mit der man solche Services umsetzen kann. Das ist ein fundamentaler Unterschied.
 
-![Folie13](/img/articles/wp-content/uploads/2015/11/Folie13.png)
+![Folie13](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/Folie13.png)
 
 Hier beschreibe ich eine klassische REST-API. Das PATCH-Attribut habe ich auf der nächsten Folie. Es ging also nicht vergessen. Jeder Link stellt eine eindeutige Aktion dar. Alle CRUDOperationen sind durch diese Links für eine Entität abgedeckt.
 
-![Folie30](/img/articles/wp-content/uploads/2015/11/Folie30.png)
+![Folie30](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/Folie30.png)
 
 Diese Folie beschreibt wohl das, was AngularJS so mächtig macht. Das Framework bietet einen clientseitige Architektur mit Javascript (oder Typescript), die es ermöglicht komplexe Web-Apllikationen zu bauen.
 
-![Folie41](/img/articles/wp-content/uploads/2015/11/Folie41.png)
-![Folie44](/img/articles/wp-content/uploads/2015/11/Folie44.png)
+![Folie41](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/Folie41.png)
+![Folie44](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/Folie44.png)
 
 "\$scope" ist wohl das Wort, was bei vielen ein Erleichtern auslöst. Es entspricht etwa dem ViewModel, welches man schon von anderen Applikationsarten kennt. Hierauf kann man im AngularJS Funktionen und Werte definieren, die man dann von der View aus via DataBinding konsumieren kann.
 
-![Folie59](/img/articles/wp-content/uploads/2015/11/Folie59.png)
+![Folie59](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/Folie59.png)
 
 Bis dahin
 

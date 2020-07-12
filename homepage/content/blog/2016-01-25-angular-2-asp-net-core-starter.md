@@ -28,8 +28,8 @@ So I want to have an environment where I can build an Angular web application wi
 
 First thing to do is setting up our Visual Studio. Create a new application and choose the ASP.NET 5 Templates. I guess they will be renamed later ;-)
 
-![AspNetCoreAngular2Demo_1](/img/articles/wp-content/uploads/2016/01/AspNetCoreAngular2Demo_1.jpg)
-![AspNetCoreAngular2Demo_2](/img/articles/wp-content/uploads/2016/01/AspNetCoreAngular2Demo_2.jpg)
+![AspNetCoreAngular2Demo_1](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/AspNetCoreAngular2Demo_1.jpg)
+![AspNetCoreAngular2Demo_2](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/AspNetCoreAngular2Demo_2.jpg)
 
 You will get an empty solution with no dependencies so far.
 
@@ -39,11 +39,11 @@ Now go on and add an "app"-Folder, a "js"-folder and a "css"-folder to the wwwro
 
 > Everything in the wwwroot-folder is going to be served to the client. This is where our app lives. You can also build your application outside this folder and copy the relevant files in it via gulp etc. I am not doing this in this case because its easier to debug in the when launching. If you have a better approach I would love to hear it :)
 
-![04](/img/articles/wp-content/uploads/2016/01/04.png)
+![04](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/04.png)
 
 To get started with our web application we need an index.html. Lets add it and put nothing in it so far.
 
-![05](/img/articles/wp-content/uploads/2016/01/05.png)
+![05](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/05.png)
 
 ## The Serverside/API
 
@@ -123,9 +123,9 @@ public class Startup
 
 Our application should now be able to start up. Just go to the commandline and type "dotnet run" in it. This will start a webserver and serve all files in wwwroot.
 
-![AspNetCoreAngular2Demo_3](/img/articles/wp-content/uploads/2016/01/AspNetCoreAngular2Demo_3.jpg)
+![AspNetCoreAngular2Demo_3](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/AspNetCoreAngular2Demo_3.jpg)
 
-![07](/img/articles/wp-content/uploads/2016/01/07.png)
+![07](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/07.png)
 
 Great so far! Now we can add a controller!
 
@@ -133,11 +133,11 @@ For this go ahead in the root of the project and add a folder "Controller" which
 
 > I like to stay to IActionResult-Interface in my controllers. It just gives me a way I am used to and is clearer for me. You do not have to do this. The controller is just for demo purposes.
 
-![08](/img/articles/wp-content/uploads/2016/01/08.png)
+![08](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/08.png)
 
 If we now run the server again with "dotnet run" it will start and via Postman we can check if everything works correctly:
 
-![Angular and ASP.NET Core Starter](/img/articles/wp-content/uploads/2016/01/09.png)
+![Angular and ASP.NET Core Starter](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/09.png)
 
 ## The Client
 
@@ -145,7 +145,7 @@ Great. So lets start clientside. What we need is an Angular environment. For the
 
 We already defined the wwwroot-Folder which holds every file which is transported to the client.
 
-![11](/img/articles/wp-content/uploads/2016/01/11.png)
+![11](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/11.png)
 
 As we start developing Angular we have to prepare our environment for working with Typescript. I already have an instruction how to start in a previous Blogpost [Getting started with Visual Studio Code & Typescript](http://offering.solutions/blog/articles/2015/12/03/getting-started-with-visual-studio-code-angularjs-and-typescript/). But lets cover some thing in short to get it customised for this Angular case.
 

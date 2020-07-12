@@ -122,7 +122,7 @@ First, we set the language to node_js defining the version afterwards. The `inst
 
 If you connected your github repository to travis and added this file with the next checkin the build should automatically trigger and your cypress tests should run automatically.
 
-![CypressTravis](/img/articles/2018-06-01/cypress-travis.gif)
+![CypressTravis](https://cdn.offering.solutions/img/articles/2018-06-01/cypress-travis.gif)
 
 HTH
 

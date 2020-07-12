@@ -104,7 +104,7 @@ As the overview is best in resource groups and the costs can be seen best per re
 - Application insights (were added automatically)
 - An App Service Plan (which is needed anyway)
 
-![Azure resourcegroup](/img/articles/2019-06-07/resource-group.png)
+![Azure resourcegroup](https://cdn.offering.solutions/img/articles/2019-06-07/resource-group.png)
 
 As these things were ready I wanted to next build up the CI/CD pipeline for the blog and homepage in Azure Devops.
 
@@ -114,7 +114,7 @@ I choose an Azure App Service for my blog because a blob storage _must_ have a s
 
 In the Azure Blob Storage I did a new container called `$web` where I upload all the files.
 
-![cdn container](/img/articles/2019-06-07/cdn-container.png)
+![cdn container](https://cdn.offering.solutions/img/articles/2019-06-07/cdn-container.png)
 
 ## Building a CI/CD pipeline for the blog
 
@@ -122,7 +122,7 @@ In Azure Devops which you can access via `https://dev.azure.com/<yourusername>/`
 
 For generating the site I used a build task which build my site running the needed hugo commands. You can find the extension here: [Visual Studio Marketplace Hugo extension](https://marketplace.visualstudio.com/items?itemName=giuliovdev.hugo-extension).
 
-![CICD-1](/img/articles/2019-06-07/cicd-1.png)
+![CICD-1](https://cdn.offering.solutions/img/articles/2019-06-07/cicd-1.png)
 
 So the source of my hugo site is the folder `homepage` and the destination is `homepage/public`. This is the folder all files are build to. I am overwriting the `BaseUrl` with the domain `https://offering.solutions`. I would not have to do this as in my `config.toml` file the `baseURL = "https://offering.solutions/"` is already set to the correct domain. It was more just to try it out a bit :)
 
@@ -130,11 +130,11 @@ As next step I had to divide the files which are going to be deployed to the azu
 
 So in the next two steps the files from the `public` folder are separated.
 
-![CICD-2](/img/articles/2019-06-07/cicd-2.png)
+![CICD-2](https://cdn.offering.solutions/img/articles/2019-06-07/cicd-2.png)
 
 To the folder `homepage/public/dist-cdn` I am copying over all the static files like images, fonts, css and javascript.
 
-![CICD-3](/img/articles/2019-06-07/cicd-3.png)
+![CICD-3](https://cdn.offering.solutions/img/articles/2019-06-07/cicd-3.png)
 
 As in the `dist-blog` folder all the other files are getting copied.
 
@@ -146,9 +146,9 @@ In the end I have to publish the two artifacts `blog` and `cdn` to make them ava
 
 In the release manager I am referring to the dropped outputs now and moving the one to the cdn and the other to the azure web service.
 
-![release manager first pic](/img/articles/2019-06-07/release-1.png)
+![release manager first pic](https://cdn.offering.solutions/img/articles/2019-06-07/release-1.png)
 
-![release manager second pic](/img/articles/2019-06-07/release-2.png)
+![release manager second pic](https://cdn.offering.solutions/img/articles/2019-06-07/release-2.png)
 
 With enabled Conitinuous Integration everytime I check in a new build and release is triggered. Perfect!
 
@@ -160,7 +160,7 @@ To move my old domain to godaddy I canceled my subscription at one.com and they 
 
 After I did this I went to Cloudflare (see below) and signed in as well. I added my domain and controlled everything from there then. In GoDaddy I added the cloudflare nameservers like this:
 
-![Godaddy nameservers](/img/articles/2019-06-07/godaddy.png)
+![Godaddy nameservers](https://cdn.offering.solutions/img/articles/2019-06-07/godaddy.png)
 
 ## Adding the custom domain to the web service
 
@@ -168,17 +168,17 @@ So in Azure I added the custom domain names to the web service. I used the guide
 
 I added the static custom domain like this:
 
-![customdomain cdn](/img/articles/2019-06-07/customdomain-cdn.png)
+![customdomain cdn](https://cdn.offering.solutions/img/articles/2019-06-07/customdomain-cdn.png)
 
 And the custom domains for the app service like this. If you want to know how to exactly add them refer to the guide above.
 
 > Do not be scared about the "Not Secure" in the picture. This means, that no SSL certificate has been added. We will serve our page with cloudflare and ssl in the end.
 
-![customdomain-appservice](/img/articles/2019-06-07/customdomain-appservice.png)
+![customdomain-appservice](https://cdn.offering.solutions/img/articles/2019-06-07/customdomain-appservice.png)
 
 Of course in Cloudflare I added these mappings then as we use the Cloudflare nameservers and not the ones from godaddy anymore.
 
-![cloudflare-mappings](/img/articles/2019-06-07/cloudflare-mappings.png).
+![cloudflare-mappings](https://cdn.offering.solutions/img/articles/2019-06-07/cloudflare-mappings.png).
 
 Notice that the `cdn.offeringsolutions` is pointing to my custom domain of the azure cdn blob storage and the `offering.solutions` and `www.offering.solutions` is pointing to the azure web service.
 
@@ -201,7 +201,7 @@ After I have done this I replaced all the references to the pictures in my blogp
 
 So to serve as much as we can from the cache I went into Cloudflare and modified the caching up to 12 hours (which is not much, but read further)
 
-![cloudflare-cache](/img/articles/2019-06-07/caching.png)
+![cloudflare-cache](https://cdn.offering.solutions/img/articles/2019-06-07/caching.png)
 
 So the "Browser Cache Expiration" setting tells that it will fall back to the setting which is given in cloudflare but respect the caching headers if they are set. I wanted to try that out and was searching for a way to modify my cache headers on the static files on azure because this is where all the static files are coming from.
 
@@ -215,25 +215,25 @@ az storage blob upload-batch --account-name <storage-account-name-here> --destin
 
 Where `$(System.DefaultWorkingDirectory)\offering-solutions-hugo-CI\cdn` refers to the name of the artifact getting dropped out.
 
-![new release pipeline](/img/articles/2019-06-07/new-rls-pipeline-2.png)
+![new release pipeline](https://cdn.offering.solutions/img/articles/2019-06-07/new-rls-pipeline-2.png)
 
 The files on Azure can now be inpected with the correct values which were set when uploading them:
 
-![azure-cache](/img/articles/2019-06-07/azure-cache.png)
+![azure-cache](https://cdn.offering.solutions/img/articles/2019-06-07/azure-cache.png)
 
-![browser-cache](/img/articles/2019-06-07/browser-cache.png)
+![browser-cache](https://cdn.offering.solutions/img/articles/2019-06-07/browser-cache.png)
 
 ## The costs
 
 So last but not least let us talk about what the whole thing costs in one month. For this, let us first look at some data from cloudflare:
 
-![cloudflare-stats](/img/articles/2019-06-07/cloudflare-stats-2.png)
+![cloudflare-stats](https://cdn.offering.solutions/img/articles/2019-06-07/cloudflare-stats-2.png)
 
 In the last 30 days the site delivered 8GB with nearly 80% cached. That is pretty cool! From 8 GB 6 GB were served out of the cache.
 
 But what does the costs say in Azure? Let us hit the resource group we created in the beginning and take a look at the costs of the May 2019.
 
-![azure-pricing](/img/articles/2019-06-07/azure-pricing.png)
+![azure-pricing](https://cdn.offering.solutions/img/articles/2019-06-07/azure-pricing.png)
 
 So in the complete month May 2019 the whole website costed 9.74 CHF which is about 8.73 Euro or 9.86 USD. As I got a MSDN Subscription this totally lies in the scope of my free amount which I can spend over the months. So actually I am running it for free.
 

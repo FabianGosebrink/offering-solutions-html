@@ -39,7 +39,7 @@ public class NameProviderImpl : NotifyPropertyChangedBase, INameProvider
 
 Then we will do a namespace for our commands and add one
 
-![Correct implementation of Commands in WPF](/img/articles/2014-10-01/INotify_IV.jpg)
+![Correct implementation of Commands in WPF](https://cdn.offering.solutions/img/articles/2014-10-01/INotify_IV.jpg)
 
 Important for the command is: Let it be a single class. It makes testing easier and decouples it from the viewmodel. Also let it inherit from ICommand and implement this interface. And let it inherit from your command Interface ;)
 
@@ -113,7 +113,7 @@ Now the command is getting executed from the button. It sets the name in the nam
 
 That should be it for the very basic of WPF.
 
-Solution can be loaded here: [Correct implementation of Commands in WPF](/img/articles/2014-10-01/DataBindingGettingStarted.zip)
+Solution can be loaded here: [Correct implementation of Commands in WPF](https://cdn.offering.solutions/img/articles/2014-10-01/DataBindingGettingStarted.zip)
 
 Enjoy
 
