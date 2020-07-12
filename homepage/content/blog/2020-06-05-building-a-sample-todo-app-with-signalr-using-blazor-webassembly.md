@@ -583,7 +583,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     app.UseEndpoints(endpoints =>
     {
         endpoints.MapControllers();
-        endpoints.MapHub<ChatHub>("/chatHub");
+        endpoints.MapHub<TodoHub>("/todoHub");
         endpoints.MapFallbackToFile("index.html");
     });
 }
