@@ -28,31 +28,31 @@ In this blog post I want to show how to upload files from an Angular application
 
 Create the blob storage by entering your dashboard and select "Create Storage Account"
 
-![Azure Dashboard Create New Storage Account](https://cdn.offering.solutions/img/articles/2020-08-10/1.png)
+![Azure Dashboard Create New Storage Account](https://cdn.offering.solutions/img/articles/2020-08-09/1.png)
 
 You can give it a name
 
-![Azure Dashboard Naming New Storage Account](https://cdn.offering.solutions/img/articles/2020-08-10/2.png)
+![Azure Dashboard Naming New Storage Account](https://cdn.offering.solutions/img/articles/2020-08-09/2.png)
 
 and then leave all the default values and click until "Review and Create" and then Create your Azure Storage Account.
 
 When the Azure Storage Account is created you can go to the resource and hit the "Container" Button.
 
-![Azure Storage Account Resource Container Button](https://cdn.offering.solutions/img/articles/2020-08-10/3.png)
+![Azure Storage Account Resource Container Button](https://cdn.offering.solutions/img/articles/2020-08-09/3.png)
 
 We create a new container, set it to "Public access level" _"Blob"_ and give it a name. `firstcontainer` in this case.
 
-![Azure Storage Account Resource Container Button](https://cdn.offering.solutions/img/articles/2020-08-10/4.png)
+![Azure Storage Account Resource Container Button](https://cdn.offering.solutions/img/articles/2020-08-09/4.png)
 
 Then click "Create".
 
 Inside of the container you can see no files yet, we will upload them with Angular and ASP.NET Core. Just read on 😉
 
-![Azure Storage Account Resource Inside Container](https://cdn.offering.solutions/img/articles/2020-08-10/5.png)
+![Azure Storage Account Resource Inside Container](https://cdn.offering.solutions/img/articles/2020-08-09/5.png)
 
 If you go back into the Container Overview you can choose the "Access keys" in the menu on the left and then copy the first Connection string mentioned there.
 
-![Azure Storage Account Connection String](https://cdn.offering.solutions/img/articles/2020-08-10/6.png)
+![Azure Storage Account Connection String](https://cdn.offering.solutions/img/articles/2020-08-09/6.png)
 
 We need this for later.
 
@@ -307,7 +307,11 @@ export class AppComponent {
 }
 ```
 
-![Angular App showing the uploaded picture](https://cdn.offering.solutions/img/articles/2020-08-10/7.png)
+![Angular App showing the uploaded picture](https://cdn.offering.solutions/img/articles/2020-08-09/7.png)
+
+And we can see the file in the blob container.
+
+![Azure Container showing the uploaded picture](https://cdn.offering.solutions/img/articles/2020-08-09/8.png)
 
 [GitHub Repository](https://github.com/FabianGosebrink/angular-azure-blob-storage)
 
