@@ -202,7 +202,7 @@ namespace backend.Controllers
 
 ```
 
-Our upload url will be `<domain>/upload` then.
+Our upload url will be `<domain>/api/upload` then.
 
 That is it for the backend, we just have to add the frontend now and create an Angular app which will upload the files for us.
 
