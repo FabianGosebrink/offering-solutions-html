@@ -19,6 +19,8 @@ In this blog post I want to show how to upload files from an Angular application
   - [Creating a blob service](#creating-a-blob-service)
   - [Using the service in a controller](#using-the-service-in-a-controller)
 - [Creating the Angular App](#creating-the-angular-app)
+  - [The UploadService](#the-upload-service)
+  - [The Uploading Component](#the-uploading-component)
 
 # Create the Azure Blob Storage
 
@@ -159,33 +161,43 @@ Inside our controller we can now inject the service and call the method to uploa
 Note that we are using the `DisableRequestSizeLimit` here for demo. Maybe you want to remove this in production apps. As a `blobContainerName` param we are passing the name of the container we want to store our data in. We just created this before when adding the storage in Azure but with our code a new one will be created as well automatically for us.
 
 ```csharp
-[ApiController]
-[ApiVersion("1.0")]
-[Route("api/v{version:apiVersion}/[controller]")]
-public class UploadController : ControllerBase
+using ...
+
+namespace backend.Controllers
 {
-	private IBlobService _blobService;
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UploadController : ControllerBase
+    {
+        private IBlobService _blobService;
 
-	public UploadController(IBlobService blobService)
-	{
-		_blobService = blobService;
-	}
+        public UploadController(IBlobService blobService)
+        {
+            _blobService = blobService;
+        }
 
-	[HttpPost(""), DisableRequestSizeLimit]
-	public async Task<ActionResult> UploadProfilePicture()
-	{
-		IFormFile file = Request.Form.Files[0];
-		if(file == null)
-		{
-			return BadRequest();
-		}
+        [HttpPost(""), DisableRequestSizeLimit]
+        public async Task<ActionResult> UploadProfilePicture()
+        {
+            IFormFile file = Request.Form.Files[0];
+            if (file == null)
+            {
+                return BadRequest();
+            }
 
-		var result = await _blobService.UploadFileBlobAsync("firstcontainer", file);
-		var toReturn = result.AbsoluteUri;
+            var result = await _blobService.UploadFileBlobAsync(
+                    "firstcontainer",
+                    file.OpenReadStream(),
+                    file.ContentType,
+                    file.FileName);
 
-		return Ok(new { path = toReturn });
-	}
+            var toReturn = result.AbsoluteUri;
+
+            return Ok(new { path = toReturn });
+        }
+    }
 }
+
 ```
 
 Our upload url will be `<domain>/api/v1/upload` then.
@@ -193,3 +205,110 @@ Our upload url will be `<domain>/api/v1/upload` then.
 That is it for the backend, we just have to add the frontend now and create an Angular app which will upload the files for us.
 
 # Creating the Angular App
+
+The Angular app is pretty straight forward. First let us create an `UploadService` which communicates to the backend.
+
+## The UploadService
+
+```ts
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({ providedIn: 'root' })
+export class UploadService {
+  constructor(private http: HttpClient) {}
+
+  upload(formData: FormData) {
+    return this.http.post<{ path: string }>(
+      'https://localhost:5001/api/upload',
+      formData
+    );
+  }
+}
+```
+
+In the `app.module.ts` the `HttpClientModule` has to be added to the `imports` as well.
+
+```ts
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  imports: [BrowserModule, HttpClientModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+## The Uploading Component
+
+In the components template we use a button to open a hidden file input and we are setting the filename of the selected file so the user knows that a file was created. A `save` button then calls a `save()` method where the files are getting passed and kicks of the saving progress
+
+```html
+<button type="button" (click)="fileInput.click()">
+  Choose File
+</button>
+<input
+  hidden
+  #fileInput
+  type="file"
+  id="file"
+  (change)="setFilename(fileInput.files)"
+/>
+<label>{{ filename }}</label>
+<br />
+<button type="button" (click)="save(fileInput.files)">
+  Save
+</button>
+<br />
+<img [src]="imageSource" />
+```
+
+The component class gets injected the `UploadService` and calls the `upload` method passing the form data. When the call comes back we are extracting the `path` property and setting it as image source to display the picture we just uploaded.
+
+```ts
+import { Component } from '@angular/core';
+import { UploadService } from './upload.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+  filename = '';
+
+  imageSource = '';
+
+  constructor(private uploadService: UploadService) {}
+
+  setFilename(files) {
+    if (files[0]) {
+      this.filename = files[0].name;
+    }
+  }
+
+  save(files) {
+    const formData = new FormData();
+
+    if (files[0]) {
+      formData.append(files[0].name, files[0]);
+    }
+
+    this.uploadService
+      .upload(formData)
+      .subscribe(({ path }) => (this.imageSource = path));
+  }
+}
+```
+
+![Angular App showing the uploaded picture](https://cdn.offering.solutions/img/articles/2020-08-10/7.png)
+
+[GitHub Repository](https://github.com/FabianGosebrink/angular-azure-blob-storage)
+
+And that is it, hope it helps!
+
+Fabian
