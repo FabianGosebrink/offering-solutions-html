@@ -11,7 +11,7 @@ In this blogpost I want to describe how I used plain Javascript and ASP.NET Core
 
 ![device-orientation-video](https://cdn.offering.solutions/img/articles/2019-07-25/video.gif)
 
-You canf ind the whole code on gihub here: [https://github.com/FabianGosebrink/device-orientation-signalr
+You can find the whole code on github here: [https://github.com/FabianGosebrink/device-orientation-signalr
 ](https://github.com/FabianGosebrink/device-orientation-signalr)
 
 ## Backend with ASP.NET Core and SignalR
