@@ -7,6 +7,8 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
+# Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2
+
 In this blog post I want to describe how you can add a login to your Angular App and secure it with OpenID Connect (OIDC) and OAuth2 to access an ASP.NET Core WebAPI with an Identity Server.
 
 Code can be found here [Angular OAuth2 OIDC Sample with ASP.NET Core](https://github.com/FabianGosebrink/angular-oauth2-oidc-sample)
