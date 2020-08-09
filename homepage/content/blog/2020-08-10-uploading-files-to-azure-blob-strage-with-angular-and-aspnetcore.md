@@ -12,6 +12,13 @@ In this blog post I want to show how to upload files from an Angular application
 # TOC
 
 - [Create the Azure Blob Storage](#create-the-azure-blob-storage)
+- [The ASP.NET Core WebAPI](#the-asp.net-core-web-api)
+  - [Installing the NuGet package](#installing-the-nu-get-package)
+  - [Modifying the app settings](#modifying-the-app-settings)
+  - [Registering the service](#registering-the-service)
+  - [Creating a blob service](#creating-a-blob-service)
+  - [Using the service in a controller](#using-the-service-in-a-controller)
+- [Creating the Angular App](#creating-the-angular-app)
 
 # Create the Azure Blob Storage
 
@@ -180,3 +187,9 @@ public class UploadController : ControllerBase
 	}
 }
 ```
+
+Our upload url will be `<domain>/api/v1/upload` then.
+
+That is it for the backend, we just have to add the frontend now and create an Angular app which will upload the files for us.
+
+# Creating the Angular App
