@@ -7,8 +7,6 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-# Cross Field Validation Using Angular Reactive Forms
-
 In this blog post I would like to describe how you can add validation to multiple fields of your reactive forms in Angular by using a feature called `Cross Field Validation`.
 
 This powerful features let you validate not just a single form control but instead you can validate one form control against the value from another control. Let us see how we can do this.

@@ -7,8 +7,6 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-# Implement endless scroll with Angular, NgRx and ASP.NET Core WebAPI
-
 In this blog post I want to show how you can implement an endless scroll feature with Angular, Ngrx and ASP.NET Core in the backend.
 
 All the code in the repository is only for demo purposes. It shows the concepts however and I hope you can use it in your apps!
