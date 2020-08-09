@@ -50,7 +50,7 @@ Inside of the container you can see no files yet, we will upload them with Angul
 
 ![Azure Storage Account Resource Inside Container](https://cdn.offering.solutions/img/articles/2020-08-10/5.png)
 
-If you go back into the Container Ovweview you can choose the "Access keys" in the menu on the left and then copy the first Connection string mentioned there.
+If you go back into the Container Overview you can choose the "Access keys" in the menu on the left and then copy the first Connection string mentioned there.
 
 ![Azure Storage Account Connection String](https://cdn.offering.solutions/img/articles/2020-08-10/6.png)
 
