@@ -7,6 +7,8 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
+# Building a Sample Todo App with Signalr Using Blazor WebAssembly
+
 In this blog post I want to show how to get started with ASP.NET Core Blazor by creating a simple Todo Application with forms, container and presentational components synchronized with SignalR.
 
 Let's get started.
