@@ -48,3 +48,135 @@ We need this for later.
 And that is basically it for setting up the Azure Blob Storage.
 
 Let us move on and create the ASP.NET WebAPI.
+
+# The ASP.NET Core WebAPI
+
+## Installing the NuGet package
+
+To upload files to the blob storage we will create a few services inside of the API which will communicate with our Azure Blob Storage. Before we do this we need to add a NuGet package:
+
+[NuGet Azure Storage Blobs Package](https://www.nuget.org/packages/Azure.Storage.Blobs)
+
+You can check if and which version o the package is installed by checking your `*.csproj` file to find an entry like this:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  // ...
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="<VERSION_HERE>" />
+    // ...
+  </ItemGroup>
+
+   // ...
+
+</Project>
+```
+
+## Modifying the app settings
+
+Now let us enter the `appsettings.json` file to add an entry called `AzureBlobStorage` and paste the connection string you just copied here
+
+```json
+{
+  // ...
+  "AzureBlobStorage": "<SUPER_SECRET_CONNECTION_STRING>"
+}
+```
+
+## Registering the service
+
+In the `Startup.cs` file we can now register a `BlobServiceClient` into our services container using the namespace `Azure.Storage.Blobs` and pass it the previously added value from the configuration.
+
+```csharp
+using Azure.Storage.Blobs;
+
+public void ConfigureServices(IServiceCollection services)
+{
+	// ...
+
+	services.AddScoped(x => new BlobServiceClient(Configuration.GetValue<string>("AzureBlobStorage")));
+
+	// ...
+}
+```
+
+## Creating a blob service
+
+Having done that we can inject the `BlobServiceClient` into a service `BlobService` we create next.
+
+```csharp
+public class BlobService : IBlobService
+{
+    private readonly BlobServiceClient _blobServiceClient;
+
+    public BlobService(BlobServiceClient blobServiceClient)
+    {
+        _blobServiceClient = blobServiceClient;
+    }
+
+    public async Task<Uri> UploadFileBlobAsync(string blobContainerName, Stream content, string contentType, string fileName)
+    {
+        var containerClient = GetContainerClient(blobContainerName);
+        var blobClient = containerClient.GetBlobClient(fileName);
+        await blobClient.UploadAsync(content, new BlobHttpHeaders { ContentType = contentType });
+        return blobClient.Uri;
+    }
+
+    private BlobContainerClient GetContainerClient(string blobContainerName)
+    {
+        var containerClient = _blobServiceClient.GetBlobContainerClient(blobContainerName);
+        containerClient.CreateIfNotExists(PublicAccessType.Blob);
+        return containerClient;
+    }
+}
+```
+
+The method `UploadFileBlobAsync` uploads a file to the blob storage we just created using the `BlobServiceClient`. First, we get the container client and call `CreateIfNotExists` on it.
+
+> This will ensure the container is there when we upload something into it. However if you do not want to let your API decide which containers to be created or do this when seeding or not in the api at all you have to remove or move this line to another place. 😊
+
+When returned the `containerClient` we create a `blobClient` and upload it setting the content type and returning the `Uri` object here.
+
+Register the service with its interface in the `Startup.cs` as following
+
+```csharp
+services.AddScoped<IBlobService, BlobService>();
+```
+
+## Using the service in a controller
+
+Inside our controller we can now inject the service and call the method to upload the file size. We are reacting to a `POST` request and reading the file from the `Request` object and return a JSON with a property `path` containing the absolute path to the resource we just uploaded.
+
+Note that we are using the `DisableRequestSizeLimit` here for demo. Maybe you want to remove this in production apps. As a `blobContainerName` param we are passing the name of the container we want to store our data in. We just created this before when adding the storage in Azure but with our code a new one will be created as well automatically for us.
+
+```csharp
+[ApiController]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
+public class UploadController : ControllerBase
+{
+	private IBlobService _blobService;
+
+	public UploadController(IBlobService blobService)
+	{
+		_blobService = blobService;
+	}
+
+	[HttpPost(""), DisableRequestSizeLimit]
+	public async Task<ActionResult> UploadProfilePicture()
+	{
+		IFormFile file = Request.Form.Files[0];
+		if(file == null)
+		{
+			return BadRequest();
+		}
+
+		var result = await _blobService.UploadFileBlobAsync("firstcontainer", file);
+		var toReturn = result.AbsoluteUri;
+
+		return Ok(new { path = toReturn });
+	}
+}
+```
