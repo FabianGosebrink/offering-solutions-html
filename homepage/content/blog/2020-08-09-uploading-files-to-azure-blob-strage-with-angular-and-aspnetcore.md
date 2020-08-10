@@ -15,7 +15,7 @@ In this blog post I want to show how to upload files from an Angular application
 
 - [Create the Azure Blob Storage](#create-the-azure-blob-storage)
 - [The ASP.NET Core WebAPI](#the-asp.net-core-web-api)
-  - [Installing the NuGet package](#installing-the-nu-get-package)
+  - [Installing the NuGet package](#installing-the-nuget-package)
   - [Modifying the app settings](#modifying-the-app-settings)
   - [Registering the service](#registering-the-service)
   - [Creating a blob service](#creating-a-blob-service)
@@ -58,7 +58,7 @@ We need this for later.
 
 And that is basically it for setting up the Azure Blob Storage.
 
-Let us move on and create the ASP.NET WebAPI.
+Let us move on and create the ASP.NET Core WebAPI.
 
 # The ASP.NET Core WebAPI
 
