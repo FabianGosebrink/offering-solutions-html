@@ -79,7 +79,7 @@ disqusShortname = "offeringsolutions"
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
     title = "Offering Solutions Software"
-    subtitle = """Your partner for Angular && ASP.NET Core """
+    subtitle = """Angular && ASP.NET Core && Azure"""
     subtitle2 = """Microsoft MVP // Pluralsight Author // Google Developer Expert """
     buttonText = "Get Started"
 

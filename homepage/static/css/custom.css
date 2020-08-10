@@ -57,7 +57,7 @@ body {
 }
 
 .blog-short > span > a > p {
-  margin:0px;
+  margin: 0px;
 }
 
 .blog-short-title {
@@ -72,8 +72,6 @@ body {
 .blog-short-date {
   font-size: 1rem;
 }
-
-
 
 .tiles article:nth-child(6n - 5):before {
   background-color: #33587a;
@@ -178,25 +176,30 @@ header.major-no-line > :first-child:after {
   list-style: none;
 }
 
-
 #one .center {
-  display: flex; 
+  display: flex;
   justify-content: center;
-  margin-top:10px; 
+  margin-top: 10px;
 }
 
 #one .pluralsight-logo {
   background-color: white;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   width: 30%;
   height: auto;
 }
 
 #one .divider {
-  height: 10px; 
-  width:80%; 
-  border-bottom:1px dotted gray; 
-  margin-left: auto; 
+  height: 10px;
+  width: 80%;
+  border-bottom: 1px dotted gray;
+  margin-left: auto;
   margin-right: auto;
 }
 
+#banner > .inner .content p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
