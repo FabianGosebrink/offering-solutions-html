@@ -5,6 +5,22 @@ draft: false
 category: noblog
 ---
 
+### Enrich your Angular Apps with Angular Forms
+
+#### 03.09.2020 - iJS London
+
+**Keywords:** angular, forms
+
+---
+
+### Architecting Angular Applications with Angular Libraries
+
+#### 15.07.2020 - NG-Poland
+
+**Keywords:** angular, Libraries, Architecture
+
+---
+
 ### Erstellen von modernen Web-APIs mit ASP.NET Core 3
 
 #### 25.02.2020 - BASTA! Frankfurt
