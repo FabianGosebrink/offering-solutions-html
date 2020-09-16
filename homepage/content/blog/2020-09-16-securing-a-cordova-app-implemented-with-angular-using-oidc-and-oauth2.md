@@ -328,3 +328,5 @@ You will find the generated `*.apk` in the `...android\app\build\outputs\apk\deb
 Take this `*.apk` and copy it to your phone, install it and it should work :)
 
 Hope this helps.
+
+Many thanks to [Christian Liebel](https://twitter.com/christianliebel) and [David Dal Busco ](https://twitter.com/daviddalbusco) for helping me on this.
