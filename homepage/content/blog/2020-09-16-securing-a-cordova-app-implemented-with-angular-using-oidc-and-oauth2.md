@@ -260,5 +260,37 @@ export class AppComponent implements OnInit {
     };
   }
 }
+```
+
+with
+
+```js
+(window as any).handleOpenURL = (url: string) => {
+  this.zone.run(() => {
+    this.authBaseService.checkAuth(url));
+  });
+};
+```
+
+We are catching the redirect back in the app and pass the url to the lib.
+
+## Create a mobile app
+
+Take your Angular app and build it production ready
 
 ```
+ng build --prod
+```
+
+After this copy the angular output to the `www` folder in your cordova project.
+
+```
+.
+├── www
+│   └── // ... all those Angular files
+├── .gitignore
+├── config.xml  // <-- this one
+└── package.json
+```
+
+Having done that enter the
