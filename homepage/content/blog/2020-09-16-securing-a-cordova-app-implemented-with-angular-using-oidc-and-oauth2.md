@@ -7,7 +7,7 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blog post I want to explain how you can secure a Cordova app written in Angular with OIDC and OAuth2 against an Identity Server. We will take a look at an Angular project created with the AngularCLI or the NxDevTools and then turn it into a Cordova app via the Cordova CLI to let it run on the mobile phone and set everything up that we can authenticate to get a identity token and an access token and navigate back to our app to consume a secret api. The result is a web app which can be compiled to be a mobile app or a web application which can run in a desktop browser.
+In this blog post I want to explain how you can secure a Cordova app written in Angular with OIDC and OAuth2 against an Identity Server. We will take a look at the Angular files created with the AngularCLI or the NxDevTools and then turn it into a Cordova app via the Cordova CLI to let it run on the mobile phone and set everything up that we can authenticate to get a identity token and an access token and navigate back to our app to consume a secure api. The result is a web app which can be compiled to be a mobile app or a web application which can run in a desktop browser.
 
 ## TOC
 
