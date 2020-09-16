@@ -13,7 +13,7 @@ In this blog post I want to explain how you can secure a Cordova app written in 
 
 In this blog post we will use the OAuth2 / OIDC Angular library [https://www.npmjs.com/package/angular-auth-oidc-client](https://www.npmjs.com/package/angular-auth-oidc-client) to secure our app against a Security Token Service. Further we will use the Cordova Plugin [https://github.com/EddyVerbruggen/Custom-URL-scheme](https://github.com/EddyVerbruggen/Custom-URL-scheme) and of course the [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/) as well as an Angular CLI project which does not have to, but maybe should be done with the [Angular CLI](https://cli.angular.io/). To determine which platform we are on we can use the [ngx-device-detector](https://www.npmjs.com/package/ngx-device-detector).
 
-We will not use the In-App-Browser plugin but the devices browser instead as the plugn may be malicious, a system browser can work better with password managers and we want to get single sign on going. We will use the custom url scheme instead.
+We will not use the In-App-Browser plugin but the devices browser instead as the plugin may be malicious, a system browser can work better with password managers and we want to get single sign on going. We will use the custom url scheme instead.
 
 ## The correct authentication flow
 
