@@ -138,6 +138,14 @@ We first have to add the plugin mentioned [https://github.com/EddyVerbruggen/Cus
 
 ```
 
+Alternatively you can run
+
+```
+cordova plugin add cordova-plugin-customurlscheme --variable URL_SCHEME=mytestapp
+```
+
+at the level of the `config.xml`.
+
 > Note that we skipped not needed plugins here. You can add them as you want.
 
 With this we registered a custom url scheme which listens to `mytestapp://`. Exactly this will be our redirect address in our auth config. I will add a `callback` in the end just to make sure we have a string indicating that this is a callback from the sts:
