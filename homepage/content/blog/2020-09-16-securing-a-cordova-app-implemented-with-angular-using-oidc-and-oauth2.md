@@ -9,6 +9,16 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this blog post I want to explain how you can secure a Cordova app written in Angular with OIDC and OAuth2 against an Identity Server. We will take a look at an Angular project created with the AngularCLI or the NxDevTools and then turn it into a Cordova app via the Cordova CLI to let it run on the mobile phone and set everything up that we can authenticate to get a identity token and an access token and navigate back to our app to consume a secret api. The result is a web app which can be compiled to be a mobile app or a web application which can run in a desktop browser.
 
+## TOC
+
+- [What we will use](#what-we-will-use)
+- [The correct authentication flow](#the-correct-authentication-flow)
+- [Modifying the authentication config](#modifying-the-authentication-config)
+- [Modifying the Cordova configuration](#modifying-the-cordova-configuration)
+- [Adding the authentication and callback in the Angular App](#adding-the-authentication-and-callback-in-the-angular-app)
+- [Catching the callback](#catching-the-callback)
+- [Create a mobile app](#create-a-mobile-app)
+
 ## What we will use
 
 In this blog post we will use the OAuth2 / OIDC Angular library [https://www.npmjs.com/package/angular-auth-oidc-client](https://www.npmjs.com/package/angular-auth-oidc-client) to secure our app against a Security Token Service. Further we will use the Cordova Plugin [https://github.com/EddyVerbruggen/Custom-URL-scheme](https://github.com/EddyVerbruggen/Custom-URL-scheme) and of course the [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/) as well as an Angular CLI project which does not have to, but maybe should be done with the [Angular CLI](https://cli.angular.io/). To determine which platform we are on we can use the [ngx-device-detector](https://www.npmjs.com/package/ngx-device-detector).
@@ -80,7 +90,7 @@ having done that we can pass the detector to our configuration and ask it for th
 }
 ```
 
-### Modifying the Cordova configuration
+## Modifying the Cordova configuration
 
 Cordova can be configured with the `config.xml` file which we have if we create a new cordova cordova project with the [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/)
 
