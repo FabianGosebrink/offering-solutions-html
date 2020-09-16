@@ -245,7 +245,7 @@ export class AppComponent implements OnInit {
   constructor(
     private authBaseService: AuthBaseService,
     private zone: NgZone,
-	private deviceService: DeviceDetectorService
+	  private deviceService: DeviceDetectorService
   ) {}
 
   ngOnInit() {
