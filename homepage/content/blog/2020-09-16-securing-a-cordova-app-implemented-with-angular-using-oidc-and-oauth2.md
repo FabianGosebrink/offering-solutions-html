@@ -7,17 +7,17 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blogpost I want to explain how you can secure a Cordova app written in Angular with OIDC and OAuth2 against an Identity Server. We will take a look at an Angular project created with the AngularCLI or the NxDevTools and then turn it into a Cordova app via the Cordova CLI to let it run on the mobile phone and set everything up that we can authenticate to get a identity token and an access token and navigate back to our app to consume a secret api. The result is a web app which can be compiled to be a mobile app or a web application be runned in a desktop browser.
+In this blog post I want to explain how you can secure a Cordova app written in Angular with OIDC and OAuth2 against an Identity Server. We will take a look at an Angular project created with the AngularCLI or the NxDevTools and then turn it into a Cordova app via the Cordova CLI to let it run on the mobile phone and set everything up that we can authenticate to get a identity token and an access token and navigate back to our app to consume a secret api. The result is a web app which can be compiled to be a mobile app or a web application which can run in a desktop browser.
 
 ## What we will use
 
-In this blogpost we will use the OAuth2 / OIDC Angular library [https://www.npmjs.com/package/angular-auth-oidc-client](https://www.npmjs.com/package/angular-auth-oidc-client) to secure our app against a Security Token Service. Further we will use the Cordova Plugin [https://github.com/EddyVerbruggen/Custom-URL-scheme](https://github.com/EddyVerbruggen/Custom-URL-scheme) and of course the [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/) as well as an Angular CLI project which does not have to, but maybe should be done with the [Angular CLI](https://cli.angular.io/). To determine which platform we are on we can use the [ngx-device-detector](https://www.npmjs.com/package/ngx-device-detector).
+In this blog post we will use the OAuth2 / OIDC Angular library [https://www.npmjs.com/package/angular-auth-oidc-client](https://www.npmjs.com/package/angular-auth-oidc-client) to secure our app against a Security Token Service. Further we will use the Cordova Plugin [https://github.com/EddyVerbruggen/Custom-URL-scheme](https://github.com/EddyVerbruggen/Custom-URL-scheme) and of course the [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/) as well as an Angular CLI project which does not have to, but maybe should be done with the [Angular CLI](https://cli.angular.io/). To determine which platform we are on we can use the [ngx-device-detector](https://www.npmjs.com/package/ngx-device-detector).
 
 We will not use the In-App-Browser plugin but the devices browser instead as the plugn may be malicious, a system browser can work better with password managers and we want to get single sign on going. We will use the custom url scheme instead.
 
 ## The correct authentication flow
 
-For the authentication we will use the code flow and configure our authentication library as following: (Find more information [here](https://github.com/damienbod/angular-auth-oidc-client/tree/master/docs) how to get things started when using authantication.)
+For the authentication we will use the code flow and configure our authentication library as following: (Find more information [here](https://github.com/damienbod/angular-auth-oidc-client/tree/master/docs) how to get things started when using authentication.)
 
 ```js
 export function configureAuth(oidcConfigService: OidcConfigService) {
@@ -29,7 +29,7 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
       stsServer: 'https://my-super-security-token-service.net',
       redirectUrl,
       postLogoutRedirectUri,
-      clientId: 'gettogetherapp',
+      clientId: 'mysupercoolapp',
       scope: 'openid profile email offline_access xyz_api',
       responseType: 'code',
       silentRenew: true,
@@ -69,7 +69,7 @@ having done that we can pass the detector to our configuration and ask it for th
       stsServer: 'https://my-super-security-token-service.net',
       redirectUrl,
       postLogoutRedirectUri,
-      clientId: 'gettogetherapp',
+      clientId: 'mysupercoolapp',
       scope: 'openid profile email offline_access xyz_api',
       responseType: 'code',
       silentRenew: true,
@@ -82,7 +82,7 @@ having done that we can pass the detector to our configuration and ask it for th
 
 ### Modifying the Cordova configuration
 
-Cordova can be configured with the `config.xml` file which we ahve if we create a new cordova cordova project with the [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/)
+Cordova can be configured with the `config.xml` file which we have if we create a new cordova cordova project with the [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/)
 
 ```
 cordova create hello com.example.hello HelloWorld
@@ -128,7 +128,9 @@ We first have to add the plugin mentioned [https://github.com/EddyVerbruggen/Cus
 
 ```
 
-With this we registered a custome url scheme which listens to `mytestapp://`. Exactly this will be our redirect address in our auth config. I will add a `callback` in the end just to make sure we have a string indicating that this is a callback from the sts:
+> Note that we skipped not needed plugins here. You can add them as you want.
+
+With this we registered a custom url scheme which listens to `mytestapp://`. Exactly this will be our redirect address in our auth config. I will add a `callback` in the end just to make sure we have a string indicating that this is a callback from the sts:
 
 ```js
  export function configureAuth(
@@ -147,7 +149,7 @@ With this we registered a custome url scheme which listens to `mytestapp://`. Ex
       stsServer: 'https://my-super-security-token-service.net',
       redirectUrl,
       postLogoutRedirectUri,
-      clientId: 'gettogetherapp',
+      clientId: 'mysupercoolapp',
       scope: 'openid profile email offline_access xyz_api',
       responseType: 'code',
       silentRenew: true,
@@ -293,4 +295,26 @@ After this copy the angular output to the `www` folder in your cordova project.
 └── package.json
 ```
 
-Having done that enter the
+Having done that enter the folder on the `package.json` or `config.xml` level and add your platforms.
+
+> Note that this article cares about android but out of experience iOS is making way less problems 😉
+
+```
+ cordova platform add android
+```
+
+> Pay attention to the requirements [Android requirements](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#requirements-and-support) or [iOS Requirements](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#requirements-and-support) you need to build android apps.
+
+After the platform was added you can run
+
+```
+cordova build
+```
+
+to build all platforms.
+
+You will find the generated `*.apk` in the `...android\app\build\outputs\apk\debug` folder.
+
+Take this `*.apk` and copy it to your phone, install it and it should work :)
+
+Hope this helps.
