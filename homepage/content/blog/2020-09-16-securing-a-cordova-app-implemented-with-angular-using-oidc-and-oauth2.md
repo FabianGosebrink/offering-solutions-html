@@ -335,6 +335,14 @@ You will find the generated `*.apk` in the `...android\app\build\outputs\apk\deb
 
 Take this `*.apk` and copy it to your phone, install it and it should work :)
 
+Alternatively you can plugin your phone and run
+
+```
+cordova run android
+```
+
+The app should start on your phone.
+
 Hope this helps.
 
 Many thanks to [Christian Liebel](https://twitter.com/christianliebel) and [David Dal Busco ](https://twitter.com/daviddalbusco) for helping me on this.
