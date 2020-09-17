@@ -12,6 +12,7 @@ In this blog post I want to explain how you can secure a Cordova app written in 
 ## TOC
 
 - [What we will use](#what-we-will-use)
+- [Understanding the problem](#understanding-the-problem)
 - [The correct authentication flow](#the-correct-authentication-flow)
 - [Modifying the authentication config](#modifying-the-authentication-config)
 - [Modifying the Cordova configuration](#modifying-the-cordova-configuration)
@@ -24,6 +25,11 @@ In this blog post I want to explain how you can secure a Cordova app written in 
 In this blog post we will use the OAuth2 / OIDC Angular library [https://www.npmjs.com/package/angular-auth-oidc-client](https://www.npmjs.com/package/angular-auth-oidc-client) to secure our app against a Security Token Service. Further we will use the Cordova Plugin [https://github.com/EddyVerbruggen/Custom-URL-scheme](https://github.com/EddyVerbruggen/Custom-URL-scheme) and of course the [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/) as well as an Angular CLI project which does not have to, but maybe should be done with the [Angular CLI](https://cli.angular.io/). To determine which platform we are on we can use the [ngx-device-detector](https://www.npmjs.com/package/ngx-device-detector).
 
 We will not use the In-App-Browser plugin but the devices browser instead as the plugin may be malicious, a system browser can work better with password managers and we want to get single sign on going. We will use the custom url scheme instead.
+
+## Understanding the problem
+
+Normally in web you would redirect _after_ the login to your app which runs on `https://localhost...` or `https://my-super-url.com`.
+Mobile devices can open apps only due to a custom scheme which can be called like `mytestapp://`. Redirecting to `https://localhost...` would not start the app again when we redirect from the Secure Token Server. This is why we have to add the custom url scheme as `redirectUrl` into the Secure Token Server and we have to make that scheme starting our particular app when it gets called on our mobile device.
 
 ## The correct authentication flow
 
@@ -151,11 +157,12 @@ at the level of the `config.xml`.
 With this we registered a custom url scheme which listens to `mytestapp://`. Exactly this will be our redirect address in our auth config. I will add a `callback` in the end just to make sure we have a string indicating that this is a callback from the sts:
 
 ```js
- export function configureAuth(
+export function configureAuth(
   oidcConfigService: OidcConfigService,
   deviceService: DeviceDetectorService
 ) {
-  return () => let redirectUrl = window.location.origin;
+  return () => {
+    let redirectUrl = window.location.origin;
     let postLogoutRedirectUri = window.location.origin;
 
     if (deviceService.isMobile()) {
