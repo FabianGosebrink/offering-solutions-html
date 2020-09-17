@@ -1,6 +1,6 @@
 ---
 title: Securing a Cordova App Implemented with Angular Using OIDC and OAuth2
-date: 2020-08-09
+date: 2020-09-17
 tags: ['aspnetcore', 'angular', 'cordova', 'crossplatform']
 draft: false
 category: blog
