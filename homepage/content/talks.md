@@ -5,6 +5,14 @@ draft: false
 category: noblog
 ---
 
+### Cross Platform Apps with Cordova, Electron and Angular
+
+#### 24.09.2020 - BASTA! Mainz
+
+**Keywords:** angular, ASP.NET Core, SignalR, Cordova, Electron
+
+---
+
 ### Enrich your Angular Apps with Angular Forms
 
 #### 03.09.2020 - iJS London
@@ -17,7 +25,7 @@ category: noblog
 
 #### 15.07.2020 - NG-Poland
 
-**Keywords:** angular, Libraries, Architecture
+**Keywords:** angular, libraries, Architecture
 
 ---
 
@@ -25,15 +33,15 @@ category: noblog
 
 #### 25.02.2020 - BASTA! Frankfurt
 
-**Keywords:** angular, Libraries, Architecture
+**Keywords:** angular, libraries, Architecture
 
 ---
 
-### Better Angular Architectures with Libraries
+### Better Angular Architectures with libraries
 
 #### 27.11.2019 - Web Zurich UG Meetup
 
-**Keywords:** angular, Libraries, Architecture
+**Keywords:** angular, libraries, Architecture
 
 ---
 
@@ -73,7 +81,7 @@ category: noblog
 
 #### 23.10.2019 - iJS München
 
-**Keywords:** angular, Libraries, Architecture
+**Keywords:** angular, libraries, Architecture
 
 ---
 
@@ -85,7 +93,7 @@ category: noblog
 
 ---
 
-### Mobile & Desktop: Cross-Plattform with Electron and Cordova
+### Mobile & Desktop: Cross-Platform with Electron and Cordova
 
 #### 15.10.2019 - Web Developer Conference (WDC) Hamburg
 
@@ -93,11 +101,11 @@ category: noblog
 
 ---
 
-### Angular Architekturen with Angular Libraries
+### Angular Architectures with Angular libraries
 
 #### 15.10.2019 - Web Developer Conference (WDC) Hamburg
 
-**Keywords:** angular, Libraries, Architecture
+**Keywords:** angular, libraries, Architecture
 
 [slides](https://speakerdeck.com/fabiangosebrink/angular-architekturen-with-angular-libraries)
 
@@ -113,11 +121,11 @@ category: noblog
 
 ---
 
-### Architecting Angular Apps With Angular Libraries
+### Architecting Angular Apps With Angular libraries
 
 #### 07.10.2019 - NgRome
 
-**Keywords:** angular, Libraries, Architecture
+**Keywords:** angular, libraries, Architecture
 
 [slides](https://speakerdeck.com/fabiangosebrink/architecting-angular-applications-with-angular-libraries)
 
