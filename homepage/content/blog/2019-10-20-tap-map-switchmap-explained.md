@@ -9,7 +9,7 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 With this article I want to briefly and shortly describe the differences between the rxjs operators `tap`, `map` and `switchMap`.
 
-There are many blogposts out there which cover those topics already but maybe this helps to understand if the other posts did not help until here :)
+There are many blog posts out there which cover those topics already but maybe this helps to understand if the other posts did not help until here :)
 
 Let us start and first create a simple observable of an array with `from()`
 
@@ -25,7 +25,7 @@ If we now subscribe to it we could do something with the values which get emitte
 import { from } from 'rxjs';
 
 const observable$ = from([1, 2, 3]);
-observable$.subscribe(item => console.log(item));
+observable$.subscribe((item) => console.log(item));
 ```
 
 In the console we should see the values `1,2,3` as an output.
@@ -45,22 +45,21 @@ from([1, 2, 3])
   .subscribe(item => console.log(item));
 ```
 
-You can pass the `tap` operator up to three methods which all have the `void` return type. The original observable stays untouched. But that does not mean that you can not manipulate the items in the stream. 
+You can pass the `tap` operator up to three methods which all have the `void` return type. The original observable stays untouched. But that does not mean that you can not manipulate the items in the stream.
 
 Let us use reference types inside a `tap` operator. When using reference types the `tap` operator can modify the properties on the value you pass in.
 
 ```js
 const objects = [
-  { id: 1, name: "Fabian" },
-  { id: 2, name: "Jan-Niklas" },
-]
+  { id: 1, name: 'Fabian' },
+  { id: 2, name: 'Jan-Niklas' },
+];
 
-const source$ = from(objects).pipe(
- tap(item => item.name = item.name + "_2")
-)
-.subscribe(x => console.log(x));
-
+const source$ = from(objects)
+  .pipe(tap((item) => (item.name = item.name + '_2')))
+  .subscribe((x) => console.log(x));
 ```
+
 Outcome:
 
 ```
@@ -81,8 +80,8 @@ import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 from([1, 2, 3])
-  .pipe(map(item => item + 2))
-  .subscribe(item => console.log(item));
+  .pipe(map((item) => item + 2))
+  .subscribe((item) => console.log(item));
 ```
 
 Check the outcome now and see: The `map` operator _does_ have consequences on the output! Now you should see `3,4,5` in the console.
@@ -118,10 +117,10 @@ import { map } from 'rxjs/operators';
 from([1, 2, 3])
   // getting out the values, modifies them, but keeps
   // the same observable as return value
-  .pipe(map(item => item + 1))
+  .pipe(map((item) => item + 1))
   // resolving the observable and getting
   // out the values itself
-  .subscribe(item => console.log(item));
+  .subscribe((item) => console.log(item));
 ```
 
 We know that a `subscribe` does resolve an observable and gets out the values which are inside of the stream.
@@ -138,11 +137,11 @@ import { map } from 'rxjs/operators';
 from([1, 2, 3])
   // getting out the values, using them, but keeps the same observable as return value.
   // In addition to that the value from the called method itself is a new observable now,
-  // so we are retruning an observable of observable here!
-  .pipe(map(item => methodWhichReturnsObservable(item)))
+  // so we are returning an observable of observable here!
+  .pipe(map((item) => methodWhichReturnsObservable(item)))
   // resolving _one_ observable and getting
   // out the values itself
-  .subscribe(item => console.log(item));
+  .subscribe((item) => console.log(item));
 ```
 
 What would the type of the `resultItem` in the `subscribe` be? We know that a `subscribe` is resolving an observable, so that we can get to its values. But it is resolving _one_ observable. We mapped our observable in a second observable because the `methodWhichReturnsObservable(item)` returns - surprise surprise - another observable.

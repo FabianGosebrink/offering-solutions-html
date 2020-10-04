@@ -333,7 +333,7 @@ export class AuthEffects {
 }
 ```
 
-So bascically we have everything prepared now! What is missing are the selectors to get a nicer access to the values form our store.
+So basically we have everything prepared now! What is missing are the selectors to get a nicer access to the values form our store.
 
 ## Adding the auth selectors
 
