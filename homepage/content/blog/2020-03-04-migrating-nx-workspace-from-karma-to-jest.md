@@ -61,7 +61,7 @@ We will work with this workspace in this article:
 └── tslint.json
 ```
 
-First thing to do is to delete all the pacakages not needed anymore from `jasmine` and `karma` in your `package.json`:
+First thing to do is to delete all the packages not needed anymore from `jasmine` and `karma` in your `package.json`:
 
 Please remove all of the mentioned here ...
 
