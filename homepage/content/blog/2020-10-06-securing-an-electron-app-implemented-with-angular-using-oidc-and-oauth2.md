@@ -13,14 +13,12 @@ In this blog post I want to explain how you can secure an electron app written i
 
 ## TOC
 
-- [What we will use](#what-we-will-use)
 - [Understanding the problem](#understanding-the-problem)
-- [The correct authentication flow](#the-correct-authentication-flow)
-- [Modifying the authentication config](#modifying-the-authentication-config)
-- [Modifying the Cordova configuration](#modifying-the-cordova-configuration)
-- [Adding the authentication and callback in the Angular App](#adding-the-authentication-and-callback-in-the-angular-app)
-- [Catching the callback](#catching-the-callback)
-- [Create a mobile app](#create-a-mobile-app)
+- [What we will use](#what-we-will-use)
+- [Configuring the authentication library](#configuring-the-authentication-library)
+- [Adding the authentication in the Angular App](#adding-the-authentication-in-the-angular-app)
+- [Catching the redirect in the electron main process](#catching-the-redirect-in-the-electron-main-process)
+- [Catching the event in the Angular app](#catching-the-event-in-the-angular-app)
 
 ## Understanding the problem
 
@@ -53,7 +51,7 @@ Now when we open up a new window to show the login to the user and we get redire
 
 ## What we will use
 
-In this blog post we will use the OAuth2 / OIDC Angular library [https://www.npmjs.com/package/angular-auth-oidc-client](https://www.npmjs.com/package/angular-auth-oidc-client) to secure our app against a Security Token Service. To determine which platform we are on we can use the [ngx-device-detector](https://www.npmjs.com/package/ngx-device-detector).
+In this blog post we will use the OAuth2 / OIDC Angular library [https://www.npmjs.com/package/angular-auth-oidc-client](https://www.npmjs.com/package/angular-auth-oidc-client) to secure our app against a Security Token Service. To determine which platform we are on we can use the [ngx-device-detector](https://www.npmjs.com/package/ngx-device-detector) and for the communication between renderer and main we use [https://www.npmjs.com/package/ngx-electron](https://www.npmjs.com/package/ngx-electron).
 
 ## Configuring the authentication library
 
@@ -188,7 +186,7 @@ is opening a modal window to the configured STS url if it gets called inside the
 
 The request will be made with the library and a modal pops up to login accordingly. That is the easy part. Now we are getting redirected back into the main process of our running electron application.
 
-## Catching the redirect in the electron's main process
+## Catching the redirect in the electron main process
 
 In the main process `index.js` we can "intercept" all calls going in and out and checking if the url contains the `redirectUrl` we provided.
 
@@ -244,3 +242,29 @@ webRequest.onBeforeRequest(filter, ({ url }) => {
 ```
 
 and with the `onBeforeRequest` method we can check if the filter is fulfilled. If so, we can send and event `authEvent` with the url from the main process to the renderer process with the `mainWindow.webContents.send(...)` method. The url contains the code which will be exchanged with the STS to receive the id token and access token.
+
+## Catching the event in the Angular app
+
+With the ipc wrapper and electron communication package `ngx-electron` we can register on the event we are sending:
+
+```ts
+@Injectable({ providedIn: 'root' })
+export class DesktopEventsService {
+  constructor(
+    private platformInformationService: PlatformInformationService,
+    private electronService: ElectronService,
+    private authBaseService: AuthBaseService,
+  ) {}
+
+  registerEvents() {
+    if (this.platformInformationService.isElectron) {
+      this.electronService.ipcRenderer.on(
+        'authEvent',
+        (event: any, data: any) => this.authBaseService.checkAuth(data));
+      );
+    }
+  }
+}
+```
+
+With this the modal is closed and the application runs the same way the web app authenticates to the STS.
