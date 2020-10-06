@@ -248,6 +248,11 @@ and with the `onBeforeRequest` method we can check if the filter is fulfilled. I
 With the ipc wrapper and electron communication package `ngx-electron` we can register on the event we are sending:
 
 ```ts
+import { Injectable } from '@angular/core';
+import { PlatformInformationService } from '@workspace/shared/utils';
+import { ElectronService } from 'ngx-electron';
+// ... more imports
+
 @Injectable({ providedIn: 'root' })
 export class DesktopEventsService {
   constructor(
