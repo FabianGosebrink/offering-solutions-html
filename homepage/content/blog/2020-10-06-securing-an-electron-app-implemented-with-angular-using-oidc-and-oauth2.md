@@ -47,7 +47,7 @@ function createWindow() {
 app.whenReady().then(createWindow);
 ```
 
-Now when we open up a new window to show the login to the user and we get redirected back to our app we do not land in the renderer process like we would do in a web application but in the main process. So the challenge is to configure the STS accordingly, open the popup, redirect back to our process, catch the redirection and tell our renderer process - which is an Angular app - that something happened and then login the user as we would do in a web application.
+Now when we login from our app we open up a new window to show the login to the user and we get redirected back to our app we do not land in the renderer process like we would do in a web application but in the main process. So the challenge is to configure the STS accordingly, open the popup, redirect back to our main process, catch the redirection and tell our renderer process - which is an Angular app - that something happened and then login the user as we would do in a web application.
 
 ## What we will use
 
