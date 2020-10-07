@@ -1,6 +1,6 @@
 ---
 title: Securing an Electron App Implemented with Angular Using OIDC and OAuth2
-date: 2020-09-17
+date: 2020-10-06
 tags: ['aspnetcore', 'angular', 'electron', 'crossplatform']
 draft: false
 category: blog
