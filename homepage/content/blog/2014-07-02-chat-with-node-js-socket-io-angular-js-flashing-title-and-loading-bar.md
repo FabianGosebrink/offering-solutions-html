@@ -37,7 +37,7 @@ Additionally to this you need to have all your scripts loaded. In the end this l
 
 ![2](https://cdn.offering.solutions/img/articles/2014-07-03/2.png)
 
-So what we see here is the head-information which is including everything (dont worry, we will get through most of these files during this post) we need to get the things going and the body. The body is giving us a div where we specify the controller "DemoController" and bind the messages we have in a simple html-list "li" with a simple angular-statement "ng-repeat".
+So what we see here is the head-information which is including everything (dont worry, we will get through most of these files during this post) we need to get the things going and the body. The body is giving us a div where we specify the controller "DemoController" and bind the messages we have in a html-list "li" with a angular-statement "ng-repeat".
 
 <span style="color: #999999;">Note: You need this "track by \$index" as suffix because only with this the message-array can contain the same message multiple times. Without this the message itself would be a key and a key can not occur multiple times. See also <a href="https://docs.angularjs.org/error/ngRepeat/dupes"><span style="color: #999999;">here</span></a></span>
 

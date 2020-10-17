@@ -5,9 +5,7 @@ tags: ['angular', 'forms']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2017/01/14/working-with-angular-2-template-forms/"
-]
+aliases: ['/blog/articles/2017/01/14/working-with-angular-2-template-forms/']
 ---
 
 In this blog I want explain and show you how to work with Angular's template driven forms.
@@ -18,7 +16,7 @@ I was recently giving an Angular course to awesome people and I noticed that wor
 
 ### The Situation
 
-We will start with a simple Angular application which has a structure like this:
+We will start with an Angular application which has a structure like this:
 
 ```
 app
@@ -40,37 +38,33 @@ this is an easy way to start with Angular and template forms.
 
 > I did not mention files like favicon etc. They do not really impact our work here
 
-Now lets got create a simple form. For this I will grab bootstraps most simple form just to get a nice look and feel.
+Now lets got create a form. For this I will grab bootstraps form just to get a nice look and feel.
 
 [Bootstraps Forms](http://getbootstrap.com/css/#forms)
 
 Now we add the bootstrap cdn to our `index.html`.
 
 ```html
-
 <head>
   <link
     rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
   />
 </head>
-
 ```
 
-Out app.component.html simply looks like this:
+Out app.component.html looks like this:
 
 ```html
-
 <div class="container">
   <h1>{{title}}</h1>
   <form-component></form-component>
 </div>
-
 ```
 
 ### Introducing the Form
 
-We remove the checkbox and the file upload from the copied form from bootstrap just for clarity and add the form template to our form component. Further we want to handle a simple Name for understanding. Lets modify the template to only work with a name.
+We remove the checkbox and the file upload from the copied form from bootstrap just for clarity and add the form template to our form component. Further we want to handle a Name for understanding. Lets modify the template to only work with a name.
 
 So our `form.component.html` looks like this now:
 
@@ -89,7 +83,7 @@ So our `form.component.html` looks like this now:
 </form>
 ```
 
-So what we did here so far is nothing Angular related! We just added simple HTML-Form things.
+So what we did here so far is nothing Angular related! We just added HTML-Form things.
 
 We will now go ahead and make this thing an Angular form.
 
@@ -97,7 +91,7 @@ We will now go ahead and make this thing an Angular form.
 
 #### The model
 
-We will use a normal customer to deal with the form. Also nothing spectecular here, we just add a class representing this customer:
+We will use a normal customer to deal with the form. Also nothing spectacular here, we just add a class representing this customer:
 
 ```javascript
 export class Customer {
@@ -202,7 +196,6 @@ With those three things we can ask the form about its state with
 like this:
 
 ```html
-
 <p>{{ myform.value | json }}</p>
 
 <form #myform="ngForm">
@@ -219,13 +212,16 @@ like this:
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
-
 ```
 
 The ngModel directive is forcing Angular to persist the state of the form to the form object. So we read it with
 
 ```javascript
-{{ myform.value | json }}
+{
+  {
+    myform.value | json;
+  }
+}
 ```
 
 But further to that it is doing nothing. We got our state only persisted to the form. We want to interact with our model, right?
@@ -329,7 +325,7 @@ So we can go ahead and for example disable the submit button and show a message 
 
 So this gives us the possibility to ask the form for some variables Angular gives us.
 
-We can also do this whole template variable thing on a control itself and ask the simple control for its state instead of the whole form. The same properties which are valid for the form apply also on the control. Therefore we have to grab our ngModel-directive again and assign it to a template variable to make the control, or better: the model assigned to this control, accessible.
+We can also do this whole template variable thing on a control itself and ask the control for its state instead of the whole form. The same properties which are valid for the form apply also on the control. Therefore we have to grab our ngModel-directive again and assign it to a template variable to make the control, or better: the model assigned to this control, accessible.
 
 ```html
 <input
@@ -377,7 +373,6 @@ Now we can ask for the state of this control in the same way like the form:
 Our button at the end of the form is currently set to submit the form. But we do not catch the submitting so far. So lets do that.
 
 ```html
-
 <h4>Form Value</h4>
 
 <p>{{myform.value | json}}</p>
@@ -405,7 +400,6 @@ Our button at the end of the form is currently set to submit the form. But we do
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
-
 ```
 
 We introduced the ngSubmit-directive and assigned it a function we have to implement on our component.

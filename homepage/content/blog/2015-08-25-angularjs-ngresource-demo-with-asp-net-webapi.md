@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2015/08/25/angularjs-ngresource-demo-with-asp-net-webapi/']
 ---
 
-In this blogpost I want to show a simple AngularJS NgResource Demo with ASP.NET WebAPI querying data as JSON.
+In this blog post I want to show an AngularJS NgResource Demo with ASP.NET WebAPI querying data as JSON.
 
 Code: [https://github.com/FabianGosebrink/ASPNET-WebAPI-AngularJs-NgResource-Demo](https://github.com/FabianGosebrink/ASPNET-WebAPI-AngularJs-NgResource-Demo)
 
@@ -23,7 +23,7 @@ The application follows the "normal" way of seperating the data access also on c
 
 #### Preparation:
 
-Before you can use angulars ng resource you have to include it into your application like this:
+Before you can use Angular's ng resource you have to include it into your application like this:
 
 ```javascript
 (function () {

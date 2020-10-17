@@ -11,7 +11,7 @@ In this blog post I would like to describe how you can add validation to multipl
 
 This powerful features let you validate not just a single form control but instead you can validate one form control against the value from another control. Let us see how we can do this.
 
-The sourcecode is of course on Github and you can copy paste the examples along: [Github](https://github.com/FabianGosebrink/angular-reactive-forms-validation)
+The source code is of course on Github and you can copy paste the examples along: [Github](https://github.com/FabianGosebrink/angular-reactive-forms-validation)
 
 - [Preparation](#preparation)
 - [Form validity](#form-validity)
@@ -25,7 +25,7 @@ The sourcecode is of course on Github and you can copy paste the examples along:
 
 ## Preparation
 
-We are starting off with a simple form looking like this
+We are starting off with a form looking like this
 
 ```ts
 export class AppComponent implements OnInit {
@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
 }
 ```
 
-This is a simple form defining four different fields you can type in the values. `firstName` and `lastName` are simple text fields, `age` is a number, and `room` is a select box which holds three values given above in the `rooms` array.
+This is a form defining four different fields you can type in the values. `firstName` and `lastName` are text fields, `age` is a number, and `room` is a select box which holds three values given above in the `rooms` array.
 
 The template to this can look like
 

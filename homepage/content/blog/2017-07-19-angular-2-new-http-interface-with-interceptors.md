@@ -5,9 +5,8 @@ tags: ['angular', 'http']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2017/07/19/angular-2-new-http-interface-with-interceptors/"
-]
+aliases:
+  ['/blog/articles/2017/07/19/angular-2-new-http-interface-with-interceptors/']
 ---
 
 In this blogpost I want to explore the latest HTTP interface from angular which was introduced in Angular 4.3.
@@ -93,7 +92,7 @@ post<T>(url: string, body: string): Observable<T> {
 
 ## Headers
 
-To apply headers we can simply add another parameter to the get function passing an object with a headers property.
+To apply headers we can add another parameter to the get function passing an object with a headers property.
 
 So
 
@@ -148,7 +147,7 @@ import {
   HttpEvent,
   HttpInterceptor,
   HttpHandler,
-  HttpRequest
+  HttpRequest,
 } from '@angular/common/http';
 
 @Injectable()
@@ -171,8 +170,8 @@ providers: [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: MyFirstInterceptor,
-    multi: true
-  }
+    multi: true,
+  },
 ];
 ```
 

@@ -397,7 +397,7 @@ And you are done :)
 If you want to add new repositories you just have to extend your UoW-interface and add your new entities to your databaseContext.
 
 _Note:
-If you are using Ninject to inject your stuff and for IoC you can simply make your UnitOfWork present in the NinjectWebCommon.cs as InRequestScope. So it is injected once per request and you can Use DI_
+If you are using Ninject to inject your stuff and for IoC you can make your UnitOfWork present in the NinjectWebCommon.cs as InRequestScope. So it is injected once per request and you can Use DI_
 
 ```csharp
 private static void RegisterServices(IKernel kernel)

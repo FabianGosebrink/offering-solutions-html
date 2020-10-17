@@ -134,7 +134,7 @@ private makeblob(dataURL) {
 }
 ```
 
-As we have the headers, the parameters and the body now we can set up a simple http call to the API with angular passing the subscriptionkey and the base64 representation of the image like:
+As we have the headers, the parameters and the body now we can set up a http call to the API with angular passing the subscription key and the base64 representation of the image like:
 
 ```javascript
 scanImage(subscriptionKey: string, base64Image: string) {

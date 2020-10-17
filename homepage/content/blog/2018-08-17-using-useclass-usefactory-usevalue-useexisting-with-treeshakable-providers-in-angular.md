@@ -5,9 +5,10 @@ tags: ['angular']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2018/08/17/using-useclass-usefactory-usevalue-useexisting-with-treeshakable-providers-in-angular/",
-]
+aliases:
+  [
+    '/blog/articles/2018/08/17/using-useclass-usefactory-usevalue-useexisting-with-treeshakable-providers-in-angular/',
+  ]
 ---
 
 In this blogpost I want to describe how to use the `useClass`, `useValue`, `useFactory`, `useExisting` providers in the new [treeshakable providers](https://angular.io/guide/providers) from Angular.
@@ -32,7 +33,7 @@ Let us start having the [AngularCLI](https://cli.angular.io/) installed and scaf
 
 ```javascript
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TestService {
   constructor() {}
@@ -45,7 +46,7 @@ Lets modify the service like this
 
 ```javascript
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TestService {
   sayHello() {
@@ -110,7 +111,7 @@ export class TestService2 {
 
 @Injectable({
   providedIn: 'root',
-  useClass: TestService2 // <-- add this line
+  useClass: TestService2, // <-- add this line
 })
 export class TestService {
   sayHello() {
@@ -154,7 +155,7 @@ export class TestService2 {
 
 @Injectable({
   providedIn: 'root',
-  useFactory: xyzFactory
+  useFactory: xyzFactory,
 })
 export class TestService {
   sayHello() {
@@ -175,7 +176,7 @@ on the console. This factory pattern comes out of the box which is very powerful
 
 Sometimes you have to add some dependencies to the factory because you need it to decide whether to return serviceA or serviceB. However, you can add the dependencies with the `deps` property on the configuration object.
 
-Let us assume that we have to have the `HttpClient` from `@angular/common/http` inside our factory we can simply add it to our `deps` property inside an array.
+Let us assume that we have to have the `HttpClient` from `@angular/common/http` inside our factory we can add it to our `deps` property inside an array.
 
 ```javascript
 export class TestService3 {
@@ -196,7 +197,7 @@ export class TestService2 {
 @Injectable({
   providedIn: 'root',
   useFactory: xyzFactory,
-  deps: [HttpClient]
+  deps: [HttpClient],
 })
 export class TestService {
   sayHello() {
@@ -226,10 +227,10 @@ To test the service now - remember we did not change our app.component at all un
 @Injectable({
   providedIn: 'root',
   useValue: {
-    sayHello: function() {
+    sayHello: function () {
       console.log('whuuuut??');
-    }
-  }
+    },
+  },
 })
 export class TestService {
   sayHello() {
@@ -244,7 +245,7 @@ Our console in the browser now prints out
 whuuuut??
 ```
 
-So this works, too. Instead of the `TestService` we are passing a simple object and to not let our app.component crash we give it a function called `sayHello` which gets called instead of the function of our `TestService`.
+So this works, too. Instead of the `TestService` we are passing an object and to not let our app.component crash we give it a function called `sayHello` which gets called instead of the function of our `TestService`.
 
 Last but not least let us take a look into `useExisting`
 
@@ -256,7 +257,7 @@ We already know `useClass`. You could easily provide a `ServiceB` and everybody 
 
 ```javascript
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServiceB {
   sayHello() {
@@ -266,7 +267,7 @@ export class ServiceB {
 
 @Injectable({
   providedIn: 'root',
-  useClass: ServiceB
+  useClass: ServiceB,
 })
 export class ServiceA {
   sayHello() {
@@ -279,7 +280,7 @@ will create two instances of your `ServiceB` class which might not be what you w
 
 ```javascript
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TestService2 {
   sayHello() {
@@ -289,7 +290,7 @@ export class TestService2 {
 
 @Injectable({
   providedIn: 'root',
-  useExisting: TestService2
+  useExisting: TestService2,
 })
 export class TestService {
   sayHello() {
@@ -322,7 +323,7 @@ import { TestService } from './test.service';
 describe('TestService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TestService]
+      providers: [TestService],
     });
   });
 
@@ -332,7 +333,7 @@ describe('TestService', () => {
 });
 ```
 
-Thanks to the treeshakeable proviers we can refactor this one to the following
+Thanks to the treeshakeable providers we can refactor this one to the following
 
 ```javascript
 import { TestBed } from '@angular/core/testing';
@@ -350,7 +351,7 @@ describe('TestService', () => {
 });
 ```
 
-As we do not need the services in the providers array of the testing module. We can simply get it from the `TestBed` as if we provided it as our modules don't use the provider-array anymore because of the new syntax of threeshakeable providers.
+As we do not need the services in the providers array of the testing module. We can get it from the `TestBed` as if we provided it as our modules don't use the provider-array anymore because of the new syntax of threeshakeable providers.
 
 > If you would like to change the class which is being used by the unit tests you still hav to use the `providers` array with your specific `useClass`, etc. property
 
@@ -409,10 +410,10 @@ describe('ServiceToTest', () => {
       providers: [
         {
           provide: TestServiceWithHttp,
-          useClass: TestServieWithoutHttp
+          useClass: TestServieWithoutHttp,
         },
-        ServiceToTest
-      ]
+        ServiceToTest,
+      ],
     });
   });
 
@@ -423,7 +424,7 @@ describe('ServiceToTest', () => {
 });
 ```
 
-And this simple test if the service can get created blows up with an error:
+And this test if the service can get created blows up with an error:
 
 ```
 Error: StaticInjectorError(DynamicTestModule)[HttpClient]:
@@ -442,11 +443,11 @@ describe('ServiceToTest', () => {
       providers: [
         {
           provide: TestServiceWithHttp,
-          useClass: TestServieWithoutHttp
+          useClass: TestServieWithoutHttp,
         },
         { provide: OptionalServiceWithHttp, useValue: null }, // See this line?
-        ServiceToTest
-      ]
+        ServiceToTest,
+      ],
     });
   });
 

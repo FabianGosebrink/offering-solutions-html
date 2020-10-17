@@ -45,7 +45,7 @@ category: noblog
 
 ---
 
-### End-To-End : Distributed Systems with ASP.NET Core and Angular - Master Class
+### End-To-End : Distributed Systems with ASP.NET Core and Angular - Workshop
 
 #### 25.11.2019 - DDC Köln (Workshop)
 
@@ -61,7 +61,7 @@ category: noblog
 
 ---
 
-### End-To-End : Distributed Systems with ASP.NET Core and Angular - Master Class
+### End-To-End : Distributed Systems with ASP.NET Core and Angular - Workshop
 
 #### 20.11.2019 - NgPoland Warschau (Workshop)
 

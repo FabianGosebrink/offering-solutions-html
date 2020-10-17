@@ -7,11 +7,11 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blog post I want to show how to get started with ASP.NET Core Blazor by creating a simple Todo Application with forms, container and presentational components synchronized with SignalR.
+In this blog post I want to show how to get started with ASP.NET Core Blazor by creating a Todo Application with forms, container and presentational components synchronized with SignalR.
 
 Let's get started.
 
-> We will only cover the frontend here, the backend is a simple ASP.NET Core WebAPI which you can see in the github Repository.
+> We will only cover the frontend here, the backend is an ASP.NET Core WebAPI which you can see in the github Repository.
 
 [https://github.com/FabianGosebrink/blazor-todo-app](https://github.com/FabianGosebrink/blazor-todo-app)
 
@@ -127,7 +127,7 @@ If you now take a look into the `index.html` file you can see that there is a cu
 
 This is how our application can be shown in the browser then :)
 
-The `App.razor` file is the component which is getting rendered and basically is like a route outlet where the components are getting rendered in. It checks the route data and is using a default layout to display the routes and its components. (We gonna get later to the point where routes and components are connected).
+The `App.razor` file is the component which is getting rendered and is like a route outlet where the components are getting rendered in. It checks the route data and is using a default layout to display the routes and its components. (We gonna get later to the point where routes and components are connected).
 
 If no route matches, it falls back to a `<NotFound></NotFound>` tag.
 
@@ -148,7 +148,7 @@ The `_Imports.razor` defines all the namespaces which should be used in the clie
 
 ## The NavMenu
 
-The mavigation is a component in the `Shared` folder and provides the navigation. This is the first thing we are going to change as we will have a simple [Bootstrap starter template](https://getbootstrap.com/docs/4.5/examples/starter-template/). So we will change the content of this file to this.
+The mavigation is a component in the `Shared` folder and provides the navigation. This is the first thing we are going to change as we will have a [Bootstrap starter template](https://getbootstrap.com/docs/4.5/examples/starter-template/). So we will change the content of this file to this.
 
 ```html
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -218,7 +218,7 @@ The `Pages` folder holds all main pages which can be addressed via routing. Page
 <!-- /.container -->
 ```
 
-This is plain html except the first line `@page "/"` which tell the router _when the route / applies, render this page_. All good.
+This is plain html except the first line `@page "/"` which tell the router _when the route / is active, render this page_. All good.
 
 So we can add our `Todo` feature exactly here.
 
@@ -251,7 +251,7 @@ public class TodoService
 }
 ```
 
-Now we can add the method to add a Todo. We send a POST request to the endpoint with a `TodoDto` in the body. The `TodoDto` lies in a project called `BlazorTodoAoo.Shared` and can be used from server and client then. We return the new created tode item in case the caller of the method needs it.
+Now we can add the method to add a Todo. We send a POST request to the endpoint with a `TodoDto` in the body. The `TodoDto` is placed in a project called `BlazorTodoAoo.Shared` and can be used from server and client then. We return the new created todo item in case the caller of the method needs it.
 
 ```cs
 public async Task<TodoDto> AddTodo(TodoDto createDto)
@@ -265,7 +265,7 @@ public async Task<TodoDto> AddTodo(TodoDto createDto)
 }
 ```
 
-Getting the todo items looks quite the same. We just fire a GET request to the url we created
+Getting the todo items looks quite the same. We throw a GET request to the url we created
 
 ```cs
 public async Task<List<TodoDto>> GetTodos()
@@ -328,7 +328,7 @@ What we want to build is:
 
 The `TodoList.razor` takes a list of items from the outside and displays them. It acts as a presentational component not worrying about where the data comes from but to display it correctly.
 
-In its csharp file we implement an partial class inheriting from the `ComponentBase` class. Inside f this we can define Properties with the `[Parameter]` attribute which describes this is a property we can bind data to or get data from (`EventCallback`). We can fire the event to the outside world by invoking the event callback.
+In its csharp file we implement an partial class inheriting from the `ComponentBase` class. Inside f this we can define Properties with the `[Parameter]` attribute which describes this is a property we can bind data to or get data from (`EventCallback`). We can throw the event to the outside world by invoking the event callback.
 
 ```cs
 public partial class TodoList : ComponentBase
@@ -347,11 +347,11 @@ public partial class TodoList : ComponentBase
 }
 ```
 
-The method `ToggleDone` takes a `TodoDto` as parameter, changes the `Done` property and fires the event to the outside then.
+The method `ToggleDone` takes a `TodoDto` as parameter, changes the `Done` property and throw the event to the outside then.
 
 In the html we can iterate over the passed in `TodoModels` and display them in ul/li tags from the used bootstrap framework.
 
-We also add an `input` typed as a checkbox and bind the `.Done` property to it. If it changes, we call the `ToggleDone` method we just implemented.
+We also add an `input` typed as a checkbox and bind the `.Done` property to it. If it changes, we call the `ToggleDone` method we implemented.
 
 ```html
 <h3>TodoList</h3>
@@ -375,7 +375,7 @@ We also add an `input` typed as a checkbox and bind the `.Done` property to it. 
 
 ### Todo Form Component
 
-The form component is responsible for providing a form the user can add a todo with. We again create a partial class with an `EventCallback` which fires if a new todo was being added and provide an internal TodoItem which can be filled.
+The form component is responsible for providing a form the user can add a todo with. We again create a partial class with an `EventCallback` which throws if a new todo was being added and provide an internal TodoItem which can be filled.
 
 ```cs
 public partial class TodoForm : ComponentBase
@@ -392,12 +392,10 @@ public partial class TodoForm : ComponentBase
 }
 ```
 
-In the html we create a from using Blazors `EditForm` passing the model we just provided from the cs class. On a valid submit we call the `HandleValidSubmit` method.
+In the html we create a from using Blazors `EditForm` passing the model we provided from the cs class. On a valid submit we call the `HandleValidSubmit` method.
 
 ```html
-<EditForm Model="@todoModel" OnValidSubmit="HandleValidSubmit">
-  ...
-</EditForm>
+<EditForm Model="@todoModel" OnValidSubmit="HandleValidSubmit"> ... </EditForm>
 ```
 
 Inside of the form we add a button with the type `submit` (otherwise the form des not get submitted) and we disable it when the current value of the model is not present.
@@ -417,7 +415,7 @@ Inside of the form we add a button with the type `submit` (otherwise the form de
 </EditForm>
 ```
 
-Lastly we of course have to add the input field where we bind the value of the new created todo item to. For this we use the `InputText` component of Blazors Framework again.
+Lastly we have to add the input field where we bind the value of the new created todo item to. For this we use the `InputText` component of Blazors Framework again.
 
 ```html
 <EditForm Model="@todoModel" OnValidSubmit="HandleValidSubmit">
@@ -441,7 +439,7 @@ Lastly we of course have to add the input field where we bind the value of the n
 
 ### Todo Component
 
-The todo component is glueing it all together. It hosts both other components, reacts to events and calls the `TodoService` when needed.
+The todo component is glueing it all together. It contains both other components, reacts to events and calls the `TodoService` when needed.
 
 We will _not_ take the HTTP responses of adding and updating the items here as we will add this via SignalR later.
 
@@ -491,7 +489,7 @@ public partial class Todo : ComponentBase
 }
 ```
 
-Alright having done that we have to call the methods when the components throw a specific event. We already implemented that in the components, so now let us call the methods we just created.
+Alright having done that we have to call the methods when the components throw a specific event. We already implemented that in the components, so now let us call the methods we created.
 
 We make this component accessible via the route `/todo`. The component then loads the other two components: The form and the list.
 
@@ -532,10 +530,9 @@ All what is missing now is that we pass parameters down to the list and receive 
   </div>
 </main>
 <!-- /.container -->
-<!-- /.container -->
 ```
 
-If the `TodoForm` throws the `TodoAdded` event, we will call the method `AddTodo`. Same with the list, just another method and event then.
+If the `TodoForm` throws the `TodoAdded` event, we will call the method `AddTodo`. Same with the list, another method and event then.
 The list gets passed the models as well to display them.
 
 That is it so far!
@@ -558,7 +555,7 @@ namespace BlazorTodoApp.Server.Hubs
 }
 ```
 
-We just have to enable compression and map the hub route.
+We have to enable compression and map the hub route.
 
 ```cs
 public void ConfigureServices(IServiceCollection services)
@@ -641,7 +638,7 @@ namespace BlazorTodoApp.Server.Controllers
 
 Now we have to react to this on client side.
 
-We can enhance the `TodoService` and create the hub connection, register to the events and then start the connection (in this order!). The service throws events to the outside using the `EventHandler` again. When the server throws an action we are getting passed the todo as parameter and can just throw the event with the argument from the server.
+We can enhance the `TodoService` and create the hub connection, register to the events and then start the connection (in this order!). The service throws events to the outside using the `EventHandler` again. When the server throws an action we are getting passed the todo as parameter and can throw the event with the argument from the server.
 
 ```cs
 // ...
@@ -702,7 +699,7 @@ namespace BlazorTodoApp.Client.Services
 }
 ```
 
-In our `Todo.razor` component, which takes care of all the data communication, we can react to those events now with adding eventhandlers and call the `InitSignalR` method we just created in the service. We are calling the `StateHasChanged()` method to ensure the components get triggered to re-render.
+In our `Todo.razor` component, which takes care of all the data communication, we can react to those events now with adding eventhandlers and call the `InitSignalR` method we created in the service. We are calling the `StateHasChanged()` method to ensure the components get triggered to re-render.
 
 ```cs
 public partial class Todo : ComponentBase

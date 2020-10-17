@@ -9,7 +9,7 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this blog post I want to describe how you can add authentication and authorization in your Angular app using NgRx. We are using an ASP.NET Core backend to get our secure data from and a custom STS which we use for the authentication and the id token as well as an access token.
 
-This is a follow up post of [Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2](https://offering.solutions/blog/articles/2020/05/18/authentication-and-authorization-with-angular-and-asp.net-core-using-oidc-and-oauth2/) so if you want to get into the complete setup you might give this blog post a shot first :-) We will build this one basically up on the app which was mentioned in the references blog post.
+This is a follow up post of [Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2](https://offering.solutions/blog/articles/2020/05/18/authentication-and-authorization-with-angular-and-asp.net-core-using-oidc-and-oauth2/) so if you want to get into the complete setup you might give this blog post a shot first :-) We will build this one up on the app which was mentioned in the references blog post.
 
 In this post we are gonna focus on the configuration and the Angular Application itself using NgRx.
 
@@ -55,7 +55,7 @@ Both folders get a barrel file `index.ts` to export what is needed. And the main
 
 ## Adding the auth actions
 
-We will add a few actions here to get along with the authentication. Basically to keep it simple we will add actions for `checkAuth`, `login` and `logout` with the appropriate complete actions.
+We will add a few actions here to get along with the authentication. To keep it easy we will add actions for `checkAuth`, `login` and `logout` with the appropriate complete actions.
 
 ```ts
 import { createAction, props } from '@ngrx/store';
@@ -80,7 +80,7 @@ The actions are placed in a file `auth.actions.ts` lying in the `store/auth` fol
 
 ## Creating the auth state and reducer
 
-Before we can define the reducer we have to define the state which holds the properties for authentication we need in our app. To keep it simple we start with a `isLoggedIn` property and a property holding the userProfile `profile`. The name of the feature is called `auth` and so is the property on the state object of our app. We will expose this as a variable here as well.
+Before we can define the reducer we have to define the state which holds the properties for authentication we need in our app. To keep it easy we start with a `isLoggedIn` property and a property holding the userProfile `profile`. The name of the feature is called `auth` and so is the property on the state object of our app. We will expose this as a variable here as well.
 
 ```ts
 export const authFeatureName = 'auth';
@@ -211,7 +211,7 @@ Now we can build the effects for the authentication:
 
 ## Creating the auth effects
 
-For the actions we have we will add the corresponding effects and inject the `AuthService` we just created. If we navigate away from our app to an external source (like the STS in this case when logging in and out) we have to config the actions with `{ dispatch: false }` to clarify that we will NOT return an action to the actions stream inside our app.
+For the actions we have we will add the corresponding effects and inject the `AuthService` we created. If we navigate away from our app to an external source (like the STS in this case when logging in and out) we have to config the actions with `{ dispatch: false }` to clarify that we will NOT return an action to the actions stream inside our app.
 
 So when the action `login` is dispatched we react with calling `doLogin()` from our `AuthService`. as this redirects, we configure it with `{ dispatch: false }`
 
@@ -333,11 +333,11 @@ export class AuthEffects {
 }
 ```
 
-So bascically we have everything prepared now! What is missing are the selectors to get a nicer access to the values form our store.
+So we have everything prepared now! What is missing are the selectors to get a nicer access to the values form our store.
 
 ## Adding the auth selectors
 
-We just have two properties to provide here and we will wrap them in their according selectors. Place them in a file called `auth.selectors.ts` in the `store/auth` folder. We are using the `authFeatureName` variable now exposed by the reducer to create a featureSelector returning the auth part of the state we are interested in and then create the selectors for the specific properties.
+We have two properties to provide here and we will wrap them in their according selectors. Place them in a file called `auth.selectors.ts` in the `store/auth` folder. We are using the `authFeatureName` variable now exposed by the reducer to create a featureSelector returning the auth part of the state we are interested in and then create the selectors for the specific properties.
 
 ```ts
 import { AuthState, authFeatureName } from './auth.reducer';
@@ -356,7 +356,7 @@ export const selectUserInfo = createSelector(
 );
 ```
 
-The `index.ts` file is just exporting all the stuff we did.
+The `index.ts` file is exporting all the stuff we did.
 
 ```ts
 export * from './auth.actions';
@@ -383,7 +383,7 @@ export * from './auth.selectors';
 
 ## Creating the store for data
 
-Basically we are using the same files and techniques for getting the data from the server in the end using a `data.service.ts` which is also placed in the `services` folder. We are adding only one (two with the complete action) action inside the action file, a reducer, the effect for getting the http data and the selector for selecting the data from the state.
+We are using the same files and techniques for getting the data from the server in the end using a `data.service.ts` which is also placed in the `services` folder. We are adding only one (two with the complete action) action inside the action file, a reducer, the effect for getting the http data and the selector for selecting the data from the state.
 
 ```ts
 import { createAction, props } from '@ngrx/store';
@@ -448,7 +448,7 @@ export const selectData = createSelector(
 );
 ```
 
-and the `data.service.ts` is firing the http request and returning the observable.
+and the `data.service.ts` is throwing the http request and returning the observable.
 
 ```ts
 @Injectable({ providedIn: 'root' })
@@ -569,7 +569,7 @@ const routes: Routes = [
 ];
 ```
 
-The `HomeComponent` and the `UnauthorizedComponent` are just static and contain no data. Interesting is the `ProtectedComponent` and the `AppComponent`
+The `HomeComponent` and the `UnauthorizedComponent` are static and contain no data. Interesting is the `ProtectedComponent` and the `AppComponent`
 
 ### AppComponent
 
@@ -654,7 +654,7 @@ Due to the NgRx store this is very nice and clean.
 
 ### Adding the AuthGuard
 
-To save the `protected` route with a guard we can use the `AuthService` again as he exposes if we are authenticated or not.
+To save the `protected` route with a guard we can use the `AuthService` again as it exposes if we are authenticated or not.
 
 ```ts
 /* imports */

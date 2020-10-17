@@ -46,7 +46,7 @@ We create a new container, set it to "Public access level" _"Blob"_ and give it 
 
 Then click "Create".
 
-Inside of the container you can see no files yet, we will upload them with Angular and ASP.NET Core. Just read on 😉
+Inside of the container you can see no files yet, we will upload them with Angular and ASP.NET Core. Read on 😉
 
 ![Azure Storage Account Resource Inside Container](https://cdn.offering.solutions/img/articles/2020-08-09/5.png)
 
@@ -56,7 +56,7 @@ If you go back into the Container Overview you can choose the "Access keys" in t
 
 We need this for later.
 
-And that is basically it for setting up the Azure Blob Storage.
+And that is it for setting up the Azure Blob Storage.
 
 Let us move on and create the ASP.NET Core WebAPI.
 
@@ -87,7 +87,7 @@ You can check if and which version o the package is installed by checking your `
 
 ## Modifying the app settings
 
-Now let us enter the `appsettings.json` file to add an entry called `AzureBlobStorage` and paste the connection string you just copied here
+Now let us enter the `appsettings.json` file to add an entry called `AzureBlobStorage` and paste the connection string you copied here
 
 ```json
 {
@@ -144,7 +144,7 @@ public class BlobService : IBlobService
 }
 ```
 
-The method `UploadFileBlobAsync` uploads a file to the blob storage we just created using the `BlobServiceClient`. First, we get the container client and call `CreateIfNotExists` on it.
+The method `UploadFileBlobAsync` uploads a file to the blob storage we created using the `BlobServiceClient`. First, we get the container client and call `CreateIfNotExists` on it.
 
 > This will ensure the container is there when we upload something into it. However if you do not want to let your API decide which containers to be created or do this when seeding or not in the api at all you have to remove or move this line to another place. 😊
 
@@ -158,9 +158,9 @@ services.AddScoped<IBlobService, BlobService>();
 
 ## Using the service in a controller
 
-Inside our controller we can now inject the service and call the method to upload the file size. We are reacting to a `POST` request and reading the file from the `Request` object and return a JSON with a property `path` containing the absolute path to the resource we just uploaded.
+Inside our controller we can now inject the service and call the method to upload the file size. We are reacting to a `POST` request and reading the file from the `Request` object and return a JSON with a property `path` containing the absolute path to the resource we uploaded.
 
-Note that we are using the `DisableRequestSizeLimit` here for demo. Maybe you want to remove this in production apps. As a `blobContainerName` param we are passing the name of the container we want to store our data in. We just created this before when adding the storage in Azure but with our code a new one will be created as well automatically for us.
+Note that we are using the `DisableRequestSizeLimit` here for demo. Maybe you want to remove this in production apps. As a `blobContainerName` param we are passing the name of the container we want to store our data in. We created this before when adding the storage in Azure but with our code a new one will be created as well automatically for us.
 
 ```csharp
 using ...
@@ -204,7 +204,7 @@ namespace backend.Controllers
 
 Our upload url will be `<domain>/api/upload` then.
 
-That is it for the backend, we just have to add the frontend now and create an Angular app which will upload the files for us.
+That is it for the backend, we have to add the frontend now and create an Angular app which will upload the files for us.
 
 # Creating the Angular App
 
@@ -250,9 +250,7 @@ export class AppModule {}
 In the components template we use a button to open a hidden file input and we are setting the filename of the selected file so the user knows that a file was created. A `save` button then calls a `save()` method where the files are getting passed and kicks of the saving progress
 
 ```html
-<button type="button" (click)="fileInput.click()">
-  Choose File
-</button>
+<button type="button" (click)="fileInput.click()">Choose File</button>
 <input
   hidden
   #fileInput
@@ -262,14 +260,12 @@ In the components template we use a button to open a hidden file input and we ar
 />
 <label>{{ filename }}</label>
 <br />
-<button type="button" (click)="save(fileInput.files)">
-  Save
-</button>
+<button type="button" (click)="save(fileInput.files)">Save</button>
 <br />
 <img [src]="imageSource" />
 ```
 
-The component class gets injected the `UploadService` and calls the `upload` method passing the form data. When the call comes back we are extracting the `path` property and setting it as image source to display the picture we just uploaded.
+The component class gets injected the `UploadService` and calls the `upload` method passing the form data. When the call comes back we are extracting the `path` property and setting it as image source to display the picture we uploaded.
 
 ```ts
 import { Component } from '@angular/core';

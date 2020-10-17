@@ -11,7 +11,7 @@ With this article I want to briefly and shortly describe the differences between
 
 There are many blog posts out there which cover those topics already but maybe this helps to understand if the other posts did not help until here :)
 
-Let us start and first create a simple observable of an array with `from()`
+Let us start and first create an observable of an array with `from()`
 
 ```js
 import { from } from 'rxjs';

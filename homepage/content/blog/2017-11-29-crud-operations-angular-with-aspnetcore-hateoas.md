@@ -5,9 +5,8 @@ tags: ['aspnetcore', 'angular', 'hateoas']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2017/11/29/crud-operations-angular-with-aspnetcore-hateoas/"
-]
+aliases:
+  ['/blog/articles/2017/11/29/crud-operations-angular-with-aspnetcore-hateoas/']
 ---
 
 This blog post shows how to implement CRUD operations in Angular which are driven by an ASP.NET Core Web API using HATEOAS.
@@ -35,7 +34,7 @@ You can find the code here: [https://github.com/FabianGosebrink/ASPNETCore-Angul
 
 ## <a name="whatishateoas">What is HATEOAS</a>
 
-HATEOAS stands for _hypermedia as the engine of application state_. Through the seperation of client and server HATEOAS provides the possibility to both sides growing and evolving seperately. With HATEOAS the server not only exposes the resouce the client asked for but also the links telling how to navigate through the application. There is no standard for HATEOAS out there yet (maybe some day there will be one) but different ways to do HATEOAS. One of them is [HAL](http://stateless.co/hal_specification.html), but there is also [JSON-LD](https://json-ld.org/), etc. A nice blogpost which discusses all the different apporaches can be found in the links.
+HATEOAS stands for _hypermedia as the engine of application state_. Through the separation of client and server HATEOAS provides the possibility to both sides growing and evolving separately. With HATEOAS the server not only exposes the resource the client asked for but also the links telling how to navigate through the application. There is no standard for HATEOAS out there yet (maybe some day there will be one) but different ways to do HATEOAS. One of them is [HAL](http://stateless.co/hal_specification.html), but there is also [JSON-LD](https://json-ld.org/), etc. A nice blog post which discusses all the different approaches can be found in the links.
 
 ## <a name="thebackend">The Backend</a>
 
@@ -391,7 +390,7 @@ The specific `CustomerDataService` then exposes only one method by extending the
 export class CustomerDataService extends HttpBaseService {
   fireRequest(customer: Customer, method: string) {
     const links = customer.links
-      ? customer.links.find(x => x.method === method)
+      ? customer.links.find((x) => x.method === method)
       : null;
 
     switch (method) {

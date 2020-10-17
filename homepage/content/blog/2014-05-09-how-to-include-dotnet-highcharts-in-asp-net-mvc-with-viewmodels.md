@@ -49,7 +49,7 @@ Now in your controller you can add your values. (I used just some for testing ri
 
 And return the viewmodel into your view.
 
-In the view you can now work with your viewmodel and where you want to show your chart you simply have to get on the Chart-Property provided by your viewmodel:
+In the view you can now work with your viewmodel and where you want to show your chart you have to get on the Chart-Property provided by your viewmodel:
 
 ![How to include DotNet.HighCharts in ASP.NET MVC with ViewModels](https://cdn.offering.solutions/img/articles/2014-05-09/492c928a-010b-4ff0-8868-eeafc2979c6b.png)The charts requires jQuery. So again: Be sure to have it included at the time your view takes access to your Chart-Property.
 

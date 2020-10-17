@@ -1,20 +1,19 @@
 ---
 title: WPF CallMemberName for INotifyPropertyChanged
 date: 2015-02-08
-tags: [ 'wpf']
+tags: ['wpf']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2015/02/08/wpf-callmembername-for-inotifypropertychanged/",
-]
+aliases:
+  ['/blog/articles/2015/02/08/wpf-callmembername-for-inotifypropertychanged/']
 ---
 
-In this blogpost I want to show you how to use WPF CallMemberName for INotifyPropertyChanged.
+In this blog post I want to show you how to use WPF CallMemberName for INotifyPropertyChanged.
 
-Regarding to this blogpost [here](http://offering.solutions/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/) I showed up how to implement the INotifyPropertyChanged.
+Regarding to this blog post [here](http://offering.solutions/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/) I showed up how to implement the INotifyPropertyChanged.
 
-Well with .Net-Framework 4.5 a new solution came up to make it even more simple:
+Well with .Net-Framework 4.5 a new solution came up to make it even more easy:
 
 Instead of the "old" (but working) base-class
 
@@ -58,7 +57,7 @@ public class NotifyPropertyChangedBase : INotifyPropertyChanged
 }
 ```
 
-The CallMemberName-Attribute is automatically set to the PropertyName which calls it. So the usage in the ViewModel (or whereever you throw the event) is now a simple:
+The CallMemberName-Attribute is automatically set to the PropertyName which calls it. So the usage in the ViewModel (or wherever you throw the event) is now easy:
 
 ```csharp
 public string NameToDisplay
@@ -75,7 +74,7 @@ public string NameToDisplay
 }
 ```
 
-See: You do not need to give a func. instead you are only calling the method whithout any paramters.
+See: You do not need to give a func. instead you are only calling the method without any parameters.
 
 Happy coding!
 

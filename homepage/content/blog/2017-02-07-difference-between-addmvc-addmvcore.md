@@ -5,9 +5,7 @@ tags: ['aspnet', 'aspnetcore']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2017/02/07/difference-between-addmvc-addmvcore/"
-]
+aliases: ['/blog/articles/2017/02/07/difference-between-addmvc-addmvcore/']
 ---
 
 In this blogpost I want to show you difference between the ASP.NET Core methods `AddMvc()` and `AddMvcCore()` when working with ASP.NET Core.
@@ -48,26 +46,26 @@ brings
     id: 1,
     street: 'Street1',
     city: 'Town1',
-    zipCode: 1234
+    zipCode: 1234,
   },
   {
     id: 2,
     street: 'Street2',
     city: 'Town2',
-    zipCode: 1234
+    zipCode: 1234,
   },
   {
     id: 3,
     street: 'Street3',
     city: 'Town3',
-    zipCode: 1234
+    zipCode: 1234,
   },
   {
     id: 4,
     street: 'Street4',
     city: 'Town4',
-    zipCode: 1234
-  }
+    zipCode: 1234,
+  },
 ];
 ```
 
@@ -172,7 +170,7 @@ So when using `AddMvcCore()` we have to add everything by ourselves. This means,
 
 Now that we know the difference between those two methods: How can we get our webapi going again? We still have the error and we can not return any data.
 
-We can fix that by simply telling ASP.NET that it should use JsonFormatters like
+We can fix that by telling ASP.NET that it should use JsonFormatters like
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)

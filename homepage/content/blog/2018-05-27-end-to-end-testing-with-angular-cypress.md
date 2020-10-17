@@ -37,7 +37,7 @@ If you now start the cypress tests you will notice that cypress created a folder
 
 ## The application
 
-The application is rather simple and is just a Todo-List which we want to test end-to-end.
+The application is rather easy and is just a Todo-List which we want to test end-to-end.
 We have a form component which can throw the output of an added todo and a list component which can mark items as "done" and expects a list of items as input.
 
 ![Todoapplication](https://cdn.offering.solutions/img/articles/2018-05-29/todo-cypress.gif)
@@ -175,7 +175,7 @@ it('Submit Form should clear Input', () => {
 });
 ```
 
-When getting the input we can type something in with the method "type('myText')" and then get the form the same way and simply submit it. Then we can check the value of the input again and check if it is empty.
+When getting the input we can type something in with the method "type('myText')" and then get the form the same way and submit it. Then we can check the value of the input again and check if it is empty.
 
 Lets test next if when we
 

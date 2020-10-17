@@ -132,9 +132,9 @@ public class HouseMapper : IHouseMapper
 }
 ```
 
-So here we are just mapping from one to another. Simple case. This can get more complex but it should do it for this time.
+So here we are just mapping from one to another. This can get more complex but it should do it for this time.
 
-After we created the mapper we want to have this mapper instanciated **every time a request comes in**. For this we use the build in DI-container in ASP.NET Core.
+After we created the mapper we want to have this mapper instantiated **every time a request comes in**. For this we use the build in DI-container in ASP.NET Core.
 
 So go to Startup.cs and add the line
 
