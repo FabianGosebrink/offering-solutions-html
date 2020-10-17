@@ -5,6 +5,30 @@ draft: false
 category: noblog
 ---
 
+### Architecting Angular Applications with Angular Libraries
+
+#### 17.10.2020 - DevFest UK & Ireland
+
+**Keywords:** angular, libraries, architecture
+
+---
+
+### Testing using Angular
+
+#### 13.10.2020 - Web developer Conference
+
+**Keywords:** angular, testing
+
+---
+
+### Statemanagement in Angular with NgRx Stores & Effects
+
+#### 12.10.2020 - Web developer Conference
+
+**Keywords:** angular, ngrx
+
+---
+
 ### Cross Platform Apps with Cordova, Electron and Angular
 
 #### 24.09.2020 - BASTA! Mainz
@@ -25,7 +49,7 @@ category: noblog
 
 #### 15.07.2020 - NG-Poland
 
-**Keywords:** angular, libraries, Architecture
+**Keywords:** angular, libraries, architecture
 
 ---
 
@@ -33,7 +57,7 @@ category: noblog
 
 #### 25.02.2020 - BASTA! Frankfurt
 
-**Keywords:** angular, libraries, Architecture
+**Keywords:** angular, libraries, architecture
 
 ---
 
@@ -41,7 +65,7 @@ category: noblog
 
 #### 27.11.2019 - Web Zurich UG Meetup
 
-**Keywords:** angular, libraries, Architecture
+**Keywords:** angular, libraries, architecture
 
 ---
 
