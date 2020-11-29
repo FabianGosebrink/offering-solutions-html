@@ -63,8 +63,22 @@ So now the Home Assistant was running...and I learned a lot until here!
 
 ### ... the humidity sensor
 
-I took a look at the humidity sensor. The company was "Aqara" but the Design was looking familiar...and then I realized that I could add this sensor to the app I was controlling my vacuum cleaner with! Aqara is like a sub company from Roborock controlled with the "Mi Home" app. Alright! Nice.
+I took a look at the humidity sensor. The company was "Aqara" but the Design was looking familiar...and then I realized that I could add this sensor to the app I was controlling my vacuum cleaner with! Aqara is like a sub company from Roborock controlled with the [Mi Home App](https://play.google.com/store/apps/details?id=com.xiaomi.smarthome&hl=en&gl=US) app. Alright! Nice.
 
-But my app was not able to find the sensor, no matter what I tried. I felt that I was missing something. So I read a little and found out that you have to have a Hub for this to work. So the Roborock was able to be connected with the app without a hub but for the humidity sensor you have to have a hub wihch is then added to the app which then connects the app and the sensor. Okay...So I bought a Aquara Hub as well.
+But my app was not able to find the sensor, no matter what I tried. I felt that I was missing something. So I read a little and found out that you have to have a Hub for this to work. So the Roborock was able to be connected with the app without a hub but for the humidity sensor you have to have a hub which is then added to the app which then connects the app and the sensor. Okay...So I bought a Aqara Hub as well.
 
 [Aqara Hub](https://www.aqara.com/us/smart_home_hub.html)
+
+Having done that I added this one to the [Mi Home App](https://play.google.com/store/apps/details?id=com.xiaomi.smarthome&hl=en&gl=US)
+
+I added the Aqara Hub and added the Humidity sensor as well.
+
+[Bild Mi Home App]
+
+Nice that was working. But now I had to solve how the Shelly could control the light and talk to the humidity sensor and vice versa.
+
+### ...Shelly
+
+The [Shelly](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) is basically "only" a relay which can be controlled wireless, has an own rest endpoint and runs in your WiFi. So it is like a device in your wifi with an IP, a UI, you can configure it and control it over the [Shelly App](https://play.google.com/store/apps/details?id=allterco.bg.shelly).
+
+Alright then, sounds nice. So I was installing it, wiring it up and installed the app on my phone. And there it really was! The app found the shelly.
