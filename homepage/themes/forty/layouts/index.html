@@ -17,10 +17,13 @@
 				{{ if .Site.Params.Tiles.enable }}
 					{{ partial "tile.html" . }}
 				{{ end }}
+				
+				{{ partial "newsletter.html" . }}
 
 				{{ if .Site.Params.Two.enable }}
 					{{ partial "projects.html" . }}
 				{{ end }}
+
 
 				{{ if .Site.Params.Two.enable }}
 					{{ partial "two.html" . }}

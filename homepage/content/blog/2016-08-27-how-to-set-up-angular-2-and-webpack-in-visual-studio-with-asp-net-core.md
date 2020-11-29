@@ -492,7 +492,7 @@ Great so far.
 
 Wouldn't it be nice to get the files refreshed as soon as I start working on them with this webpack construction? Well we already added the webpack dev-server in the package.json as dependency and in the web.config we already configured it in a basic way. So now lets use it:
 
-You can now change the "npm start" command but we will simply make another one like "startWebpackDevServer". So add the following line into the scripts section of package.json:
+You can now change the "npm start" command but we will make another one like "startWebpackDevServer". So add the following line into the scripts section of package.json:
 
 `"startWebpackDevServer": "webpack-dev-server --inline --progress --port 8080",`
 
@@ -539,7 +539,7 @@ Create a file which is called "webpack.prod.js" which will be our production fil
 
 ![How to set up Angular and Webpack in Visual Studio with ASP.NET Core](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/08/Zwischenablage10.jpg)
 
-To test this put a simple console.log in the production file like:
+To test this put a console.log in the production file like:
 
 `console.log("----> Production");`
 
@@ -549,7 +549,7 @@ and let it run:
 
 So now lets pimp the production a bit. Its mostly the same we have so far for dev, but we need a little more plugins. Maybe the one to uglify the js [UglifyJsPlugin](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin) and to delete the files in the wwwroot first "[Clean for webpack](https://github.com/johnagan/clean-webpack-plugin)".
 
-Copy the whole content from the webpack.dev.json to the prod.json and simply add the uglifyjs-plugin like this:
+Copy the whole content from the webpack.dev.json to the prod.json and add the uglifyjs-plugin like this:
 
 ```javascript
 // AoT plugin.

@@ -7,7 +7,7 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blogpost I want to write down how you can set the new windows Terminal as the default external console when working with VSCode.
+In this blog post I want to write down how you can set the new windows Terminal as the default external console when working with VSCode.
 
 I like to have the console in an external window and NOT inside my vscode instance so I often use the combination `Ctrl + Shift + C` to start an external console window at the folder I am currently with my vscode instance.
 

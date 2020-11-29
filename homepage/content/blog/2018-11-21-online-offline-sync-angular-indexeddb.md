@@ -5,9 +5,7 @@ tags: ['angular', 'indexeddb']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2018/11/21/online-offline-sync-angular-indexeddb/",
-]
+aliases: ['/blog/articles/2018/11/21/online-offline-sync-angular-indexeddb/']
 ---
 
 In this blogpost I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
@@ -102,9 +100,7 @@ export class Todo {
 <div>
   <ul style="list-style-type: none;">
     <li *ngFor="let item of todos" class="todo-item">
-      <span [ngClass]="{ inactive: item.done }"
-        >{{ item.value }}</span
-      >
+      <span [ngClass]="{ inactive: item.done }">{{ item.value }}</span>
 
       <button class="todo-item-button" (click)="markAsDone(item)">Done</button>
     </li>
@@ -116,7 +112,7 @@ export class Todo {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   title = 'Angular-Online-Offline-Sync';
@@ -126,7 +122,7 @@ export class AppComponent implements OnInit {
 
   constructor() {
     this.form = new FormGroup({
-      value: new FormControl('', Validators.required)
+      value: new FormControl('', Validators.required),
     });
   }
 
@@ -205,7 +201,7 @@ So with that we are registered and know when something is happening to the onlin
 
 ## Working with the IndexedDb
 
-To work with the IndexedDb we can use [Dexie.js](https://www.npmjs.com/package/dexie). Dexie has a very simple interface acting as a wrapper around IndexedDb.
+To work with the IndexedDb we can use [Dexie.js](https://www.npmjs.com/package/dexie). Dexie has an interface acting as a wrapper around IndexedDb.
 
 We can create a new database, provide a version and tell them what to store exactly.
 
@@ -276,9 +272,9 @@ private async sendItemsFromIndexedDb() {
 }
 ```
 
-If we want to add something to the IndexedDb we can simply call the `add` method and get a promise in return. With the `then()` syntax we only give a console log about the current state about the IndexedDb.
+If we want to add something to the IndexedDb we can call the `add` method and get a promise in return. With the `then()` syntax we only give a console log about the current state about the IndexedDb.
 
-Sending the items however is getting all items, looping over it, sending it and delte them locally if sending was successful.
+Sending the items however is getting all items, looping over it, sending it and delta them locally if sending was successful.
 
 So there are two things left to do:
 
@@ -356,8 +352,7 @@ Our `addTodo()` is calling our `todoService` which is handling our data storage 
 
 ```html
 <p>
-  current status: {{ onlineOfflineService.isOnline ? 'online' :
-  'offline' }}
+  current status: {{ onlineOfflineService.isOnline ? 'online' : 'offline' }}
 </p>
 <div>
   <form (ngSubmit)="addTodo()" [formGroup]="form">
@@ -368,9 +363,7 @@ Our `addTodo()` is calling our `todoService` which is handling our data storage 
 <div>
   <ul style="list-style-type: none;">
     <li *ngFor="let item of todos" class="todo-item">
-      <span [ngClass]="{ inactive: item.done }"
-        >{{ item.value }}</span
-      >
+      <span [ngClass]="{ inactive: item.done }">{{ item.value }}</span>
 
       <button class="todo-item-button" (click)="markAsDone(item)">Done</button>
     </li>

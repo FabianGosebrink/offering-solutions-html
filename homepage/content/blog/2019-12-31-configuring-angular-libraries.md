@@ -49,7 +49,7 @@ import { LibToConfigureComponent } from './lib-to-configure.component';
 @NgModule({
   declarations: [LibToConfigureComponent],
   imports: [CommonModule],
-  exports: [LibToConfigureComponent]
+  exports: [LibToConfigureComponent],
 })
 export class LibToConfigureModule {}
 ```
@@ -65,7 +65,7 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [BrowserModule, LibToConfigureModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -78,7 +78,7 @@ If you now want to pass configuration to your library you have two ways: First o
 
 ```js
 const config = {
-  name: 'Fabian'
+  name: 'Fabian',
 };
 ```
 
@@ -124,9 +124,9 @@ export class LibToConfigureModule {
       providers: [
         {
           provide: LibToConfigureConfiguration,
-          useValue: libConfiguration
-        }
-      ]
+          useValue: libConfiguration,
+        },
+      ],
     };
   }
 }
@@ -177,7 +177,7 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [BrowserModule, LibToConfigureModule.forRoot({ name: 'Fabian' })],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -188,7 +188,7 @@ Nice, so we know how to pass a static configuration to a library.
 
 ### Dynamic Configuration
 
-Things get a little more complex if we do not know the configuration at the startup time of our application which means it is dynamic. We do not have a static JSON object we can simply pass down the lib. Let us target that next.
+Things get a little more complex if we do not know the configuration at the startup time of our application which means it is dynamic. We do not have a static JSON object we can pass down the lib. Let us target that next.
 
 For this let us take a quick look what we can pass down to the providers array in the library in the `forRoot` method. The `providers` array takes a `Provider` type! We can use this one to expect it from the consuming application and we can provide a default config in case we as a library do not get given a configuration at all. This makes the configuration more flexible because we are not passing the static config, but a class which provides us the configuration object.
 
@@ -324,7 +324,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {
   LibConfigurationProvider,
   LibToConfigureConfiguration,
-  LibToConfigureModule
+  LibToConfigureModule,
 } from 'lib-to-configure';
 import { AppComponent } from './app.component';
 
@@ -341,12 +341,12 @@ export class ConfigFromApp implements LibConfigurationProvider {
     LibToConfigureModule.forRoot({
       config: {
         provide: LibConfigurationProvider,
-        useClass: ConfigFromApp
-      }
-    })
+        useClass: ConfigFromApp,
+      },
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -444,7 +444,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {
   LibConfigurationProvider,
   LibToConfigureConfiguration,
-  LibToConfigureModule
+  LibToConfigureModule,
 } from 'lib-to-configure';
 import { AppComponent } from './app.component';
 
@@ -460,7 +460,7 @@ export class ConfigFromApp implements LibConfigurationProvider {
 
 export function initApp(configurationStore: ConfigurationStore) {
   return () => {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         configurationStore.setConfig({ name: 'Fabian' });
         resolve();
@@ -485,7 +485,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {
   LibConfigurationProvider,
   LibToConfigureConfiguration,
-  LibToConfigureModule
+  LibToConfigureModule,
 } from 'lib-to-configure';
 import { AppComponent } from './app.component';
 
@@ -510,9 +510,9 @@ export function initApp(configurationStore: ConfigurationStore) {
     LibToConfigureModule.forRoot({
       config: {
         provide: LibConfigurationProvider,
-        useClass: ConfigFromApp
-      }
-    })
+        useClass: ConfigFromApp,
+      },
+    }),
   ],
   providers: [
     /* ADD THIS */
@@ -520,10 +520,10 @@ export function initApp(configurationStore: ConfigurationStore) {
       provide: APP_INITIALIZER,
       useFactory: initApp,
       multi: true,
-      deps: [ConfigurationStore]
-    }
+      deps: [ConfigurationStore],
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -552,7 +552,7 @@ export function initAppWithHttp(
     return httpClient
       .get('https://my-super-url-to-get-the-config-from')
       .toPromise()
-      .then(config => {
+      .then((config) => {
         configurationStore.setConfig(config);
       });
   };
@@ -566,9 +566,9 @@ export function initAppWithHttp(
     LibToConfigureModule.forRoot({
       config: {
         provide: LibConfigurationProvider,
-        useClass: ConfigFromApp
-      }
-    })
+        useClass: ConfigFromApp,
+      },
+    }),
     // LibToConfigureModule.forRoot()
   ],
   providers: [
@@ -576,10 +576,10 @@ export function initAppWithHttp(
       provide: APP_INITIALIZER,
       useFactory: initAppWithHttp,
       multi: true,
-      deps: [ConfigurationStore, HttpClient] // <-- Add this
-    }
+      deps: [ConfigurationStore, HttpClient], // <-- Add this
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```

@@ -5,9 +5,8 @@ tags: ['angular', 'systemjs', 'webpack']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2017/02/26/moving-from-systemjs-to-webpack-angular-2/"
-]
+aliases:
+  ['/blog/articles/2017/02/26/moving-from-systemjs-to-webpack-angular-2/']
 ---
 
 In this blogpost I want to show you how you can move from an existing Angular application using systemjs to an application with webpack.
@@ -215,7 +214,7 @@ import { AppModule } from './app.module';
 platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
-and in your webpack.config.ts you only need one entrypoint then:
+and in your webpack.config.ts you only need one entry point then:
 
 ```javascript
 module.exports = {
@@ -226,10 +225,10 @@ module.exports = {
 
 ## Asking for the environment (dev/prod)
 
-We will set the environment from the outside later. To consume it in your application we can simply ask for a variable like this:
+We will set the environment from the outside later. To consume it in your application we can ask for a variable like this:
 
 ```javascript
-module.exports = function(env) {
+module.exports = function (env) {
   console.log(env);
   return require(`./webpack.${env}.js`);
 };

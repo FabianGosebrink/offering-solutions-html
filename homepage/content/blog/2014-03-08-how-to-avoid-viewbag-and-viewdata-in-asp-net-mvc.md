@@ -1,18 +1,19 @@
 ---
 title: How to avoid ViewBag and ViewData in ASP.NET MVC
 date: 2014-03-08
-tags: [ 'aspnet', 'mvc']
+tags: ['aspnet', 'mvc']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2014/03/08/how-to-avoid-viewbag-and-viewdata-in-asp-net-mvc/",
-]
+aliases:
+  [
+    '/blog/articles/2014/03/08/how-to-avoid-viewbag-and-viewdata-in-asp-net-mvc/',
+  ]
 ---
 
 In this blogpost I want to show you How to avoid ViewBag and ViewData in ASP.NET MVC.
 
-It could be so easy: When passing data from the Controller to the View in MVC one can simply use
+It could be so easy: When passing data from the Controller to the View in MVC one can use
 
 ```csharp
 ViewBag.MyProperty = “ThisIsTheContentOfMyProperty”;
@@ -62,7 +63,7 @@ public class MyViewModel
 }
 ```
 
-And in the View you can simply pass the complete ViewModel to your View
+And in the View you can pass the complete ViewModel to your View
 
 ```csharp
 public ActionResult MyMethod()
@@ -75,9 +76,9 @@ public ActionResult MyMethod()
 }
 ```
 
-With this simple technique you can keep all the data you need for creating a view separately from your MVC-Models.
+With this technique you can keep all the data you need for creating a view separately from your MVC-Models.
 
-This can be tested well; it can be simply used and gives you more structure arrangement to your MVC-Projects.
+This can be tested well; it can be used easily and gives you more structure arrangement to your MVC-Projects.
 
 It’s so easy, isn’t it?
 

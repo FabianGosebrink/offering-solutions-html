@@ -109,7 +109,7 @@ module.exports = {
 };
 ```
 
-This file is plain simple:
+This file is plain easy:
 
 First we tell webpack that we have three entry-points (three files to start) in our application which are "app", "vendor" and "polyfills"
 

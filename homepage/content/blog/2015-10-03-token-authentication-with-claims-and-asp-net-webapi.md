@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this post I would like to show you the most simple example about TToken Authentication with Claims and ASP.NET WebAPI.
+In this post I would like to show you the most example about Token Authentication with Claims and ASP.NET WebAPI.
 
 The sense behind this is:
 

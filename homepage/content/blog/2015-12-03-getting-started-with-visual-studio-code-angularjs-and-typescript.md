@@ -66,7 +66,7 @@ If you now type Typescript-code in a \*.ts file, save it and compile you will se
 
 ### Adding AngularJs-Files
 
-If you want to get also started with AngularJs (and have installed the tsd like mentioned above) you can go to the root of your application, open the console and simply type
+If you want to get also started with AngularJs (and have installed the tsd like mentioned above) you can go to the root of your application, open the console and type
 
 `tsd install angular --resolve --save`
 

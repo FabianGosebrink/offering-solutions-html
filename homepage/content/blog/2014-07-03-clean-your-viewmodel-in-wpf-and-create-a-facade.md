@@ -9,11 +9,11 @@ aliases:
   ['/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/']
 ---
 
-In this post I want to show you how to Clean your viewmodel in WPF and create a facade.
+In this post I want to show you how to Clean your view model in WPF and create a facade.
 
-We use a facade to get your viewmodel in WPF nice and clean. I want to show you how to get along with the seperation of concerns and how to write simple and testable code with databinding and WPF.
+We use a facade to get your view model in WPF nice and clean. I want to show you how to get along with the separation of concerns and how to write easy and testable code with data binding and WPF.
 
-When you want to use a viewmodel for databinding you normally get your public properties on your viewmodel an do a normal binding on your xaml like this:
+When you want to use a view model for data binding you normally get your public properties on your view model an do a normal binding on your xaml like this:
 
 ```xml
 <Window x:Class="WPFViewModelAsFacade.MainWindow"
@@ -61,7 +61,7 @@ public class MainViewModel
     }
 ```
 
-of course you would give the viewmodel other values and it would grow like hell. Also when you do calculations or CRUD-operations etc. But when your application grows and gets bigger it would be necessary to move some thing into services, providers etc. to get into the seperation of concerns.
+of course you would give the viewmodel other values and it would grow like hell. Also when you do calculations or CRUD-operations etc. But when your application grows and gets bigger it would be necessary to move some thing into services, providers etc. to get into the separation of concerns.
 
 ### Solution I -  Services
 

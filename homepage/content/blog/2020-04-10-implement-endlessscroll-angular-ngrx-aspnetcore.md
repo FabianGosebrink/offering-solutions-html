@@ -66,9 +66,9 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 ```
 
-Having done that we can create a controller which will provide a simple large data set.
+Having done that we can create a controller which will provide a large data set.
 
-But first we have to create the models we are dealing with. To keep it simple we are using an `Item.cs` model and a `Filter.cs` model which we will come back to for the endless scroll in the end.
+But first we have to create the models we are dealing with. To keep it easy we are using an `Item.cs` model and a `Filter.cs` model which we will come back to for the endless scroll in the end.
 
 ```cs
 public class Item
@@ -295,7 +295,7 @@ export const error = createAction(
 );
 ```
 
-The `payload` taken from the `getItemsComplete` action is a simple `Item[]` which it takes the action with it.
+The `payload` taken from the `getItemsComplete` action is an `Item[]` which it takes the action with it.
 
 #### Adding the effects
 
@@ -402,7 +402,7 @@ export class ItemEffects {
 
 #### Adding the reducer
 
-The reducer is basically simple and makes it pretty easy to combine the items we already have with the new ones which were coming. This is one of the reasons I think ngrx fits very well to the solve of the problem of an endless scroll here.
+The reducer makes it pretty easy to combine the items we already have with the new ones which were coming. This is one of the reasons I think ngrx fits very well to the solve of the problem of an endless scroll here.
 
 ```ts
 import { createReducer, on } from '@ngrx/store';
@@ -461,7 +461,7 @@ on(appActions.getItemsComplete, (state, { payload }) => {
 });
 ```
 
-Is nice and simple imho and we have a simple interface to our components now, because the state itself only hold one array with n items in it.
+Is nice and we have an interface to our components now, because the state itself only hold one array with n items in it.
 
 To make it easier for the components (and developers) let us turn to the selectors.
 

@@ -5,12 +5,11 @@ tags: ['angular', 'ngrx']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/"
-]
+aliases:
+  ['/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/']
 ---
 
-In this blogpost I want to give you an explanation of the state tree of ngrx if you are working with a state and how to separate it into different modules.
+In this blog post I want to give you an explanation of the state tree of ngrx if you are working with a state and how to separate it into different modules.
 
 ## In this blog
 
@@ -18,7 +17,7 @@ In this blogpost I want to give you an explanation of the state tree of ngrx if 
 2. [Separating state into modules with forFeature(...)](#forFeature)
 3. [Conclusion](#conclusion)
 
-If you are building smaller or large angular applications you will sooner or later face the problem to manage the state of your application. It gets influenced by a lot of things around which can be a simple buttons triggering a service - maybe with an http action - which will set your application in a different state.
+If you are building smaller or large angular applications you will sooner or later face the problem to manage the state of your application. It gets influenced by a lot of things around which can be a button triggering a service - maybe with an http action - which will set your application in a different state.
 
 ## <a name="forRoot">One state for your entire application with forRoot(...)</a>
 
@@ -38,7 +37,7 @@ interface ApplicationState {
 
 export const initialState: ApplicationState = {
   currentlyLoading: false,
-  customerList: []
+  customerList: [],
 };
 ```
 
@@ -52,7 +51,7 @@ export function appReducer(
   switch (action.type) {
     case ANYACTION:
       return {
-        ...state
+        ...state,
         // modify properties here
       };
     // more actions
@@ -68,8 +67,8 @@ which we can then use in our as follows:
 @NgModule({
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ applicationState: appReducer })
-  ]
+    StoreModule.forRoot({ applicationState: appReducer }),
+  ],
 })
 export class AppModule {}
 ```
@@ -185,7 +184,7 @@ interface CustomerState {
 
 export const initialState: CustomerState = {
   currentlyLoading: false,
-  customerList: []
+  customerList: [],
 };
 ```
 
@@ -197,8 +196,8 @@ app.module.ts
     BrowserModule,
     StoreModule.forRoot({
       /* an empty object here for this time */
-    })
-  ]
+    }),
+  ],
 })
 export class AppModule {}
 ```
@@ -209,12 +208,12 @@ customer.module.ts
 @NgModule({
   imports: [
     StoreModule.forFeature('customerFeature', {
-      customer: customerReducer
-    })
+      customer: customerReducer,
+    }),
   ],
   exports: [],
   declarations: [],
-  providers: []
+  providers: [],
 })
 export class CustomerModule {}
 ```
@@ -225,7 +224,7 @@ The interesting part is the `forFeature` method above. Let's take a look at this
 
 ```javascript
 StoreModule.forFeature('customerFeature', {
-  customer: customerReducer
+  customer: customerReducer,
 });
 ```
 
