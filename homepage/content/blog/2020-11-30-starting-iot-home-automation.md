@@ -61,6 +61,11 @@ Alright...I have a touchscreen left over now for future projects. All good 😀
 
 So now the Home Assistant was running...and I learned a lot until here!
 
+Takeaways:
+
+- Home Assistant can be run in a docker container on an existing Raspberry Pi
+- Flashed on a card it is a web server which can be accessed from a browser at any device in your network
+
 ### ... the humidity sensor
 
 I took a look at the humidity sensor. The company was "Aqara" but the Design was looking familiar...and then I realized that I could add this sensor to the app I was controlling my vacuum cleaner with! Aqara is like a sub company from Roborock controlled with the [Mi Home App](https://play.google.com/store/apps/details?id=com.xiaomi.smarthome&hl=en&gl=US) app. Alright! Nice.
@@ -77,8 +82,31 @@ I added the Aqara Hub and added the Humidity sensor as well.
 
 Nice that was working. But now I had to solve how the Shelly could control the light and talk to the humidity sensor and vice versa.
 
+Takeaways:
+
+- The humidity sensor alone is worth nothing, you need a hub.
+- The Aqara app and devices work with the same app which is used to control the Roborock S6 vacuum cleaner although the vacuum cleaner does not need a hub.
+
 ### ...Shelly
 
 The [Shelly](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) is basically "only" a relay which can be controlled wireless, has an own rest endpoint and runs in your WiFi. So it is like a device in your wifi with an IP, a UI, you can configure it and control it over the [Shelly App](https://play.google.com/store/apps/details?id=allterco.bg.shelly).
 
 Alright then, sounds nice. So I was installing it, wiring it up and installed the app on my phone. And there it really was! The app found the shelly.
+
+But how to add it to my network when you have a MAC filter? I needed the MAC from the shelly BEFORE adding it to my network. What I did was: Switching off the MAC filter, adding the device, then switching on the MAC filter again. What I did not know is that the name of the mac includes the MAC address!
+
+(In the meantime I have A LOT of shellies working and this info saved me a lot of time).
+
+So once added in the app I could control the light with the Shelly App. That was working.
+
+Takeaways:
+
+- The MAC address of the shelly is in the shelly name when you add it
+- You need the app to add it to your network
+- You can control/configure the shelly from every browser in your network, it has a web interface and an IP to access the UI
+
+## Connecting the parts
+
+Now every part for itself was working
+
+- I was
