@@ -1,5 +1,5 @@
 ---
-title: How to start with home automation for absolute beginners
+title: How I started with Home Automation
 date: 2020-11-30
 tags: ['homeassistant']
 draft: false
