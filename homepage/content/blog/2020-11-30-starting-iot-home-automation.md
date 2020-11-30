@@ -9,6 +9,10 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this blog post I want to write how I started with home automation. Really starting from zero as I had no clue from home automation and only heard about it from colleagues. The only think I knew was a Raspberry Pi because I was using it already as a Pi-Hole in my home. Other than that I had no clue about home automation. In the end I am sure that there is loads more to do and a lot of things to improve but lets go with what I have so far.
 
+You will have some good laughs because of my stupidity and lack of experience. But this was literally my story on how I got into this...with a lot of failures and lessons learned. They are all in here.
+
+> You will see a lot of links to devices and hardware I bought. I do NOT get any money if you click on this. So this is not an promotional event.
+
 ## The start
 
 I live in a flat where I have a bathroom which has no window itself and a vent fan installed which sucks moist air out of the room during and after a shower before it causes damage or mold. The ventilator is combined with the light so when the light is on a few seconds later the ventilator starts and when I turn the light off the ventilator runs for a bit and turns off then as well.
@@ -124,9 +128,21 @@ In the `automations` part in the Home Assistant you can now use those devices an
 "Turn off the light when the humidity is below 60%"
 "Turn on the light when the humidity is above 60%"
 
+I reached my goal!...For now...
+
 Takeaways:
 
 - `Devices` are mostly the physical devices you install in your home. `Entities` are the functionalities this device has!
 - `Integrations` are the glue between your physical devices and the Home Assistant.
 
+## Be aware! - The Problems
+
+As good as this sounds: It leads to problems. So my light was turning on and off now when the humidity changed, all good.
+
+One day I was in the bathroom and the light turned off. Which was completely okay because the humidity level told my Home Assistant system to switch off. But it was not okay because I was in there!!!
+
+So what do to? You buy a motion detector [Aqara motion detector](https://www.aqara.com/us/motion_sensor.html). You add it like the previous items and extend your automations with "
+
 ## Current situation
+
+## Amazon Alexa
