@@ -7,7 +7,7 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blog post I want to write how I started with home automation. Really starting from zero as I had no clue from home automation and only heard about it from colleagues. The only thing I knew was a Raspberry Pi because I was using it already as a Pi-Hole in my home. Other than that I had no clue about home automation. In the end I am sure that there is loads more to do and a lot of things to improve but lets go with my journey to it, what I have so far and how I got there.
+In this blog post I want to write about how I started with home automation. Really starting from zero as I had no clue from home automation and only heard about it from colleagues and friends. The only thing I knew already was a Raspberry Pi because I was using it already as a [Pi-Hole](https://pi-hole.net/) in my home. Other than that I had no clue about home automation. In the end I am sure that there is loads more to do and a lot of things to improve but lets go with my journey to it, what I have built up so far and how I got there.
 
 You will have some good laughs because of my stupidity and lack of experience. But this was literally my story on how I got into this...with a lot of failures and lessons learned. They are all in here.
 
@@ -15,9 +15,9 @@ You will have some good laughs because of my stupidity and lack of experience. B
 
 ## The start
 
-I live in a flat where I have a bathroom which has no window itself and a vent fan installed which sucks moist air out of the room during and after a shower before it causes damage or mold. The ventilator is combined with the light so when the light is on a few seconds later the ventilator starts and when I turn the light off the ventilator runs for a bit and turns off then as well.
+I live in a flat where I have a bathroom which has no window itself and a vent fan installed which sucks moist air out of the room during and after a shower before it causes damage or mold. The ventilator is combined with the light switch in the bathroom. So when the light is on a few seconds later the ventilator starts and when I turn the light off the ventilator runs for a bit and turns off then as well.
 
-However, we have to leave the ventilator/light on until the air is dry as we think it is dry and then turn it off manually. Which was not a situation for because I had no measurement how much humidity and temperature we have in the bathroom. So this was the starting point. I wanted to measure the temperature and humidity to see when to switch off the light/ventilator.
+However, we have to leave the ventilator/light on until the air is as dry as we want it to (guessing the humidity) and then turn it off manually. Which was not a situation for because I had no measurement how much humidity and temperature we have in the bathroom. Switching the light off would cause the ventilator to run a bit, but that was not enough for me. So this was the starting point. I wanted to measure the temperature and humidity to see when to switch off the light/ventilator.
 
 I went with something like this in the first place
 
