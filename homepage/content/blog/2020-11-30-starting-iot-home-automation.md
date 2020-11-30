@@ -93,9 +93,9 @@ The [Shelly](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/
 
 Alright then, sounds nice. So I was installing it, wiring it up and installed the app on my phone. And there it really was! The app found the shelly.
 
-But how to add it to my network when you have a MAC filter? I needed the MAC from the shelly BEFORE adding it to my network. What I did was: Switching off the MAC filter, adding the device, then switching on the MAC filter again. What I did not know is that the name of the mac includes the MAC address!
+But how to add it to my network when you have a MAC filter? I needed the MAC from the shelly BEFORE adding it to my network. What I did was: Switching off the MAC filter, adding the device, then switching on the MAC filter again. What I did not know is that the name of the mac includes the MAC address! So the name of the shelly is something like `Shelly-12-AB-34-CD...` you get the idea.
 
-(In the meantime I have A LOT of shellies working and this info saved me a lot of time).
+(In the meantime I have A LOT of Shellys working and this info saved me a lot of time).
 
 So once added in the app I could control the light with the Shelly App. That was working.
 
@@ -107,6 +107,6 @@ Takeaways:
 
 ## Connecting the parts
 
-Now every part for itself was working
+Now every part for itself was working: I could see the temperature and humidity in the Mi Home App, I could switch the light on and off over the shelly app and the home assistant was up and running on my Raspberry Pi and I could access the ui via a browser. Great. But the connection...how could I bring the
 
 - I was
