@@ -41,12 +41,14 @@ I was starting with getting a new Raspberry Pi with a touch screen because my Pi
 
 Then I bought a humidity sensor to get the humidity in my bathroom and I needed something to control the light or to turn it on and off, so I bought a Shelly. All in all I started with this.
 
-- https://shelly.cloud/products/shelly-1-smart-home-automation-relay/
-- https://www.amazon.com/Aqara-WSDCGQ11LM-Temperature-Humidity-Sensor/dp/B07D37FKGY
-- https://www.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/ref=pd_sbs_147_1/138-0884345-6996938
-- https://www.amazon.com/Raspberry-Pi-7-Touchscreen-Display/dp/B0153R2A9I
+- [Shelly Cloud - Shelly 1](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/)
+- [Amazon Aqara Temperature & Humidity Sensor](https://www.amazon.com/Aqara-WSDCGQ11LM-Temperature-Humidity-Sensor/dp/B07D37FKGY)
+- [Amazon Raspberry Pi](https://www.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/ref=pd_sbs_147_1/138-0884345-6996938)
+- [Amazon Raspberry Pi Touchscreen](https://www.amazon.com/Raspberry-Pi-7-Touchscreen-Display/dp/B0153R2A9I)
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Preparing to work with <a href="https://twitter.com/home_assistant?ref_src=twsrc%5Etfw">@home_assistant</a> <a href="https://twitter.com/hashtag/lookingforward?src=hash&amp;ref_src=twsrc%5Etfw">#lookingforward</a> 😍👍 <a href="https://t.co/zuPW6RGSzO">pic.twitter.com/zuPW6RGSzO</a></p>&mdash; Fabian Gosebrink @ 🏠🇨🇭 (@FabianGosebrink) <a href="https://twitter.com/FabianGosebrink/status/1287416630247673856?ref_src=twsrc%5Etfw">July 26, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+![Humidity Sensor in Shower](../../static/img/articles/2020-11-30/IMG_20201129_173137.jpg)
 
 ## What I learned so far about...
 
@@ -58,8 +60,11 @@ Then I flashed the Home Assistant on the SD Card and just saw...nothing. No Ui. 
 
 What I could have done is running the Home Assistant on my first Raspberry (with the Pi-Hole in parallel) in a docker container. Then I would not have needed any of the Raspberry OR the touchscreen. However, I have it running on two separate Raspberries now.
 
-[Bild Touchscreen]
-[Bild Raspberry case]
+This is the raspberry Pi where I have the Browser UI always open:
+![Raspberry pi with touchscreen and two tabs one with Home Assistant and one with the Pi Hole](../../static/img/articles/2020-11-30/IMG_20201129_172738.jpg)
+
+And this is the Pi the Home Assistant is always running on
+![Case of a raspberry Pi](../../static/img/articles/2020-11-30/IMG_20201129_172750.jpg)
 
 Alright...I have a touchscreen left over now for future projects. All good 😀
 
@@ -99,7 +104,7 @@ Alright then, sounds nice. So I was installing it, wiring it up and installed th
 
 But how to add it to my network when you have a MAC filter? I needed the MAC from the shelly BEFORE adding it to my network. What I did was: Switching off the MAC filter, adding the device, then switching on the MAC filter again. What I did not know is that the name of the mac includes the MAC address! So the name of the shelly is something like `Shelly-12-AB-34-CD...` you get the idea.
 
-(In the meantime I have A LOT of Shellys working and this info saved me a lot of time).
+(In the meantime I have A LOT of Shellies working and this info saved me a lot of time).
 
 So once added in the app I could control the light with the Shelly App. That was working.
 
@@ -113,17 +118,19 @@ Takeaways:
 
 Now every part for itself was working: I could see the temperature and humidity in the Mi Home App, I could switch the light on and off over the shelly app and the home assistant was up and running on my Raspberry Pi and I could access the ui via a browser. Great. But the connection...how could I bring the parts together?
 
-The answer is that the Home Assistant has "Integrations" where you can add different systems into the Home Assistant system. Hue lights. your FritzBox, if you have one. Your Samsung Printer. The Pi-Hole. The weather. Home Assistant has nearly endless integrations for all the different systems you can image. And also the Shellys. And the Aqara Hub! And there was the connection!
+The answer is that the Home Assistant has "Integrations" where you can add different systems into the Home Assistant system. Hue lights. your FritzBox, if you have one. Your Samsung Printer. The Pi-Hole. The weather. Home Assistant has nearly endless integrations for all the different systems you can image. And also the Shellies. And the Aqara Hub! And there was the connection!
 
 So once configured and added the [integration for the Shelly](https://www.home-assistant.io/integrations/shelly/) it was found! That is good.
 
 Then I added the Mi Home Aqara Integration.
 
-[Bild Integrations]
+![Home Assistant integrations](../../static/img/articles/2020-11-30/integrations-home-assistant.png)
 
 And suddenly the devices were found and added! And inside those `devices` are `entities`. And those entities are providing the functionalities you search for for this device. So for example my Aqara device has the entity for humidity and one for temperature.
 
-In the `automations` part in the Home Assistant you can now use those devices and create rules which are for example.
+![Home Assistant device and entities](../../static/img/articles/2020-11-30/home-assistant-device.png)
+
+In the `automation` part in the Home Assistant you can now use those devices and create rules which are for example.
 
 "Turn off the light when the humidity is below 60%"
 "Turn on the light when the humidity is above 60%"
@@ -143,7 +150,10 @@ As good as this sounds: It leads to problems. So my light was turning on and off
 
 One day I was in the bathroom and the light turned off. Which was completely okay because the humidity level told my Home Assistant system to switch off. But it was not okay because I was in there!!!
 
-So what do to? You buy a motion detector [Aqara motion detector](https://www.aqara.com/us/motion_sensor.html). You add it like the previous items and extend your automations with "Turn of the light when humidity is below 60% AND there is no motion detected". Until you encounter the next misconfiguration 😊 This and seeing all the possibilities is how you sloooowly get into the rabbit hole of home automation.
+So what do to? You buy a motion detector [Aqara motion detector](https://www.aqara.com/us/motion_sensor.html). You add it like the previous items and extend your automation with "Turn of the light when humidity is below 60% AND there is no motion detected". Until you encounter the next misconfiguration 😊 This and seeing all the possibilities is how you sloooowly get into the rabbit hole of home automation.
+
+![Motion Sensor 1](../../static/img/articles/2020-11-30/IMG_20201129_140444.jpg)
+![Motion Sensor 2](../../static/img/articles/2020-11-30/IMG_20201129_140510.jpg)
 
 ## Current situation
 
@@ -159,9 +169,30 @@ Currently...
 - I can control all lights with my app
 - When I open the window in the morning in my bedroom I get a notification if the temperature drops under 15 degrees Celsius as a reminder to close it
 - When I say "Alexa, clean the flat" my robot starts cleaning
+- My lights turn on when I want to go to toilet at night
+- All lights turned on automatically also turn off when no motion is detected
 - So much more
 
 It is so much fun! When you see the possibilities you can do. Maybe a pressure sensor underneath my bed or chair to check if I am in bed or in the office or something? Aqara and all the sensors out there provide incredible functionality. But I will take it step by step.
+
+I am using several apps which I need to control all the things.
+
+1. "Shelly" to add, and control all the Shelly devices
+2. "Mi Home" to start my vacuum cleaner and control all my Aqara devices
+3. "Hue" app to integrate new Hue lights
+4. "Amazon Alexa" to control and configure my Amazon Alexa and speech commands which control my shellies etc then.
+5. "Aqara Home" I never opened this app to be honest. "Mi Home" is enough
+6. "Home Assistant" is THE MAIN app where I control everything with
+7. "Reolink" for my security camera which is running in my flat as well
+
+![All smart home apps](../../static/img/articles/2020-11-30/Screenshot_20201129-140357.jpg)
+
+![Home Assistant App I](../../static/img/articles/2020-11-30/Screenshot_20201129-140422.jpg)
+![Home Assistant App II](../../static/img/articles/2020-11-30/Screenshot_20201129-140431.jpg)
+
+Here we are controlling the Light with the Shelly over the Home Assistant on a Raspberry Pi
+
+![Controlling the shelly with the Home Assistant App](../../static/img/articles/2020-11-30/VID-20201129-WA0000.gif)
 
 ## Amazon Alexa
 
@@ -172,3 +203,7 @@ So you can integrate the Shellies into Alexa, all hue lights and I think a lot o
 So for example I added all my Shellies and Hue Lights to Alexa as well and when i say "Alexa, Good night!" before I go to bed it turns out all the lights for me.
 
 ## Recap
+
+I started with absolutely no clue how those things can work together. That made the steps steeper then they should be but in the end it was absolutely no problem anymore to integrate the things an the meantime I know where I have to look out for what to pre check if my things work together.
+
+But this is a rabbit whole: You have to stop yourself :-) It is so much fun that you want to combine all the things together. I have so much ideas doing this and that if that and this happens.
