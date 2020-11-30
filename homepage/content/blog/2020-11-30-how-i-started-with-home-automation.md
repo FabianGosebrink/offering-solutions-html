@@ -46,7 +46,9 @@ Then I bought a humidity sensor to get the humidity in my bathroom and I needed 
 - [Amazon Raspberry Pi](https://www.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/ref=pd_sbs_147_1/138-0884345-6996938)
 - [Amazon Raspberry Pi Touchscreen](https://www.amazon.com/Raspberry-Pi-7-Touchscreen-Display/dp/B0153R2A9I)
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Preparing to work with <a href="https://twitter.com/home_assistant?ref_src=twsrc%5Etfw">@home_assistant</a> <a href="https://twitter.com/hashtag/lookingforward?src=hash&amp;ref_src=twsrc%5Etfw">#lookingforward</a> 😍👍 <a href="https://t.co/zuPW6RGSzO">pic.twitter.com/zuPW6RGSzO</a></p>&mdash; Fabian Gosebrink @ 🏠🇨🇭 (@FabianGosebrink) <a href="https://twitter.com/FabianGosebrink/status/1287416630247673856?ref_src=twsrc%5Etfw">July 26, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+![Tweet 1](https://cdn.offering.solutions/img/articles/2020-11-30/tweet1.png)
+
+[https://twitter.com/FabianGosebrink/status/1287416630247673856](https://twitter.com/FabianGosebrink/status/1287416630247673856)
 
 ![Humidity Sensor in Shower](https://cdn.offering.solutions/img/articles/2020-11-30/IMG_20201129_173137.jpg)
 
@@ -54,7 +56,11 @@ Then I bought a humidity sensor to get the humidity in my bathroom and I needed 
 
 ### ... the Home Assistant
 
-So I started with downloading the [Home Assistant](https://www.home-assistant.io/getting-started/) and assembling the Raspberry and the touchscreen. <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Back home!!! <a href="https://t.co/YQxnf61zdb">pic.twitter.com/YQxnf61zdb</a></p>&mdash; Fabian Gosebrink @ 🏠🇨🇭 (@FabianGosebrink) <a href="https://twitter.com/FabianGosebrink/status/1288848695925055488?ref_src=twsrc%5Etfw">July 30, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+So I started with downloading the [Home Assistant](https://www.home-assistant.io/getting-started/) and assembling the Raspberry and the touchscreen.
+
+![Tweet 2](https://cdn.offering.solutions/img/articles/2020-11-30/tweet2.png)
+
+[https://twitter.com/FabianGosebrink/status/1288848695925055488](https://twitter.com/FabianGosebrink/status/1288848695925055488)
 
 Then I flashed the Home Assistant on the SD Card and just saw...nothing. No Ui. Just a console which was periodically printing out values. I said I was "half-wrong" and here is why: I could flash the Home Assistant and install it on the new Raspberry Pi. What I did NOT know until now was that the Home Assistant is firing up a web server which you can access then via browser! I did not know that before! (And yes if you read the instructions on the homepage of Home Assistant carefully there is `On another computer, navigate to http://homeassistant.local:8123 to access Home Assistant.`. ON ANOTHER COMPUTER!!!! I did not read. My bad.) So I did not need the touchscreen for the home assistant on this Raspberry Pi. I could access it from the first Raspberry with the Pi-Hole on it which already had a touchscreen installed, because I just had to open a second browser tab to access the webserver running on the new bought new flashed Raspberry on `http://homeassistant.local:8123`. So I let go off the Touchscreen and the case behind the touchscreen and put the new Raspberry in a case (which I had as leftover from other projects) and now the Raspberry _without_ any screen in my shelve.
 
