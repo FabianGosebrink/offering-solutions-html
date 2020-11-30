@@ -107,6 +107,26 @@ Takeaways:
 
 ## Connecting the parts
 
-Now every part for itself was working: I could see the temperature and humidity in the Mi Home App, I could switch the light on and off over the shelly app and the home assistant was up and running on my Raspberry Pi and I could access the ui via a browser. Great. But the connection...how could I bring the
+Now every part for itself was working: I could see the temperature and humidity in the Mi Home App, I could switch the light on and off over the shelly app and the home assistant was up and running on my Raspberry Pi and I could access the ui via a browser. Great. But the connection...how could I bring the parts together?
 
-- I was
+The answer is that the Home Assistant has "Integrations" where you can add different systems into the Home Assistant system. Hue lights. your FritzBox, if you have one. Your Samsung Printer. The Pi-Hole. The weather. Home Assistant has nearly endless integrations for all the different systems you can image. And also the Shellys. And the Aqara Hub! And there was the connection!
+
+So once configured and added the [integration for the Shelly](https://www.home-assistant.io/integrations/shelly/) it was found! That is good.
+
+Then I added the Mi Home Aqara Integration.
+
+[Bild Integrations]
+
+And suddenly the devices were found and added! And inside those `devices` are `entities`. And those entities are providing the functionalities you search for for this device. So for example my Aqara device has the entity for humidity and one for temperature.
+
+In the `automations` part in the Home Assistant you can now use those devices and create rules which are for example.
+
+"Turn off the light when the humidity is below 60%"
+"Turn on the light when the humidity is above 60%"
+
+Takeaways:
+
+- `Devices` are mostly the physical devices you install in your home. `Entities` are the functionalities this device has!
+- `Integrations` are the glue between your physical devices and the Home Assistant.
+
+## Current situation
