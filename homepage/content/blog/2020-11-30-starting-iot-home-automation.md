@@ -153,6 +153,7 @@ One day I was in the bathroom and the light turned off. Which was completely oka
 So what do to? You buy a motion detector [Aqara motion detector](https://www.aqara.com/us/motion_sensor.html). You add it like the previous items and extend your automation with "Turn of the light when humidity is below 60% AND there is no motion detected". Until you encounter the next misconfiguration 😊 This and seeing all the possibilities is how you sloooowly get into the rabbit hole of home automation.
 
 ![Motion Sensor 1](../../static/img/articles/2020-11-30/IMG_20201129_140444.jpg)
+
 ![Motion Sensor 2](../../static/img/articles/2020-11-30/IMG_20201129_140510.jpg)
 
 ## Current situation
@@ -188,9 +189,10 @@ I am using several apps which I need to control all the things.
 ![All smart home apps](../../static/img/articles/2020-11-30/Screenshot_20201129-140357.jpg)
 
 ![Home Assistant App I](../../static/img/articles/2020-11-30/Screenshot_20201129-140422.jpg)
+
 ![Home Assistant App II](../../static/img/articles/2020-11-30/Screenshot_20201129-140431.jpg)
 
-Here we are controlling the Light with the Shelly over the Home Assistant on a Raspberry Pi
+Here we are controlling the light with the Shelly over the Home Assistant on a Raspberry Pi
 
 ![Controlling the shelly with the Home Assistant App](../../static/img/articles/2020-11-30/VID-20201129-WA0000.gif)
 
@@ -206,4 +208,10 @@ So for example I added all my Shellies and Hue Lights to Alexa as well and when 
 
 I started with absolutely no clue how those things can work together. That made the steps steeper then they should be but in the end it was absolutely no problem anymore to integrate the things an the meantime I know where I have to look out for what to pre check if my things work together.
 
-But this is a rabbit whole: You have to stop yourself :-) It is so much fun that you want to combine all the things together. I have so much ideas doing this and that if that and this happens.
+But this is a rabbit whole: You have to stop yourself :-) It is so much fun that you want to combine all the things together. I have so much ideas doing this and that if that and this happens. Once you got the system set up it is really nice to work with. I love it and will definitely add more and more things over the time.
+
+Alexa - Call it a day!
+
+Hope you enjoyed this
+
+Fabian
