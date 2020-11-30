@@ -130,6 +130,8 @@ In the `automations` part in the Home Assistant you can now use those devices an
 
 I reached my goal!...For now...
 
+> If you have added for example the printer and if provides the entity of a color being empty you can like flash a light when xyz is empty, it ran out of paper etc. With the Home Assistant you can connect everything with everything.
+
 Takeaways:
 
 - `Devices` are mostly the physical devices you install in your home. `Entities` are the functionalities this device has!
@@ -141,8 +143,32 @@ As good as this sounds: It leads to problems. So my light was turning on and off
 
 One day I was in the bathroom and the light turned off. Which was completely okay because the humidity level told my Home Assistant system to switch off. But it was not okay because I was in there!!!
 
-So what do to? You buy a motion detector [Aqara motion detector](https://www.aqara.com/us/motion_sensor.html). You add it like the previous items and extend your automations with "
+So what do to? You buy a motion detector [Aqara motion detector](https://www.aqara.com/us/motion_sensor.html). You add it like the previous items and extend your automations with "Turn of the light when humidity is below 60% AND there is no motion detected". Until you encounter the next misconfiguration 😊 This and seeing all the possibilities is how you sloooowly get into the rabbit hole of home automation.
 
 ## Current situation
 
+The current situation is that I am very satisfied with my setup but it took a long way to get there. I have 7 Shellies in my flat, 9 motion detectors or humidity and temperature sensors, 5 hue lights a pi hole and so on. I could do a lot more, maybe over the winter time now when you are more at home. I am at a stand where I have to tweak something from time to time but all in all it works pretty well. The releases are coming very often and you have to update everything from time to time. But this works pretty well over the provided UIs.
+
+Currently...
+
+- My lights turn on when I get home or am home and the sun is set
+- My lights turn on in the morning when I get up and the sun is still down
+  - but only the small one in the hallway, the big one makes you blind
+- The fan in the hallway gets on and off based on the humidity completely self controlled
+- Me and my wife get notifications when one of us gets home
+- I can control all lights with my app
+- When I open the window in the morning in my bedroom I get a notification if the temperature drops under 15 degrees Celsius as a reminder to close it
+- When I say "Alexa, clean the flat" my robot starts cleaning
+- So much more
+
+It is so much fun! When you see the possibilities you can do. Maybe a pressure sensor underneath my bed or chair to check if I am in bed or in the office or something? Aqara and all the sensors out there provide incredible functionality. But I will take it step by step.
+
 ## Amazon Alexa
+
+Of course I have an Amazon Alexa as well. I have three to be precise, but only one of them is really used. Just to clarify how that fits in: Amazon Alexa acts like a Home Assistant technically: It has integrations by itself over the app and then can control things like hue or even Shellies and much more of course.
+
+So you can integrate the Shellies into Alexa, all hue lights and I think a lot of other things. You can do "if this than that" things. Alexa can be controlled by voice. The Home Assistant possibly can also have an integration of voice anyhow I am sure, but I am running all voice controlled commands over my Amazon Alexa for now.
+
+So for example I added all my Shellies and Hue Lights to Alexa as well and when i say "Alexa, Good night!" before I go to bed it turns out all the lights for me.
+
+## Recap
