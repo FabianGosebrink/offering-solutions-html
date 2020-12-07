@@ -25,6 +25,10 @@
 	<link rel="icon" type="image/x-icon" href="{{ . | absURL }}">
 	{{ end }}
 
+	{{ range .AlternativeOutputFormats -}}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+
 	<!-- ios support -->
 	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-72x72.png" />
 	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-96x96.png" />

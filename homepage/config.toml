@@ -216,5 +216,9 @@ disqusShortname = "offeringsolutions"
 [permalinks]
   blog = "/blog/articles/:year/:month/:day/:title/"
 
+[author]
+  name = "Fabian Gosebrink"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
