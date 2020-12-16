@@ -8,7 +8,7 @@ category: blog
 aliases: ['/blog/articles/2015/04/22/find-me-on-github/']
 ---
 
-I just wanted to mention that you can find me on GitHub from now on. I am available on GitHub with my personal profile.
+I wanted to mention that you can find me on GitHub from now on. I am available on GitHub with my personal profile.
 
 I want to publish all my repositories I do code like new trials, hands-on-anythings and examples which will kick you off to get started with what the repository is about.
 
@@ -20,7 +20,7 @@ Feel free to do pull requests and contribute on what I coded.
 
 ![Find me on GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/04/FabianGosebrinkGithub.jpg)
 
-Sometimes you will find a "\_gitAssets"-Folder in my repos which are not for holding anything code specific but they hold pictures or anything used in the readme markdown. Just to ensure the repository is complete I would like to host them directly within the repository.
+Sometimes you will find a "\_gitAssets"-Folder in my repos which are not for holding anything code specific but they hold pictures or anything used in the readme markdown. To ensure the repository is complete I would like to host them directly within the repository.
 
 If anything is not working or not compiling at all please leave me a note because every repository shall be possible to get started right away.
 

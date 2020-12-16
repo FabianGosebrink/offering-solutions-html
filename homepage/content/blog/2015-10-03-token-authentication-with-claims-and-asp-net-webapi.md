@@ -80,11 +80,11 @@ Thats it! For server side.
 
 But how to consume it?
 
-So we have created the enpoint...lets request it with a POST-Request. (I am using Postman here)
+So we have created the endpoint...lets request it with a POST-Request. (I am using Postman here)
 
 ![1](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/1.jpg)
 
-So send a post request to the token enpoint we created. Take a look at the "x-www-form-urlencoded" which is very important! Also see the "grant_type" which is set to "password". Without this you will not reach the token endpoint. username and password are equal due to the fact we check it for equality in your OAuthProvider we introduced before.
+So send a post request to the token endpoint we created. Take a look at the "x-www-form-urlencoded" which is very important! Also see the "grant_type" which is set to "password". Without this you will not reach the token endpoint. username and password are equal due to the fact we check it for equality in your OAuthProvider we introduced before.
 
 ![2](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/2.jpg)
 Also check that in the Headers-Section we set the content-type to "application/x-www-form-encoded". Firing this request reaches the endpoint and is giving us a valid token:
@@ -111,11 +111,11 @@ public class ValuesController : ApiController
 
 ![Token Authentication with Claims and ASP.NET WebAPI](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/10/41.jpg)
 
-Note that we added the "Authorization".Header with the "Bearer" and the token we just received. We can send it and receive the protected resource.
+Note that we added the "Authorization".Header with the "Bearer" and the token we received. We can send it and receive the protected resource.
 
 Thats it :)
 
-You can also check the roles you added in the claims by just mentioning the roles in your Autorize-Attribute:
+You can also check the roles you added in the claims by mentioning the roles in your Autorize-Attribute:
 
 ```csharp
 [Authorize(Roles = "user")]

@@ -107,7 +107,7 @@ Do not forget to add your interceptor like
 { provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor, multi: true },
 ```
 
-This dataservice gets the configuration we just did and the HTTP-Service via DI. We included it over the new module-loading-syntax.
+This dataservice gets the configuration we did and the HTTP-Service via DI. We included it over the new module-loading-syntax.
 
 It is also important to tell the http-calls which header to use. "Application/Json" in this case. We are doing this via an interceptor and the new HttpClientModule.
 

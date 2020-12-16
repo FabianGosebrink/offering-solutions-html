@@ -60,7 +60,7 @@ Having done that we can build a form in the template `app.component.html`
 // more to come...
 ```
 
-and in the table we can add just one column which can be extended as you like:
+and in the table we can add one column which can be extended as you like:
 
 ```html
 <form [formGroup]="formGroup">

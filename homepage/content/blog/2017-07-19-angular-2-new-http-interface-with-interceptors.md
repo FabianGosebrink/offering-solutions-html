@@ -139,7 +139,7 @@ Be aware that setting a new header _returns_ the new header object instead of ma
 
 From AngularJS we know HTTP interceptors as a great and very mighty way to observe ingoing and outgoing requests. In Angular this feature of interceptors was not available yet. But it came back with this new version of the http interface.
 
-Let us add an interceptor which is just logging the requests. This is just a class tagged with the `@Injectable` decorator implementing and interface `HttpInterceptor`. It gets passed an `HttpHeader` which provides us the `handle(...)` method to not cancel the request but just hook 'between' the application and the outgoing or incoming request. So we have to give the request further to be handled from the enxt interceptor (chaining) or the backend.
+Let us add an interceptor which is logging the requests. This is a class tagged with the `@Injectable` decorator implementing and interface `HttpInterceptor`. It gets passed an `HttpHeader` which provides us the `handle(...)` method to not cancel the request but hook 'between' the application and the outgoing or incoming request. So we have to give the request further to be handled from the enxt interceptor (chaining) or the backend.
 
 ```javascript
 import { Injectable } from '@angular/core';
@@ -175,7 +175,7 @@ providers: [
 ];
 ```
 
-If we just log this one we get a result like this
+If we log this one we get a result like this
 
 ```javascript
 {

@@ -121,7 +121,7 @@ public class Startup
 }
 ```
 
-Our application should now be able to start up. Just go to the commandline and type "dotnet run" in it. This will start a webserver and serve all files in wwwroot.
+Our application should now be able to start up. In the commandline and type "dotnet run" in it. This will start a webserver and serve all files in wwwroot.
 
 ![AspNetCoreAngular2Demo_3](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/AspNetCoreAngular2Demo_3.jpg)
 
@@ -131,7 +131,7 @@ Great so far! Now we can add a controller!
 
 For this go ahead in the root of the project and add a folder "Controller" which wil hold all the controllers for us. Then you can add an standardcontroller for the first run.
 
-> I like to stay to IActionResult-Interface in my controllers. It just gives me a way I am used to and is clearer for me. You do not have to do this. The controller is just for demo purposes.
+> I like to stay to IActionResult-Interface in my controllers. It provides me a way I am used to and is clearer for me. You do not have to do this. The controller is for demo purposes.
 
 ![08](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/08.png)
 
@@ -272,9 +272,9 @@ Angular is served via npm. To get Angular we have to add a package.json to the r
 }
 ```
 
-or just type "npm init" to answer all questions and get an package.json file generated.
+or type "npm init" to answer all questions and get an package.json file generated.
 
-After this you can install Angular and all other dependencies via "npm install" or Visual Studio will do this for you automatically. Just just have to wait a few seconds. It will add a node_modules folder to your root application and copy all files, also the \*.d.ts-files you need to develop with typescript.
+After this you can install Angular and all other dependencies via "npm install" or Visual Studio will do this for you automatically. This will be done in a few seconds. It will add a node_modules folder to your root application and copy all files, also the \*.d.ts-files you need to develop with typescript.
 
 #### Webpack
 
@@ -389,7 +389,7 @@ We are done so far:
 
 You can now go ahead and develop you application in Typescript and Angular. You could start with the [Angular](https://angular.io/docs/ts/latest/quickstart.html) quickstart. All files you need should be there. Its important to add the [main.ts](https://github.com/FabianGosebrink/ASPNETCore-Angular-SystemJS-StarterTemplate/blob/master/src/ASPNETCoreAngularDemo/angularApp/app.module.ts) to get an entry point and bootstrapping your application.
 
-> If you, like me, always forget to compile the typescript files: open a cmd in the app folder and just type "npm run tsc:w". This activates a typescript watcher using the tsconfig in the root of the project and will always compile the _.ts files into _.js files if there are some changes
+> If you, like me, always forget to compile the typescript files: open a cmd in the app folder and type "npm run tsc:w". This activates a typescript watcher using the tsconfig in the root of the project and will always compile the _.ts files into _.js files if there are some changes
 
 ### Further steps:
 

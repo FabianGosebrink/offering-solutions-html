@@ -220,7 +220,7 @@ So I check the headers, append a token if available, set the content-type and ac
 
 To give this whole thing a go as an exe and as an app on mobile devices I used cordova and electron with gulp as a taskrunner.
 
-I seperated all the files in the tasks for "electron", "cordova" and "web". In the main gulp file I am just gathering all the information and point the default task only to list all available tasks to \_not- start something the developer does not know when he only types "gulp" without a specific command.
+I separated all the files in the tasks for "electron", "cordova" and "web". In the main gulp file I am gathering all the information and point the default task only to list all available tasks to \_not- start something the developer does not know when he only types "gulp" without a specific command.
 
 ```javascript
 var buildConfig = require('./gulp.config');

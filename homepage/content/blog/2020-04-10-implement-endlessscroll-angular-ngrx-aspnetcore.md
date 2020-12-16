@@ -124,7 +124,7 @@ So basically we only have one method here which reacts to a `GET` Call to `https
 
 The method takes the `FilterModel` from the query string with the `[FromQuery]` Attribute. So sending `https://localhost:501/api/values?skip=20` will be automatically serialized into this model and we can work with it. This provides full control for the client.
 
-With `dotnet watch run` we can start our webapi and just keep it running. When something changes the webapi will restart automatically.
+With `dotnet watch run` we can start our webapi and keep it running. When something changes the webapi will restart automatically.
 
 ## Creating the frontend
 
@@ -203,7 +203,7 @@ export class ItemsApiService {
 }
 ```
 
-The service provides only one method `getAllItems` which can be called with an `ItemFilter` as parameter. If it was the `turnFilterIntoUrl` composes the filter keys and values into a valid url string. So `skip` and `take` are part of the url so that we can call the backend with the `[FromQuery]` parameter in C# as seen above in the backend. The `url` just points to the backend directly.
+The service provides only one method `getAllItems` which can be called with an `ItemFilter` as parameter. If it was the `turnFilterIntoUrl` composes the filter keys and values into a valid url string. So `skip` and `take` are part of the url so that we can call the backend with the `[FromQuery]` parameter in C# as seen above in the backend. The `url` points to the backend directly.
 
 ### Adding Ngrx
 
@@ -319,7 +319,7 @@ getAllItems$ = createEffect(() =>
 );
 ```
 
-The `getMoreItems$` does _not_ take any parameters from the outside (which we could absolutely extend it to) but for getting the items to skip - because they are already loaded and we want to fetch the _next_ 20 items we use the `withLatestFrom()` operator. In it we are asking the store about the length of the current items, so what we have right now is what we want to skip. We will write the selector later, just read on 😊😊
+The `getMoreItems$` does _not_ take any parameters from the outside (which we could absolutely extend it to) but for getting the items to skip - because they are already loaded and we want to fetch the _next_ 20 items we use the `withLatestFrom()` operator. In it we are asking the store about the length of the current items, so what we have right now is what we want to skip. We will write the selector later, read on 😊😊
 
 ```ts
 getMoreItems$ = createEffect(() =>
@@ -449,7 +449,7 @@ The concrete state is the `ItemState` which only has an `items` and a `loading` 
 
 The reducer itself first sets `loading` to `true` every time we ask for some items, so when the action `getItems` or `getMoreItems` comes around.
 
-The action `getItemsComplete` however takes the payload and uses the spread operator to set the new items just at the bottom of a new array. The top are the old items we already have.
+The action `getItemsComplete` however takes the payload and uses the spread operator to set the new items at the bottom of a new array. The top are the old items we already have.
 
 ```ts
 on(appActions.getItemsComplete, (state, { payload }) => {
@@ -499,7 +499,7 @@ export const selectIsLoading = createSelector(
 );
 ```
 
-Having done that we have the `index.ts` file left. I like to use this file to combine things and resolve them clearly, making the registration in the `AppModule` or wherever needed more precise and clear. The import is just `import ... from '../store';` then instead having wild imports all around the app.
+Having done that we have the `index.ts` file left. I like to use this file to combine things and resolve them clearly, making the registration in the `AppModule` or wherever needed more precise and clear. The import is `import ... from '../store';` then instead having wild imports all around the app.
 
 In the `index.ts` file can prepare the array which we have to register in the `EffectsModule(...)` in the `AppModule` and we can define what we want to pass into the `StoreModule.forRoot(...)`.
 

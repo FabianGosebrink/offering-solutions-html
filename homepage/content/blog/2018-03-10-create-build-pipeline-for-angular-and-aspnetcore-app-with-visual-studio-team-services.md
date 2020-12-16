@@ -63,7 +63,7 @@ So we are using the wildcards to check for specific paths in our application whi
 
 ![GithubRepository](https://cdn.offering.solutions/img/articles/2018-03-10/2018-03-1001_36_00.jpg)
 
-One of the last steps is to execute a `dotnet publish` to get the final results of our build. We can add a new task like we did before just running the `dotnet publish` command. Be aware that we also set the `--configuration release` again and also as an output we pass the `$(build.artifactstagingdirectory)` with `--output $(build.artifactstagingdirectory)`. This one gets automatically filled by VSTS. I also like to zip the output which you do not have to do, I just like having one file as an output as this file gets unzipped automatically when it gets released to an azure web app.
+One of the last steps is to execute a `dotnet publish` to get the final results of our build. We can add a new task like we did before running the `dotnet publish` command. Be aware that we also set the `--configuration release` again and also as an output we pass the `$(build.artifactstagingdirectory)` with `--output $(build.artifactstagingdirectory)`. This one gets automatically filled by VSTS. I also like to zip the output which you do not have to do, I like having one file as an output as this file gets unzipped automatically when it gets released to an azure web app.
 
 ![GithubRepository](https://cdn.offering.solutions/img/articles/2018-03-10/2018-03-1001_53_17.jpg)
 
@@ -86,7 +86,7 @@ Github
 ...
 ```
 
-and until here we came away with not caring about that because we only have _one_ ASP.NET Core project on it, so we could walk on with the wildcars `**/*.csproj` for example. For the client side however it is better to use the specific paths to point to a specific angular folder created with the cli.
+and until here we came away with not caring about that because we only have _one_ ASP.NET Core project on it, so we could walk on with the wildcards `**/*.csproj` for example. For the client side however it is better to use the specific paths to point to a specific angular folder created with the cli.
 
 So lets add a new phase for the client side build and add three tasks to it. Let's go!
 
@@ -118,23 +118,23 @@ So that we have an output folder now we can also publish that result by publishi
 
 So thats it. We created a pipeline for creating an artifact for the server app which is ASP.NET Core and the client application which is done via the AngularCLI.
 
-But thats not all. Lets do a release taking the artifacts we just created and droping them to an Azure Web App in this case.
+But thats not all. Lets do a release taking the artifacts we created and dropping them to an Azure Web App in this case.
 
 ## Creating the release
 
 ### Preparation
 
-Please log into you Azure Portal and create a new Web App with a name of your choice. In this case I took "AngularCliOnAzure" but that is really just a sample name. But is should be mentioned that behind this runs a real web app on Azure.
+Please log into you Azure Portal and create a new Web App with a name of your choice. In this case I took "AngularCliOnAzure" but that is really a sample name. But is should be mentioned that behind this runs a real web app on Azure.
 
 ### Releasing the server artifact
 
-To release the server artifact we just created (remember the \*.zip-file and the client artifact) we first have to create a new release. So head over ot the "Release" tab and hit "New Definition".
+To release the server artifact we created (remember the \*.zip-file and the client artifact) we first have to create a new release. So head over ot the "Release" tab and hit "New Definition".
 
 ![GithubRepository](https://cdn.offering.solutions/img/articles/2018-03-10/2018-03-1006_08_41.jpg)
 
 The template we are going to select is a "Azure App Service Deployment" which we will use to get our artifact and drop it to Azure.
 
-> This is just an example. You can - maybe should - deploy your client and server code to different servers. That is why we sperated them. In this example we will drop both artifacts to the same server. But I hope you get the idea.
+> This is an example. You can - maybe should - deploy your client and server code to different servers. That is why we separated them. In this example we will drop both artifacts to the same server. But I hope you get the idea.
 
 ![GithubRepository](https://cdn.offering.solutions/img/articles/2018-03-10/2018-03-1006_09_19.jpg)
 
@@ -142,7 +142,7 @@ The first artifact will be the server code. The artifact is a \*.zip file we cre
 
 ![GithubRepository](https://cdn.offering.solutions/img/articles/2018-03-10/2018-03-1006_09_40.jpg)
 
-As we want to run a deployment everytime a successful build has run we can activate the continuous deployment trigger. Just click on the flash and set the switch to "enabled".
+As we want to run a deployment everytime a successful build has run we can activate the continuous deployment trigger. Click on the flash and set the switch to "enabled".
 
 ![GithubRepository](https://cdn.offering.solutions/img/articles/2018-03-10/2018-03-1006_09_53.jpg)
 

@@ -33,7 +33,7 @@ You can find the code here: [https://github.com/FabianGosebrink/ASPNETCore-Angul
 
 ## <a name="getstarted">Get started</a>
 
-With the Angular Material Table and its Pagination Module it is quite easy to set up paging in a beautiful way so that you can use it on client side and only show a specific amount of entries to your users. What we do not want to do, is loading _all_ items from the backend in the first place just to get the paging going and then display only a specific amount. Instead we want to load only what we need and display that. If the user clicks on the "next page"-button the items should be loaded and displayed.
+With the Angular Material Table and its Pagination Module it is quite easy to set up paging in a beautiful way so that you can use it on client side and only show a specific amount of entries to your users. What we do not want to do, is loading _all_ items from the backend in the first place to get the paging going and then display only a specific amount. Instead we want to load only what we need and display that. If the user clicks on the "next page"-button the items should be loaded and displayed.
 
 ## <a name="thebackend">The Backend</a>
 

@@ -1,5 +1,5 @@
 ---
-title: Lessons learnt from organising a conference
+title: Lessons learnt from organizing a conference
 date: 2017-07-18
 tags: ['angular', 'azure', 'conference', 'speaking']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -18,23 +18,23 @@ I needed some time to really figure out all the thoughts & things which were goi
 
 ## Be prepared and have a plan B
 
-On the event you are planning, things will happen you never thought of. This can be good or bad things, but you will _not_ be prepared of them. So what you can do is starting early (!) and thinking of any possible situation which may happen. (You can't, but more on this later :-) This can be that a speaker is not coming because the night before he got sick or something, a microphone does not work, the food can not be served etc. You should always think of those things and play with that thought in your head. "What am I doing if xyz happens?" is the question you have to ask for youself. Have backup speakers. Have saved the telephone numbers of all pizza delivery services in your area to be prepared if food can not be served. Have a car there which you can use to get something which you not have thought of etc. If you re-think your event over and over again you will possibly come to a point where you can say to yourself that you are prepared for every single thing which can happen. (Which you can't, but you did your best here :)
+On the event you are planning, things will happen you never thought of. This can be good or bad things, but you will _not_ be prepared of them. So what you can do is starting early (!) and thinking of any possible situation which may happen. (You can't, but more on this later :-) This can be that a speaker is not coming because the night before he got sick or something, a microphone does not work, the food can not be served etc. You should always think of those things and play with that thought in your head. "What am I doing if xyz happens?" is the question you have to ask for yourself. Have backup speakers. Have saved the telephone numbers of all pizza delivery services in your area to be prepared if food can not be served. Have a car there which you can use to get something which you not have thought of etc. If you re-think your event over and over again you will possibly come to a point where you can say to yourself that you are prepared for every single thing which can happen. (Which you can't, but you did your best here :)
 
 So make that a little easier and taking this thought of being prepared further we can take a look at the next point...
 
 ## Change the perspective to an attendee
 
-...changing the perspective to an attendee. Image you are walking into the venue, what do you expect? Getting your ticket scanned? Getting a lanyard? Seeing the organiser? Just think of where do you would like to sit, what would be cool in the breakes? Is there something you would say "If there would be xyz, that'd be cool!". If you attended to other conferences before and you can clone some ideas: Cool! If you were missing something on other conference: Try to add it to our conference. Its your attendees who give feedback & do tweet about it. So you have to do everything they feel comfortable. From the selection of talks, topics over the venue, how you treat them etc.
+...changing the perspective to an attendee. Image you are walking into the venue, what do you expect? Getting your ticket scanned? Getting a lanyard? Seeing the organizer? Think of where do you would like to sit, what would be cool in the breaks? Is there something you would say "If there would be xyz, that'd be cool!". If you attended to other conferences before and you can clone some ideas: Cool! If you were missing something on other conference: Try to add it to our conference. Its your attendees who give feedback & do tweet about it. So you have to do everything they feel comfortable. From the selection of talks, topics over the venue, how you treat them etc.
 
 ## Ask for help
 
-You noticed something, didn't you? Thats massive work. Well until here we did not organise anything so far. All that were thoughts! But you need another input. Ask your friends, your family if idea xyz is cool. "Would you like it if ...?", "What do you think of xyz?". Also tell them if you arranged something. Not to get compliments on how good you are but to trigger their thouoghts a bit. "Hey I have just organised thisandthat" - "Cool, but did you think of thatandthis, too then?" - Boom! You got your input.
+You noticed something, didn't you? Thats massive work. Well until here we did not organize anything so far. All that were thoughts! But you need another input. Ask your friends, your family if idea xyz is cool. "Would you like it if ...?", "What do you think of xyz?". Also tell them if you arranged something. Not to get compliments on how good you are but to trigger their thoughts a bit. "Hey I have organised thisandthat" - "Cool, but did you think of thatandthis, too then?" - Boom! You got your input.
 
 Further ask a friend to help you out. There are so much things to do which are completely separated and can be done by another one. If you organise a conference at some point you have to ...
 
 ## Talk to each other and delegate
 
-... delegate! We took OneNote for that which was completely fine. Just to keep each other up to date, if the emails to the speakers were sent out, which speaker said yes/no/maybe. Which topic by whom, which sponsors do we have, mail proposals for review etc. Delegate something, divide the work by two or more and give exact advises. "Can you please write a draft mail for the sponsors to do this and that". Maybe you can organise via SCRUM or Kanban. Feel free to do that as you want, but split up the work. It is getting easier then.
+... delegate! We took OneNote for that which was completely fine. To keep each other up to date, if the emails to the speakers were sent out, which speaker said yes/no/maybe. Which topic by whom, which sponsors do we have, mail proposals for review etc. Delegate something, divide the work by two or more and give exact advises. "Can you please write a draft mail for the sponsors to do this and that". Maybe you can organize via SCRUM or Kanban. Feel free to do that as you want, but split up the work. It is getting easier then.
 
 ## Don't do a talk when you organise the conference
 
@@ -44,7 +44,7 @@ So stay focused. Either on talking or on doing the things around it...but for me
 
 ## Start early
 
-With all the things in mind: You can not start too early with that. Even if other people youre talking to tell you "We still have time": Try to organise everything sooner than later. If you just ask people about their opinion maybe you notice things you haven't thought of. And these are things you have to organise. So start early with you preparations. Maybe there is no "Too early" at all :-)
+With all the things in mind: You can not start too early with that. Even if other people youre talking to tell you "We still have time": Try to organise everything sooner than later. If you ask people about their opinion maybe you notice things you haven't thought of. And these are things you have to organise. So start early with you preparations. Maybe there is no "Too early" at all :-)
 
 ## During the conference: Observe & Listen !!!
 

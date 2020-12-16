@@ -114,7 +114,7 @@ peopleService.query(
 );
 ```
 
-In case you want to add a new resource, a person in this case, you can just call the "save" method and pass in the person you want to save:
+In case you want to add a new resource, a person in this case, you call the "save" method and pass in the person you want to save:
 
 ```javascript
 peopleService.save(

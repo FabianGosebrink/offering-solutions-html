@@ -164,11 +164,11 @@ So here we are building a small architecture and get some order in our tasks-, f
 
 Often I see that the default task is executing logic. It does something. And when the default task is doing something it's most likely something like a main task. Like "build-all" or something?
 
-Let's picture the situation you cloned a repository and you just want to get started. Thats all you want to do. First step: "Let me see what you have got for me".
+Let's picture the situation you cloned a repository and you want to get started. Thats all you want to do. First step: "Let me see what you have got for me".
 
 If you run `gulp` which executes the default task and something starts to run and I as a developer have NO IDEA what exactly runs there - that scares me.
 
-Wouldn't it be better to have a kind of more defensive behaviour? This is why I prefer to list all the tasks the repo offers to the delevoper. And the developer can then decide which one he wants to execute.
+Wouldn't it be better to have a kind of more defensive behavior? This is why I prefer to list all the tasks the repo offers to the developer. And the developer can then decide which one he wants to execute.
 
 But with this option I mentioned above we have **many** small tasks which can be executed.
 

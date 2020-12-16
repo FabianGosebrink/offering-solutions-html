@@ -77,7 +77,7 @@ So when an event on `window` is coming up we call our `updateOnlineStatus()` met
 
 ## The Todo-App
 
-As the Todo-app itself is not the core point of this blogpost, I will just post the code for the form and the list that you have an impression of what is going on so far.
+As the Todo-app itself is not the core point of this blog post, I will post the code for the form and the list that you have an impression of what is going on so far.
 
 ```javascript
 export class Todo {
@@ -171,7 +171,7 @@ export class TodoService {
 }
 ```
 
-Now lets use our `OnlineOfflineService` we just created and register to the `Subject` we created.
+Now lets use our `OnlineOfflineService` we created and register to the `Subject` we created.
 
 ```javascript
 import { OnlineOfflineService } from './online-offline.service';

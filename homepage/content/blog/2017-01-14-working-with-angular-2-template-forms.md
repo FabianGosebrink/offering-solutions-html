@@ -38,7 +38,7 @@ this is an easy way to start with Angular and template forms.
 
 > I did not mention files like favicon etc. They do not really impact our work here
 
-Now lets got create a form. For this I will grab bootstraps form just to get a nice look and feel.
+Now lets got create a form. For this I will grab bootstraps form to get a nice look and feel.
 
 [Bootstraps Forms](http://getbootstrap.com/css/#forms)
 
@@ -64,7 +64,7 @@ Out app.component.html looks like this:
 
 ### Introducing the Form
 
-We remove the checkbox and the file upload from the copied form from bootstrap just for clarity and add the form template to our form component. Further we want to handle a Name for understanding. Lets modify the template to only work with a name.
+We remove the checkbox and the file upload from the copied form from bootstrap for clarity and add the form template to our form component. Further we want to handle a Name for understanding. Lets modify the template to only work with a name.
 
 So our `form.component.html` looks like this now:
 
@@ -83,7 +83,7 @@ So our `form.component.html` looks like this now:
 </form>
 ```
 
-So what we did here so far is nothing Angular related! We just added HTML-Form things.
+So what we did here so far is nothing Angular related! We added HTML-Form things.
 
 We will now go ahead and make this thing an Angular form.
 
@@ -91,7 +91,7 @@ We will now go ahead and make this thing an Angular form.
 
 #### The model
 
-We will use a normal customer to deal with the form. Also nothing spectacular here, we just add a class representing this customer:
+We will use a normal customer to deal with the form. Also nothing spectacular here, we add a class representing this customer:
 
 ```javascript
 export class Customer {
@@ -278,7 +278,7 @@ We can check the following states on the form :
 
 ```
 
-Lets face the "valid" and "invalid" for a second. We can apply a normal HTML `required` attribute at one control just to have a reason why a form should be valid or invalid.
+Lets face the "valid" and "invalid" for a second. We can apply a normal HTML `required` attribute at one control to have a reason why a form should be valid or invalid.
 
 ```html
 <form #myform="ngForm">

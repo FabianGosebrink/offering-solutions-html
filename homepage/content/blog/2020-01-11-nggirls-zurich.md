@@ -9,7 +9,7 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this article I want to present the first NgGirls of 2020 in Zürich, Switzerland!
 
-I am very happy to announce ngGirls in Zürich at the 21st of February 2020 at the Google Europaallee F – Europaallee 36, 8004 Zurich. The workshop is only for woman and free of charge. So you can just apply the form and ou are onboard.
+I am very happy to announce ngGirls in Zürich at the 21st of February 2020 at the Google Europaallee F – Europaallee 36, 8004 Zurich. The workshop is only for woman and free of charge. So you can apply the form and ou are onboard.
 
 Please check out other information at [https://ng-girls.org/zurich-2020/](https://ng-girls.org/zurich-2020/)
 

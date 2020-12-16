@@ -1,5 +1,5 @@
 ---
-title: Deploy a .NET 5 ASP.NET Core Application to Azure with Github Actions
+title: Deploy a .NET 5 ASP.NET Core Application to Azure With GitHub Actions
 date: 2020-12-15
 tags: ['aspnetcore', 'github']
 draft: false
@@ -25,7 +25,7 @@ What you need is an existing Azure Web App. Inside the Azure Web App make sure t
 
 Once downloaded open your repository on GitHub and switch to the `Settings` tab choosing `Secrets` from the menu on the left.
 
-Add a name for the secret and _Copy the raw xml content of the `publishsettings` file you just downloaded_ in there.
+Add a name for the secret and _Copy the raw xml content of the `publishsettings` file you downloaded_ in there.
 
 ![Screenshot of GitHub Secrets](http://localhost:1313/img/articles/2020-12-16/2020-12-16-2.jpg)
 

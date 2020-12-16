@@ -16,7 +16,7 @@ You can find the whole code on github here: [https://github.com/FabianGosebrink/
 
 ## Backend with ASP.NET Core and SignalR
 
-For this demo I just created a small backend with the dotnet cli and
+For this demo I created a small backend with the dotnet cli and
 
 ```
 dotnet new webapi
@@ -95,7 +95,7 @@ public class MotionHub : Hub
 }
 ```
 
-The `MotionDto` just reflects the data we will get from the client to make them easier to handle.
+The `MotionDto` reflects the data we will get from the client to make them easier to handle.
 
 ```csharp
 public class MotionDto
@@ -194,13 +194,13 @@ function turnLogo(beta, gamma) {
 }
 ```
 
-So here first I am registering on the event `motionupdated` this time. In the callback method I call the `turnLogo` method which will just apply the `beta` and `gamma` properties to the logo.
+So here first I am registering on the event `motionupdated` this time. In the callback method I call the `turnLogo` method which will apply the `beta` and `gamma` properties to the logo.
 
 After this I am starting the connection and listen for the events.
 
-So everytime an event is read from the device API the handler is getting called and is invoking the SignalR action if the connection exists.
+So every time an event is read from the device API the handler is getting called and is invoking the SignalR action if the connection exists.
 
-The only thing that is missing now is the `index.html` part. This is perhaps the most unspectacular part as we just have an `<img>` with the logo and including the `signalr.js` file and the `motion.js` which covers all the logic.
+The only thing that is missing now is the `index.html` part. This is perhaps the most unspectacular part as we have an `<img>` with the logo and including the `signalr.js` file and the `motion.js` which covers all the logic.
 
 ```html
 <!DOCTYPE html>
@@ -245,6 +245,6 @@ The only thing that is missing now is the `index.html` part. This is perhaps the
 </html>
 ```
 
-I also installed a lightweight webserver to make this all hosting. If you upload that and access it with your mobile phone you can move the picture with your hpone just like that :)
+I also installed a lightweight webserver to make this all hosting. If you upload that and access it with your mobile phone you can move the picture with your phone like that :)
 
 ![device-orientation-video](https://cdn.offering.solutions/img/articles/2019-07-25/video.gif)

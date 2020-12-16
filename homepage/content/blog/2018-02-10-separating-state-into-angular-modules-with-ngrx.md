@@ -218,7 +218,7 @@ customer.module.ts
 export class CustomerModule {}
 ```
 
-The customer reducer - customer is just a feature module name here - manipulates the whole customer state now. As our AppState did exactly that before, we can just move the reducer into the customer feature module and rename all the things.
+The customer reducer - customer is a feature module name here - manipulates the whole customer state now. As our AppState did exactly that before, we can move the reducer into the customer feature module and rename all the things.
 
 The interesting part is the `forFeature` method above. Let's take a look at this:
 

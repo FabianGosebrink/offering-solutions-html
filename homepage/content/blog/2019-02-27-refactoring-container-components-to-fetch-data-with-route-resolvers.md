@@ -93,7 +93,7 @@ Our routing is set up like
 ]),
 ```
 
-`HomeComponent` here is just a components displaying something that we can fetch the data when the route to the container component is clicked.
+`HomeComponent` here is a components displaying something that we can fetch the data when the route to the container component is clicked.
 
 ## Displaying data with route resolvers
 
@@ -118,7 +118,7 @@ export class DataResolver implements Resolve<any> {
 }
 ```
 
-The Resolver is just a class implementing the interface `Resolve<T>` which forces you to implement a function called `resolve` where you are getting passed the `ActivatedRouteSnapshot` and the `RouterStateSnapshot` as parameter.
+The Resolver is a class implementing the interface `Resolve<T>` which forces you to implement a function called `resolve` where you are getting passed the `ActivatedRouteSnapshot` and the `RouterStateSnapshot` as parameter.
 
 Let us improve the resolver by letting it fetch some data
 

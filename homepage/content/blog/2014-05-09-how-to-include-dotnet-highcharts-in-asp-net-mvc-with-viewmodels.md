@@ -43,7 +43,7 @@ I will now publish the normal case with only having the charts on the ViewModel.
 
 So add "Chart" as a "Highcharts"-Object to your viewmodel.
 
-Now in your controller you can add your values. (I used just some for testing right here) and get it into the property.
+Now in your controller you can add your values. (I used some for testing right here) and get it into the property.
 
 ![How to include DotNet.HighCharts in ASP.NET MVC with ViewModels](https://cdn.offering.solutions/img/articles/2014-05-09/e6b349b1-ebe7-41b4-9c35-28e04a9f3d28.png)
 

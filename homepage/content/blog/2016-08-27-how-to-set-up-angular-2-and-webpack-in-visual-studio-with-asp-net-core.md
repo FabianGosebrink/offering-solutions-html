@@ -293,7 +293,7 @@ module.exports = {
 
 This file is no magic, don't be scared:
 
-First we require everything we need to use to kick off webpack. Then we will export our complete configuration. Our entrypoints are pointing to the files we just created (remember?) and of course our entrypoint of our application.
+First we require everything we need to use to kick off webpack. Then we will export our complete configuration. Our entrypoints are pointing to the files we created (remember?) and of course our entrypoint of our application.
 
 The "resolve"-array tells webpack to look for those file endings. The "output" is what we all were looking for. Here we tell webpack "Hey, what no matter what you are doing and how you are doing it, put it in the ./wwwroot-Folder and please be gentle and name the files like I will tell you later on ([name]) and please put a hash on it at the end, but only 8 digits ([hash:8])". This is it.
 

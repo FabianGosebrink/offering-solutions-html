@@ -8,7 +8,7 @@ category: blog
 aliases: ['/blog/articles/2015/03/04/asp-net-helpers-by-offering-solutions/']
 ---
 
-I just released a new version of the ASP.NET Helpers by Offering Solutions:
+I released a new version of the ASP.NET Helpers by Offering Solutions:
 
 [Nuget: AspNetHelpers by Offering Solutions](https://www.nuget.org/packages/OfferingSolutions.AspNetHelpers/)
 
@@ -27,8 +27,8 @@ and features like
 - Checks if a string is a timespan
 - Checks if a string is an email
 - Converts a string to datetime
-- Converts s tring to timespan
-- Checks a string for null, empty or a given lenght (e.g. for password purposes)
+- Converts a string to timespan
+- Checks a string for null, empty or a given length (e.g. for password purposes)
 - Checks if a HttpPostedFile has a specific format
 - Checks if a HttpPostedFile is an image
 - Checks if a string can be converted to double

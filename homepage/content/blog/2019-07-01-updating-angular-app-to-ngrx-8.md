@@ -100,7 +100,7 @@ export const loadAllTodosFinished = createAction(
 );
 ```
 
-That's it. No enums or summarized types anymore, its just a call to `createAction()` either with one parameter as a string describing your action or with a second parameter describing what payload the action should take. These properties are introduced with the generic `props<...>` type which takes an object holding all your payload parameters.
+That's it. No enums or summarized types anymore, its a call to `createAction()` either with one parameter as a string describing your action or with a second parameter describing what payload the action should take. These properties are introduced with the generic `props<...>` type which takes an object holding all your payload parameters.
 
 As a side note: In other files I imported all the actions directly afterwards from that action file I did like:
 
@@ -190,7 +190,7 @@ you could use the short term syntax in the effect like
 map(todos => todoActions.loadAllTodosFinished({ todos })),
 ```
 
-here. But that is just for the record.
+here. But that is for the record.
 
 ## Updating the reducer
 
@@ -406,7 +406,7 @@ const todoReducerInternal = createReducer(
 
 ## Updating the components
 
-As we have no Action Enum anymore and working directly with the methods created we have to update our components as well. Before we created a new class of the action with `new xyzAction(...)` or just `new xyz(...)` like
+As we have no Action Enum anymore and working directly with the methods created we have to update our components as well. Before we created a new class of the action with `new xyzAction(...)` or `new xyz(...)` like
 
 ```
 import {

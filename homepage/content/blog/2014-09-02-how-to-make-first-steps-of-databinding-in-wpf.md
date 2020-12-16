@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2014/09/02/how-to-make-first-steps-of-databinding-in-wpf/']
 ---
 
-In this blogpost I want to show you how to make first steps of Databinding in WPF.
+In this blog post I want to show you how to make first steps of Databinding in WPF.
 
 I often hear or see that people try to start with WPF but they do not start mit MVVM. Because databinding is frightening them. But why? Databinding is one of the biggest advantages you can have to decouple your logic from your view.
 
@@ -21,7 +21,7 @@ In the last time the MV\*-Pattern was really getting pushed and was established 
 
 Advantages are:
 
-- Changing the UI without changing the logic: The UI changes more often than the logic. What if green is more "stylish" than the good old "blue"? It has to be changed, but all the things you show stay the same. Just because something looks different you are not showing different information.
+- Changing the UI without changing the logic: The UI changes more often than the logic. What if green is more "stylish" than the good old "blue"? It has to be changed, but all the things you show stay the same. Only because something looks different you are not showing different information.
 
 - Testability of the logic: Because logic gets more modular it can be well tested. You do not need to know about your view or how it looks like. The only thing your tests are interested in are the output-information.
 
@@ -85,7 +85,7 @@ The viewmodel offers all data it wants to show to the view (and perhaps some mor
 
 > Note: You can make an interface for the viewmodel to see what exactly is on the view and what is not. To get a besser overview. But internally wpf will take the real implementaion of the viewmodel as datacontext. But for larger view/viewmodels adding an interface can makes sense. Also for testing/mocking etc.
 
-You see that the MainWindow.xaml which we edited above and the viewmodel. We just have no connection until here.
+You see that the MainWindow.xaml which we edited above and the viewmodel. We have no connection until here.
 
 In the last part you have to let the view know about its datacontext. This property can be set to nearly every viewmodel but its the source for the view where to get their data from. So the "Text"-Property in XAML gets its value from...what? You can set the datacontext in XAML but I think its easier to set this in the codebehind. **<span style="text-decoration: underline;">This is the only thing you should set there!</span>**
 
@@ -173,7 +173,7 @@ Now that the viewmodel is our Datacontext it can access every property on it. So
 </Grid>
 ```
 
-But if you run this you only see the namespace and the name of the classes. Why this? Because the only thing you give to the ItemsControl is the list of persons. From where should it know what to do with it? It just calls the "ToString()"-Extension on "object" and gets the Namespace and the name of the class.
+But if you run this you only see the namespace and the name of the classes. Why this? Because the only thing you give to the ItemsControl is the list of persons. From where should it know what to do with it? It calls the "ToString()"-Extension on "object" and gets the Namespace and the name of the class.
 
 ![How to make first steps of Databinding in WPF](https://cdn.offering.solutions/img/articles/2014-09-02/List1.jpg)
 
@@ -198,7 +198,7 @@ So lets tell the UI how to treat the objects. This can be done with an Itemtempl
 </Grid>
 ```
 
-The Itemtemplate now tells the object how to appear. In my case these are just two labels showing the two properties name and age.
+The Itemtemplate now tells the object how to appear. In my case these are two labels showing the two properties name and age.
 
 > <span style="color: #000000;">I dont know why but this is a heavy thing every beginner stumbles upon: The Datacontext of you **view **is what we have set it to: The MainViewModel. Now you give the collection to the ItemsControl and make an **Item**Template for each object in the list. So in the **Item**Template the "datacontext" is the object "Person" itself and NOT the MainViewModel anymore! This is why you can access "Name" and "Age" in the DataTemplate directly. Because every Item (which the **Item**Template is for) is a Person and a Person has got the mentioned properties.</span>
 

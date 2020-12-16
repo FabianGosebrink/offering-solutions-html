@@ -74,7 +74,7 @@ export class AppComponent {
 }
 ```
 
-Again, we are just using the service, calling the method which logs something out. We will use the method to see which service is gonna be used later.
+Again, we are using the service, calling the method which logs something out. We will use the method to see which service is gonna be used later.
 
 If we run that one with `npm start` we can see in the console that
 
@@ -276,7 +276,7 @@ export class ServiceA {
 }
 ```
 
-will create two instances of your `ServiceB` class which might not be what you want. And this is where `useExisting` comes into play. Using that you can refer to an already existing service and so act as an alias. Keep in mind that this time your class has to be an Angular service with a decorator and not just a plain class like in the examples above. Lets use it and get our service names in again.
+will create two instances of your `ServiceB` class which might not be what you want. And this is where `useExisting` comes into play. Using that you can refer to an already existing service and so act as an alias. Keep in mind that this time your class has to be an Angular service with a decorator and not a plain class like in the examples above. Lets use it and get our service names in again.
 
 ```javascript
 @Injectable({

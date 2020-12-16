@@ -15,7 +15,7 @@ This time I want to show you how getting started with Visual Studio Code, Angula
 
 Before we start: A new Typescript version was announced!! You can see whats new [here](https://github.com/Microsoft/TypeScript/wiki/roadmap) and further information [here](http://www.typescriptlang.org/).
 
-I always wanted to get to know Typescript and see the advantages of it compared to the "normal" javascript and so I just took my plain old sample application and tried to build it up with Typescript. I have to say: Typescript in combination with Visual Studio Code is absolutely awesome! I loved it.
+I always wanted to get to know Typescript and see the advantages of it compared to the "normal" javascript and so I took my plain old sample application and tried to build it up with Typescript. I have to say: Typescript in combination with Visual Studio Code is absolutely awesome! I loved it.
 
 ## Getting Started:
 
