@@ -9,13 +9,13 @@ aliases:
   ['/blog/articles/2016/11/29/how-i-started-recording-my-first-video-training/']
 ---
 
-In this blogpost I want to describe how I started recording my first Video training and tell you about the experiences I made during the recording.
+In this blog post I want to describe how I started recording my first Video training and tell you about the experiences I made during the recording.
 
 [https://channel9.msdn.com/Blogs/MVP-VisualStudio-Dev/Erstellen-einer-WebAPI-mit-ASPNET-Core](https://channel9.msdn.com/Blogs/MVP-VisualStudio-Dev/Erstellen-einer-WebAPI-mit-ASPNET-Core)
 
 ### Why?
 
-I had this "recording a video"-thing in my mind for a long time. But never had the equipment and the software to do it. So it was more a "Yes, I can get this video recording thing going sometime". But a few weeks ago I went along and bought a microphone giving me a bit better quality than the microphone on an USB-Logitech-Webcam. ;) I think this is another way of getting knowledge in the community beside blogging and doing talks. It is not better or worse - it is just a different way. And I wanted to try it. If I fail I take the experience with me and if I would try the next time I have some experience to rely on :)
+I had this "recording a video"-thing in my mind for a long time. But never had the equipment and the software to do it. So it was more a "Yes, I can get this video recording thing going sometime". But a few weeks ago I went along and bought a microphone giving me a bit better quality than the microphone on an USB-Logitech-Webcam. ;) I think this is another way of getting knowledge in the community beside blogging and doing talks. It is not better or worse - it is a different way. And I wanted to try it. If I fail I take the experience with me and if I would try the next time I have some experience to rely on :)
 
 ### Get going...
 
@@ -33,7 +33,7 @@ Next thing was to get Camtasia as a screen recording software. I downloaded it a
 
 ![img_20161018_115456](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/IMG_20161018_115456-1024x576.jpg)
 
-You should give it a try. Even if you do not have Camtasia experience you can get started in just a few steps.
+You should give it a try. Even if you do not have Camtasia experience you can get started in a few steps.
 
 ### You are going to hate yourself
 

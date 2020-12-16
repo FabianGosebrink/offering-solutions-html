@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-With this blogpost I want to introduce you the ASP.NET WebAPI Datashaper to strip your json data before sending it back to the client.
+With this blog post I want to introduce you the ASP.NET WebAPI Datashaper to strip your json data before sending it back to the client.
 
 The Datashaper gives you the possibility to strip the data you want to send based on the query of the client if you can not use Odata for a reason.
 

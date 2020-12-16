@@ -436,7 +436,7 @@ export class AppModule {}
 
 ```
 
-Next we add a init method which is getting called at the beginning of our app. The method has the store as dependency and sets the configuration when it gets it from a specific endpoint, in our case it is just a promise which gets resolved after two seconds:
+Next we add a init method which is getting called at the beginning of our app. The method has the store as dependency and sets the configuration when it gets it from a specific endpoint, in our case it is a promise which gets resolved after two seconds:
 
 ```js
 import { NgModule, APP_INITIALIZER, Injectable } from '@angular/core';

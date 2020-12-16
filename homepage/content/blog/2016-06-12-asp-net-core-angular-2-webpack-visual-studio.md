@@ -27,7 +27,7 @@ The ASP.NET Core application contains both the server side API services and also
 
 **npm configuration**
 
-The npm package.json configuration loads all the required packages for Angular 2 and Webpack. The Webpack packages are all added to the devDependencies. A "npm build" script and also a "npm buildProduction" are also configured, so that the client application can be built using Webpack from the cmd line using "npm build" or "npm buildProduction". These two scripts just call the same cmd as the Webpack task runner.
+The npm package.json configuration loads all the required packages for Angular 2 and Webpack. The Webpack packages are all added to the devDependencies. A "npm build" script and also a "npm buildProduction" are also configured, so that the client application can be built using Webpack from the cmd line using "npm build" or "npm buildProduction". These two scripts call the same cmd as the Webpack task runner.
 
 ```javascript
 {
@@ -142,7 +142,7 @@ The types are configured in this file, so typings are no longer required.
 
 ## Webpack build
 
-The Webpack development build <em>&gt;webpack -d</em> just uses the source files and creates outputs for development. The production build copies everything required for the client application to the wwwroot folder, and uglifies the js files. The <em>webpack -d --watch</em> can be used to automatically build the dist files if a source file is changed.
+The Webpack development build <em>&gt;webpack -d</em> uses the source files and creates outputs for development. The production build copies everything required for the client application to the wwwroot folder, and uglifies the js files. The <em>webpack -d --watch</em> can be used to automatically build the dist files if a source file is changed.
 
 The Webpack config file was created using the excellent github repository [https://github.com/preboot/angular2-webpack](https://github.com/preboot/angular2-webpack). Thanks for this. Small changes were made to this, such as the process.env.NODE_ENV and Webpack uses different source and output folders to match the ASP.NET Core project. If you decide to use two different projects, one for server, and one for client, preboot or angular-cli, or both together would be a good choice for the client application.
 
@@ -674,7 +674,7 @@ export class HomeComponent implements OnInit {
 
 ## The ASP.NET Core API
 
-The ASP.NET Core API is quite small and tiny. It just provides a demo CRUD service.
+The ASP.NET Core API is quite small and tiny. It provides a demo CRUD service.
 
 ```csharp
 using System.Linq;

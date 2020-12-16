@@ -15,7 +15,7 @@ This blog post shows how to implement CRUD operations in Angular which are drive
 
 The HATEOAS in this repository does not follow any "standard" like e.g. [HAL](http://stateless.co/hal_specification.html). But it is enough that you get the idea and an impression how to use it.
 
-I just played around a little bit with this in the last time and maybe you can get some inspiration of how to get stuff going with that in your project. This is only one approach. I would love to hear yours in the comments :-)
+I played around a little bit with this in the last time and maybe you can get some inspiration of how to get stuff going with that in your project. This is only one approach. I would love to hear yours in the comments :-)
 
 ## Code
 

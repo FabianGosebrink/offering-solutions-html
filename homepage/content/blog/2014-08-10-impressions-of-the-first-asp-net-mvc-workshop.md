@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2014/08/10/impressions-of-the-first-asp-net-mvc-workshop/']
 ---
 
-In this blogpost I am doing a small recap to give you impressions of the first ASP.NET MVC workshop.
+In this blog post I am doing a small recap to give you impressions of the first ASP.NET MVC workshop.
 
 Even when I am not doing it in my current project at work I am very interested in ASP.NET and the ASP.NET MVC-Framework and everything which is needed to build modern web based applications.
 
@@ -27,7 +27,7 @@ Five students were not many, but they were hungry about knowledge and they were 
 
 Also routing was a topic at this workshop and how it is connected to Asp.NET MVC.
 
-One of the points which were most important to me getting into the students heads was the viewmodel-principle. So we made a lot of examples and the students finally did a practical work for themselves in groups. So they were getting to know what they just saw up in the front and could manifest the presented stuff.
+One of the points which were most important to me getting into the students heads was the viewmodel-principle. So we made a lot of examples and the students finally did a practical work for themselves in groups. So they were getting to know what they saw up in the front and could manifest the presented stuff.
 
 ![Workshop_2](https://cdn.offering.solutions/img/articles/2014-08-10/Workshop_2.png)
 
@@ -47,4 +47,4 @@ In the end our blog was completely ready with all Create-Read-Update and Delete-
 
 The students now have a complete example of how a modern web application can be organized with all advantages and disadvantages of the Asp.NET MVC-Framework and how to solve the pain-points it gives to you. They saw how to implement C#-Code and how to use the linq-queries combined with the Entity Framework and Software-Pattens to give their application structure and get data out of their database.
 
-For me it was a lot of fun, I was glad the university gave me the opportunity to present and to impart my knowledge about Asp.NET MVC. And even if my throat hurt a bit because of 4 hours talking: Live programming with students is much more fun than just pushing an audience through PowerPoint slides.
+For me it was a lot of fun, I was glad the university gave me the opportunity to present and to impart my knowledge about Asp.NET MVC. And even if my throat hurt a bit because of 4 hours talking: Live programming with students is much more fun than pushing an audience through PowerPoint slides.

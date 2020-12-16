@@ -8,7 +8,7 @@ category: blog
 aliases: ['/blog/articles/2016/05/25/kurs-frontend-entwicklung-mit-angularjs/']
 ---
 
-In diesem Blogpost stelle ich meinen Kurs: _Frontend-Entwicklung mit AngularJS_ vor.
+In diesem blog post stelle ich meinen Kurs: _Frontend-Entwicklung mit AngularJS_ vor.
 
 ![Angular_With_Digicomp](https://offering.solutions/img/images/Angular_With_Digicomp.png)
 

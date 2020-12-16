@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to show you the solution for an error I had today which I spent a lot of time on solving it. it was the case that WPF crashes with OutOfMemoryException when loading PNGs.
+In this blog post I want to show you the solution for an error I had today which I spent a lot of time on solving it. it was the case that WPF crashes with OutOfMemoryException when loading PNGs.
 
 I had Windows 8.1 running as operating system and used pngs in my WPF application. It was all running well until I wanted to display the images. The whole programm froze and was unusable. Had to kill the process. I spent a lot of time on this and went through a lot of possibilities to display images in WPF.
 

@@ -8,11 +8,11 @@ category: blog
 aliases: ['/blog/articles/2018/11/21/online-offline-sync-angular-indexeddb/']
 ---
 
-In this blogpost I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
+In this blog post I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
 
-After this blogpost you should have an example how to use the IndexedDb in your applications, how to register to the online and offline commands and send items if the event comes up.
+After this blog post you should have an example how to use the IndexedDb in your applications, how to register to the online and offline commands and send items if the event comes up.
 
-The code to this blogpost can be found here [https://github.com/FabianGosebrink/Angular-Online-Offline-Sync](https://github.com/FabianGosebrink/Angular-Online-Offline-Sync)
+The code to this blog post can be found here [https://github.com/FabianGosebrink/Angular-Online-Offline-Sync](https://github.com/FabianGosebrink/Angular-Online-Offline-Sync)
 
 ## Introduction
 
@@ -77,7 +77,7 @@ So when an event on `window` is coming up we call our `updateOnlineStatus()` met
 
 ## The Todo-App
 
-As the Todo-app itself is not the core point of this blogpost, I will just post the code for the form and the list that you have an impression of what is going on so far.
+As the Todo-app itself is not the core point of this blog post, I will post the code for the form and the list that you have an impression of what is going on so far.
 
 ```javascript
 export class Todo {
@@ -171,7 +171,7 @@ export class TodoService {
 }
 ```
 
-Now lets use our `OnlineOfflineService` we just created and register to the `Subject` we created.
+Now lets use our `OnlineOfflineService` we created and register to the `Subject` we created.
 
 ```javascript
 import { OnlineOfflineService } from './online-offline.service';

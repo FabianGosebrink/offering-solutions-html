@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-I just implemented a solution for the ASP.NET Unit Of Work with Entity Framework (see [this](http://offering.solutions/blog/articles/2014/07/01/asp-net-mvc-generic-repositories-and-unitofwork/) post) and put all this into a NuGet-Package. And finally: Here it is!
+I implemented a solution for the ASP.NET Unit Of Work with Entity Framework (see [this](http://offering.solutions/blog/articles/2014/07/01/asp-net-mvc-generic-repositories-and-unitofwork/) post) and put all this into a NuGet-Package. And finally: Here it is!
 
 ### Code
 
@@ -18,9 +18,9 @@ Nuget: [UnitOfWork by Offering.Solutions](https://www.nuget.org/packages/Offeri
 
 Github: [OfferingSolutions UnitOfWork with Entity Framework](https://github.com/OfferingSolutions/OfferingSolutions-RepositoryPattern-UnitOfWork)
 
-This blogpost has a sample-solution attached. Feel free to look into it. But before you do let me explain this package a bit. It will use the UnitOfWork, you will be able to use GenericRepositories and Customrepositories and everything is cached so that if you use the repositories in one using they only have to be created once.
+This blog post has a sample-solution attached. Feel free to look into it. But before you do let me explain this package a bit. It will use the UnitOfWork, you will be able to use GenericRepositories and Customrepositories and everything is cached so that if you use the repositories in one using they only have to be created once.
 
-I wont go into details about the sense of the UnitOfWork-thing but I want to give you code-examples how you can start with this in just a few minutes of your time.
+I wont go into details about the sense of the UnitOfWork-thing but I want to give you code-examples how you can start with this in a few minutes of your time.
 
 If you want to work with the UnitOfWork in this NuGet-Package you will have two different possibilities:
 

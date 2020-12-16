@@ -46,7 +46,7 @@ To create a new blog post, you can take advantage of archetypes and use the Hugo
     $ cd hugoProjectDirectory
     $ hugo new blogs/myBlog.md
 
-Replace `myBlog.md` with your own file name. You can also just copy the markdown files from forty/exampleSite/content/blogs
+Replace `myBlog.md` with your own file name. You can also copy the markdown files from forty/exampleSite/content/blogs
 
 ### Contact form
 

@@ -16,7 +16,7 @@ aliases:
 
 In the first part I told something about the databinding [here](http://offering.solutions/blog/articles/2014/09/02/how-to-make-first-steps-of-databinding-in-wpf/). The second part should be something about refreshing the data at the UI. We said that the UI only knows the datacontext and its properties. So far so god. It is binding them at startup and we're done so far.
 
-Just to calm down the ones who expect a solution: Can be found in the third article [here](http://offering.solutions/blog/articles/2014/10/01/correct-implementation-of-commands-in-wpf/)
+To calm down the ones who expect a solution: Can be found in the third article [here](http://offering.solutions/blog/articles/2014/10/01/correct-implementation-of-commands-in-wpf/)
 
 But what if the data underneath is changing. What if a service or anything else has new data and want to tell the UI "Hey there, I have something new!"
 
@@ -126,7 +126,7 @@ public class NotifyPropertyChangedBase : INotifyPropertyChanged
 
 This is taking the member and throwing the event for us on this member. That was Point 1 and 2. Let it be (three)!
 
-We do inherit from the just created class and can access the event with the lambda-expression, which is more generic:
+We do inherit from the created class and can access the event with the lambda-expression, which is more generic:
 
 ```csharp
 public class MainViewModel : NotifyPropertyChangedBase

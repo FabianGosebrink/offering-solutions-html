@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-I am very happy to announce the .NET Day 2017 in Switzerland! In this blogpost I want to give you a small background information on this, how this idea came up and about the current status.
+I am very happy to announce the .NET Day 2017 in Switzerland! In this blog post I want to give you a small background information on this, how this idea came up and about the current status.
 
 ### The beginning
 

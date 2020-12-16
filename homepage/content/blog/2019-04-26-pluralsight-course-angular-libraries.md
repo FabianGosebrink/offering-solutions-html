@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to announce my very first Pluralsight course "Structuring Angular Applications with Angular Libraries"
+In this blog post I want to announce my very first Pluralsight course "Structuring Angular Applications with Angular Libraries"
 
 ## TL;DR
 

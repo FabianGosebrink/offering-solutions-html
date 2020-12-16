@@ -1,5 +1,5 @@
 ---
-title: Structurize your project with areas and services in ASP.NET MVC
+title: Structure your project with areas and services in ASP.NET MVC
 date: 2014-06-01
 tags: ['aspnet', 'areas', 'mvc']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show you one possible way to structurize your project with areas and services in ASP.NET MVC.
+In this blog post I want to show you one possible way to structurize your project with areas and services in ASP.NET MVC.
 
 This is the first part of several architecture posts I will publish in the next time.
 
@@ -27,7 +27,7 @@ VMs and SMs are one essential part (of many 😉 ) of your mvc-application. They
 
 **2)     ** **Areas**
 
-Do work with areas. Ever. I know in the beginning it seems useless to you because you “just want to get a little thing done”. But do use areas (and thank me later). This is the second step of getting structure into your project from the beginning.
+Do work with areas. Ever. I know in the beginning it seems useless to you because you "want to get a little thing done”. But do use areas (and thank me later). This is the second step of getting structure into your project from the beginning.
 
 <span style="color: #808080;">When I started to do this I got problems sharing my partial views from the top-level “Shared”-Folder which is given to me from the MVC-Template.</span>
 

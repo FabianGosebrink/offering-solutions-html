@@ -8,7 +8,7 @@ category: blog
 aliases: ['/blog/articles/2016/05/10/writing-custom-validators-in-angular-2/']
 ---
 
-In this blogpost I want to show you how you are writing custom validators in Angular.
+In this blog post I want to show you how you are writing custom validators in Angular.
 
 [https://github.com/OfferingSolutions/Offering-Solutions-Angular-Course/tree/master/Angular-Course/09_Forms/end/app/validators](https://github.com/OfferingSolutions/Offering-Solutions-Angular-Course/tree/master/Angular-Course/09_Forms/end/app/validators)
 
@@ -260,6 +260,6 @@ Regards
 
 [http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html](http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html)
 
-Thanks to [Jürgen Gutsch](http://www.gutsch-online.de/) for doing a review of this blogpost.
+Thanks to [Jürgen Gutsch](http://www.gutsch-online.de/) for doing a review of this blog post.
 
 Fabian

@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to show you how to get Ahead Of Time compilation enabled with lazy loading in combination with webpack 2.
+In this blog post I want to show you how to get Ahead Of Time compilation enabled with lazy loading in combination with webpack 2.
 
 ### Code
 
@@ -134,7 +134,7 @@ platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);
 
 Here we are consuming the generated files in the aot folder.
 
-> If this file causes problems because of not finding any files it may be that the aot folder does not exist yet. This is normal. What does not exist cant be imported. Just create the folder and the errors should go away.
+> If this file causes problems because of not finding any files it may be that the aot folder does not exist yet. This is normal. What does not exist cant be imported. If you create the folder and the errors should go away.
 
 ### Webpack: Comsuming the AoT output
 

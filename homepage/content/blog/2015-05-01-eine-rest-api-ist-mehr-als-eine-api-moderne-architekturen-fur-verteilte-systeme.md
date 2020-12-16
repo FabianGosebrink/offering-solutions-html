@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In diesem Blogpost möchte ich zeigen, wie wichtig eine API heutzutage ist. Frei nach dem Motto: Eine REST API ist mehr als eine API – Moderne Architekturen für verteilte Systeme
+In diesem Blog post möchte ich zeigen, wie wichtig eine API heutzutage ist. Frei nach dem Motto: Eine REST API ist mehr als eine API – Moderne Architekturen für verteilte Systeme
 
 In der heutigen Zeit ist es absolut unabdingbar eine Software, die man für internen oder externen Gebrauch schreibt, auf mehreren Wegen verfügbar bzw. konsumierbar zu machen. Wichtig sind hierbei sicherlich Desktop-PCs, Smartphones und Tablets.
 

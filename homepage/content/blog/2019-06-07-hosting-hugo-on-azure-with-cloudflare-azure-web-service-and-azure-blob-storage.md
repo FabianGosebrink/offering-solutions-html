@@ -16,7 +16,7 @@ In this blog post I want to describe how I moved my complete company homepage an
 
 As my company homepage and my blog have been two projects in the past I had two different repositories for both which were lying on an azure devops git repo (html page) and on github.com (blog).
 
-The blog was a jekyll blog which was creating my html pages from markdown and then deployed to the same webserver as my website was hosted. The both repositories had two different CI/CD pipelines on dev.azure.com and if I checked in one of them, the build was triggered and either the blog was deployed in a subfolder or the website was deployed to root. But they just did not have the same look and feel as this was grown historically.
+The blog was a jekyll blog which was creating my html pages from markdown and then deployed to the same webserver as my website was hosted. The both repositories had two different CI/CD pipelines on dev.azure.com and if I checked in one of them, the build was triggered and either the blog was deployed in a subfolder or the website was deployed to root. But they did not have the same look and feel as this was grown historically.
 
 The site was hosted on one.com including the domain. I am very satisfied with one.com. It ran all the time without any problem, support was good, had no pain with it. But I could not change the nameservers and because of that not use cloudflare. And I wanted to host my site on azure.com to get a feeling of this, better integration and find a good solution to combine site and blog in one.
 
@@ -47,7 +47,7 @@ I tweaked the theme a bit, added all my pictures, adapted colors (mostly with go
 
 ## Moving from jekyll to hugo
 
-Here is the thing: This was the most unspectacular part in the whole process of migrating from A to B. I just copied over the \*.md files and had to modify the markdown metainformation in the header. Which was also because I did not want to use the old design but introduced a completely new one.
+Here is the thing: This was the most unspectacular part in the whole process of migrating from A to B. I copied over the \*.md files and had to modify the markdown metainformation in the header. Which was also because I did not want to use the old design but introduced a completely new one.
 
 Old (Jekyll)
 
@@ -124,7 +124,7 @@ For generating the site I used a build task which build my site running the need
 
 ![CICD-1](https://cdn.offering.solutions/img/articles/2019-06-07/cicd-1.png)
 
-So the source of my hugo site is the folder `homepage` and the destination is `homepage/public`. This is the folder all files are build to. I am overwriting the `BaseUrl` with the domain `https://offering.solutions`. I would not have to do this as in my `config.toml` file the `baseURL = "https://offering.solutions/"` is already set to the correct domain. It was more just to try it out a bit :)
+So the source of my hugo site is the folder `homepage` and the destination is `homepage/public`. This is the folder all files are build to. I am overwriting the `BaseUrl` with the domain `https://offering.solutions`. I would not have to do this as in my `config.toml` file the `baseURL = "https://offering.solutions/"` is already set to the correct domain. It was more to try it out a bit :)
 
 As next step I had to divide the files which are going to be deployed to the azure blob service and the files which are going to be deployed to the main domain web service on azure.
 

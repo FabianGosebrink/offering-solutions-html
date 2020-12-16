@@ -22,7 +22,7 @@ Get started by creating a new folder where you want to work in, opening a consol
 
 Then open up a console and type `code .` to start Visual Studio Code on the current level.
 
-You should now see all the files and folders of your project. We can now go ahead and create a typed class which represents the configuration we want to work with. In this case this is just a file with a name property.
+You should now see all the files and folders of your project. We can now go ahead and create a typed class which represents the configuration we want to work with. In this case this is a file with a name property.
 
 ```
 Config

@@ -8,9 +8,9 @@ category: blog
 aliases: ['/blog/articles/2018/05/27/end-to-end-testing-with-angular-cypress/']
 ---
 
-In this blogpost we will cover how to get started with end to end testing using cypress and angular and the AngularCLI.
+In this blog post we will cover how to get started with end to end testing using cypress and angular and the AngularCLI.
 
-The code for this blogpost can be found [here](https://github.com/FabianGosebrink/cypress-angular-getting-started)
+The code for this blog post can be found [here](https://github.com/FabianGosebrink/cypress-angular-getting-started)
 
 As a long term AngularCLI user I am very used to work with protractor when it comes to end to end testing. To be honest I did not like end to end testing that much. So I was looking for an alternative and this tweet from Dominic Elm pushed me more into the direction of cypress.
 
@@ -21,7 +21,7 @@ So I started taking a closer look.
 
 ## Preparation
 
-Cypress is an end to end testing utility which can run beside your maybe existing protractor tests. To install it just run the following command and it persists to your package.json.
+Cypress is an end to end testing utility which can run beside your maybe existing protractor tests. To install it run the following command and it persists to your package.json.
 
 `npm i cypress --save-dev`
 
@@ -33,11 +33,11 @@ As your application has to run while cypress is testing it I use a package calle
 
 If you now start the cypress tests you will notice that cypress created a folder "cypress" for you. In there is a folder called "integration" which is holding your tests
 
-> This is just the default folder. You configure a lot in the cypress variables. Just check them out and play around with them. The folder is quite interesting in the beginning because it provides a good starting point watching the file "example_spec.js" which contains some example tests.
+> This is the default folder. You configure a lot in the cypress variables. Check them out and play around with them. The folder is quite interesting in the beginning because it provides a good starting point watching the file "example_spec.js" which contains some example tests.
 
 ## The application
 
-The application is rather easy and is just a Todo-List which we want to test end-to-end.
+The application is rather easy and is a Todo-List which we want to test end-to-end.
 We have a form component which can throw the output of an added todo and a list component which can mark items as "done" and expects a list of items as input.
 
 ![Todoapplication](https://cdn.offering.solutions/img/articles/2018-05-29/todo-cypress.gif)

@@ -15,7 +15,7 @@ Hey,
 
 today I want to show you how to get started with ASP.NET 5 and Entity Framework 6.
 
-If you start with the new templates for ASP.NET 5 you will notice in a short time that examples are going the EF 7 way. But if you want to stay at Entity Framework 6 as long as 7 is not in a final release or just to move from an older version step by step you can follow this instructions here. In this blog post I want to show you how to include a database with a connectionstring saved in a json file with the new ASP.NET Core.
+If you start with the new templates for ASP.NET 5 you will notice in a short time that examples are going the EF 7 way. But if you want to stay at Entity Framework 6 as long as 7 is not in a final release or to move from an older version step by step you can follow this instructions here. In this blog post I want to show you how to include a database with a connectionstring saved in a json file with the new ASP.NET Core.
 
 > Note: At the time of this post ASP.NET was at RC1 status. There might be changes until its completely an final released. However: If you want to dive into new functionalities: Keep reading.
 
@@ -61,7 +61,7 @@ Next thing we have to do is getting the config and our databasecontext married :
 
 This can be done putting a single line in our "Startup.cs"-File.
 
-Just add
+Asdd
 
 ```csharp
 services.AddScoped<MyEf6EntityFrameworkContext>((s) => new MyEf6EntityFrameworkContext(Configuration["Data:Ef6ExampleConnectionString"]));

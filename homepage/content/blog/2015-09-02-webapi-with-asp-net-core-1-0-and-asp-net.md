@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-I just released two sample APIs on Github: WebAPI with ASP.NET Core and ASP.NET
+I released two sample APIs on Github: WebAPI with ASP.NET Core and ASP.NET
 
 One of them is done with the "old" approach but heads in the direction of my understanding of a modern WebAPI using OData and having DTOs instead of delivering the plain entitites down to the client.
 

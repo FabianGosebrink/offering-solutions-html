@@ -10,9 +10,9 @@ aliases: [
 ]
 ---
 
-With this blogpost I want to show you how to use AngularJS with gulp, wiredep and bower to provide the files to an angular application.
+With this blog post I want to show you how to use AngularJS with gulp, wiredep and bower to provide the files to an angular application.
 
-I just introduced Gulp in my AngularJSDemoApp on GitHub.
+I introduced Gulp in my AngularJSDemoApp on GitHub.
 
 Check it out [here](https://github.com/FabianGosebrink/ASPNET-WebAPI-AngularJs).
 
@@ -94,7 +94,7 @@ module.exports = function() {
 };
 ```
 
-Just run the corresponding gulp commands to start the default gulp task. Or, if you do not like gulp, just comment in all the files explicitly. That will do it, too :)
+Run the corresponding gulp commands to start the default gulp task. Or, if you do not like gulp, comment in all the files explicitly. That will do it, too :)
 
 ```html
 <script src="libs/angular/angular.js"></script>
@@ -121,6 +121,6 @@ Just run the corresponding gulp commands to start the default gulp task. Or, if 
 
 Regards and have fun. Happy coding
 
-If you have VS 2013 you can install the [Task Runner Explorer](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708), which is included in VS 2015 or you just run the commands from the command line being on the level of the gulp.js-file.
+If you have VS 2013 you can install the [Task Runner Explorer](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708), which is included in VS 2015 or you run the commands from the command line being on the level of the gulp.js-file.
 
 Fabian

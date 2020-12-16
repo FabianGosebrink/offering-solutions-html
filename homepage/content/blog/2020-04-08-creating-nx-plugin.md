@@ -397,7 +397,7 @@ ng g app myApp
 
 Pay attention that this is the workspace you are gonna test you schematics with. So bring it in the position that you can apply your changes.
 
-Having done that: Commit! have a "clean" workspace. I am not saying to push it, just have the workspace clean that you can see what the schematic did. Checking the file changes is very easy like this.
+Having done that: Commit! have a "clean" workspace. I am not saying to push it, have the workspace clean that you can see what the schematic did. Checking the file changes is very easy like this.
 
 Now you can link your schematic into your workspace to run it locally. Therefore run the `npm link` command _from the workspace you want to test on with the path to your `package.json` of the schematic without the `package.json` filename_.
 
@@ -468,7 +468,7 @@ or
     }),
 ```
 
-Which we could use to achieve our goals with our schematic. However this time we gonna stick to what we have and just provide our existing schematic as an nx plugin.
+Which we could use to achieve our goals with our schematic. However this time we gonna stick to what we have and provide our existing schematic as an nx plugin.
 
 First we can take the complete `actions` folder of our schematic and paste it into the `libs\my-first-plugin\src\schematics\my-first-plugin\` folder.
 

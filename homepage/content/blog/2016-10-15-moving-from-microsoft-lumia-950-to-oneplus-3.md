@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2016/10/15/moving-from-microsoft-lumia-950-to-oneplus-3/']
 ---
 
-In this blogpost I want to share the experience I made moving from Microsoft Lumia 950 to OnePlus 3.
+In this blog post I want to share the experience I made moving from Microsoft Lumia 950 to OnePlus 3.
 
 ### Prologue
 
@@ -27,7 +27,7 @@ I have had this feelings almost everytime you could do something really easy via
 
 Don't get me wrong: I could do almost everything I wanted with my phone. Through the normal websites you can do a lot of stuff without an app, the rest of the things you wanted to do were not really necessary or you could not even do them because your phone was not able to. And this last this was really offending me more and more.
 
-Another story: I was in a project at a customers place and they were discussing about getting their angular application to mobile via cordova and stuff. They wanted to participate from my knowledge so I was consulting them and joined the discussion. As I said that you are able to build for every platform their eyes really got bigger and bigger and they were really interested. As I started naming all the platforms and mentioned "Windows Mobile" they suddenly interrupted me and said "Nobody cares about Windows Mobile". This was not to offend me. It was just said in the room like a statement. Standing there. I was quiet for a little time and went on.
+Another story: I was in a project at a customers place and they were discussing about getting their angular application to mobile via cordova and stuff. They wanted to participate from my knowledge so I was consulting them and joined the discussion. As I said that you are able to build for every platform their eyes really got bigger and bigger and they were really interested. As I started naming all the platforms and mentioned "Windows Mobile" they suddenly interrupted me and said "Nobody cares about Windows Mobile". This was not to offend me. It was said in the room like a statement. Standing there. I was quiet for a little time and went on.
 
 But this showed me that also customers do not care about Windows Mobile.
 
@@ -77,7 +77,7 @@ Another thing I noticed was the data usage of the OnePlus3 or better: of the app
 
 ### Hardware
 
-The hardware is also pretty great on both devices. But the OP3 has aluminium which just looks a bit nicer and it has got this notification slider on the side where I can choose which notifications shall come through by only slide this button up and down. This was really impressive. Also the fingerprint sensor I mentioned is cool.
+The hardware is also pretty great on both devices. But the OP3 has alu which looks a bit nicer and it has got this notification slider on the side where I can choose which notifications shall come through by only slide this button up and down. This was really impressive. Also the fingerprint sensor I mentioned is cool.
 
 ![dsc_6519](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/10/DSC_6519.jpg)
 

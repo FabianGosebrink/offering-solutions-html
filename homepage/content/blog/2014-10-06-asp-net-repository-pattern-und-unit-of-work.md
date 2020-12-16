@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2014/10/06/asp-net-repository-pattern-und-unit-of-work/']
 ---
 
-In diesem Blogpost möchte ich das ASP.NET Repository Pattern and Unit of Work vorstellen. In einem Informationssystem (z.B. Webapplikation) hat man normalerweise immer dasselbe Problem: Irgendwie muss man Daten persistieren und von der Oberfläche im Browser in die Datenbank hin- und wieder zurückschieben. Und dies findet man beinahe bei jedem Objekt (Person, Artikel, Blogeintrage, etc.). Vor allem fällt nach einer Zeit auf, dass die Operationen immer dieselben sind: **C**reate/**R**ead/**U**pdate und **D**elete geben sich die Klinke in die Hand. Dies sind die sogenannten CRUD-Operationen.
+In diesem Blog post möchte ich das ASP.NET Repository Pattern and Unit of Work vorstellen. In einem Informationssystem (z.B. Webapplikation) hat man normalerweise immer dasselbe Problem: Irgendwie muss man Daten persistieren und von der Oberfläche im Browser in die Datenbank hin- und wieder zurückschieben. Und dies findet man beinahe bei jedem Objekt (Person, Artikel, Blogeintrage, etc.). Vor allem fällt nach einer Zeit auf, dass die Operationen immer dieselben sind: **C**reate/**R**ead/**U**pdate und **D**elete geben sich die Klinke in die Hand. Dies sind die sogenannten CRUD-Operationen.
 
 ![ASP.NET Repository Pattern und Unit of Work](https://cdn.offering.solutions/img/articles/2014-10-06/01.png)
 

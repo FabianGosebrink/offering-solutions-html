@@ -1,18 +1,18 @@
 ---
-title: Announcing 'Getting started with Angular and ASP.NET Core' blogpost for ng book
+title: Announcing 'Getting started with Angular and ASP.NET Core' blog post for ng book
 date: 2018-08-09
 tags: ['angular', 'aspnetcore']
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: [
-    "/blog/articles/2018/08/09/announcing-getting-started-with-angular-and-asp.net-core-blogpost-for-ng-book/",
+    "/blog/articles/2018/08/09/announcing-getting-started-with-angular-and-asp.net-core-blog post-for-ng-book/",
 ]
 ---
 
-I wanted to announce another blogpost I wrote for the famous "ng-book" called "Getting started with Angular and ASP.NET Core" and you can find it [here](http://blog.ng-book.com/getting-started-with-angular-and-asp-net-core/)
+I wanted to announce another blog post I wrote for the famous "ng-book" called "Getting started with Angular and ASP.NET Core" and you can find it [here](http://blog.ng-book.com/getting-started-with-angular-and-asp-net-core/)
 
-Some time ago [Nate Murray](https://twitter.com/eigenjoy) contacted me asking if I would be willing to write a blogpost for ng book which he can publish over the [NgNewsletter](https://twitter.com/ngnewsletter). I immediatelly said "Yes" and began to write about my favorite topics "Angular" and "ASP.NET Core".
+Some time ago [Nate Murray](https://twitter.com/eigenjoy) contacted me asking if I would be willing to write a blog post for ng book which he can publish over the [NgNewsletter](https://twitter.com/ngnewsletter). I immediatelly said "Yes" and began to write about my favorite topics "Angular" and "ASP.NET Core".
 
 This tutorial describes the first steps of starting with distributed applications and how to get them going digging a little into every field. Of course there is much much more to explore. Maybe you find it helpful!
 

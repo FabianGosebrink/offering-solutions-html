@@ -8,7 +8,7 @@ category: blog
 aliases: ['/blog/articles/2015/07/20/how-to-build-a-great-restful-service/']
 ---
 
-In this blogpost I want to get you an idea of how to build a great RESTful Service. The idea for this blogpost came after I spent a whole [post](http://blog.noser.com/implementieren-von-paging-in-einer-asp-net-webapi-mitangularjs/) about implementing paging in a web API. Paging is a very important feature a REST API should offer. However, there are a lot more. Here I want to mention a few of them hoping to cover as much as you need to build great API’s ;-)
+In this blog post I want to get you an idea of how to build a great RESTful Service. The idea for this blog post came after I spent a whole [post](http://blog.noser.com/implementieren-von-paging-in-einer-asp-net-webapi-mitangularjs/) about implementing paging in a web API. Paging is a very important feature a REST API should offer. However, there are a lot more. Here I want to mention a few of them hoping to cover as much as you need to build great API’s ;-)
 
 Before we dive deeper into what an API can do you may think that all this stuff can also be done on the client. But you do not know which kind of client in the future will consume your web API. This can be an intelligent client that can do all the stuff on client side. So why do you have to offer those features then? Because instead of an intelligent client this can also be a “stupid” client which does not support any features at all. And if it only supports http-calls it has to use the features you offer with your API. The more you offer, the better it is for those clients. Keep this in your mind during coding your API’s.
 
@@ -22,9 +22,9 @@ So if you are handling exceptions, not authenticated states etc.: Always get cle
 
 **Paging**
 
-On this point I want to refer to the blogpost I have already written. In addition to this I want to mention that the _pagination Header_ should also be filled up with the link to the next page, the link to the last page, the current page size, the total pages, the current page etc.
+On this point I want to refer to the blog post I have already written. In addition to this I want to mention that the _pagination Header_ should also be filled up with the link to the next page, the link to the last page, the current page size, the total pages, the current page etc.
 
-Yes, you can solve this in a modern client like the one I did in the blogpost with AngularJS. However, for clients which do not support those features: These links are essential to get paging working! So do include them and thank me later. ;-)
+Yes, you can solve this in a modern client like the one I did in the blog post with AngularJS. However, for clients which do not support those features: These links are essential to get paging working! So do include them and thank me later. ;-)
 
 ```javascript
 var paginationHeader = new

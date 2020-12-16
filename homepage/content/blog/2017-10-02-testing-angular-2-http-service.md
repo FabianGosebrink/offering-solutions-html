@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to show you how you can test the new HttpClient introduced with the version 4.2 of angular.
+In this blog post I want to show you how you can test the new HttpClient introduced with the version 4.2 of angular.
 
 ## The HttpClient service
 

@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2018/06/01/running-cypress-tests-in-angular-with-travis-ci/']
 ---
 
-In the last blogpost I explained how to get started with cypress tests. The next step would be running these tests in a Continuous Integration and Continuous Delivery (CI and CD) environment. The advantage of this is that with every commit the tests are being executed automatically and you get feedback about wether your application is still doing good or not automatically.
+In the last blog post I explained how to get started with cypress tests. The next step would be running these tests in a Continuous Integration and Continuous Delivery (CI and CD) environment. The advantage of this is that with every commit the tests are being executed automatically and you get feedback about wether your application is still doing good or not automatically.
 
 [Travis CI](https://travis-ci.org/) is a very well known Continuous Integration Environment and is very common when working with OSS projects. The best thing about it is that it is free to use for an open source project.
 
@@ -50,7 +50,7 @@ Having done that we want to start an independent http-server which serves our ap
 
 So `http-server ./dist/cypressTest` is starting the server at our required path. With `-a localhost` we can specify the IP which is going to be used. This is localhost or 127.0.0.1 in this case. As a port we sepcify `-p 8000` and because we do a lot of reloading we are disabling the cache with `-c-1`.
 
-> Rmemeber we told cypress to load localhost:8000 in our tests. `cy.visit('http://localhost:8000');`
+> Remember we told cypress to load localhost:8000 in our tests. `cy.visit('http://localhost:8000');`
 
 ### Starting cypress
 
@@ -64,7 +64,7 @@ So we are building our application now and are running a webserver on travis ci 
 
 ### Getting the pieces together (I of II)
 
-Let us stick a few pieces together so far: We can let run cypress and start the tests, we can build our application and start a webserver to serve our app to cypress. We only have to concetinate it for our main CI command Travis CI has to call in the end:
+Let us stick a few pieces together so far: We can let run cypress and start the tests, we can build our application and start a webserver to serve our app to cypress. We only have to concatenate it for our main CI command Travis CI has to call in the end:
 
 ```javascript
 "cypress:ci": "ng build --prod && start:ci && cypress:run",
@@ -72,7 +72,7 @@ Let us stick a few pieces together so far: We can let run cypress and start the 
 "cypress:run": "cypress run",
 ```
 
-The `&&` is just running one command after the other when the current one is finished. But starting a webserver never finishes really. It is started and will run until you shut it down. On CI environments you want to shut down _after_ all the test ran and you want it to happen automatically. So we need something to run commands in parallel and will stop after automatically.
+The `&&` is running one command after the other when the current one is finished. But starting a webserver never finishes really. It is started and will run until you shut it down. On CI environments you want to shut down _after_ all the test ran and you want it to happen automatically. So we need something to run commands in parallel and will stop after automatically.
 
 ### Running commands in parallel
 
@@ -118,9 +118,9 @@ node_js:
 -   npm run cypress:ci
 ```
 
-First, we set the language to node_js defining the version afterwards. The `install` tasks are just a plain `npm install` to install all dependencies. After doing that travisCI should automatically call `npm run cypress:ci` which is the command from our package.json.
+First, we set the language to node_js defining the version afterwards. The `install` tasks are a plain `npm install` to install all dependencies. After doing that travisCI should automatically call `npm run cypress:ci` which is the command from our package.json.
 
-If you connected your github repository to travis and added this file with the next checkin the build should automatically trigger and your cypress tests should run automatically.
+If you connected your github repository to travis and added this file with the next check in the build should automatically trigger and your cypress tests should run automatically.
 
 ![CypressTravis](https://cdn.offering.solutions/img/articles/2018-06-01/cypress-travis.gif)
 

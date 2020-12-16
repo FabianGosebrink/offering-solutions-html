@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to give you a guidance to the first steps of starting with Microsoft's Face Recognition API and using it with Angular and the Angular CLI.
+In this blog post I want to give you a guidance to the first steps of starting with Microsoft's Face Recognition API and using it with Angular and the Angular CLI.
 
 ## Preparation
 
@@ -23,11 +23,11 @@ Another useful links are:
 - [Face API JavaScript Quickstarts](https://docs.microsoft.com/de-de/azure/cognitive-services/Face/quickstarts/javascript)
 - [Api Documentation - Face API - V1.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
 
-The complete sourcecode for this blogpost can be found in my [GitHub](https://github.com/FabianGosebrink/angular-face-recognition-api). It is based on the Angular CLI and Bootstrap 4.
+The complete sourcecode for this blog post can be found in my [GitHub](https://github.com/FabianGosebrink/angular-face-recognition-api). It is based on the Angular CLI and Bootstrap 4.
 
 ## The goal
 
-The goal of this blogpost or this private project I did was to consume the face recognition API sending a picture to it which you can capture with the camera of your laptop/ computer and then to analyze it and siaply the results.
+The goal of this blog post or this private project I did was to consume the face recognition API sending a picture to it which you can capture with the camera of your laptop/ computer and then to analyze it and siaply the results.
 
 ## Questions to clarify
 

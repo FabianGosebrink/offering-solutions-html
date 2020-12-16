@@ -11,9 +11,9 @@ aliases:
   ]
 ---
 
-In this bogpost I want to show you one possibility of deleting a Team Project on Visual Studio Team Services.
+In this blog post I want to show you one possibility of deleting a Team Project on Visual Studio Team Services.
 
-I just stumbled over the case that I wanted to delete an old project in my online TFS to keep it clean and up to date. As I noticed that it is not as easy as it sounds I thought about mentioning it here. So here is the walkthrough:
+I stumbled over the case that I wanted to delete an old project in my online TFS to keep it clean and up to date. As I noticed that it is not as easy as it sounds I thought about mentioning it here. So here is the walk through:
 
 First log into your VSTS account by typing something like in the browser and entering your username and password.
 

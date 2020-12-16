@@ -25,7 +25,7 @@ I went with something like this in the first place
 
 but yet I had to turn off the ventilator/light manually. The first idea - and so the entrance to the iot rabbit hole - was this: Controlling the light automatically when temperature and humidity changes.
 
-I read a lot about [Home Assistant](https://www.home-assistant.io/) but had absolutely no clue how to use it and what to do with it, how to connect the things I did not yet have and how all that stuff worked. I thought it was an operating system like thing to flash on a card with a UI and I could basically use it to automatic the things in my home. I was half-wrong but we will clarify this later on. How would things communicate with each other? And how could I tell what system that when x happens I want y to happen? No idea. I just started. But the goal was to turn off the light and the ventilator automatically when the humidity in the rooms was decreasing to a certain level.
+I read a lot about [Home Assistant](https://www.home-assistant.io/) but had absolutely no clue how to use it and what to do with it, how to connect the things I did not yet have and how all that stuff worked. I thought it was an operating system like thing to flash on a card with a UI and I could basically use it to automatic the things in my home. I was half-wrong but we will clarify this later on. How would things communicate with each other? And how could I tell what system that when x happens I want y to happen? No idea. I started. But the goal was to turn off the light and the ventilator automatically when the humidity in the rooms was decreasing to a certain level.
 
 ## What I already had
 
@@ -62,11 +62,11 @@ So I started with downloading the [Home Assistant](https://www.home-assistant.io
 
 [https://twitter.com/FabianGosebrink/status/1288848695925055488](https://twitter.com/FabianGosebrink/status/1288848695925055488)
 
-Then I flashed the Home Assistant on the SD Card and just saw...nothing. No Ui. Just a console which was periodically printing out values. I said I was "half-wrong" and here is why: I could flash the Home Assistant and install it on the new Raspberry Pi. What I did NOT know until now was that the Home Assistant is firing up a web server which you can access then via browser! I did not know that before! (And yes if you read the instructions on the homepage of Home Assistant carefully there is `On another computer, navigate to http://homeassistant.local:8123 to access Home Assistant.`. ON ANOTHER COMPUTER!!!! I did not read. My bad.) So I did not need the touchscreen for the home assistant on this Raspberry Pi. I could access it from the first Raspberry with the Pi-Hole on it which already had a touchscreen installed, because I just had to open a second browser tab to access the webserver running on the new bought new flashed Raspberry on `http://homeassistant.local:8123`. So I let go off the Touchscreen and the case behind the touchscreen and put the new Raspberry in a case (which I had as leftover from other projects) and now the Raspberry _without_ any screen in my shelve.
+Then I flashed the Home Assistant on the SD Card and saw...nothing. No Ui. A console which was periodically printing out values. I said I was "half-wrong" and here is why: I could flash the Home Assistant and install it on the new Raspberry Pi. What I did NOT know until now was that the Home Assistant is firing up a web server which you can access then via browser! I did not know that before! (And yes if you read the instructions on the homepage of Home Assistant carefully there is `On another computer, navigate to http://homeassistant.local:8123 to access Home Assistant.`. ON ANOTHER COMPUTER!!!! I did not read. My bad.) So I did not need the touchscreen for the home assistant on this Raspberry Pi. I could access it from the first Raspberry with the Pi-Hole on it which already had a touchscreen installed, because I had to open a second browser tab to access the webserver running on the new bought new flashed Raspberry on `http://homeassistant.local:8123`. So I let go off the Touchscreen and the case behind the touchscreen and put the new Raspberry in a case (which I had as leftover from other projects) and now the Raspberry _without_ any screen in my shelve.
 
 What I could have done is running the Home Assistant on my first Raspberry (with the Pi-Hole in parallel) in a docker container. Then I would not have needed any of the new Raspberry OR the touchscreen. However, I have it running on two separate Raspberries now. My bad.
 
-This is the Raspberry Pi where I have the Browser UI for the Pi-Hole and the Home Assistant always open. Pi-Hole is running on that Raspberry, the Home Assistnat itself runs on a separate Raspberry Pi shown in the picture below.
+This is the Raspberry Pi where I have the Browser UI for the Pi-Hole and the Home Assistant always open. Pi-Hole is running on that Raspberry, the Home Assistant itself runs on a separate Raspberry Pi shown in the picture below.
 ![Raspberry pi with touchscreen and two tabs one with Home Assistant and one with the Pi Hole](https://cdn.offering.solutions/img/articles/2020-11-30/IMG_20201129_172738.jpg)
 
 And this is the Pi the Home Assistant is always running on
@@ -80,7 +80,7 @@ Takeaways:
 
 - Home Assistant can be run in a docker container on an existing Raspberry Pi
 - Flashed on a card it is a web server which can be accessed from a browser at any device in your network
-- Read. Just read the docs.
+- Read. Read the docs.
 
 ### ... the humidity sensor
 
@@ -99,7 +99,7 @@ Nice that was working. But now I had to solve how the Shelly could control the l
 Takeaways:
 
 - The humidity sensor alone is worth nothing, you need a hub.
-- If they offer you a Combo (!!!) with a hub AND a starting device...maybe...just maybe consider reading what the hub is for!
+- If they offer you a Combo (!!!) with a hub AND a starting device...maybe... maybe consider reading what the hub is for!
 - The Aqara app and devices work with the same app which is used to control the Roborock S6 vacuum cleaner although the vacuum cleaner does not need a hub.
 
 ### ...Shelly
@@ -151,7 +151,7 @@ Takeaways:
 - `Entities` are the functionalities this device has!
 - `Integrations` are the glue between your physical devices and the Home Assistant
 - There are a lot of integrations
-- Read. Just read the docs.
+- Read. Read the docs.
 
 ## Be aware! - The Problems
 
@@ -215,7 +215,7 @@ Here we are controlling the light with Home Assistant App which uses the Shelly 
 
 ## Amazon Alexa
 
-Of course I have an Amazon Alexa as well. I have three to be precise, but only one of them is really used. Just to clarify how that fits in: Amazon Alexa acts basically like a Home Assistant from a technical perspective: It has integrations by itself over the Amazon Alexa app and then can control things like Hue or even Shellies and much more of course.
+Of course I have an Amazon Alexa as well. I have three to be precise, but only one of them is really used. To clarify how that fits in: Amazon Alexa acts basically like a Home Assistant from a technical perspective: It has integrations by itself over the Amazon Alexa app and then can control things like Hue or even Shellies and much more of course.
 
 So you can integrate the Shellies into Alexa, all Hue lights and I think a lot of other things. You can also do "if this than that" things. Alexa can be controlled by voice. The Home Assistant possibly can also have an integration of voice anyhow I am sure, but I am running all voice controlled commands over my Amazon Alexa for now.
 

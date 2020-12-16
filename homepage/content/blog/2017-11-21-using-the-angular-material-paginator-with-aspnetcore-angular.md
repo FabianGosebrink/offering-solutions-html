@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show you how to use Angular Material with Angular to use a table with paging which is driven by an ASP.NET Core WebAPI.
+In this blog post I want to show you how to use Angular Material with Angular to use a table with paging which is driven by an ASP.NET Core WebAPI.
 
 ## Code
 
@@ -33,7 +33,7 @@ You can find the code here: [https://github.com/FabianGosebrink/ASPNETCore-Angul
 
 ## <a name="getstarted">Get started</a>
 
-With the Angular Material Table and its Pagination Module it is quite easy to set up paging in a beautiful way so that you can use it on client side and only show a specific amount of entries to your users. What we do not want to do, is loading _all_ items from the backend in the first place just to get the paging going and then display only a specific amount. Instead we want to load only what we need and display that. If the user clicks on the "next page"-button the items should be loaded and displayed.
+With the Angular Material Table and its Pagination Module it is quite easy to set up paging in a beautiful way so that you can use it on client side and only show a specific amount of entries to your users. What we do not want to do, is loading _all_ items from the backend in the first place to get the paging going and then display only a specific amount. Instead we want to load only what we need and display that. If the user clicks on the "next page"-button the items should be loaded and displayed.
 
 ## <a name="thebackend">The Backend</a>
 
@@ -314,7 +314,7 @@ export class OverviewComponent implements OnInit {
 
 The `switchPage` method is called when the page changes and first sets all the new values in the paginationService and then gets the customers again. Those values are then provided again in the dataservice, and are consumed there, and also used in the view where they get displayed correctly.
 
-In the `getAllCustomers` method we are reading the `totalCount` value from the headers. Be sure to read the full response in the dataservice by adding `return this.httpClient.get<T>(mergedUrl, { observe: 'response' });` and exposing the header in the CORS options like shown before in this blogpost.
+In the `getAllCustomers` method we are reading the `totalCount` value from the headers. Be sure to read the full response in the dataservice by adding `return this.httpClient.get<T>(mergedUrl, { observe: 'response' });` and exposing the header in the CORS options like shown before in this blog post.
 
 Thanks for reading
 

@@ -12,7 +12,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show how to create Cross Platform Builds with Angular, Gulp and Webpack
+In this blog post I want to show how to create Cross Platform Builds with Angular, Gulp and Webpack
 
 <a href="https://webpack.github.io/" title="Webpack">Webpack</a>
 
@@ -32,7 +32,7 @@ Whereas "app" contains my Angular 2 application and the other files and foldersÂ
 
 ## The goal
 
-The sense of this blogpost is now to get a build with webpack AND gulp combined to have the same cross platform functionality we are used from a "gulp-only" build.
+The sense of this blog post is now to get a build with webpack AND gulp combined to have the same cross platform functionality we are used from a "gulp-only" build.
 
 ### The past
 

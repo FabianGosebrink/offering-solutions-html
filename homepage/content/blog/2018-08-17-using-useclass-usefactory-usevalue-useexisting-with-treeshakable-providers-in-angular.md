@@ -11,9 +11,9 @@ aliases:
   ]
 ---
 
-In this blogpost I want to describe how to use the `useClass`, `useValue`, `useFactory`, `useExisting` providers in the new [treeshakable providers](https://angular.io/guide/providers) from Angular.
+In this blog post I want to describe how to use the `useClass`, `useValue`, `useFactory`, `useExisting` providers in the new [treeshakable providers](https://angular.io/guide/providers) from Angular.
 
-After this blogpost you should have an example how to use those four providers and have an idea what to do with it in case they are a solution to some problems you might face when developing Angular applications.
+After this blog post you should have an example how to use those four providers and have an idea what to do with it in case they are a solution to some problems you might face when developing Angular applications.
 
 ## Introduction
 
@@ -74,7 +74,7 @@ export class AppComponent {
 }
 ```
 
-Again, we are just using the service, calling the method which logs something out. We will use the method to see which service is gonna be used later.
+Again, we are using the service, calling the method which logs something out. We will use the method to see which service is gonna be used later.
 
 If we run that one with `npm start` we can see in the console that
 
@@ -276,7 +276,7 @@ export class ServiceA {
 }
 ```
 
-will create two instances of your `ServiceB` class which might not be what you want. And this is where `useExisting` comes into play. Using that you can refer to an already existing service and so act as an alias. Keep in mind that this time your class has to be an Angular service with a decorator and not just a plain class like in the examples above. Lets use it and get our service names in again.
+will create two instances of your `ServiceB` class which might not be what you want. And this is where `useExisting` comes into play. Using that you can refer to an already existing service and so act as an alias. Keep in mind that this time your class has to be an Angular service with a decorator and not a plain class like in the examples above. Lets use it and get our service names in again.
 
 ```javascript
 @Injectable({

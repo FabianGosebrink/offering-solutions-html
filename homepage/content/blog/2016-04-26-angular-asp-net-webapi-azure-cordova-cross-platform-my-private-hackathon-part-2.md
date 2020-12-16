@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In the last [blogpost](http://offering.solutions/blog/articles/2016/04/19/angular-asp-net-webapi-azure-cordova-cross-platform-2/)I lost a few words about the REST-API the FoodChooser is talking to. In this blog I want to talk about the clients I developed. This is: Angular, ASP.NET WebAPI, Azure & Cordova, Cross Platform – My Private Hackathon Part 2.
+In the last [blog post](http://offering.solutions/blog/articles/2016/04/19/angular-asp-net-webapi-azure-cordova-cross-platform-2/)I lost a few words about the REST-API the FoodChooser is talking to. In this blog I want to talk about the clients I developed. This is: Angular, ASP.NET WebAPI, Azure & Cordova, Cross Platform – My Private Hackathon Part 2.
 
 Well I started coding an AngularJs 1.x Client with Typecript which is available here
 
@@ -220,7 +220,7 @@ So I check the headers, append a token if available, set the content-type and ac
 
 To give this whole thing a go as an exe and as an app on mobile devices I used cordova and electron with gulp as a taskrunner.
 
-I seperated all the files in the tasks for "electron", "cordova" and "web". In the main gulp file I am just gathering all the information and point the default task only to list all available tasks to \_not- start something the developer does not know when he only types "gulp" without a specific command.
+I separated all the files in the tasks for "electron", "cordova" and "web". In the main gulp file I am gathering all the information and point the default task only to list all available tasks to \_not- start something the developer does not know when he only types "gulp" without a specific command.
 
 ```javascript
 var buildConfig = require('./gulp.config');

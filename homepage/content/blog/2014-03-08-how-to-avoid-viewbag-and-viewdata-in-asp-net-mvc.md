@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show you How to avoid ViewBag and ViewData in ASP.NET MVC.
+In this blog post I want to show you How to avoid ViewBag and ViewData in ASP.NET MVC.
 
 It could be so easy: When passing data from the Controller to the View in MVC one can use
 

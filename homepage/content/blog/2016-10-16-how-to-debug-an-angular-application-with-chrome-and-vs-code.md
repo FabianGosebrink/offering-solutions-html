@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show you how to debug an Angular application with Chrome and VS Code.
+In this blog post I want to show you how to debug an Angular application with Chrome and VS Code.
 
 First of all you need to install the extension in VS Code.
 
@@ -72,7 +72,7 @@ So replace the port in the config file with the port from your angular applicati
 }
 ```
 
-If the server is running just hit "play" in VSCode and the breakpoint should be hit. If not, it might not be attached, so just hit refresh in the browser.
+If the server is running hit "play" in VSCode and the breakpoint should be hit. If not, it might not be attached, so hit refresh in the browser.
 
 Chrome starts and you can debug your page in VS Code. Of course you can also configure Chrome to attach directly. See here for examples:
 

@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2014/07/01/asp-net-mvc-generic-repositories-and-unitofwork/']
 ---
 
-This is the third and the last blogpost regarding ASP.NET MVC Architecture.
+This is the third and the last blog post regarding ASP.NET MVC Architecture.
 
 ### NugetPackage
 
@@ -74,13 +74,11 @@ Nothing new until here. I am always hiding things in namespaces, so in my root-f
 Let’s go into this in detail:
 For offering the same operations on every entity we have we need something like a base-class (with interface) which offers us everything we can do with an object (CRUD with a little bit more. Let’s call it CRUD+ ;) ).
 
-_Note: I just looked into the web and found a good solution for this generic-things_
-
 <a href="http://codereview.stackexchange.com/questions/31822/unit-of-work-and-repository-design-pattern-implementation" target="_blank">StackExchange</a>
 
 <a href="http://www.ASP.NET/mvc/tutorials/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application" target="_blank">ASP.NET MVC - Generic Repositories - UoW</a>
 
-So I combined them and just put in a little effort then.
+So I combined them and put in a little effort then.
 
 This is the RepositoryBase. With its interface IRepositoryBase.
 
@@ -177,7 +175,7 @@ public class RepositoryBaseImpl<T> : IRepositoryBase<T> where T : class
     }
 ```
 
-So here right in the beginning we see the heart of the thing we want to take a look at with this blogpost.
+So here right in the beginning we see the heart of the thing we want to take a look at with this blog post.
 In this generic repository we are able to perform every operation we want with an object, while being able to include some child-properties, to find all, to find a single entry (with the find-method which will eventually not force a direct query), to get a single entry with a query etc.
 But let’s put this interface into a more flexible context. I added, like shown in the links above, a repository-provider which is caching the repositories and creating them with a factory (factory-pattern).
 
@@ -369,12 +367,12 @@ public class UnitOfWorkImpl : IUnitOfWork
 _Notice the IDisposable-Interface which the implementation of the UoW is implementing. This is why you can use it with a “using” in the end._
 
 The `GetGenericRepository()` can be used if you would like to have standard CRUD-Functions on your entity. This should be the case in like 80% of your use-cases.
-The `GetCustomRepository()` can give you back the custom repository which you have implemented because you want to have like other functions or for any other reason. You just have to implement its interface and offer it through the UoW-Interface.
+The `GetCustomRepository()` can give you back the custom repository which you have implemented because you want to have like other functions or for any other reason. You have to implement its interface and offer it through the UoW-Interface.
 You can also do extended interfaces, if you want to extend the CRUD-Methods because they are not enough.
 
 ![ASP.NET MVC - Generic Repositories and UnitOfWork](https://cdn.offering.solutions/img/articles/2014-07-01/21.png)
 
-Just let the repository-interface inherit from your repositorybase-interface and the class from the repositorybase-implementation. Because the methods are virtual you can override them or just add new functions.
+Let the repository-interface inherit from your repositorybase-interface and the class from the repositorybase-implementation. Because the methods are virtual you can override them or add new functions.
 You can provide it again with the normal UoW-Interface:
 
 ![ASP.NET MVC - Generic Repositories and UnitOfWork](https://cdn.offering.solutions/img/articles/2014-07-01/31.png)
@@ -394,7 +392,7 @@ using (IUnitOfWork unitOfWork = new UnitOfWorkImpl())
 ```
 
 And you are done :)
-If you want to add new repositories you just have to extend your UoW-interface and add your new entities to your databaseContext.
+If you want to add new repositories you have to extend your UoW-interface and add your new entities to your databaseContext.
 
 _Note:
 If you are using Ninject to inject your stuff and for IoC you can make your UnitOfWork present in the NinjectWebCommon.cs as InRequestScope. So it is injected once per request and you can Use DI_

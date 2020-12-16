@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to show you a way to realize code First with Entity Framework n:m relationship with additional information.
+In this blog post I want to show you a way to realize code First with Entity Framework n:m relationship with additional information.
 
 a few days ago I faced the problem of having a normal N:M Relationship in EF with additional information in the table which keeps the two entities together.
 
@@ -119,7 +119,7 @@ When you now run your application with the right code-first configuration your d
 
 Note: Now you have to think exactly about what you want to do (Well you should do this always while coding 😉 ). Adding a new group has to get another entry in the Group-Table. but adding or deleting users are only reached by editing the Groups2Users-Table. (Perhaps you should spend this table an own repository 😉 ).
 
-When you for example want to have all Groups of a user just call:
+When you for example want to have all Groups of a user call:
 
 ```csharp
 context.Groups2Users.Where(x => x.UserId == userId, includeProperties: "Group").ToList();

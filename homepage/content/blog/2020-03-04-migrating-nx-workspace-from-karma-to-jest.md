@@ -182,7 +182,7 @@ module.exports = {
 };
 ```
 
-and just delete the existing `karma.conf.js` in the root of your workspace.
+and delete the existing `karma.conf.js` in the root of your workspace.
 
 ```
 

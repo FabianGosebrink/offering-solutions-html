@@ -8,7 +8,7 @@ category: blog
 aliases: ['/blog/articles/2016/07/29/how-to-create-an-asp-net-core-webapi/']
 ---
 
-In this blogpost I want to show you how to create an ASP.NET Core WebAPI. We will use a custom mapper (you could use AutoMapper for this instead, a repository which is a singleton in this blog here and we will use the normal CRUD operations to Create, Read, Update and Delete in the "database" here.
+In this blog post I want to show you how to create an ASP.NET Core WebAPI. We will use a custom mapper (you could use AutoMapper for this instead, a repository which is a singleton in this blog here and we will use the normal CRUD operations to Create, Read, Update and Delete in the "database" here.
 
 Code here [https://github.com/FabianGosebrink/ASPNETCore-WebAPI-Sample](https://github.com/FabianGosebrink/ASPNETCore-WebAPI-Sample)
 
@@ -132,7 +132,7 @@ public class HouseMapper : IHouseMapper
 }
 ```
 
-So here we are just mapping from one to another. This can get more complex but it should do it for this time.
+So here we are mapping from one to another. This can get more complex but it should do it for this time.
 
 After we created the mapper we want to have this mapper instantiated **every time a request comes in**. For this we use the build in DI-container in ASP.NET Core.
 

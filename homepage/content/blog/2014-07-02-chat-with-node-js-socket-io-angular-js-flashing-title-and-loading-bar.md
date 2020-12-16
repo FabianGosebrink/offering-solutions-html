@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show you how you can set up a chat with Node.js, socket.io, Angular.js, flashing title and loading bar. We will take a look into the lightweight architecture angular is giving you and how to set up the services and controllers the right way. Additionally we will use the loading-bar-module to give the user information about what his message is doing after sending it and we will flash the homepage title if a new message arrives. The communication is done with socket-io.js and we use jQuery for the basic javascript-things. Enjoy!
+In this blog post I want to show you how you can set up a chat with Node.js, socket.io, Angular.js, flashing title and loading bar. We will take a look into the lightweight architecture angular is giving you and how to set up the services and controllers the right way. Additionally we will use the loading-bar-module to give the user information about what his message is doing after sending it and we will flash the homepage title if a new message arrives. The communication is done with socket-io.js and we use jQuery for the basic javascript-things. Enjoy!
 
 Check these links to get all these libs:
 
@@ -64,7 +64,7 @@ app.config(function ($routeProvider) {
 });
 ```
 
-Here you can see that we define an app in a variable "app" making it an angular module and we call it "MessengerApp" (This is what you see in the html-opening-tag in the screenshot above). Into this we are including all the 3rd-party-libs I mentioned above (loading-bar and so on). The route provider is not that important because we just have one route to show. I wont go into detail here because for this example this would be more theory than practice.
+Here you can see that we define an app in a variable "app" making it an angular module and we call it "MessengerApp" (This is what you see in the html-opening-tag in the screenshot above). Into this we are including all the 3rd-party-libs I mentioned above (loading-bar and so on). The route provider is not that important because we have one route to show. I wont go into detail here because for this example this would be more theory than practice.
 
 ### The Controller
 
@@ -104,7 +104,7 @@ app.controller('DemoController', function (
 });
 ```
 
-Lets take a look into this in detail: First we define a controller which we can call in the view. Because of the dependency injection angular gives us out of the box we can just get everything into our controller we want to use.
+Lets take a look into this in detail: First we define a controller which we can call in the view. Because of the dependency injection angular gives us out of the box we can get everything into our controller we want to use.
 
 Then we make an array of messages and connect to our socket via socket-io. "\_sendMessage" is a private function here, which only calls the chatService. The controller further makes UI-Stuff like starting the loading bar and reset the messagetext to an empty string so that the user can enter a new string to send.
 
@@ -129,7 +129,7 @@ This is the whole controller which is stored under the "Controllers"-folder and 
 
 ### The Services
 
-The services are like the base of our application because they are doing the real hard work. Lets take a closer look what these services we just included are really doing:
+The services are like the base of our application because they are doing the real hard work. Lets take a closer look what these services we included are really doing:
 
 ```javascript
 'use strict';
@@ -160,7 +160,7 @@ app.factory('chatDataService', function ($http) {
 ```
 
 And here you can see the seperattion of concerns which I am a big fan of. I divided the data-service from the real service to have a better understanding and a better overview of whom is doing what. So the single-responsibility is used here.
-So we have the "ChatService" and a "ChatDataService". We just want to look at the real work in the "ChatDataService" which is really sending the messages by calling the method:
+So we have the "ChatService" and a "ChatDataService". We want to look at the real work in the "ChatDataService" which is really sending the messages by calling the method:
 
 ```javascript
 socket.emit('chat', { name: name, text: stringToSend });
