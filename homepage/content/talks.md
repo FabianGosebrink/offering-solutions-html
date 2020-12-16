@@ -79,7 +79,7 @@ category: noblog
 
 ### End-To-End : Real time messaging with Angular and ASP.NET Core SignalR
 
-#### 21.11.2019 - NgPoland Warschau (Workshop)
+#### 21.11.2019 - NgPoland Warsaw (Workshop)
 
 **Keywords:** angular, ASP.NET Core SignalR
 
