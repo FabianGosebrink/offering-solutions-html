@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show you how to debug an Angular application with Chrome and VS Code.
+In this blog post I want to show you how to debug an Angular application with Chrome and VS Code.
 
 First of all you need to install the extension in VS Code.
 

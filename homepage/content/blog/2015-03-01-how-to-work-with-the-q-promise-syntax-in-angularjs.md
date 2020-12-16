@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to show you how to work with the q promise syntax in AngularJS
+In this blog post I want to show you how to work with the q promise syntax in AngularJS
 
 #### The "Then(success/error)"-Syntax
 

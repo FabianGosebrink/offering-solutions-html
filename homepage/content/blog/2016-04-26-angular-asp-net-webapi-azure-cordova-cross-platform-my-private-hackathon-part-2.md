@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In the last [blogpost](http://offering.solutions/blog/articles/2016/04/19/angular-asp-net-webapi-azure-cordova-cross-platform-2/)I lost a few words about the REST-API the FoodChooser is talking to. In this blog I want to talk about the clients I developed. This is: Angular, ASP.NET WebAPI, Azure & Cordova, Cross Platform – My Private Hackathon Part 2.
+In the last [blog post](http://offering.solutions/blog/articles/2016/04/19/angular-asp-net-webapi-azure-cordova-cross-platform-2/)I lost a few words about the REST-API the FoodChooser is talking to. In this blog I want to talk about the clients I developed. This is: Angular, ASP.NET WebAPI, Azure & Cordova, Cross Platform – My Private Hackathon Part 2.
 
 Well I started coding an AngularJs 1.x Client with Typecript which is available here
 

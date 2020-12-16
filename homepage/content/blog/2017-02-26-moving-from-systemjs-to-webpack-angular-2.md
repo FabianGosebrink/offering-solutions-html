@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2017/02/26/moving-from-systemjs-to-webpack-angular-2/']
 ---
 
-In this blogpost I want to show you how you can move from an existing Angular application using systemjs to an application with webpack.
+In this blog post I want to show you how you can move from an existing Angular application using systemjs to an application with webpack.
 
 Imagine the following application.
 

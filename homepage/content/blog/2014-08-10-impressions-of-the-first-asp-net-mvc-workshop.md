@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2014/08/10/impressions-of-the-first-asp-net-mvc-workshop/']
 ---
 
-In this blogpost I am doing a small recap to give you impressions of the first ASP.NET MVC workshop.
+In this blog post I am doing a small recap to give you impressions of the first ASP.NET MVC workshop.
 
 Even when I am not doing it in my current project at work I am very interested in ASP.NET and the ASP.NET MVC-Framework and everything which is needed to build modern web based applications.
 

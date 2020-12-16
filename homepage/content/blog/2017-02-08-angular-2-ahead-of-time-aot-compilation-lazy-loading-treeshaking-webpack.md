@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to show you how to get Ahead Of Time compilation enabled with lazy loading in combination with webpack 2.
+In this blog post I want to show you how to get Ahead Of Time compilation enabled with lazy loading in combination with webpack 2.
 
 ### Code
 

@@ -50,7 +50,7 @@ After creating this new app we are interested in the details of this app. Click 
 
 We are interested in the secret for your app and in the link we define for the target of our WebHooks.
 
-> I will take the placeholder "_[MyDropBoxAppKey]_" as the key for this blogpost. You will have to replace this with your own secret yu get when you click on "show" above.
+> I will take the placeholder "_[MyDropBoxAppKey]_" as the key for this blog post. You will have to replace this with your own secret yu get when you click on "show" above.
 
 Once we have the secret we can go back to our Visual Studio and select the both WebHook receivers we want to create: GitHub and DropBox.
 

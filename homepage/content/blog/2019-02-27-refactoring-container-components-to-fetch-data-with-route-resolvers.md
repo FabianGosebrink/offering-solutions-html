@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to show an alternative way to provide data in a common container & presentational components relation inside an Angular application.
+In this blog post I want to show an alternative way to provide data in a common container & presentational components relation inside an Angular application.
 
 ## Content
 

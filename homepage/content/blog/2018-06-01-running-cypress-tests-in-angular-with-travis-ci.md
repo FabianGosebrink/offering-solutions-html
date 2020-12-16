@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2018/06/01/running-cypress-tests-in-angular-with-travis-ci/']
 ---
 
-In the last blogpost I explained how to get started with cypress tests. The next step would be running these tests in a Continuous Integration and Continuous Delivery (CI and CD) environment. The advantage of this is that with every commit the tests are being executed automatically and you get feedback about wether your application is still doing good or not automatically.
+In the last blog post I explained how to get started with cypress tests. The next step would be running these tests in a Continuous Integration and Continuous Delivery (CI and CD) environment. The advantage of this is that with every commit the tests are being executed automatically and you get feedback about wether your application is still doing good or not automatically.
 
 [Travis CI](https://travis-ci.org/) is a very well known Continuous Integration Environment and is very common when working with OSS projects. The best thing about it is that it is free to use for an open source project.
 

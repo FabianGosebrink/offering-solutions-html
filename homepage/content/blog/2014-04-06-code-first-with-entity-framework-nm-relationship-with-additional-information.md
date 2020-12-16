@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to show you a way to realize code First with Entity Framework n:m relationship with additional information.
+In this blog post I want to show you a way to realize code First with Entity Framework n:m relationship with additional information.
 
 a few days ago I faced the problem of having a normal N:M Relationship in EF with additional information in the table which keeps the two entities together.
 

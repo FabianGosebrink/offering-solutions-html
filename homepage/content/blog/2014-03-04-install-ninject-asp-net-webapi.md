@@ -8,7 +8,7 @@ category: blog
 aliases: ['/blog/articles/2014/03/04/install-ninject-asp-net-webapi/']
 ---
 
-In this blogpost I want to show you how to install Ninject in ASP.NET WebAPI. Using Dependency-Injection is one of the most important things when implementing software. Code is much more testable and you have clearly ordered dependencies and an overview of what you injected where etc.
+In this blog post I want to show you how to install Ninject in ASP.NET WebAPI. Using Dependency-Injection is one of the most important things when implementing software. Code is much more testable and you have clearly ordered dependencies and an overview of what you injected where etc.
 
 For ASP.NET MVC there are a lot of possibilities which you can use to achieve the DI-Goal. I tried a few (e.g. AutoFaq, Unity, etc.) and for me the fastest way to get things going was the Ninject-Way. So this time I want to show you a way to start with DI using Ninject. (You can get it <a href="http://ninject.codeplex.com/" target="_blank">here</a>)
 

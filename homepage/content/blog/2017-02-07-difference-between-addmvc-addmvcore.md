@@ -8,7 +8,7 @@ category: blog
 aliases: ['/blog/articles/2017/02/07/difference-between-addmvc-addmvcore/']
 ---
 
-In this blogpost I want to show you difference between the ASP.NET Core methods `AddMvc()` and `AddMvcCore()` when working with ASP.NET Core.
+In this blog post I want to show you difference between the ASP.NET Core methods `AddMvc()` and `AddMvcCore()` when working with ASP.NET Core.
 
 [ASPNETCore-WebAPI-Sample](https://github.com/FabianGosebrink/ASPNETCore-WebAPI-Sample)
 

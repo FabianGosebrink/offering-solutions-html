@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show you how to use Angular Material with Angular to use a table with paging which is driven by an ASP.NET Core WebAPI.
+In this blog post I want to show you how to use Angular Material with Angular to use a table with paging which is driven by an ASP.NET Core WebAPI.
 
 ## Code
 
@@ -314,7 +314,7 @@ export class OverviewComponent implements OnInit {
 
 The `switchPage` method is called when the page changes and first sets all the new values in the paginationService and then gets the customers again. Those values are then provided again in the dataservice, and are consumed there, and also used in the view where they get displayed correctly.
 
-In the `getAllCustomers` method we are reading the `totalCount` value from the headers. Be sure to read the full response in the dataservice by adding `return this.httpClient.get<T>(mergedUrl, { observe: 'response' });` and exposing the header in the CORS options like shown before in this blogpost.
+In the `getAllCustomers` method we are reading the `totalCount` value from the headers. Be sure to read the full response in the dataservice by adding `return this.httpClient.get<T>(mergedUrl, { observe: 'response' });` and exposing the header in the CORS options like shown before in this blog post.
 
 Thanks for reading
 

@@ -8,9 +8,9 @@ category: blog
 aliases: ['/blog/articles/2018/05/27/end-to-end-testing-with-angular-cypress/']
 ---
 
-In this blogpost we will cover how to get started with end to end testing using cypress and angular and the AngularCLI.
+In this blog post we will cover how to get started with end to end testing using cypress and angular and the AngularCLI.
 
-The code for this blogpost can be found [here](https://github.com/FabianGosebrink/cypress-angular-getting-started)
+The code for this blog post can be found [here](https://github.com/FabianGosebrink/cypress-angular-getting-started)
 
 As a long term AngularCLI user I am very used to work with protractor when it comes to end to end testing. To be honest I did not like end to end testing that much. So I was looking for an alternative and this tweet from Dominic Elm pushed me more into the direction of cypress.
 

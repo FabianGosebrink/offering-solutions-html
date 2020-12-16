@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show you how you can set up a chat with Node.js, socket.io, Angular.js, flashing title and loading bar. We will take a look into the lightweight architecture angular is giving you and how to set up the services and controllers the right way. Additionally we will use the loading-bar-module to give the user information about what his message is doing after sending it and we will flash the homepage title if a new message arrives. The communication is done with socket-io.js and we use jQuery for the basic javascript-things. Enjoy!
+In this blog post I want to show you how you can set up a chat with Node.js, socket.io, Angular.js, flashing title and loading bar. We will take a look into the lightweight architecture angular is giving you and how to set up the services and controllers the right way. Additionally we will use the loading-bar-module to give the user information about what his message is doing after sending it and we will flash the homepage title if a new message arrives. The communication is done with socket-io.js and we use jQuery for the basic javascript-things. Enjoy!
 
 Check these links to get all these libs:
 

@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-In this blogpost I want to show how to use the Crypto-Namespace to Generate Salts and Compare Passwords
+In this blog post I want to show how to use the Crypto-Namespace to Generate Salts and Compare Passwords
 
 <a href="https://msdn.microsoft.com/en-us/library/system.web.helpers.crypto.hashpassword(v=vs.111).aspx" target="_blank">Crypto.HashPassword Method</a>
 

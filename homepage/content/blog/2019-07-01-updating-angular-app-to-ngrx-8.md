@@ -7,7 +7,7 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blogpost I want to describe how I updated an Angular Project using ngrx to the latest version ngrx 8.
+In this blog post I want to describe how I updated an Angular Project using ngrx to the latest version ngrx 8.
 
 Github: [angular-ngrx-todo](https://github.com/FabianGosebrink/angular-ngrx-todo)
 

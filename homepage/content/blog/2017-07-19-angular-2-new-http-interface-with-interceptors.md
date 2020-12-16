@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2017/07/19/angular-2-new-http-interface-with-interceptors/']
 ---
 
-In this blogpost I want to explore the latest HTTP interface from angular which was introduced in Angular 4.3.
+In this blog post I want to explore the latest HTTP interface from angular which was introduced in Angular 4.3.
 
 We all need to get our data from any source, mostly this is done via HTTP and any REST backend (like node or ASP.NET Core etc.) or even from files in the \*.json format. However, this was possible ever since and is one of the key features of an SPA but Angular introduced a improved version of the HTTP Api in version 4.3. Let's take a look into this one.
 

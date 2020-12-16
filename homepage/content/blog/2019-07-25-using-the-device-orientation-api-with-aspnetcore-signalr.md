@@ -7,7 +7,7 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blogpost I want to describe how I used plain Javascript and ASP.NET Core SignalR to broadcast the device orientation values over HTTP.
+In this blog post I want to describe how I used plain Javascript and ASP.NET Core SignalR to broadcast the device orientation values over HTTP.
 
 ![device-orientation-video](https://cdn.offering.solutions/img/articles/2019-07-25/video.gif)
 

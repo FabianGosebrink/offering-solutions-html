@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2014/07/01/asp-net-mvc-generic-repositories-and-unitofwork/']
 ---
 
-This is the third and the last blogpost regarding ASP.NET MVC Architecture.
+This is the third and the last blog post regarding ASP.NET MVC Architecture.
 
 ### NugetPackage
 
@@ -175,7 +175,7 @@ public class RepositoryBaseImpl<T> : IRepositoryBase<T> where T : class
     }
 ```
 
-So here right in the beginning we see the heart of the thing we want to take a look at with this blogpost.
+So here right in the beginning we see the heart of the thing we want to take a look at with this blog post.
 In this generic repository we are able to perform every operation we want with an object, while being able to include some child-properties, to find all, to find a single entry (with the find-method which will eventually not force a direct query), to get a single entry with a query etc.
 But let’s put this interface into a more flexible context. I added, like shown in the links above, a repository-provider which is caching the repositories and creating them with a factory (factory-pattern).
 

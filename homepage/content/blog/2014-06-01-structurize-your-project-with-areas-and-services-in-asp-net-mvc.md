@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to show you one possible way to structurize your project with areas and services in ASP.NET MVC.
+In this blog post I want to show you one possible way to structurize your project with areas and services in ASP.NET MVC.
 
 This is the first part of several architecture posts I will publish in the next time.
 

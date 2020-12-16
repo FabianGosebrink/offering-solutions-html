@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blogpost I want to describe how you can build up a build and release pipeline for your Angular and ASP.NET Core applications using Visual Studio Team Services.
+In this blog post I want to describe how you can build up a build and release pipeline for your Angular and ASP.NET Core applications using Visual Studio Team Services.
 
 ## Preparation
 

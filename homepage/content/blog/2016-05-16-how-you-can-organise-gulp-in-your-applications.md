@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/']
 ---
 
-In this blogpost I want to show one possibility of organising your gulp tasks in a way that you as a developer can find them quickly and print them to the console in an ordered way.
+In this blog post I want to show one possibility of organising your gulp tasks in a way that you as a developer can find them quickly and print them to the console in an ordered way.
 
 > I have taken all these examples from my cross platform examples on [GitHub](https://github.com/FabianGosebrink?tab=repositories). Especially from [Foodchooser](https://github.com/FabianGosebrink/Foodchooser-ASPNET-Angular-Cross-Platform).
 

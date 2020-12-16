@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2016/11/29/how-i-started-recording-my-first-video-training/']
 ---
 
-In this blogpost I want to describe how I started recording my first Video training and tell you about the experiences I made during the recording.
+In this blog post I want to describe how I started recording my first Video training and tell you about the experiences I made during the recording.
 
 [https://channel9.msdn.com/Blogs/MVP-VisualStudio-Dev/Erstellen-einer-WebAPI-mit-ASPNET-Core](https://channel9.msdn.com/Blogs/MVP-VisualStudio-Dev/Erstellen-einer-WebAPI-mit-ASPNET-Core)
 

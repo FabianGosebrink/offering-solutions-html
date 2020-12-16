@@ -8,11 +8,11 @@ category: blog
 aliases: ['/blog/articles/2018/11/21/online-offline-sync-angular-indexeddb/']
 ---
 
-In this blogpost I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
+In this blog post I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
 
-After this blogpost you should have an example how to use the IndexedDb in your applications, how to register to the online and offline commands and send items if the event comes up.
+After this blog post you should have an example how to use the IndexedDb in your applications, how to register to the online and offline commands and send items if the event comes up.
 
-The code to this blogpost can be found here [https://github.com/FabianGosebrink/Angular-Online-Offline-Sync](https://github.com/FabianGosebrink/Angular-Online-Offline-Sync)
+The code to this blog post can be found here [https://github.com/FabianGosebrink/Angular-Online-Offline-Sync](https://github.com/FabianGosebrink/Angular-Online-Offline-Sync)
 
 ## Introduction
 

@@ -7,7 +7,7 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blogpost I want to give a short overview about my upcoming speaking activities in the rest of 2019.
+In this blog post I want to give a short overview about my upcoming speaking activities in the rest of 2019.
 
 ## 04.10.2019 .NET Conf 2019
 

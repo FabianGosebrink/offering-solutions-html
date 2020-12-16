@@ -147,7 +147,7 @@ We already defined the wwwroot-Folder which holds every file which is transporte
 
 ![11](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/01/11.png)
 
-As we start developing Angular we have to prepare our environment for working with Typescript. I already have an instruction how to start in a previous Blogpost [Getting started with Visual Studio Code & Typescript](http://offering.solutions/blog/articles/2015/12/03/getting-started-with-visual-studio-code-angularjs-and-typescript/). But lets cover some thing in short to get it customised for this Angular case.
+As we start developing Angular we have to prepare our environment for working with Typescript. I already have an instruction how to start in a previous blog post [Getting started with Visual Studio Code & Typescript](http://offering.solutions/blog/articles/2015/12/03/getting-started-with-visual-studio-code-angularjs-and-typescript/). But lets cover some thing in short to get it customised for this Angular case.
 
 Lets add a file for configuring the typescript-options for our project: tsconfig.json to the root of our project.
 

@@ -15,7 +15,7 @@ aliases: [
 * 19.09.2018 - Updated Angular Syntax
 * 19.08.2017 - Updated to ASP.NET Core 2.0 & new HttpClientModule
 
-### Blogpost
+### blog post
 
 Hey,
 

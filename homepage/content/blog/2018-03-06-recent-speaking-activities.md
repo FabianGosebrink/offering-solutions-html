@@ -8,7 +8,7 @@ category: blog
 aliases: ['/blog/articles/2018/03/06/recent-speaking-activities/']
 ---
 
-In this blogpost I want to recap my recent speaking activities and provide you some short information and slides to have it all in a go.
+In this blog post I want to recap my recent speaking activities and provide you some short information and slides to have it all in a go.
 
 ## Basta! in Frankfurt
 

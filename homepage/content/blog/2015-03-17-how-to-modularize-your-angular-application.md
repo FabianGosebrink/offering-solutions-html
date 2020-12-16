@@ -9,7 +9,7 @@ aliases:
   ['/blog/articles/2015/03/17/how-to-modularize-your-angular-application/']
 ---
 
-In this blogpost I want to show you a way on how to modularize your angular application in a way I did it so far. Enjoy reading :)
+In this blog post I want to show you a way on how to modularize your angular application in a way I did it so far. Enjoy reading :)
 
 Due to the fact that angular.js gets more and more important you are forced to think about a nice architecture to develop easy. Especially if you develop in mulitple teams.
 
