@@ -33,7 +33,12 @@ jobs:
         run: hugo --minify --baseURL https://offering.solutions/
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
-        run: Copy-Item -Path public/js/*,public/css/*,public/fonts/*,public/img/*,public/index.json -Destination public/dist-cdn -recurse
+        run: |
+          Copy-Item -Path public/js/* public/dist-cdn/js -recurse
+          Copy-Item -Path public/css/* public/dist-cdn/css -recurse
+          Copy-Item -Path public/fonts/* public/dist-cdn/fonts -recurse
+          Copy-Item -Path public/img/* public/dist-cdn/img -recurse
+          Copy-Item -Path public/index.json public/dist-cdn -recurse
 
       - name: 'Copy Files to: homepage/public/dist-blog'
         run: |
@@ -64,5 +69,4 @@ jobs:
           azcliversion: 2.0.72
           inlineScript: |
             az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
-            az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn/js' --destination-path 'js' --content-cache-control "public, max-age=2592000"
-            az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn/img' --destination-path 'img' --content-cache-control "public, max-age=2592000"
+            az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=2592000"
