@@ -14,7 +14,7 @@ env:
   WORKING_DIRECTORY: homepage
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -50,14 +50,6 @@ jobs:
           Copy-Item -Path public/newsletter/ -Destination public/dist-blog/newsletter -recurse
           Copy-Item -Path public/*.* -Destination public/dist-blog
 
-  deploy:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: pwsh
-        working-directory: ${{ env.WORKING_DIRECTORY }}
-
-    steps:
       - name: 'Deploy Blog to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
