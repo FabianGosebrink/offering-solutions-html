@@ -33,12 +33,12 @@ jobs:
         run: hugo --minify --baseURL https://offering.solutions/
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
-        run: |
-          cp 'homepage/public/js/**/*.*
-          css/**/*.*
-          fonts/**/*.*
-          img/**/*.*
-          index.json' 'homepage/public/dist-cdn'
+        run:
+          cp 'homepage/public/js/**/*.*' 'homepage/public/dist-cdn'
+          # css/**/*.*
+          # fonts/**/*.*
+          # img/**/*.*
+          # index.json' 'homepage/public/dist-cdn'
 
       # - name: 'Copy Files to: homepage/public/dist-blog'
       #   run: |
