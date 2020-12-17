@@ -10,7 +10,7 @@ on:
       - main
 
 env:
-  AZURE_WEBAPP_NAME: sampletodobackend
+  BASE_URL: https://offering.solutions/
   WORKING_DIRECTORY: homepage
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
           hugo-version: '0.73.0'
 
       - name: Build hugo
-        run: hugo --minify --baseURL https://offering.solutions/
+        run: hugo --minify --baseURL ${{ env.BASE_URL }}
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
         run: |
@@ -50,6 +50,14 @@ jobs:
           Copy-Item -Path public/newsletter/ -Destination public/dist-blog/newsletter -recurse
           Copy-Item -Path public/*.* -Destination public/dist-blog
 
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+    steps:
       - name: 'Deploy Blog to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
