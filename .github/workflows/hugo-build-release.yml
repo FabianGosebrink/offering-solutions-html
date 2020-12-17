@@ -29,7 +29,5 @@ jobs:
         with:
           hugo-version: '0.73.0'
 
-      - name: Build
-        # remove --minify tag if you do not need it
-        # docs: https://gohugo.io/hugo-pipes/minification/
+      - name: Build hugo
         run: hugo --minify
