@@ -33,12 +33,22 @@ jobs:
         run: hugo --minify --baseURL https://offering.solutions/
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
-        run: |
-          Copy 'public/js/**/*.*
-          css/**/*.*
-          fonts/**/*.*
-          img/**/*.*
-          index.json' 'homepage/public/dist-cdn'
+        run: Copy-Item -Path js/*,css/*,fonts/*,img/*,index.json -Destination dist-cdn -recurse
+        working-directory: public
+
+      - name: 'Copy Files to: homepage/public/dist-blog'
+      - run: |
+          Copy-Item -Path public/blog/* -Destination public/dist-blog/blog -recurse
+          Copy-Item -Path public/categories/* -Destination public/dist-blog/categories -recurse
+          Copy-Item -Path public/tags/* -Destination public/dist-blog/tags -recurse
+          Copy-Item -Path public/talks/* -Destination public/dist-blog/talks -recurse
+          Copy-Item -Path public/newsletter/* -Destination public/dist-blog/newsletter -recurse
+        working-directory: public
+
+      - name: 'Copy Files to: homepage/public/dist-blog'
+      - run: |
+          New-Item -Path public/dist-blog -ItemType Directory
+          Copy-Item -Path public/*.* -Destination public/dist-blog
 
       # - name: 'Copy Files to: homepage/public/dist-blog'
       #   run: |
