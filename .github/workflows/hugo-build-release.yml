@@ -30,10 +30,10 @@ jobs:
           hugo-version: '0.73.0'
 
       - name: Build hugo
-        run: hugo --minify --baseURL https://offering.solutions/
+      - run: hugo --minify --baseURL https://offering.solutions/
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
-        run: Copy-Item -Path js/*,css/*,fonts/*,img/*,index.json -Destination dist-cdn -recurse
+      - run: Copy-Item -Path js/*,css/*,fonts/*,img/*,index.json -Destination dist-cdn -recurse
         working-directory: public
 
       - name: 'Copy Files to: homepage/public/dist-blog'
