@@ -45,14 +45,9 @@ jobs:
           Copy-Item -Path public/newsletter/ -Destination public/dist-blog/newsletter -recurse
           Copy-Item -Path public/*.* -Destination public/dist-blog
 
-      # - name: 'Publish Artifact: blog'
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     path: homepage/public/dist-blog
-      #     name: blog
-
-      # - name: 'Publish Artifact: cdn'
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     path: homepage/public/dist-cdn
-      #     name: cdn
+      - name: 'Run Azure webapp deploy action using publish profile credentials'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: offeringsolutions
+          publish-profile: ${{ secrets.AZURE_WEBAPP_OFFERING_SOLUTIONS_BLOG_SECRET }}
+          package: '${{ env.WORKING_DIRECTORY }}/public/dist-blog'
