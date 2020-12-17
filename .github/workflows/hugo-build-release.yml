@@ -58,10 +58,10 @@ jobs:
           creds: ${{secrets.AZURE_CDN_CREDENTIALS}}
           enable-AzPSSession: true
 
-       - name: Reupload all blog items
-         uses: azure/CLI@v1
-         with:
+      - name: Reupload all blog items
+        uses: azure/CLI@v1
+        with:
           azcliversion: 2.0.72
           inlineScript: |
-              az storage blob delete-batch --account-name offeringsolutionscdn --source $web
-              az storage blob upload-batch --account-name offeringsolutionscdn --destination $web --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=2592000"
+            az storage blob delete-batch --account-name offeringsolutionscdn --source $web
+            az storage blob upload-batch --account-name offeringsolutionscdn --destination $web --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=2592000"
