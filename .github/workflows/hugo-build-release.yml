@@ -31,3 +31,34 @@ jobs:
 
       - name: Build hugo
         run: hugo --minify
+        with:
+          baseURL: https://offering.solutions/
+
+      - name: 'Copy Files to: homepage/public/dist-cdn'
+        run: |
+          Copy 'homepage/public/js\**\*.*
+          css\**\*.*
+          fonts\**\*.*
+          img\**\*.*
+          index.json' 'homepage/public/dist-cdn'
+
+      - name: 'Copy Files to: homepage/public/dist-blog'
+        run: |
+          Copy 'homepage/public/blog\**\*.*
+          categories\**\*.*
+          tags\**\*.*
+          talks\**\*.*
+          newsletter\**\*.*
+          *.*' 'homepage/public/dist-blog'
+
+      - name: 'Publish Artifact: blog'
+        uses: actions/upload-artifact@v2
+        with:
+          path: homepage/public/dist-blog
+          name: blog
+
+      - name: 'Publish Artifact: cdn'
+        uses: actions/upload-artifact@v2
+        with:
+          path: homepage/public/dist-cdn
+          name: cdn
