@@ -45,9 +45,15 @@ jobs:
           Copy-Item -Path public/newsletter/ -Destination public/dist-blog/newsletter -recurse
           Copy-Item -Path public/*.* -Destination public/dist-blog
 
-      - name: 'Run Azure webapp deploy action using publish profile credentials'
+      - name: 'Deploy Blog to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
           app-name: offeringsolutions
           publish-profile: ${{ secrets.AZURE_WEBAPP_OFFERING_SOLUTIONS_BLOG_SECRET }}
           package: '${{ env.WORKING_DIRECTORY }}/public/dist-blog'
+
+      - name: Login via Az module
+        uses: azure/login@v1
+        with:
+          creds: ${{secrets.AZURE_CDN_CREDENTIALS}}
+          enable-AzPSSession: true
