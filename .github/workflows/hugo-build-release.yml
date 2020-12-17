@@ -33,22 +33,21 @@ jobs:
         run: hugo --minify --baseURL https://offering.solutions/
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
-        run: Copy-Item -Path js/*,css/*,fonts/*,img/*,index.json -Destination dist-cdn -recurse
-        working-directory: public
+        run: Copy-Item -Path public/js/*,public/css/*,public/fonts/*,public/img/*,public/index.json -Destination public/dist-cdn -recurse
 
-      - name: 'Copy Files to: homepage/public/dist-blog'
-        run: |
-          Copy-Item -Path blog/* -Destination dist-blog/blog -recurse
-          Copy-Item -Path categories/* -Destination dist-blog/categories -recurse
-          Copy-Item -Path tags/* -Destination dist-blog/tags -recurse
-          Copy-Item -Path talks/* -Destination dist-blog/talks -recurse
-          Copy-Item -Path newsletter/* -Destination dist-blog/newsletter -recurse
-        working-directory: public
+      # - name: 'Copy Files to: homepage/public/dist-blog'
+      #   run: |
+      #     Copy-Item -Path blog/* -Destination dist-blog/blog -recurse
+      #     Copy-Item -Path categories/* -Destination dist-blog/categories -recurse
+      #     Copy-Item -Path tags/* -Destination dist-blog/tags -recurse
+      #     Copy-Item -Path talks/* -Destination dist-blog/talks -recurse
+      #     Copy-Item -Path newsletter/* -Destination dist-blog/newsletter -recurse
+      #   working-directory: public
 
-      - name: 'Copy Files to: homepage/public/dist-blog'
-        run: |
-          New-Item -Path public/dist-blog -ItemType Directory
-          Copy-Item -Path public/*.* -Destination public/dist-blog
+      # - name: 'Copy Files to: homepage/public/dist-blog'
+      #   run: |
+      #     New-Item -Path public/dist-blog -ItemType Directory
+      #     Copy-Item -Path public/*.* -Destination public/dist-blog
 
       # - name: 'Copy Files to: homepage/public/dist-blog'
       #   run: |
