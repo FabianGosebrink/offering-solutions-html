@@ -38,21 +38,12 @@ jobs:
       - name: 'Copy Files to: homepage/public/dist-blog'
         run: |
           New-Item -Path public/dist-blog -ItemType Directory
-          Copy-Item -Path public/blog/* -Destination public/dist-blog/blog -recurse
-          Copy-Item -Path public/categories/* -Destination public/dist-blog/categories -recurse
-          Copy-Item -Path public/tags/* -Destination public/dist-blog/tags -recurse
-          Copy-Item -Path public/talks/* -Destination public/dist-blog/talks -recurse
-          Copy-Item -Path public/newsletter/* -Destination public/dist-blog/newsletter -recurse
+          Copy-Item -Path public/blog/ -Destination public/dist-blog/blog -recurse
+          Copy-Item -Path public/categories/ -Destination public/dist-blog/categories -recurse
+          Copy-Item -Path public/tags/ -Destination public/dist-blog/tags -recurse
+          Copy-Item -Path public/talks/ -Destination public/dist-blog/talks -recurse
+          Copy-Item -Path public/newsletter/ -Destination public/dist-blog/newsletter -recurse
           Copy-Item -Path public/*.* -Destination public/dist-blog
-
-      # - name: 'Copy Files to: homepage/public/dist-blog'
-      #   run: |
-      #     Copy 'homepage/public/blog\**\*.*
-      #     categories\**\*.*
-      #     tags\**\*.*
-      #     talks\**\*.*
-      #     newsletter\**\*.*
-      #     *.*' 'homepage/public/dist-blog'
 
       # - name: 'Publish Artifact: blog'
       #   uses: actions/upload-artifact@v2
