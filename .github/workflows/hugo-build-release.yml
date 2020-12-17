@@ -30,9 +30,7 @@ jobs:
           hugo-version: '0.73.0'
 
       - name: Build hugo
-        run: hugo --minify
-        with:
-          baseURL: https://offering.solutions/
+        run: hugo --minify --baseURL https://offering.solutions/
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
         run: |
