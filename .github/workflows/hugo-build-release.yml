@@ -34,10 +34,10 @@ jobs:
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
         run: |
-          Copy 'public/js\**\*.*
-          css\**\*.*
-          fonts\**\*.*
-          img\**\*.*
+          Copy 'public/js/**/*.*
+          css/**/*.*
+          fonts/**/*.*
+          img/**/*.*
           index.json' 'homepage/public/dist-cdn'
 
       # - name: 'Copy Files to: homepage/public/dist-blog'
