@@ -34,7 +34,7 @@ jobs:
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
         run:
-          cp 'homepage/public/js/**/*.*' 'homepage/public/dist-cdn'
+          cp 'public/js/**/*.*' 'public/dist-cdn'
           # css/**/*.*
           # fonts/**/*.*
           # img/**/*.*
