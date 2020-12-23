@@ -76,7 +76,7 @@ jobs:
 
 ## Build our Hugo site
 
-As one of the first steps we want to build our hugo blog. We can use the action `peaceiris/actions-hugo@v2` here passing the hugo version we are running locally when previewing our blog. We are building our hugo site and pass the baseURL with `hugo --minify --baseURL ${{ env.BASE_URL }}`
+As one of the first steps we want to build our hugo blog. We can use the action `peaceiris/actions-hugo@v2` here passing the hugo version we are running locally as well. With the action are building our hugo site and pass the baseURL with `hugo --minify --baseURL ${{ env.BASE_URL }}` as parameter.
 
 ```
 steps:
