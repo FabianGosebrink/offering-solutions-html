@@ -31,7 +31,7 @@ Let's go.
 
 ## Setting up the environment
 
-So for my case my blog is in a working directory `homepage` so we will set this to here, you can also pass a `.` as a root folder or delete the property at all. In addition to that we are listening to the main branch and PRs as the following
+So for my case my blog is in a working directory `homepage` so we will set the environment variable to `homepage`, you can also pass a `.` as a root folder or delete the property at all. In addition to that we are listening to the `main` branch for changes.
 
 ```
 name: Build and Release Hugo Site
@@ -61,6 +61,7 @@ env:
 
 jobs:
   build-and-deploy:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
     defaults:
       run:
