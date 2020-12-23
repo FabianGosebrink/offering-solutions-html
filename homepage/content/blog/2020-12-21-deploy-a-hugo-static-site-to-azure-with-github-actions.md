@@ -95,7 +95,7 @@ Having done that we now have a `public` folder where our hugo site was built in.
 
 We want to get our blog items now to our Azure Web App and the other static content like images, js, css etc. to the static web app on Azure.
 
-First, we copy all the items we need in a folder `public/dist-cdn`
+First, we copy all the items for the static web app in a folder called `public/dist-cdn`
 
 ```
 - name: 'Copy Files to: homepage/public/dist-cdn'
