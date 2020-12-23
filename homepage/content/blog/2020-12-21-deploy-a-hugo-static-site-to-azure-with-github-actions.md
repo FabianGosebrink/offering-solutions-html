@@ -31,7 +31,7 @@ Let's go.
 
 ## Setting up the environment
 
-So for my case my blog is in a working directory `homepage` so we will set the environment variable to `homepage`, you can also pass a `.` as a root folder or delete the property at all if you are at root level. In addition to that we are listening to the `main` branch for changes.
+For my case, my blog is in a working directory `homepage`. We set the environment variable to `homepage` and you can also pass a `.` as a root folder or delete the property, if you are at root level. In addition to that, we are listening to the `main` branch for changes.
 
 ```
 name: Build and Release Hugo Site
@@ -50,7 +50,7 @@ env:
   WORKING_DIRECTORY: homepage
 ```
 
-As our build task for hugo can take a `baseURL` we created an environment variable for this as well.
+The build task Hugo can take a `baseURL` and we created an environment variable for this as well.
 
 ```
 BASE_URL: https://offering.solutions/
