@@ -34,7 +34,7 @@ jobs:
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
         run: |
-          Copy-Item -Path public/js/ public/dist-cdn/ -recurse
+          Copy-Item -Path public/js/ public/dist-cdn/js -recurse
           Copy-Item -Path public/css/ public/dist-cdn/css -recurse
           Copy-Item -Path public/fonts/ public/dist-cdn/fonts -recurse
           Copy-Item -Path public/img/ public/dist-cdn/img -recurse
@@ -69,4 +69,4 @@ jobs:
           azcliversion: 2.0.72
           inlineScript: |
             az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
-            az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=2592000"
+            az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=43200"
