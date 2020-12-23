@@ -19,6 +19,12 @@ In this blog we will
 
 Let's go.
 
+- [Setting up the environment](#setting-up-the-environment)
+- [Build our Hugo site](#build-our-hugo-site)
+- [Deploying to Azure Web App](#deploying-to-azure-web-app)
+- [Uploading the files to a storage account](#uploading-the-files-to-a-storage-account)
+- [Complete Example](#complete-example)
+
 ## TL;DR
 
 [Complete Example](#complete-example)
@@ -129,7 +135,56 @@ Great. As we have done that now, we can use the Azure CLI to upload our cdn file
 
 ## Uploading the files to a storage account
 
-First, we have to login to have the rights to upload files.
+First, we have to login to have the rights to upload files. To login we can use the [Azure Login Action](https://github.com/Azure/login). To get the secret follow the steps described [here](https://github.com/Azure/login#configure-deployment-credentials).
+
+So what I did was taking the blueprint of the command
+
+```
+az ad sp create-for-rbac --name "{sp-name}" --sdk-auth --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Web/sites/{app-name}
+```
+
+and added my values. I was then executing it via the Azure CLI. I used the VSCode extension [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) but you can use whatever you like. The output was
+
+```
+{
+  "clientId": "<GUID>",
+  "clientSecret": "<GUID>",
+  "subscriptionId": "<GUID>",
+  "tenantId": "<GUID>",
+  (...)
+}
+```
+
+I added this to my GitHub Secrets as described above with the publish profile in the same way only calling it `AZURE_CDN_CREDENTIALS`.
+
+Now we can build the login action using the credentials.
+
+```
+- name: Login via Az module
+  uses: azure/login@v1
+  with:
+    creds: ${{secrets.AZURE_CDN_CREDENTIALS}}
+    enable-AzPSSession: true
+```
+
+As we are logged in now we can upload all blog items to the cdn with the Azure CLI. We use the `$web` container and upload everything we have in the
+
+```
+- name: Reupload all blog items
+  uses: azure/CLI@v1
+  with:
+    azcliversion: 2.0.72
+    inlineScript: |
+      az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
+      az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=43200"
+
+```
+
+And that was it. After the build is executed our hugo page gets built, uploaded to the Azure Web App and to the Azure storage account. I have caching enabled with cloudflare, too that this does not hit my Azure Web App every time.
+
+Hope this helps.
+
+Fabian
 
 ## Complete Example
 
