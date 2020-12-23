@@ -172,7 +172,7 @@ Now we can build the login action using the credentials.
     enable-AzPSSession: true
 ```
 
-As we are logged in now we can upload all blog items to the cdn with the Azure CLI. We use the `$web` container and upload everything we have in the
+As we are logged in now we can upload all blog items to the cdn with the Azure CLI. We use the `$web` container and upload everything we have in the container. I added a cache time from 23 hours just to be sure.
 
 ```
 - name: Reupload all blog items
