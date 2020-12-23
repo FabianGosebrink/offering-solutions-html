@@ -93,9 +93,9 @@ steps:
 
 Having done that we now have a `public` folder where our hugo site was built in.
 
-We want to get our blog items now to our Azure Web App and the other static content like images, js, css etc. to the static web app on Azure.
+We want to get our blog items now to our Azure Web App and the other static content like images, js, css etc. to the storage account on Azure.
 
-First, we copy all the items for the static web app in a folder called `public/dist-cdn`
+First, we copy all the items for the storage account in a folder called `public/dist-cdn`
 
 ```
 - name: 'Copy Files to: homepage/public/dist-cdn'
@@ -107,7 +107,7 @@ First, we copy all the items for the static web app in a folder called `public/d
         Copy-Item -Path public/index.json public/dist-cdn -recurse
 ```
 
-Inside the `public` folder a new folder called `public/dist-cdn` was created which is like one artifact which we are going to upload to our static web app later. The other folder to create are the sites, the blog itself which we are going to deploy to the Azure Web App.
+Inside the `public` folder a new folder called `public/dist-cdn` was created which is like one artifact which we are going to upload to our storage account later. The other folder to create are the sites, the blog itself which we are going to deploy to the Azure Web App.
 
 ```
 - name: 'Copy Files to: homepage/public/dist-blog'
@@ -125,7 +125,7 @@ So now we have two folders: `public/dist-cdn` and we have `public/dist-blog` whi
 
 ## Deploying to Azure Web App
 
-As we want to deploy the `public/dist-blog` to the Azure Web App we can add the publish profile to the GitHub Secrets as described [here](https://offering.solutions/blog/articles/2020/12/16/deploy-a-.net-5-asp.net-core-application-to-azure-with-github-actions/) and use the folder as the `package` to upload directly
+As we want to deploy the `public/dist-blog` to the Azure Web App we can add the publish profile to the GitHub Secrets as described [here](https://offering.solutions/blog/articles/2020/12/16/deploy-a-.net-5-asp.net-core-application-to-azure-with-github-actions/) and use the folder as the `package` to upload it directly
 
 ```
 - name: 'Deploy Blog to Azure Web App'
