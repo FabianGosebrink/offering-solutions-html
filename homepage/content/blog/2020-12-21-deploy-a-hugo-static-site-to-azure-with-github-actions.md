@@ -135,7 +135,7 @@ Great. As we have done that now, we can use the Azure CLI to upload our cdn file
 
 ## Uploading the files to a storage account
 
-First, we have to login to have the rights to upload files. To login we can use the [Azure Login Action](https://github.com/Azure/login). To get the secret follow the steps described [here](https://github.com/Azure/login#configure-deployment-credentials).
+First, we have to login to have the rights to upload files. To login we can use the [Azure Login Action](https://github.com/Azure/login). To get the secret follow the steps described in [Configure deployment credentials](https://github.com/Azure/login#configure-deployment-credentials) or [Set up a GitHub Actions workflow to deploy your static website in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions)
 
 So what I did was taking the blueprint of the command
 
@@ -180,7 +180,7 @@ As we are logged in now we can upload all blog items to the cdn with the Azure C
 
 ```
 
-And that was it. After the build is executed our hugo page gets built, uploaded to the Azure Web App and to the Azure storage account. I have caching enabled with cloudflare, too that this does not hit my Azure Web App every time.
+And that was it. After the build is finished our hugo page got built, uploaded to the Azure Web App and to the Azure storage account. I have caching enabled with cloudflare, too that this does not hit my Azure Web App every time.
 
 Hope this helps.
 
