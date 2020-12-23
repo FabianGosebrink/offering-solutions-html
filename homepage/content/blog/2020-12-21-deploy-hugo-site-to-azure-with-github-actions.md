@@ -89,14 +89,47 @@ First, we copy all the items we need in a folder `public/dist-cdn`
 ```
 - name: 'Copy Files to: homepage/public/dist-cdn'
       run: |
-        Copy-Item -Path public/js/ public/dist-cdn/ -recurse
+        Copy-Item -Path public/js/ public/dist-cdn/js -recurse
         Copy-Item -Path public/css/ public/dist-cdn/css -recurse
         Copy-Item -Path public/fonts/ public/dist-cdn/fonts -recurse
         Copy-Item -Path public/img/ public/dist-cdn/img -recurse
         Copy-Item -Path public/index.json public/dist-cdn -recurse
 ```
 
-Inside the `public` folder a new folder called `public `
+Inside the `public` folder a new folder called `public/dist-cdn` which is like one artifact which we are going to upload to our cdn later. The other one are the sites, the blog itself which we are going to deploy to the Azure Web App.
+
+```
+- name: 'Copy Files to: homepage/public/dist-blog'
+      run: |
+        New-Item -Path public/dist-blog -ItemType Directory
+        Copy-Item -Path public/blog/ -Destination public/dist-blog/blog -recurse
+        Copy-Item -Path public/categories/ -Destination public/dist-blog/categories -recurse
+        Copy-Item -Path public/tags/ -Destination public/dist-blog/tags -recurse
+        Copy-Item -Path public/talks/ -Destination public/dist-blog/talks -recurse
+        Copy-Item -Path public/newsletter/ -Destination public/dist-blog/newsletter -recurse
+        Copy-Item -Path public/*.* -Destination public/dist-blog
+```
+
+So now we have two folders: `public/dist-cdn` and we have `public/dist-blog` which we are going to deploy to different resources now.
+
+## Deploying to Azure Web App
+
+As we want to deploy the `public/dist-blog` to the Azure Web App we can add the publish profile to the GitHub Secrets as described [here](https://offering.solutions/blog/articles/2020/12/16/deploy-a-.net-5-asp.net-core-application-to-azure-with-github-actions/) and use the folder as the `package` to upload directly
+
+```
+- name: 'Deploy Blog to Azure Web App'
+  uses: azure/webapps-deploy@v2
+  with:
+    app-name: offeringsolutions
+    publish-profile: ${{ secrets.AZURE_WEBAPP_OFFERING_SOLUTIONS_BLOG_SECRET }}
+    package: '${{ env.WORKING_DIRECTORY }}/public/dist-blog'
+```
+
+Great. As we have done that now, we can use the Azure CLI to upload our cdn files to the storage account.
+
+## Uploading the files to a storage account
+
+First, we have to login to have the rights to upload files.
 
 ## Complete Example
 
@@ -137,7 +170,7 @@ jobs:
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
         run: |
-          Copy-Item -Path public/js/ public/dist-cdn/ -recurse
+          Copy-Item -Path public/js/ public/dist-cdn/js -recurse
           Copy-Item -Path public/css/ public/dist-cdn/css -recurse
           Copy-Item -Path public/fonts/ public/dist-cdn/fonts -recurse
           Copy-Item -Path public/img/ public/dist-cdn/img -recurse
@@ -172,7 +205,8 @@ jobs:
           azcliversion: 2.0.72
           inlineScript: |
             az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
-            az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=2592000"
+            az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=43200"
+
 
 ```
 
