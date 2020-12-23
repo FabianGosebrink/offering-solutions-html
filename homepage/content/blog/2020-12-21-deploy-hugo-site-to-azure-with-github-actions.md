@@ -23,10 +23,12 @@ Let's go.
 
 [Complete Example](#complete-example)
 
-## Complete Example
+## Setting up the environment
+
+So for my case my blog is in a working directory `homepage` so we will set this to here, you can also pass a `.` as a root folder or delete the property at all. In addition to that we are listening to the main branch and PRs as the following
 
 ```
-name: .NET Core
+name: Build and Release Hugo Site
 
 on:
   push:
@@ -38,43 +40,140 @@ on:
       - main
 
 env:
-  AZURE_WEBAPP_NAME: sampletodobackend
-  WORKING_DIRECTORY: backend/aspnetcore
+  BASE_URL: https://offering.solutions/
+  WORKING_DIRECTORY: homepage
+```
+
+As our build task for hugo can take a `baseURL` we will pass it like this.
+
+Now let us set up a job called `build-and-deploy` and run it on ubuntu with the powershell and configure the working directory using the environment variable above.
+
+```
+env:
+  BASE_URL: https://offering.solutions/
+  WORKING_DIRECTORY: homepage
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        shell: bash
+        shell: pwsh
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+```
+
+## Build our Hugo site
+
+As one of the first steps we want to build our hugo blog. We can use the action `peaceiris/actions-hugo@v2` here passing the hugo version we are running locally when previewing our blog. We are building our hugo site and pass the baseURL with `hugo --minify --baseURL ${{ env.BASE_URL }}`
+
+```
+steps:
+  - uses: actions/checkout@v2
+
+  - name: Setup hugo
+    uses: peaceiris/actions-hugo@v2
+    with:
+      hugo-version: '0.73.0'
+
+  - name: Build hugo
+    run: hugo --minify --baseURL ${{ env.BASE_URL }}
+```
+
+Having done that we now have a `public` folder where our hugo site was built in.
+
+We want to get our blog items now to our Azure Web App and the other static content like images, js, css etc. to the static web app on Azure.
+
+First, we copy all the items we need in a folder `public/dist-cdn`
+
+```
+- name: 'Copy Files to: homepage/public/dist-cdn'
+      run: |
+        Copy-Item -Path public/js/ public/dist-cdn/ -recurse
+        Copy-Item -Path public/css/ public/dist-cdn/css -recurse
+        Copy-Item -Path public/fonts/ public/dist-cdn/fonts -recurse
+        Copy-Item -Path public/img/ public/dist-cdn/img -recurse
+        Copy-Item -Path public/index.json public/dist-cdn -recurse
+```
+
+Inside the `public` folder a new folder called `public `
+
+## Complete Example
+
+```
+name: Build and Release Hugo Site
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+env:
+  BASE_URL: https://offering.solutions/
+  WORKING_DIRECTORY: homepage
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: pwsh
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
         with:
-          dotnet-version: '5.0.100'
+          hugo-version: '0.73.0'
 
-      - name: Install dependencies
-        run: dotnet restore
+      - name: Build hugo
+        run: hugo --minify --baseURL ${{ env.BASE_URL }}
 
-      - name: Build
-        run: dotnet build --configuration Release --no-restore
+      - name: 'Copy Files to: homepage/public/dist-cdn'
+        run: |
+          Copy-Item -Path public/js/ public/dist-cdn/ -recurse
+          Copy-Item -Path public/css/ public/dist-cdn/css -recurse
+          Copy-Item -Path public/fonts/ public/dist-cdn/fonts -recurse
+          Copy-Item -Path public/img/ public/dist-cdn/img -recurse
+          Copy-Item -Path public/index.json public/dist-cdn -recurse
 
-      - name: Test
-        run: dotnet test --no-restore --verbosity normal
+      - name: 'Copy Files to: homepage/public/dist-blog'
+        run: |
+          New-Item -Path public/dist-blog -ItemType Directory
+          Copy-Item -Path public/blog/ -Destination public/dist-blog/blog -recurse
+          Copy-Item -Path public/categories/ -Destination public/dist-blog/categories -recurse
+          Copy-Item -Path public/tags/ -Destination public/dist-blog/tags -recurse
+          Copy-Item -Path public/talks/ -Destination public/dist-blog/talks -recurse
+          Copy-Item -Path public/newsletter/ -Destination public/dist-blog/newsletter -recurse
+          Copy-Item -Path public/*.* -Destination public/dist-blog
 
-      - name: dotnet publish
-        run: dotnet publish --configuration Release --output 'dotnetcorewebapp'
-
-      - name: 'Deploy to Azure WebApp'
+      - name: 'Deploy Blog to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.MY_SECRET_PUBLISH_PROFILE }}
-          package: '${{ env.WORKING_DIRECTORY }}/dotnetcorewebapp'
+          app-name: offeringsolutions
+          publish-profile: ${{ secrets.AZURE_WEBAPP_OFFERING_SOLUTIONS_BLOG_SECRET }}
+          package: '${{ env.WORKING_DIRECTORY }}/public/dist-blog'
+
+      - name: Login via Az module
+        uses: azure/login@v1
+        with:
+          creds: ${{secrets.AZURE_CDN_CREDENTIALS}}
+          enable-AzPSSession: true
+
+      - name: Reupload all blog items
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+            az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
+            az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=2592000"
+
 ```
 
 Hope this helps
