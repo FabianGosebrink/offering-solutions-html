@@ -9,7 +9,7 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this blog post I want to write about how you can deploy your Static Site - maybe blog - generated with Hugo to Azure with Github Actions.
 
-We will deploy two things in this article: First of all we deploy our hugo log to an Azure Web App and we deploy all static content like pictures, styles, javascript etc. to a CDN which is a Azure Storage Account. The main site is on the Azure Web App because I use multiple domains to point at my blog and IIRC the domains at an Azure Storage Account are case sensitive which I also ant to avoid. Both, the site and the cdn, are cached with cloudflare to not hit my Azure every time someone calls my url. This is served from cache then.
+We will deploy two things in this article: we deploy a Hugo blog to an Azure Web App and deploy all static content like pictures, styles and Javascript to a CDN which is implemented using an Azure Storage Account. The main site is an Azure Web App because I use multiple domains to point to my blog. As far as I know, the Azure Storage Account URLs are case sensitive. I want to avoid this. Both, the site and the CDN are cached with Cloudflare which prevents traffic to my Azure every time someone calls one of the sites. This is served from the Cloudflare cache.
 
 In this blog we will
 
