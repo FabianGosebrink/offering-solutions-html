@@ -1,7 +1,7 @@
 ---
 title: Deploy a Hugo Static Site to Azure With GitHub Actions
 date: 2020-12-23
-tags: ['aspnetcore', 'github']
+tags: ['hugo', 'github']
 draft: false
 category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
