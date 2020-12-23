@@ -50,9 +50,13 @@ env:
   WORKING_DIRECTORY: homepage
 ```
 
-As our build task for hugo can take a `baseURL` we will pass it like this.
+As our build task for hugo can take a `baseURL` we created an environment variable for this as well.
 
-Now let us set up a job called `build-and-deploy` and run it on ubuntu with the powershell and configure the working directory using the environment variable above.
+```
+BASE_URL: https://offering.solutions/
+```
+
+Now let us set up a job called `build-and-deploy` and run it on ubuntu with the powershell and configure the working directory using the environment variable we declared.
 
 ```
 env:
