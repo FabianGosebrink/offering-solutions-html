@@ -31,7 +31,7 @@ Let's go.
 
 ## Setting up the environment
 
-So for my case my blog is in a working directory `homepage` so we will set the environment variable to `homepage`, you can also pass a `.` as a root folder or delete the property at all if you do not want to use it. In addition to that we are listening to the `main` branch for changes.
+So for my case my blog is in a working directory `homepage` so we will set the environment variable to `homepage`, you can also pass a `.` as a root folder or delete the property at all if you are at root level. In addition to that we are listening to the `main` branch for changes.
 
 ```
 name: Build and Release Hugo Site
