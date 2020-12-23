@@ -91,9 +91,9 @@ steps:
     run: hugo --minify --baseURL ${{ env.BASE_URL }}
 ```
 
-Having done that we now have a `public` folder where our hugo site was built in.
+Having set this up, we now have a `public` folder where the Hugo site was built.
 
-We want to get our blog items now to our Azure Web App and the other static content like images, js, css etc. to the storage account on Azure.
+We want to copy the blog items to the Azure Web App and the other static content like images, js, css etc. to the storage account on Azure.
 
 First, we copy all the items for the storage account in a folder called `public/dist-cdn`
 
