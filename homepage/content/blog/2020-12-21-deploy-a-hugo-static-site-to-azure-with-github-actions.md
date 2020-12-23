@@ -107,7 +107,7 @@ First, we copy all the items for the static web app in a folder called `public/d
         Copy-Item -Path public/index.json public/dist-cdn -recurse
 ```
 
-Inside the `public` folder a new folder called `public/dist-cdn` which is like one artifact which we are going to upload to our cdn later. The other one are the sites, the blog itself which we are going to deploy to the Azure Web App.
+Inside the `public` folder a new folder called `public/dist-cdn` was created which is like one artifact which we are going to upload to our static web app later. The other folder to create are the sites, the blog itself which we are going to deploy to the Azure Web App.
 
 ```
 - name: 'Copy Files to: homepage/public/dist-blog'
