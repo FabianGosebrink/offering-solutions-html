@@ -107,7 +107,7 @@ First, we copy all the items for the storage account in a folder called `public/
         Copy-Item -Path public/index.json public/dist-cdn -recurse
 ```
 
-Inside the `public` folder a new folder called `public/dist-cdn` was created which is like one artifact which we are going to upload to our storage account later. The other folder to create are the sites, the blog itself which we are going to deploy to the Azure Web App.
+Inside the `public` folder a new folder called `public/dist-cdn` was created which is like an artefact which we are going to upload to our storage account later. The other folder created is for the sites, ie the blog itself which we are going to deploy to the Azure Web App.
 
 ```
 - name: 'Copy Files to: homepage/public/dist-blog'
@@ -125,7 +125,7 @@ So now we have two folders: `public/dist-cdn` and we have `public/dist-blog` whi
 
 ## Deploying to Azure Web App
 
-As we want to deploy the `public/dist-blog` to the Azure Web App we can add the publish profile to the GitHub Secrets as described [here](https://offering.solutions/blog/articles/2020/12/16/deploy-a-.net-5-asp.net-core-application-to-azure-with-github-actions/) and use the folder as the `package` to upload it directly
+As we want to deploy the `public/dist-blog` to the Azure Web App, we can add the publish profile to the GitHub secrets as described [here](https://offering.solutions/blog/articles/2020/12/16/deploy-a-.net-5-asp.net-core-application-to-azure-with-github-actions/) and use the folder as the `package` to upload it directly.
 
 ```
 - name: 'Deploy Blog to Azure Web App'
@@ -136,7 +136,7 @@ As we want to deploy the `public/dist-blog` to the Azure Web App we can add the 
     package: '${{ env.WORKING_DIRECTORY }}/public/dist-blog'
 ```
 
-Great. As we have done that now, we can use the Azure CLI to upload our cdn files to the storage account.
+Great. As we have done that now, we can use the Azure CLI to upload our CDN files to the storage account.
 
 ## Uploading the files to a storage account
 
