@@ -211,6 +211,7 @@ env:
 
 jobs:
   build-and-deploy:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -266,7 +267,6 @@ jobs:
           inlineScript: |
             az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
             az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.WORKING_DIRECTORY }}/public/dist-cdn' --content-cache-control "public, max-age=43200"
-
 
 ```
 
