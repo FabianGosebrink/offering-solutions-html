@@ -1,0 +1,23 @@
+{
+  "name": "offering-solutions-html",
+  "version": "1.0.0",
+  "description": "[Offering Solutions Software](https://offering.solutions)",
+  "main": "index.js",
+  "dependencies": {
+    "alex": "^9.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run-alex": "alex homepage/content/blog/*.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabianGosebrink/offering-solutions-html.git"
+  },
+  "author": "Fabian Gosebrink",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabianGosebrink/offering-solutions-html/issues"
+  },
+  "homepage": "https://github.com/FabianGosebrink/offering-solutions-html#readme"
+}
