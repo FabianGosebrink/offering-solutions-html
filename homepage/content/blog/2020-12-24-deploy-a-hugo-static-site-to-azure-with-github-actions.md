@@ -140,7 +140,7 @@ Great. As we have done that now, we can use the Azure CLI to upload our CDN file
 
 ## Uploading the files to a storage account
 
-First, we have to login to have the rights to upload files. To login we can use the [Azure Login Action](https://github.com/Azure/login). To get the secret follow the steps described in [Configure deployment credentials](https://github.com/Azure/login#configure-deployment-credentials) or [Set up a GitHub Actions workflow to deploy your static website in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions)
+First, we have to login to have the rights to upload files. To login, we can use the [Azure Login Action](https://github.com/Azure/login). To get the secret, follow the steps described in [Configure deployment credentials](https://github.com/Azure/login#configure-deployment-credentials) or [Set up a GitHub Actions workflow to deploy your static website in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions)
 
 So what I did was taking the blueprint of the command
 
@@ -148,7 +148,7 @@ So what I did was taking the blueprint of the command
 az ad sp create-for-rbac --name "{sp-name}" --sdk-auth --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Web/sites/{app-name}
 ```
 
-and added my values. I was then executing it via the Azure CLI. I used the VSCode extension [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) but you can use whatever you like. The output was
+and added my values. I was then executing it via the Azure CLI. I used the VSCode extension [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) but you can use whatever you like. The output was:
 
 ```
 {
@@ -160,7 +160,7 @@ and added my values. I was then executing it via the Azure CLI. I used the VSCod
 }
 ```
 
-I added this to my GitHub Secrets as described above with the publish profile in the same way only calling it `AZURE_CDN_CREDENTIALS`.
+I added this to my GitHub secrets as described above with the publish profile in the same way, only calling it `AZURE_CDN_CREDENTIALS`.
 
 Now we can build the login action using the credentials.
 
@@ -172,7 +172,7 @@ Now we can build the login action using the credentials.
     enable-AzPSSession: true
 ```
 
-As we are logged in now we can upload all blog items to the cdn with the Azure CLI. We use the `$web` container and upload everything we have in the container. I added a cache time from 23 hours just to be sure.
+As we are logged in now, we can upload all blog items to the CDN with the Azure CLI. We use the `$web` container and upload everything we have in the container. I added a cache time from 23 hours just to be sure.
 
 ```
 - name: Reupload all blog items
@@ -185,7 +185,7 @@ As we are logged in now we can upload all blog items to the cdn with the Azure C
 
 ```
 
-And that was it. After the build is finished our hugo page got built, uploaded to the Azure Web App and to the Azure storage account. I have caching enabled with cloudflare, too that this does not hit my Azure Web App every time.
+And that was it. After the build is finished our Hugo page got built, uploaded to the Azure Web App and to the Azure storage account. I have caching enabled with Cloudflare, so that all requests do not hit my Azure Web App every time.
 
 Hope this helps.
 
