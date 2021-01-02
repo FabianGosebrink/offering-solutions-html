@@ -13,6 +13,8 @@ In this blog post I want to write about how you can move from TravisCI to GitHub
 
 [Complete Example](#complete-example)
 
+Find the moving-to-github-actions-commit here [Moving to GitHub actions](https://github.com/damienbod/angular-auth-oidc-client/commit/6589b7d19772bf541dac995a0101f8c2de385f8b) and the adding-code-coverage-commit here [adding code coverage](https://github.com/damienbod/angular-auth-oidc-client/commit/85629a40ba5678c9e2b062194c67bd7efabd0e98)
+
 ## Why moving?
 
 In the beginning of November 2020 TravisCI announced that they will change their pricing plan which made me read their new announcement. I found out that Travis is providing a free amount of minutes to spend on open source projects because TravisCI found out their systems suffer from abuse.
@@ -39,10 +41,13 @@ The current build was doing the following steps in sequence
 2. Linting the lib
 3. Testing the lib
 4. Make a production build of the lib
+
+As we had issues with installing the lib I added the following steps to make sure our lib can be installed
+
 5. Creating a new empty angular project with the angular cli
 6. Installing the built lib in it
 
-And as steps which were not 100% needed because the new angular project was not used by the app, I added the two following steps anyway:
+and to be even more covered I added the steps
 
 7. Testing the new angular project with the lib
 8. Make a production build of the new angular project
@@ -98,6 +103,170 @@ First I added a new `build.yaml` file to place my action in.
 ...
 ```
 
+First we give it a name and want to listen to the `main` branch including the pull requests:
+
+```
+name: angular-auth-oidc-client-build
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        types: [opened, synchronize, reopened, closed]
+        branches:
+            - main
+```
+
+Now we define the `build_job` which runs on `ubuntu-latest`.
+
+```
+jobs:
+    build_job:
+        runs-on: ubuntu-latest
+        name: Build Job
+        steps:
+            ...
+```
+
+As a first step we check out the files and install node in version 12 on the system.
+
+```
+...
+steps:
+    - uses: actions/checkout@v2
+      with:
+          submodules: true
+
+    - name: Setup Node.js 12
+      uses: actions/setup-node@v1
+      with:
+          node-version: 12
+```
+
+Next, let us install the dependencies with `npm install`, lint the frontend with `npm run lint-lib` and test the lib with `npm run test-lib-ci`
+
+```
+- name: Installing Dependencies
+  run: sudo npm install
+
+- name: Linting Frontend
+  run: sudo npm run lint-lib
+
+- name: Testing Frontend
+  run: sudo npm run test-lib-ci
+```
+
+For the testing I had to add a new browser with no sandbox `ChromeHeadlessNoSandbox` to my `karma.conf.js`
+
+```js
+module.exports = function (config) {
+  config.set({
+    // ...
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox'],
+      },
+    },
+    // ...
+  });
+};
+```
+
+In the end, let us build the lib with a production build `build-lib-prod`
+
+```
+- name: Building Frontend
+  run: sudo npm run build-lib-prod
+```
+
+Now, let us add a step which creates a new AngularCLI project, installs the lib we built, tests the project and makes a production build of the app.
+
+For this we can pipe all the operations to combine it in a single task:
+
+```
+- name: Create new Angular Project and install lib in it, test it and build it
+  run: |
+      cd ..
+      sudo npm install -g @angular/cli
+      echo 'Creating new angular project'
+      sudo ng new testProject --skip-git
+      cd testProject
+      sudo npm install ../angular-auth-oidc-client/dist/angular-auth-oidc-client
+      npm test -- --watch=false --browsers=ChromeHeadless
+      sudo npm run build -- --prod
+```
+
+If that works, we are very far!
+
+## Adding Code Coverage
+
+Last thing to do is adding the code coverage to check if this changed with a PR. I am using [coveralls](https://coveralls.io/) for this which is free for open source projects.
+
+In the `karma.conf.js` a `lcov.info` file was created with
+
+```js
+// Karma configuration file, see link for more information
+// https://karma-runner.github.io/1.0/config/configuration-file.html
+
+module.exports = function (config) {
+  config.set({
+    //..
+    coverageReporter: {
+      dir: require('path').join(
+        __dirname,
+        '../../coverage/angular-auth-oidc-client'
+      ),
+      subdir: '.',
+      reporters: [{ type: 'html' }, { type: 'text-summary' }, { type: 'lcov' }],
+    },
+    //..
+  });
+};
+```
+
+With the executed task this file is present as well and with the actions [Coveralls GitHub Action](https://github.com/coverallsapp/github-action) we can use this already created file and publish and view our code coverage.
+
+I am placing it between the testing and the building of the lib. We are using a variable called `secrets.github_token` which you already have. You do not need to add it to your secrets of this repository. You can use it right away. Be sure to provide the correct path to `path-to-lcov`. In our case, this is `'./coverage/angular-auth-oidc-client/lcov.info'`.
+
+```
+
+- name: Testing Frontend
+  run: sudo npm run test-lib-ci
+
+
+
+#### NEW COVERAGE PART
+- name: Coveralls
+  uses: coverallsapp/github-action@master
+  with:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+      path-to-lcov: './coverage/angular-auth-oidc-client/lcov.info'
+
+- name: Coveralls Finished
+  uses: coverallsapp/github-action@master
+  with:
+      github-token: ${{ secrets.github_token }}
+      parallel-finished: true
+#### END NEW COVERAGE PART
+
+
+- name: Building Frontend
+  run: sudo npm run build-lib-prod
+
+```
+
+And that is it!
+
+As a next step we will add schematics and really add the library to a new project. Once this is merged, I will update the blog post.
+
+Until then:
+
+Stay tuned
+
+Fabian
+
 ## Complete Example
 
 ```
@@ -114,7 +283,6 @@ on:
 
 jobs:
     build_job:
-        if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
         runs-on: ubuntu-latest
         name: Build Job
         steps:
