@@ -14,7 +14,7 @@ In this blog post I want to write about how you can move from TravisCI to GitHub
 - [TL;DR](#tl;dr)
 - [Why moving?](#why-moving?)
 - [The current TravisCI build](#the-current-travis-ci-build)
-- [The GitHub Action](#the-git-hub-action)
+- [The GitHub Action](#the-github-action)
 - [Adding Code Coverage](#adding-code-coverage)
 - [Complete Example](#complete-example)
 
