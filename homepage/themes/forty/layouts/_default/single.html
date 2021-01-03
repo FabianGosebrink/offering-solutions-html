@@ -4,7 +4,9 @@
   <body>
     {{ "<!-- Wrapper -->" | safeHTML }}
     <div id="wrapper">
-      {{ partial "nav.html" . }} {{ "<!-- Main -->" | safeHTML }}
+      {{ partial "nav.html" . }}
+
+      {{ "<!-- Main -->" | safeHTML }}
       <div id="main" class="alt">
         <div class="bottom">
           <div class="progress-container">
@@ -29,16 +31,23 @@
 
         <!-- One -->
         <section id="one">
-          <div class="inner">{{ .Content }}</div>
+          <div class="inner">
+            {{ .Content }}
+          </div>
         </section>
-        {{ "<!-- Disqus Inject -->" | safeHTML }} {{ if .Site.DisqusShortname }}
-        {{ partial "disqus.html" . }} {{ end }}
+        {{ "<!-- Disqus Inject -->" | safeHTML }}
+        {{ if .Site.DisqusShortname }}
+        {{ partial "disqus.html" . }}
+        {{ end }}
       </div>
 
-      {{ "<!-- Footer -->" | safeHTML}} {{ if .Site.Params.footer.enable }} {{
-      partial "footer.html" . }} {{ end }}
+      {{ "<!-- Footer -->" | safeHTML}}
+      {{ if .Site.Params.footer.enable }}
+      {{ partial "footer.html" . }}
+      {{ end }}
     </div>
 
-    {{ "<!-- Scripts -->" | safeHTML}} {{ partial "js.html" . }}
+    {{ "<!-- Scripts -->" | safeHTML}}
+    {{ partial "js.html" . }}
   </body>
 </html>
