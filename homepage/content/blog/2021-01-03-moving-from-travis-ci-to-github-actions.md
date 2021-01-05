@@ -15,6 +15,7 @@ In this blog post I want to write about how you can move from TravisCI to GitHub
 - [Why moving?](#why-moving?)
 - [The current TravisCI build](#the-current-travis-ci-build)
 - [The GitHub Action](#the-github-action)
+- [Adding a task for schematics](#adding-a-task-for-schematics)
 - [Adding Code Coverage](#adding-code-coverage)
 - [Complete Example](#complete-example)
 
@@ -209,6 +210,30 @@ For this we can pipe all the operations to combine it in a single task:
 
 If that works, we are very far!
 
+
+## Adding a task for schematics
+
+In this task we want to check if the schematics are working and an app cal be built when added something with the schematics. We are using schematics to add an auth module to our app and include it in out `AppModule`. When adding the libe with the `ng add ...` using specific schematics we can also pass all the parameters we have in a single command as parameters.
+
+We create a new Angular project as in the previous step but this time use the schematics to add the lib to our project with the parameters, then test and build the app.
+
+```
+sudo ng add ../angular-auth-oidc-client/dist/angular-auth-oidc-client --stsUrlOrTenantId "my-sts-url" --flowType "OIDC Code Flow PKCE using iframe silent renew"
+```
+
+```
+- name: Create new Angular Project and use the schematics to add a module
+  run: |
+      cd ..
+      sudo npm install -g @angular/cli
+      sudo ng new testProjectSchematic --skip-git
+      cd testProjectSchematic
+      sudo ng add ../angular-auth-oidc-client/dist/angular-auth-oidc-client --stsUrlOrTenantId "my-sts-url" --flowType "OIDC Code Flow PKCE using iframe silent renew"
+      npm test -- --watch=false --browsers=ChromeHeadless
+      sudo npm run build -- --prod
+```
+
+
 ## Adding Code Coverage
 
 Last thing to do is adding the code coverage to check if this changed with a PR. I am using [coveralls](https://coveralls.io/) for this which is free for open source projects.
@@ -267,8 +292,6 @@ I am placing it between the testing and the building of the lib. We are using a 
 ```
 
 And that is it!
-
-As a next step we will add schematics and really add the library to a new project. Once this is merged, I will update the blog post.
 
 Until then:
 
@@ -340,6 +363,21 @@ jobs:
                   echo '=== Current Directory ==='
                   ls
                   sudo npm install ../angular-auth-oidc-client/dist/angular-auth-oidc-client
+                  npm test -- --watch=false --browsers=ChromeHeadless
+                  sudo npm run build -- --prod
+
+            - name: Create new Angular Project and use the schematics to add a module
+              run: |
+                  cd ..
+                  echo '=== Current Directory ==='
+                  ls
+                  sudo npm install -g @angular/cli
+                  echo 'Creating new angular project'
+                  sudo ng new testProjectSchematic --skip-git
+                  cd testProjectSchematic
+                  echo '=== Current Directory ==='
+                  ls
+                  sudo ng add ../angular-auth-oidc-client/dist/angular-auth-oidc-client --stsUrlOrTenantId "my-sts-url" --flowType "OIDC Code Flow PKCE using iframe silent renew"
                   npm test -- --watch=false --browsers=ChromeHeadless
                   sudo npm run build -- --prod
 
