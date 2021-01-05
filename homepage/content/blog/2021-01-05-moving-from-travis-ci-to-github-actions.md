@@ -13,11 +13,13 @@ In this blog post I want to write about how you can move from TravisCI to GitHub
 
 - [TL;DR](#tl;dr)
 - [Why moving?](#why-moving?)
-- [The current TravisCI build](#the-current-travis-ci-build)
+- [The current TravisCI build](#the-current-travisci-build)
 - [The GitHub Action](#the-github-action)
 - [Adding a task for schematics](#adding-a-task-for-schematics)
 - [Adding Code Coverage](#adding-code-coverage)
 - [Complete Example](#complete-example)
+
+[github actions animation](https://cdn.offering.solutions/img/articles/2021-01-05/Github-action-3.gif)
 
 ## TL;DR
 
@@ -27,11 +29,11 @@ Find the moving-to-github-actions-commit here [Moving to GitHub actions](https:/
 
 ## Why moving?
 
-In the beginning of November 2020 TravisCI announced that they will change their pricing plan which made me read their new announcement. I found out that Travis is providing a free amount of minutes to spend on open source projects because TravisCI found out their systems suffer from abuse.
+In the beginning of November 2020 TravisCI announced that they will change their pricing plan which made me read their new announcement. I found out that TravisCI is providing a free amount of minutes to spend on open source projects because TravisCI found out their systems suffer from abuse.
 
 ```
 When your credit allotment runs out - we’d love for you to consider which of our plans will meet your needs.
- - We will be offering an allotment of OSS minutes that will be reviewed and allocated on a case by case basis. Should you want to apply for these credits please open a request with Travis CI support stating that you’d like to be considered for the OSS allotment. Please include:
+ - We will be offering an allotment of OSS minutes that will be reviewed and allocated on a case by case basis. Should you want to apply for these credits please open a request with TravisCI support stating that you’d like to be considered for the OSS allotment. Please include:
  - Your account name and VCS provider (like travis-ci.com/github/[your account name] )
  - How many credits (build minutes) you’d like to request (should your run out of credits again you can repeat the process to request more or discuss a renewable amount)
 Usage will be tracked under your account information so that you can better understand how many credits/minutes are being used
