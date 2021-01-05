@@ -64,7 +64,7 @@ and to be even more covered I added the steps
 
 In the end we wanted to check our code coverage with coveralls and display that in a badge at our [Readme.md](https://github.com/damienbod/angular-auth-oidc-client/blob/main/README.md)
 
-Existing TravisCI \*.yaml file
+Existing TravisCI `*.yaml` file
 
 ```
 sudo: required
@@ -113,7 +113,7 @@ First I added a new `build.yaml` file to place my action in.
 ...
 ```
 
-First we give it a name and want to listen to the `main` branch including the pull requests:
+After this we give it a name and want to listen to the `main` branch including the pull requests:
 
 ```
 name: angular-auth-oidc-client-build
@@ -167,7 +167,13 @@ Next, let us install the dependencies with `npm install`, lint the frontend with
   run: sudo npm run test-lib-ci
 ```
 
-For the testing I had to add a new browser with no sandbox `ChromeHeadlessNoSandbox` to my `karma.conf.js`
+For the testing I had to add a new browser with no sandbox `ChromeHeadlessNoSandbox` to my `karma.conf.js` which is called with the `test-lib-ci` task in the `package.json`
+
+
+```
+test-lib-ci": "ng test angular-auth-oidc-client --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage",
+```
+
 
 ```js
 module.exports = function (config) {
@@ -213,7 +219,7 @@ If that works, we are very far!
 
 ## Adding a task for schematics
 
-In this task we want to check if the schematics are working and an app cal be built when added something with the schematics. We are using schematics to add an auth module to our app and include it in out `AppModule`. When adding the libe with the `ng add ...` using specific schematics we can also pass all the parameters we have in a single command as parameters.
+In this task we want to check if the schematics are working and an app can be built when added something with the schematics. We are using schematics to add an auth module to our app and include it in our `AppModule`. When adding the lib with the `ng add ...` command using specific schematics we can also pass all the parameters we have in a single command as parameter.
 
 We create a new Angular project as in the previous step but this time use the schematics to add the lib to our project with the parameters, then test and build the app.
 
@@ -232,7 +238,6 @@ sudo ng add ../angular-auth-oidc-client/dist/angular-auth-oidc-client --stsUrlOr
       npm test -- --watch=false --browsers=ChromeHeadless
       sudo npm run build -- --prod
 ```
-
 
 ## Adding Code Coverage
 
