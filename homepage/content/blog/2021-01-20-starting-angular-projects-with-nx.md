@@ -305,3 +305,69 @@ Can be imported in the desired file with the path of the lib `@my-workspace/prof
 // import via ES6 statement
 import { SomeType } from `@my-workspace/profile/ui`
 ```
+
+## What about shared?
+
+In an application we always have functionality which has to be spread application wide or feature wide. This shared things can be app specific and completely shared generic functionality.
+
+First of all we create a `shared` folder underneath the `libs` folder.
+
+If the shared thing is app(s) specific and used by apps we can create a new app specific library in a folder under the shared one. How would this look like?
+
+```
+nx generate @nrwl/angular:library completely-generic --directory=shared
+```
+
+Would bring us
+
+```
+.
+├── apps
+│   ├── my-app
+│   │   └──...
+│   └── my-app-e2e
+│       └──...
+├── libs
+│   ├── profile
+│   │   └── ...
+│   ├── shared
+│   │   └── completely-generic
+│   │   │   └── ...
+├── ...
+```
+
+This is where completely shared things can be kept.
+
+If things can not be done generic we create a library in a new folder under shared.
+
+The command
+
+```
+nx generate @nrwl/angular:library not-generic-but-shared --directory=shared/featureName
+```
+
+would give us exactly this:
+
+```
+.
+├── apps
+│   ├── my-app
+│   │   └──...
+│   └── my-app-e2e
+│       └──...
+├── libs
+│   ├── profile
+│   │   └── ...
+│   ├── shared
+│   │   ├── completely-generic
+│   │   │   └── ...
+│   │   └── feature-name
+│   │       └── not-generic-but-shared
+│   │           └── ...
+│   └── .gitkeep
+├── ...
+```
+
+## Using linter to check your architecture
+
+- explain nx enforce module boundaries
