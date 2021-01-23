@@ -306,7 +306,9 @@ Can be imported in the desired file with the path of the lib `@my-workspace/prof
 import { SomeType } from `@my-workspace/profile/ui`
 ```
 
-## What about shared?
+> There are automatic linting rules installed to check this for you. But keeping an eye on it in the first place can not be wrong ;-)
+
+## Shared functionality
 
 In an application we always have functionality which has to be spread application wide or feature wide. This shared things can be app specific and completely shared generic functionality.
 
@@ -370,4 +372,84 @@ would give us exactly this:
 
 ## Using linter to check your architecture
 
-- explain nx enforce module boundaries
+To ensure that a specific app/lib can only access specific other libs you can ensure that with the `@nrwl/nx/enforce-module-boundaries` rule which automatically being applied for you. If you check the `.eslint` file you will find
+
+```
+{
+   //...
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+            ]
+          }
+        ]
+      }
+    },
+   //...
+  ]
+}
+
+```
+
+What we can do here is telling that a lib/app with the tag `x` can only depend on libs with tag `y`.
+
+Those tags can be set in the `nx.json` file.
+
+```
+{
+  // ...
+  "projects": {
+    "my-app": { "tags": [] },
+    "my-app-e2e": { "tags": [], "implicitDependencies": ["my-app"] },
+    "profile-data-access": { "tags": [] },
+    "profile-profile-feature": { "tags": ["lib:profile:feature"] },
+    "profile-ui": { "tags": ["lib:profile:ui"] },
+    "shared-completely-generic": { "tags": [] },
+    "shared-feature-name-not-generic-but-shared": { "tags": [] }
+  }
+}
+
+```
+
+Now we can ensure that the `profile-profile-feature` lib only depends on the `profile-ui` lib for example:
+
+```
+{
+   //...
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              { "sourceTag": "lib:profile:feature", "onlyDependOnLibsWithTags": ["lib:profile:ui"] }
+            ]
+          }
+        ]
+      }
+    },
+   //...
+  ]
+}
+
+```
+
+Of course this is an example and should be used like you have it in your architecture.
+
+I once again refer to the book [Enterprise Monorepo Angular Patterns, by Nitin Vericherla & Victor Savkin.](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book).
+
+Thanks and hope this helps
+
+Fabian
