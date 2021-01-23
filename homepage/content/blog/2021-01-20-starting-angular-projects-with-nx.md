@@ -116,3 +116,16 @@ After answering a few questions again the app is being added to the `apps` folde
 You can configure all the commands to use your specific tools for testing (`karma` `jasmine` or `jest`) or end to end testing (`cypress` or `protractor`). We are running with the latest tools here.
 
 ## Rethinking Libraries
+
+As written in the beginning I really recommend you to read the book I mentioned. When it comes to Angular Monorepos we have to rethink libraries a bit.
+
+Normally we add libraries to share code between projects. This is absolutely valid and one of _the_ use cases when it comes to the reasons creating a library. The code it outsourced and can be used from different applications, has to be maintained only once, can be tested etc.
+
+When it comes to an Angular monorepo we have two new approaches we will introduce
+
+- Creating libraries even if they are used by only ONE application
+- A feature is not _one_ library, but multiple one.
+
+### Creating libraries consumed by only one application
+
+This may sound weird in the beginning but makes absolutely sense when we think about a
