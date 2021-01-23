@@ -124,8 +124,184 @@ Normally we add libraries to share code between projects. This is absolutely val
 When it comes to an Angular monorepo we have two new approaches we will introduce
 
 - Creating libraries even if they are used by only ONE application
-- A feature is not _one_ library, but multiple one.
+- A feature is not _one_ library, but multiple ones
 
 ### Creating libraries consumed by only one application
 
-This may sound weird in the beginning but makes absolutely sense when we think about a
+We create libraries in our monorepo not only for the ability to share them between applications. They can also be consumed by only one application. Call it an "app specific libs" if you want. That breaks down our application into smaller pieces which can be better named, better tested and provide us a better overview when we are defining and looking at our overall pieces the complete application consists of. The app can be well maintained then. As a side effect all the apps and libs are in the files we already mentioned (`package.json` and `nx.json`).
+
+### A "Feature" is not _one_ library but multiple ones
+
+Angular has to architectural approach to break down the application into (feature) modules which is imho a great way to separate the pieces of your application. As we know now we take that a step further and not only create a module in an application to separate features but we move them out into "app specific libs".
+
+Nx goes one step further and divides "features" in four kinds of libraries. This is also written in the book I mentioned, but to summarize:
+
+- _Feature_ libraries represent the entry point and container components to that feature. These are the component where we can route to and this lib is used as entry point when loading our feature from the app.
+- _Ui_ libraries hold presentational components which are used by the feature components in the feature lib. They do not know data-services, they are getting the data passed in via `@Input()` decorated properties and help us to show the data they received. They only care about _how_ things have to look, not _where_ the data comes from.
+
+- _Data-Access_ libraries are abstracting the data access and calls to a backend API like NodeJS, ASP.NET Core, etc.
+
+- _Utility_ libraries are shared things which are shared over that feature. So if you need some services over the complete feature, this is your place.
+
+So if this is the structure a feature exists of they are placed in a folder which can be named after the feature itself.
+
+For example
+
+```
+├── .vscode
+│   └── extensions.json
+├── apps
+│   ├── my-app
+│   │   ├── ...
+│   ├── my-app-e2e
+│   │   ├── ...
+│   └── .gitkeep
+├── libs
+    ├── profile // this is a folder
+    │   ├── data-access
+    │   │   └── // this is a lib
+    │   ├── feature-profile
+    │   │   └── // this is a lib
+    │   ├── ui
+    │   │   └── // this is a lib
+    │   └── utility
+    │       └── // this is a lib
+
+```
+
+## The power of the 'affected' commands
+
+This may sound weird in the beginning but makes absolutely sense when we think about a feature nx brings us which provides us the ability to only build/test/lint/... things which were affected from our specific changes.
+
+You can find the commands in the `package.json`
+
+```
+    "affected:apps": "nx affected:apps",
+    "affected:libs": "nx affected:libs",
+    "affected:build": "nx affected:build",
+    "affected:e2e": "nx affected:e2e",
+    "affected:test": "nx affected:test",
+    "affected:lint": "nx affected:lint",
+    "affected:dep-graph": "nx affected:dep-graph",
+    "affected": "nx affected",
+```
+
+So we create a branch and add our changes. The `affected` commands from nx can check which projects have changed, which projects rely on that changes and build them. ALl other non affected things do not get rebuild. This is a huge time and cost saver when it comes to builds in the cloud where you pay money for!
+
+## Creating libraries
+
+You can create such libraries in the specific folder with the command
+
+```
+nx generate @nrwl/angular:library <name of the lib> --directory=<name of the feature>
+```
+
+For example this is the command to create a `profile-feature` lib in the `profile` directory.
+
+```
+nx generate @nrwl/angular:library profile-feature --directory=profile
+```
+
+The others are equivalent.
+
+As said, the `nx.json` and `angular.json` files are being updated automatically. But more files are being touched: In the `tsconfig.base.json` there is a `paths` array which gets updated.
+
+```
+{
+  "compilerOptions": {
+    // ...
+    "paths": {
+      "@my-workspace/profile/data-access": [
+        "libs/profile/data-access/src/index.ts"
+      ],
+      "@my-workspace/profile/profile-feature": [
+        "libs/profile/profile-feature/src/index.ts"
+      ],
+      "@my-workspace/profile/ui": ["libs/profile/ui/src/index.ts"]
+    }
+  },
+}
+
+```
+
+This is the path the libraries are available from.
+
+## Consuming libraries
+
+This path points to the entry file of the library `index.ts`. The `index.ts` file exports all the _types_ you want to export from that library. For the start this is only the module.
+
+```
+export * from './lib/profile-ui.module';
+```
+
+Every time you want to import something from the lib _via ES6 import statement_ like `import { something } from '...'` it has to be exported via this `index.ts` file.
+
+If you want to import a component you would do this over the `exports` array of the angular module like we separated in modules before. No changes to the behavior of Angular modules only because we introduced a lib! You import the angular module from the lib in the angular module of your app and can consume everything which gets exported by the module.
+
+For example you want to use a component called `MyComponent` which is placed in the `profile/ui` lib in the `profile/profile-feature` lib:
+
+Example for the export via Angular Module
+
+```
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MyComponent } from '...'
+
+@NgModule({
+  imports: [CommonModule],
+  declarations: [MyComponent]
+  exports: [MyComponent]
+})
+export class ProfileUiModule {}
+
+```
+
+Then this component `MyComponent` can be used in the app by importing the Angular module like regular over the `imports` array.
+
+```
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ProfileUiModule } from '@my-workspace/profile/ui'
+
+@NgModule({
+  imports: [CommonModule, ProfileUiModule],
+})
+export class ProfileProfileFeatureModule {}
+```
+
+By importing the `ProfileUiModule` everything the Angular module exports (!) can be used. If it does not get exported, it can not be used.
+
+Pay attention to the path we are importing from. It is `... from '@my-workspace/profile/ui'`. This path is defined in the paths array and points to the `index.ts` file. Visual Studio Code for example sometimes tries to fool you pointing to the direct path, which is not correct.
+
+```
+// This is not the correct import path!
+import { ProfileUiModule } from './../../../ui/src/lib/profile-ui.module';
+
+// This is the correct import path!
+import { ProfileUiModule } from '@my-workspace/profile/ui'
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@NgModule({
+  imports: [CommonModule, ProfileUiModule],
+})
+export class ProfileProfileFeatureModule {}
+
+```
+
+The abstraction happens in the paths array in the `tsconfig.base.json` which is consumed first. if it is not found then the path is looked up in the `node_modules` folder.
+
+However if you need to import a type directly _not_ over Angular modules because you need it directly, this _has_ to be exported via the `index.ts` file!
+
+```
+// index.ts
+export * from './lib/profile-ui.module';
+export * from './path/to/my/type'
+```
+
+Can be imported in the desired file with the path of the lib `@my-workspace/profile/ui` in this example.
+
+```
+// import via ES6 statement
+import { SomeType } from `@my-workspace/profile/ui`
+```
