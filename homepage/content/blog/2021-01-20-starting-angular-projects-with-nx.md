@@ -9,6 +9,10 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this blog post I want to write down one possible way to start and architecture Angular projects using the [nx](https://nx.dev). I know that there are a lot of guides and even books out there but just to have it written down in one place for me with all the current commands I am using building bigger Angular applications I am creating this blog post.
 
+## Who is this article for?
+
+This article is for developers and architects who want to build a bigger angular application and have a state of the art architecture with an nx monorepo. If you are reaching out to learn what libraries are and how they are used in your angular project to build your architecture, if you want to avoid the common mistakes, if you want to learn the separation of the parts an angular monorepo consists of and how nx can help you with that, this article is for you.
+
 What we are going to look at is
 
 - How to start a project
@@ -136,7 +140,7 @@ Angular has to architectural approach to break down the application into (featur
 
 Nx goes one step further and divides "features" in four kinds of libraries. This is also written in the book I mentioned, but to summarize:
 
-- _Feature_ libraries represent the entry point and container components to that feature. These are the component where we can route to and this lib is used as entry point when loading our feature from the app.
+- _Feature_ libraries represent the entry point and container components to that feature. These are the component where we can route to and this lib is used as entry point when loading our feature from the app. This features are lazy loaded from the app.
 - _Ui_ libraries hold presentational components which are used by the feature components in the feature lib. They do not know data-services, they are getting the data passed in via `@Input()` decorated properties and help us to show the data they received. They only care about _how_ things have to look, not _where_ the data comes from.
 
 - _Data-Access_ libraries are abstracting the data access and calls to a backend API like NodeJS, ASP.NET Core, etc.
@@ -448,7 +452,17 @@ Now we can ensure that the `profile-profile-feature` lib only depends on the `pr
 
 Of course this is an example and should be used like you have it in your architecture.
 
-I once again refer to the book [Enterprise Monorepo Angular Patterns, by Nitin Vericherla & Victor Savkin.](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book).
+You can start this lintin process with the command provided in your `package.json`
+
+```
+"lint": "nx workspace-lint && ng lint",
+```
+
+## Further steps
+
+Of course this is only a brief overview of nx can do for you.
+
+I once again refer to the book [Enterprise Monorepo Angular Patterns, by Nitin Vericherla & Victor Savkin.](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book) and really recommend this to read.
 
 Thanks and hope this helps
 
