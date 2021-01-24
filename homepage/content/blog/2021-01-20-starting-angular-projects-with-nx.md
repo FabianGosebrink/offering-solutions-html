@@ -11,7 +11,7 @@ In this blog post I want to write down one possible way to start and architectur
 
 ## Who is this article for?
 
-This article is for developers and architects who want to build a bigger angular application and have a state of the art architecture with an nx monorepo. If you are reaching out to learn what libraries are and how they are used in your angular project to build your architecture, if you want to avoid the common mistakes, if you want to learn the separation of the parts an angular monorepo consists of and how nx can help you with that, this article is for you.
+This article is for developers and architects who want to build a bigger Angular application and have a state of the art architecture with an nx monorepo. If you are reaching out to learn what libraries are and how they are used in your Angular project to build your architecture, if you want to avoid the common mistakes, if you want to learn the separation of the parts an Angular monorepo consists of and how nx can help you with that, this article is for you. You and your team will be able to start an Angular architecture after this article and know how to walk the first steps of nx.
 
 What we are going to look at is
 
@@ -240,7 +240,7 @@ export * from './lib/profile-ui.module';
 
 Every time you want to import something from the lib _via ES6 import statement_ like `import { something } from '...'` it has to be exported via this `index.ts` file.
 
-If you want to import a component you would do this over the `exports` array of the angular module like we separated in modules before. No changes to the behavior of Angular modules only because we introduced a lib! You import the angular module from the lib in the angular module of your app and can consume everything which gets exported by the module.
+If you want to import a component you would do this over the `exports` array of the Angular module like we separated in modules before. No changes to the behavior of Angular modules only because we introduced a lib! You import the Angular module from the lib in the Angular module of your app and can consume everything which gets exported by the module.
 
 For example you want to use a component called `MyComponent` which is placed in the `profile/ui` lib in the `profile/profile-feature` lib:
 
@@ -452,7 +452,7 @@ Now we can ensure that the `profile-profile-feature` lib only depends on the `pr
 
 Of course this is an example and should be used like you have it in your architecture.
 
-You can start this lintin process with the command provided in your `package.json`
+You can start this linting process with the command provided in your `package.json`
 
 ```
 "lint": "nx workspace-lint && ng lint",
@@ -460,7 +460,7 @@ You can start this lintin process with the command provided in your `package.jso
 
 ## Further steps
 
-Of course this is only a brief overview of nx can do for you.
+Of course this is only a brief overview of nx can do for you. Nx also holds a dependency graph for your current architecture where you can visually see which app/lib relies on which lib and find mistakes, it has the affected commands, the built in latest tools the latest checks which protect you and your team from common mistakes. A linter and code formatter is included as well to give you everything on the hand to start your Angular application.
 
 I once again refer to the book [Enterprise Monorepo Angular Patterns, by Nitin Vericherla & Victor Savkin.](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book) and really recommend this to read.
 
