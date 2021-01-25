@@ -1,6 +1,6 @@
 ---
 title: Architecting Angular Projects with Nx
-date: 2021-01-25
+date: 2021-01-26
 tags: ['nx', 'angular']
 draft: false
 category: blog
