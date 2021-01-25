@@ -11,12 +11,13 @@ In this blog post I want to write down one possible way to start and architectur
 
 ## Who is this article for?
 
-This article is for developers and architects who want to build a bigger Angular application and have a state of the art architecture with an nx monorepo. If you are reaching out to learn what libraries are and how they are used in your Angular project to build your architecture, if you want to avoid the common mistakes, if you want to learn the separation of the parts an Angular monorepo consists of and how nx can help you with that, this article is for you. You and your team will be able to start an Angular architecture after this article and know how to walk the first steps of nx.
+This article is for developers and architects who want to build a bigger Angular application and aim for a state of the art architecture with an nx monorepo. If you are reaching out to learn what libraries are and how they are used in your Angular nx workspace to build your architecture, if you want to avoid the common mistakes, if you want to learn the separation of the parts an Angular monorepo consists of and how nx can help you with that, this article is for you. You and your team will be able to start an Angular architecture after this article and know how to walk the first steps of nx.
 
 What we are going to look at is
 
 - How to start a project
 - How to separate your application
+- How build and use libraries
 - What the commands for the separation are
 
 And during this read we are going to learn how nx is helping us getting a nice and readable structure into our project which is extendable and easy to follow along with.
