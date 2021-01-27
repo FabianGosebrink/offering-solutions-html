@@ -1,5 +1,5 @@
 ---
-title: Architecting Angular Projects with Nx
+title: Starting Angular Projects with Nx
 date: 2021-01-27
 tags: ['nx', 'angular']
 draft: false
