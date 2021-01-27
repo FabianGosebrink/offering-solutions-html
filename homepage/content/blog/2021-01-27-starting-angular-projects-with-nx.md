@@ -22,7 +22,7 @@ What we are going to look at is
 
 And during this read we are going to learn how nx is helping us getting a nice and readable structure into our project which is extendable and straightforward.
 
-Before we start you can find parts of those information on [nx.dev](https://nx.dev/) and - although it is a little older - in this book here [Enterprise Monorepo Angular Patterns, by Nitin Vericherla & Victor Savkin.](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book). I really recommend to read the book and take the knowledge before reading this article here. Much of the content in the article is based on what is written in the book. Trust me, it is incredibly good and redefines how Angular applications are being made. Read it now. Thank me later.
+Before we start you can find parts of those information on [nx.dev](https://nx.dev/) and - although it is a little older - in this book here [Enterprise Monorepo Angular Patterns, by Nitin Vericherla & Victor Savkin](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book). I really recommend to read the book and take the knowledge before reading this article here. Much of the content in the article is based on what is written in the book. Trust me, it is incredibly good and redefines how Angular applications are being made. Read it now. Thank me later.
 
 ## How to start an Angular project with nx
 
