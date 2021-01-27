@@ -7,11 +7,11 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blog post I want to write down one possible way to start and architecture Angular projects using the [nx](https://nx.dev). I know that there are a lot of guides and even books out there but just to have it written down in one place for me with all the current commands I am using building bigger Angular applications I am creating this blog post.
+In this blog post I want to write down one possible way to start and architecture Angular projects using the [nx](https://nx.dev). I know that there are a lot of guides and even books out there but to have it written down in one place for me with all the current commands I am using building larger Angular applications I am creating this blog post.
 
 ## Who is this article for?
 
-This article is for developers and architects who want to build a bigger Angular application and aim for a state of the art architecture with an nx monorepo. If you are reaching out to learn what libraries are and how they are used in your Angular nx workspace to build your architecture, if you want to avoid the common mistakes, if you want to learn the separation of the parts an Angular monorepo consists of and how nx can help you with that, this article is for you. You and your team will be able to start an Angular architecture after this article and know how to walk the first steps of nx.
+This article is for developers and architects who want to build a large Angular application (or multiple ones) in a workspace and aim for a state of the art architecture with an nx monorepo. If you are reaching out to learn what libraries are and how they are used in your Angular nx workspace to build your architecture, if you want to avoid the common mistakes, if you want to learn the separation of the parts an Angular monorepo consists of and how nx can help you with that, this article is for you. You and your team will be able to start an Angular architecture after this article and know how to walk the first steps of nx.
 
 What we are going to look at is
 
@@ -20,7 +20,7 @@ What we are going to look at is
 - How build and use libraries
 - What the commands for the separation are
 
-And during this read we are going to learn how nx is helping us getting a nice and readable structure into our project which is extendable and easy to follow along with.
+And during this read we are going to learn how nx is helping us getting a nice and readable structure into our project which is extendable and straightforward.
 
 Before we start you can find parts of those information on [nx.dev](https://nx.dev/) and - although it is a little older - in this book here [Enterprise Monorepo Angular Patterns, by Nitin Vericherla & Victor Savkin.](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book). I really recommend to read the book and take the knowledge before reading this article here. Much of the content in the article is based on what is written in the book. Trust me, it is incredibly good and redefines how Angular applications are being made. Read it now. Thank me later.
 
@@ -451,7 +451,7 @@ Now we can ensure that the `profile-profile-feature` lib only depends on the `pr
 
 ```
 
-Of course this is an example and should be used like you have it in your architecture.
+This is only an example and should be used like you have it in your architecture.
 
 You can start this linting process with the command provided in your `package.json`
 
@@ -461,7 +461,7 @@ You can start this linting process with the command provided in your `package.js
 
 ## Further steps
 
-Of course this is only a brief overview of nx can do for you. Nx also holds a dependency graph for your current architecture where you can visually see which app/lib relies on which lib and find mistakes, it has the affected commands, the built in latest tools the latest checks which protect you and your team from common mistakes. A linter and code formatter is included as well to give you everything on the hand to start your Angular application.
+This is only a brief overview of nx can do for you. Nx also holds a dependency graph for your current architecture where you can visually see which app/lib relies on which lib and find mistakes, it has the affected commands, the built in latest tools the latest checks which protect you and your team from common mistakes. A linter and code formatter is included as well to give you everything on the hand to start your Angular application.
 
 I once again refer to the book [Enterprise Monorepo Angular Patterns, by Nitin Vericherla & Victor Savkin.](https://go.nrwl.io/angular-enterprise-monorepo-patterns-new-book) and really recommend this to read.
 

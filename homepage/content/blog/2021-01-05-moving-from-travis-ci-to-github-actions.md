@@ -29,7 +29,7 @@ Find the moving-to-github-actions-commit here [Moving to GitHub actions](https:/
 
 ## Why moving?
 
-In the beginning of November 2020 TravisCI announced that they will change their pricing plan which made me read their new announcement. I found out that TravisCI is providing a free amount of minutes to spend on open source projects because TravisCI found out their systems suffer from abuse.
+In the beginning of November 2020 TravisCI announced that they will change their pricing plan which made me read their new announcement. I found out that TravisCI is providing a free amount of minutes to spend on open source projects because TravisCI found out their systems suffer from misusage.
 
 ```
 When your credit allotment runs out - we’d love for you to consider which of our plans will meet your needs.
@@ -171,11 +171,9 @@ Next, let us install the dependencies with `npm install`, lint the frontend with
 
 For the testing I had to add a new browser with no sandbox `ChromeHeadlessNoSandbox` to my `karma.conf.js` which is called with the `test-lib-ci` task in the `package.json`
 
-
 ```
 test-lib-ci": "ng test angular-auth-oidc-client --watch=false --browsers=ChromeHeadlessNoSandbox --code-coverage",
 ```
-
 
 ```js
 module.exports = function (config) {
@@ -217,7 +215,6 @@ For this we can pipe all the operations to combine it in a single task:
 ```
 
 If that works, we are very far!
-
 
 ## Adding a task for schematics
 
@@ -267,7 +264,7 @@ module.exports = function (config) {
 };
 ```
 
-With the executed task this file is present as well and with the actions [Coveralls GitHub Action](https://github.com/coverallsapp/github-action) we can use this already created file and publish and view our code coverage.
+With the task this file is present as well and with the actions [Coveralls GitHub Action](https://github.com/coverallsapp/github-action) we can use this already created file and publish and view our code coverage.
 
 I am placing it between the testing and the building of the lib. We are using a variable called `secrets.github_token` which you already have. You do not need to add it to your secrets of this repository. You can use it right away. Be sure to provide the correct path to `path-to-lcov`. In our case, this is `'./coverage/angular-auth-oidc-client/lcov.info'`.
 
@@ -309,4 +306,3 @@ Fabian
 ## Complete Example
 
 See the action on [GitHub](https://github.com/damienbod/angular-auth-oidc-client/blob/main/.github/workflows/build.yml)
-
