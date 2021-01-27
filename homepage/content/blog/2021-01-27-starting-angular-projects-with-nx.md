@@ -11,7 +11,7 @@ In this blog post I want to write down one possible way to start and architectur
 
 ## TOC
 
-- [Who is this article for?](#who-is-this-article-for?)
+- [Who is this article for?](#who-is-this-article-for)
 - [How to start an Angular project with nx](#how-to-start-an-angular-project-with-nx)
 - [Adding Applications](#adding-applications)
 - [Rethinking Libraries](#rethinking-libraries)
