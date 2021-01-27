@@ -9,6 +9,21 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this blog post I want to write down one possible way to start and architecture Angular projects using the [nx](https://nx.dev). I know that there are a lot of guides and even books out there but to have it written down in one place for me with all the current commands I am using building larger Angular applications I am creating this blog post.
 
+## TOC
+
+- [Who is this article for?](#who-is-this-article-for?)
+- [How to start an Angular project with nx](#how-to-start-an-angular-project-with-nx)
+- [Adding Applications](#adding-applications)
+- [Rethinking Libraries](#rethinking-libraries)
+  - [Creating libraries consumed by only one application](#creating-libraries-consumed-by-only-one-application)
+  - [A "Feature" is not _one_ library but multiple ones](#a-"feature"-is-not-one-library-but-multiple-ones)
+- [The power of the 'affected' commands](#the-power-of-the-'affected'-commands)
+- [Creating libraries](#creating-libraries)
+- [Consuming libraries](#consuming-libraries)
+- [Shared functionality](#shared-functionality)
+- [Using linter to check your architecture](#using-linter-to-check-your-architecture)
+- [Further steps](#further-steps)
+
 ## Who is this article for?
 
 This article is for developers and architects who want to build a large Angular application (or multiple ones) in a workspace and aim for a state of the art architecture with an nx monorepo. If you are reaching out to learn what libraries are and how they are used in your Angular nx workspace to build your architecture, if you want to avoid the common mistakes, if you want to learn the separation of the parts an Angular monorepo consists of and how nx can help you with that, this article is for you. You and your team will be able to start an Angular architecture after this article and know how to walk the first steps of nx.
