@@ -184,7 +184,7 @@ const urlHandler = (authUrl) => {
 
 is opening a modal window to the configured STS url if it gets called inside the library with `return of(this.oidcSecurityService.authorize({ urlHandler }));`
 
-The request will be made with the library and a modal pops up to login accordingly. That is the easy part. Now we are getting redirected back into the main process of our running electron application.
+The request will be made with the library and a modal pops up to login accordingly. That is the first part. Now we are getting redirected back into the main process of our running electron application.
 
 ## Catching the redirect in the electron main process
 

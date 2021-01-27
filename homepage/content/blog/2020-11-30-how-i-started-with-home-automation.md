@@ -9,13 +9,13 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this blog post I want to write about how I started with home automation. Really starting from zero as I had no clue from home automation and only heard about it from colleagues and friends. The only thing I knew already was a Raspberry Pi because I was using it already as a [Pi-Hole](https://pi-hole.net/) in my home. Other than that I had no clue about home automation. In the end I am sure that there is loads more to do and a lot of things to improve but lets go with my journey to it, what I have built up so far and how I got there.
 
-You will have some good laughs because of my stupidity and lack of experience. But this was literally my story on how I got into this...with a lot of failures and lessons learned. They are all in here.
+You will have some good laughs because of my stupidity and lack of experience. But this was literally my story on how I got into this...with a lot of mistakes and lessons learned. They are all in here.
 
 > You will see a lot of links to devices and hardware I bought. I do NOT get any money if you click on this. So this is not an promotional event.
 
 ## The start
 
-I live in a flat where I have a bathroom which has no window itself and a vent fan installed which sucks moist air out of the room during and after a shower before it causes damage or mold. The ventilator is combined with the light switch in the bathroom. So when the light is on a few seconds later the ventilator starts and when I turn the light off the ventilator runs for a bit and turns off then as well.
+I live in a flat where I have a bathroom which has no window itself and a vent fan installed which gets the moist air out of the room during and after a shower before it causes damage or mold. The ventilator is combined with the light switch in the bathroom. So when the light is on a few seconds later the ventilator starts and when I turn the light off the ventilator runs for a bit and turns off then as well.
 
 However, we have to leave the ventilator/light on until the air is as dry as we want it to (guessing the humidity) and then turn it off manually. Which was not a situation for because I had no measurement how much humidity and temperature we have in the bathroom. Switching the light off would cause the ventilator to run a bit, but that was not enough for me. So this was the starting point. I wanted to measure the temperature and humidity to see when to switch off the light/ventilator.
 
@@ -23,13 +23,13 @@ I went with something like this in the first place
 
 [Hygrometer on Amazon](https://www.amazon.com/ORIA-Humidity-Thermometer-Temperature-Hygrometer/dp/B07KSTN3PF/ref=sr_1_21)
 
-but yet I had to turn off the ventilator/light manually. The first idea - and so the entrance to the iot rabbit hole - was this: Controlling the light automatically when temperature and humidity changes.
+but yet I had to turn off the ventilator/light manually. The first idea - and so the entrance to iot - was this: Controlling the light automatically when temperature and humidity changes.
 
-I read a lot about [Home Assistant](https://www.home-assistant.io/) but had absolutely no clue how to use it and what to do with it, how to connect the things I did not yet have and how all that stuff worked. I thought it was an operating system like thing to flash on a card with a UI and I could basically use it to automatic the things in my home. I was half-wrong but we will clarify this later on. How would things communicate with each other? And how could I tell what system that when x happens I want y to happen? No idea. I started. But the goal was to turn off the light and the ventilator automatically when the humidity in the rooms was decreasing to a certain level.
+I read a lot about [Home Assistant](https://www.home-assistant.io/) but had absolutely no clue how to use it and what to do with it, how to connect the things I did not yet have and how all that stuff worked. I thought it was an operating system like thing to flash on a card with a UI and I could use it to automatic the things in my home. I was half-wrong but we will clarify this later on. How would things communicate with each other? And how could I tell what system that when x happens I want y to happen? No idea. I started. But the goal was to turn off the light and the ventilator automatically when the humidity in the rooms was decreasing to a certain level.
 
 ## What I already had
 
-I already had a robot vacuum cleaner which is cleaning my flat not regularly with a schedule but when I leave the house I can tell him over an app that I want him to run through the flat and clean it. So that was nice. [Roborock S6](https://www.digitec.ch/de/s1/product/roborock-s6-roboterstaubsauger-10731138) was controller over the [Mi Home App](https://play.google.com/store/apps/details?id=com.xiaomi.smarthome&hl=en&gl=US) I had already installed. The robot does not directly has something to do with the home automation, however it is part of it.
+I already had a robot vacuum cleaner which is cleaning my flat not regularly with a schedule but when I leave the house I can tell it over an app that I want it to run through the flat and clean it. So that was nice. [Roborock S6](https://www.digitec.ch/de/s1/product/roborock-s6-roboterstaubsauger-10731138) was controller over the [Mi Home App](https://play.google.com/store/apps/details?id=com.xiaomi.smarthome&hl=en&gl=US) I had already installed. The robot does not directly has something to do with the home automation, however it is part of it.
 
 I also had an existing Raspberry Pi with a touch screen running for my Pi-Hole but I bought a new one for the home automation. We will cover this in the next section.
 
@@ -62,7 +62,7 @@ So I started with downloading the [Home Assistant](https://www.home-assistant.io
 
 [https://twitter.com/FabianGosebrink/status/1288848695925055488](https://twitter.com/FabianGosebrink/status/1288848695925055488)
 
-Then I flashed the Home Assistant on the SD Card and saw...nothing. No Ui. A console which was periodically printing out values. I said I was "half-wrong" and here is why: I could flash the Home Assistant and install it on the new Raspberry Pi. What I did NOT know until now was that the Home Assistant is firing up a web server which you can access then via browser! I did not know that before! (And yes if you read the instructions on the homepage of Home Assistant carefully there is `On another computer, navigate to http://homeassistant.local:8123 to access Home Assistant.`. ON ANOTHER COMPUTER!!!! I did not read. My bad.) So I did not need the touchscreen for the home assistant on this Raspberry Pi. I could access it from the first Raspberry with the Pi-Hole on it which already had a touchscreen installed, because I had to open a second browser tab to access the webserver running on the new bought new flashed Raspberry on `http://homeassistant.local:8123`. So I let go off the Touchscreen and the case behind the touchscreen and put the new Raspberry in a case (which I had as leftover from other projects) and now the Raspberry _without_ any screen in my shelve.
+Then I flashed the Home Assistant on the SD Card and saw...nothing. No Ui. A console which was periodically printing out values. I said I was "half-wrong" and here is why: I could flash the Home Assistant and install it on the new Raspberry Pi. What I did NOT know until now was that the Home Assistant is starting up a web server which you can access then via browser! I did not know that before! (And yes if you read the instructions on the homepage of Home Assistant carefully there is `On another computer, navigate to http://homeassistant.local:8123 to access Home Assistant.`. ON ANOTHER COMPUTER!!!! I did not read. My bad.) So I did not need the touchscreen for the home assistant on this Raspberry Pi. I could access it from the first Raspberry with the Pi-Hole on it which already had a touchscreen installed, because I had to open a second browser tab to access the webserver running on the new bought new flashed Raspberry on `http://homeassistant.local:8123`. So I let go off the Touchscreen and the case behind the touchscreen and put the new Raspberry in a case (which I had as leftover from other projects) and now the Raspberry _without_ any screen in my shelve.
 
 What I could have done is running the Home Assistant on my first Raspberry (with the Pi-Hole in parallel) in a docker container. Then I would not have needed any of the new Raspberry OR the touchscreen. However, I have it running on two separate Raspberries now. My bad.
 
@@ -104,7 +104,7 @@ Takeaways:
 
 ### ...Shelly
 
-The [Shelly](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) is basically "only" a relay which can be controlled wireless, has an own web server, a rest endpoint and runs in your WiFi. So it is like a device in your WiFi with an IP, a UI, you can configure it and control it over the [Shelly App](https://play.google.com/store/apps/details?id=allterco.bg.shelly).
+The [Shelly](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) is a relay which can be controlled wireless, has an own web server, a rest endpoint and runs in your WiFi. So it is like a device in your WiFi with an IP, a UI, you can configure it and control it over the [Shelly App](https://play.google.com/store/apps/details?id=allterco.bg.shelly).
 
 Alright then, sounds nice. So I was installing it in my socket, wiring it up and installed the [Shelly App](https://play.google.com/store/apps/details?id=allterco.bg.shelly&hl=en&gl=US) on my phone. And there it really was! The app found the Shelly.
 
@@ -143,7 +143,7 @@ In the `automation` part in the Home Assistant you can now use those devices/ent
 
 I reached my goal!...For now...
 
-> If you have added for example the printer and if provides the entity of a color being empty you can like flash a light when xyz is empty, it ran out of paper etc. With the Home Assistant you can connect everything with everything. But there has to be an [integration](https://www.home-assistant.io/integrations/).
+> If you have added for example the printer and if provides the entity of a cartridge being empty you can like flash a light when xyz is empty, it ran out of paper etc. With the Home Assistant you can connect everything with everything. But there has to be an [integration](https://www.home-assistant.io/integrations/).
 
 Takeaways:
 
@@ -157,7 +157,7 @@ Takeaways:
 
 As good as this sounds: It leads to problems. So my light was turning on and off now when the humidity changed, all good.
 
-One day I was in the bathroom, stepping out of the shower and after some time the light turned off. Which was completely okay because the humidity level was decreasing because the ventilator was running and told my Shelly over theHome Assistant system to switch off the light. But it was not okay because I was standing in the dark naked!!!
+One day I was in the bathroom, stepping out of the shower and after some time the light turned off. Which was completely okay because the humidity level was decreasing because the ventilator was running and told my Shelly over theHome Assistant system to switch off the light. But it was not okay because I was standing in the dark!
 
 I had to extend the rule:
 
@@ -181,13 +181,13 @@ Some of my actions currently are:
 
 - My lights turn on when I get home or am home and the sun is set
 - My lights turn on in the morning when I get up and the sun is still down
-  - but only the small one in the hallway, the big one makes you blind
+  - but only the small one in the hallway, the big one are too bright
 - The fan in the hallway gets on and off based on the humidity completely self controlled
-- Me and my wife get notifications when one of us gets home
+- Me and my significant other get notifications when one of us gets home
 - I can control all lights with my app
 - When I open the window in the morning in my bedroom I get a notification if the temperature drops under 15 degrees Celsius as a reminder to close it
 - When I say "Alexa, clean the flat" my robot starts cleaning
-- My lights turn on when I want to go to toilet at night
+- My lights turn on when I want to go to the bathroom at night
 - All lights turned on automatically also turn off when no motion is detected
 - So much more
 
@@ -215,7 +215,7 @@ Here we are controlling the light with Home Assistant App which uses the Shelly 
 
 ## Amazon Alexa
 
-Of course I have an Amazon Alexa as well. I have three to be precise, but only one of them is really used. To clarify how that fits in: Amazon Alexa acts basically like a Home Assistant from a technical perspective: It has integrations by itself over the Amazon Alexa app and then can control things like Hue or even Shellies and much more of course.
+I have an Amazon Alexa as well. I have three to be precise, but only one of them is really used. To clarify how that fits in: Amazon Alexa acts like a Home Assistant from a technical perspective: It has integrations by itself over the Amazon Alexa app and then can control things like Hue or even Shellies and much more.
 
 So you can integrate the Shellies into Alexa, all Hue lights and I think a lot of other things. You can also do "if this than that" things. Alexa can be controlled by voice. The Home Assistant possibly can also have an integration of voice anyhow I am sure, but I am running all voice controlled commands over my Amazon Alexa for now.
 
@@ -227,7 +227,7 @@ I started with absolutely no clue how those things can work together. That made 
 
 But this is a rabbit hole: You have to stop yourself 😊 It is so much fun that you want to combine all the things together. I have so much ideas doing this and that if that and this happens. Once you got the system set up it is really nice to work with. I love it and will definitely add more and more things over the time.
 
-The main thing you should consider when adding so much stuff to your WiFi network is: Name your devices properly. Give them names. Otherwise you are lost. You will drown and the rabbit hole will suck you in.
+The main thing you should consider when adding so much stuff to your WiFi network is: Name your devices properly. Give them names. Otherwise you are lost. You will drown and the iot thing will get you and never let you go 😊.
 
 Alexa - Call it a day!
 
