@@ -1,16 +1,16 @@
 {{ "<!-- Header -->" | safeHTML }}
-    <section id="one" class="tiles">
-        {{ range .Site.Params.Tiles.showcase }}
-        <article>
-            {{ if .image }}
-            <span class="image">
-                <img src="{{ .Site.Params.cdnbaseurl }}img/{{ .image }}" alt="tileImage" />
-            </span>
-            {{ end }}
-            <header class="major">
-                <h3><a href="{{ .url | absURL }}" class="link" aria-label="{{ .title }}">{{ .title }}</a></h3>
-                <p>{{ .subtitle }}</p>
-            </header>
-        </article>
+<section id="one" class="tiles">
+    {{ range .Site.Params.Tiles.showcase }}
+    <article>
+        {{ if .image }}
+        <span class="image">
+            <img src="{{ $.Site.Params.cdnbaseurl }}img/{{ .image }}" alt="tileImage" />
+        </span>
         {{ end }}
-    </section>
+        <header class="major">
+            <h3><a href="{{ .url | absURL }}" class="link" aria-label="{{ .title }}">{{ .title }}</a></h3>
+            <p>{{ .subtitle }}</p>
+        </header>
+    </article>
+    {{ end }}
+</section>
