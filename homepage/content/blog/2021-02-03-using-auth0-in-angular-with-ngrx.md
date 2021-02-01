@@ -17,6 +17,20 @@ However, let us start.
 
 Code can be found here [https://github.com/FabianGosebrink/auth0-angular-ngrx/](https://github.com/FabianGosebrink/auth0-angular-ngrx/)
 
+## TOC
+
+  - [Adding the App in Auth0](#adding-the-app-in-auth0)
+  - [Creating the Angular app and install the dependencies](#creating-the-angular-app-and-install-the-dependencies)
+  - [Adding the Auth service abstraction](#adding-the-auth-service-abstraction)
+  - [Including AuthModule](#including-auth-module)
+  - [Adding NgRx](#adding-ngrx)
+  - [Adding the Actions](#adding-the-actions)
+  - [Adding the reducer and the state](#adding-the-reducer-and-the-state)
+  - [Adding the effects](#adding-the-effects)
+  - [Providing the state to the module](#providing-the-state-to-the-module)
+  - [Adding the selectors](#adding-the-selectors)
+  - [Building the Component](#building-the-component)
+
 ## Adding the App in Auth0
 
 Before we start we should add our new Angular app in the portal of [Auth0](https://auth0.com/).
@@ -98,7 +112,7 @@ export class AuthenticationService {
 
 Inside of our app (in the effects later) we will use the `AuthenticationService` to communicate with Auth0.
 
-## Including AuthModule with the information
+## Including AuthModule
 
 We have to include the `AuthModule` from `@auth0/auth0-angular` and pass in the information we have like our `clientId` and our `domain`. You can find both of it in your dashboard on Auth0 in the `Basic Information` area right on top of the app-
 
