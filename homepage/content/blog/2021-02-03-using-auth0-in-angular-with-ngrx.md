@@ -21,19 +21,19 @@ Code can be found here [https://github.com/FabianGosebrink/auth0-angular-ngrx/](
 
 Before we start we should add our new Angular app in the portal of [Auth0](https://auth0.com/).
 
-There fore create an account and add your application in the dashboard of Auth0. Be sure to select `Single page WebApplication` as we are doing an Angular app next.
+First create an account and add your application in the dashboard of Auth0. Be sure to select `Single page WebApplication` as we are doing an Angular app next.
 
 ![Auth0 creating a single page app](https://cdn.offering.solutions/img/articles/2021-02-03/auth0-app.jpg)
 
-Once this is created and we know that our Angular app will run on the domain `http(s)://localhost:4200` be sure to add these urls into the correct fields of Auth0. I am adding both, http and https, here. Just that when I switch to https I do not have to get that entries changed again.
+Once this is created and we know that our Angular app will run on the domain `http(s)://localhost:4200` locally be sure to add these urls into the correct fields of Auth0. I am adding both, http and https, here. in case that that I switch to https I do not have to get that entries changed again.
 
 ![Auth0 adding all domains](https://cdn.offering.solutions/img/articles/2021-02-03/allowed-urls.jpg)
 
-That was it for the Auth0 configuration. On the same page where we add the allowed urls on top there is a chapter for the `Basic Information`. We need the values `ClientId` and `domain` values from there to use it in our Angular application next. 
+On the same page where we add the allowed urls on top there is a chapter for the `Basic Information`. We need the values `ClientId` and `Domain` from there and place it in our Angular application next. 
 
 ## Creating the Angular app and install the dependencies
 
-We can create the Angular app like normal with
+We can create the Angular app with
 
 ```
 ng new auth0-angular-ngrx
@@ -49,7 +49,7 @@ npm install @auth0/auth0-angular
 
 As Auth0 is a third party lib here I like to create an abstraction for this. Auth0 provides us an incredibly good API where to write a wrapper for is no big effort.
 
-So we can add a file called `auth.service.ts` and place it in root (or where ever you want to, just for the sake of simplicity we get it into root now).
+So we can add a file called `auth.service.ts` and place it in root (or where ever you want to, for the sake of simplicity we get it into root now).
 
 ```
 .
@@ -387,7 +387,7 @@ In addition to that we wire up the effects by passing them into the `forRoot()` 
 
 ## Adding the selectors
 
-That we can consume all of this in a simple way we can build selectors which give us back what we need when we consume it from our component.
+To make the consumption in the component clear we can build selectors which select exactly what we need from the state and provide it.
 
 ```
 .
@@ -464,7 +464,7 @@ export class AppComponent implements OnInit {
 
 ```
 
-It also provides two methods to `login` and `logout`. As we have done all the work before the component looks very clean and easy to follow.
+It also provides two methods to `login` and `logout`. As we have done all the work before the component looks very clean.
 
 In the template we can now use the information as needed 
 
