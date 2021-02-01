@@ -1,6 +1,6 @@
 ---
 title: Using Auth0 in Angular with NgRx
-date: 2021-02-03
+date: 2021-02-01
 tags: ['auth', 'angular', 'ngrx']
 draft: false
 category: blog
