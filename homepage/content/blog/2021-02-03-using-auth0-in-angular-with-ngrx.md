@@ -13,6 +13,8 @@ We are going to look how you can place authentication with Auth0 in an Angular a
 
 However, let us start.
 
+![Login Logout in the sample app](https://cdn.offering.solutions/img/articles/2021-02-03/login-logout.gif)
+
 Code can be found here [https://github.com/FabianGosebrink/auth0-angular-ngrx/](https://github.com/FabianGosebrink/auth0-angular-ngrx/)
 
 ## Adding the App in Auth0
@@ -21,7 +23,7 @@ Before we start we should add our new Angular app in the portal of [Auth0](https
 
 There fore create an account and add your application in the dashboard of Auth0. Be sure to select `Single page WebApplication` as we are doing an Angular app next.
 
-![Auth0 creating a singla epage app](https://cdn.offering.solutions/img/articles/2021-02-03/auth0-app.jpg)
+![Auth0 creating a single page app](https://cdn.offering.solutions/img/articles/2021-02-03/auth0-app.jpg)
 
 Once this is created and we know that our Angular app will run on the domain `http(s)://localhost:4200` be sure to add these urls into the correct fields of Auth0. I am adding both, http and https, here. Just that when I switch to https I do not have to get that entries changed again.
 
