@@ -96,6 +96,30 @@ export class AuthenticationService {
 
 Inside of our app (in the effects later) we will use the `AuthenticationService` to communicate with Auth0.
 
+## Including AuthModule with the information
+
+We have to include the `AuthModule` from `@auth0/auth0-angular` and pass in the information we have like our `clientId` and our `domain`. You can find both of it in your dashboard on Auth0 in the `Basic Information` area right on top of the app-
+
+```
+import { NgModule } from '@angular/core';
+import { AuthModule } from '@auth0/auth0-angular';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    AuthModule.forRoot({
+      domain: '<your domain>',
+      clientId: '<your client id>',
+      redirectUri: window.location.origin,
+    }),
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+
+```
+
 ## Adding NgRx
 
 Let us add the NgRx dependencies `@ngrx/store` and `@ngrx/effects` first.
@@ -167,10 +191,19 @@ The state of our application will be an object with a property called `auth` and
 
 To build that into code we can define an interface in the reducer file we have to create `auth.reducer.ts` in the `store` folder.
 
+```
+.
+├── src
+│   ├── app
+│   │   ├── store
+│   │   │   ├── auth.actions.ts
+│   │   │   ├── auth.reducer.ts
+│   └── ...
+├── ...
+```
+
 ```ts
 import { Action, createReducer, on } from '@ngrx/store';
-
-export const featureName = 'auth';
 
 export interface AuthState {
   userProfile: any;
@@ -232,3 +265,164 @@ const authReducerInternal = createReducer(
 
 ```
 
+## Adding the effects
+
+We are using effects for the asynchronous work to do when we are trying to manipulate the state after async actions like an http request have finished.
+
+We have three actions to listen to: the `login`, the `logout` and the `checkAuth` action which updates the state after redirecting.
+
+```
+.
+├── src
+│   ├── app
+│   │   ├── store
+│   │   │   ├── auth.actions.ts
+│   │   │   ├── auth.effects.ts
+│   │   │   ├── auth.reducer.ts
+│   └── ...
+├── ...
+```
+
+```ts
+@Injectable()
+export class AuthEffects {
+  constructor(
+    private actions$: Actions,
+    private authService: AuthenticationService
+  ) {}
+
+    // effects go here
+}
+
+```
+
+The `login` effect will only call the `authService.login()` action and won't dispatch any other action then.
+
+```ts
+  login$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(fromAuthActions.login),
+        tap(() => this.authService.login())
+      ),
+    { dispatch: false }
+  );
+```
+
+We will throw the `checkAuth` action when we are getting redirected from Auth0 to our app again. The service from Auth0 got updated then with the latest information which we have to collect and ad to our state: `isLoggedIn$` and `user$` are the properties we want to collect and update the state with.
+If `isLoggedIn` resolves to `true` - which should be the case after the redirect - we can return a `loginComplete` action. Otherwise we reset the state with a `logoutComplete` action.
+
+```ts
+  login$ = createEffect(/* ... */);
+
+  checkAuth$ = createEffect(() =>
+    this.actions$.pipe(
+      // If an action with the type 'checkAuth' occurs in the actions$ stream...
+      ofType(fromAuthActions.checkAuth),
+      // return an observable including the latest info from 'isLoggedIn' and 'userProfile'
+      switchMap(() =>
+        combineLatest([this.authService.isLoggedIn$, this.authService.user$])
+      ),
+      // Take it out and return the appropriate action based on if logged in or not
+      switchMap(([isLoggedIn, profile]) => {
+        if (isLoggedIn) {
+          return of(fromAuthActions.loginComplete({ profile, isLoggedIn }));
+        }
+
+        return of(fromAuthActions.logoutComplete());
+      })
+    )
+  );
+```
+
+The `logout` action calls the `authService.logout()` method and returns the `logoutComplete` again.
+
+```ts
+ logout$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromAuthActions.logout),
+      tap(() => this.authService.logout()),
+      switchMap(() => of(fromAuthActions.logoutComplete()))
+    )
+  );
+```
+
+## Providing the state to the module
+
+Until here we haven't told our application module about our state yet. Like said already, we want our state to be
+
+```
+{
+    auth: {
+        isLoggedIn,
+        userProfile
+    }
+}
+```
+
+Which is exactly what we provide our `StoreModule.forRoot()` in the `forRoot()` method:
+
+```ts
+import { NgModule } from '@angular/core';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { AuthEffects } from './store/auth.effects';
+import { authReducer } from './store/auth.reducer';
+
+@NgModule({
+  imports: [
+    StoreModule.forRoot({ auth: authReducer }), // State object here like described
+    EffectsModule.forRoot([AuthEffects]),
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+
+```
+
+In addition to that we wire up the effects by passing them into the `forRoot()` method of the `EffectsModule` from `@ngrx/effects`.
+
+
+## Adding the selectors
+
+That we can consume all of this in a simple way we can build selectors which give us back what we need when we consume it from our component.
+
+```
+.
+├── src
+│   ├── app
+│   │   ├── store
+│   │   │   ├── auth.actions.ts
+│   │   │   ├── auth.effects.ts
+│   │   │   ├── auth.reducer.ts
+│   │   │   └── auth.selectors.ts
+│   └── ...
+├── ...
+```
+
+We need to create a selector for the `isloggedIn` and for the `userProfile` property as well as getting the first step: the `auth` property from the state object we described.
+
+```ts
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { AuthState } from './auth.reducer';
+
+// get the `auth` property from the state object
+export const getAuthFeatureState = createFeatureSelector<AuthState>('auth');
+
+// get the userProfile from the auth state
+export const selectCurrentUserProfile = createSelector(
+  getAuthFeatureState,
+  (state: AuthState) => state.userProfile
+);
+
+// get the isLoggedIn from the auth state
+export const selectIsLoggedIn = createSelector(
+  getAuthFeatureState,
+  (state: AuthState) => state.isLoggedIn
+);
+
+```
+
+## Building the Component
+
+The component consumes the selectr
