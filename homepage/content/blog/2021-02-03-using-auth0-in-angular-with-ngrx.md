@@ -425,4 +425,66 @@ export const selectIsLoggedIn = createSelector(
 
 ## Building the Component
 
-The component consumes the selectr
+The component consumes the selectors to consume the values in the state and dispatches the action `checkAuth()` when it is loaded to update the information in the state
+
+```ts
+import { select, Store } from '@ngrx/store';
+import { checkAuth, login, logout } from './store/auth.actions';
+import {
+  selectCurrentUserProfile,
+  selectIsLoggedIn
+} from './store/auth.selectors';
+
+@Component({ /* */ })
+export class AppComponent implements OnInit {
+  title = 'auth0-angular-ngrx';
+
+  loggedIn$: Observable<boolean>;
+  profile$: Observable<any>;
+
+  constructor(private store: Store<any>) {}
+
+  ngOnInit() {
+    this.loggedIn$ = this.store.pipe(select(selectIsLoggedIn));
+    this.profile$ = this.store.pipe(select(selectCurrentUserProfile));
+
+    this.store.dispatch(checkAuth());
+  }
+
+  logout() {
+    this.store.dispatch(logout());
+  }
+
+  login() {
+    this.store.dispatch(login());
+  }
+}
+
+```
+
+It also provides two methods to `login` and `logout`. As we have done all the work before the component looks very clean and easy to follow.
+
+In the template we can now use the information as needed 
+
+```html
+<div>
+  <div *ngIf="loggedIn$ | async as loggedIn; else loginContent">
+    <p>
+      <button (click)="logout()">Logout</button>
+      is logged in {{ loggedIn }}
+    </p>
+    <div *ngIf="profile$ | async as profile">
+      <img [src]="profile.picture" />
+      <pre>{{ profile | json }}</pre>
+    </div>
+  </div>
+
+  <ng-template #loginContent
+    ><button (click)="login()">Login</button></ng-template
+  >
+</div>
+```
+
+And that is it.
+
+The result can be seen on GitHub [https://github.com/FabianGosebrink/auth0-angular-ngrx/](https://github.com/FabianGosebrink/auth0-angular-ngrx/)
