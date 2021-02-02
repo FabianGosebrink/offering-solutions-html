@@ -91,7 +91,7 @@ export class AuthenticationService {
     return this.authService.isAuthenticated$;
   }
 
-  get token$(): Observable<string> {
+  getToken$(): Observable<string> {
     return this.authService.getAccessTokenSilently();
   }
 
