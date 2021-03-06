@@ -122,6 +122,8 @@ The `switchMap` operator takes the first value in the stream `first` and calls t
 
 ![SwitchMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/switchmap.gif)
 
+In the animation you can see that only the value `second` is printed. This is the last one which got fired. The first response is not proceeded by the `switchMap` operator when a second one comes in and the first one is not finished yet.
+
 ## ConcatMap
 
 Next one in the list is the `concatMap` operator. Let us assume the same method again:
