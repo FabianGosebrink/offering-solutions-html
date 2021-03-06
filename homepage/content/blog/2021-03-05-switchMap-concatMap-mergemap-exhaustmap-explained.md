@@ -19,6 +19,10 @@ The operators differ in how they treat values inside on observable when multiple
 
 I want to describe the behavior next.
 
+## Stackblitz
+
+https://stackblitz.com/edit/angular-ivy-rfr8ru
+
 ## The situation
 
 First let us imagine we have a long running operation like an HTTP call and after an amount f this the result comes back. We can create a method which creates an observable and after two seconds it returns the value we pass in the function.
@@ -95,7 +99,7 @@ All of those operators can be piped to an observable and return a new observable
 Let us take the `switchMap` operator first. I explained it already in the previous post but let us take it as the first one and look how he behaves when multiple values come in.
 
 ```ts
-fireEvent() {
+fireEvents() {
 
   // Here we react ot everything which is fired in the subject
   this.sub
@@ -120,12 +124,38 @@ The `switchMap` operator takes the first value in the stream `first` and calls t
 
 ## ConcatMap
 
+Next one in the list is the `concatMap` operator. Let us assume the same method again:
+
+```ts
+fireEvents() {
+
+  // Here we react ot everything which is fired in the subject
+  this.sub
+    // Here we can take the operator we want to take a look at which returns the
+    // result from the anyLongRunningOp method which is the value itself
+    // (for the sake of simplicity)
+    .pipe(concatMap((value) => this.anyLongRunningOp(value)))
+    // We just console.log the output, which is 'first' or 'second' or
+    .subscribe(console.log);
+
+  // After subscribing we fire the two value in the observable, could also be more than that
+  this.sub.next('first');
+  this.sub.next('second');
+
+  console.log(`fired events 'first' and 'second'`);
+}
+```
+
+We know that the `switchMap` operator is only interested in the most recent value which came in. It does not build a relation between everything which comes in and puts them in a queue. This is what the `concatMap` operator is for. He behaves like he has a queue and stores the incoming calls and fires the next one when the previous one came back! So when he receives the value with `first` he calls `anyLongRunningOp` with `first`, then the `second` value comes in. The `concatMap` operator now holds this call back until the `anyLongRunningOp` method comes back with the result of the call with `first` and _then_ the next call with `second` as parameter is being fired. He concatenates the calls and fires them one after another. As a side effect he builds a relation between the calls, because he has to look wether the first one came back before he can fire the next one.
+
+![ConcatMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/concatmap.gif)
+
 ## MergeMap
 
 Let us take the `mergeMap` operator next. Again we are trying to see how he behaves if multiple values come in when the previous one does not have come back yet.
 
 ```ts
-fireEvent() {
+fireEvents() {
 
   // Here we react ot everything which is fired in the subject
   this.sub
@@ -144,6 +174,51 @@ fireEvent() {
 }
 ```
 
-The `mergeMap` operator does _not_ swallow the previous ones but fires both calls _as they come in_. So if we fire `first` the operator calls the `anyLongRunningOp` with `first` and right after that with `second`. But unlike the `switchMap` operator he listens to _both_ answers when they come back. He does not wait until the first one comes back but calls the `anyLongRunningOp` with the params as they come in. When the `anyLongRunningOp` method comes back the first time with `first` we print out that result and right after this with `second` we print out this.
+The `mergeMap` operator does _not_ swallow the previous ones but fires both calls _as they come in_. So if we fire `first` the operator calls the `anyLongRunningOp` with `first` and right after that with `second`. But unlike the `switchMap` operator he listens to _both_ answers when they come back. He does not wait until the first one comes back like the `concatMap` does but calls the `anyLongRunningOp` with the params as they come in. When the `anyLongRunningOp` method comes back the first time with `first` we print out that result and right after this with `second` we print out this.
+
+![mergemap operator](https://cdn.offering.solutions/img/articles/2021-03-07/mergemap.gif)
+
+## ExhaustMap
+
+Then there is the `exhaustMap` operator left.
+
+```ts
+fireEvents() {
+
+  // Here we react ot everything which is fired in the subject
+  this.sub
+    // Here we can take the operator we want to take a look at which returns the
+    // result from the anyLongRunningOp method which is the value itself
+    // (for the sake of simplicity)
+    .pipe(exhaustMap((value) => this.anyLongRunningOp(value)))
+    // We just console.log the output, which is 'first' or 'second' or
+    .subscribe(console.log);
+
+  // After subscribing we fire the two value in the observable, could also be more than that
+  this.sub.next('first');
+  this.sub.next('second');
+
+  console.log(`fired events 'first' and 'second'`);
+}
+```
+
+The `exhaustMap` operator takes care of the first request which comes in and ignores everything which comes in afterwards _until the first once came back_. So it is called with the value `first` and then with the value `second` which is ignored because the first one has not completed yet. So it ignores everything until the first value comes back.
+
+![exhaustmap operator](https://cdn.offering.solutions/img/articles/2021-03-07/exhaustmap.gif)
+
+## Summary
+
+It took me along while to understand those operators and for me it all became clearer when I understood the `switchMap` operator first.
+
+Let us summarize those 4 a bit:
+
+- `switchMap`: emits values and is only interested in the very last one he sent. All the responses of the calls before just get ignored.
+- `concatMap`: behaves like a queue: He stores all calls and sends one after another. If one is completed, the next one comes.
+- `mergeMap`: Also sends all requests, like `concatMap` but does not wait until the response is coming back. He sends them out as they come. But he receives every response and does not ignore something.
+- `exhaustMap`: Fires the first request and ignores all future requests until the first one gets back. THen he is ready for a new one.
+
+I hope this helped!
 
 Thanks.
+
+Fabian
