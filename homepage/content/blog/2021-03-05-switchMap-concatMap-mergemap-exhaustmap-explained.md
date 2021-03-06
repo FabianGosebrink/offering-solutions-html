@@ -116,4 +116,34 @@ fireEvent() {
 
 The `switchMap` operator takes the first value in the stream `first` and calls the `anyLongRunningOp` with it. _Right after_ he did this he receives the second emit with the value `second`. What he does not is that he forgets about the first response. He is not waiting for it. Like the HTTP request which could be done here is out, comes back any when but the `switchMap` operator does not care about the first one. He calls the `anyLongRunningOp` with the `second` parameter and waits for _that one_'s answer. And so with multiple ones, he is only interested in the response of the _last_ one he just fired. Everything before got just swallowed.
 
+![SwitchMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/switchmap.gif)
+
+## ConcatMap
+
+## MergeMap
+
+Let us take the `mergeMap` operator next. Again we are trying to see how he behaves if multiple values come in when the previous one does not have come back yet.
+
+```ts
+fireEvent() {
+
+  // Here we react ot everything which is fired in the subject
+  this.sub
+    // Here we can take the operator we want to take a look at which returns the
+    // result from the anyLongRunningOp method which is the value itself
+    // (for the sake of simplicity)
+    .pipe(mergeMap((value) => this.anyLongRunningOp(value)))
+    // We just console.log the output, which is 'first' or 'second' or
+    .subscribe(console.log);
+
+  // After subscribing we fire the two value in the observable, could also be more than that
+  this.sub.next('first');
+  this.sub.next('second');
+
+  console.log(`fired events 'first' and 'second'`);
+}
+```
+
+The `mergeMap` operator does _not_ swallow the previous ones but fires both calls _as they come in_. So if we fire `first` the operator calls the `anyLongRunningOp` with `first` and right after that with `second`. But unlike the `switchMap` operator he listens to _both_ answers when they come back. He does not wait until the first one comes back but calls the `anyLongRunningOp` with the params as they come in. When the `anyLongRunningOp` method comes back the first time with `first` we print out that result and right after this with `second` we print out this.
+
 Thanks.
