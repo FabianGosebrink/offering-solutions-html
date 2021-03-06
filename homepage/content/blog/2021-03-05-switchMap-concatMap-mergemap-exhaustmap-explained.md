@@ -25,7 +25,7 @@ https://stackblitz.com/edit/angular-ivy-rfr8ru
 
 ## The situation
 
-First let us imagine we have a long running operation like an HTTP call and after an amount f this the result comes back. We can create a method which creates an observable and after two seconds it returns the value we pass in the function.
+First let us imagine we have a long running operation like an HTTP call and after an amount of time the result comes back. We use a method which creates an observable and after two seconds it returns the value we pass in the function just for the sake of simplicity and to simulate a long running task.
 
 ```ts
 import { Observable } from "rxjs";
