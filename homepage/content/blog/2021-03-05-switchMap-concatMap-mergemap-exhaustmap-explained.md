@@ -53,14 +53,14 @@ anyLongRunningOp('value').subscribe((result) => {
 });
 ```
 
-To explain `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` let us _always_ assume that we call the method `anyLongRunningOp` _multiple times without having the first call being completed_! This is important. So we call it and immediately call the method again but the first call has not completed (hence the 2 seconds delay).
+To explain `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` let us _always_ assume that we call the method `anyLongRunningOp` _multiple times_! This is important. So we call it and immediately call the method again but the first call has not completed (hence the 2 seconds delay).
 
 To be able to fire multiple observables we can create a `Subject` where we can write values in and process it with the operator we want to take a look at.
 
 ```ts
 sub = new Subject<string>();
 
-fireEvent() {
+fireEvents() {
 
   // Here we react ot everything which is fired in the subject
   this.sub
