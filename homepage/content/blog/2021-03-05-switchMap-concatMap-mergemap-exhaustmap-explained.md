@@ -118,7 +118,7 @@ fireEvents() {
 }
 ```
 
-The `switchMap` operator takes the first value in the stream `first` and calls the `anyLongRunningOp` with it. _Right after_ he did this he receives the second emit with the value `second`. What he does not is that he forgets about the first response. He is not waiting for it. Like the HTTP request which could be done here is out, comes back any when but the `switchMap` operator does not care about the first one. He calls the `anyLongRunningOp` with the `second` parameter and waits for _that one_'s answer. And so with multiple ones, he is only interested in the response of the _last_ one he just fired. Everything before got just swallowed.
+The `switchMap` operator takes the first value in the stream `first` and calls the `anyLongRunningOp` with it. _Right after_ he did this he receives the second emit with the value `second`. What he does now is that he forgets about the response of the first request. He is not waiting for it. Like the HTTP request which could be done here is out, comes back any when but the `switchMap` operator does not care about the first one. He calls the `anyLongRunningOp` with the `second` parameter and waits for _that one_'s answer. And so with multiple ones, he is only interested in the response of the _last_ one he just fired. Everything before got just swallowed.
 
 ![SwitchMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/switchmap.gif)
 
