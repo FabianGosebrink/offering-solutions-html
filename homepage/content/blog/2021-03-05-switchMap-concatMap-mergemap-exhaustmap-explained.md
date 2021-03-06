@@ -152,6 +152,8 @@ We know that the `switchMap` operator is only interested in the most recent valu
 
 ![ConcatMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/concatmap.gif)
 
+TBD: Describe what happens in the gif
+
 ## MergeMap
 
 Let us take the `mergeMap` operator next. Again we are trying to see how he behaves if multiple values come in when the previous one does not have come back yet.
@@ -180,6 +182,8 @@ The `mergeMap` operator does _not_ swallow the previous ones but fires both call
 
 ![mergemap operator](https://cdn.offering.solutions/img/articles/2021-03-07/mergemap.gif)
 
+TBD: Describe what happens in the gif
+
 ## ExhaustMap
 
 Then there is the `exhaustMap` operator left.
@@ -207,6 +211,8 @@ fireEvents() {
 The `exhaustMap` operator takes care of the first request which comes in and ignores everything which comes in afterwards _until the first once came back_. So it is called with the value `first` and then with the value `second` which is ignored because the first one has not completed yet. So it ignores everything until the first value comes back.
 
 ![exhaustmap operator](https://cdn.offering.solutions/img/articles/2021-03-07/exhaustmap.gif)
+
+TBD: Describe what happens in the gif
 
 ## Summary
 
