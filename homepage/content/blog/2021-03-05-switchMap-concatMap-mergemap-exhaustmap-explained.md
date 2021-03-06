@@ -9,15 +9,15 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 With this article I want to briefly and shortly describe the differences between the rxjs operators `switchMap`, `mergeMap`, `concatMap` and `exhaustMap`.
 
-The last article [tap, map & switchMap explained](https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/) is, depending on the stats, one if my most successful blogs ever. So I thought I could continue writing something about those operators mentioned above.
+The last article [tap, map & switchMap explained](https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/) is, depending on the stats, one if my most successful blogs ever. So I thought I could continue writing something about rxjs and the operators mentioned above.
 
-As mentioned in the [tap, map & switchMap explained](https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/):
+As mentioned in [tap, map & switchMap explained](https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/):
 
 > There are many blog posts out there which cover those topics already but maybe this helps to understand if the other posts did not help until here :)
 
-The operators differ in how they treat values inside on observable when multiple ones get emitted short after another. Maybe this is one of the most important things to understand. Observables give you the possibility to handle "values over time". So when the first one gets emitted, the second one, the third one etc. Depending on _when_ that happens the `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` behave in a different way.
+The operators differ in how they treat values in an observable when multiple values get emitted right after each other. Maybe this is one of the most important things to understand. Observables give you the possibility to handle "values over time". So when the first value gets emitted, the second one, the third one etc. Depending on _when_ that happens the `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` behave differently.
 
-I want to describe the behavior next.
+Let us take a look at the behavior of those operators in specific next.
 
 ## Stackblitz
 
