@@ -88,7 +88,7 @@ anyLongRunningOp(value: string) {
 }
 ```
 
-The `fireEvent()` method fires in the `Subject` `sub` two times. First the value `first` and immediately after the value `second`.
+The `fireEvents()` method fires in the `Subject` `sub` two times one value each. First the value `first` and immediately after the value `second`.
 
 ## Similarities
 
