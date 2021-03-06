@@ -15,7 +15,7 @@ As mentioned in [tap, map & switchMap explained](https://offering.solutions/blog
 
 > There are many blog posts out there which cover those topics already but maybe this helps to understand if the other posts did not help until here :)
 
-The operators differ in how they treat values in an observable when multiple values get emitted right after each other. Maybe this is one of the most important things to understand. Observables give you the possibility to handle "values over time". So when the first value gets emitted, the second one, the third one etc. Depending on _when_ that happens the `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` behave differently.
+The operators differ in how they treat values in an observable when multiple values get emitted right after each other. Maybe this is one of the most important things to understand. Observables give you the possibility to handle "values over time". So when the first value gets emitted, the second one, the third one etc. TBD: Klarer werden!!!! Depending on _when_ that happens the `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` behave differently.
 
 Let us take a look at the behavior of those operators in specific next.
 
