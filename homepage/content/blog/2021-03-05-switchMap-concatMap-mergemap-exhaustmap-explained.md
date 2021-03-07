@@ -57,7 +57,7 @@ anyLongRunningOp('value').subscribe((result) => {
 
 To explain `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` let us _always_ assume that we call the method `anyLongRunningOp` _multiple times_! This is important. So we call it and immediately call the method again but the first call has not completed (hence the 2 seconds delay).
 
-To be able to emit multiple observables we can create a `Subject` where we can write values in and process it with the operator we want to take a look at.
+To be able to emit multiple observables we can create a `Subject` where we can write values in with `next(...)` and process it with the operator we want to take a look at.
 
 ```ts
 sub = new Subject<string>();
@@ -90,7 +90,7 @@ anyLongRunningOp(value: string) {
 }
 ```
 
-The `fireEvents()` method emits in the `Subject` `sub` two times one value each. First the value `first` and immediately after the value `second`.
+The `fireEvents()` method emits in the `Subject` `sub` two times one value each. First the value `first` and immediately after the value `second`. This value then gets processed by the operator we want to look how it behaves when multiple values come in.
 
 ## Similarities
 
@@ -120,11 +120,11 @@ fireEvents() {
 }
 ```
 
-The `switchMap` operator takes the first value in the stream `first` and calls the `anyLongRunningOp` with it. _Right after_ it did this it receives the second emit with the value `second`. What it does now is that it forgets about the response of the first request. It is not waiting for it. Like the HTTP request which could be done here is out, comes back any when but the `switchMap` operator does not care about the first one. It calls the `anyLongRunningOp` with the `second` parameter and waits for _that one_'s answer. And so with multiple ones, it is only interested in the response of the _last_ one it fired. Everything before got swallowed.
+The `switchMap` operator takes the first value in the stream `first` and calls the `anyLongRunningOp` with it. _Right after_ it did this it receives the second emit with the value `second`. Now it forgets about the response of the first request. It is not waiting for it. Like the HTTP request which could be done here is out and comes back any when but the `switchMap` operator does not care about the first one. It calls the `anyLongRunningOp` with the `second` parameter and waits for _that one_'s answer. And so with multiple ones, it is only interested in the response of the _last_ one it fired. Everything before got ignored.
 
 ![SwitchMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/switchmap.gif)
 
-In the animation you can see that only the value `second` is printed. This is the last one which got fired. The first response is not proceeded by the `switchMap` operator when a second one comes in and the first one is not finished yet.
+In the animation you can see that only the value `second` is printed. This is the last one which got fired. The first response is ignored by the `switchMap` operator when a second one comes in and the first one is not finished yet.
 
 ## ConcatMap
 
@@ -150,11 +150,11 @@ fireEvents() {
 }
 ```
 
-We know that the `switchMap` operator is only interested in the most recent value which came in. It does not build a relation between everything which comes in and puts them in a queue. This is what the `concatMap` operator is for. It behaves like it has a queue and stores the incoming calls and emits the next one when the previous one came back! So when it receives the value with `first` it calls `anyLongRunningOp` with `first`, then the `second` value comes in. The `concatMap` operator now holds this call back until the `anyLongRunningOp` method comes back with the result of the call with `first` and _then_ the next call with `second` as parameter is being fired. It concatenates the calls and emits them one after another. As a side effect it builds a relation between the calls, because it has to look wether the first one came back before it can emit the next one.
+We know that the `switchMap` operator is only interested in the most recent value which came in. It does not build a relation between everything which comes in and puts them in a queue. This is what the `concatMap` operator is for. It behaves like it has a queue and stores the incoming calls and emits the next one when the previous one came back! So when it receives the value with `first` it calls `anyLongRunningOp` with `first`, then the `second` value comes in. The `concatMap` operator now holds this call back until the `anyLongRunningOp` method comes back with the result of the call with `first` and _then_ the next call with `second` as parameter is being fired. It concatenates the calls and emits them one after another. As a side effect it builds a relation between the calls because it has to look wether the first one came back before it can emit the next one.
 
 ![ConcatMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/concatmap.gif)
 
-TBD: Describe what happens in the gif
+In the animation you can see that `first` and `second` got emitted and after two seconds the `first` call comes back and after another two seconds the `second` call comes back. `concatMap` here queues the requests and fires them when the previous one has finished.
 
 ## MergeMap
 
@@ -180,11 +180,11 @@ fireEvents() {
 }
 ```
 
-The `mergeMap` operator does _not_ ignore the result of the previous emits but emits both calls _as they come in_. So if we emit `first` the operator calls the `anyLongRunningOp` with `first` and right after that with `second`. But unlike the `switchMap` operator it listens to _both_ answers when they come back. It does not wait until the first one comes back like the `concatMap` does but calls the `anyLongRunningOp` with the params as they come in. When the `anyLongRunningOp` method comes back the first time with `first` we print out that result and right after this with `second` we print out this.
+The `mergeMap` operator does _not_ ignore the result of the previous emits and does _not_ wait for the second one to emit until the first one finished. It emits both calls _as they come in_. So if we emit `first` the operator calls the `anyLongRunningOp` with `first` and right after that it calls the ``anyLongRunningOp` with `second`. It also listens to _both_ answers when they come back. When the `anyLongRunningOp` method comes back the first time with `first` we print out that result and right after this with `second` we print out this. These operations run in parallel. The operator does _not_ build a relation between these two calls. The first one which comes back gets processed first, the second one which comes back gets processed second. So the order of the return values is not guaranteed to be the order of the requests as they were sent out.
 
 ![mergemap operator](https://cdn.offering.solutions/img/articles/2021-03-07/mergemap.gif)
 
-TBD: Describe what happens in the gif
+In the animation you can see that both values `first` and `second` get emitted and they come back almost at the same time. `mergeMap` fires them as they come in, both need two seconds to be processed and come back then. Nobody waits for the first one to complete (like `concatMap`) and nothing gets ignored (like `switchMap`).
 
 ## ExhaustMap
 
@@ -214,17 +214,17 @@ The `exhaustMap` operator takes care of the first request which comes in and ign
 
 ![exhaustmap operator](https://cdn.offering.solutions/img/articles/2021-03-07/exhaustmap.gif)
 
-TBD: Describe what happens in the gif
+IN the animation you can see it gets emitted with `first` and `second` but only the `first` emit is being processed. The `exhaustMap` ignored everything which comes after this until the `first` call came back after two seconds. Then it is ready to process the next value when it gets emitted again. Everything during the procedure of the first call gets ignored. So only the value `first` is printed in the example.
 
 ## Summary
 
 It took me along while to understand those operators and for me it all became clearer when I understood the `switchMap` operator first.
 
-Let us summarize those 4 a bit:
+Let us summarize those four operators:
 
-- `switchMap`: emits values and is only interested in the very last one it sent. All the responses of the calls before get ignored.
-- `concatMap`: behaves like a queue: It stores all calls and sends one after another. If one is completed, the next one comes.
-- `mergeMap`: Also sends all requests, like `concatMap` but does not wait until the response is coming back. It sends them out as they come. But it receives every response and does not ignore something.
+- `switchMap`: emits values and is only interested in the very last one it sent. All the _responses_ of the calls before get ignored.
+- `concatMap`: behaves like a queue: It stores all calls and sends one after another. If one is completed, the next one is being processed.
+- `mergeMap`: Also sends all requests, like `concatMap` but does not wait until the response is coming back. It sends them out as they come. But it receives every response and does not ignore something. The order here is not guaranteed.
 - `exhaustMap`: Emits the first request and ignores all future requests until the first one gets back. Then it is ready for a new one.
 
 I hope this helped!
