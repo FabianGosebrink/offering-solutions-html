@@ -15,7 +15,7 @@ As mentioned in [tap, map & switchMap explained](https://offering.solutions/blog
 
 > There are many blog posts out there which cover those topics already but maybe this helps to understand if the other posts did not help until here :)
 
-The operators `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` do not show any difference at first sight when they are called one time. THey take a value, proceed it and return back a new observable.
+The operators `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` do not show any difference at first sight when they are called one time. They take a value, proceed it and return back a new observable.
 
 The operators differ in how they treat values in an observable when multiple values get emitted right after each other. Maybe this is one of the most important things to understand. Observables give you the possibility to handle "values over time". So when the first value gets emitted, the second one, the third one etc. right after each other the `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` behave differently.
 
@@ -68,16 +68,19 @@ fireEvents() {
   this.sub
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
-    // (for the sake of simplicity)
-    .pipe(<...>((value) => this.anyLongRunningOp(value)))
+    // (for the sake of simplicity). The `tap` only prints out what
+    // was just sent, does nothing to the stream!
+    .pipe(
+      tap(value => console.log("--> sent out", value)),
+      [OPERATOR_HERE]((value) => this.anyLongRunningOp(value)))
     // We console.log the output, which is 'first' or 'second' or
-    .subscribe(console.log);
+    .subscribe(value => console.log("<-- received", value));
 
   // After subscribing we emit the two value in the observable, could also be more than that
   this.sub.next('first');
   this.sub.next('second');
 
-  console.log(`fired events 'first' and 'second'`);
+  console.log("-------");
 }
 
 anyLongRunningOp(value: string) {
@@ -107,16 +110,20 @@ fireEvents() {
   this.sub
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
-    // (for the sake of simplicity)
-    .pipe(switchMap((value) => this.anyLongRunningOp(value)))
+    // (for the sake of simplicity). The `tap` only prints out what
+    // was just sent, does nothing to the stream!
+    .pipe(
+      tap(value => console.log("--> sent out", value)),
+      switchMap(value => this.obsService.anyLongRunningOp(value))
+    )
     // We console.log the output, which is 'first' or 'second' or
-    .subscribe(console.log);
+    .subscribe(value => console.log("<-- received", value));
 
   // After subscribing we emit the two value in the observable, could also be more than that
-  this.sub.next('first');
-  this.sub.next('second');
+  this.sub.next("first");
+  this.sub.next("second");
 
-  console.log(`fired events 'first' and 'second'`);
+  console.log("-------");
 }
 ```
 
@@ -137,16 +144,20 @@ fireEvents() {
   this.sub
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
-    // (for the sake of simplicity)
-    .pipe(concatMap((value) => this.anyLongRunningOp(value)))
+    // (for the sake of simplicity). The `tap` only prints out what
+    // was just sent, does nothing to the stream!
+    .pipe(
+      tap(value => console.log("--> sent out", value)),
+      concatMap(value => this.obsService.anyLongRunningOp(value))
+    )
     // We console.log the output, which is 'first' or 'second' or
-    .subscribe(console.log);
+    .subscribe(value => console.log("<-- received", value));
 
   // After subscribing we emit the two value in the observable, could also be more than that
-  this.sub.next('first');
-  this.sub.next('second');
+  this.sub.next("first");
+  this.sub.next("second");
 
-  console.log(`fired events 'first' and 'second'`);
+  console.log("-------");
 }
 ```
 
@@ -167,10 +178,14 @@ fireEvents() {
   this.sub
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
-    // (for the sake of simplicity)
-    .pipe(mergeMap((value) => this.anyLongRunningOp(value)))
+    // (for the sake of simplicity). The `tap` only prints out what
+    // was just sent, does nothing to the stream!
+    .pipe(
+      tap(value => console.log("--> sent out", value)),
+      mergeMap(value => this.obsService.anyLongRunningOp(value))
+    )
     // We console.log the output, which is 'first' or 'second' or
-    .subscribe(console.log);
+    .subscribe(value => console.log("<-- received", value));
 
   // After subscribing we emit the two value in the observable, could also be more than that
   this.sub.next('first');
@@ -197,10 +212,14 @@ fireEvents() {
   this.sub
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
-    // (for the sake of simplicity)
-    .pipe(exhaustMap((value) => this.anyLongRunningOp(value)))
+    // (for the sake of simplicity). The `tap` only prints out what
+    // was just sent, does nothing to the stream!
+    .pipe(
+      tap(value => console.log("--> sent out", value)),
+      exhaustMap(value => this.obsService.anyLongRunningOp(value))
+    )
     // We console.log the output, which is 'first' or 'second' or
-    .subscribe(console.log);
+    .subscribe(value => console.log("<-- received", value));
 
   // After subscribing we emit the two value in the observable, could also be more than that
   this.sub.next('first');
