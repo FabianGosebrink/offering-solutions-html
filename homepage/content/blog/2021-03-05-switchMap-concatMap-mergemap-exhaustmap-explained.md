@@ -7,7 +7,7 @@ category: blog
 image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-With this article I want to briefly and shortly describe the differences between the rxjs operators `switchMap`, `mergeMap`, `concatMap` and `exhaustMap`.
+With this article I want to describe the differences between the rxjs operators `switchMap`, `mergeMap`, `concatMap` and `exhaustMap`.
 
 The last article [tap, map & switchMap explained](https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/) is, depending on the stats, one if my most successful blogs ever. So I thought I could continue writing something about rxjs and the operators mentioned above.
 
@@ -20,6 +20,17 @@ The operators `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` do not show 
 The operators differ in how they treat values in an observable when multiple values get emitted right after each other. Maybe this is one of the most important things to understand. Observables give you the possibility to handle "values over time". So when the first value gets emitted, the second one, the third one etc. right after each other the `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` behave differently.
 
 Let us take a look at the behavior of those operators in specific next.
+
+## TOC
+
+- [Stackblitz](#stackblitz)
+- [The situation](#the-situation)
+- [Similarities](#similarities)
+- [SwitchMap](#switch-map)
+- [ConcatMap](#concat-map)
+- [MergeMap](#merge-map)
+- [ExhaustMap](#exhaust-map)
+- [Summary](#summary)
 
 ## Stackblitz
 
