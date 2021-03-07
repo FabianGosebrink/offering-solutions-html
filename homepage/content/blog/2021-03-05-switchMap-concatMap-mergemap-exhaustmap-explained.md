@@ -165,7 +165,7 @@ We know that the `switchMap` operator is only interested in the most recent valu
 
 ![ConcatMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/concatmap.gif)
 
-In the animation you can see that `first` and `second` got emitted and after two seconds the `first` call comes back and after another two seconds the `second` call comes back. `concatMap` here queues the requests and fires them when the previous one has finished.
+In the animation you can see that `first` and `second` got emitted and after two seconds the `first` call comes back and after another two seconds the `second` call comes back. `concatMap` here queues the requests and emits them when the previous one has finished.
 
 ## MergeMap
 
@@ -199,7 +199,7 @@ The `mergeMap` operator does _not_ ignore the result of the previous emits and d
 
 ![mergemap operator](https://cdn.offering.solutions/img/articles/2021-03-07/mergemap.gif)
 
-In the animation you can see that both values `first` and `second` get emitted and they come back almost at the same time. `mergeMap` fires them as they come in, both need two seconds to be processed and come back then. Nobody waits for the first one to complete (like `concatMap`) and nothing gets ignored (like `switchMap`).
+In the animation you can see that both values `first` and `second` get emitted and they come back almost at the same time. `mergeMap` emits them as they come in, both need two seconds to be processed and come back then. Nobody waits for the first one to complete (like `concatMap`) and nothing gets ignored (like `switchMap`).
 
 ## ExhaustMap
 
