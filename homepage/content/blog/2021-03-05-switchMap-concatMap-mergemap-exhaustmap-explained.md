@@ -171,7 +171,7 @@ In the animation you can see that `first` and `second` got emitted and after two
 
 ## MergeMap
 
-Let us take the `mergeMap` operator next. Again we are trying to see how it behaves if multiple values come in when the previous one does not have come back yet.
+Let us take the `mergeMap` [docs](https://rxjs.dev/api/operators/mergeMap) operator next. Again we are trying to see how it behaves if multiple values come in when the previous one does not have come back yet.
 
 ```ts
 fireEvents() {
@@ -198,7 +198,7 @@ fireEvents() {
 }
 ```
 
-The `mergeMap` operator does _not_ ignore the result of the previous emits and does _not_ wait for the second one to emit until the first one finished. It emits both calls _as they come in_. So if we emit `first` the operator calls the `anyLongRunningOp` with `first` and right after that it calls the `anyLongRunningOp` with `second`. It also listens to _both_ answers when they come back. When the `anyLongRunningOp` method comes back the first time with `first` we print out that result and right after this with `second` we print out this. These operations run in parallel. The operator does _not_ build a relation between these two calls. The first one which comes back gets processed first, the second one which comes back gets processed second. So the order of the return values is not guaranteed to be the order of the requests as they were sent out.
+The `mergeMap` [docs](https://rxjs.dev/api/operators/mergeMap) operator does _not_ ignore the result of the previous emits and does _not_ wait for the second one to emit until the first one finished. It emits both calls _as they come in_. So if we emit `first` the operator calls the `anyLongRunningOp` with `first` and right after that it calls the `anyLongRunningOp` with `second`. It also listens to _both_ answers when they come back. When the `anyLongRunningOp` method comes back the first time with `first` we print out that result and right after this with `second` we print out this. These operations run in parallel. The operator does _not_ build a relation between these two calls. The first one which comes back gets processed first, the second one which comes back gets processed second. So the order of the return values is not guaranteed to be the order of the requests as they were sent out.
 
 ![mergemap operator](https://cdn.offering.solutions/img/articles/2021-03-07/mergemap.gif)
 
@@ -206,7 +206,7 @@ In the animation you can see that both values `first` and `second` get emitted a
 
 ## ExhaustMap
 
-Then there is the `exhaustMap` operator left.
+Then there is the `exhaustMap` [docs](https://rxjs.dev/api/operators/exhaustMap)  operator left.
 
 ```ts
 fireEvents() {
@@ -251,6 +251,15 @@ Let us summarize those four operators:
 - `exhaustMap`: Emits the first request and ignores all future requests until the first one gets back. Then it is ready for a new one.
 
 I hope this helped!
+
+## Helpful Links
+
+[Comprehensive Guide to Higher-Order RxJs Mapping Operators](https://blog.angular-university.io/rxjs-higher-order-mapping/)
+[exhaustMap](https://rxjs.dev/api/operators/exhaustMap) 
+[mergeMap](https://rxjs.dev/api/operators/mergeMap)
+[concatMap](https://rxjs.dev/api/operators/concatMap)
+[switchMap](https://rxjs.dev/api/operators/switchMap)
+
 
 Thanks.
 
