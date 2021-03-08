@@ -250,15 +250,11 @@ I hope this helped!
 
 ## Helpful Links
 
-[Comprehensive Guide to Higher-Order RxJs Mapping Operators](https://blog.angular-university.io/rxjs-higher-order-mapping/)
-
-[exhaustMap](https://rxjs.dev/api/operators/exhaustMap) 
-
-[mergeMap](https://rxjs.dev/api/operators/mergeMap)
-
-[concatMap](https://rxjs.dev/api/operators/concatMap)
-
-[switchMap](https://rxjs.dev/api/operators/switchMap)
+- [Comprehensive Guide to Higher-Order RxJs Mapping Operators](https://blog.angular-university.io/rxjs-higher-order-mapping/)
+- [exhaustMap](https://rxjs.dev/api/operators/exhaustMap) 
+- [mergeMap](https://rxjs.dev/api/operators/mergeMap)
+- [concatMap](https://rxjs.dev/api/operators/concatMap)
+- [switchMap](https://rxjs.dev/api/operators/switchMap)
 
 
 Thanks.
