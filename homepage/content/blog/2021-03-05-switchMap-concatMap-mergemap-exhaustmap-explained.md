@@ -97,11 +97,11 @@ The `fireEvents()` method emits in the `Subject` `sub` two times one value each.
 
 ## Similarities
 
-All of the *map operators can be piped to an observable and return a new observable. They keep the stream. They resolve the value but return a new observable. This makes them higher order mapping operators. You can subscribe to the outcome but initially `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` return an observable which then can be processed further.
+All of the *map operators can be piped to an observable and return a new observable. They keep the stream. They resolve the value but return a new observable. This makes them higher order mapping operators. You can subscribe to the outcome but initially `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` return a new observable which then can be processed further.
 
 ## SwitchMap
 
-Let us take the `switchMap` operator first. I explained it already in the previous post but let us take it as the first one and look how it behaves when multiple values come in.
+Let us take a look at the `switchMap` [docs](https://rxjs.dev/api/operators/switchMap) operator first. I explained it already in the previous post but let us take it as the first one and look how it behaves when multiple values come in.
 
 ```ts
 fireEvents() {
@@ -128,7 +128,7 @@ fireEvents() {
 }
 ```
 
-The `switchMap` operator takes the first value in the stream `first` and calls the `anyLongRunningOp` with it. _Right after_ it did this it receives the second emit with the value `second`. Now it forgets about the response of the first request. It is not waiting for it. Like the HTTP request which could be done here is out and comes back any when but the `switchMap` operator does not care about the first one. It calls the `anyLongRunningOp` with the `second` parameter and waits for _that one_'s answer. And so with multiple ones, it is only interested in the response of the _last_ one it fired. Everything before got ignored.
+The `switchMap` operator takes the first value in the stream `first` and calls the `anyLongRunningOp` with it. _Right after_ it did this it receives the second emit with the value `second`. Now it forgets about the response of the first request. It is not waiting for it. It calls the `anyLongRunningOp` with the `second` parameter and waits for _that one_'s answer. And so with multiple ones, it is only interested in the response of the _last_ one it fired. Everything before got ignored.
 
 ![SwitchMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/switchmap.gif)
 
@@ -136,7 +136,7 @@ In the animation you can see that only the value `second` is printed. This is th
 
 ## ConcatMap
 
-Next one in the list is the `concatMap` operator. Let us assume the same method again:
+Next one in the list is the `concatMap` [docs](https://rxjs.dev/api/operators/concatMap) operator. Let us assume the same method again:
 
 ```ts
 fireEvents() {
@@ -163,7 +163,7 @@ fireEvents() {
 }
 ```
 
-We know that the `switchMap` operator is only interested in the most recent value which came in. It does not build a relation between everything which comes in and puts them in a queue. This is what the `concatMap` operator is for. It behaves like it has a queue and stores the incoming calls and emits the next one when the previous one came back! So when it receives the value with `first` it calls `anyLongRunningOp` with `first`, then the `second` value comes in. The `concatMap` operator now holds this call back until the `anyLongRunningOp` method comes back with the result of the call with `first` and _then_ the next call with `second` as parameter is being fired. It concatenates the calls and emits them one after another. As a side effect it builds a relation between the calls because it has to look wether the first one came back before it can emit the next one.
+We know that the `switchMap` operator is only interested in the most recent value which came in. It does not build a relation between everything which comes in and puts them in a queue. This is what the `concatMap` operator is for. It has a queue and stores the incoming calls and emits the next one when the previous one came back! So when it receives the value with `first` it calls `anyLongRunningOp` with `first`, then the `second` value comes in. The `concatMap` operator now holds this call back until the `anyLongRunningOp` method comes back with the result of the call with `first` and _then_ the next call with `second` as parameter is being fired. It concatenates the calls and emits them one after another. As a side effect it builds a relation between the calls because it has to look wether the first one came back before it can emit the next one.
 
 ![ConcatMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/concatmap.gif)
 
