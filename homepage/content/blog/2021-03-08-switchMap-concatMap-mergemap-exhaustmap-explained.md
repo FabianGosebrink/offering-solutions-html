@@ -1,6 +1,6 @@
 ---
 title: switchMap, mergeMap, concatMap & exhaustMap explained
-date: 2019-10-20
+date: 2021-03-08
 tags: ['rxjs', 'switchMap', 'mergeMap', 'concatMap', 'exhaustMap']
 draft: false
 category: blog
