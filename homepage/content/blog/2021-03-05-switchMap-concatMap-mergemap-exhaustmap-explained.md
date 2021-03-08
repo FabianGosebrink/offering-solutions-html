@@ -9,7 +9,7 @@ image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 With this article I want to describe the differences between the rxjs operators `switchMap`, `mergeMap`, `concatMap` and `exhaustMap`.
 
-The last article [tap, map & switchMap explained](https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/) is, depending on the stats, one if my most successful blogs ever. So I thought I could continue writing something about rxjs and the operators mentioned above.
+The last article [tap, map & switchMap explained](https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/) is, depending on the stats, one of my most successful blogs ever. So I thought I could continue writing something about rxjs and the operators mentioned above.
 
 As mentioned in [tap, map & switchMap explained](https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/):
 
@@ -41,15 +41,8 @@ https://stackblitz.com/edit/angular-ivy-rfr8ru
 First let us imagine we have a long running operation like an HTTP call and after an amount of time the result comes back. We use a method which creates an observable and after two seconds it returns the value we pass in the function for the sake of simplicity and to simulate a long running task.
 
 ```ts
-import { Observable } from "rxjs";
-
 anyLongRunningOp(value: string) {
-  return new Observable(observer => {
-    setTimeout(() => {
-      observer.next(value);
-      observer.complete();
-    }, 2000);
-  });
+  return timer(2000).pipe(mapTo(value));
 }
 ```
 
@@ -71,12 +64,13 @@ To explain `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` let us _always_
 To be able to emit multiple observables we can create a `Subject` where we can write values in with `next(...)` and process it with the operator we want to take a look at.
 
 ```ts
-sub = new Subject<string>();
+const sub = new Subject<string>();
 
 fireEvents() {
 
   // Here we react ot everything which is fired in the subject
   this.sub
+    .asObservable()
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
     // (for the sake of simplicity). The `tap` only prints out what
@@ -95,12 +89,7 @@ fireEvents() {
 }
 
 anyLongRunningOp(value: string) {
-  return new Observable(observer => {
-    setTimeout(() => {
-      observer.next(value);
-      observer.complete();
-    }, 2000);
-  });
+  return timer(2000).pipe(mapTo(value));
 }
 ```
 
@@ -108,7 +97,7 @@ The `fireEvents()` method emits in the `Subject` `sub` two times one value each.
 
 ## Similarities
 
-All of those operators can be piped to an observable and return a new observable. They keep the stream. They resolve the value but return a new observable. This makes them higher order mapping operators. You can subscribe to the outcome but initially `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` return an observable which then can be processed further.
+All of the *map operators can be piped to an observable and return a new observable. They keep the stream. They resolve the value but return a new observable. This makes them higher order mapping operators. You can subscribe to the outcome but initially `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` return an observable which then can be processed further.
 
 ## SwitchMap
 
@@ -119,13 +108,14 @@ fireEvents() {
 
   // Here we react ot everything which is fired in the subject
   this.sub
+    .asObservable()
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
     // (for the sake of simplicity). The `tap` only prints out what
     // was just sent, does nothing to the stream!
     .pipe(
       tap(value => console.log("--> sent out", value)),
-      switchMap(value => this.obsService.anyLongRunningOp(value))
+      switchMap(value => this.anyLongRunningOp(value))
     )
     // We console.log the output, which is 'first' or 'second' or
     .subscribe(value => console.log("<-- received", value));
@@ -153,13 +143,14 @@ fireEvents() {
 
   // Here we react ot everything which is fired in the subject
   this.sub
+    .asObservable()
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
     // (for the sake of simplicity). The `tap` only prints out what
     // was just sent, does nothing to the stream!
     .pipe(
       tap(value => console.log("--> sent out", value)),
-      concatMap(value => this.obsService.anyLongRunningOp(value))
+      concatMap(value => this.anyLongRunningOp(value))
     )
     // We console.log the output, which is 'first' or 'second' or
     .subscribe(value => console.log("<-- received", value));
@@ -187,13 +178,14 @@ fireEvents() {
 
   // Here we react ot everything which is fired in the subject
   this.sub
+    .asObservable()
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
     // (for the sake of simplicity). The `tap` only prints out what
     // was just sent, does nothing to the stream!
     .pipe(
       tap(value => console.log("--> sent out", value)),
-      mergeMap(value => this.obsService.anyLongRunningOp(value))
+      mergeMap(value => this.anyLongRunningOp(value))
     )
     // We console.log the output, which is 'first' or 'second' or
     .subscribe(value => console.log("<-- received", value));
@@ -210,7 +202,7 @@ The `mergeMap` operator does _not_ ignore the result of the previous emits and d
 
 ![mergemap operator](https://cdn.offering.solutions/img/articles/2021-03-07/mergemap.gif)
 
-In the animation you can see that both values `first` and `second` get emitted and they come back almost at the same time. `mergeMap` emits them as they come in, both need two seconds to be processed and come back then. Nobody waits for the first one to complete (like `concatMap`) and nothing gets ignored (like `switchMap`).
+In the animation you can see that both values `first` and `second` get emitted and they come back almost at the same time. `mergeMap` emits them as they come in, both need two seconds to be processed and come back then. The operator `mergeMap` does not wait for the first one to complete (like `concatMap`) and nothing gets ignored (like `switchMap`).
 
 ## ExhaustMap
 
@@ -221,13 +213,14 @@ fireEvents() {
 
   // Here we react ot everything which is fired in the subject
   this.sub
+    .asObservable()
     // Here we can take the operator we want to take a look at which returns the
     // result from the anyLongRunningOp method which is the value itself
     // (for the sake of simplicity). The `tap` only prints out what
     // was just sent, does nothing to the stream!
     .pipe(
       tap(value => console.log("--> sent out", value)),
-      exhaustMap(value => this.obsService.anyLongRunningOp(value))
+      exhaustMap(value => this.anyLongRunningOp(value))
     )
     // We console.log the output, which is 'first' or 'second' or
     .subscribe(value => console.log("<-- received", value));
@@ -240,11 +233,11 @@ fireEvents() {
 }
 ```
 
-The `exhaustMap` operator takes care of the first request which comes in and ignores everything which comes in afterwards _until the first once came back_. So it is called with the value `first` and then with the value `second` which is ignored because the first one has not completed yet. So it ignores everything until the first value comes back.
+The `exhaustMap` operator takes care of the first request which comes in and ignores everything which comes in afterwards _until the first one came back_. So it is called with the value `first` and then with the value `second` which is ignored because the first one has not completed yet. So it ignores everything until the first value comes back.
 
 ![exhaustmap operator](https://cdn.offering.solutions/img/articles/2021-03-07/exhaustmap.gif)
 
-IN the animation you can see it gets emitted with `first` and `second` but only the `first` emit is being processed. The `exhaustMap` ignored everything which comes after this until the `first` call came back after two seconds. Then it is ready to process the next value when it gets emitted again. Everything during the procedure of the first call gets ignored. So only the value `first` is printed in the example.
+In the animation you can see it gets emitted with `first` and `second` but only the `first` emission is being processed. The `exhaustMap` ignored everything which comes after this until the `first` call came back after two seconds. Then it is ready to process the next value when it gets emitted again. Everything during the procedure of the first call gets ignored. So only the value `first` is printed in the example.
 
 ## Summary
 
