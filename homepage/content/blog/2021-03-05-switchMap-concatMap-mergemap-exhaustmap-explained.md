@@ -25,7 +25,6 @@ Let us take a look at the behavior of those operators in specific next.
 
 - [Stackblitz](#stackblitz)
 - [The situation](#the-situation)
-- [Similarities](#similarities)
 - [SwitchMap](#switch-map)
 - [ConcatMap](#concat-map)
 - [MergeMap](#merge-map)
@@ -95,9 +94,6 @@ anyLongRunningOp(value: string) {
 
 The `fireEvents()` method emits in the `Subject` `sub` two times one value each. First the value `first` and immediately after the value `second`. This value then gets processed by the operator we want to look how it behaves when multiple values come in.
 
-## Similarities
-
-All of the *map operators can be piped to an observable and return a new observable. They keep the stream. They resolve the value but return a new observable. This makes them higher order mapping operators. You can subscribe to the outcome but initially `switchMap`, `mergeMap`, `concatMap` and `exhaustMap` return a new observable which then can be processed further.
 
 ## SwitchMap
 
