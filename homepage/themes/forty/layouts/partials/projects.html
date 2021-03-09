@@ -1,7 +1,7 @@
 {{ "<!-- Projects -->" | safeHTML}}
 <div class="projects">
   <div class="inner">
-    <header class="major">
+    <header class="major center">
       <img
           src="{{ .Site.Params.cdnbaseurl }}img/academy-logo.png"
           alt="AcademyLogo" 
@@ -15,7 +15,7 @@
         <h3>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
         </h3>
-        <span class="image fit"><a href="{{ .Permalink }}"><img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" alt="" /></a></span>
+        <span class="image fit"><a href="{{ .Permalink }}"><img src="{{ .Site.Params.cdnbaseurl }}img/landing/development.jpg" alt="" /></a></span>
         <p>{{ .Description | safeHTML | truncate 170}}</p>
         <ul class="actions">
           <li><a href="{{ .Permalink }}" class="button">Read more</a></li>

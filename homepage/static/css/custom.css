@@ -219,7 +219,7 @@ header.major-no-line > :first-child:after {
 }
 
 .logo-bar {
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(241, 241, 241);
   color: rgb(59, 77, 93);
 }
 
@@ -228,6 +228,7 @@ header.major-no-line > :first-child:after {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  min-height: 15em; 
 }
 
 .logo-bar .center > img{
@@ -257,6 +258,41 @@ header.major-no-line > :first-child:after {
 
 .newsletter .newsletter-form input {
   background-color: white;
+}
+
+.projects .inner .center {
+  width: 60%;
+  margin: auto;
+}
+
+.projects .inner .major {
+  margin-bottom: 100px;
+}
+
+.image-line-1 {
+  min-height: 200px;
+  background-color: #23354D;
+  opacity: 0.66;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  background-image: url("../../img/20191120_160016-e1613416406528.jpg");
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  padding: 6em 0 2em 0 ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 0 !important;
+  cursor: default;
+  height: 60vh;
+  max-height: 32em;
+  min-height: 22em; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* @media screen and (max-width: 600px) {
