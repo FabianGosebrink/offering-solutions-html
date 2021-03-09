@@ -213,6 +213,11 @@ header.major-no-line > :first-child:after {
   width: 100%;
 }
 
+.width-80 {
+  width: 80%;
+  margin: auto;
+}
+
 .logo-bar {
   background-color: rgb(236, 236, 236);
   color: rgb(59, 77, 93);

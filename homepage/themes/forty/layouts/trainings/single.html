@@ -24,6 +24,7 @@
             <header class="major">
               <h1>{{ .Title }}</h1>
             </header>
+              <h4>{{ .Params.subhead }}</h4>
               <a href="{{ .Site.Params.baseURL }}/trainings/">back to all trainings</a>
             </p>
           </div>
@@ -36,7 +37,7 @@
           </div>
         </section>
         
-		{{ partial "contact-full-width.html" . }}
+	    	{{ partial "contact-full-width.html" . }}
         
         {{ "<!-- Disqus Inject -->" | safeHTML }} {{ if .Site.DisqusShortname }}
         {{ partial "disqus.html" . }} {{ end }}
