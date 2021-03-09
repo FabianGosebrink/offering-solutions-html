@@ -15,12 +15,13 @@
 			<div id="main">
 
 				{{ partial "logo-bar.html" . }}
+
+				{{ partial "newsletter.html" . }}
 				
 				{{ if .Site.Params.Tiles.enable }}
 					{{ partial "tile.html" . }}
 				{{ end }}
 				
-				{{ partial "newsletter.html" . }}
 
 				{{ if .Site.Params.Two.enable }}
 					{{ partial "projects.html" . }}

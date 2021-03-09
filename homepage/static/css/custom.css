@@ -213,18 +213,53 @@ header.major-no-line > :first-child:after {
   width: 100%;
 }
 
-.margin-lr-30{
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
 .logo-bar {
   background-color: rgb(236, 236, 236);
   color: rgb(59, 77, 93);
 }
 
-.logo-bar > img{
+.logo-bar .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-bar .center > img{
   max-width: 350px;
   height: auto;
-  margin: 25px 150px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
+
+.newsletter {
+  padding-top:50px;
+  padding-bottom:50px;
+  background-color: rgba(59, 77, 93, 0.336);
+  color: #303138;
+}
+
+.newsletter .newsletter-form {
+  width: 80%;
+  margin: auto;
+}
+
+.newsletter .newsletter-form .button.primary {
+  margin-top: 20px;
+}
+
+.newsletter .newsletter-form input {
+  background-color: white;
+}
+
+
+/* @media screen and (max-width: 600px) {
+  .nav-responsive {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    display: none;
+  }
+} */
