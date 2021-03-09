@@ -259,7 +259,6 @@ header.major-no-line > :first-child:after {
   background-color: white;
 }
 
-
 /* @media screen and (max-width: 600px) {
   .nav-responsive {
     visibility: hidden;

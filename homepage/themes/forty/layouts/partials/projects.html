@@ -2,29 +2,26 @@
 <div class="projects">
   <div class="inner">
     <header class="major">
-      <h2>Projects</h2>
-    </header>
-
-    <div style="
-    display: flex;
-    align-items: center;
-    flex-direction: column;">
-      <a href="https://developer-academy.ch" class="mb-5 no-border-bottom" target="_blank" rel="noreferrer">
-        <img
+      <img
           src="{{ .Site.Params.cdnbaseurl }}img/academy-logo.png"
           alt="AcademyLogo" 
           class="responsive" 
-      /></a>
-      <a href="https://swissangular.com" class="mb-3 no-border-bottom" target="_blank" rel="noreferrer">
-        <img
-          src="{{ .Site.Params.cdnbaseurl }}img/swissangular-logo.png"
-          alt="SwissAngularLogo" 
-          class="responsive" 
-      /></a>
-      <a href="https://app.pluralsight.com/profile/author/fabian-gosebrink" class="mb-2 no-border-bottom " 
-      style="background-color:white;" target="_blank" rel="noreferrer" >
-        <img src="{{ .Site.Params.cdnbaseurl }}img/PS_logo_F-01.png" alt="pluralsightlogo" class="responsive" />
-      </a>
+      />
+    </header>
+    <div class="row">
+      <!-- Break -->
+      {{ range first 12 (where .Site.Pages "Params.category" "training") }}
+      <div class="col-4 col-12-medium">
+        <h3>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h3>
+        <span class="image fit"><a href="{{ .Permalink }}"><img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" alt="" /></a></span>
+        <p>{{ .Description | safeHTML | truncate 170}}</p>
+        <ul class="actions">
+          <li><a href="{{ .Permalink }}" class="button">Read more</a></li>
+        </ul>
+      </div>
+      {{ end }} 
     </div>
   </div>
 </div>
