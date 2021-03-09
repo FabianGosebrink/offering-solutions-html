@@ -24,43 +24,19 @@
             <header class="major">
               <h1>{{ .Title }}</h1>
             </header>
-            <h6>{{ dateFormat "Monday, Jan 2, 2006" .Date }}</h6>
-            <p>
-              {{ partial "readingtime.html" . }}
-
-              <a href="{{ .Site.Params.baseURL }}/blog/">back to all blogs</a>
+              <a href="{{ .Site.Params.baseURL }}/trainings/">back to all trainings</a>
             </p>
           </div>
         </section>
 
         <!-- One -->
         <section id="one">
-          <div class="center">
-            <span
-              class="image pluralsight-logo"
-              title="Check out my pluralsight courses"
-            >
-              <a
-                href="https://app.pluralsight.com/profile/author/fabian-gosebrink"
-                style="border-bottom: none;"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src="{{ .Site.Params.cdnbaseurl }}img/PS_logo_F-01.png"
-                  alt="pluralsightlogo"
-                  class="responsive"
-                />
-              </a>
-            </span>
-          </div>
-          <div class="divider"></div>
           <div class="inner">
             {{ .Content }}
           </div>
         </section>
         
-				{{ partial "newsletter.html" . }}
+		{{ partial "contact-full-width.html" . }}
         
         {{ "<!-- Disqus Inject -->" | safeHTML }} {{ if .Site.DisqusShortname }}
         {{ partial "disqus.html" . }} {{ end }}

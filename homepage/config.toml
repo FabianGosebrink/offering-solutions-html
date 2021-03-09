@@ -21,7 +21,7 @@ disqusShortname = "offeringsolutions"
   # Provide your metadata here.
   name = "Fabian Gosebrink Offering Solutions Software"
   description = "Angular and ASP.NET Core Consulting, Training and Courses"
-  cdnbaseurl = "https://cdn.offering.solutions/"
+  cdnbaseurl = "http://localhost:1313/"
 
   # Link custom assets relative to /static
   custom_css = ["css/custom.css", "css/scrolling.css"]
@@ -59,6 +59,10 @@ disqusShortname = "offeringsolutions"
     [[params.navigation.links]]
       name = "Newsletter"
       url = "newsletter"
+
+    [[params.navigation.links]]
+      name = "Trainings"
+      url = "trainings"
 
     # Add custom links here by uncommenting code below. To remove links just delete
     # the [[params.navigation.links]] map associated with that link. Copy and paste
@@ -103,7 +107,7 @@ disqusShortname = "offeringsolutions"
       title = "Training"
       subtitle = "Get you and your team up and running in the latest web technologies with Angular, ASP.NET Core, Javascript and Typescript"
       image = "landing/training.jpg"
-      url = "https://developer-academy.ch"
+      url = "/trainings"
 
     [[params.tiles.showcase]]
       title = "Consulting"
@@ -202,7 +206,7 @@ disqusShortname = "offeringsolutions"
       url= "https://www.linkedin.com/in/fabian-gosebrink-71023a88"
       label = "LinkedIn"
 
-       [[params.footer.social]]
+      [[params.footer.social]]
       icon = "fa-xing"
       url= "https://www.xing.com/profile/Fabian_Gosebrink"
       label = "Xing"

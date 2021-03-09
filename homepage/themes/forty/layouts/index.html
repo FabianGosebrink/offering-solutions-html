@@ -13,6 +13,8 @@
 
 		{{ "<!-- Main -->" | safeHTML }}
 			<div id="main">
+
+				{{ partial "logo-bar.html" . }}
 				
 				{{ if .Site.Params.Tiles.enable }}
 					{{ partial "tile.html" . }}

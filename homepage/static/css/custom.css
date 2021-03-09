@@ -203,3 +203,28 @@ header.major-no-line > :first-child:after {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.margin-lr-30{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.logo-bar {
+  background-color: rgb(236, 236, 236);
+  color: rgb(59, 77, 93);
+}
+
+.logo-bar > img{
+  max-width: 350px;
+  height: auto;
+  margin: 25px 150px;
+}
