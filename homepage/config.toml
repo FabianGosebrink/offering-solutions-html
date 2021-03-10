@@ -21,7 +21,7 @@ disqusShortname = "offeringsolutions"
   # Provide your metadata here.
   name = "Fabian Gosebrink Offering Solutions Software"
   description = "Angular and ASP.NET Core Consulting, Training and Courses"
-  cdnbaseurl = "http://localhost:1313/"
+  cdnbaseurl = "https://cdn.offering.solutions/"
 
   # Link custom assets relative to /static
   custom_css = ["css/custom.css", "css/scrolling.css"]
