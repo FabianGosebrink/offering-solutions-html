@@ -49,6 +49,7 @@ jobs:
           Copy-Item -Path public/tags/ -Destination public/dist-blog/tags -recurse
           Copy-Item -Path public/talks/ -Destination public/dist-blog/talks -recurse
           Copy-Item -Path public/newsletter/ -Destination public/dist-blog/newsletter -recurse
+          Copy-Item -Path public/trainings/ -Destination public/dist-blog/trainings -recurse
           Copy-Item -Path public/*.* -Destination public/dist-blog
 
       - name: 'Deploy Blog to Azure Web App'
