@@ -9,7 +9,8 @@
   "devDependencies": {},
   "scripts": {
     "alex": "alex homepage/content/blog/*.md",
-    "start": "hugo server -D --source=./homepage"
+    "start": "hugo server -D --source=./homepage",
+    "build": "hugo --source=./homepage"
   },
   "repository": {
     "type": "git",

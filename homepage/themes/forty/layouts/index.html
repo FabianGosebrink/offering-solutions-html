@@ -13,17 +13,22 @@
 
 		{{ "<!-- Main -->" | safeHTML }}
 			<div id="main">
+
+				{{ partial "logo-bar-1.html" . }}
+
+				{{ partial "newsletter.html" . }}
 				
 				{{ if .Site.Params.Tiles.enable }}
 					{{ partial "tile.html" . }}
 				{{ end }}
 				
-				{{ partial "newsletter.html" . }}
+				{{ partial "logo-bar-2.html" . }}
 
 				{{ if .Site.Params.Two.enable }}
 					{{ partial "projects.html" . }}
 				{{ end }}
 
+				{{ partial "image-line-1.html" . }}
 
 				{{ if .Site.Params.Two.enable }}
 					{{ partial "two.html" . }}

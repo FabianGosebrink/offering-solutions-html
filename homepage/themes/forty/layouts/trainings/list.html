@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  {{ "<!-- Header -->" | safeHTML }}
+  {{ partial "header.html" . }}
+
+  <body>
+    {{ "<!-- Wrapper -->" | safeHTML }}
+    <div id="wrapper">
+      {{ partial "nav.html" . }}
+
+      {{ "<!-- Main -->" | safeHTML }}
+      <div id="main">
+        <section id="banner" class="style2">
+          <div class="inner">
+            {{ if .Params.image }}
+            <span class="image">
+              <img
+                src="{{ .Site.Params.cdnbaseurl }}/img/{{ .Params.image }}"
+                alt="defaultListImage"
+              />
+            </span>
+            {{ end }}
+            <header class="major">
+              <h1>{{ .Title }}</h1>
+            </header>
+            <div class="content">{{ .Content }}</div>
+          </div>
+        </section>
+
+
+        <section id="one">
+
+          <div class="inner">
+            <header class="major">
+              <h1>Trainings and Workshops</h1>
+            </header>
+
+            <p>All trainings and workshops are hands on workshops with professional personal support, live coding and examples on slides and live on the PC.</p>
+
+            <!-- Content -->
+              <div class="row">
+                
+                {{ $paginator := .Paginate .Pages }}
+                {{ range .Paginator.Pages.ByDate.Reverse }}
+                <div class="col-4 col-12-medium">
+
+                  <h3>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </h3>
+                  <span class="image fit"><img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" alt="" /></span>
+                  <p>{{ .Description | safeHTML | truncate 170}}</p>
+                  <ul class="actions">
+                    <li><a href="{{ .Permalink }}" class="button">Read more</a></li>
+                  </ul>
+                </div>
+                {{ end }}
+
+              </div>
+
+            <hr class="major" />
+
+          </div>
+        
+
+          {{ partial "newsletter.html" . }}
+        </section>
+       
+      
+      </div>
+
+      {{ "<!-- Footer -->" | safeHTML}}
+      {{ if .Site.Params.footer.enable }}
+      {{ partial "footer.html" . }}
+      {{ end }}
+    </div>
+
+    {{ "<!-- Scripts -->" | safeHTML}}
+    {{ partial "js.html" . }}
+  </body>
+</html>
