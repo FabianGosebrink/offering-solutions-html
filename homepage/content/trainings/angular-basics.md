@@ -2,7 +2,7 @@
 title: Angular Basics
 subhead: This course is the best start to ramp up your knowledge about Angular and component driven web development.
 description: Master the first steps and principles of Angular the client side framework for building modern web applications.
-image: banner.jpg
+image: landing/development.jpg
 category: training
 ---
 

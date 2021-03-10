@@ -6,11 +6,6 @@
     <div id="wrapper">
       {{ partial "nav.html" . }} {{ "<!-- Main -->" | safeHTML }}
       <div id="main" class="alt">
-        <div class="bottom">
-          <div class="progress-container">
-            <div class="progress-bar" id="scrollingbar"></div>
-          </div>
-        </div>
         <section id="banner" class="style2">
           <div class="inner">
             {{ if .Params.image }}
@@ -36,11 +31,9 @@
             {{ .Content }}
           </div>
         </section>
-        
+
 	    	{{ partial "contact-full-width.html" . }}
         
-        {{ "<!-- Disqus Inject -->" | safeHTML }} {{ if .Site.DisqusShortname }}
-        {{ partial "disqus.html" . }} {{ end }}
       </div>
 
       {{ "<!-- Footer -->" | safeHTML}} {{ if .Site.Params.footer.enable }} {{ partial "footer.html" . }} {{ end }}
