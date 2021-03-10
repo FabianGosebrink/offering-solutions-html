@@ -38,7 +38,7 @@
       <section class="split">
         <section>
           <div class="contact-method">
-            <span class="icon alt fa fa-envelope"></span>
+            <span class="icon solid alt fa-envelope"></span>
             {{ range .Site.Params.Contact.email }}
             <h3>{{ .title }}</h3>
             <a href="mailto:{{ .email }}">{{ .email }}</a>
@@ -47,7 +47,7 @@
         </section>
         <section>
           <div class="contact-method">
-            <span class="icon alt fa fa-home"></span>
+            <span class="icon solid alt fa fa-home"></span>
             <h3>Address</h3>
             {{ range .Site.Params.Contact.address }}
             <span
