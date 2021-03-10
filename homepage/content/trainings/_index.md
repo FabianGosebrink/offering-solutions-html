@@ -7,4 +7,4 @@ draft: false
 category: noblog
 ---
 
-Check out our trainings
+Check out our trainings and workshops
