@@ -1,12 +1,12 @@
 {{ "<!-- Header -->" | safeHTML }}
     <header id="header" class="alt">
         <a href="{{ .Site.BaseURL }}" class="logo">{{ if .Site.Params.Navigation.logo }}<img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Site.Params.Navigation.logo }}" alt="logo" width="100" />{{ else }}<strong>{{ .Site.Params.Navigation.title }}</strong> <span>{{ .Site.Params.Navigation.subtitle }}</span>{{ end }}</a>
-        <nav>
-            <a href="/blog/">blog</a>
-            <a href="/talks/">speaking</a>
-            <a href="/newsletter/">newsletter</a>
+       <nav>
+            {{ range .Site.Params.Navigation.links }}
+                <a class="nav-responsive" href="{{ .url | absURL}}">{{ .name }}</a>
+            {{ end }}
             <a href="#menu">{{ .Site.Params.Navigation.menu }}</a>
-        </nav>
+        </nav> 
     </header>
 
 {{ "<!-- Menu -->" | safeHTML }}

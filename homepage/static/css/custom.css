@@ -2,6 +2,10 @@ body {
   background: #303138;
 }
 
+.mt-30 {
+  margin-top: 30px;
+}
+
 .tiles article {
   width: 50%;
 }
@@ -48,7 +52,7 @@ body {
 }
 
 #header .logo {
-  margin-top: 1em;
+  margin-top: 0.7em;
   min-width: 20%;
 }
 
@@ -203,3 +207,120 @@ header.major-no-line > :first-child:after {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.width-80 {
+  width: 80%;
+  margin: auto;
+}
+
+.logo-bar {
+  background-color: rgb(241, 241, 241);
+  color: rgb(59, 77, 93);
+}
+
+.logo-bar .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 15em;
+}
+
+.logo-bar .center > img {
+  max-width: 400px;
+  height: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.newsletter {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgba(59, 77, 93, 0.336);
+  color: #303138;
+}
+
+.newsletter .newsletter-form {
+  width: 80%;
+  margin: auto;
+}
+
+.newsletter .newsletter-form .button.primary {
+  margin-top: 20px;
+}
+
+.newsletter .newsletter-form .mc-field-group input {
+  background-color: rgba(59, 77, 93, 0.9);
+}
+
+.projects .inner .center {
+  width: 60%;
+  margin: auto;
+}
+
+.projects .inner .major {
+  margin-bottom: 100px;
+}
+
+.image-line { 
+  position: relative; 
+  height: 60vh;
+  max-height: 32em;
+  min-height: 22em; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../img/20191120_160016-e1613416406528.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+.image-line::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;    
+  background-color: rgba(35,53,77, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.image-line .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #ffffff;  
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact > .inner .actions {
+  margin-top: 20px;
+}
+
+/* @media screen and (max-width: 600px) {
+  .nav-responsive {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    display: none;
+  }
+} */

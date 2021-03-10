@@ -21,7 +21,7 @@ disqusShortname = "offeringsolutions"
   # Provide your metadata here.
   name = "Fabian Gosebrink Offering Solutions Software"
   description = "Angular and ASP.NET Core Consulting, Training and Courses"
-  cdnbaseurl = "https://cdn.offering.solutions/"
+  cdnbaseurl = "http://localhost:1313/"
 
   # Link custom assets relative to /static
   custom_css = ["css/custom.css", "css/scrolling.css"]
@@ -60,6 +60,10 @@ disqusShortname = "offeringsolutions"
       name = "Newsletter"
       url = "newsletter"
 
+    [[params.navigation.links]]
+      name = "Trainings"
+      url = "trainings"
+
     # Add custom links here by uncommenting code below. To remove links just delete
     # the [[params.navigation.links]] map associated with that link. Copy and paste
     # code below if you need more links. Buttons work in the same way.
@@ -83,8 +87,8 @@ disqusShortname = "offeringsolutions"
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
     title = "Offering Solutions Software"
-    subtitle = """Angular && ASP.NET Core && Azure"""
-    subtitle2 = """Microsoft MVP // Pluralsight Author // Google Developer Expert """
+    subtitle = "Angular, ASP.NET Core & Azure Consulting"
+    subtitle2 = "Microsoft MVP // Pluralsight Author // Google Developer Expert"
     buttonText = "Get Started"
 
 
@@ -103,7 +107,7 @@ disqusShortname = "offeringsolutions"
       title = "Training"
       subtitle = "Get you and your team up and running in the latest web technologies with Angular, ASP.NET Core, Javascript and Typescript"
       image = "landing/training.jpg"
-      url = "https://developer-academy.ch"
+      url = "/trainings"
 
     [[params.tiles.showcase]]
       title = "Consulting"
@@ -129,10 +133,14 @@ disqusShortname = "offeringsolutions"
   [params.two]
     enable = true
     title = "Blog"
-    subtitle = """In the blog you can read the latest articles about Angular, ASP.NET Core and latest tech journeys of a developer, trainer and teacher..."""
+    subtitle = "In the blog you can read the latest articles about Angular, ASP.NET Core and latest tech journeys of a developer, trainer and teacher..."
     buttonText = "To the blog"
     url = "blog"
 
+  [params.trainings]
+    enable = true
+    buttonText = "To the workshops"
+    url = "trainings"
 
   # Contact section
   [params.contact]
@@ -202,7 +210,7 @@ disqusShortname = "offeringsolutions"
       url= "https://www.linkedin.com/in/fabian-gosebrink-71023a88"
       label = "LinkedIn"
 
-       [[params.footer.social]]
+      [[params.footer.social]]
       icon = "fa-xing"
       url= "https://www.xing.com/profile/Fabian_Gosebrink"
       label = "Xing"
