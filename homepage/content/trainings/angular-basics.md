@@ -23,3 +23,5 @@ You want to leave the jQuery world behind you? Look no further because we have g
 - Dependency Injection
 - Server communication with HTTP
 - Observables
+
+If you are interested, drop us a line below
