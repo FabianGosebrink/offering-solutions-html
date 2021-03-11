@@ -59,7 +59,7 @@
             {{ .Content }}
           </div>
         </section>
-        
+
 				{{ partial "newsletter.html" . }}
         
         {{ "<!-- Disqus Inject -->" | safeHTML }} {{ if .Site.DisqusShortname }}
@@ -72,3 +72,4 @@
     {{ "<!-- Scripts -->" | safeHTML}} {{ partial "js.html" . }}
   </body>
 </html>
+
