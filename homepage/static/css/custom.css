@@ -316,6 +316,15 @@ header.major-no-line > :first-child:after {
   margin-top: 20px;
 }
 
+ul.alt li.talk-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ul.alt li.talk-item .talk-title {
+  font-size: 2em;
+}
+
 /* @media screen and (max-width: 600px) {
   .nav-responsive {
     visibility: hidden;
