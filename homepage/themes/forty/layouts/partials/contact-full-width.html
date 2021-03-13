@@ -1,37 +1,34 @@
 {{ "<!-- Contact -->" | safeHTML}}
 <section id="contact">
-  <div class="width-80">
-      <form
-        method="post"
-        action="https://formspree.io/{{ .Site.Params.Contact.formEmail }}"
-      >
-        <div class="field first">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" />
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email" />
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea name="message" id="message" rows="6"></textarea>
-        </div>
-        <ul class="actions">
-          <li>
-            <input
-              type="submit"
-              value="{{ .Site.Params.Contact.buttonSend }}"
-              class="special"
-            />
-          </li>
-          <li>
-            <input
-              type="reset"
-              value="{{ .Site.Params.Contact.buttonClear }}"
-            />
-          </li>
-        </ul>
-      </form>
+  <div>
+    <form
+      method="post"
+      action="https://formspree.io/{{ .Site.Params.Contact.formEmail }}"
+    >
+      <div class="field first">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" />
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="6"></textarea>
+      </div>
+      <ul class="actions">
+        <li>
+          <input
+            type="submit"
+            value="{{ .Site.Params.Contact.buttonSend }}"
+            class="special"
+          />
+        </li>
+        <li>
+          <input type="reset" value="{{ .Site.Params.Contact.buttonClear }}" />
+        </li>
+      </ul>
+    </form>
   </div>
 </section>
