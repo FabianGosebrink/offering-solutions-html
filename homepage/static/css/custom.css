@@ -47,6 +47,10 @@ body {
   background-color: #33587a;
 }
 
+#banner.center-image {
+  background-attachment: scroll;
+}
+
 #menu {
   background: rgba(0, 0, 0, 0.5);
 }
@@ -186,6 +190,13 @@ header.major-no-line > :first-child:after {
   margin-top: 10px;
 }
 
+#one .center-space-around {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 #one .pluralsight-logo {
   background-color: white;
   margin-bottom: 10px;
@@ -273,29 +284,29 @@ header.major-no-line > :first-child:after {
   margin-bottom: 100px;
 }
 
-.image-line { 
-  position: relative; 
+.image-line {
+  position: relative;
   height: 60vh;
   max-height: 32em;
-  min-height: 22em; 
+  min-height: 22em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("../../img/20191120_160016-e1613416406528.jpg");
+  background-image: url('../../img/20191120_160016-e1613416406528.jpg');
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
 }
 
 .image-line::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
-  left: 0px;    
-  background-color: rgba(35,53,77, 0.7);
+  left: 0px;
+  background-color: rgba(35, 53, 77, 0.7);
   align-items: center;
   justify-content: center;
 }
@@ -306,7 +317,7 @@ header.major-no-line > :first-child:after {
   align-items: center;
   justify-content: center;
   position: relative;
-  color: #ffffff;  
+  color: #ffffff;
   text-align: center;
   align-items: center;
   justify-content: center;

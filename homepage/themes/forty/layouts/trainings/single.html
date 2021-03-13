@@ -28,6 +28,18 @@
         <!-- One -->
         <section id="one">
           <div class="inner">
+
+            {{ if .Params.logos }}
+              <div class="center-space-around">
+                {{ range .Params.logos }}
+                  <img
+                    src="{{ $.Site.Params.cdnbaseurl }}img/{{ . }}"
+                    alt="{{.}}"
+                  />
+                {{ end }}
+              </div>
+            {{ end }}
+
             {{ .Content }}
 
             

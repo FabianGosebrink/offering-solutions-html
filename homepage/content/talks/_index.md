@@ -1,7 +1,7 @@
 ---
 title: 'Talks'
 slug: 'a'
-image: banner.jpg
+image: speaking.jpg
 draft: false
 category: noblog
 ---

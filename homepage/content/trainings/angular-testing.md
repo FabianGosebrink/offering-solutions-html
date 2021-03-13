@@ -1,8 +1,9 @@
 ---
 title: Angular Testing
-description: Master the first steps and principles of Angular the client side framework for building modern web applications.
+description: Angular Testing Workshop with Karma, Jasmine, Protractor and Cypress
 image: landing/development.jpg
 category: training
+logos: ['logos/karma.png', 'logos/protractor.png']
 ---
 
 This course is a journey through testing with Angular tools and best practices. With the Angular CLI's built in testing tools like `Karma` and `Jasmine` the varieties of components and service testing are explored. As a comparison `Jest` is also used to perform unit tests. `Protractor` and `Cypress` are used to perform end-to-end testing to ensure the current state-of-the-art.
