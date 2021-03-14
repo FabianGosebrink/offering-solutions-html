@@ -1,7 +1,7 @@
 # Site settings
 baseURL = "https://offering.solutions/"
 languageCode = "en-us"
-title = "Angular and ASP.NET Core Consulting, Training and Courses"
+title = "Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses"
 theme = "forty"
 
 # Enter your tracking code to enable Google Analytics
