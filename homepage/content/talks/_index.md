@@ -1,5 +1,5 @@
 ---
-title: 'Talks'
+title: 'Fabian Gosebrink's Talks'
 slug: 'a'
 image: speaking.jpg
 draft: false
