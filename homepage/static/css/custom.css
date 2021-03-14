@@ -336,11 +336,12 @@ ul.alt li.talk-item .talk-title {
   font-size: 2em;
 }
 
-/* @media screen and (max-width: 600px) {
-  .nav-responsive {
-    visibility: hidden;
-    clear: both;
-    float: left;
-    display: none;
-  }
-} */
+
+@media screen and (max-width: 736px) {
+    #header nav a.nav-responsive{
+      visibility: hidden; 
+      clear: both;
+      float: left;
+      display: none;
+    }
+}
