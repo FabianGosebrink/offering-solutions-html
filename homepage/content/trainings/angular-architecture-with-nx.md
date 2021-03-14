@@ -1,6 +1,6 @@
 ---
 title: Angular Architecture with NX
-description: Master the first steps and principles of Angular the client side framework for building modern web applications.
+description: Build large scale enterprise web applications with Angular and NX.
 image: landing/development.jpg
 category: training
 ---
