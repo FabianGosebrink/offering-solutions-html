@@ -1,7 +1,7 @@
 # Site settings
 baseURL = "https://offering.solutions/"
 languageCode = "en-us"
-title = "Offering Solutions Software by Fabian Gosebrink"
+title = "Angular and ASP.NET Core Consulting, Training and Courses"
 theme = "forty"
 
 # Enter your tracking code to enable Google Analytics
@@ -19,7 +19,7 @@ disqusShortname = "offeringsolutions"
   # CSS class.
 
   # Provide your metadata here.
-  name = "Fabian Gosebrink Offering Solutions Software"
+  name = "Fabian Gosebrink"
   description = "Angular and ASP.NET Core Consulting, Training and Courses"
   cdnbaseurl = "https://cdn.offering.solutions/"
   # cdnbaseurl = "http://localhost:1313/"
@@ -54,7 +54,7 @@ disqusShortname = "offeringsolutions"
       url = "blog"
 
     [[params.navigation.links]]
-      name = "Speaking"
+      name = "Talks"
       url = "talks"
 
     [[params.navigation.links]]
@@ -87,10 +87,10 @@ disqusShortname = "offeringsolutions"
   [params.banner]
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
-    title = "Offering Solutions Software"
-    subtitle = "Angular, ASP.NET Core & Azure Consulting"
+    title = "Angular, ASP.NET Core & Azure Consulting"
+    subtitle = "Offering Solutions Software"
     subtitle2 = "Microsoft MVP // Pluralsight Author // Google Developer Expert"
-    buttonText = "Get Started"
+    buttonText = "See our Services"
 
 
   # Tiles Section
@@ -220,6 +220,11 @@ disqusShortname = "offeringsolutions"
       icon = "fa-windows"
       url= "https://mvp.microsoft.com/en-us/PublicProfile/5001666?fullName=Fabian%20%20Gosebrink"
       label = "Microsoft"
+
+      [[params.footer.social]]
+      icon = "fa-google"
+      url= "https://developers.google.com/community/experts/directory/profile/profile-fabian_gosebrink"
+      label = "Google"
 
     [[params.footer.quicklinks]]
       text = "Design: "

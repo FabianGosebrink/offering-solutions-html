@@ -1,5 +1,5 @@
 ---
-title: 'Angular and ASP.NET Core Trainings'
+title: 'Angular & ASP.NET Core Trainings'
 slug: 'Trainings'
 image: landing/consulting.jpg
 date: 2021-03-07T22:27:21-05:00
