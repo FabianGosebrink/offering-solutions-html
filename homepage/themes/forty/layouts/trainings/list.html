@@ -32,7 +32,7 @@
 
           <div class="inner">
             <header class="major">
-              <h1>Angular & ASP.NET Core Trainings</h1>
+              <h1>Angular Trainings</h1>
             </header>
 
             <p>All trainings and workshops are hands on workshops with professional personal support, live coding and examples on slides and live on the PC.</p>
@@ -40,14 +40,13 @@
             <!-- Content -->
               <div class="row">
                 
-                {{ $paginator := .Paginate .Pages }}
-                {{ range .Paginator.Pages.ByDate.Reverse }}
+                {{ range (where .Site.Pages "Params.category" "training") }}
                 <div class="col-4 col-12-medium">
 
                   <h3>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                   </h3>
-                  <span class="image fit"><img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" alt="" /></span>
+                  <span class="image fit"><a href="{{ .Permalink }}"><img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" alt="{{ .Title }}" /></a></span>
                   <p>{{ .Description | safeHTML | truncate 170}}</p>
                   <ul class="actions">
                     <li><a href="{{ .Permalink }}" class="button">See Details</a></li>

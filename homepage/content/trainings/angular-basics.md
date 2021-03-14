@@ -1,9 +1,10 @@
 ---
-title: Angular Basics
+title: Angular Basics Workshop
 subhead: This course is the best start to ramp up your knowledge about Angular and component driven web development.
 description: Master the first steps and principles of Angular the client side framework for building modern web applications.
-image: landing/development.jpg
+image: trainings/angularbasics.png
 category: training
+logos: ['trainings/angularbasics.png']
 ---
 
 You want to leave the jQuery world behind you? Look no further because we have got you covered. In this course you will learn to create Angular applications from scratch.

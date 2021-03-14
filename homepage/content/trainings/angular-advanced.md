@@ -1,8 +1,9 @@
 ---
-title: Angular Advanced
+title: Angular Advanced Workshop
 description: Master the first steps and principles of Angular the client side framework for building modern web applications.
-image: landing/development.jpg
+image: trainings/angularadvancedngrx.png
 category: training
+logos: ['trainings/angularadvancedngrx.png']
 ---
 
 This course is the continuation of our Angular Beginner Course. Anyone who has visited this or has already taken the first steps with beginner Angular / Typescript is here repealed.

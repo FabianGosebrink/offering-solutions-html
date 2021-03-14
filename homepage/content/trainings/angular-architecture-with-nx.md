@@ -1,8 +1,9 @@
 ---
-title: Angular Architecture with NX
+title: Angular Architecture with NX Workshop
 description: Build large scale enterprise web applications with Angular and NX.
-image: landing/development.jpg
+image: trainings/angulararchitecture.png
 category: training
+logos: ['trainings/angulararchitecture.png']
 ---
 
 To build up scalable, maintainable and extendable architectures with an Angular application working with a nx workspace is the best option to use.
