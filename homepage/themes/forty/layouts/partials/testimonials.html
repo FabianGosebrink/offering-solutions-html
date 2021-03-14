@@ -1,0 +1,10 @@
+<div class="quotes-wrapper">
+    <div class="quotes">
+        {{ range  ($.Site.Data.testimonials) }}
+            <blockquote>
+                <p>"{{ .text }}"</p>
+                <cite>{{ .event }}</cite>
+            </blockquote>
+        {{ end }} 
+    </div>
+</div>

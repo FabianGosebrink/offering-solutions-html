@@ -336,6 +336,23 @@ ul.alt li.talk-item .talk-title {
   font-size: 2em;
 }
 
+.quotes-wrapper {
+  width: 100%;
+  height: 340px;
+  padding: 0;
+}
+
+.quotes {
+  position: absolute;
+  text-align: center;
+  overflow-y: hidden;
+  padding: 3em 0;
+}
+
+.quotes blockquote p {
+  font-size: 2em;
+  font-weight: bolder;
+}
 
 @media screen and (max-width: 736px) {
     #header nav a.nav-responsive{
