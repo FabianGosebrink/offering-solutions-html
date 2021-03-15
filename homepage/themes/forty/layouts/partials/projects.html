@@ -13,12 +13,12 @@
       {{ range (where .Site.Pages "Params.category" "training") }}
       <div class="col-4 col-12-medium">
         <h3>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h3>
-        <span class="image fit"><a href="{{ .Permalink }}"><img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" alt="" /></a></span>
+        <span class="image fit"><a href="{{ .RelPermalink }}"><img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" alt="" /></a></span>
         <p>{{ .Description | safeHTML | truncate 170}}</p>
         <ul class="actions">
-          <li><a href="{{ .Permalink }}" class="button">See Details</a></li>
+          <li><a href="{{ .RelPermalink }}" class="button">See Details</a></li>
         </ul>
       </div>
       {{ end }} 
@@ -28,7 +28,7 @@
       <ul class="actions">
         <li>
           <a
-            href="{{ .Site.Params.Trainings.url | absURL}}"
+            href="{{ .Site.Params.baseURLInternal }}{{ .Site.Params.Trainings.url }}"
             class="button next"
             >{{ .Site.Params.Trainings.buttonText }}</a
           >

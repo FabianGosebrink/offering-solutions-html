@@ -17,7 +17,7 @@
             <span class="image">
               <img
                 src="{{ .Site.Params.cdnbaseurl }}img/blog/{{ .Params.image }}"
-                alt="defaultSingleImage"
+                alt="blog header image"
               />
             </span>
             {{ end }}
@@ -28,7 +28,7 @@
             <p>
               {{ partial "readingtime.html" . }}
 
-              <a href="{{ .Site.Params.baseURL }}/blog/">back to all blogs</a>
+              <a href="{{ .Site.Params.baseURLInternal }}blog/">back to all blogs</a>
             </p>
           </div>
         </section>

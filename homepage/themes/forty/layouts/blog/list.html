@@ -15,7 +15,7 @@
             {{ if .Params.image }}
             <span class="image">
               <img
-                src="{{ .Site.Params.cdnbaseurl }}/img/{{ .Params.image }}"
+                src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}"
                 alt="defaultListImage"
               />
             </span>
@@ -47,7 +47,7 @@
               <div class="inner">
                 <header class="major-no-line">
                   <h3>
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                   </h3>
                 </header>
                 <p>
@@ -62,7 +62,7 @@
                 </p>
                 <p>{{ .Description | safeHTML | truncate 100}}</p>
                 <ul class="actions">
-                  <li><a href="{{ .Permalink }}" class="button">Read more</a></li>
+                  <li><a href="{{ .RelPermalink }}" class="button">Read more</a></li>
                 </ul>
               </div>
             </div>

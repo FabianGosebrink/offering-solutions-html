@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="{{ .Site.Params.cdnbaseurl }}css/main.css"/>
 	<!--[if lte IE 9]><link rel="stylesheet" href="{{ "css/ie9.css" }}"/><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="{{ "css/ie8.css" }}"/><![endif]-->
-	<link rel="manifest" href="{{ .Site.BaseURL }}manifest.webmanifest">
+	<link rel="manifest" href="{{ .Site.Params.baseURLInternal }}manifest.webmanifest">
 	{{ range .Site.Params.custom_css }}
 		<link rel="stylesheet" href="{{ $.Site.Params.cdnbaseurl }}{{ . }}">
 	{{ end }}
@@ -20,8 +20,8 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" type="text/css">
 
 	{{ with .Site.Params.favicon }}
-	<link rel="shortcut icon" type="image/x-icon" href="{{ . | absURL }}">
-	<link rel="icon" type="image/x-icon" href="{{ . | absURL }}">
+	<link rel="shortcut icon" type="image/x-icon" href="/{{ . }}">
+	<link rel="icon" type="image/x-icon" href="/{{ . }}">
 	{{ end }}
 
 	<!-- ios support -->

@@ -1,9 +1,9 @@
 {{ "<!-- Header -->" | safeHTML }}
     <header id="header" class="alt">
-        <a href="{{ .Site.BaseURL }}" class="logo">{{ if .Site.Params.Navigation.logo }}<img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Site.Params.Navigation.logo }}" alt="logo" width="100" />{{ else }}<strong>{{ .Site.Params.Navigation.title }}</strong> <span>{{ .Site.Params.Navigation.subtitle }}</span>{{ end }}</a>
+        <a href="{{ .Site.Params.baseURLInternal }}" class="logo">{{ if .Site.Params.Navigation.logo }}<img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Site.Params.Navigation.logo }}" alt="logo" width="100" />{{ else }}<strong>{{ .Site.Params.Navigation.title }}</strong> <span>{{ .Site.Params.Navigation.subtitle }}</span>{{ end }}</a>
         <nav>
             {{ range .Site.Params.Navigation.links }}
-                <a class="nav-responsive" href="{{ .url | absURL}}">{{ .name }}</a>
+                <a class="nav-responsive" href="{{ $.Site.Params.baseURLInternal }}{{ .url }}">{{ .name }}</a>
             {{ end }}
             <a href="#menu">{{ .Site.Params.Navigation.menu }}</a>
         </nav> 
@@ -13,16 +13,16 @@
     <nav id="menu">
         <ul class="links">
             {{ range .Site.Params.Navigation.links }}
-                <li><a href="{{ .url | absURL}}">{{ .name }}</a></li>
+                <li><a href="{{ $.Site.Params.baseURLInternal }}{{ .url }}">{{ .name }}</a></li>
             {{ end }}
 
         </ul>
         <ul class="actions vertical">
             {{ range .Site.Params.Navigation.button1 }}
-                <li><a href="{{ .url | absURL}}" class="button special fit">{{ .name }}</a></li>
+                <li><a href="{{ .url }}" class="button special fit">{{ .name }}</a></li>
             {{ end }}
             {{ range .Site.Params.Navigation.button2 }}
-                <li><a href="{{ .url | absURL}}" class="button fit">{{ .name }}</a></li>
+                <li><a href="{{ .url }}" class="button fit">{{ .name }}</a></li>
             {{ end }}
         </ul>
     </nav>

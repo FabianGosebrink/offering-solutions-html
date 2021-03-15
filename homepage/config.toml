@@ -1,7 +1,7 @@
 # Site settings
 baseURL = "https://offering.solutions/"
 languageCode = "en-us"
-title = "Fabian Gosebrink's Angular and ASP.NET Core Consulting, Training and Courses"
+title = "Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses"
 theme = "forty"
 
 # Enter your tracking code to enable Google Analytics
@@ -21,6 +21,7 @@ disqusShortname = "offeringsolutions"
   # Provide your metadata here.
   name = "Fabian Gosebrink"
   description = "Angular and ASP.NET Core Consulting, Training and Courses"
+  baseURLInternal = "/"
   cdnbaseurl = "https://cdn.offering.solutions/"
   # cdnbaseurl = "http://localhost:1313/"
 
