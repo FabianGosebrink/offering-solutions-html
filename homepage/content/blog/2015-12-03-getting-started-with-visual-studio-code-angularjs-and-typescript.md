@@ -31,7 +31,7 @@ With
 
 `npm install tsd -g`
 
-You can install the [TypeScript Definition manager for DefinitelyTyped](http://definitelytyped.org/tsd/) to get the strong typed advantages from Typescript going.
+You can install the [TypeScript Definition manager for DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) to get the strong typed advantages from Typescript going.
 
 In Visual Studio Code the first file you need when working with Typescript is the "tsconfig.json" which sets the basic behaviour of your typescript compiler.
 

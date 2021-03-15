@@ -21,7 +21,7 @@ You can find the complete update commit here : [angular-ngrx-todo update commit]
 
 ## Preparations
 
-I started updating the project with [update.angular.io](update.angular.io) and came to update the store with
+I started updating the project with [update.angular.io](https://update.angular.io) and came to update the store with
 
 ```
 ng update @ngrx/store

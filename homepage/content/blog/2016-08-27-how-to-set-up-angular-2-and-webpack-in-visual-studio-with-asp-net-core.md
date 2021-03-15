@@ -547,7 +547,7 @@ and let it run:
 
 ![Zwischenablage11](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/08/Zwischenablage11.jpg)
 
-So now lets pimp the production a bit. Its mostly the same we have so far for dev, but we need a little more plugins. Maybe the one to uglify the js [UglifyJsPlugin](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin) and to delete the files in the wwwroot first "[Clean for webpack](https://github.com/johnagan/clean-webpack-plugin)".
+So now lets pimp the production a bit. Its mostly the same we have so far for dev, but we need a little more plugins. Maybe the one to uglify the js [UglifyJsPlugin](https://webpack.js.org/migrate/3/#uglifyjsplugin-sourcemap) and to delete the files in the wwwroot first "[Clean for webpack](https://github.com/johnagan/clean-webpack-plugin)".
 
 Copy the whole content from the webpack.dev.json to the prod.json and add the uglifyjs-plugin like this:
 
