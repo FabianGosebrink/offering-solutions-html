@@ -224,6 +224,10 @@ header.major-no-line > :first-child:after {
   height: auto;
 }
 
+.responsive.max-width-70 {
+  max-width: 70%;
+}
+
 .full-width {
   width: 100%;
 }
@@ -355,10 +359,10 @@ ul.alt li.talk-item .talk-title {
 }
 
 @media screen and (max-width: 736px) {
-    #header nav a.nav-responsive{
-      visibility: hidden; 
-      clear: both;
-      float: left;
-      display: none;
-    }
+  #header nav a.nav-responsive {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    display: none;
+  }
 }
