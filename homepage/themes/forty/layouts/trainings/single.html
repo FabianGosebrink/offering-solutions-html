@@ -29,9 +29,23 @@
         <section id="one">
           <div class="inner">
 
-            {{ if .Params.logos }}
+            {{ if .Params.logo1 }}
               <div class="center-space-around">
-                {{ range .Params.logos }}
+                {{ range .Params.logo1 }}
+                  <img
+                    src="{{ $.Site.Params.cdnbaseurl }}img/{{ . }}"
+                    class="responsive"
+                    alt="{{ $.Title }}"
+                  />
+                {{ end }}
+              </div>
+            {{ end }}
+
+            {{ .Content }}
+
+             {{ if .Params.logo2 }}
+              <div class="center-space-around">
+                {{ range .Params.logo2 }}
                   <img
                     src="{{ $.Site.Params.cdnbaseurl }}img/{{ . }}"
                     class="responsive max-width-70"
@@ -41,9 +55,7 @@
               </div>
             {{ end }}
 
-            {{ .Content }}
 
-            
             {{ partial "contact-full-width.html" . }}
           </div>
         </section>

@@ -4,7 +4,8 @@ subhead: This course is the best start to ramp up your knowledge about Angular a
 description: Master the first steps and principles of Angular the client side framework for building modern web applications.
 image: trainings/angularbasics.png
 category: training
-logos: ['trainings/angularbasics.png']
+logo1: ['trainings/training-small.jpg']
+logo2: ['trainings/angularbasics.png']
 ---
 
 You want to leave the jQuery world behind you? Look no further because we have got you covered. In this course you will learn to create Angular applications from scratch.

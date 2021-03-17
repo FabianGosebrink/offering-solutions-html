@@ -327,7 +327,8 @@ header.major-no-line > :first-child:after {
   justify-content: center;
 }
 
-#contact > .inner .actions {
+#contact > .inner .actions,
+#contact .actions {
   margin-top: 20px;
 }
 
