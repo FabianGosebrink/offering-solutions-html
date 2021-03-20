@@ -37,7 +37,7 @@
                             <ul class="alt">
                                 {{ range  ($.Site.Data.talks) }}
                                 <li class="talk-item">
-                                    <span class="talk-title">{{ .title }}</span><br/>
+                                    <span class="talk-title">{{ title .title }}</span><br/>
                                     {{ dateFormat "Monday, Jan 2, 2006" .date }} - {{.event }}<br/>
                                     Tags: {{ delimit .tags ", " }}
                                 </li>

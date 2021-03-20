@@ -4,13 +4,16 @@
   "description": "[Offering Solutions Software](https://offering.solutions)",
   "main": "index.js",
   "dependencies": {
-    "alex": "^9.1.0"
+    "alex": "^9.1.0",
+    "fs-extra": "^9.1.0",
+    "title-case": "^3.0.3"
   },
   "devDependencies": {},
   "scripts": {
     "alex": "alex homepage/content/blog/*.md",
     "start": "hugo server -D --source=./homepage",
-    "build": "hugo --source=./homepage"
+    "build": "hugo --source=./homepage",
+    "title-case": "tsc ./tools/title-case-converter.ts && node ./tools/title-case-converter.js"
   },
   "repository": {
     "type": "git",
