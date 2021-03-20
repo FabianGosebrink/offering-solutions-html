@@ -1,0 +1,45 @@
+<html>
+  {{ "<!-- Header -->" | safeHTML }}
+  {{ partial "header.html" . }}
+
+  <body>
+    {{ "<!-- Wrapper -->" | safeHTML }}
+    <div id="wrapper">
+      {{ partial "nav.html" . }}
+
+      {{ "<!-- Main -->" | safeHTML }}
+      <div id="main">
+        <section id="banner" class="style2">
+          <div class="inner">
+           
+            <header class="major">
+              <h1>{{ .Title }}</h1>
+            </header>
+            <div class="content">{{ .Content }}</div>
+          </div>
+        </section>
+
+        
+        <section id="two" class="spotlights">
+          <section>
+            <div class="content">
+                 <div class="inner">
+                    {{ partial "impressum.html" . }}
+                </div>
+            </div>
+          </section>
+        </section>
+       
+      
+      </div>
+
+      {{ "<!-- Footer -->" | safeHTML}}
+      {{ if .Site.Params.footer.enable }}
+      {{ partial "footer.html" . }}
+      {{ end }}
+    </div>
+
+    {{ "<!-- Scripts -->" | safeHTML}}
+    {{ partial "js.html" . }}
+  </body>
+</html>
