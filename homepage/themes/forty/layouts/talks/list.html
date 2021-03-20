@@ -33,11 +33,16 @@
             
                     <div class="row">
                         <div class="col-12">
-                            <h2>Excerpt of all given talks....</h2>
+                            {{ $list := ($.Site.Data.talks) }}
+                            {{ $len := (len $.Site.Data.talks) }}
+                            <h2>Excerpt of all given talks ({{ $len }} talks listed here)...</h2>
                             <ul class="alt">
-                                {{ range  ($.Site.Data.talks) }}
+                                {{ range  ($list) }}
                                 <li class="talk-item">
-                                    <span class="talk-title">{{ title .title }}</span><br/>
+                                    <span class="talk-title">
+                                       {{ if .link }}<a href="{{.link}}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }} 
+                                    </span>
+                                    <br/>
                                     {{ dateFormat "Monday, Jan 2, 2006" .date }} - {{.event }}<br/>
                                     Tags: {{ delimit .tags ", " }}
                                 </li>

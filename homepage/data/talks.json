@@ -1,15 +1,57 @@
 [
   {
+    "title": "Realtime Cross-Plattform-Applikationen mit Angular, ASP.NET Core und SignalR",
+    "link": "https://basta.net/user-interface/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr/",
+    "date": "2021-02-16T00:00:00.000Z",
+    "event": "BASTA!",
+    "tags": ["Angular", "ASP.NET Core", "SignalR"]
+  },
+  {
+    "title": "Architecting Angular Applications with Angular Libraries",
+    "link": "https://www.meetup.com/de-DE/GDGWestSweden/events/275821898/",
+    "date": "2021-01-28T00:00:00.000Z",
+    "event": "GDG West Sweden",
+    "tags": ["Angular", "Libraries"]
+  },
+  {
+    "title": "End-to-End – Moderne Webanwendungen mit Angular und ASP.NET Core",
+    "link": "https://www.digicomp.ch/weiterbildung/development-trainings/web-development/microsoft-web-development-trainings/workshop-end-to-end-moderne-webanwendungen-mit-angular-und-asp-net-core",
+    "date": "2021-01-27T00:00:00.000Z",
+    "event": "Digicomp",
+    "tags": ["Angular", "ASP.NET Core"]
+  },
+  {
+    "title": "Enrich your Angular App with Angular Forms",
+    "link": "https://ng-poland.pl/",
+    "date": "2020-11-19T00:00:00.000Z",
+    "event": "Ng Poland",
+    "tags": ["Angular", "Forms"]
+  },
+  {
+    "title": "Angular Testing Made Easy with Jasmine, Karma and Cypress",
+    "link": "https://javascript-conference.com/angular/angular-testing-made-easy-with-jasmine-karma-and-cypress/",
+    "date": "2020-10-28T00:00:00.000Z",
+    "event": "International Javascript Conference 2020",
+    "tags": ["Angular", "Testing"]
+  },
+  {
+    "title": "Architecting Angular Applications with Angular Libraries",
+    "link": "https://javascript-conference.com/angular/architecting-angular-applications-and-angular-libraries/",
+    "date": "2020-10-28T00:00:00.000Z",
+    "event": "International Javascript Conference 2020",
+    "tags": ["Angular", "Libraries", "architecture"]
+  },
+  {
     "title": "Architecting Angular Applications with Angular Libraries",
     "date": "2020-10-17T00:00:00.000Z",
     "event": "DevFest UK & Ireland",
-    "tags": ["Angular", "libraries", "architecture"]
+    "tags": ["Angular", "Libraries", "architecture"]
   },
   {
     "title": "Testing Using Angular",
     "date": "2020-10-13T00:00:00.000Z",
     "event": "Web developer Conference",
-    "tags": ["Angular", "testing"]
+    "tags": ["Angular", "Testing"]
   },
   {
     "title": "Statemanagement in Angular with Ngrx Stores & Effects",
@@ -33,19 +75,19 @@
     "title": "Architecting Angular Applications with Angular Libraries",
     "date": "2020-07-15T00:00:00.000Z",
     "event": "NG-Poland",
-    "tags": ["Angular", "libraries", "architecture"]
+    "tags": ["Angular", "Libraries", "architecture"]
   },
   {
     "title": "Erstellen Von Modernen Web-Apis Mit ASP.NET Core 3",
     "date": "2020-02-25T00:00:00.000Z",
     "event": "BASTA! Frankfurt",
-    "tags": ["Angular", "libraries", "architecture"]
+    "tags": ["Angular", "Libraries", "architecture"]
   },
   {
     "title": "Better Angular Architectures with Libraries",
     "date": "2019-11-27T00:00:00.000Z",
     "event": "Web Zurich UG Meetup",
-    "tags": ["Angular", "libraries", "architecture"]
+    "tags": ["Angular", "Libraries", "architecture"]
   },
   {
     "title": "End-to-End : Distributed Systems with ASP.NET Core and Angular - Workshop",
@@ -75,7 +117,7 @@
     "title": "Professional Angular Architectures with Angular Libraries",
     "date": "2019-10-23T00:00:00.000Z",
     "event": "iJS Munich",
-    "tags": ["Angular", "libraries", "Architecture"]
+    "tags": ["Angular", "Libraries", "Architecture"]
   },
   {
     "title": "Statemanagement in Angular with Ngrx Stores & Effects Workshop",
@@ -93,7 +135,7 @@
     "title": "Angular Architectures with Angular Libraries",
     "date": "2019-10-15T00:00:00.000Z",
     "event": "Web Developer Conference (WDC) Hamburg",
-    "tags": ["Angular", "libraries", "Architecture"]
+    "tags": ["Angular", "Libraries", "Architecture"]
   },
   {
     "title": "Testing Made Easy",
@@ -105,7 +147,7 @@
     "title": "Architecting Angular Apps with Angular Libraries",
     "date": "2019-10-07T00:00:00.000Z",
     "event": "NgRome",
-    "tags": ["Angular", "libraries", "Architecture"]
+    "tags": ["Angular", "Libraries", "Architecture"]
   },
   {
     "title": "What Is New in ASP.NET Core 3.0",
