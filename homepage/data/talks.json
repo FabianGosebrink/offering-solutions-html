@@ -141,174 +141,174 @@
     "title": "Javascript Testing Leicht Gemacht Am Beispiel Von Angular",
     "date": "2019-02-27T00:00:00.000Z",
     "event": "BASTA! - Frankfurt",
-    "tags": ["Angular", "javascript", "testing"]
+    "tags": ["Angular", "Javascript", "testing"]
   },
   {
     "title": "Echte Cross-Plattform-Anwendungen Mit Cordova, Electron Und Angular",
     "date": "2018-09-27T00:00:00.000Z",
     "event": "BASTA! - Mainz",
-    "tags": ["Angular", "cordova", "electron", "web", "cross platform"]
+    "tags": ["Angular", "cordova", "Electron", "Web", "cross platform"]
   },
   {
     "title": "Die Moderne Web-Toolchain: Webpack, Npm Und Yarn, Linting Und Co.",
     "date": "2018-09-26T00:00:00.000Z",
     "event": "BASTA! - Mainz",
-    "tags": ["web", "development", "tools"]
+    "tags": ["Web", "Development", "tools"]
   },
   {
     "title": "Modern Webapis with ASP.NET Core",
     "date": "2018-06-25T00:00:00.000Z",
     "event": "DWX - Nürnberg",
-    "tags": ["ASP.NET Core", "web", "development"]
+    "tags": ["ASP.NET Core", "Web", "Development"]
   },
   {
     "title": "Real Time Web Applications with Angular and ASP.NET Core Signalr",
     "date": "2018-06-22T00:00:00.000Z",
     "event": "WebZurich meetup - Zürich",
-    "tags": ["ASP.NET Core", "web", "development", "signalr"]
+    "tags": ["ASP.NET Core", "Web", "Development", "SignalR"]
   },
   {
     "title": "Angular Testing Made Easy",
     "date": "2018-03-21T00:00:00.000Z",
     "event": "Angular Days - Munich",
-    "tags": ["Angular", "testing", "javascript", "web", "development"]
+    "tags": ["Angular", "testing", "Javascript", "Web", "Development"]
   },
   {
     "title": "From Zero to Azure with Angular",
     "date": "2018-03-01T00:00:00.000Z",
     "event": "Microsoft TechSummit Switzerland",
-    "tags": ["javascript", "web", "development", "Azure"]
+    "tags": ["Javascript", "Web", "Development", "Azure"]
   },
   {
     "title": "Mehr Als Nur Web: Cross-Plattform-Anwendungen Mit Angular, Electron Und Cordova",
     "date": "2018-02-21T00:00:00.000Z",
     "event": "BASTA! Spring 2018",
-    "tags": ["javascript", "web", "development"]
+    "tags": ["Javascript", "Web", "Development"]
   },
   {
     "title": "Modern Web Toolchain",
     "date": "2018-02-21T00:00:00.000Z",
     "event": "BASTA! Spring 2018",
-    "tags": ["javascript", "web", "development"]
+    "tags": ["Javascript", "Web", "Development"]
   },
   {
     "title": "Modern Web Toolchain",
     "date": "2017-10-23T00:00:00.000Z",
     "event": "Dev-Day Digicomp - Zürich",
-    "tags": ["javascript", "web", "development"]
+    "tags": ["Javascript", "Web", "Development"]
   },
   {
     "title": "Angular Testing Von a Bis Z",
     "date": "2017-10-11T00:00:00.000Z",
     "event": "Angular Days - Berlin",
-    "tags": ["Angular", "testing", "javascript", "web", "development"]
+    "tags": ["Angular", "testing", "Javascript", "Web", "Development"]
   },
   {
     "title": "Fenster Überall: Desktopanwendungen Mit Angular Und Electron",
     "date": "2017-09-28T00:00:00.000Z",
     "event": "BASTA! - Mainz",
-    "tags": ["Angular", "electron", "javascript", "web", "development"]
+    "tags": ["Angular", "Electron", "Javascript", "Web", "Development"]
   },
   {
     "title": "Webentwicklung Mit ASP.NET Core Webapi & Angular",
     "date": "2017-09-19T00:00:00.000Z",
     "event": "Advanced Developers Conference - Köln",
-    "tags": ["Angular", "asp.net core", "web", "development"]
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
   },
   {
     "title": "Cross-Plattform Webapis Mit ASP.NET Core",
     "date": "2017-09-19T00:00:00.000Z",
     "event": "Advanced Developers Conference - Köln",
-    "tags": ["asp.net core", "web", "development"]
+    "tags": ["ASP.NET Core", "Web", "Development"]
   },
   {
     "title": "Businessanwendungen Für Jedes System Mit ASP.NET Core Und Angular",
     "date": "2017-05-23T00:00:00.000Z",
     "event": ".NET-Day Schweiz",
-    "tags": ["Angular", "asp.net core", "web", "development"]
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
   },
   {
     "title": "Angular Mit ASP.NET Core Webapi",
     "date": "2017-04-25T00:00:00.000Z",
     "event": " Sarganserland GR Softwareentwickler Meetup",
-    "tags": ["Angular", "asp.net core", "web", "development"]
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
   },
   {
     "title": "Cross-Platform Webapis Mit Der Dotnet Cli Und ASP.NET Core",
     "date": "2017-03-30T00:00:00.000Z",
     "event": "Microsoft Solutions User Group Switzerland",
-    "tags": ["asp.net core", "web", "development", "dotnet cli"]
+    "tags": ["ASP.NET Core", "Web", "Development", "dotnet cli"]
   },
   {
     "title": "Angular and C# .Net as Backend",
     "date": "2017-02-28T00:00:00.000Z",
     "event": "Angular Basel",
-    "tags": ["Angular", "asp.net core", "web", "development"]
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
   },
   {
     "title": "ASP.NET Core & Angular in Business Applications",
     "date": "2017-01-31T00:00:00.000Z",
     "event": "Microsoft TechDays 2017",
-    "tags": ["Angular", "asp.net core", "web", "signalr", "development"]
+    "tags": ["Angular", "ASP.NET Core", "Web", "SignalR", "Development"]
   },
   {
     "title": "Moderne Webentwicklung Mit Component Based Design",
     "date": "2017-01-17T00:00:00.000Z",
     "event": "Noser Engineering",
-    "tags": ["Angular", "asp.net", "web", "development"]
+    "tags": ["Angular", "ASP.NET", "Web", "Development"]
   },
   {
     "title": "How to Write a Webapi with ASP.NET Core",
     "date": "2016-11-28T00:00:00.000Z",
     "event": "Basel .NET User Group",
-    "tags": ["asp.net core", "web", "development"]
+    "tags": ["ASP.NET Core", "Web", "Development"]
   },
   {
     "title": "Webentwicklung Mit Angular Und ASP.NET Core",
     "date": "2016-06-02T00:00:00.000Z",
     "event": "Noser Engineering",
-    "tags": ["Angular", "asp.net core", "web", "development"]
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
   },
   {
     "title": "Webentwicklung Mit Angular, Signalr Und ASP.NET Core",
     "date": "2016-03-01T00:00:00.000Z",
     "event": "Microsoft TechDays 2016",
-    "tags": ["Angular", "asp.net core", "web", "signalr", "development"]
+    "tags": ["Angular", "ASP.NET Core", "Web", "SignalR", "Development"]
   },
   {
     "title": "AngularJs & Rest/webapi (with X-Platform Development)",
     "date": "2016-01-13T00:00:00.000Z",
     "event": "undefined",
-    "tags": ["Angular", "asp.net", "web", "development", "x-platform"]
+    "tags": ["Angular", "ASP.NET", "Web", "Development", "x-platform"]
   },
   {
     "title": "Webentwicklung Mit AngularJs & Rest/webapi",
     "date": "2015-10-29T00:00:00.000Z",
     "event": "Microsoft Evolution Day",
-    "tags": ["Angular", "asp.net", "web", "development"]
+    "tags": ["Angular", "ASP.NET", "Web", "Development"]
   },
   {
     "title": "Webentwicklung Mit ASP.NET & AngularJs",
     "date": "2015-04-23T00:00:00.000Z",
     "event": " Microsoft Techtalk (Bern)",
-    "tags": ["Angular", "asp.net", "web", "development"]
+    "tags": ["Angular", "ASP.NET", "Web", "Development"]
   },
   {
     "title": "Webentwicklung Mit ASP.NET & AngularJs",
     "date": "2015-03-19T00:00:00.000Z",
     "event": "Microsoft Techtalk (Wallisellen)",
-    "tags": ["Angular", "asp.net", "web", "development"]
+    "tags": ["Angular", "ASP.NET", "Web", "Development"]
   },
   {
     "title": "Scrum - Agile Development",
     "date": "2015-03-02T00:00:00.000Z",
     "event": "Hochschule Rapperswil",
-    "tags": ["agile", "development", "scrum"]
+    "tags": ["agile", "Development", "scrum"]
   },
   {
     "title": "ASP.NET Mvc Workshop",
     "date": "2014-06-21T00:00:00.000Z",
     "event": "Hochschule Albstadt-Sigmaringen",
-    "tags": ["web", "development", "asp.net mvc"]
+    "tags": ["Web", "Development", "ASP.NET MVC"]
   }
 ]
