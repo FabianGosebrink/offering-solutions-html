@@ -1,6 +1,7 @@
 (function($) {
 
 	skel.breakpoints({
+		xxlarge: '(min-width: 2400px)',
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
 		medium: '(max-width: 980px)',
@@ -36,10 +37,9 @@
 		$this.each(function() {
 
 			var $t = $(this),
-				on, off;
+				normal, medium, xxlarge;
 
-			on = function() {
-
+			normal = function() {
 				$t.css('background-position', 'center 100%, center 100%, center 0px');
 
 				// $window
@@ -53,7 +53,11 @@
 
 			};
 
-			off = function() {
+			xxlarge = function() {
+				$t.css('background-position', '0% 65%');
+			};
+
+			medium = function() {
 
 				$t
 					.css('background-position', '');
@@ -65,10 +69,13 @@
 
 			skel.on('change', function() {
 
-				if (skel.breakpoint('medium').active)
-					(off)();
-				else
-					(on)();
+				if (skel.breakpoint('xxlarge').active) {
+					(xxlarge)();
+				} else if (skel.breakpoint('medium').active) {
+					(medium)();
+				} else {
+					(normal)();
+				}
 
 			});
 
