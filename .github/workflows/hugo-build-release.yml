@@ -20,20 +20,25 @@ jobs:
     defaults:
       run:
         shell: pwsh
-        working-directory: ${{ env.WORKING_DIRECTORY }}
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Setup Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.73.0'
 
-      - name: Build hugo
-        run: hugo --minify --baseURL ${{ env.BASE_URL }}
+      - name: Building Hugo
+        run: sudo npm run build
 
       - name: 'Copy Files to: homepage/public/dist-cdn'
+        working-directory: ${{ env.WORKING_DIRECTORY }}
         run: |
           Copy-Item -Path public/js/ public/dist-cdn/js -recurse
           Copy-Item -Path public/css/ public/dist-cdn/css -recurse
@@ -42,6 +47,7 @@ jobs:
           Copy-Item -Path public/index.json public/dist-cdn -recurse
 
       - name: 'Copy Files to: homepage/public/dist-blog'
+        working-directory: ${{ env.WORKING_DIRECTORY }}
         run: |
           New-Item -Path public/dist-blog -ItemType Directory
           Copy-Item -Path public/blog/ -Destination public/dist-blog/blog -recurse

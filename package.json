@@ -11,8 +11,8 @@
   "devDependencies": {},
   "scripts": {
     "alex": "alex homepage/content/blog/*.md",
-    "start": "hugo server -D --source=./homepage",
-    "build": "hugo --source=./homepage",
+    "start": "cd ./homepage && hugo server -D --config config.dev.toml",
+    "build": "cd ./homepage && hugo",
     "title-case": "tsc ./tools/title-case-converter.ts && node ./tools/title-case-converter.js"
   },
   "repository": {
