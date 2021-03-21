@@ -1,3 +1,5 @@
 backups/
 /homepage/public
 /node_modules/
+.dist
+.temp
