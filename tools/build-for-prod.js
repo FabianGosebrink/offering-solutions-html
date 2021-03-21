@@ -76,10 +76,6 @@ shell.echo('Deleted dist folders...');
 const buildCommand = `hugo --source=./homepage --destination=../${OUTPUT_TEMP_PATH}`;
 shell.exec(buildCommand);
 
-// MINIFY WITH GULP 
-// const gulpMinifyCommand = `gulp buildWeb`;
-// shell.exec(gulpMinifyCommand);
-
 // COPY DIST CDN
 shell.echo('Copy Dist CDN...');
 distCdnFiles.forEach(({source, destination}) => {
@@ -93,3 +89,7 @@ distBlogFiles.forEach(({source, destination}) => {
     shell.mkdir('-p', destination);
     shell.cp('-r', source, destination);
 })
+
+// MINIFY WITH GULP 
+const gulpMinifyCommand = `gulp buildWeb`;
+shell.exec(gulpMinifyCommand);
