@@ -2,7 +2,6 @@
 
 const shell = require('shelljs');
 
-
 const OUTPUT_TEMP_PATH = '.temp';
 const OUTPUT_DIST_PATH = '.dist';
 const OUTPUT_DIST_CDN_PATH = 'dist-cdn';
@@ -73,9 +72,13 @@ shell.rm('-rf', `${OUTPUT_TEMP_PATH}`);
 shell.rm('-rf', `${OUTPUT_DIST_PATH}`);
 shell.echo('Deleted dist folders...');
 
-// BUILD ANGULAR
+// BUILD 
 const buildCommand = `hugo --source=./homepage --destination=../${OUTPUT_TEMP_PATH}`;
 shell.exec(buildCommand);
+
+// MINIFY WITH GULP 
+// const gulpMinifyCommand = `gulp buildWeb`;
+// shell.exec(gulpMinifyCommand);
 
 // COPY DIST CDN
 shell.echo('Copy Dist CDN...');
