@@ -29,7 +29,7 @@ Find the moving-to-github-actions-commit here [Moving to GitHub actions](https:/
 
 ## Why moving?
 
-In the beginning of November 2020 TravisCI announced that they will change their pricing plan which made me read their new announcement. I found out that TravisCI is providing a free amount of minutes to spend on open source projects because TravisCI found out their systems suffer from misusage.
+In the beginning of November 2020, TravisCI announced that they will change their pricing plan which made me read their new announcement. I found out that TravisCI is providing a free amount of minutes to spend on open source projects because TravisCI found out their systems suffer from misusage.
 
 ```
 When your credit allotment runs out - we’d love for you to consider which of our plans will meet your needs.
