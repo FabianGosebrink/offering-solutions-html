@@ -55,6 +55,11 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 
+#header {
+  /* Mailchimp popup has 9999 */
+  z-index: 9998;
+}
+
 #header .logo {
   margin-top: 0.7em;
   min-width: 20%;
