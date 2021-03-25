@@ -33,18 +33,16 @@
             
                     <div class="row">
                         <div class="col-12">
-                            {{ $list := ($.Site.Data.talks) }}
-                            {{ $len := (len $.Site.Data.talks) }}
-                            <h2>Excerpt of all given talks ({{ $len }} talks listed here)...</h2>
+                            <h2>Excerpt of all given talks...</h2>
                             <ul class="alt">
-                                {{ range  ($list) }}
+                              {{ range (where .Site.Pages "Params.category" "talks") }}
                                 <li class="talk-item">
-                                    <span class="talk-title">
-                                       {{ if .link }}<a href="{{.link}}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }} 
-                                    </span>
+                                   <span class="talk-title">
+                                      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                    </span>    
                                     <br/>
-                                    {{ dateFormat "Monday, Jan 2, 2006" .date }} - {{.event }}<br/>
-                                    Tags: {{ delimit .tags ", " }}
+                                    {{ dateFormat "Monday, Jan 2, 2006" .Date }} - {{ if .Params.link }}<a href="{{.Params.link}}"> {{ .Params.event }}</a>{{ else }} {{ .Params.event }}{{ end }}<br/>
+                                    Tags: {{ delimit .Params.tags ", " }}
                                 </li>
                                 {{ end }} 
                             </ul>

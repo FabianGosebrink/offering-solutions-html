@@ -1,10 +1,19 @@
 [
   {
+    "title": "Angular Reactive Forms – Formulare und Validierung mit Angular entwickeln",
+    "link": "https://javascript-days.de/angular/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln/",
+    "date": "2021-03-25T00:00:00.000Z",
+    "event": "Angular Days",
+    "tags": ["Angular"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular"
+  },
+  {
     "title": "Realtime Cross-Plattform-Applikationen mit Angular, ASP.NET Core und SignalR",
     "link": "https://basta.net/user-interface/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr/",
     "date": "2021-02-16T00:00:00.000Z",
     "event": "BASTA!",
-    "tags": ["Angular", "ASP.NET Core", "SignalR"]
+    "tags": ["Angular", "ASP.NET Core", "SignalR"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr"
   },
   {
     "title": "Architecting Angular Applications with Angular Libraries",

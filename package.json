@@ -22,7 +22,8 @@
     "start": "cd ./homepage && hugo server -D --config config.dev.toml",
     "build": "node tools/build-for-prod.js",
     "post-build-gulp": "gulp buildWeb",
-    "title-case": "tsc ./tools/title-case-converter.ts && node ./tools/title-case-converter.js"
+    "title-case": "tsc ./tools/title-case-converter.ts && node ./tools/title-case-converter.js",
+    "convert-talks": "tsc ./tools/convert-talks-json-to-md.ts && node ./tools/convert-talks-json-to-md.js"
   },
   "repository": {
     "type": "git",
