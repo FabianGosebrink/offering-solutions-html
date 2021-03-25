@@ -7,12 +7,12 @@ const outputPath = './homepage/content/talks/';
 let rawData = fs.readFileSync(fileName);
 let allTalks = JSON.parse(rawData) as any[];
 
-const talksWithBetterTitle = allTalks.map(({ title, date, event, tags }) => {
+allTalks.map(({ title, date, event, tags }) => {
   let titleLowerCase = title.toLowerCase();
 
   const fileNameWithoutExt = camelCase(titleLowerCase);
 
-  const filename = `${fileNameWithoutExt}.md`;
+  const filePath = `${outputPath}/${fileNameWithoutExt}.md`;
 
-  fs.writeJsonSync(filename, '');
+  fs.writeJsonSync(filePath, '');
 });
