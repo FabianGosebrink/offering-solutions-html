@@ -7,16 +7,34 @@ const outputPath = './homepage/content/talks/';
 let rawData = fs.readFileSync(fileName);
 let allTalks = JSON.parse(rawData) as any[];
 
-const replacements = [
+const filenameReplacements = [
   { from: 'ü', to: 'ue' },
   { from: 'ä', to: 'ae' },
   { from: 'ö', to: 'oe' },
 ];
 
-allTalks.map(({ title, date, event, tags }) => {
+const titleReplacements = [{ from: ':', to: '-' }];
+
+allTalks.map(({ title, date, event, tags, link, dataId, slides }) => {
   let titleLowerCase = title.toLowerCase();
 
-  replacements.forEach(({ from, to }) => {
+  titleReplacements.forEach(({ from, to }) => {
+    title = title.replace(from, to);
+  });
+
+  let content = '---';
+  content = addLine(content, 'title', title);
+  content = addLine(content, 'link', link);
+  content = addLine(content, 'date', date);
+  content = addLine(content, 'image', 'speaking.jpg');
+  content = addLine(content, 'event', event);
+  content = addLine(content, 'tags', `[${tags}]`);
+  content = addLine(content, 'dataId', dataId);
+  content = addLine(content, 'slides', slides);
+  content = addLine(content, 'category', 'talks');
+  content += '\r\n---';
+
+  filenameReplacements.forEach(({ from, to }) => {
     titleLowerCase = titleLowerCase.replace(from, to);
   });
 
@@ -24,5 +42,13 @@ allTalks.map(({ title, date, event, tags }) => {
 
   const filePath = `${outputPath}/${fileNameWithoutExt}.md`;
 
-  fs.writeJsonSync(filePath, '');
+  fs.writeFileSync(filePath, content);
 });
+
+function addLine(currentText: string, key: string, value: string) {
+  if (!value) {
+    return currentText;
+  }
+
+  return currentText + '\r\n' + key + ': ' + value;
+}
