@@ -40,7 +40,8 @@ allTalks.map(({ title, date, event, tags, link, dataId, slides }) => {
 
   const fileNameWithoutExt = paramCase(titleLowerCase);
 
-  const filePath = `${outputPath}/${fileNameWithoutExt}-${makeId(5)}.md`;
+  const id = new Date(date).getTime().toString().substring(0, 4);
+  const filePath = `${outputPath}/${fileNameWithoutExt}-${id}.md`;
 
   fs.writeFileSync(filePath, content);
 });
@@ -51,14 +52,4 @@ function addLine(currentText: string, key: string, value: string) {
   }
 
   return currentText + '\r\n' + key + ': ' + value;
-}
-
-function makeId(length) {
-  var result = '';
-  const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-  const charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
 }
