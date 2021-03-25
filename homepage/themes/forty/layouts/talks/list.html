@@ -33,9 +33,11 @@
             
                     <div class="row">
                         <div class="col-12">
-                            <h2>Excerpt of all given talks...</h2>
-                            <ul class="alt">
-                              {{ range (where .Site.Pages "Params.category" "talks") }}
+                            {{$list := (where .Site.Pages "Params.category" "talks")}}
+                            {{$len := (len $list)}}
+                            <h2>Excerpt of all given talks ({{ $len }} talks listed here)...</h2>
+                            <ul class="alt"> 
+                              {{ range ($list) }}
                                 <li class="talk-item">
                                    <span class="talk-title">
                                       <a href="{{ .RelPermalink }}">{{ .Title }}</a>

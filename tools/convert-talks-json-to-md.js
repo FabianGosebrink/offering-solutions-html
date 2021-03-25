@@ -35,7 +35,7 @@ allTalks.map(function (_a) {
         titleLowerCase = titleLowerCase.replace(from, to);
     });
     var fileNameWithoutExt = change_case_1.paramCase(titleLowerCase);
-    var filePath = outputPath + "/" + fileNameWithoutExt + ".md";
+    var filePath = outputPath + "/" + fileNameWithoutExt + "-" + makeId(5) + ".md";
     fs.writeFileSync(filePath, content);
 });
 function addLine(currentText, key, value) {
@@ -43,4 +43,13 @@ function addLine(currentText, key, value) {
         return currentText;
     }
     return currentText + '\r\n' + key + ': ' + value;
+}
+function makeId(length) {
+    var result = '';
+    var characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
 }
