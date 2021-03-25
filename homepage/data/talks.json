@@ -1,6 +1,6 @@
 [
   {
-    "title": "Angular Reactive Forms – Formulare und Validierung mit Angular entwickeln",
+    "title": "Angular Reactive Forms – Formulare Und Validierung Mit Angular Entwickeln",
     "link": "https://javascript-days.de/angular/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln/",
     "date": "2021-03-25T00:00:00.000Z",
     "event": "Angular Days",
@@ -9,7 +9,7 @@
     "dataId": "eedabd0f0d2c4525b62886011097886b"
   },
   {
-    "title": "Realtime Cross-Plattform-Applikationen mit Angular, ASP.NET Core und SignalR",
+    "title": "Realtime Cross-Plattform-Applikationen Mit Angular, ASP.NET Core Und Signalr",
     "link": "https://basta.net/user-interface/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr/",
     "date": "2021-02-16T00:00:00.000Z",
     "event": "BASTA!",
@@ -24,14 +24,14 @@
     "tags": ["Angular", "Libraries"]
   },
   {
-    "title": "End-to-End – Moderne Webanwendungen mit Angular und ASP.NET Core",
+    "title": "End-to-End – Moderne Webanwendungen Mit Angular Und ASP.NET Core",
     "link": "https://www.digicomp.ch/weiterbildung/development-trainings/web-development/microsoft-web-development-trainings/workshop-end-to-end-moderne-webanwendungen-mit-angular-und-asp-net-core",
     "date": "2021-01-27T00:00:00.000Z",
     "event": "Digicomp",
     "tags": ["Angular", "ASP.NET Core"]
   },
   {
-    "title": "Enrich your Angular App with Angular Forms",
+    "title": "Enrich Your Angular App with Angular Forms",
     "link": "https://ng-poland.pl/",
     "date": "2020-11-19T00:00:00.000Z",
     "event": "Ng Poland",

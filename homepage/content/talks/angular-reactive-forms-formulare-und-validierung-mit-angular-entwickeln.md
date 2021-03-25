@@ -1,5 +1,5 @@
 ---
-title: Angular Reactive Forms – Formulare und Validierung mit Angular entwickeln
+title: Angular Reactive Forms – Formulare Und Validierung Mit Angular Entwickeln
 link: https://javascript-days.de/angular/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln/
 date: 2021-03-25T00:00:00.000Z
 image: speaking.jpg

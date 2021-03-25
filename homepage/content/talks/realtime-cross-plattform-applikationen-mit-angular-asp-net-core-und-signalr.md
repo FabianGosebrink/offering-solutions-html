@@ -1,5 +1,5 @@
 ---
-title: Realtime Cross-Plattform-Applikationen mit Angular, ASP.NET Core und SignalR
+title: Realtime Cross-Plattform-Applikationen Mit Angular, ASP.NET Core Und Signalr
 link: https://basta.net/user-interface/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr/
 date: 2021-02-16T00:00:00.000Z
 image: speaking.jpg
