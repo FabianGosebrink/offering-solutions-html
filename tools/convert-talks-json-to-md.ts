@@ -7,8 +7,18 @@ const outputPath = './homepage/content/talks/';
 let rawData = fs.readFileSync(fileName);
 let allTalks = JSON.parse(rawData) as any[];
 
+const replacements = [
+  { from: 'ü', to: 'ue' },
+  { from: 'ä', to: 'ae' },
+  { from: 'ö', to: 'oe' },
+];
+
 allTalks.map(({ title, date, event, tags }) => {
   let titleLowerCase = title.toLowerCase();
+
+  replacements.forEach(({ from, to }) => {
+    titleLowerCase = titleLowerCase.replace(from, to);
+  });
 
   const fileNameWithoutExt = paramCase(titleLowerCase);
 
