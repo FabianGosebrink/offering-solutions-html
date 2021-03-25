@@ -1,4 +1,4 @@
-import { camelCase } from 'change-case';
+import { paramCase } from 'change-case';
 import * as fs from 'fs-extra';
 
 const fileName = './homepage/data/talks.json';
@@ -10,7 +10,7 @@ let allTalks = JSON.parse(rawData) as any[];
 allTalks.map(({ title, date, event, tags }) => {
   let titleLowerCase = title.toLowerCase();
 
-  const fileNameWithoutExt = camelCase(titleLowerCase);
+  const fileNameWithoutExt = paramCase(titleLowerCase);
 
   const filePath = `${outputPath}/${fileNameWithoutExt}.md`;
 
