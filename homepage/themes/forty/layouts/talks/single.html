@@ -35,13 +35,19 @@
         <section id="one">
           <div class="inner">
             <h2>Slides</h2>
-            <script async class="speakerdeck-embed" data-id="{{.Params.dataId}}" data-ratio="1.37081659973226" src="///speakerdeck.com/assets/embed.js"></script>
+            {{ if .Params.slides }}
+              <p>
+                <a href="{{ .Params.slides }}" target="_blank">Go to the slides</a>
+              </p>
+            {{ end }}
+            {{ if .Params.dataId }}
+              <script async class="speakerdeck-embed" data-id="{{.Params.dataId}}" data-ratio="1.37081659973226" src="///speakerdeck.com/assets/embed.js"></script>
+            {{ end }}
           </div>
         </section>
 				{{ partial "newsletter.html" . }}
       </div>
 
-      {{ "<!-- Footer -->" | safeHTML}} {{ if .Site.Params.footer.enable }} {{ partial "footer.html" . }} {{ end }}
     </div>
 
     {{ "<!-- Scripts -->" | safeHTML}} {{ partial "js.html" . }}
