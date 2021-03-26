@@ -15,7 +15,7 @@ const filenameReplacements = [
 
 const titleReplacements = [{ from: ':', to: '-' }];
 
-allTalks.map(({ title, date, event, tags, link, dataId, slides }) => {
+allTalks.map(({ title, date, event, tags, link, dataId, slides }, index) => {
   let titleLowerCase = title.toLowerCase();
 
   titleReplacements.forEach(({ from, to }) => {
@@ -40,8 +40,7 @@ allTalks.map(({ title, date, event, tags, link, dataId, slides }) => {
 
   const fileNameWithoutExt = paramCase(titleLowerCase);
 
-  const id = new Date(date).getTime().toString().substring(0, 4);
-  const filePath = `${outputPath}/${fileNameWithoutExt}-${id}.md`;
+  const filePath = `${outputPath}/${fileNameWithoutExt}-${index + 1}.md`;
 
   fs.writeFileSync(filePath, content);
 });

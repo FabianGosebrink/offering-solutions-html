@@ -12,7 +12,7 @@ var filenameReplacements = [
     { from: 'ö', to: 'oe' },
 ];
 var titleReplacements = [{ from: ':', to: '-' }];
-allTalks.map(function (_a) {
+allTalks.map(function (_a, index) {
     var title = _a.title, date = _a.date, event = _a.event, tags = _a.tags, link = _a.link, dataId = _a.dataId, slides = _a.slides;
     var titleLowerCase = title.toLowerCase();
     titleReplacements.forEach(function (_a) {
@@ -35,8 +35,7 @@ allTalks.map(function (_a) {
         titleLowerCase = titleLowerCase.replace(from, to);
     });
     var fileNameWithoutExt = change_case_1.paramCase(titleLowerCase);
-    var id = new Date(date).getTime().toString().substring(0, 4);
-    var filePath = outputPath + "/" + fileNameWithoutExt + "-" + id + ".md";
+    var filePath = outputPath + "/" + fileNameWithoutExt + "-" + (index + 1) + ".md";
     fs.writeFileSync(filePath, content);
 });
 function addLine(currentText, key, value) {
