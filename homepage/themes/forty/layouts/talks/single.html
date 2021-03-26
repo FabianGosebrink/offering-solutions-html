@@ -35,14 +35,29 @@
         <section id="one">
           <div class="inner">
             <h2>Slides</h2>
-            {{ if .Params.slides }}
-              <p>
-                <a href="{{ .Params.slides }}" target="_blank">Go to the slides</a>
-              </p>
-            {{ end }}
+           
             {{ if .Params.dataId }}
               <script async class="speakerdeck-embed" data-id="{{.Params.dataId}}" data-ratio="1.37081659973226" src="///speakerdeck.com/assets/embed.js"></script>
             {{ end }}
+
+             {{ if .Params.slides }}
+              <p>
+                <a href="{{ .Params.slides }}" target="_blank" class="button">Download slides as pdf</a>
+              </p>
+            {{ end }}
+
+            {{if (not .Params.dataId) }}
+            {{ if( (not .Params.slides) )}}
+              <p>
+                No slides available at present, please check in the future again if they are added.<br/>
+              </p>
+
+              <p>
+                <a href="https://speakerdeck.com/fabiangosebrink/" target="_blank" class="button">See all slides</a>
+              </p>
+
+            {{end}}
+            {{end}}
           </div>
         </section>
 				{{ partial "newsletter.html" . }}
