@@ -4,7 +4,7 @@ date: 2019-06-07
 tags: ['cloudflare', 'azure', 'hugo']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to describe how I moved my complete company homepage and my blog from static handwritten html and jekyll to a hugo solution which is hosted on azure and uses cloudflare as DNS, has a CI/CD pipeline and is hosted on azure.
@@ -74,7 +74,7 @@ new (hugo)
 title: Refactoring Container Components to Fetch Data With Route Resolvers
 date: 2019-02-27
 tags: ['angular', 'routeresolvers', 'components']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: [

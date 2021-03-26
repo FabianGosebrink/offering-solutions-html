@@ -2,7 +2,7 @@
 title: Chat with Node.js, socket.io, AngularJS, flashing title and loading bar
 date: 2014-07-02
 tags: ['angularjs', 'nodejs', 'socketio']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
@@ -71,37 +71,35 @@ Here you can see that we define an app in a variable "app" making it an angular 
 As mentioned in the view we have a controller called "DemoController". And because we instantiated a variable called "app" we can now use it and define a controller on this app:
 
 ```javascript
-app.controller('DemoController', function (
-  $scope,
-  chatService,
-  cfpLoadingBar,
-  flashService
-) {
-  var _messages = [];
+app.controller(
+  'DemoController',
+  function ($scope, chatService, cfpLoadingBar, flashService) {
+    var _messages = [];
 
-  cfpLoadingBar.start();
-  var socket = io.connect('MyIp:MyPort');
-
-  var _sendMessage = function () {
     cfpLoadingBar.start();
-    chatService.sendMessage(socket, $scope.name, $scope.messageText);
+    var socket = io.connect('MyIp:MyPort');
+
+    var _sendMessage = function () {
+      cfpLoadingBar.start();
+      chatService.sendMessage(socket, $scope.name, $scope.messageText);
+      $scope.messageText = '';
+    };
+
+    socket.on('chat', function (data) {
+      $scope.messages.push(data.name + ': ' + data.text);
+      $scope.$apply();
+
+      flashService.flashWindow(data.name + ': ' + data.text, 10);
+      $('body').scrollTop($('body')[0].scrollHeight);
+      cfpLoadingBar.complete();
+    });
+
+    $scope.sendMessage = _sendMessage;
+    $scope.messages = _messages;
     $scope.messageText = '';
-  };
-
-  socket.on('chat', function (data) {
-    $scope.messages.push(data.name + ': ' + data.text);
-    $scope.$apply();
-
-    flashService.flashWindow(data.name + ': ' + data.text, 10);
-    $('body').scrollTop($('body')[0].scrollHeight);
-    cfpLoadingBar.complete();
-  });
-
-  $scope.sendMessage = _sendMessage;
-  $scope.messages = _messages;
-  $scope.messageText = '';
-  $scope.name = '';
-});
+    $scope.name = '';
+  }
+);
 ```
 
 Lets take a look into this in detail: First we define a controller which we can call in the view. Because of the dependency injection angular gives us out of the box we can get everything into our controller we want to use.

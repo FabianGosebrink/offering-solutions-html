@@ -2,7 +2,7 @@
 title: How to make first steps of Databinding in WPF
 date: 2014-09-02
 tags: ['databinding', 'wpf']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

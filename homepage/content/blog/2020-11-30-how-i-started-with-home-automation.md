@@ -4,7 +4,7 @@ date: 2020-11-30
 tags: ['homeassistant']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to write about how I started with home automation. Really starting from zero as I had no clue from home automation and only heard about it from colleagues and friends. The only thing I knew already was a Raspberry Pi because I was using it already as a [Pi-Hole](https://pi-hole.net/) in my home. Other than that I had no clue about home automation. In the end I am sure that there is loads more to do and a lot of things to improve but lets go with my journey to it, what I have built up so far and how I got there.

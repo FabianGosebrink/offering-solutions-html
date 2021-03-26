@@ -2,7 +2,7 @@
 title: ASP.NET Repository Pattern und Unit of Work
 date: 2014-10-06
 tags: ['unitofwork', 'aspnet']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

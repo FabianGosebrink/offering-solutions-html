@@ -2,7 +2,7 @@
 title: Working with Angular Template Forms
 date: 2017-01-14
 tags: ['angular', 'forms']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: ['/blog/articles/2017/01/14/working-with-angular-2-template-forms/']

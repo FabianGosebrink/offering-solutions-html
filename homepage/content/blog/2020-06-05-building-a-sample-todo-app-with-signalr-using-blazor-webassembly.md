@@ -4,7 +4,7 @@ date: 2020-06-05
 tags: ['blazor', 'webassembly', 'aspnetcore']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to show how to get started with ASP.NET Core Blazor by creating a Todo Application with forms, container and presentational components synchronized with SignalR.

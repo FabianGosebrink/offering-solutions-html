@@ -4,7 +4,7 @@ date: 2020-05-03
 tags: ['angular', 'reactiveforms', 'validation']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I would like to describe how you can add validation to multiple fields of your reactive forms in Angular by using a feature called `Cross Field Validation`.

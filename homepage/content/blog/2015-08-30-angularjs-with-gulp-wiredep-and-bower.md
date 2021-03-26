@@ -2,12 +2,10 @@
 title: AngularJS with gulp, wiredep and bower
 date: 2015-08-30
 tags: ['angularjs', 'bower', 'gulp', 'wiredep']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/",
-]
+aliases: ['/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/']
 ---
 
 With this blog post I want to show you how to use AngularJS with gulp, wiredep and bower to provide the files to an angular application.
@@ -29,7 +27,7 @@ var inject = require('gulp-inject');
 
 var config = require('./gulp.config')();
 
-gulp.task('vet', function() {
+gulp.task('vet', function () {
   return gulp
     .src(config.srcJSFiles)
     .pipe(jscs())
@@ -37,7 +35,7 @@ gulp.task('vet', function() {
     .pipe(jshint.reporter('jshint-stylish', { verbose: true }));
 });
 
-gulp.task('injectJsIntoIndex', ['vet'], function() {
+gulp.task('injectJsIntoIndex', ['vet'], function () {
   var wiredep = require('wiredep').stream;
   var options = config.getWiredepDefaultOptions();
 
@@ -47,7 +45,7 @@ gulp.task('injectJsIntoIndex', ['vet'], function() {
   return target
     .pipe(
       inject(sources, {
-        addRootSlash: false
+        addRootSlash: false,
       })
     )
     .pipe(wiredep(options))
@@ -62,13 +60,13 @@ The gulp task is checking via wiredep all dependencies and is injecting them int
 The gulp-config is seperated:
 
 ```javascript
-module.exports = function() {
+module.exports = function () {
   var config = {
     srcJSFiles: [
       './app/*.js',
       './app/*/*.js',
       './app/*/*/*.js',
-      '!./node_modules/**/*.js'
+      '!./node_modules/**/*.js',
     ],
     targetIndexHtmlFile: 'index.html',
     root: './',
@@ -76,15 +74,15 @@ module.exports = function() {
     bower: {
       json: require('./bower.json'),
       directory: './libs',
-      ignorePath: '../..'
-    }
+      ignorePath: '../..',
+    },
   };
 
-  config.getWiredepDefaultOptions = function() {
+  config.getWiredepDefaultOptions = function () {
     var options = {
       bowerJson: config.bower.json,
       directory: config.bower.directory,
-      ignorePath: config.bower.ignorePath
+      ignorePath: config.bower.ignorePath,
     };
 
     return options;

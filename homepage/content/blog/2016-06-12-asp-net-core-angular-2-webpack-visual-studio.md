@@ -2,7 +2,7 @@
 title: ASP.NET Core and Angular with Webpack and Visual Studio
 date: 2016-06-12
 tags: ['angular', 'aspnetcore']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

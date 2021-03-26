@@ -2,7 +2,7 @@
 title: AngularJS NgResource Demo with ASP.NET WebAPI
 date: 2015-08-25
 tags: ['angularjs', 'aspnet']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

@@ -2,7 +2,7 @@
 title: Impressions of the first ASP.NET MVC workshop
 date: 2014-08-10
 tags: ['aspnet', 'workshop']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

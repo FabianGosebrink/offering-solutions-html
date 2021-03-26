@@ -2,12 +2,13 @@
 title: Angular Ahead Of Time (AoT) compilation, lazy loading and treeshaking with webpack
 date: 2017-02-08
 tags: ['angular', 'webpack', 'lazyloading', 'treeshaking', 'aot']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2017/02/08/angular-2-ahead-of-time-aot-compilation-lazy-loading-treeshaking-webpack/"
-]
+aliases:
+  [
+    '/blog/articles/2017/02/08/angular-2-ahead-of-time-aot-compilation-lazy-loading-treeshaking-webpack/',
+  ]
 ---
 
 In this blog post I want to show you how to get Ahead Of Time compilation enabled with lazy loading in combination with webpack 2.
@@ -26,8 +27,8 @@ export const AppRoutes: Routes = [
   { path: 'food', loadChildren: './path/to/module.file#ModuleName' },
   {
     path: '**',
-    redirectTo: 'home'
-  }
+    redirectTo: 'home',
+  },
 ];
 ```
 
@@ -44,7 +45,7 @@ If you did this you have to remove the module import from the module import arra
   imports: [
     BrowserModule,
     // other imports but NOT your lazy loaded module anymore
-    HomeModule
+    HomeModule,
   ],
 
   declarations: [AppComponent],
@@ -53,7 +54,7 @@ If you did this you have to remove the module import from the module import arra
     // ...
   ],
 
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```

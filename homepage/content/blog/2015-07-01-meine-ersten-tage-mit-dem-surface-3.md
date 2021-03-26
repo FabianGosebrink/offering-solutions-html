@@ -2,7 +2,7 @@
 title: Meine ersten Tage mit dem Surface Pro 3
 date: 2015-07-01
 tags: ['surface3', 'microsoft']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: ['/blog/articles/2015/07/01/meine-ersten-tage-mit-dem-surface-3/']

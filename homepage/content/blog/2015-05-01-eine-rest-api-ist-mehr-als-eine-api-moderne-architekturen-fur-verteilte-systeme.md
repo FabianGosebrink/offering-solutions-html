@@ -2,7 +2,7 @@
 title: Eine REST API ist mehr als eine API – Moderne Architekturen für verteilte Systeme
 date: 2015-05-01
 tags: ['architecture', 'angularjs', 'aspnet']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

@@ -4,7 +4,7 @@ date: 2021-01-05
 tags: ['hugo', 'github']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to write about how you can move from TravisCI to GitHub Actions. Together with [DamienBod](https://twitter.com/damien_bod?lang=en) I am maintaining an Angular library for OIDC and OAuth2 [angular-auth-oidc-client](https://github.com/damienbod/angular-auth-oidc-client). In this blog post I want to describe why and how I migrated from TravisCI to GitHub Actions.

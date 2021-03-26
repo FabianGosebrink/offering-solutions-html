@@ -4,7 +4,7 @@ date: 2020-03-04
 tags: ['angular', 'nx', 'karma', 'jest']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this article I want to describe how we can migrate an nx workspace with an angular application from karma to use jest, the test runner from facebook.

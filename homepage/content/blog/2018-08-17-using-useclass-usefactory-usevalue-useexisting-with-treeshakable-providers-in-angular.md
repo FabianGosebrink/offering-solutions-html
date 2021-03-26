@@ -2,7 +2,7 @@
 title: Using UseClass, UseFactory, UseValue & UseExisting with treeshakable providers in Angular
 date: 2018-08-17
 tags: ['angular']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

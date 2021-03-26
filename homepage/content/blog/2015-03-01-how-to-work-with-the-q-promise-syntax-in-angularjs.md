@@ -1,13 +1,14 @@
 ---
 title: How to work with the q promise syntax in AngularJS
 date: 2015-03-01
-tags: [ 'angularjs']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+tags: ['angularjs']
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2015/03/01/how-to-work-with-the-q-promise-syntax-in-angularjs/",
-]
+aliases:
+  [
+    '/blog/articles/2015/03/01/how-to-work-with-the-q-promise-syntax-in-angularjs/',
+  ]
 ---
 
 In this blog post I want to show you how to work with the q promise syntax in AngularJS
@@ -20,10 +21,10 @@ Very cool, hm?
 
 ```javascript
 $http.get('/here/goes/my/Api').then(
-  function(result) {
+  function (result) {
     // Success
   },
-  function() {
+  function () {
     // Error
   }
 );
@@ -41,11 +42,11 @@ Repository:
 
 ```javascript
 $http.get('/here/goes/my/Api').then(
-  function(result) {
+  function (result) {
     // Success
     return 'good';
   },
-  function() {
+  function () {
     // Error
     return 'bad';
   }

@@ -4,7 +4,7 @@ date: 2020-01-11
 tags: ['angular']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this article I want to present the first NgGirls of 2020 in Zürich, Switzerland!

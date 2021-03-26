@@ -4,7 +4,7 @@ date: 2020-05-29
 tags: ['angular', 'authentication', 'authorization', 'ngrx', 'aspnetcore']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to describe how you can add authentication and authorization in your Angular app using NgRx. We are using an ASP.NET Core backend to get our secure data from and a custom STS which we use for the authentication and the id token as well as an access token.

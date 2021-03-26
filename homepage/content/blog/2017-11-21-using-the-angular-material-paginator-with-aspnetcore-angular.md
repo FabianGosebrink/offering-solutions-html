@@ -2,7 +2,7 @@
 title: Using the Angular Material Paginator with ASP.NET Core and Angular
 date: 2017-11-21
 tags: ['angular', 'material', 'aspnetcore']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

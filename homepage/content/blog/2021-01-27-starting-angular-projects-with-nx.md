@@ -4,7 +4,7 @@ date: 2021-01-27
 tags: ['nx', 'angular']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to write down one possible way to start and architecture Angular projects using the [nx](https://nx.dev). I know that there are a lot of guides and even books out there but to have it written down in one place for me with all the current commands I am using building larger Angular applications I am creating this blog post.

@@ -2,7 +2,7 @@
 title: How you can organise gulp in your applications
 date: 2016-05-16
 tags: ['angular', 'gulp']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

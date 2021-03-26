@@ -4,7 +4,7 @@ date: 2019-12-31
 tags: ['angular', 'libraries', 'configuration']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this article I want to explain two possible ways to configure Angular libraries.

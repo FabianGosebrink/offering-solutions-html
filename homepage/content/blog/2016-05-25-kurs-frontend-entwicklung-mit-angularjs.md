@@ -2,7 +2,7 @@
 title: Kurs - Frontend-Entwicklung mit AngularJS
 date: 2016-05-25
 tags: ['angularjs', 'courses', 'training']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: ['/blog/articles/2016/05/25/kurs-frontend-entwicklung-mit-angularjs/']

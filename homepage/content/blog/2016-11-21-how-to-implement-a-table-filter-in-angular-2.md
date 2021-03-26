@@ -2,7 +2,7 @@
 title: How to implement a table filter in Angular
 date: 2016-11-21
 tags: ['angular', 'filter']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
@@ -78,9 +78,7 @@ and in the table we can add one column which can be extended as you like:
     <th>Name</th>
   </tr>
   <tr *ngFor="let food of filteredFoods$ | async">
-    <td class="text-left">
-      {{food.name}}
-    </td>
+    <td class="text-left">{{food.name}}</td>
   </tr>
 </table>
 ```
@@ -308,9 +306,7 @@ export class FoodListComponent {
   <tr
     *ngFor="let food of foods | filter : 'name' : searchString; let i = index"
   >
-    <td class="text-left">
-      {{food.name}}
-    </td>
+    <td class="text-left">{{food.name}}</td>
     // ...
   </tr>
 </table>

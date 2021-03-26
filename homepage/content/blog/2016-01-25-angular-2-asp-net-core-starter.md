@@ -2,7 +2,7 @@
 title: Angular and ASP.NET Core Starter
 date: 2016-01-25
 tags: ['angular', 'aspnetcore']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

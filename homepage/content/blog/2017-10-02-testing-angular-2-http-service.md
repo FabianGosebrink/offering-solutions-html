@@ -2,12 +2,10 @@
 title: Testing an Angular Http Service
 date: 2017-10-02
 tags: ['angular', 'testing']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2017/10/02/testing-angular-2-http-service/"
-]
+aliases: ['/blog/articles/2017/10/02/testing-angular-2-http-service/']
 ---
 
 In this blog post I want to show you how you can test the new HttpClient introduced with the version 4.2 of angular.
@@ -59,7 +57,7 @@ describe('CustomHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [CustomHttpService]
+      providers: [CustomHttpService],
     });
   });
 });
@@ -70,7 +68,7 @@ The next step is to hold the `CustomHttpService` itself and the `HttpTestingCont
 ```javascript
 import {
   HttpClientTestingModule,
-  HttpTestingController
+  HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
@@ -83,7 +81,7 @@ describe('CustomHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [CustomHttpService]
+      providers: [CustomHttpService],
     });
 
     // inject the service
@@ -178,7 +176,7 @@ it('should post the correct data', () => {
   expect(req.request.method).toBe('POST');
 
   req.flush({
-    firstname: 'firstname'
+    firstname: 'firstname',
   });
 
   httpMock.verify();
@@ -198,7 +196,7 @@ it('should put the correct data', () => {
   expect(req.request.method).toBe('PUT');
 
   req.flush({
-    firstname: 'firstname'
+    firstname: 'firstname',
   });
 
   httpMock.verify();

@@ -2,7 +2,7 @@
 title: ASP.NET Core 1.0 with Entity Framework Core
 date: 2016-07-03
 tags: ['aspnetcore', 'entityframeworkcore']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

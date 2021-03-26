@@ -2,18 +2,19 @@
 title: Consuming a REST API with Angular Http-Service in Typescript
 date: 2016-02-01
 tags: ['angular', 'aspnetcore']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-  "/blog/articles/2016/02/01/consuming-a-rest-api-with-angular-http-service-in-typescript/"
-]
+aliases:
+  [
+    '/blog/articles/2016/02/01/consuming-a-rest-api-with-angular-http-service-in-typescript/',
+  ]
 ---
 
 ### Updates
 
-* 19.09.2018 - Updated Angular Syntax
-* 19.08.2017 - Updated to ASP.NET Core 2.0 & new HttpClientModule
+- 19.09.2018 - Updated Angular Syntax
+- 19.08.2017 - Updated to ASP.NET Core 2.0 & new HttpClientModule
 
 ### blog post
 

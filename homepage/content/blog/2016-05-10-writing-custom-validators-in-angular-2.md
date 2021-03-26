@@ -2,7 +2,7 @@
 title: Writing custom validators in Angular
 date: 2016-05-10
 tags: ['angular']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: ['/blog/articles/2016/05/10/writing-custom-validators-in-angular-2/']

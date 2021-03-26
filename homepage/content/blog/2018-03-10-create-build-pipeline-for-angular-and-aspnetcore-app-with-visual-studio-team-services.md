@@ -2,7 +2,7 @@
 title: Create a build pipeline for Angular and ASP.NET Core apps with Visual Studio Team Services
 date: 2018-03-08
 tags: ['angular', 'aspnetcore', 'vsts']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

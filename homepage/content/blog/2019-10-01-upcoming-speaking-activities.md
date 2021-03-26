@@ -4,7 +4,7 @@ date: 2019-10-03
 tags: ['publicspeaking']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to give a short overview about my upcoming speaking activities in the rest of 2019.

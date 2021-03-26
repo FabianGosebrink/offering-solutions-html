@@ -4,7 +4,7 @@ date: 2020-03-24
 tags: ['vscode']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to write down how you can set the new windows Terminal as the default external console when working with VSCode.

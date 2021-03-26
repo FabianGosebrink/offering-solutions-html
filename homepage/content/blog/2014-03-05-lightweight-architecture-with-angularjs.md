@@ -2,7 +2,7 @@
 title: Lightweight architecture with AngularJS
 date: 2014-03-05
 tags: ['angularjs']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: ['/blog/articles/2014/03/05/lightweight-architecture-with-angularjs/']

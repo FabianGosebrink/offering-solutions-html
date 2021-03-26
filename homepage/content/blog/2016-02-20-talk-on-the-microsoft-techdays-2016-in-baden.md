@@ -2,7 +2,7 @@
 title: Microsoft TechDays 2016
 date: 2016-02-20
 tags: ['microsoft', 'speaking']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

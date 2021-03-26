@@ -2,12 +2,11 @@
 title: Lessons learnt from organizing a conference
 date: 2017-07-18
 tags: ['angular', 'azure', 'conference', 'speaking']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2017/07/18/things-i-learned-from-organising-a-conference/"
-]
+aliases:
+  ['/blog/articles/2017/07/18/things-i-learned-from-organising-a-conference/']
 ---
 
 It has been quiet here for a while... :-)

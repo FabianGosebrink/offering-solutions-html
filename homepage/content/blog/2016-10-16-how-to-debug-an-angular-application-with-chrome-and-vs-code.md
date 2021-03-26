@@ -2,7 +2,7 @@
 title: How to debug an Angular application with Chrome and VS Code
 date: 2016-10-16
 tags: ['angular', 'chrome', 'vscode']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

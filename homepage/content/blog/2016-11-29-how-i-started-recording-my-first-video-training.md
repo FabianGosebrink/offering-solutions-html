@@ -2,7 +2,7 @@
 title: How I started recording my first Video training
 date: 2016-11-29
 tags: ['recording', 'training']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

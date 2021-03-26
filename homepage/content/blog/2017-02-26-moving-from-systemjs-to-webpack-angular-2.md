@@ -2,7 +2,7 @@
 title: Moving your Angular application from SystemJS to Webpack
 date: 2017-02-26
 tags: ['angular', 'systemjs', 'webpack']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

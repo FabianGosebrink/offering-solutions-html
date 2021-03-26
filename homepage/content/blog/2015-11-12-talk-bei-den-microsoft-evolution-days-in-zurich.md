@@ -2,7 +2,7 @@
 title: Talk bei den Microsoft Evolution Days in Zürich
 date: 2015-11-12
 tags: ['speaking']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

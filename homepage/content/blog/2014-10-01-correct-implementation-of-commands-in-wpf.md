@@ -2,7 +2,7 @@
 title: Correct implementation of Commands in WPF
 date: 2014-10-01
 tags: ['commands', 'wpf']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

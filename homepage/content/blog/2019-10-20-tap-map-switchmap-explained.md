@@ -4,7 +4,7 @@ date: 2019-10-20
 tags: ['rxjs', 'tap', 'map', 'switchmap']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 With this article I want to briefly and shortly describe the differences between the rxjs operators `tap`, `map` and `switchMap`.

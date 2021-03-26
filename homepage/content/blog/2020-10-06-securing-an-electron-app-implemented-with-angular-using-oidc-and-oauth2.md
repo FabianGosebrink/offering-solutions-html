@@ -4,7 +4,7 @@ date: 2020-10-06
 tags: ['aspnetcore', 'angular', 'electron', 'crossplatform']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to explain how you can secure an electron app written in Angular with OIDC and OAuth2 using IdentityServer4 as the Secure Token Server.

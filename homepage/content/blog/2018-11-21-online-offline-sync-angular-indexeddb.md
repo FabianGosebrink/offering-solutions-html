@@ -2,7 +2,7 @@
 title: Online and Offline Sync with Angular and IndexedDb
 date: 2018-11-21
 tags: ['angular', 'indexeddb']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: ['/blog/articles/2018/11/21/online-offline-sync-angular-indexeddb/']

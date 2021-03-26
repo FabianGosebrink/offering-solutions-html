@@ -2,7 +2,7 @@
 title: CRUD operations in Angular with ASP.NET Core and HATEOAS
 date: 2017-11-29
 tags: ['aspnetcore', 'angular', 'hateoas']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

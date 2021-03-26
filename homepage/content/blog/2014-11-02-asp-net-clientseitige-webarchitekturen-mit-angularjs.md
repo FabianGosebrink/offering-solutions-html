@@ -2,7 +2,7 @@
 title: ASP.NET - Clientseitige Webarchitekturen mit AngularJS
 date: 2014-11-02
 tags: ['angularjs', 'aspnet']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

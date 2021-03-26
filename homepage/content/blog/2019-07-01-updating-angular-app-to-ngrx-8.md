@@ -4,7 +4,7 @@ date: 2019-07-01
 tags: ['ngrx', 'angular']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to describe how I updated an Angular Project using ngrx to the latest version ngrx 8.

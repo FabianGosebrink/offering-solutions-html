@@ -2,12 +2,13 @@
 title: Refactoring Container Components to Fetch Data With Route Resolvers
 date: 2019-02-27
 tags: ['angular', 'routeresolvers', 'components']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/",
-]
+aliases:
+  [
+    '/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/',
+  ]
 ---
 
 In this blog post I want to show an alternative way to provide data in a common container & presentational components relation inside an Angular application.
@@ -44,7 +45,7 @@ import { Observable } from 'rxjs';
   template: `
     <app-presentational [data]="data$ | async"></app-presentational>
   `,
-  styleUrls: ['./container.component.css']
+  styleUrls: ['./container.component.css'],
 })
 export class ContainerComponent implements OnInit {
   data$: Observable<any>;
@@ -106,7 +107,7 @@ import { Injectable } from '@angular/core';
 import {
   Resolve,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  RouterStateSnapshot,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -128,7 +129,7 @@ import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   Resolve,
-  RouterStateSnapshot
+  RouterStateSnapshot,
 } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
@@ -191,7 +192,6 @@ The difference now is that the `ContainerComponent` is only displayed when the d
 export class PresentationalComponent {
   @Input() data: any;
 }
-
 ```
 
 ## Showing loading indicator when data gets resolved
@@ -206,10 +206,10 @@ export class LoadingIndicatorService {
   constructor(private router: Router) {
     this.isLoading$ = this.router.events.pipe(
       filter(
-        event =>
+        (event) =>
           event instanceof NavigationStart || event instanceof NavigationEnd
       ),
-      map(event => !!(event instanceof NavigationStart))
+      map((event) => !!(event instanceof NavigationStart))
     );
   }
 }
@@ -232,7 +232,7 @@ In our app component we can inject this service and use the `isLoading$` to show
       *ngIf="!(loadingIndicatorService.isLoading$ | async); else loading"
     ></router-outlet>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'route-resolvers';

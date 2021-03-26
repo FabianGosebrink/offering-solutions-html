@@ -2,7 +2,7 @@
 title: How to modularize your angular application
 date: 2015-03-17
 tags: ['angularjs', 'modules']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

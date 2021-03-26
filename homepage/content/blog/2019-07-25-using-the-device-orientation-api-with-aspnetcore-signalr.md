@@ -4,7 +4,7 @@ date: 2019-07-25
 tags: ['aspnetcore', 'signalr', 'javascript']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to describe how I used plain Javascript and ASP.NET Core SignalR to broadcast the device orientation values over HTTP.

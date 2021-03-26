@@ -2,7 +2,7 @@
 title: Deleting a Team Project on Visual Studio Team Services
 date: 2014-04-14
 tags: ['vsts']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

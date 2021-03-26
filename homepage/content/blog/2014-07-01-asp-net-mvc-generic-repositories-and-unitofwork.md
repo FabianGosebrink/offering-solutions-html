@@ -2,7 +2,7 @@
 title: ASP.NET MVC - Generic Repositories and UnitOfWork
 date: 2014-07-01
 tags: ['aspnet', 'mvc']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

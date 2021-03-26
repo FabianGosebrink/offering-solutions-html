@@ -2,7 +2,7 @@
 title: Getting started with Visual Studio Code, AngularJS and Typescript
 date: 2015-12-03
 tags: ['aspnetmvc', 'typescript', 'vscode']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

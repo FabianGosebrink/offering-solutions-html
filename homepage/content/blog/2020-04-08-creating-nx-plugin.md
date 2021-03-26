@@ -4,7 +4,7 @@ date: 2020-04-08
 tags: ['nx', 'plugin']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I would like to explain how you can write a schematic and turn it into an nx plugin or turn an existing schematic into an nx plugin.

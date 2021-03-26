@@ -1,13 +1,12 @@
 ---
 title: Configure ASP.NET WebAPI to send data as JSON
 date: 2014-02-26
-tags: [ 'aspnet']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+tags: ['aspnet']
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2014/02/26/configure-asp-net-webapi-to-send-data-as-json/",
-]
+aliases:
+  ['/blog/articles/2014/02/26/configure-asp-net-webapi-to-send-data-as-json/']
 ---
 
 Hey,

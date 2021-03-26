@@ -2,7 +2,7 @@
 title: Kooperation von MyCSharp.de und der BASTA!
 date: 2016-07-20
 tags: ['basta', 'mycsharp']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

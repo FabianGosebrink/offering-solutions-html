@@ -2,7 +2,7 @@
 title: Running cypress tests in an Angular project with travis CI
 date: 2018-06-01
 tags: ['angular', 'endtoend', 'cypress', 'travisci']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

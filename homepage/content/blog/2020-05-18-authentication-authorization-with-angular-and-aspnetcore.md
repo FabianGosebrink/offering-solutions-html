@@ -4,7 +4,7 @@ date: 2020-05-18
 tags: ['angular', 'authentication', 'authorization', 'aspnetcore']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to describe how you can add a login to your Angular App and secure it with OpenID Connect (OIDC) and OAuth2 to access an ASP.NET Core WebAPI with an Identity Server.

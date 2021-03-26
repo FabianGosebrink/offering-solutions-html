@@ -2,7 +2,7 @@
 title: Clean your viewmodel in WPF and create a facade
 date: 2014-07-03
 tags: ['wpf']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

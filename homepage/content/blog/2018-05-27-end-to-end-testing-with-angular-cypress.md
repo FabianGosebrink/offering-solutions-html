@@ -2,7 +2,7 @@
 title: Start your end to end testing with Angular and Cypress
 date: 2018-05-27
 tags: ['angular', 'endtoend', 'cypress']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: ['/blog/articles/2018/05/27/end-to-end-testing-with-angular-cypress/']

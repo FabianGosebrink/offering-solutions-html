@@ -4,10 +4,10 @@ date: 2021-02-01
 tags: ['auth', 'angular', 'ngrx']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blog post I want to show how we can add Auth0 authentication into an Angular app when using state management with NgRx. 
+In this blog post I want to show how we can add Auth0 authentication into an Angular app when using state management with NgRx.
 
 We are going to look how you can place authentication with Auth0 in an Angular app to provide a login and a logout and going a little beyond the incredibly good tutorial [The Complete Guide to Angular User Authentication with Auth0](https://auth0.com/blog/complete-guide-to-angular-user-authentication/). Also there is already a blog post I am happy to link to: [NgRx Authentication Tutorial](https://auth0.com/blog/ngrx-authentication-tutorial/). In this blog we are starting from the beginning and refer to the next syntax in NgRx and maybe an alternative way. I recommend giving the resources a read, they really helped me a lot.
 
@@ -19,17 +19,17 @@ Code can be found here [https://github.com/FabianGosebrink/auth0-angular-ngrx/](
 
 ## TOC
 
-  - [Adding the App in Auth0](#adding-the-app-in-auth0)
-  - [Creating the Angular app and install the dependencies](#creating-the-angular-app-and-install-the-dependencies)
-  - [Adding the Auth service abstraction](#adding-the-auth-service-abstraction)
-  - [Including AuthModule](#including-authmodule)
-  - [Adding NgRx](#adding-ngrx)
-  - [Adding the Actions](#adding-the-actions)
-  - [Adding the reducer and the state](#adding-the-reducer-and-the-state)
-  - [Adding the effects](#adding-the-effects)
-  - [Providing the state to the module](#providing-the-state-to-the-module)
-  - [Adding the selectors](#adding-the-selectors)
-  - [Building the Component](#building-the-component)
+- [Adding the App in Auth0](#adding-the-app-in-auth0)
+- [Creating the Angular app and install the dependencies](#creating-the-angular-app-and-install-the-dependencies)
+- [Adding the Auth service abstraction](#adding-the-auth-service-abstraction)
+- [Including AuthModule](#including-authmodule)
+- [Adding NgRx](#adding-ngrx)
+- [Adding the Actions](#adding-the-actions)
+- [Adding the reducer and the state](#adding-the-reducer-and-the-state)
+- [Adding the effects](#adding-the-effects)
+- [Providing the state to the module](#providing-the-state-to-the-module)
+- [Adding the selectors](#adding-the-selectors)
+- [Building the Component](#building-the-component)
 
 ## Adding the App in Auth0
 
@@ -43,7 +43,7 @@ Once this is created and we know that our Angular app will run on the domain `ht
 
 ![Auth0 adding all domains](https://cdn.offering.solutions/img/articles/2021-02-03/allowed-urls.jpg)
 
-On the same page where we add the allowed urls on top there is a chapter for the `Basic Information`. We need the values `ClientId` and `Domain` from there and place it in our Angular application next. 
+On the same page where we add the allowed urls on top there is a chapter for the `Basic Information`. We need the values `ClientId` and `Domain` from there and place it in our Angular application next.
 
 ## Creating the Angular app and install the dependencies
 
@@ -147,7 +147,7 @@ ng add @ngrx/store@latest
 ng add @ngrx/effects@latest
 ```
 
-After having done this we can create a folder in the root called `store` where we place all the NgRx related files in. 
+After having done this we can create a folder in the root called `store` where we place all the NgRx related files in.
 
 ```
 .
@@ -156,7 +156,7 @@ After having done this we can create a folder in the root called `store` where w
 ├── src
 │   ├── app
 │   │   ├── store // <<< ADD THIS!
-│   │   │   └── ... 
+│   │   │   └── ...
 │   │   ├── ...
 │   ├── ...
 ├── ...
@@ -231,7 +231,7 @@ export const initialState: AuthState = {
 };
 
 const authReducerInternal = createReducer(
-  initialState,
+  initialState
   /* */
 );
 
@@ -241,10 +241,9 @@ export function authReducer(
 ): AuthState {
   return authReducerInternal(state, action);
 }
-
 ```
 
-The `AuthState` is the representation of the value the `auth` property has in our state. This reducer only takes care about anything that goes on *inside* of the `auth` property. 
+The `AuthState` is the representation of the value the `auth` property has in our state. This reducer only takes care about anything that goes on _inside_ of the `auth` property.
 
 We are setting the `initialState` and create the reducer getting passed the `initialState`. What we must do is adding the state manipulation when a specific action comes in.
 
@@ -277,7 +276,6 @@ const authReducerInternal = createReducer(
 );
 
 // export functions
-
 ```
 
 ## Adding the effects
@@ -306,60 +304,59 @@ export class AuthEffects {
     private authService: AuthenticationService
   ) {}
 
-    // effects go here
+  // effects go here
 }
-
 ```
 
 The `login` effect will only call the `authService.login()` action and won't dispatch any other action then.
 
 ```ts
-  login$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(fromAuthActions.login),
-        tap(() => this.authService.login())
-      ),
-    { dispatch: false }
-  );
+login$ = createEffect(
+  () =>
+    this.actions$.pipe(
+      ofType(fromAuthActions.login),
+      tap(() => this.authService.login())
+    ),
+  { dispatch: false }
+);
 ```
 
 We will throw the `checkAuth` action when we are getting redirected from Auth0 to our app again. The service from Auth0 got updated then with the latest information which we must collect and add to our state: `isLoggedIn$` and `user$` are the properties we want to collect and update the state with.
 If `isLoggedIn` resolves to `true` - which should be the case after the redirect - we can return a `loginComplete` action. Otherwise, we reset the state with a `logoutComplete` action.
 
 ```ts
-  login$ = createEffect(/* ... */);
+login$ = createEffect(/* ... */);
 
-  checkAuth$ = createEffect(() =>
-    this.actions$.pipe(
-      // If an action with the type 'checkAuth' occurs in the actions$ stream...
-      ofType(fromAuthActions.checkAuth),
-      // return an observable including the latest info from 'isLoggedIn' and 'userProfile'
-      switchMap(() =>
-        combineLatest([this.authService.isLoggedIn$, this.authService.user$])
-      ),
-      // Take it out and return the appropriate action based on if logged in or not
-      switchMap(([isLoggedIn, profile]) => {
-        if (isLoggedIn) {
-          return of(fromAuthActions.loginComplete({ profile, isLoggedIn }));
-        }
+checkAuth$ = createEffect(() =>
+  this.actions$.pipe(
+    // If an action with the type 'checkAuth' occurs in the actions$ stream...
+    ofType(fromAuthActions.checkAuth),
+    // return an observable including the latest info from 'isLoggedIn' and 'userProfile'
+    switchMap(() =>
+      combineLatest([this.authService.isLoggedIn$, this.authService.user$])
+    ),
+    // Take it out and return the appropriate action based on if logged in or not
+    switchMap(([isLoggedIn, profile]) => {
+      if (isLoggedIn) {
+        return of(fromAuthActions.loginComplete({ profile, isLoggedIn }));
+      }
 
-        return of(fromAuthActions.logoutComplete());
-      })
-    )
-  );
+      return of(fromAuthActions.logoutComplete());
+    })
+  )
+);
 ```
 
 The `logout` action calls the `authService.logout()` method and returns the `logoutComplete` again.
 
 ```ts
- logout$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(fromAuthActions.logout),
-      tap(() => this.authService.logout()),
-      switchMap(() => of(fromAuthActions.logoutComplete()))
-    )
-  );
+logout$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType(fromAuthActions.logout),
+    tap(() => this.authService.logout()),
+    switchMap(() => of(fromAuthActions.logoutComplete()))
+  )
+);
 ```
 
 ## Providing the state to the module
@@ -392,7 +389,6 @@ import { authReducer } from './store/auth.reducer';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
 ```
 
 In addition to that we wire up the effects by passing them into the `forRoot()` method of the `EffectsModule` from `@ngrx/effects`.
@@ -434,7 +430,6 @@ export const selectIsLoggedIn = createSelector(
   getAuthFeatureState,
   (state: AuthState) => state.isLoggedIn
 );
-
 ```
 
 ## Building the Component
@@ -446,10 +441,12 @@ import { select, Store } from '@ngrx/store';
 import { checkAuth, login, logout } from './store/auth.actions';
 import {
   selectCurrentUserProfile,
-  selectIsLoggedIn
+  selectIsLoggedIn,
 } from './store/auth.selectors';
 
-@Component({ /* */ })
+@Component({
+  /* */
+})
 export class AppComponent implements OnInit {
   title = 'auth0-angular-ngrx';
 
@@ -473,12 +470,11 @@ export class AppComponent implements OnInit {
     this.store.dispatch(login());
   }
 }
-
 ```
 
 It also provides two methods to `login` and `logout`. As we have done all the work before the component looks very clean.
 
-In the template we can now use the information as needed 
+In the template we can now use the information as needed
 
 ```html
 <div>
@@ -502,4 +498,3 @@ In the template we can now use the information as needed
 And that is it.
 
 The result can be seen on GitHub [https://github.com/FabianGosebrink/auth0-angular-ngrx/](https://github.com/FabianGosebrink/auth0-angular-ngrx/)
-

@@ -2,12 +2,13 @@
 title: Announcing ASP.NET Core WebAPI PacktPub Video Course
 date: 2017-08-13
 tags: ['aspnetcore', 'recording']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: [
-    "/blog/articles/2017/08/13/announcing-aspnetcore-webapi-packtpub-video-course/"
-]
+aliases:
+  [
+    '/blog/articles/2017/08/13/announcing-aspnetcore-webapi-packtpub-video-course/',
+  ]
 ---
 
 I am very proud and really happy to announce that my video course "RESTful Web services with ASP.NET Core" was published on _Packt_. You can find it here:

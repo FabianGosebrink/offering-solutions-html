@@ -2,7 +2,7 @@
 title: WebHooks with ASP.NET on Azure - DropBox and GitHub
 date: 2015-10-18
 tags: ['aspnet', 'azure', 'webhooks']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

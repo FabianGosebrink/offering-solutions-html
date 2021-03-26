@@ -2,7 +2,7 @@
 title: WPF CallMemberName for INotifyPropertyChanged
 date: 2015-02-08
 tags: ['wpf']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

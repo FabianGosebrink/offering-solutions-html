@@ -2,7 +2,7 @@
 title: Separating state into angular modules with ngrx
 date: 2018-02-10
 tags: ['angular', 'ngrx']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

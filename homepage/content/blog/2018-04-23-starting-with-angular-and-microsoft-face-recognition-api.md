@@ -2,7 +2,7 @@
 title: Starting with Angular and Microsoft's Face Recognition API
 date: 2018-04-23
 tags: ['angular', 'microsoft', 'faceapi']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

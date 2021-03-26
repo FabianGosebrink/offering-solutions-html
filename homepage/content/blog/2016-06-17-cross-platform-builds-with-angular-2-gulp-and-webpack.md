@@ -2,7 +2,7 @@
 title: Cross Platform Builds with Angular, Gulp and Webpack
 date: 2016-06-17
 tags: ['angular', 'gulp', 'webpack']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

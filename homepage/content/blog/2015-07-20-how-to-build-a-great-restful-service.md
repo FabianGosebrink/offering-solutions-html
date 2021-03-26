@@ -2,7 +2,7 @@
 title: How to build a great RESTful Service
 date: 2015-07-20
 tags: ['webapi', 'aspnet']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: ['/blog/articles/2015/07/20/how-to-build-a-great-restful-service/']

@@ -2,7 +2,7 @@
 title: How to install Ninject in ASP.NET WebAPI
 date: 2014-03-04
 tags: ['aspnet', 'ninject']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases: ['/blog/articles/2014/03/04/install-ninject-asp-net-webapi/']

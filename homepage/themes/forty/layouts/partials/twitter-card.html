@@ -11,7 +11,7 @@
  <meta property="og:url" content="{{ .Permalink }}">
  <meta property="og:site_name" content="{{ .Site.Title }}">
  <meta property="og:locale" content="en_US" />
- <meta property="og:image" content="{{ .Site.Params.cdnbaseurl }}img/blog/{{ .Params.image }}">
+ <meta property="og:image" content="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}">
  
  {{ range .Params.tags }}
  <meta property="og:tags" content="{{ . }}">
@@ -20,11 +20,11 @@
  <meta name="twitter:site" content="@FabianGosebrink">
  <meta name="twitter:creator" content="@FabianGosebrink">
  {{ if .IsPage }}
- <meta name="twitter:description" content="{{ if .Summary }}{{ .Summary }} {{else}} {{.Site.Params.description}}{{end}}" />
+ <meta name="twitter:description" content="{{ if .Summary }}{{ .Summary }} {{else}}{{.Site.Params.description}}{{end}}" />
  <meta name="twitter:title" content="{{ .Title }}" />
  <meta name="twitter:text:title" content="{{ .Title }}" />
  <meta name="twitter:card" content="summary_large_image" />
- <meta name="twitter:image" content="{{ .Site.Params.cdnbaseurl }}img/blog/{{ .Params.image }}" /> {{ else }}
+ <meta name="twitter:image" content="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" /> {{ else }}
  <meta name="twitter:title" content="{{ .Site.Title }}" />
  {{ end }}
 

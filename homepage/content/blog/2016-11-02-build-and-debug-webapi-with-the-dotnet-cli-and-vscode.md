@@ -2,7 +2,7 @@
 title: Build and debug a WebAPI with the Dotnet CLI and VSCode
 date: 2016-11-02
 tags: ['aspnetcore', 'dotnetcli']
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:

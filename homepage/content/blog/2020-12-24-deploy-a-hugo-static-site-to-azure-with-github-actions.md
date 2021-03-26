@@ -4,7 +4,7 @@ date: 2020-12-24
 tags: ['hugo', 'github']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 In this blog post I want to write about how you can deploy your Static Site - maybe blog - generated with Hugo to Azure with Github Actions.

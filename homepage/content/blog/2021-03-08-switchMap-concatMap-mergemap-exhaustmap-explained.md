@@ -4,7 +4,7 @@ date: 2021-03-08
 tags: ['rxjs', 'switchMap', 'mergeMap', 'concatMap', 'exhaustMap']
 draft: false
 category: blog
-image: aerial-view-of-laptop-and-notebook_bw_osc.jpg
+image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
 With this article I want to describe the differences between the rxjs operators `switchMap`, `mergeMap`, `concatMap` and `exhaustMap`.
@@ -93,7 +93,6 @@ anyLongRunningOp(value: string) {
 ```
 
 The `fireEvents()` method emits in the `Subject` `sub` two times one value each. First the value `first` and immediately after the value `second`. This value then gets processed by the operator we want to look how it behaves when multiple values come in.
-
 
 ## SwitchMap
 
@@ -202,7 +201,7 @@ In the animation you can see that both values `first` and `second` get emitted a
 
 ## ExhaustMap
 
-Then there is the `exhaustMap` ([docs](https://rxjs.dev/api/operators/exhaustMap))  operator left.
+Then there is the `exhaustMap` ([docs](https://rxjs.dev/api/operators/exhaustMap)) operator left.
 
 ```ts
 fireEvents() {
@@ -251,11 +250,10 @@ I hope this helped!
 ## Helpful Links
 
 - [Comprehensive Guide to Higher-Order RxJs Mapping Operators](https://blog.angular-university.io/rxjs-higher-order-mapping/)
-- [exhaustMap](https://rxjs.dev/api/operators/exhaustMap) 
+- [exhaustMap](https://rxjs.dev/api/operators/exhaustMap)
 - [mergeMap](https://rxjs.dev/api/operators/mergeMap)
 - [concatMap](https://rxjs.dev/api/operators/concatMap)
 - [switchMap](https://rxjs.dev/api/operators/switchMap)
-
 
 Thanks.
 
