@@ -22,10 +22,8 @@ const talksWithBetterTitle = allTalks.map((talk) => {
 
   const newTitle = tc.titleCase(titleLowerCase);
   return {
+    ...talk,
     title: newTitle,
-    date,
-    event,
-    tags,
   };
 });
 

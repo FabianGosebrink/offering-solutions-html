@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  {{ partial "blog-header.html" . }}
+  <body>
+    {{ "<!-- Wrapper -->" | safeHTML }}
+    <div id="wrapper">
+      {{ partial "nav.html" . }} {{ "<!-- Main -->" | safeHTML }}
+      <div id="main" class="alt">
+        <div class="bottom">
+          <div class="progress-container">
+            <div class="progress-bar" id="scrollingbar"></div>
+          </div>
+        </div>
+          <section id="banner" class="style2 center-image">
+          <div class="inner">
+            {{ if .Params.image }}
+            <span class="image">
+              <img
+                src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}"
+                alt="defaultListImage"
+              />
+            </span>
+            {{ end }}
+            <header class="major">
+              <h1>{{ .Title }}</h1>
+            </header>
+             <h6>{{ dateFormat "Monday, Jan 2, 2006" .Date }} - {{ if .Params.link }}<a href="{{.Params.link}}"> {{ .Params.event }}</a>{{ else }} {{ .Params.event }}{{ end }}</h6>
+            <p>
+              <a href="{{ .Site.Params.baseURLInternal }}talks/">back to all talks</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- One -->
+        <section id="one">
+          <div class="inner">
+            <h2>Slides</h2>
+           
+            {{ if .Params.dataId }}
+              <script async class="speakerdeck-embed" data-id="{{.Params.dataId}}" data-ratio="1.37081659973226" src="///speakerdeck.com/assets/embed.js"></script>
+            {{ end }}
+
+             {{ if .Params.slides }}
+              <p>
+                <a href="{{ .Params.slides }}" target="_blank" class="button">Download slides as pdf</a>
+              </p>
+            {{ end }}
+
+            {{if (not .Params.dataId) }}
+            {{ if( (not .Params.slides) )}}
+              <p>
+                No slides available at present, please check in the future again if they are added.<br/>
+              </p>
+
+              <p>
+                <a href="https://speakerdeck.com/fabiangosebrink/" target="_blank" class="button">See all slides</a>
+              </p>
+
+            {{end}}
+            {{end}}
+          </div>
+        </section>
+				{{ partial "newsletter.html" . }}
+      </div>
+
+    </div>
+
+    {{ "<!-- Scripts -->" | safeHTML}} {{ partial "js.html" . }}
+  </body>
+</html>
+

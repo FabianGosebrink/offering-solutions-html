@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "alex": "^9.1.0",
+    "change-case": "^4.1.2",
     "fs-extra": "^9.1.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
@@ -22,7 +23,9 @@
     "start": "cd ./homepage && hugo server -D --config config.dev.toml",
     "build": "node tools/build-for-prod.js",
     "post-build-gulp": "gulp buildWeb",
-    "title-case": "tsc ./tools/title-case-converter.ts && node ./tools/title-case-converter.js"
+    "prepare-talks": "npm run title-case && npm run convert-talks",
+    "title-case": "tsc ./tools/title-case-converter.ts && node ./tools/title-case-converter.js",
+    "convert-talks": "tsc ./tools/convert-talks-json-to-md.ts && node ./tools/convert-talks-json-to-md.js"
   },
   "repository": {
     "type": "git",
