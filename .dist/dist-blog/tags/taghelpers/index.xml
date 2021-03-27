@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>taghelpers on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/taghelpers/</link>
+    <description>Recent content in taghelpers on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/taghelpers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to use tag helpers in ASP.NET MVC</title>
+      <link>https://offering.solutions/blog/articles/2015/11/16/how-to-use-tag-helpers-in-asp.net-mvc/</link>
+      <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/11/16/how-to-use-tag-helpers-in-asp.net-mvc/</guid>
+      <description>Hey,
+in this post I want to show you how to use tag helpers in ASP.NET.
+First of all: What are the tag helpers good for?
+If you are coding your links in your MVC-Views with normal strings its really hard to refactor or correct them in case you rename your routing, controller or your action. So you need a kind of generic approach to do this.
+Razor in previous versions had this</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>modules on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/modules/</link>
+    <description>Recent content in modules on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/modules/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to modularize your angular application</title>
+      <link>https://offering.solutions/blog/articles/2015/03/17/how-to-modularize-your-angular-application/</link>
+      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/03/17/how-to-modularize-your-angular-application/</guid>
+      <description>In this blog post I want to show you a way on how to modularize your angular application in a way I did it so far. Enjoy reading :)
+Due to the fact that angular.js gets more and more important you are forced to think about a nice architecture to develop easy. Especially if you develop in mulitple teams.
+Well one of the killer features for me in angular is its modularization.</description>
+    </item>
+    
+  </channel>
+</rss>

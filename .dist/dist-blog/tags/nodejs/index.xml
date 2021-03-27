@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nodejs on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/nodejs/</link>
+    <description>Recent content in nodejs on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Jul 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chat with Node.js, socket.io, AngularJS, flashing title and loading bar</title>
+      <link>https://offering.solutions/blog/articles/2014/07/02/chat-with-node.js-socket.io-angularjs-flashing-title-and-loading-bar/</link>
+      <pubDate>Wed, 02 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/07/02/chat-with-node.js-socket.io-angularjs-flashing-title-and-loading-bar/</guid>
+      <description>In this blog post I want to show you how you can set up a chat with Node.js, socket.io, Angular.js, flashing title and loading bar. We will take a look into the lightweight architecture angular is giving you and how to set up the services and controllers the right way. Additionally we will use the loading-bar-module to give the user information about what his message is doing after sending it and we will flash the homepage title if a new message arrives.</description>
+    </item>
+    
+  </channel>
+</rss>

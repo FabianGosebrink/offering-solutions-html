@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/javascript/</link>
+    <description>Recent content in javascript on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using the Device Orientation API with ASP.NET Core SignalR</title>
+      <link>https://offering.solutions/blog/articles/2019/07/25/using-the-device-orientation-api-with-asp.net-core-signalr/</link>
+      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/07/25/using-the-device-orientation-api-with-asp.net-core-signalr/</guid>
+      <description>In this blog post I want to describe how I used plain Javascript and ASP.NET Core SignalR to broadcast the device orientation values over HTTP.
+You can find the whole code on github here: https://github.com/FabianGosebrink/device-orientation-signalr 
+Backend with ASP.NET Core and SignalR For this demo I created a small backend with the dotnet cli and
+dotnet new webapito scaffold the basic files.
+In the ConfigureServices method I added MVC and also configured CORS with the appropriate origins as well as added SignalR with services.</description>
+    </item>
+    
+    <item>
+      <title>Javascript Testing Leicht Gemacht Am Beispiel Von Angular</title>
+      <link>https://offering.solutions/talks/javascript-testing-leicht-gemacht-am-beispiel-von-angular-31/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/javascript-testing-leicht-gemacht-am-beispiel-von-angular-31/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular Testing Made Easy</title>
+      <link>https://offering.solutions/talks/angular-testing-made-easy-36/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-testing-made-easy-36/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>From Zero to Azure with Angular</title>
+      <link>https://offering.solutions/talks/from-zero-to-azure-with-angular-37/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/from-zero-to-azure-with-angular-37/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mehr Als Nur Web- Cross-Plattform-Anwendungen Mit Angular, Electron Und Cordova</title>
+      <link>https://offering.solutions/talks/mehr-als-nur-web-cross-plattform-anwendungen-mit-angular-electron-und-cordova-38/</link>
+      <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/mehr-als-nur-web-cross-plattform-anwendungen-mit-angular-electron-und-cordova-38/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modern Web Toolchain</title>
+      <link>https://offering.solutions/talks/modern-web-toolchain-39/</link>
+      <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/modern-web-toolchain-39/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modern Web Toolchain</title>
+      <link>https://offering.solutions/talks/modern-web-toolchain-40/</link>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/modern-web-toolchain-40/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular Testing Von a Bis Z</title>
+      <link>https://offering.solutions/talks/angular-testing-von-a-bis-z-41/</link>
+      <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-testing-von-a-bis-z-41/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fenster Überall- Desktopanwendungen Mit Angular Und Electron</title>
+      <link>https://offering.solutions/talks/fenster-ueberall-desktopanwendungen-mit-angular-und-electron-42/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/fenster-ueberall-desktopanwendungen-mit-angular-und-electron-42/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

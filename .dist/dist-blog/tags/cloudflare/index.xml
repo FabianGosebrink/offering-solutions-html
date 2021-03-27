@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cloudflare on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/cloudflare/</link>
+    <description>Recent content in cloudflare on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hosting Hugo on Azure with Cloudflare, Azure Web Service and Azure Blob Storage</title>
+      <link>https://offering.solutions/blog/articles/2019/06/07/hosting-hugo-on-azure-with-cloudflare-azure-web-service-and-azure-blob-storage/</link>
+      <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/06/07/hosting-hugo-on-azure-with-cloudflare-azure-web-service-and-azure-blob-storage/</guid>
+      <description>In this blog post I want to describe how I moved my complete company homepage and my blog from static handwritten html and jekyll to a hugo solution which is hosted on azure and uses cloudflare as DNS, has a CI/CD pipeline and is hosted on azure.
+The Situation in the past As my company homepage and my blog have been two projects in the past I had two different repositories for both which were lying on an azure devops git repo (html page) and on github.</description>
+    </item>
+    
+  </channel>
+</rss>

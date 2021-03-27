@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>authorization on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/authorization/</link>
+    <description>Recent content in authorization on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/authorization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication in Angular with NgRx and ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2020/05/29/authentication-in-angular-with-ngrx-and-asp.net-core/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/05/29/authentication-in-angular-with-ngrx-and-asp.net-core/</guid>
+      <description>In this blog post I want to describe how you can add authentication and authorization in your Angular app using NgRx. We are using an ASP.NET Core backend to get our secure data from and a custom STS which we use for the authentication and the id token as well as an access token.
+This is a follow up post of Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2 so if you want to get into the complete setup you might give this blog post a shot first :-) We will build this one up on the app which was mentioned in the references blog post.</description>
+    </item>
+    
+    <item>
+      <title>Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2</title>
+      <link>https://offering.solutions/blog/articles/2020/05/18/authentication-and-authorization-with-angular-and-asp.net-core-using-oidc-and-oauth2/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/05/18/authentication-and-authorization-with-angular-and-asp.net-core-using-oidc-and-oauth2/</guid>
+      <description>In this blog post I want to describe how you can add a login to your Angular App and secure it with OpenID Connect (OIDC) and OAuth2 to access an ASP.NET Core WebAPI with an Identity Server.
+Code can be found here Angular OAuth2 OIDC Sample with ASP.NET Core
+ Disclaimer: In this blog we will use an Angular library which I wrote some parts of. But the principles are best practice and uses a standard which can be applied to any Angular application no matter what libraries you use.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>unitofwork on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/unitofwork/</link>
+    <description>Recent content in unitofwork on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Dec 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/unitofwork/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASP.NET Unit Of Work with Entity Framework</title>
+      <link>https://offering.solutions/blog/articles/2015/12/09/asp.net-unit-of-work-with-entity-framework/</link>
+      <pubDate>Wed, 09 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/12/09/asp.net-unit-of-work-with-entity-framework/</guid>
+      <description>I implemented a solution for the ASP.NET Unit Of Work with Entity Framework (see this post) and put all this into a NuGet-Package. And finally: Here it is!
+Code Nuget: UnitOfWork by Offering.Solutions
+Github: OfferingSolutions UnitOfWork with Entity Framework
+This blog post has a sample-solution attached. Feel free to look into it. But before you do let me explain this package a bit. It will use the UnitOfWork, you will be able to use GenericRepositories and Customrepositories and everything is cached so that if you use the repositories in one using they only have to be created once.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Repository Pattern und Unit of Work</title>
+      <link>https://offering.solutions/blog/articles/2014/10/06/asp.net-repository-pattern-und-unit-of-work/</link>
+      <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/10/06/asp.net-repository-pattern-und-unit-of-work/</guid>
+      <description>In diesem Blog post möchte ich das ASP.NET Repository Pattern and Unit of Work vorstellen. In einem Informationssystem (z.B. Webapplikation) hat man normalerweise immer dasselbe Problem: Irgendwie muss man Daten persistieren und von der Oberfläche im Browser in die Datenbank hin- und wieder zurückschieben. Und dies findet man beinahe bei jedem Objekt (Person, Artikel, Blogeintrage, etc.). Vor allem fällt nach einer Zeit auf, dass die Operationen immer dieselben sind: Create/Read/Update und Delete geben sich die Klinke in die Hand.</description>
+    </item>
+    
+  </channel>
+</rss>

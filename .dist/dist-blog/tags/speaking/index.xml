@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>speaking on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/speaking/</link>
+    <description>Recent content in speaking on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/speaking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent Speaking Activities</title>
+      <link>https://offering.solutions/blog/articles/2018/03/06/recent-speaking-activities/</link>
+      <pubDate>Tue, 06 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/03/06/recent-speaking-activities/</guid>
+      <description>In this blog post I want to recap my recent speaking activities and provide you some short information and slides to have it all in a go.
+Basta! in Frankfurt I spoke at the BASTA! Spring 2018 in Frankfurt two times. The first talk on Wednesday was about Cross-Platform development with Angular, Cordova and Electron. (Althought there is this &amp;lsquo;PWA&amp;rsquo; standing in the room ;-) ) we took a look on how to create applications with Angular a bit and porting them to mobile devices with Cordova and to the desktop with Electron.</description>
+    </item>
+    
+    <item>
+      <title>Lessons learnt from organizing a conference</title>
+      <link>https://offering.solutions/blog/articles/2017/07/18/lessons-learnt-from-organizing-a-conference/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/07/18/lessons-learnt-from-organizing-a-conference/</guid>
+      <description>It has been quiet here for a while&amp;hellip; :-)
+You may have noticed that I organised my first conference .NET Dayabout two months ago. Well, that is not true. The organisation itself took place long before that but the event took place approximately two months ago. With this distance of time I want to gather up what I learned from organising this event, what I take with me and what will influence the next conference if I will do this again some time :-)</description>
+    </item>
+    
+    <item>
+      <title>Announcing the .NET Day 2017</title>
+      <link>https://offering.solutions/blog/articles/2017/04/02/announcing-the-.net-day-2017/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/04/02/announcing-the-.net-day-2017/</guid>
+      <description>I am very happy to announce the .NET Day 2017 in Switzerland! In this blog post I want to give you a small background information on this, how this idea came up and about the current status.
+The beginning The idea of this conference day came into my mind in the middle of 2016. I love conferences. I think that a developer has to stay updated on his well known topics as well as be open to new topics and has to keep on learning over and over again.</description>
+    </item>
+    
+    <item>
+      <title>Speaking at the Microsoft TechDays 2017</title>
+      <link>https://offering.solutions/blog/articles/2017/01/02/speaking-at-the-microsoft-techdays-2017/</link>
+      <pubDate>Mon, 02 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/01/02/speaking-at-the-microsoft-techdays-2017/</guid>
+      <description>I am very proud to announce that I will be speaking at the Microsoft TechDays 2017 about Angular and ASP.NET Core.
+This is the second time I am attending to the Microsoft TechDays. The last time was 2016 and it was a blast - I really enjoyed it.
+In my session which is placed as the last one at the second day, I will get you introduced to ASP.NET Core and how to use it.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft TechDays 2016</title>
+      <link>https://offering.solutions/blog/articles/2016/02/20/microsoft-techdays-2016/</link>
+      <pubDate>Sat, 20 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/02/20/microsoft-techdays-2016/</guid>
+      <description>TechDays 2016 Baden
+===== UPDATE======
+I got the feedback from Microsoft and my talk was rated with 4.5 in Content and 4.6 in Speaker Performance. This means it was rated as the best Talk at the TechDays. Im really happy to read that so thanks to everybody who was in the audience :)
+Hope to see you again on some events.
+Greetings
+Fabian
+=================
+I am so happy to announce that I will speak on the TechDays 2016 in Baden for the first time!</description>
+    </item>
+    
+    <item>
+      <title>Talk bei den Microsoft Evolution Days in Zürich</title>
+      <link>https://offering.solutions/blog/articles/2015/11/12/talk-bei-den-microsoft-evolution-days-in-z%C3%BCrich/</link>
+      <pubDate>Thu, 12 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/11/12/talk-bei-den-microsoft-evolution-days-in-z%C3%BCrich/</guid>
+      <description>Am 29. Oktober hielt ich einen Talk bei den Microsoft Evolution Days in Zürich, die Digicomp ausgerichtet hat. Ich habe einen Talk bei den Microsoft Evolution Days in Zürichüber AngularJs &amp;amp; REST mit einer ASP.NET WebAPI gehalten. Die Folien gibts direkt bei Digicomp. Alle Beispiele gibts auch auf Github.
+ Mein erster Vortrag als MVP :-)
+ Früher hatten die Evolution Days keinen Developer-Track. Dieses Jahr war aber einer dabei und ich bin froh, dass ich eingeladen wurde.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft TechTalk in Wallisellen</title>
+      <link>https://offering.solutions/blog/articles/2015/04/19/microsoft-techtalk-in-wallisellen/</link>
+      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/04/19/microsoft-techtalk-in-wallisellen/</guid>
+      <description>Hallo zusammen, in diesem Blog will ich kurz den Microsoft TechTalk in Wallisellen zusammenfassen.
+Am 19.03.2015 waren Hans Peter Bornhauser und ich Guestspeaker beim Microsoft Techtalk in Wallisellen. Dass Ereignis war mit mehr als 100 Leuten komplett ausverkauft und drehte sich innerhalb von 3 Vorträgen rund um das Thema ASP.NET und Azure.
+Hans Peter stellte in einer 50-minütigen Session ASP.NET vNext vor. Mit praktischen Beispielen zeigte er, was alles auf Entwickler zukommt mit dem neuen ASP.</description>
+    </item>
+    
+  </channel>
+</rss>

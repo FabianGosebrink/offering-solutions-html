@@ -24,16 +24,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Node.js 12
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
+      # - name: Setup Node.js 12
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12
 
-      - name: Installing Dependencies
-        run: sudo npm install
+      # - name: Installing Dependencies
+      #   run: sudo npm install
 
-      - name: Building Hugo
-        run: sudo npm run build
+      # - name: Building Hugo
+      #   run: sudo npm run build
 
       - name: 'Deploy Blog to Azure Web App'
         uses: azure/webapps-deploy@v2

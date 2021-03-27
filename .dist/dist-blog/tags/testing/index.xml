@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>testing on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/testing/</link>
+    <description>Recent content in testing on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Angular Testing Made Easy with Jasmine, Karma and Cypress</title>
+      <link>https://offering.solutions/talks/angular-testing-made-easy-with-jasmine-karma-and-cypress-6/</link>
+      <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-testing-made-easy-with-jasmine-karma-and-cypress-6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing Using Angular</title>
+      <link>https://offering.solutions/talks/testing-using-angular-9/</link>
+      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/testing-using-angular-9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing Made Easy</title>
+      <link>https://offering.solutions/talks/testing-made-easy-24/</link>
+      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/testing-made-easy-24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript Testing Leicht Gemacht Am Beispiel Von Angular</title>
+      <link>https://offering.solutions/talks/javascript-testing-leicht-gemacht-am-beispiel-von-angular-31/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/javascript-testing-leicht-gemacht-am-beispiel-von-angular-31/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular Testing Made Easy</title>
+      <link>https://offering.solutions/talks/angular-testing-made-easy-36/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-testing-made-easy-36/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular Testing Von a Bis Z</title>
+      <link>https://offering.solutions/talks/angular-testing-von-a-bis-z-41/</link>
+      <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-testing-von-a-bis-z-41/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing an Angular Http Service</title>
+      <link>https://offering.solutions/blog/articles/2017/10/02/testing-an-angular-http-service/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/10/02/testing-an-angular-http-service/</guid>
+      <description>In this blog post I want to show you how you can test the new HttpClient introduced with the version 4.2 of angular.
+The HttpClient service Lets take this service as a reference
+import { HttpClient } from &amp;#39;@angular/common/http&amp;#39;; import { Injectable } from &amp;#39;@angular/core&amp;#39;; @Injectable() export class CustomHttpService { constructor(private httpClient: HttpClient) { } getSingle&amp;lt;T&amp;gt;(id: number) { return this.httpClient.get&amp;lt;T&amp;gt;(`http://replace.with.api/anything/${id}`); } post&amp;lt;T&amp;gt;(item: any) { return this.httpClient.post&amp;lt;T&amp;gt;(`http://replace.with.api/anything`, item); } put&amp;lt;T&amp;gt;(id: number, item: any) { return this.</description>
+    </item>
+    
+  </channel>
+</rss>

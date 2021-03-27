@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>highcharts on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/highcharts/</link>
+    <description>Recent content in highcharts on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 May 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/highcharts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to include DotNet.HighCharts in ASP.NET MVC with ViewModels</title>
+      <link>https://offering.solutions/blog/articles/2014/05/09/how-to-include-dotnet.highcharts-in-asp.net-mvc-with-viewmodels/</link>
+      <pubDate>Fri, 09 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/05/09/how-to-include-dotnet.highcharts-in-asp.net-mvc-with-viewmodels/</guid>
+      <description>Hey,
+I want to show you how to include DotNet.HighCharts in ASP.NET MVC working with ViewModels.
+A charting component is always very cool to see on your page and makes normal plain numbers good-looking.
+Highcharts are available on Codeplex: DotNet.HighChartsI will not dive into this whole ViewModel thing. This is something very common in ASP.NET MVC and can also bee seen in the second blog I am working on: How to avoid ViewBag and ViewDataSo, lets start:</description>
+    </item>
+    
+  </channel>
+</rss>

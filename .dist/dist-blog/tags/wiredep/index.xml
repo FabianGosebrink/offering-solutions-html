@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wiredep on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/wiredep/</link>
+    <description>Recent content in wiredep on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Aug 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/wiredep/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AngularJS with gulp, wiredep and bower</title>
+      <link>https://offering.solutions/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/</link>
+      <pubDate>Sun, 30 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/</guid>
+      <description>With this blog post I want to show you how to use AngularJS with gulp, wiredep and bower to provide the files to an angular application.
+I introduced Gulp in my AngularJSDemoApp on GitHub.
+Check it out here.
+AngularJS with gulp wiredep and bower gulp.js var gulp = require(&amp;#39;gulp&amp;#39;); var jshint = require(&amp;#39;gulp-jshint&amp;#39;); var jscs = require(&amp;#39;gulp-jscs&amp;#39;); var del = require(&amp;#39;del&amp;#39;); var inject = require(&amp;#39;gulp-inject&amp;#39;); var config = require(&amp;#39;./gulp.config&amp;#39;)(); gulp.task(&amp;#39;vet&amp;#39;, function () { return gulp .</description>
+    </item>
+    
+  </channel>
+</rss>

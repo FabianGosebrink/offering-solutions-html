@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gulp on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/gulp/</link>
+    <description>Recent content in gulp on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Jun 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cross Platform Builds with Angular, Gulp and Webpack</title>
+      <link>https://offering.solutions/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/</link>
+      <pubDate>Fri, 17 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/</guid>
+      <description>In this blog post I want to show how to create Cross Platform Builds with Angular, Gulp and Webpack
+WebpackGulpAngularCode can be found here: https://github.com/FabianGosebrink/Foodchooser-ASPNET-Angular-Cross-Platform
+Setting up the folder structure The folder structure is very important but also one of the most discussed in the internet I think ;). Mine looks like the following:
+Whereas &amp;ldquo;app&amp;rdquo; contains my Angular 2 application and the other files and folders speak for theirselves.</description>
+    </item>
+    
+    <item>
+      <title>How you can organise gulp in your applications</title>
+      <link>https://offering.solutions/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/</link>
+      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/</guid>
+      <description>In this blog post I want to show one possibility of organising your gulp tasks in a way that you as a developer can find them quickly and print them to the console in an ordered way.
+ I have taken all these examples from my cross platform examples on GitHub. Especially from Foodchooser.
+ Motivation No matter what you do with web development today you will have to have a task runner when it comes to distribute to a customer at the latest.</description>
+    </item>
+    
+    <item>
+      <title>AngularJS with gulp, wiredep and bower</title>
+      <link>https://offering.solutions/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/</link>
+      <pubDate>Sun, 30 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/</guid>
+      <description>With this blog post I want to show you how to use AngularJS with gulp, wiredep and bower to provide the files to an angular application.
+I introduced Gulp in my AngularJSDemoApp on GitHub.
+Check it out here.
+AngularJS with gulp wiredep and bower gulp.js var gulp = require(&amp;#39;gulp&amp;#39;); var jshint = require(&amp;#39;gulp-jshint&amp;#39;); var jscs = require(&amp;#39;gulp-jscs&amp;#39;); var del = require(&amp;#39;del&amp;#39;); var inject = require(&amp;#39;gulp-inject&amp;#39;); var config = require(&amp;#39;./gulp.config&amp;#39;)(); gulp.task(&amp;#39;vet&amp;#39;, function () { return gulp .</description>
+    </item>
+    
+  </channel>
+</rss>

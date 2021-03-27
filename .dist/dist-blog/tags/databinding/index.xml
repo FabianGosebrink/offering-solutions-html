@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>databinding on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/databinding/</link>
+    <description>Recent content in databinding on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/databinding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WPF Basics II - The INotifyPropertyChanged Interface</title>
+      <link>https://offering.solutions/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/</link>
+      <pubDate>Sun, 14 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/</guid>
+      <description>UPDATE Check the CallMemberName-Possibility here
+ In the first part I told something about the databinding here. The second part should be something about refreshing the data at the UI. We said that the UI only knows the datacontext and its properties. So far so god. It is binding them at startup and we&amp;rsquo;re done so far.
+To calm down the ones who expect a solution: Can be found in the third article here</description>
+    </item>
+    
+    <item>
+      <title>How to make first steps of Databinding in WPF</title>
+      <link>https://offering.solutions/blog/articles/2014/09/02/how-to-make-first-steps-of-databinding-in-wpf/</link>
+      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/09/02/how-to-make-first-steps-of-databinding-in-wpf/</guid>
+      <description>In this blog post I want to show you how to make first steps of Databinding in WPF.
+I often hear or see that people try to start with WPF but they do not start mit MVVM. Because databinding is frightening them. But why? Databinding is one of the biggest advantages you can have to decouple your logic from your view.
+With this post I want to give you a short introduction about databinding and how to get set up.</description>
+    </item>
+    
+  </channel>
+</rss>

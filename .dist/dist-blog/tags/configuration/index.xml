@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>configuration on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/configuration/</link>
+    <description>Recent content in configuration on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuring Angular libraries</title>
+      <link>https://offering.solutions/blog/articles/2019/12/31/configuring-angular-libraries/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/12/31/configuring-angular-libraries/</guid>
+      <description>In this article I want to explain two possible ways to configure Angular libraries.
+With libraries we have a convenient way to separate logic which is used multiple times across more than one application or libraries can define our architecture especially when working with a monorepo.
+Libraries build a standalone codebase where complete modules with all its services, components etc. can be stored away and can be included into your Angular app.</description>
+    </item>
+    
+    <item>
+      <title>Automatically reload typed configuration in ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2017/02/17/automatically-reload-typed-configuration-in-asp.net-core/</link>
+      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/02/17/automatically-reload-typed-configuration-in-asp.net-core/</guid>
+      <description>In this article I want to explore IOptionsSnapshot and show how to work with IOptionsSnapshot in ASP.NET Core 1.1.
+We will use the dotnet cli to create a new project and configure it using the reload technique in combination with IOptionsSnapshot.
+ Make sure you are using at least ASP.NET Core 1.1
+ Get started by creating a new folder where you want to work in, opening a console there and typing</description>
+    </item>
+    
+  </channel>
+</rss>

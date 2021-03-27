@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webassembly on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/webassembly/</link>
+    <description>Recent content in webassembly on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/webassembly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a Sample Todo App with Signalr Using Blazor WebAssembly</title>
+      <link>https://offering.solutions/blog/articles/2020/06/05/building-a-sample-todo-app-with-signalr-using-blazor-webassembly/</link>
+      <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/06/05/building-a-sample-todo-app-with-signalr-using-blazor-webassembly/</guid>
+      <description>In this blog post I want to show how to get started with ASP.NET Core Blazor by creating a Todo Application with forms, container and presentational components synchronized with SignalR.
+Let&amp;rsquo;s get started.
+ We will only cover the frontend here, the backend is an ASP.NET Core WebAPI which you can see in the github Repository.
+ https://github.com/FabianGosebrink/blazor-todo-app
+TOC  Prerequisites Scaffolding the client project Deleting not used Files Examine the files The NavMenu The MainLayout Blazor Pages Adding the communication service Adding the components  Todo List Component Todo Form Component Todo Component   Adding SignalR  Prerequisites Make sure you have installed all of the listed software underneath.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>validation on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/validation/</link>
+    <description>Recent content in validation on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/validation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cross Field Validation Using Angular Reactive Forms</title>
+      <link>https://offering.solutions/blog/articles/2020/05/03/cross-field-validation-using-angular-reactive-forms/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/05/03/cross-field-validation-using-angular-reactive-forms/</guid>
+      <description>In this blog post I would like to describe how you can add validation to multiple fields of your reactive forms in Angular by using a feature called Cross Field Validation.
+This powerful features let you validate not a single form control but instead you can validate one form control against the value from another control. Let us see how we can do this.
+The source code is of course on Github and you can copy paste the examples along: Github</description>
+    </item>
+    
+  </channel>
+</rss>

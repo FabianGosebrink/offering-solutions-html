@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>material on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/material/</link>
+    <description>Recent content in material on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Nov 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/material/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using the Angular Material Paginator with ASP.NET Core and Angular</title>
+      <link>https://offering.solutions/blog/articles/2017/11/21/using-the-angular-material-paginator-with-asp.net-core-and-angular/</link>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/11/21/using-the-angular-material-paginator-with-asp.net-core-and-angular/</guid>
+      <description>In this blog post I want to show you how to use Angular Material with Angular to use a table with paging which is driven by an ASP.NET Core WebAPI.
+Code You can find the code here: https://github.com/FabianGosebrink/ASPNETCore-Angular-Material-HATEOAS-Paging
+Overview  What is HATEOAS The Backend  Customer Controller   The Frontend  PaginationService HttpBaseService The Components Include in module ListComponent OverviewComponent   Links  Get started With the Angular Material Table and its Pagination Module it is quite easy to set up paging in a beautiful way so that you can use it on client side and only show a specific amount of entries to your users.</description>
+    </item>
+    
+  </channel>
+</rss>

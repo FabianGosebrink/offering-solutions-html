@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jest on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/jest/</link>
+    <description>Recent content in jest on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/jest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrating an Nx Workspace from Karma to Jest</title>
+      <link>https://offering.solutions/blog/articles/2020/03/04/migrating-an-nx-workspace-from-karma-to-jest/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/03/04/migrating-an-nx-workspace-from-karma-to-jest/</guid>
+      <description>In this article I want to describe how we can migrate an nx workspace with an angular application from karma to use jest, the test runner from facebook.
+TL;DR  Switch packages in package.json Modify angular.json (test section &amp;amp; at the bottom) Replace karma.conf.js with jest.config.js on root level Replace content of tsconfig.spec.json in app folder Replace karma.conf.js with jest.config.js on app level Replace test.ts with test-setup.ts on app level  Details We will work with this workspace in this article:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hateoas on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/hateoas/</link>
+    <description>Recent content in hateoas on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Nov 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/hateoas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CRUD operations in Angular with ASP.NET Core and HATEOAS</title>
+      <link>https://offering.solutions/blog/articles/2017/11/29/crud-operations-in-angular-with-asp.net-core-and-hateoas/</link>
+      <pubDate>Wed, 29 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/11/29/crud-operations-in-angular-with-asp.net-core-and-hateoas/</guid>
+      <description>This blog post shows how to implement CRUD operations in Angular which are driven by an ASP.NET Core Web API using HATEOAS.
+A quick note The HATEOAS in this repository does not follow any &amp;ldquo;standard&amp;rdquo; like e.g. HAL. But it is enough that you get the idea and an impression how to use it.
+I played around a little bit with this in the last time and maybe you can get some inspiration of how to get stuff going with that in your project.</description>
+    </item>
+    
+  </channel>
+</rss>

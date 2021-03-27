@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aspnetcore on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/aspnetcore/</link>
+    <description>Recent content in aspnetcore on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/aspnetcore/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy a .NET 5 ASP.NET Core Application to Azure With GitHub Actions</title>
+      <link>https://offering.solutions/blog/articles/2020/12/16/deploy-a-.net-5-asp.net-core-application-to-azure-with-github-actions/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/12/16/deploy-a-.net-5-asp.net-core-application-to-azure-with-github-actions/</guid>
+      <description>In this blog post I want to write about how you can deploy your ASP.NET Core Web App running on .NET 5 to Azure with Github Actions.
+GitHub Actions use a yaml format as well as the new Azure pipelines but their format is a little bit different. However I want to move more and more into GitHub Actions because I enjoy having my code an my build together and most of my repositories are stored in GitHub since private repositories are free.</description>
+    </item>
+    
+    <item>
+      <title>Securing an Electron App Implemented with Angular Using OIDC and OAuth2</title>
+      <link>https://offering.solutions/blog/articles/2020/10/06/securing-an-electron-app-implemented-with-angular-using-oidc-and-oauth2/</link>
+      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/10/06/securing-an-electron-app-implemented-with-angular-using-oidc-and-oauth2/</guid>
+      <description>In this blog post I want to explain how you can secure an electron app written in Angular with OIDC and OAuth2 using IdentityServer4 as the Secure Token Server.
+ This is kind of a follow up blog post of my previous one Securing a Cordova App Implemented with Angular Using OIDC and OAuth2
+ TOC  Understanding the problem What we will use Configuring the authentication library Adding the authentication in the Angular App Catching the redirect in the electron main process Catching the event in the Angular app  Understanding the problem We are using the code flow to authenticate our application against the Secure Token Server (STS).</description>
+    </item>
+    
+    <item>
+      <title>Securing a Cordova App Implemented with Angular Using OIDC and OAuth2</title>
+      <link>https://offering.solutions/blog/articles/2020/09/17/securing-a-cordova-app-implemented-with-angular-using-oidc-and-oauth2/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/09/17/securing-a-cordova-app-implemented-with-angular-using-oidc-and-oauth2/</guid>
+      <description>In this blog post I want to explain how you can secure a Cordova app written in Angular with OIDC and OAuth2 using IdentityServer4 as the Secure Token Server. We will take a look at an Angular project created with the AngularCLI or the NxDevTools and then turn it into a Cordova app via the Cordova CLI to let it run on the mobile phone and set everything up that we can authenticate to get an identity token and an access token and navigate back to our app to consume a protected API.</description>
+    </item>
+    
+    <item>
+      <title>Uploading Files to Azure Blob Storage with Angular and ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2020/08/09/uploading-files-to-azure-blob-storage-with-angular-and-asp.net-core/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/08/09/uploading-files-to-azure-blob-storage-with-angular-and-asp.net-core/</guid>
+      <description>In this blog post I want to show how to upload files from an Angular application over an ASP.NET Core WebAPI to an Azure Blob Storage and save them there. Using an Azure Blob Storage for this is a perfect candidate not to pollute your App Service and store files there but use a dedicated system for this. In this blog post we will see how we can create the Azure Blob Storage in the Azure Portal, add the appropriate services into an ASP.</description>
+    </item>
+    
+    <item>
+      <title>Building a Sample Todo App with Signalr Using Blazor WebAssembly</title>
+      <link>https://offering.solutions/blog/articles/2020/06/05/building-a-sample-todo-app-with-signalr-using-blazor-webassembly/</link>
+      <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/06/05/building-a-sample-todo-app-with-signalr-using-blazor-webassembly/</guid>
+      <description>In this blog post I want to show how to get started with ASP.NET Core Blazor by creating a Todo Application with forms, container and presentational components synchronized with SignalR.
+Let&amp;rsquo;s get started.
+ We will only cover the frontend here, the backend is an ASP.NET Core WebAPI which you can see in the github Repository.
+ https://github.com/FabianGosebrink/blazor-todo-app
+TOC  Prerequisites Scaffolding the client project Deleting not used Files Examine the files The NavMenu The MainLayout Blazor Pages Adding the communication service Adding the components  Todo List Component Todo Form Component Todo Component   Adding SignalR  Prerequisites Make sure you have installed all of the listed software underneath.</description>
+    </item>
+    
+    <item>
+      <title>Authentication in Angular with NgRx and ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2020/05/29/authentication-in-angular-with-ngrx-and-asp.net-core/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/05/29/authentication-in-angular-with-ngrx-and-asp.net-core/</guid>
+      <description>In this blog post I want to describe how you can add authentication and authorization in your Angular app using NgRx. We are using an ASP.NET Core backend to get our secure data from and a custom STS which we use for the authentication and the id token as well as an access token.
+This is a follow up post of Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2 so if you want to get into the complete setup you might give this blog post a shot first :-) We will build this one up on the app which was mentioned in the references blog post.</description>
+    </item>
+    
+    <item>
+      <title>Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2</title>
+      <link>https://offering.solutions/blog/articles/2020/05/18/authentication-and-authorization-with-angular-and-asp.net-core-using-oidc-and-oauth2/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/05/18/authentication-and-authorization-with-angular-and-asp.net-core-using-oidc-and-oauth2/</guid>
+      <description>In this blog post I want to describe how you can add a login to your Angular App and secure it with OpenID Connect (OIDC) and OAuth2 to access an ASP.NET Core WebAPI with an Identity Server.
+Code can be found here Angular OAuth2 OIDC Sample with ASP.NET Core
+ Disclaimer: In this blog we will use an Angular library which I wrote some parts of. But the principles are best practice and uses a standard which can be applied to any Angular application no matter what libraries you use.</description>
+    </item>
+    
+    <item>
+      <title>Implement endless scroll with Angular, NgRx and ASP.NET Core WebAPI</title>
+      <link>https://offering.solutions/blog/articles/2020/04/10/implement-endless-scroll-with-angular-ngrx-and-asp.net-core-webapi/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/04/10/implement-endless-scroll-with-angular-ngrx-and-asp.net-core-webapi/</guid>
+      <description>In this blog post I want to show how you can implement an endless scroll feature with Angular, Ngrx and ASP.NET Core in the backend.
+All the code in the repository is only for demo purposes. It shows the concepts however and I hope you can use it in your apps!
+Code is here https://github.com/FabianGosebrink/angular-ngrx-endlessscroll
+Creating the ASP.NET Core backend For the backend we need an ASP.NET Core WebAPI returning a large array of Items in this case.</description>
+    </item>
+    
+    <item>
+      <title>Using the Device Orientation API with ASP.NET Core SignalR</title>
+      <link>https://offering.solutions/blog/articles/2019/07/25/using-the-device-orientation-api-with-asp.net-core-signalr/</link>
+      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/07/25/using-the-device-orientation-api-with-asp.net-core-signalr/</guid>
+      <description>In this blog post I want to describe how I used plain Javascript and ASP.NET Core SignalR to broadcast the device orientation values over HTTP.
+You can find the whole code on github here: https://github.com/FabianGosebrink/device-orientation-signalr 
+Backend with ASP.NET Core and SignalR For this demo I created a small backend with the dotnet cli and
+dotnet new webapito scaffold the basic files.
+In the ConfigureServices method I added MVC and also configured CORS with the appropriate origins as well as added SignalR with services.</description>
+    </item>
+    
+    <item>
+      <title>Announcing &#39;Getting started with Angular and ASP.NET Core&#39; blog post for ng book</title>
+      <link>https://offering.solutions/blog/articles/2018/08/09/announcing-getting-started-with-angular-and-asp.net-core-blog-post-for-ng-book/</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/08/09/announcing-getting-started-with-angular-and-asp.net-core-blog-post-for-ng-book/</guid>
+      <description>I wanted to announce another blog post I wrote for the famous &amp;ldquo;ng-book&amp;rdquo; called &amp;ldquo;Getting started with Angular and ASP.NET Core&amp;rdquo; and you can find it here
+Some time ago Nate Murray contacted me asking if I would be willing to write a blog post for ng book which he can publish over the NgNewsletter. I immediatelly said &amp;ldquo;Yes&amp;rdquo; and began to write about my favorite topics &amp;ldquo;Angular&amp;rdquo; and &amp;ldquo;ASP.NET Core&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Create a build pipeline for Angular and ASP.NET Core apps with Visual Studio Team Services</title>
+      <link>https://offering.solutions/blog/articles/2018/03/08/create-a-build-pipeline-for-angular-and-asp.net-core-apps-with-visual-studio-team-services/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/03/08/create-a-build-pipeline-for-angular-and-asp.net-core-apps-with-visual-studio-team-services/</guid>
+      <description>In this blog post I want to describe how you can build up a build and release pipeline for your Angular and ASP.NET Core applications using Visual Studio Team Services.
+Preparation First of all you need an user account with which you can login to &amp;lt;yourname&amp;gt;.visualstudio.com. Then we will need a github repository where your project is checked in. As an example I will take the repository located on https://github.com/FabianGosebrink/ASPNETCore-Angular-Ngrx. The repository has the client and the server code completely seperated which makes it easy for us to switch technologies or to keep things seperated like we will do it with our build and release pipelines in Visual Studio Team Services (VSTS).</description>
+    </item>
+    
+    <item>
+      <title>CRUD operations in Angular with ASP.NET Core and HATEOAS</title>
+      <link>https://offering.solutions/blog/articles/2017/11/29/crud-operations-in-angular-with-asp.net-core-and-hateoas/</link>
+      <pubDate>Wed, 29 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/11/29/crud-operations-in-angular-with-asp.net-core-and-hateoas/</guid>
+      <description>This blog post shows how to implement CRUD operations in Angular which are driven by an ASP.NET Core Web API using HATEOAS.
+A quick note The HATEOAS in this repository does not follow any &amp;ldquo;standard&amp;rdquo; like e.g. HAL. But it is enough that you get the idea and an impression how to use it.
+I played around a little bit with this in the last time and maybe you can get some inspiration of how to get stuff going with that in your project.</description>
+    </item>
+    
+    <item>
+      <title>Using the Angular Material Paginator with ASP.NET Core and Angular</title>
+      <link>https://offering.solutions/blog/articles/2017/11/21/using-the-angular-material-paginator-with-asp.net-core-and-angular/</link>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/11/21/using-the-angular-material-paginator-with-asp.net-core-and-angular/</guid>
+      <description>In this blog post I want to show you how to use Angular Material with Angular to use a table with paging which is driven by an ASP.NET Core WebAPI.
+Code You can find the code here: https://github.com/FabianGosebrink/ASPNETCore-Angular-Material-HATEOAS-Paging
+Overview  What is HATEOAS The Backend  Customer Controller   The Frontend  PaginationService HttpBaseService The Components Include in module ListComponent OverviewComponent   Links  Get started With the Angular Material Table and its Pagination Module it is quite easy to set up paging in a beautiful way so that you can use it on client side and only show a specific amount of entries to your users.</description>
+    </item>
+    
+    <item>
+      <title>Announcing ASP.NET Core WebAPI PacktPub Video Course</title>
+      <link>https://offering.solutions/blog/articles/2017/08/13/announcing-asp.net-core-webapi-packtpub-video-course/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/08/13/announcing-asp.net-core-webapi-packtpub-video-course/</guid>
+      <description>I am very proud and really happy to announce that my video course &amp;ldquo;RESTful Web services with ASP.NET Core&amp;rdquo; was published on Packt. You can find it here:
+https://www.packtpub.com/application-development/restful-web-services-aspnet-core-video
+With ASP.NET Core you can build cross platform web apis which I am describing in this course. We dedicated this course to beginners who want to get started but are trying to cover many topics too. All of this is done with Visual Studio 2017.</description>
+    </item>
+    
+    <item>
+      <title>Automatically reload typed configuration in ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2017/02/17/automatically-reload-typed-configuration-in-asp.net-core/</link>
+      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/02/17/automatically-reload-typed-configuration-in-asp.net-core/</guid>
+      <description>In this article I want to explore IOptionsSnapshot and show how to work with IOptionsSnapshot in ASP.NET Core 1.1.
+We will use the dotnet cli to create a new project and configure it using the reload technique in combination with IOptionsSnapshot.
+ Make sure you are using at least ASP.NET Core 1.1
+ Get started by creating a new folder where you want to work in, opening a console there and typing</description>
+    </item>
+    
+    <item>
+      <title>The difference between AddMvc() and AddMvcCore()</title>
+      <link>https://offering.solutions/blog/articles/2017/02/07/the-difference-between-addmvc-and-addmvccore/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/02/07/the-difference-between-addmvc-and-addmvccore/</guid>
+      <description>In this blog post I want to show you difference between the ASP.NET Core methods AddMvc() and AddMvcCore() when working with ASP.NET Core.
+ASPNETCore-WebAPI-Sample
+Startup.cs When creating an ASP.NET Core WebAPI you often see a Startup.cs file to configure your services and configure your pipeline. Thats what the methods ConfigureServices(IServiceCollection services) and Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) are for.
+ConfigureServices is preparing your services for being used as you configure them.</description>
+    </item>
+    
+    <item>
+      <title>Build and debug a WebAPI with the Dotnet CLI and VSCode</title>
+      <link>https://offering.solutions/blog/articles/2016/11/02/build-and-debug-a-webapi-with-the-dotnet-cli-and-vscode/</link>
+      <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/11/02/build-and-debug-a-webapi-with-the-dotnet-cli-and-vscode/</guid>
+      <description>In this blog I want to show you how to build and debug a WebAPI with the Dotnet CLI and VSCode.
+Code is here:
+https://github.com/FabianGosebrink/ASPNETCore-WebAPI-With-VSCode-Dotnet-CLI
+Why should we do a WebAPI with VSCode and the DotNet CLI? If you are building websites nowadays you have a lot of tools and a lot of technologies to handle. On Serverside this is a little bit easier but there you have a couple of technologies to face, too.</description>
+    </item>
+    
+    <item>
+      <title>How to set up Angular and Webpack in Visual Studio with ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2016/08/27/how-to-set-up-angular-and-webpack-in-visual-studio-with-asp.net-core/</link>
+      <pubDate>Sat, 27 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/08/27/how-to-set-up-angular-and-webpack-in-visual-studio-with-asp.net-core/</guid>
+      <description>With this blog post I want to show an example of how to set up Angular and Webpack in Visual Studio with ASP.NET Core ready for dev and production builds.
+ See also my latest article Angular Ahead Of Time (AoT) compilation, lazy loading and treeshaking with webpack
+ If you read this until the end you will have a picture how to enable webpack and webpack-dev-server with npm and how to use webpack to bundle your angular application and inject files into index.</description>
+    </item>
+    
+    <item>
+      <title>How to create an ASP.NET Core WebAPI</title>
+      <link>https://offering.solutions/blog/articles/2016/07/29/how-to-create-an-asp.net-core-webapi/</link>
+      <pubDate>Fri, 29 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/07/29/how-to-create-an-asp.net-core-webapi/</guid>
+      <description>In this blog post I want to show you how to create an ASP.NET Core WebAPI. We will use a custom mapper (you could use AutoMapper for this instead, a repository which is a singleton in this blog here and we will use the normal CRUD operations to Create, Read, Update and Delete in the &amp;ldquo;database&amp;rdquo; here.
+Code here https://github.com/FabianGosebrink/ASPNETCore-WebAPI-Sample
+Visual Studio We will start with the ASP.NET Startup-File
+ASP.NET Core Startup public class Startup { public Startup(IHostingEnvironment env) { var builder = new ConfigurationBuilder() .</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core 1.0 with Entity Framework Core</title>
+      <link>https://offering.solutions/blog/articles/2016/07/03/asp.net-core-1.0-with-entity-framework-core/</link>
+      <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/07/03/asp.net-core-1.0-with-entity-framework-core/</guid>
+      <description>In this repository I want to show the first steps with Entity Framework Core and ASP.NET Core 1.0.
+The Repository contains a sample WebAPI with CRUD-Operations that you can Get/Read/Update and Delete &amp;ldquo;MyModel&amp;rdquo; objects through HTTP-calls.
+Here is the code: https://github.com/FabianGosebrink/ASPNETCore-Entity-Framework-Core
+Before starting&amp;hellip; Please read this readme and think of executing Add-Migration [MyMigrationName] and update-database in the Package Manager Console first.
+The database should now be visible inside your SQL Server Management Studio.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core and Angular with Webpack and Visual Studio</title>
+      <link>https://offering.solutions/blog/articles/2016/06/12/asp.net-core-and-angular-with-webpack-and-visual-studio/</link>
+      <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/06/12/asp.net-core-and-angular-with-webpack-and-visual-studio/</guid>
+      <description>This article shows how to use ASP.NET Core and Angular with webpack and Visual Studio. Both the client and the server side of the application is implemented inside one ASP.NET Core project which makes it easier to deploy.
+Code: https://github.com/damienbod/Angular2WebpackVisualStudio
+Authors Fabian Gosebrink, Damien Bowden. This post is hosted on both http://damienbod.com and http://offering.solutions/.
+Setting up the application
+The ASP.NET Core application contains both the server side API services and also hosts the Angular 2 client application.</description>
+    </item>
+    
+    <item>
+      <title>Consuming a REST API with Angular Http-Service in Typescript</title>
+      <link>https://offering.solutions/blog/articles/2016/02/01/consuming-a-rest-api-with-angular-http-service-in-typescript/</link>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/02/01/consuming-a-rest-api-with-angular-http-service-in-typescript/</guid>
+      <description>Updates  19.09.2018 - Updated Angular Syntax 19.08.2017 - Updated to ASP.NET Core 2.0 &amp;amp; new HttpClientModule  blog post Hey,
+with this blog pot I want to show you how to create a dataservice to consume (not only) an ASP.NET REST API with the angular http module.
+In my recent blog post Getting started with Visual Studio Code, AngularJS and Typescript I have already mentioned how to start and to install the complete angular environment with corresponding tools.</description>
+    </item>
+    
+    <item>
+      <title>Angular and ASP.NET Core Starter</title>
+      <link>https://offering.solutions/blog/articles/2016/01/25/angular-and-asp.net-core-starter/</link>
+      <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/01/25/angular-and-asp.net-core-starter/</guid>
+      <description>With this bIog I want to give you an Angular and ASP.NET Core Starter.
+Code here:
+https://github.com/FabianGosebrink/ASPNETCore-Angular-Webpack-StarterTemplate
+Updated to the newest Versions
+Nowadays you hear a lot of new technologies around the web stuff and with this post I want to show you a get-starting-guide how to start with the following technologies in general. I want to show how to set up an environment where you can start programming ASP.NET and Angular.</description>
+    </item>
+    
+    <item>
+      <title>Get started with ASP.NET Core and Entity Framework 6</title>
+      <link>https://offering.solutions/blog/articles/2015/12/13/get-started-with-asp.net-core-and-entity-framework-6/</link>
+      <pubDate>Sun, 13 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/12/13/get-started-with-asp.net-core-and-entity-framework-6/</guid>
+      <description>Hey,
+today I want to show you how to get started with ASP.NET 5 and Entity Framework 6.
+If you start with the new templates for ASP.NET 5 you will notice in a short time that examples are going the EF 7 way. But if you want to stay at Entity Framework 6 as long as 7 is not in a final release or to move from an older version step by step you can follow this instructions here.</description>
+    </item>
+    
+    <item>
+      <title>WebAPI with ASP.NET Core 1.0 and ASP.NET</title>
+      <link>https://offering.solutions/blog/articles/2015/09/02/webapi-with-asp.net-core-1.0-and-asp.net/</link>
+      <pubDate>Wed, 02 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/09/02/webapi-with-asp.net-core-1.0-and-asp.net/</guid>
+      <description>I released two sample APIs on Github: WebAPI with ASP.NET Core and ASP.NET
+One of them is done with the &amp;ldquo;old&amp;rdquo; approach but heads in the direction of my understanding of a modern WebAPI using OData and having DTOs instead of delivering the plain entitites down to the client.
+I will cover the most important information now:
+The get method includes odata and is restricting the page-size to 50 to prevent anyone from getting all entries which can cause problems.</description>
+    </item>
+    
+  </channel>
+</rss>

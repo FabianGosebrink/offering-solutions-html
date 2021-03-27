@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>auth on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/auth/</link>
+    <description>Recent content in auth on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/auth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Auth0 in Angular with NgRx</title>
+      <link>https://offering.solutions/blog/articles/2021/02/01/using-auth0-in-angular-with-ngrx/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2021/02/01/using-auth0-in-angular-with-ngrx/</guid>
+      <description>In this blog post I want to show how we can add Auth0 authentication into an Angular app when using state management with NgRx.
+We are going to look how you can place authentication with Auth0 in an Angular app to provide a login and a logout and going a little beyond the incredibly good tutorial The Complete Guide to Angular User Authentication with Auth0. Also there is already a blog post I am happy to link to: NgRx Authentication Tutorial.</description>
+    </item>
+    
+  </channel>
+</rss>

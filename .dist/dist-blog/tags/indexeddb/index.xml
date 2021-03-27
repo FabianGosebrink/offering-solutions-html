@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>indexeddb on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/indexeddb/</link>
+    <description>Recent content in indexeddb on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/indexeddb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Online and Offline Sync with Angular and IndexedDb</title>
+      <link>https://offering.solutions/blog/articles/2018/11/21/online-and-offline-sync-with-angular-and-indexeddb/</link>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/11/21/online-and-offline-sync-with-angular-and-indexeddb/</guid>
+      <description>In this blog post I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
+After this blog post you should have an example how to use the IndexedDb in your applications, how to register to the online and offline commands and send items if the event comes up.
+The code to this blog post can be found here https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

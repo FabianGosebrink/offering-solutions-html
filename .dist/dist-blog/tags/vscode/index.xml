@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vscode on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/vscode/</link>
+    <description>Recent content in vscode on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting Windows Terminal as Default External Terminal in Visual Studio Code</title>
+      <link>https://offering.solutions/blog/articles/2020/03/24/setting-windows-terminal-as-default-external-terminal-in-visual-studio-code/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/03/24/setting-windows-terminal-as-default-external-terminal-in-visual-studio-code/</guid>
+      <description>In this blog post I want to write down how you can set the new windows Terminal as the default external console when working with VSCode.
+I like to have the console in an external window and NOT inside my vscode instance so I often use the combination Ctrl + Shift + C to start an external console window at the folder I am currently with my vscode instance.
+What bothered me was: I love the new Windows Terminal but I wanted it to start as default when I use my preferred combination on my keyboard.</description>
+    </item>
+    
+    <item>
+      <title>How to debug an Angular application with Chrome and VS Code</title>
+      <link>https://offering.solutions/blog/articles/2016/10/16/how-to-debug-an-angular-application-with-chrome-and-vs-code/</link>
+      <pubDate>Sun, 16 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/10/16/how-to-debug-an-angular-application-with-chrome-and-vs-code/</guid>
+      <description>In this blog post I want to show you how to debug an Angular application with Chrome and VS Code.
+First of all you need to install the extension in VS Code.
+You can find it here
+https://github.com/Microsoft/vscode-chrome-debug
+or search in the extensions tab for the plugin directly:
+After installing you probably have to enable the plugin and restart VS Code but in the end you will see your folder structure like normal.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Visual Studio Code, AngularJS and Typescript</title>
+      <link>https://offering.solutions/blog/articles/2015/12/03/getting-started-with-visual-studio-code-angularjs-and-typescript/</link>
+      <pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/12/03/getting-started-with-visual-studio-code-angularjs-and-typescript/</guid>
+      <description>This time I want to show you how getting started with Visual Studio Code, AngularJS and Typescript.
+Before we start: A new Typescript version was announced!! You can see whats new here and further information here.
+I always wanted to get to know Typescript and see the advantages of it compared to the &amp;ldquo;normal&amp;rdquo; javascript and so I took my plain old sample application and tried to build it up with Typescript.</description>
+    </item>
+    
+  </channel>
+</rss>

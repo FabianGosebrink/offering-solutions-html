@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mvc on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/mvc/</link>
+    <description>Recent content in mvc on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jul 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASP.NET MVC - Generic Repositories and UnitOfWork</title>
+      <link>https://offering.solutions/blog/articles/2014/07/01/asp.net-mvc-generic-repositories-and-unitofwork/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/07/01/asp.net-mvc-generic-repositories-and-unitofwork/</guid>
+      <description>This is the third and the last blog post regarding ASP.NET MVC Architecture.
+NugetPackage NugetPackage
+Previous Posts ASP.NET MVC Architecture (Part I): Structurize your project with areas and services in ASP.NET MVC
+ASP.NET MVC Architecture (Part II): Creating a business logic in ASP.NET MVC
+Lets go In the first two posts I handled UI things, how to organize your areas (controller-services) and I showed a possibility to create your business-logic regarding area-Services and business-services.</description>
+    </item>
+    
+    <item>
+      <title>Creating a business logic in ASP.NET MVC</title>
+      <link>https://offering.solutions/blog/articles/2014/06/10/creating-a-business-logic-in-asp.net-mvc/</link>
+      <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/06/10/creating-a-business-logic-in-asp.net-mvc/</guid>
+      <description>In this blog post I want to show you one possible way creating a business logic in ASP.NET MVC.
+Okay, referring to my last blog postI want to take you one step further and extend the older post a little bit. In the last post we saw how to build up areas and to get them clean, with separated concerns and nice looking, testable etc.
+But this is worth nothing if the rest you have is not well separated and you have a big mess there.</description>
+    </item>
+    
+    <item>
+      <title>Structure your project with areas and services in ASP.NET MVC</title>
+      <link>https://offering.solutions/blog/articles/2014/06/01/structure-your-project-with-areas-and-services-in-asp.net-mvc/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/06/01/structure-your-project-with-areas-and-services-in-asp.net-mvc/</guid>
+      <description>In this blog post I want to show you one possible way to structurize your project with areas and services in ASP.NET MVC.
+This is the first part of several architecture posts I will publish in the next time.
+The idea to this came up because I noticed that if you are implementing ASP.NET mvc-code you always come to a point where you have to invest some time in the architecture.</description>
+    </item>
+    
+    <item>
+      <title>How to include DotNet.HighCharts in ASP.NET MVC with ViewModels</title>
+      <link>https://offering.solutions/blog/articles/2014/05/09/how-to-include-dotnet.highcharts-in-asp.net-mvc-with-viewmodels/</link>
+      <pubDate>Fri, 09 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/05/09/how-to-include-dotnet.highcharts-in-asp.net-mvc-with-viewmodels/</guid>
+      <description>Hey,
+I want to show you how to include DotNet.HighCharts in ASP.NET MVC working with ViewModels.
+A charting component is always very cool to see on your page and makes normal plain numbers good-looking.
+Highcharts are available on Codeplex: DotNet.HighChartsI will not dive into this whole ViewModel thing. This is something very common in ASP.NET MVC and can also bee seen in the second blog I am working on: How to avoid ViewBag and ViewDataSo, lets start:</description>
+    </item>
+    
+    <item>
+      <title>How to avoid ViewBag and ViewData in ASP.NET MVC</title>
+      <link>https://offering.solutions/blog/articles/2014/03/08/how-to-avoid-viewbag-and-viewdata-in-asp.net-mvc/</link>
+      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/03/08/how-to-avoid-viewbag-and-viewdata-in-asp.net-mvc/</guid>
+      <description>In this blog post I want to show you How to avoid ViewBag and ViewData in ASP.NET MVC.
+It could be so easy: When passing data from the Controller to the View in MVC one can use
+ViewBag.MyProperty = “ThisIsTheContentOfMyProperty”; or
+ViewData[&amp;#34;MyProperty&amp;#34;] = MyProperty; And in the view you can access the data with:
+@ViewBag.MyProperty or
+ViewData[&amp;#34;MyProperty &amp;#34;] as ... But what about spelling problems? IntelliSense will not correct you if you would miss a character.</description>
+    </item>
+    
+  </channel>
+</rss>

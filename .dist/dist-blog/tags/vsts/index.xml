@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vsts on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/vsts/</link>
+    <description>Recent content in vsts on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/vsts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a build pipeline for Angular and ASP.NET Core apps with Visual Studio Team Services</title>
+      <link>https://offering.solutions/blog/articles/2018/03/08/create-a-build-pipeline-for-angular-and-asp.net-core-apps-with-visual-studio-team-services/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/03/08/create-a-build-pipeline-for-angular-and-asp.net-core-apps-with-visual-studio-team-services/</guid>
+      <description>In this blog post I want to describe how you can build up a build and release pipeline for your Angular and ASP.NET Core applications using Visual Studio Team Services.
+Preparation First of all you need an user account with which you can login to &amp;lt;yourname&amp;gt;.visualstudio.com. Then we will need a github repository where your project is checked in. As an example I will take the repository located on https://github.com/FabianGosebrink/ASPNETCore-Angular-Ngrx. The repository has the client and the server code completely seperated which makes it easy for us to switch technologies or to keep things seperated like we will do it with our build and release pipelines in Visual Studio Team Services (VSTS).</description>
+    </item>
+    
+    <item>
+      <title>Deleting a Team Project on Visual Studio Team Services</title>
+      <link>https://offering.solutions/blog/articles/2014/04/14/deleting-a-team-project-on-visual-studio-team-services/</link>
+      <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/04/14/deleting-a-team-project-on-visual-studio-team-services/</guid>
+      <description>In this blog post I want to show you one possibility of deleting a Team Project on Visual Studio Team Services.
+I stumbled over the case that I wanted to delete an old project in my online TFS to keep it clean and up to date. As I noticed that it is not as easy as it sounds I thought about mentioning it here. So here is the walk through:</description>
+    </item>
+    
+  </channel>
+</rss>

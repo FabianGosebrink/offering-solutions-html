@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>components on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/components/</link>
+    <description>Recent content in components on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/components/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Refactoring Container Components to Fetch Data With Route Resolvers</title>
+      <link>https://offering.solutions/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/</guid>
+      <description>In this blog post I want to show an alternative way to provide data in a common container &amp;amp; presentational components relation inside an Angular application.
+Content  Container and presentational components Sample application on Github Displaying data without route resolvers Displaying data with route resolvers Showing loading indicator when data gets resolved  Container and presentational components In an Angular application we try to separate our components to container and presentational components as much as we can.</description>
+    </item>
+    
+  </channel>
+</rss>

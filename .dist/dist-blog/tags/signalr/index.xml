@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>signalr on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/signalr/</link>
+    <description>Recent content in signalr on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/signalr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Realtime Cross-Plattform-Applikationen Mit Angular, ASP.NET Core Und Signalr</title>
+      <link>https://offering.solutions/talks/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr-2/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cross Platform Apps with Cordova, Electron and Angular</title>
+      <link>https://offering.solutions/talks/cross-platform-apps-with-cordova-electron-and-angular-11/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/cross-platform-apps-with-cordova-electron-and-angular-11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile &amp; Desktop- Cross-Platform with Electron and Cordova</title>
+      <link>https://offering.solutions/talks/mobile-desktop-cross-platform-with-electron-and-cordova-22/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/mobile-desktop-cross-platform-with-electron-and-cordova-22/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile and Desktop Cross-Plattform with Electron Und Cordova - an Introduction</title>
+      <link>https://offering.solutions/talks/mobile-and-desktop-cross-plattform-with-electron-und-cordova-an-introduction-27/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/mobile-and-desktop-cross-plattform-with-electron-und-cordova-an-introduction-27/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using the Device Orientation API with ASP.NET Core SignalR</title>
+      <link>https://offering.solutions/blog/articles/2019/07/25/using-the-device-orientation-api-with-asp.net-core-signalr/</link>
+      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/07/25/using-the-device-orientation-api-with-asp.net-core-signalr/</guid>
+      <description>In this blog post I want to describe how I used plain Javascript and ASP.NET Core SignalR to broadcast the device orientation values over HTTP.
+You can find the whole code on github here: https://github.com/FabianGosebrink/device-orientation-signalr 
+Backend with ASP.NET Core and SignalR For this demo I created a small backend with the dotnet cli and
+dotnet new webapito scaffold the basic files.
+In the ConfigureServices method I added MVC and also configured CORS with the appropriate origins as well as added SignalR with services.</description>
+    </item>
+    
+    <item>
+      <title>Creating Realtime Cross-Platform Applications with Angular, ASP.NET Core &amp; Signalr</title>
+      <link>https://offering.solutions/talks/creating-realtime-cross-platform-applications-with-angular-asp-net-core-signalr-28/</link>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/creating-realtime-cross-platform-applications-with-angular-asp-net-core-signalr-28/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real Time Web Applications with Angular and ASP.NET Core Signalr</title>
+      <link>https://offering.solutions/talks/real-time-web-applications-with-angular-and-asp-net-core-signalr-35/</link>
+      <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/real-time-web-applications-with-angular-and-asp-net-core-signalr-35/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core &amp; Angular in Business Applications</title>
+      <link>https://offering.solutions/talks/asp-net-core-angular-in-business-applications-49/</link>
+      <pubDate>Tue, 31 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/asp-net-core-angular-in-business-applications-49/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webentwicklung Mit Angular, Signalr Und ASP.NET Core</title>
+      <link>https://offering.solutions/talks/webentwicklung-mit-angular-signalr-und-asp-net-core-53/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/webentwicklung-mit-angular-signalr-und-asp-net-core-53/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

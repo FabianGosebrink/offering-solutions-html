@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wpf on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/wpf/</link>
+    <description>Recent content in wpf on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Feb 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/wpf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WPF CallMemberName for INotifyPropertyChanged</title>
+      <link>https://offering.solutions/blog/articles/2015/02/08/wpf-callmembername-for-inotifypropertychanged/</link>
+      <pubDate>Sun, 08 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/02/08/wpf-callmembername-for-inotifypropertychanged/</guid>
+      <description>In this blog post I want to show you how to use WPF CallMemberName for INotifyPropertyChanged.
+Regarding to this blog post here I showed up how to implement the INotifyPropertyChanged.
+Well with .Net-Framework 4.5 a new solution came up to make it even more easy:
+Instead of the &amp;ldquo;old&amp;rdquo; (but working) base-class
+public class NotifyPropertyChangedBase : INotifyPropertyChanged { public event PropertyChangedEventHandler PropertyChanged; protected virtual void OnPropertyChanged&amp;lt;T&amp;gt;(Expression&amp;lt;Func&amp;lt;T&amp;gt;&amp;gt; propertyExpression) { MemberExpression memberExpr = propertyExpression.</description>
+    </item>
+    
+    <item>
+      <title>Correct implementation of Commands in WPF</title>
+      <link>https://offering.solutions/blog/articles/2014/10/01/correct-implementation-of-commands-in-wpf/</link>
+      <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/10/01/correct-implementation-of-commands-in-wpf/</guid>
+      <description>In this blogost I want to show you the IMHO correct implementation of Commands in WPF. Feel free to discuss :)
+Again we will take the code from the posts before (Wpf Basics I and Wpf Basics II) and make it nicer. Well: What we did was databind a string to the UI. Then we implemented a solution for notify the UI that something changed. Everything triggered with a small timer which was doing the work for &amp;ldquo;I have something new&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>WPF Basics II - The INotifyPropertyChanged Interface</title>
+      <link>https://offering.solutions/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/</link>
+      <pubDate>Sun, 14 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/</guid>
+      <description>UPDATE Check the CallMemberName-Possibility here
+ In the first part I told something about the databinding here. The second part should be something about refreshing the data at the UI. We said that the UI only knows the datacontext and its properties. So far so god. It is binding them at startup and we&amp;rsquo;re done so far.
+To calm down the ones who expect a solution: Can be found in the third article here</description>
+    </item>
+    
+    <item>
+      <title>How to make first steps of Databinding in WPF</title>
+      <link>https://offering.solutions/blog/articles/2014/09/02/how-to-make-first-steps-of-databinding-in-wpf/</link>
+      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/09/02/how-to-make-first-steps-of-databinding-in-wpf/</guid>
+      <description>In this blog post I want to show you how to make first steps of Databinding in WPF.
+I often hear or see that people try to start with WPF but they do not start mit MVVM. Because databinding is frightening them. But why? Databinding is one of the biggest advantages you can have to decouple your logic from your view.
+With this post I want to give you a short introduction about databinding and how to get set up.</description>
+    </item>
+    
+    <item>
+      <title>Clean your viewmodel in WPF and create a facade</title>
+      <link>https://offering.solutions/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/</link>
+      <pubDate>Thu, 03 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/</guid>
+      <description>In this post I want to show you how to Clean your view model in WPF and create a facade.
+We use a facade to get your view model in WPF nice and clean. I want to show you how to get along with the separation of concerns and how to write easy and testable code with data binding and WPF.
+When you want to use a view model for data binding you normally get your public properties on your view model an do a normal binding on your xaml like this:</description>
+    </item>
+    
+    <item>
+      <title>WPF crashes with &#39;OutOfMemoryException&#39; when loading PNGs in Windows 8.1</title>
+      <link>https://offering.solutions/blog/articles/2014/06/04/wpf-crashes-with-outofmemoryexception-when-loading-pngs-in-windows-8.1/</link>
+      <pubDate>Wed, 04 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/06/04/wpf-crashes-with-outofmemoryexception-when-loading-pngs-in-windows-8.1/</guid>
+      <description>In this blog post I want to show you the solution for an error I had today which I spent a lot of time on solving it. it was the case that WPF crashes with OutOfMemoryException when loading PNGs.
+I had Windows 8.1 running as operating system and used pngs in my WPF application. It was all running well until I wanted to display the images. The whole programm froze and was unusable.</description>
+    </item>
+    
+  </channel>
+</rss>

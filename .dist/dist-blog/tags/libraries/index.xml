@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>libraries on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/libraries/</link>
+    <description>Recent content in libraries on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/libraries/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Architecting Angular Applications with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-3/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Architecting Angular Applications with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-7/</link>
+      <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Architecting Angular Applications with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-8/</link>
+      <pubDate>Sat, 17 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Architecting Angular Applications with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-13/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-13/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Erstellen Von Modernen Web-Apis Mit ASP.NET Core 3</title>
+      <link>https://offering.solutions/talks/erstellen-von-modernen-web-apis-mit-asp-net-core-3-14/</link>
+      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/erstellen-von-modernen-web-apis-mit-asp-net-core-3-14/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuring Angular libraries</title>
+      <link>https://offering.solutions/blog/articles/2019/12/31/configuring-angular-libraries/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/12/31/configuring-angular-libraries/</guid>
+      <description>In this article I want to explain two possible ways to configure Angular libraries.
+With libraries we have a convenient way to separate logic which is used multiple times across more than one application or libraries can define our architecture especially when working with a monorepo.
+Libraries build a standalone codebase where complete modules with all its services, components etc. can be stored away and can be included into your Angular app.</description>
+    </item>
+    
+    <item>
+      <title>Better Angular Architectures with Libraries</title>
+      <link>https://offering.solutions/talks/better-angular-architectures-with-libraries-15/</link>
+      <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/better-angular-architectures-with-libraries-15/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Professional Angular Architectures with Angular Libraries</title>
+      <link>https://offering.solutions/talks/professional-angular-architectures-with-angular-libraries-20/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/professional-angular-architectures-with-angular-libraries-20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular Architectures with Angular Libraries</title>
+      <link>https://offering.solutions/talks/angular-architectures-with-angular-libraries-23/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-architectures-with-angular-libraries-23/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Architecting Angular Apps with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-apps-with-angular-libraries-25/</link>
+      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-apps-with-angular-libraries-25/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Announcing First Pluralsight Course About Angular Libraries</title>
+      <link>https://offering.solutions/blog/articles/2019/04/26/announcing-first-pluralsight-course-about-angular-libraries/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/04/26/announcing-first-pluralsight-course-about-angular-libraries/</guid>
+      <description>In this blog post I want to announce my very first Pluralsight course &amp;ldquo;Structuring Angular Applications with Angular Libraries&amp;rdquo;
+TL;DR I created my first Pluralsight course which is available here : Structuring Angular Applications with Angular Libraries with a corresponding GitHub Repository here https://github.com/FabianGosebrink/angular-libraries
+Links   https://www.pluralsight.com/courses/structuring-angular-applications-angular-libraries
+  https://github.com/FabianGosebrink/angular-libraries
+  Preparation It was quite empty here for a while because at the end of last year I got accepted as a Pluralsight author and I got the chance to start my very first course.</description>
+    </item>
+    
+  </channel>
+</rss>

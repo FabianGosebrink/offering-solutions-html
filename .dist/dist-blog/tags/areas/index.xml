@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>areas on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/areas/</link>
+    <description>Recent content in areas on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jun 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/areas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Structure your project with areas and services in ASP.NET MVC</title>
+      <link>https://offering.solutions/blog/articles/2014/06/01/structure-your-project-with-areas-and-services-in-asp.net-mvc/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/06/01/structure-your-project-with-areas-and-services-in-asp.net-mvc/</guid>
+      <description>In this blog post I want to show you one possible way to structurize your project with areas and services in ASP.NET MVC.
+This is the first part of several architecture posts I will publish in the next time.
+The idea to this came up because I noticed that if you are implementing ASP.NET mvc-code you always come to a point where you have to invest some time in the architecture.</description>
+    </item>
+    
+  </channel>
+</rss>

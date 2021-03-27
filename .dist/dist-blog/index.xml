@@ -1,0 +1,1868 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/</link>
+    <description>Recent content on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Angular Reactive Forms – Formulare Und Validierung Mit Angular Entwickeln</title>
+      <link>https://offering.solutions/talks/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln-1/</link>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln-1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>switchMap, mergeMap, concatMap &amp; exhaustMap explained</title>
+      <link>https://offering.solutions/blog/articles/2021/03/08/switchmap-mergemap-concatmap-exhaustmap-explained/</link>
+      <pubDate>Mon, 08 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2021/03/08/switchmap-mergemap-concatmap-exhaustmap-explained/</guid>
+      <description>With this article I want to describe the differences between the rxjs operators switchMap, mergeMap, concatMap and exhaustMap.
+The last article tap, map &amp;amp; switchMap explained is, depending on the stats, one of my most successful blogs ever. So I thought I could continue writing something about rxjs and the operators mentioned above.
+As mentioned in tap, map &amp;amp; switchMap explained:
+ There are many blog posts out there which cover those topics already but maybe this helps to understand if the other posts did not help until here :)</description>
+    </item>
+    
+    <item>
+      <title>Realtime Cross-Plattform-Applikationen Mit Angular, ASP.NET Core Und Signalr</title>
+      <link>https://offering.solutions/talks/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr-2/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using Auth0 in Angular with NgRx</title>
+      <link>https://offering.solutions/blog/articles/2021/02/01/using-auth0-in-angular-with-ngrx/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2021/02/01/using-auth0-in-angular-with-ngrx/</guid>
+      <description>In this blog post I want to show how we can add Auth0 authentication into an Angular app when using state management with NgRx.
+We are going to look how you can place authentication with Auth0 in an Angular app to provide a login and a logout and going a little beyond the incredibly good tutorial The Complete Guide to Angular User Authentication with Auth0. Also there is already a blog post I am happy to link to: NgRx Authentication Tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Architecting Angular Applications with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-3/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>End-to-End – Moderne Webanwendungen Mit Angular Und ASP.NET Core</title>
+      <link>https://offering.solutions/talks/end-to-end-moderne-webanwendungen-mit-angular-und-asp-net-core-4/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/end-to-end-moderne-webanwendungen-mit-angular-und-asp-net-core-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Starting Angular Projects with Nx</title>
+      <link>https://offering.solutions/blog/articles/2021/01/27/starting-angular-projects-with-nx/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2021/01/27/starting-angular-projects-with-nx/</guid>
+      <description>In this blog post I want to write down one possible way to start and architecture Angular projects using the nx. I know that there are a lot of guides and even books out there but to have it written down in one place for me with all the current commands I am using building larger Angular applications I am creating this blog post.
+TOC  Who is this article for?</description>
+    </item>
+    
+    <item>
+      <title>Moving from TravisCI to GitHub Actions</title>
+      <link>https://offering.solutions/blog/articles/2021/01/05/moving-from-travisci-to-github-actions/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2021/01/05/moving-from-travisci-to-github-actions/</guid>
+      <description>In this blog post I want to write about how you can move from TravisCI to GitHub Actions. Together with DamienBod I am maintaining an Angular library for OIDC and OAuth2 angular-auth-oidc-client. In this blog post I want to describe why and how I migrated from TravisCI to GitHub Actions.
+TOC  TL;DR Why moving? The current TravisCI build The GitHub Action Adding a task for schematics Adding Code Coverage Complete Example  TL;DR Complete Example</description>
+    </item>
+    
+    <item>
+      <title>Deploy a Hugo Static Site to Azure With GitHub Actions</title>
+      <link>https://offering.solutions/blog/articles/2020/12/24/deploy-a-hugo-static-site-to-azure-with-github-actions/</link>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/12/24/deploy-a-hugo-static-site-to-azure-with-github-actions/</guid>
+      <description>In this blog post I want to write about how you can deploy your Static Site - maybe blog - generated with Hugo to Azure with Github Actions.
+We will deploy two things in this article: we deploy a Hugo blog to an Azure Web App and deploy all static content like pictures, styles and Javascript to a CDN which is implemented using an Azure Storage Account. The main site is an Azure Web App because I use multiple domains to point to my blog.</description>
+    </item>
+    
+    <item>
+      <title>Deploy a .NET 5 ASP.NET Core Application to Azure With GitHub Actions</title>
+      <link>https://offering.solutions/blog/articles/2020/12/16/deploy-a-.net-5-asp.net-core-application-to-azure-with-github-actions/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/12/16/deploy-a-.net-5-asp.net-core-application-to-azure-with-github-actions/</guid>
+      <description>In this blog post I want to write about how you can deploy your ASP.NET Core Web App running on .NET 5 to Azure with Github Actions.
+GitHub Actions use a yaml format as well as the new Azure pipelines but their format is a little bit different. However I want to move more and more into GitHub Actions because I enjoy having my code an my build together and most of my repositories are stored in GitHub since private repositories are free.</description>
+    </item>
+    
+    <item>
+      <title>How I started with Home Automation</title>
+      <link>https://offering.solutions/blog/articles/2020/11/30/how-i-started-with-home-automation/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/11/30/how-i-started-with-home-automation/</guid>
+      <description>In this blog post I want to write about how I started with home automation. Really starting from zero as I had no clue from home automation and only heard about it from colleagues and friends. The only thing I knew already was a Raspberry Pi because I was using it already as a Pi-Hole in my home. Other than that I had no clue about home automation. In the end I am sure that there is loads more to do and a lot of things to improve but lets go with my journey to it, what I have built up so far and how I got there.</description>
+    </item>
+    
+    <item>
+      <title>Enrich Your Angular App with Angular Forms</title>
+      <link>https://offering.solutions/talks/enrich-your-angular-app-with-angular-forms-5/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/enrich-your-angular-app-with-angular-forms-5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular Testing Made Easy with Jasmine, Karma and Cypress</title>
+      <link>https://offering.solutions/talks/angular-testing-made-easy-with-jasmine-karma-and-cypress-6/</link>
+      <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-testing-made-easy-with-jasmine-karma-and-cypress-6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Architecting Angular Applications with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-7/</link>
+      <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Architecting Angular Applications with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-8/</link>
+      <pubDate>Sat, 17 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing Using Angular</title>
+      <link>https://offering.solutions/talks/testing-using-angular-9/</link>
+      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/testing-using-angular-9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statemanagement in Angular with Ngrx Stores &amp; Effects</title>
+      <link>https://offering.solutions/talks/statemanagement-in-angular-with-ngrx-stores-effects-10/</link>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/statemanagement-in-angular-with-ngrx-stores-effects-10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Securing an Electron App Implemented with Angular Using OIDC and OAuth2</title>
+      <link>https://offering.solutions/blog/articles/2020/10/06/securing-an-electron-app-implemented-with-angular-using-oidc-and-oauth2/</link>
+      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/10/06/securing-an-electron-app-implemented-with-angular-using-oidc-and-oauth2/</guid>
+      <description>In this blog post I want to explain how you can secure an electron app written in Angular with OIDC and OAuth2 using IdentityServer4 as the Secure Token Server.
+ This is kind of a follow up blog post of my previous one Securing a Cordova App Implemented with Angular Using OIDC and OAuth2
+ TOC  Understanding the problem What we will use Configuring the authentication library Adding the authentication in the Angular App Catching the redirect in the electron main process Catching the event in the Angular app  Understanding the problem We are using the code flow to authenticate our application against the Secure Token Server (STS).</description>
+    </item>
+    
+    <item>
+      <title>Cross Platform Apps with Cordova, Electron and Angular</title>
+      <link>https://offering.solutions/talks/cross-platform-apps-with-cordova-electron-and-angular-11/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/cross-platform-apps-with-cordova-electron-and-angular-11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Securing a Cordova App Implemented with Angular Using OIDC and OAuth2</title>
+      <link>https://offering.solutions/blog/articles/2020/09/17/securing-a-cordova-app-implemented-with-angular-using-oidc-and-oauth2/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/09/17/securing-a-cordova-app-implemented-with-angular-using-oidc-and-oauth2/</guid>
+      <description>In this blog post I want to explain how you can secure a Cordova app written in Angular with OIDC and OAuth2 using IdentityServer4 as the Secure Token Server. We will take a look at an Angular project created with the AngularCLI or the NxDevTools and then turn it into a Cordova app via the Cordova CLI to let it run on the mobile phone and set everything up that we can authenticate to get an identity token and an access token and navigate back to our app to consume a protected API.</description>
+    </item>
+    
+    <item>
+      <title>Enrich Your Angular Apps with Angular Forms</title>
+      <link>https://offering.solutions/talks/enrich-your-angular-apps-with-angular-forms-12/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/enrich-your-angular-apps-with-angular-forms-12/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uploading Files to Azure Blob Storage with Angular and ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2020/08/09/uploading-files-to-azure-blob-storage-with-angular-and-asp.net-core/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/08/09/uploading-files-to-azure-blob-storage-with-angular-and-asp.net-core/</guid>
+      <description>In this blog post I want to show how to upload files from an Angular application over an ASP.NET Core WebAPI to an Azure Blob Storage and save them there. Using an Azure Blob Storage for this is a perfect candidate not to pollute your App Service and store files there but use a dedicated system for this. In this blog post we will see how we can create the Azure Blob Storage in the Azure Portal, add the appropriate services into an ASP.</description>
+    </item>
+    
+    <item>
+      <title>Architecting Angular Applications with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-13/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-applications-with-angular-libraries-13/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Building a Sample Todo App with Signalr Using Blazor WebAssembly</title>
+      <link>https://offering.solutions/blog/articles/2020/06/05/building-a-sample-todo-app-with-signalr-using-blazor-webassembly/</link>
+      <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/06/05/building-a-sample-todo-app-with-signalr-using-blazor-webassembly/</guid>
+      <description>In this blog post I want to show how to get started with ASP.NET Core Blazor by creating a Todo Application with forms, container and presentational components synchronized with SignalR.
+Let&amp;rsquo;s get started.
+ We will only cover the frontend here, the backend is an ASP.NET Core WebAPI which you can see in the github Repository.
+ https://github.com/FabianGosebrink/blazor-todo-app
+TOC  Prerequisites Scaffolding the client project Deleting not used Files Examine the files The NavMenu The MainLayout Blazor Pages Adding the communication service Adding the components  Todo List Component Todo Form Component Todo Component   Adding SignalR  Prerequisites Make sure you have installed all of the listed software underneath.</description>
+    </item>
+    
+    <item>
+      <title>Authentication in Angular with NgRx and ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2020/05/29/authentication-in-angular-with-ngrx-and-asp.net-core/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/05/29/authentication-in-angular-with-ngrx-and-asp.net-core/</guid>
+      <description>In this blog post I want to describe how you can add authentication and authorization in your Angular app using NgRx. We are using an ASP.NET Core backend to get our secure data from and a custom STS which we use for the authentication and the id token as well as an access token.
+This is a follow up post of Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2 so if you want to get into the complete setup you might give this blog post a shot first :-) We will build this one up on the app which was mentioned in the references blog post.</description>
+    </item>
+    
+    <item>
+      <title>Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2</title>
+      <link>https://offering.solutions/blog/articles/2020/05/18/authentication-and-authorization-with-angular-and-asp.net-core-using-oidc-and-oauth2/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/05/18/authentication-and-authorization-with-angular-and-asp.net-core-using-oidc-and-oauth2/</guid>
+      <description>In this blog post I want to describe how you can add a login to your Angular App and secure it with OpenID Connect (OIDC) and OAuth2 to access an ASP.NET Core WebAPI with an Identity Server.
+Code can be found here Angular OAuth2 OIDC Sample with ASP.NET Core
+ Disclaimer: In this blog we will use an Angular library which I wrote some parts of. But the principles are best practice and uses a standard which can be applied to any Angular application no matter what libraries you use.</description>
+    </item>
+    
+    <item>
+      <title>Cross Field Validation Using Angular Reactive Forms</title>
+      <link>https://offering.solutions/blog/articles/2020/05/03/cross-field-validation-using-angular-reactive-forms/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/05/03/cross-field-validation-using-angular-reactive-forms/</guid>
+      <description>In this blog post I would like to describe how you can add validation to multiple fields of your reactive forms in Angular by using a feature called Cross Field Validation.
+This powerful features let you validate not a single form control but instead you can validate one form control against the value from another control. Let us see how we can do this.
+The source code is of course on Github and you can copy paste the examples along: Github</description>
+    </item>
+    
+    <item>
+      <title>Implement endless scroll with Angular, NgRx and ASP.NET Core WebAPI</title>
+      <link>https://offering.solutions/blog/articles/2020/04/10/implement-endless-scroll-with-angular-ngrx-and-asp.net-core-webapi/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/04/10/implement-endless-scroll-with-angular-ngrx-and-asp.net-core-webapi/</guid>
+      <description>In this blog post I want to show how you can implement an endless scroll feature with Angular, Ngrx and ASP.NET Core in the backend.
+All the code in the repository is only for demo purposes. It shows the concepts however and I hope you can use it in your apps!
+Code is here https://github.com/FabianGosebrink/angular-ngrx-endlessscroll
+Creating the ASP.NET Core backend For the backend we need an ASP.NET Core WebAPI returning a large array of Items in this case.</description>
+    </item>
+    
+    <item>
+      <title>Creating an Angular schematic and turn it into an nx plugin</title>
+      <link>https://offering.solutions/blog/articles/2020/04/08/creating-an-angular-schematic-and-turn-it-into-an-nx-plugin/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/04/08/creating-an-angular-schematic-and-turn-it-into-an-nx-plugin/</guid>
+      <description>In this blog post I would like to explain how you can write a schematic and turn it into an nx plugin or turn an existing schematic into an nx plugin.
+Knowledge Prerequisites There are a lot of blog posts out there which deal with how you can get started writing a schematic in much more detail as we do not cover this here one more time in depth. Be sure to check out:</description>
+    </item>
+    
+    <item>
+      <title>Setting Windows Terminal as Default External Terminal in Visual Studio Code</title>
+      <link>https://offering.solutions/blog/articles/2020/03/24/setting-windows-terminal-as-default-external-terminal-in-visual-studio-code/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/03/24/setting-windows-terminal-as-default-external-terminal-in-visual-studio-code/</guid>
+      <description>In this blog post I want to write down how you can set the new windows Terminal as the default external console when working with VSCode.
+I like to have the console in an external window and NOT inside my vscode instance so I often use the combination Ctrl + Shift + C to start an external console window at the folder I am currently with my vscode instance.
+What bothered me was: I love the new Windows Terminal but I wanted it to start as default when I use my preferred combination on my keyboard.</description>
+    </item>
+    
+    <item>
+      <title>Migrating an Nx Workspace from Karma to Jest</title>
+      <link>https://offering.solutions/blog/articles/2020/03/04/migrating-an-nx-workspace-from-karma-to-jest/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/03/04/migrating-an-nx-workspace-from-karma-to-jest/</guid>
+      <description>In this article I want to describe how we can migrate an nx workspace with an angular application from karma to use jest, the test runner from facebook.
+TL;DR  Switch packages in package.json Modify angular.json (test section &amp;amp; at the bottom) Replace karma.conf.js with jest.config.js on root level Replace content of tsconfig.spec.json in app folder Replace karma.conf.js with jest.config.js on app level Replace test.ts with test-setup.ts on app level  Details We will work with this workspace in this article:</description>
+    </item>
+    
+    <item>
+      <title>Erstellen Von Modernen Web-Apis Mit ASP.NET Core 3</title>
+      <link>https://offering.solutions/talks/erstellen-von-modernen-web-apis-mit-asp-net-core-3-14/</link>
+      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/erstellen-von-modernen-web-apis-mit-asp-net-core-3-14/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NgGirls in Zürich</title>
+      <link>https://offering.solutions/blog/articles/2020/01/11/nggirls-in-z%C3%BCrich/</link>
+      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/01/11/nggirls-in-z%C3%BCrich/</guid>
+      <description>In this article I want to present the first NgGirls of 2020 in Zürich, Switzerland!
+I am very happy to announce ngGirls in Zürich at the 21st of February 2020 at the Google Europaallee F – Europaallee 36, 8004 Zurich. The workshop is only for woman and free of charge. So you can apply the form and ou are onboard.
+Please check out other information at https://ng-girls.org/zurich-2020/
+ 08:00 - 08:30 - check in08:30 - 09:00 - opening lecture: introduction to ngGirls09:00 - 12:00 - Workshop start: hands on12:00 - 13:00 - lunch break13:00 - 17:00 - continue coding17:30 - 18:00 - closing lecture and goodbye</description>
+    </item>
+    
+    <item>
+      <title>Configuring Angular libraries</title>
+      <link>https://offering.solutions/blog/articles/2019/12/31/configuring-angular-libraries/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/12/31/configuring-angular-libraries/</guid>
+      <description>In this article I want to explain two possible ways to configure Angular libraries.
+With libraries we have a convenient way to separate logic which is used multiple times across more than one application or libraries can define our architecture especially when working with a monorepo.
+Libraries build a standalone codebase where complete modules with all its services, components etc. can be stored away and can be included into your Angular app.</description>
+    </item>
+    
+    <item>
+      <title>Better Angular Architectures with Libraries</title>
+      <link>https://offering.solutions/talks/better-angular-architectures-with-libraries-15/</link>
+      <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/better-angular-architectures-with-libraries-15/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>End-to-End - Distributed Systems with ASP.NET Core and Angular - Workshop</title>
+      <link>https://offering.solutions/talks/end-to-end-distributed-systems-with-asp-net-core-and-angular-workshop-16/</link>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/end-to-end-distributed-systems-with-asp-net-core-and-angular-workshop-16/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>End-to-End - Real Time Messaging with Angular and ASP.NET Core Signalr</title>
+      <link>https://offering.solutions/talks/end-to-end-real-time-messaging-with-angular-and-asp-net-core-signalr-17/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/end-to-end-real-time-messaging-with-angular-and-asp-net-core-signalr-17/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>End-to-End - Distributed Systems with ASP.NET Core and Angular - Workshop</title>
+      <link>https://offering.solutions/talks/end-to-end-distributed-systems-with-asp-net-core-and-angular-workshop-18/</link>
+      <pubDate>Wed, 20 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/end-to-end-distributed-systems-with-asp-net-core-and-angular-workshop-18/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real Time Messaging with Angular and ASP.NET Core Signalr</title>
+      <link>https://offering.solutions/talks/real-time-messaging-with-angular-and-asp-net-core-signalr-19/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/real-time-messaging-with-angular-and-asp-net-core-signalr-19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Professional Angular Architectures with Angular Libraries</title>
+      <link>https://offering.solutions/talks/professional-angular-architectures-with-angular-libraries-20/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/professional-angular-architectures-with-angular-libraries-20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tap, map &amp; switchMap explained</title>
+      <link>https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/10/20/tap-map-switchmap-explained/</guid>
+      <description>With this article I want to briefly and shortly describe the differences between the rxjs operators tap, map and switchMap.
+There are many blog posts out there which cover those topics already but maybe this helps to understand if the other posts did not help until here :)
+Let us start and first create an observable of an array with from()
+import { from } from &amp;#39;rxjs&amp;#39;; const observable$ = from([1, 2, 3]); If we now subscribe to it we could do something with the values which get emitted</description>
+    </item>
+    
+    <item>
+      <title>Statemanagement in Angular with Ngrx Stores &amp; Effects Workshop</title>
+      <link>https://offering.solutions/talks/statemanagement-in-angular-with-ngrx-stores-effects-workshop-21/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/statemanagement-in-angular-with-ngrx-stores-effects-workshop-21/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular Architectures with Angular Libraries</title>
+      <link>https://offering.solutions/talks/angular-architectures-with-angular-libraries-23/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-architectures-with-angular-libraries-23/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile &amp; Desktop- Cross-Platform with Electron and Cordova</title>
+      <link>https://offering.solutions/talks/mobile-desktop-cross-platform-with-electron-and-cordova-22/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/mobile-desktop-cross-platform-with-electron-and-cordova-22/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing Made Easy</title>
+      <link>https://offering.solutions/talks/testing-made-easy-24/</link>
+      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/testing-made-easy-24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Architecting Angular Apps with Angular Libraries</title>
+      <link>https://offering.solutions/talks/architecting-angular-apps-with-angular-libraries-25/</link>
+      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/architecting-angular-apps-with-angular-libraries-25/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>What Is New in ASP.NET Core 3.0</title>
+      <link>https://offering.solutions/talks/what-is-new-in-asp-net-core-3-0-26/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/what-is-new-in-asp-net-core-3-0-26/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Upcoming speaking activities</title>
+      <link>https://offering.solutions/blog/articles/2019/10/03/upcoming-speaking-activities/</link>
+      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/10/03/upcoming-speaking-activities/</guid>
+      <description>In this blog post I want to give a short overview about my upcoming speaking activities in the rest of 2019.
+04.10.2019 .NET Conf 2019 With collaborated forces of different UserGroups around Zürich we are presenting a meetup to have the .NET Conf local in Zürich. I will give a short introduction about what is new in ASP.NET Core 3.0. Meetups are usually a nice place to get started.
+Link: https://www.</description>
+    </item>
+    
+    <item>
+      <title>Mobile and Desktop Cross-Plattform with Electron Und Cordova - an Introduction</title>
+      <link>https://offering.solutions/talks/mobile-and-desktop-cross-plattform-with-electron-und-cordova-an-introduction-27/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/mobile-and-desktop-cross-plattform-with-electron-und-cordova-an-introduction-27/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using the Device Orientation API with ASP.NET Core SignalR</title>
+      <link>https://offering.solutions/blog/articles/2019/07/25/using-the-device-orientation-api-with-asp.net-core-signalr/</link>
+      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/07/25/using-the-device-orientation-api-with-asp.net-core-signalr/</guid>
+      <description>In this blog post I want to describe how I used plain Javascript and ASP.NET Core SignalR to broadcast the device orientation values over HTTP.
+You can find the whole code on github here: https://github.com/FabianGosebrink/device-orientation-signalr 
+Backend with ASP.NET Core and SignalR For this demo I created a small backend with the dotnet cli and
+dotnet new webapito scaffold the basic files.
+In the ConfigureServices method I added MVC and also configured CORS with the appropriate origins as well as added SignalR with services.</description>
+    </item>
+    
+    <item>
+      <title>Updating your angular app to NgRx 8</title>
+      <link>https://offering.solutions/blog/articles/2019/07/01/updating-your-angular-app-to-ngrx-8/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/07/01/updating-your-angular-app-to-ngrx-8/</guid>
+      <description>In this blog post I want to describe how I updated an Angular Project using ngrx to the latest version ngrx 8.
+Github: angular-ngrx-todo
+You can find the complete update commit here : angular-ngrx-todo update commit
+ Preparations Updating the actions Updating the effects Updating the reducer Updating the components  Preparations I started updating the project with update.angular.io and came to update the store with
+ng update @ngrx/store This will lift your version of @ngrx/store and @ngrx/effects to version 8</description>
+    </item>
+    
+    <item>
+      <title>Creating Realtime Cross-Platform Applications with Angular, ASP.NET Core &amp; Signalr</title>
+      <link>https://offering.solutions/talks/creating-realtime-cross-platform-applications-with-angular-asp-net-core-signalr-28/</link>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/creating-realtime-cross-platform-applications-with-angular-asp-net-core-signalr-28/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hosting Hugo on Azure with Cloudflare, Azure Web Service and Azure Blob Storage</title>
+      <link>https://offering.solutions/blog/articles/2019/06/07/hosting-hugo-on-azure-with-cloudflare-azure-web-service-and-azure-blob-storage/</link>
+      <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/06/07/hosting-hugo-on-azure-with-cloudflare-azure-web-service-and-azure-blob-storage/</guid>
+      <description>In this blog post I want to describe how I moved my complete company homepage and my blog from static handwritten html and jekyll to a hugo solution which is hosted on azure and uses cloudflare as DNS, has a CI/CD pipeline and is hosted on azure.
+The Situation in the past As my company homepage and my blog have been two projects in the past I had two different repositories for both which were lying on an azure devops git repo (html page) and on github.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Signalr Azure Signalr Service Scale Out</title>
+      <link>https://offering.solutions/talks/asp-net-core-signalr-azure-signalr-service-scale-out-29/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/asp-net-core-signalr-azure-signalr-service-scale-out-29/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>State Management in Angular with Ngrx Stores and Effects</title>
+      <link>https://offering.solutions/talks/state-management-in-angular-with-ngrx-stores-and-effects-30/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/state-management-in-angular-with-ngrx-stores-and-effects-30/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Announcing First Pluralsight Course About Angular Libraries</title>
+      <link>https://offering.solutions/blog/articles/2019/04/26/announcing-first-pluralsight-course-about-angular-libraries/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/04/26/announcing-first-pluralsight-course-about-angular-libraries/</guid>
+      <description>In this blog post I want to announce my very first Pluralsight course &amp;ldquo;Structuring Angular Applications with Angular Libraries&amp;rdquo;
+TL;DR I created my first Pluralsight course which is available here : Structuring Angular Applications with Angular Libraries with a corresponding GitHub Repository here https://github.com/FabianGosebrink/angular-libraries
+Links   https://www.pluralsight.com/courses/structuring-angular-applications-angular-libraries
+  https://github.com/FabianGosebrink/angular-libraries
+  Preparation It was quite empty here for a while because at the end of last year I got accepted as a Pluralsight author and I got the chance to start my very first course.</description>
+    </item>
+    
+    <item>
+      <title>Javascript Testing Leicht Gemacht Am Beispiel Von Angular</title>
+      <link>https://offering.solutions/talks/javascript-testing-leicht-gemacht-am-beispiel-von-angular-31/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/javascript-testing-leicht-gemacht-am-beispiel-von-angular-31/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Refactoring Container Components to Fetch Data With Route Resolvers</title>
+      <link>https://offering.solutions/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/</guid>
+      <description>In this blog post I want to show an alternative way to provide data in a common container &amp;amp; presentational components relation inside an Angular application.
+Content  Container and presentational components Sample application on Github Displaying data without route resolvers Displaying data with route resolvers Showing loading indicator when data gets resolved  Container and presentational components In an Angular application we try to separate our components to container and presentational components as much as we can.</description>
+    </item>
+    
+    <item>
+      <title>My Personal Review of 2018</title>
+      <link>https://offering.solutions/blog/articles/2019/01/03/my-personal-review-of-2018/</link>
+      <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/01/03/my-personal-review-of-2018/</guid>
+      <description>With this blog post I want to recap my year 2018 and find a personal resume - partly for me as I have to know where I am standing and what this year brought for me but also for the readers of this blog of course. I also want to see what I can improve for the next year and, well, maybe I can really improve some things. I will try, for sure!</description>
+    </item>
+    
+    <item>
+      <title>Online and Offline Sync with Angular and IndexedDb</title>
+      <link>https://offering.solutions/blog/articles/2018/11/21/online-and-offline-sync-with-angular-and-indexeddb/</link>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/11/21/online-and-offline-sync-with-angular-and-indexeddb/</guid>
+      <description>In this blog post I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
+After this blog post you should have an example how to use the IndexedDb in your applications, how to register to the online and offline commands and send items if the event comes up.
+The code to this blog post can be found here https://github.</description>
+    </item>
+    
+    <item>
+      <title>Echte Cross-Plattform-Anwendungen Mit Cordova, Electron Und Angular</title>
+      <link>https://offering.solutions/talks/echte-cross-plattform-anwendungen-mit-cordova-electron-und-angular-32/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/echte-cross-plattform-anwendungen-mit-cordova-electron-und-angular-32/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Die Moderne Web-Toolchain- Webpack, Npm Und Yarn, Linting Und Co.</title>
+      <link>https://offering.solutions/talks/die-moderne-web-toolchain-webpack-npm-und-yarn-linting-und-co-33/</link>
+      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/die-moderne-web-toolchain-webpack-npm-und-yarn-linting-und-co-33/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using UseClass, UseFactory, UseValue &amp; UseExisting with treeshakable providers in Angular</title>
+      <link>https://offering.solutions/blog/articles/2018/08/17/using-useclass-usefactory-usevalue-useexisting-with-treeshakable-providers-in-angular/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/08/17/using-useclass-usefactory-usevalue-useexisting-with-treeshakable-providers-in-angular/</guid>
+      <description>In this blog post I want to describe how to use the useClass, useValue, useFactory, useExisting providers in the new treeshakable providers from Angular.
+After this blog post you should have an example how to use those four providers and have an idea what to do with it in case they are a solution to some problems you might face when developing Angular applications.
+Introduction Everybody is talking about the providedIn property of the configuration object which can be passed to the Injectable() decorator of the Angular services.</description>
+    </item>
+    
+    <item>
+      <title>Announcing &#39;Getting started with Angular and ASP.NET Core&#39; blog post for ng book</title>
+      <link>https://offering.solutions/blog/articles/2018/08/09/announcing-getting-started-with-angular-and-asp.net-core-blog-post-for-ng-book/</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/08/09/announcing-getting-started-with-angular-and-asp.net-core-blog-post-for-ng-book/</guid>
+      <description>I wanted to announce another blog post I wrote for the famous &amp;ldquo;ng-book&amp;rdquo; called &amp;ldquo;Getting started with Angular and ASP.NET Core&amp;rdquo; and you can find it here
+Some time ago Nate Murray contacted me asking if I would be willing to write a blog post for ng book which he can publish over the NgNewsletter. I immediatelly said &amp;ldquo;Yes&amp;rdquo; and began to write about my favorite topics &amp;ldquo;Angular&amp;rdquo; and &amp;ldquo;ASP.NET Core&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Modern Webapis with ASP.NET Core</title>
+      <link>https://offering.solutions/talks/modern-webapis-with-asp-net-core-34/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/modern-webapis-with-asp-net-core-34/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real Time Web Applications with Angular and ASP.NET Core Signalr</title>
+      <link>https://offering.solutions/talks/real-time-web-applications-with-angular-and-asp-net-core-signalr-35/</link>
+      <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/real-time-web-applications-with-angular-and-asp-net-core-signalr-35/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Running cypress tests in an Angular project with travis CI</title>
+      <link>https://offering.solutions/blog/articles/2018/06/01/running-cypress-tests-in-an-angular-project-with-travis-ci/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/06/01/running-cypress-tests-in-an-angular-project-with-travis-ci/</guid>
+      <description>In the last blog post I explained how to get started with cypress tests. The next step would be running these tests in a Continuous Integration and Continuous Delivery (CI and CD) environment. The advantage of this is that with every commit the tests are being executed automatically and you get feedback about wether your application is still doing good or not automatically.
+Travis CI is a very well known Continuous Integration Environment and is very common when working with OSS projects.</description>
+    </item>
+    
+    <item>
+      <title>Start your end to end testing with Angular and Cypress</title>
+      <link>https://offering.solutions/blog/articles/2018/05/27/start-your-end-to-end-testing-with-angular-and-cypress/</link>
+      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/05/27/start-your-end-to-end-testing-with-angular-and-cypress/</guid>
+      <description>In this blog post we will cover how to get started with end to end testing using cypress and angular and the AngularCLI.
+The code for this blog post can be found here
+As a long term AngularCLI user I am very used to work with protractor when it comes to end to end testing. To be honest I did not like end to end testing that much. So I was looking for an alternative and this tweet from Dominic Elm pushed me more into the direction of cypress.</description>
+    </item>
+    
+    <item>
+      <title>Starting with Angular and Microsoft&#39;s Face Recognition API</title>
+      <link>https://offering.solutions/blog/articles/2018/04/23/starting-with-angular-and-microsofts-face-recognition-api/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/04/23/starting-with-angular-and-microsofts-face-recognition-api/</guid>
+      <description>In this blog post I want to give you a guidance to the first steps of starting with Microsoft&amp;rsquo;s Face Recognition API and using it with Angular and the Angular CLI.
+Preparation The first thing you need is a FaceAPI key which you can get here FaceAPI. You can login with your Microsoft, LinkedIn, GitHub or Facebook account to get one.
+Another useful links are:
+ Obtaining Subscription Keys Face API JavaScript Quickstarts Api Documentation - Face API - V1.</description>
+    </item>
+    
+    <item>
+      <title>Angular Testing Made Easy</title>
+      <link>https://offering.solutions/talks/angular-testing-made-easy-36/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-testing-made-easy-36/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Create a build pipeline for Angular and ASP.NET Core apps with Visual Studio Team Services</title>
+      <link>https://offering.solutions/blog/articles/2018/03/08/create-a-build-pipeline-for-angular-and-asp.net-core-apps-with-visual-studio-team-services/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/03/08/create-a-build-pipeline-for-angular-and-asp.net-core-apps-with-visual-studio-team-services/</guid>
+      <description>In this blog post I want to describe how you can build up a build and release pipeline for your Angular and ASP.NET Core applications using Visual Studio Team Services.
+Preparation First of all you need an user account with which you can login to &amp;lt;yourname&amp;gt;.visualstudio.com. Then we will need a github repository where your project is checked in. As an example I will take the repository located on https://github.com/FabianGosebrink/ASPNETCore-Angular-Ngrx. The repository has the client and the server code completely seperated which makes it easy for us to switch technologies or to keep things seperated like we will do it with our build and release pipelines in Visual Studio Team Services (VSTS).</description>
+    </item>
+    
+    <item>
+      <title>Recent Speaking Activities</title>
+      <link>https://offering.solutions/blog/articles/2018/03/06/recent-speaking-activities/</link>
+      <pubDate>Tue, 06 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/03/06/recent-speaking-activities/</guid>
+      <description>In this blog post I want to recap my recent speaking activities and provide you some short information and slides to have it all in a go.
+Basta! in Frankfurt I spoke at the BASTA! Spring 2018 in Frankfurt two times. The first talk on Wednesday was about Cross-Platform development with Angular, Cordova and Electron. (Althought there is this &amp;lsquo;PWA&amp;rsquo; standing in the room ;-) ) we took a look on how to create applications with Angular a bit and porting them to mobile devices with Cordova and to the desktop with Electron.</description>
+    </item>
+    
+    <item>
+      <title>From Zero to Azure with Angular</title>
+      <link>https://offering.solutions/talks/from-zero-to-azure-with-angular-37/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/from-zero-to-azure-with-angular-37/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mehr Als Nur Web- Cross-Plattform-Anwendungen Mit Angular, Electron Und Cordova</title>
+      <link>https://offering.solutions/talks/mehr-als-nur-web-cross-plattform-anwendungen-mit-angular-electron-und-cordova-38/</link>
+      <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/mehr-als-nur-web-cross-plattform-anwendungen-mit-angular-electron-und-cordova-38/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modern Web Toolchain</title>
+      <link>https://offering.solutions/talks/modern-web-toolchain-39/</link>
+      <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/modern-web-toolchain-39/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Separating state into angular modules with ngrx</title>
+      <link>https://offering.solutions/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/</link>
+      <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/</guid>
+      <description>In this blog post I want to give you an explanation of the state tree of ngrx if you are working with a state and how to separate it into different modules.
+In this blog  One state for your entire application with forRoot(&amp;hellip;) Separating state into modules with forFeature(&amp;hellip;) Conclusion  If you are building smaller or large angular applications you will sooner or later face the problem to manage the state of your application.</description>
+    </item>
+    
+    <item>
+      <title>CRUD operations in Angular with ASP.NET Core and HATEOAS</title>
+      <link>https://offering.solutions/blog/articles/2017/11/29/crud-operations-in-angular-with-asp.net-core-and-hateoas/</link>
+      <pubDate>Wed, 29 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/11/29/crud-operations-in-angular-with-asp.net-core-and-hateoas/</guid>
+      <description>This blog post shows how to implement CRUD operations in Angular which are driven by an ASP.NET Core Web API using HATEOAS.
+A quick note The HATEOAS in this repository does not follow any &amp;ldquo;standard&amp;rdquo; like e.g. HAL. But it is enough that you get the idea and an impression how to use it.
+I played around a little bit with this in the last time and maybe you can get some inspiration of how to get stuff going with that in your project.</description>
+    </item>
+    
+    <item>
+      <title>Using the Angular Material Paginator with ASP.NET Core and Angular</title>
+      <link>https://offering.solutions/blog/articles/2017/11/21/using-the-angular-material-paginator-with-asp.net-core-and-angular/</link>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/11/21/using-the-angular-material-paginator-with-asp.net-core-and-angular/</guid>
+      <description>In this blog post I want to show you how to use Angular Material with Angular to use a table with paging which is driven by an ASP.NET Core WebAPI.
+Code You can find the code here: https://github.com/FabianGosebrink/ASPNETCore-Angular-Material-HATEOAS-Paging
+Overview  What is HATEOAS The Backend  Customer Controller   The Frontend  PaginationService HttpBaseService The Components Include in module ListComponent OverviewComponent   Links  Get started With the Angular Material Table and its Pagination Module it is quite easy to set up paging in a beautiful way so that you can use it on client side and only show a specific amount of entries to your users.</description>
+    </item>
+    
+    <item>
+      <title>Modern Web Toolchain</title>
+      <link>https://offering.solutions/talks/modern-web-toolchain-40/</link>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/modern-web-toolchain-40/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular Testing Von a Bis Z</title>
+      <link>https://offering.solutions/talks/angular-testing-von-a-bis-z-41/</link>
+      <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-testing-von-a-bis-z-41/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing an Angular Http Service</title>
+      <link>https://offering.solutions/blog/articles/2017/10/02/testing-an-angular-http-service/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/10/02/testing-an-angular-http-service/</guid>
+      <description>In this blog post I want to show you how you can test the new HttpClient introduced with the version 4.2 of angular.
+The HttpClient service Lets take this service as a reference
+import { HttpClient } from &amp;#39;@angular/common/http&amp;#39;; import { Injectable } from &amp;#39;@angular/core&amp;#39;; @Injectable() export class CustomHttpService { constructor(private httpClient: HttpClient) { } getSingle&amp;lt;T&amp;gt;(id: number) { return this.httpClient.get&amp;lt;T&amp;gt;(`http://replace.with.api/anything/${id}`); } post&amp;lt;T&amp;gt;(item: any) { return this.httpClient.post&amp;lt;T&amp;gt;(`http://replace.with.api/anything`, item); } put&amp;lt;T&amp;gt;(id: number, item: any) { return this.</description>
+    </item>
+    
+    <item>
+      <title>Fenster Überall- Desktopanwendungen Mit Angular Und Electron</title>
+      <link>https://offering.solutions/talks/fenster-ueberall-desktopanwendungen-mit-angular-und-electron-42/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/fenster-ueberall-desktopanwendungen-mit-angular-und-electron-42/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cross-Plattform Webapis Mit ASP.NET Core</title>
+      <link>https://offering.solutions/talks/cross-plattform-webapis-mit-asp-net-core-44/</link>
+      <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/cross-plattform-webapis-mit-asp-net-core-44/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webentwicklung Mit ASP.NET Core Webapi &amp; Angular</title>
+      <link>https://offering.solutions/talks/webentwicklung-mit-asp-net-core-webapi-angular-43/</link>
+      <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/webentwicklung-mit-asp-net-core-webapi-angular-43/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Going full time on offering solutions</title>
+      <link>https://offering.solutions/blog/articles/2017/09/16/going-full-time-on-offering-solutions/</link>
+      <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/09/16/going-full-time-on-offering-solutions/</guid>
+      <description>I am delighted and excited to announce that at the end of September, I will end my employment with my current company and will work full time for my own company &amp;ldquo;Offering Solutions Software GmbH&amp;rdquo;. Read reasons and thoughts below.
+TL;DR I quit my job to push my own company and to push Swiss Angular (&amp;ldquo;SwissAngular&amp;rdquo;) - which is a project from Damien Bowden and myself - as well as mycsharp.</description>
+    </item>
+    
+    <item>
+      <title>Announcing ASP.NET Core WebAPI PacktPub Video Course</title>
+      <link>https://offering.solutions/blog/articles/2017/08/13/announcing-asp.net-core-webapi-packtpub-video-course/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/08/13/announcing-asp.net-core-webapi-packtpub-video-course/</guid>
+      <description>I am very proud and really happy to announce that my video course &amp;ldquo;RESTful Web services with ASP.NET Core&amp;rdquo; was published on Packt. You can find it here:
+https://www.packtpub.com/application-development/restful-web-services-aspnet-core-video
+With ASP.NET Core you can build cross platform web apis which I am describing in this course. We dedicated this course to beginners who want to get started but are trying to cover many topics too. All of this is done with Visual Studio 2017.</description>
+    </item>
+    
+    <item>
+      <title>Angular - New HTTP interface with interceptors</title>
+      <link>https://offering.solutions/blog/articles/2017/07/19/angular-new-http-interface-with-interceptors/</link>
+      <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/07/19/angular-new-http-interface-with-interceptors/</guid>
+      <description>In this blog post I want to explore the latest HTTP interface from angular which was introduced in Angular 4.3.
+We all need to get our data from any source, mostly this is done via HTTP and any REST backend (like node or ASP.NET Core etc.) or even from files in the *.json format. However, this was possible ever since and is one of the key features of an SPA but Angular introduced a improved version of the HTTP Api in version 4.</description>
+    </item>
+    
+    <item>
+      <title>Lessons learnt from organizing a conference</title>
+      <link>https://offering.solutions/blog/articles/2017/07/18/lessons-learnt-from-organizing-a-conference/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/07/18/lessons-learnt-from-organizing-a-conference/</guid>
+      <description>It has been quiet here for a while&amp;hellip; :-)
+You may have noticed that I organised my first conference .NET Dayabout two months ago. Well, that is not true. The organisation itself took place long before that but the event took place approximately two months ago. With this distance of time I want to gather up what I learned from organising this event, what I take with me and what will influence the next conference if I will do this again some time :-)</description>
+    </item>
+    
+    <item>
+      <title>Businessanwendungen Für Jedes System Mit ASP.NET Core Und Angular</title>
+      <link>https://offering.solutions/talks/businessanwendungen-fuer-jedes-system-mit-asp-net-core-und-angular-45/</link>
+      <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/businessanwendungen-fuer-jedes-system-mit-asp-net-core-und-angular-45/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular Mit ASP.NET Core Webapi</title>
+      <link>https://offering.solutions/talks/angular-mit-asp-net-core-webapi-46/</link>
+      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-mit-asp-net-core-webapi-46/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Announcing the .NET Day 2017</title>
+      <link>https://offering.solutions/blog/articles/2017/04/02/announcing-the-.net-day-2017/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/04/02/announcing-the-.net-day-2017/</guid>
+      <description>I am very happy to announce the .NET Day 2017 in Switzerland! In this blog post I want to give you a small background information on this, how this idea came up and about the current status.
+The beginning The idea of this conference day came into my mind in the middle of 2016. I love conferences. I think that a developer has to stay updated on his well known topics as well as be open to new topics and has to keep on learning over and over again.</description>
+    </item>
+    
+    <item>
+      <title>Cross-Platform Webapis Mit Der Dotnet Cli Und ASP.NET Core</title>
+      <link>https://offering.solutions/talks/cross-platform-webapis-mit-der-dotnet-cli-und-asp-net-core-47/</link>
+      <pubDate>Thu, 30 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/cross-platform-webapis-mit-der-dotnet-cli-und-asp-net-core-47/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular and C# .Net as Backend</title>
+      <link>https://offering.solutions/talks/angular-and-c-net-as-backend-48/</link>
+      <pubDate>Tue, 28 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angular-and-c-net-as-backend-48/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Moving your Angular application from SystemJS to Webpack</title>
+      <link>https://offering.solutions/blog/articles/2017/02/26/moving-your-angular-application-from-systemjs-to-webpack/</link>
+      <pubDate>Sun, 26 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/02/26/moving-your-angular-application-from-systemjs-to-webpack/</guid>
+      <description>In this blog post I want to show you how you can move from an existing Angular application using systemjs to an application with webpack.
+Imagine the following application.
+app├── // modules, components and so on├── app.component.ts├── app.component.html├── app.module.ts└── main.ts...systemjs.config.jstsconfig.jsontslint.json...Because we want to get away from systemjs here we will first introduce a webpack.config.js which holds your configuration and which can handle all you files and stuff.</description>
+    </item>
+    
+    <item>
+      <title>Automatically reload typed configuration in ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2017/02/17/automatically-reload-typed-configuration-in-asp.net-core/</link>
+      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/02/17/automatically-reload-typed-configuration-in-asp.net-core/</guid>
+      <description>In this article I want to explore IOptionsSnapshot and show how to work with IOptionsSnapshot in ASP.NET Core 1.1.
+We will use the dotnet cli to create a new project and configure it using the reload technique in combination with IOptionsSnapshot.
+ Make sure you are using at least ASP.NET Core 1.1
+ Get started by creating a new folder where you want to work in, opening a console there and typing</description>
+    </item>
+    
+    <item>
+      <title>Angular Ahead Of Time (AoT) compilation, lazy loading and treeshaking with webpack</title>
+      <link>https://offering.solutions/blog/articles/2017/02/08/angular-ahead-of-time-aot-compilation-lazy-loading-and-treeshaking-with-webpack/</link>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/02/08/angular-ahead-of-time-aot-compilation-lazy-loading-and-treeshaking-with-webpack/</guid>
+      <description>In this blog post I want to show you how to get Ahead Of Time compilation enabled with lazy loading in combination with webpack 2.
+Code Github - ASPNET-ASPNETCore-AngularJS-Angular
+The Router If you want to enable lazy loading in your application with aot you first have to configure your router to load the module lazy - when it gets requested. You can do that with the loadChildren-attribute.
+export const AppRoutes: Routes = [ // normal routes  { path: &amp;#39;food&amp;#39;, loadChildren: &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>The difference between AddMvc() and AddMvcCore()</title>
+      <link>https://offering.solutions/blog/articles/2017/02/07/the-difference-between-addmvc-and-addmvccore/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/02/07/the-difference-between-addmvc-and-addmvccore/</guid>
+      <description>In this blog post I want to show you difference between the ASP.NET Core methods AddMvc() and AddMvcCore() when working with ASP.NET Core.
+ASPNETCore-WebAPI-Sample
+Startup.cs When creating an ASP.NET Core WebAPI you often see a Startup.cs file to configure your services and configure your pipeline. Thats what the methods ConfigureServices(IServiceCollection services) and Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) are for.
+ConfigureServices is preparing your services for being used as you configure them.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core &amp; Angular in Business Applications</title>
+      <link>https://offering.solutions/talks/asp-net-core-angular-in-business-applications-49/</link>
+      <pubDate>Tue, 31 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/asp-net-core-angular-in-business-applications-49/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Moderne Webentwicklung Mit Component Based Design</title>
+      <link>https://offering.solutions/talks/moderne-webentwicklung-mit-component-based-design-50/</link>
+      <pubDate>Tue, 17 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/moderne-webentwicklung-mit-component-based-design-50/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Working with Angular Template Forms</title>
+      <link>https://offering.solutions/blog/articles/2017/01/14/working-with-angular-template-forms/</link>
+      <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/01/14/working-with-angular-template-forms/</guid>
+      <description>In this blog I want explain and show you how to work with Angular&amp;rsquo;s template driven forms.
+The Problem I was recently giving an Angular course to awesome people and I noticed that working with Angular forms seems to be one of the most complicated things in Angular.
+The Situation We will start with an Angular application which has a structure like this:
+app├── app.component.ts├── app.component.html├── form.component.ts├── form.</description>
+    </item>
+    
+    <item>
+      <title>Speaking at the Microsoft TechDays 2017</title>
+      <link>https://offering.solutions/blog/articles/2017/01/02/speaking-at-the-microsoft-techdays-2017/</link>
+      <pubDate>Mon, 02 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2017/01/02/speaking-at-the-microsoft-techdays-2017/</guid>
+      <description>I am very proud to announce that I will be speaking at the Microsoft TechDays 2017 about Angular and ASP.NET Core.
+This is the second time I am attending to the Microsoft TechDays. The last time was 2016 and it was a blast - I really enjoyed it.
+In my session which is placed as the last one at the second day, I will get you introduced to ASP.NET Core and how to use it.</description>
+    </item>
+    
+    <item>
+      <title>How I started recording my first Video training</title>
+      <link>https://offering.solutions/blog/articles/2016/11/29/how-i-started-recording-my-first-video-training/</link>
+      <pubDate>Tue, 29 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/11/29/how-i-started-recording-my-first-video-training/</guid>
+      <description>In this blog post I want to describe how I started recording my first Video training and tell you about the experiences I made during the recording.
+https://channel9.msdn.com/Blogs/MVP-VisualStudio-Dev/Erstellen-einer-WebAPI-mit-ASPNET-Core
+Why? I had this &amp;ldquo;recording a video&amp;rdquo;-thing in my mind for a long time. But never had the equipment and the software to do it. So it was more a &amp;ldquo;Yes, I can get this video recording thing going sometime&amp;rdquo;. But a few weeks ago I went along and bought a microphone giving me a bit better quality than the microphone on an USB-Logitech-Webcam.</description>
+    </item>
+    
+    <item>
+      <title>How to Write a Webapi with ASP.NET Core</title>
+      <link>https://offering.solutions/talks/how-to-write-a-webapi-with-asp-net-core-51/</link>
+      <pubDate>Mon, 28 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/how-to-write-a-webapi-with-asp-net-core-51/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to implement a table filter in Angular</title>
+      <link>https://offering.solutions/blog/articles/2016/11/21/how-to-implement-a-table-filter-in-angular/</link>
+      <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/11/21/how-to-implement-a-table-filter-in-angular/</guid>
+      <description>In this post I want to show you how to implement a table filter in Angular.
+ NOTE: Keep in mind that this only filters the client side values meaning the values you already loaded to the client! Filtering should maybe be a server side thing when you only call the data you really want, sending a request to your API with the term you want to filter your resources on right on the DB.</description>
+    </item>
+    
+    <item>
+      <title>Build and debug a WebAPI with the Dotnet CLI and VSCode</title>
+      <link>https://offering.solutions/blog/articles/2016/11/02/build-and-debug-a-webapi-with-the-dotnet-cli-and-vscode/</link>
+      <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/11/02/build-and-debug-a-webapi-with-the-dotnet-cli-and-vscode/</guid>
+      <description>In this blog I want to show you how to build and debug a WebAPI with the Dotnet CLI and VSCode.
+Code is here:
+https://github.com/FabianGosebrink/ASPNETCore-WebAPI-With-VSCode-Dotnet-CLI
+Why should we do a WebAPI with VSCode and the DotNet CLI? If you are building websites nowadays you have a lot of tools and a lot of technologies to handle. On Serverside this is a little bit easier but there you have a couple of technologies to face, too.</description>
+    </item>
+    
+    <item>
+      <title>How to debug an Angular application with Chrome and VS Code</title>
+      <link>https://offering.solutions/blog/articles/2016/10/16/how-to-debug-an-angular-application-with-chrome-and-vs-code/</link>
+      <pubDate>Sun, 16 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/10/16/how-to-debug-an-angular-application-with-chrome-and-vs-code/</guid>
+      <description>In this blog post I want to show you how to debug an Angular application with Chrome and VS Code.
+First of all you need to install the extension in VS Code.
+You can find it here
+https://github.com/Microsoft/vscode-chrome-debug
+or search in the extensions tab for the plugin directly:
+After installing you probably have to enable the plugin and restart VS Code but in the end you will see your folder structure like normal.</description>
+    </item>
+    
+    <item>
+      <title>Moving from Microsoft Lumia 950 to OnePlus 3</title>
+      <link>https://offering.solutions/blog/articles/2016/10/15/moving-from-microsoft-lumia-950-to-oneplus-3/</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/10/15/moving-from-microsoft-lumia-950-to-oneplus-3/</guid>
+      <description>In this blog post I want to share the experience I made moving from Microsoft Lumia 950 to OnePlus 3.
+Prologue Let me clarify that first: I have always been a WP &amp;amp; Lumia-Lover. I had Windows Phones right from the start and never had another phone ever before. So for me it was clear to also jump to the newest one, the 950, and I was sure to love it.</description>
+    </item>
+    
+    <item>
+      <title>How to set up Angular and Webpack in Visual Studio with ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2016/08/27/how-to-set-up-angular-and-webpack-in-visual-studio-with-asp.net-core/</link>
+      <pubDate>Sat, 27 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/08/27/how-to-set-up-angular-and-webpack-in-visual-studio-with-asp.net-core/</guid>
+      <description>With this blog post I want to show an example of how to set up Angular and Webpack in Visual Studio with ASP.NET Core ready for dev and production builds.
+ See also my latest article Angular Ahead Of Time (AoT) compilation, lazy loading and treeshaking with webpack
+ If you read this until the end you will have a picture how to enable webpack and webpack-dev-server with npm and how to use webpack to bundle your angular application and inject files into index.</description>
+    </item>
+    
+    <item>
+      <title>Neue Angular-Kurstermine angekündigt</title>
+      <link>https://offering.solutions/blog/articles/2016/08/17/neue-angular-kurstermine-angek%C3%BCndigt/</link>
+      <pubDate>Wed, 17 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/08/17/neue-angular-kurstermine-angek%C3%BCndigt/</guid>
+      <description>In diesem blog post möchte ich bekanntgeben, dass Digicomp neue Kurstermine angekündigt hat, die ich als Trainer betreuen und durchführen darf :) . Die Kurse finden in Bern statt, je nach Teilnehmern auch in Basel und Zürich.
+Zu den Kursterminen
+Zu Beginn werde ich wie beim letzten Mal die Erwartungen der Teilnehmer abholen, eventuell habt ihr ja Punkte, die euch unter den Nägeln brennen. Im Laufe des Kurses werde ich versuchen alle Punkte zu klären, dass euch möglichst gut geholfen werden kann.</description>
+    </item>
+    
+    <item>
+      <title>How to create an ASP.NET Core WebAPI</title>
+      <link>https://offering.solutions/blog/articles/2016/07/29/how-to-create-an-asp.net-core-webapi/</link>
+      <pubDate>Fri, 29 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/07/29/how-to-create-an-asp.net-core-webapi/</guid>
+      <description>In this blog post I want to show you how to create an ASP.NET Core WebAPI. We will use a custom mapper (you could use AutoMapper for this instead, a repository which is a singleton in this blog here and we will use the normal CRUD operations to Create, Read, Update and Delete in the &amp;ldquo;database&amp;rdquo; here.
+Code here https://github.com/FabianGosebrink/ASPNETCore-WebAPI-Sample
+Visual Studio We will start with the ASP.NET Startup-File
+ASP.NET Core Startup public class Startup { public Startup(IHostingEnvironment env) { var builder = new ConfigurationBuilder() .</description>
+    </item>
+    
+    <item>
+      <title>Kooperation von MyCSharp.de und der BASTA!</title>
+      <link>https://offering.solutions/blog/articles/2016/07/20/kooperation-von-mycsharp.de-und-der-basta/</link>
+      <pubDate>Wed, 20 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/07/20/kooperation-von-mycsharp.de-und-der-basta/</guid>
+      <description>Ich freue mich wieder sehr anzukündigen, dass es erneut zu einer Kooperation von MyCSharp.de und der BASTA! gekommen ist. Die zweite dieses Jahr :)
+Was ist die BASTA!?  Die BASTA! ist die führende unabhängige Konferenz für Microsoft-Technologien im deutschsprachigen Raum. Durch ihre einmalige Expertendichte, die Aktualität sowie ausgeprägte Praxisrelevanz gehört sie zu den jährlichen Pflichtterminen für Windows- und .NET-Entwickler, Architekten und Projektleiter. Das Konferenzprogramm umfasst die immer größere werdende Technologieplattform der Microsoft-Welt – und darüber hinaus.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core 1.0 with Entity Framework Core</title>
+      <link>https://offering.solutions/blog/articles/2016/07/03/asp.net-core-1.0-with-entity-framework-core/</link>
+      <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/07/03/asp.net-core-1.0-with-entity-framework-core/</guid>
+      <description>In this repository I want to show the first steps with Entity Framework Core and ASP.NET Core 1.0.
+The Repository contains a sample WebAPI with CRUD-Operations that you can Get/Read/Update and Delete &amp;ldquo;MyModel&amp;rdquo; objects through HTTP-calls.
+Here is the code: https://github.com/FabianGosebrink/ASPNETCore-Entity-Framework-Core
+Before starting&amp;hellip; Please read this readme and think of executing Add-Migration [MyMigrationName] and update-database in the Package Manager Console first.
+The database should now be visible inside your SQL Server Management Studio.</description>
+    </item>
+    
+    <item>
+      <title>Cross Platform Builds with Angular, Gulp and Webpack</title>
+      <link>https://offering.solutions/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/</link>
+      <pubDate>Fri, 17 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/</guid>
+      <description>In this blog post I want to show how to create Cross Platform Builds with Angular, Gulp and Webpack
+WebpackGulpAngularCode can be found here: https://github.com/FabianGosebrink/Foodchooser-ASPNET-Angular-Cross-Platform
+Setting up the folder structure The folder structure is very important but also one of the most discussed in the internet I think ;). Mine looks like the following:
+Whereas &amp;ldquo;app&amp;rdquo; contains my Angular 2 application and the other files and folders speak for theirselves.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core and Angular with Webpack and Visual Studio</title>
+      <link>https://offering.solutions/blog/articles/2016/06/12/asp.net-core-and-angular-with-webpack-and-visual-studio/</link>
+      <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/06/12/asp.net-core-and-angular-with-webpack-and-visual-studio/</guid>
+      <description>This article shows how to use ASP.NET Core and Angular with webpack and Visual Studio. Both the client and the server side of the application is implemented inside one ASP.NET Core project which makes it easier to deploy.
+Code: https://github.com/damienbod/Angular2WebpackVisualStudio
+Authors Fabian Gosebrink, Damien Bowden. This post is hosted on both http://damienbod.com and http://offering.solutions/.
+Setting up the application
+The ASP.NET Core application contains both the server side API services and also hosts the Angular 2 client application.</description>
+    </item>
+    
+    <item>
+      <title>Webentwicklung Mit Angular Und ASP.NET Core</title>
+      <link>https://offering.solutions/talks/webentwicklung-mit-angular-und-asp-net-core-52/</link>
+      <pubDate>Thu, 02 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/webentwicklung-mit-angular-und-asp-net-core-52/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kurs - Frontend-Entwicklung mit AngularJS</title>
+      <link>https://offering.solutions/blog/articles/2016/05/25/kurs-frontend-entwicklung-mit-angularjs/</link>
+      <pubDate>Wed, 25 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/05/25/kurs-frontend-entwicklung-mit-angularjs/</guid>
+      <description>In diesem blog post stelle ich meinen Kurs: Frontend-Entwicklung mit AngularJS vor.
+Anfang dieses Jahres kam Digicomp auf mich zu und hat mich gefragt ob ich neben meinen Talks auch mal einen Kurs geben möchte. Natürlich habe ich nicht &amp;ldquo;Nein&amp;rdquo; gesagt.
+Ich began Unterlagen zu schreiben und am 19. und 20.05. hielt ich einen AngularJs Kurs zum ersten Mal.
+Digicomp Kurs
+In dem Kurs werden Controller und Databinding behandelt genauso wie Expressions, Filter, Direktiven, Events, Services, Forms und Validation, Routing und das Testing.</description>
+    </item>
+    
+    <item>
+      <title>How you can organise gulp in your applications</title>
+      <link>https://offering.solutions/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/</link>
+      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/</guid>
+      <description>In this blog post I want to show one possibility of organising your gulp tasks in a way that you as a developer can find them quickly and print them to the console in an ordered way.
+ I have taken all these examples from my cross platform examples on GitHub. Especially from Foodchooser.
+ Motivation No matter what you do with web development today you will have to have a task runner when it comes to distribute to a customer at the latest.</description>
+    </item>
+    
+    <item>
+      <title>Writing custom validators in Angular</title>
+      <link>https://offering.solutions/blog/articles/2016/05/10/writing-custom-validators-in-angular/</link>
+      <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/05/10/writing-custom-validators-in-angular/</guid>
+      <description>In this blog post I want to show you how you are writing custom validators in Angular.
+https://github.com/OfferingSolutions/Offering-Solutions-Angular-Course/tree/master/Angular-Course/09_Forms/end/app/validators
+ Updated to new Syntax
+ When dealing with forms in Angular you can use the build-in validators like: required, minLength or maxLength, pattern&amp;hellip; . Sooner or later you need a custom validator fulfilling a special validation.
+Let&amp;rsquo;s have a form first:
+&amp;lt;form #f=&amp;#34;ngForm&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label for=&amp;#34;calories&amp;#34;&amp;gt;Calories&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; class=&amp;#34;form-control&amp;#34; id=&amp;#34;calories&amp;#34; placeholder=&amp;#34;Calories&amp;#34; [(ngModel)]=&amp;#34;foodItem.</description>
+    </item>
+    
+    <item>
+      <title>Angular, ASP.NET WebAPI, Azure &amp; Cordova, Cross Platform – My Private Hackathon Part 2</title>
+      <link>https://offering.solutions/blog/articles/2016/04/26/angular-asp.net-webapi-azure-cordova-cross-platform-my-private-hackathon-part-2/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/04/26/angular-asp.net-webapi-azure-cordova-cross-platform-my-private-hackathon-part-2/</guid>
+      <description>In the last blog postI lost a few words about the REST-API the FoodChooser is talking to. In this blog I want to talk about the clients I developed. This is: Angular, ASP.NET WebAPI, Azure &amp;amp; Cordova, Cross Platform – My Private Hackathon Part 2.
+Well I started coding an AngularJs 1.x Client with Typecript which is available here
+https://github.com/FabianGosebrink/ASPNET-Foodchooser-Cross-Platform-AngularJS
+Of course I could not stop looking and digging into Angular.</description>
+    </item>
+    
+    <item>
+      <title>Angular, ASP.NET WebAPI, Azure &amp; Cordova, Cross Platform – My Private Hackathon Part 1</title>
+      <link>https://offering.solutions/blog/articles/2016/04/19/angular-asp.net-webapi-azure-cordova-cross-platform-my-private-hackathon-part-1/</link>
+      <pubDate>Tue, 19 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/04/19/angular-asp.net-webapi-azure-cordova-cross-platform-my-private-hackathon-part-1/</guid>
+      <description>Motivation I had a few free hours and was curious and wanted to know what you can achieve in 9 hours of coding. Due to the fact that I am very into ASP.NET development with Angular I coded a small application which is based on ASP.NET Web API, AngularJs/Angular2 with Typescript &amp;amp; co. So the question is: How far will I go in 9 hours? This is my private Hackathon!!</description>
+    </item>
+    
+    <item>
+      <title>Webentwicklung Mit Angular, Signalr Und ASP.NET Core</title>
+      <link>https://offering.solutions/talks/webentwicklung-mit-angular-signalr-und-asp-net-core-53/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/webentwicklung-mit-angular-signalr-und-asp-net-core-53/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microsoft TechDays 2016</title>
+      <link>https://offering.solutions/blog/articles/2016/02/20/microsoft-techdays-2016/</link>
+      <pubDate>Sat, 20 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/02/20/microsoft-techdays-2016/</guid>
+      <description>TechDays 2016 Baden
+===== UPDATE======
+I got the feedback from Microsoft and my talk was rated with 4.5 in Content and 4.6 in Speaker Performance. This means it was rated as the best Talk at the TechDays. Im really happy to read that so thanks to everybody who was in the audience :)
+Hope to see you again on some events.
+Greetings
+Fabian
+=================
+I am so happy to announce that I will speak on the TechDays 2016 in Baden for the first time!</description>
+    </item>
+    
+    <item>
+      <title>Consuming a REST API with Angular Http-Service in Typescript</title>
+      <link>https://offering.solutions/blog/articles/2016/02/01/consuming-a-rest-api-with-angular-http-service-in-typescript/</link>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/02/01/consuming-a-rest-api-with-angular-http-service-in-typescript/</guid>
+      <description>Updates  19.09.2018 - Updated Angular Syntax 19.08.2017 - Updated to ASP.NET Core 2.0 &amp;amp; new HttpClientModule  blog post Hey,
+with this blog pot I want to show you how to create a dataservice to consume (not only) an ASP.NET REST API with the angular http module.
+In my recent blog post Getting started with Visual Studio Code, AngularJS and Typescript I have already mentioned how to start and to install the complete angular environment with corresponding tools.</description>
+    </item>
+    
+    <item>
+      <title>Angular and ASP.NET Core Starter</title>
+      <link>https://offering.solutions/blog/articles/2016/01/25/angular-and-asp.net-core-starter/</link>
+      <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2016/01/25/angular-and-asp.net-core-starter/</guid>
+      <description>With this bIog I want to give you an Angular and ASP.NET Core Starter.
+Code here:
+https://github.com/FabianGosebrink/ASPNETCore-Angular-Webpack-StarterTemplate
+Updated to the newest Versions
+Nowadays you hear a lot of new technologies around the web stuff and with this post I want to show you a get-starting-guide how to start with the following technologies in general. I want to show how to set up an environment where you can start programming ASP.NET and Angular.</description>
+    </item>
+    
+    <item>
+      <title>AngularJs &amp; Rest/webapi (with X-Platform Development)</title>
+      <link>https://offering.solutions/talks/angularjs-rest-webapi-with-x-platform-development-54/</link>
+      <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/angularjs-rest-webapi-with-x-platform-development-54/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Get started with ASP.NET Core and Entity Framework 6</title>
+      <link>https://offering.solutions/blog/articles/2015/12/13/get-started-with-asp.net-core-and-entity-framework-6/</link>
+      <pubDate>Sun, 13 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/12/13/get-started-with-asp.net-core-and-entity-framework-6/</guid>
+      <description>Hey,
+today I want to show you how to get started with ASP.NET 5 and Entity Framework 6.
+If you start with the new templates for ASP.NET 5 you will notice in a short time that examples are going the EF 7 way. But if you want to stay at Entity Framework 6 as long as 7 is not in a final release or to move from an older version step by step you can follow this instructions here.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Unit Of Work with Entity Framework</title>
+      <link>https://offering.solutions/blog/articles/2015/12/09/asp.net-unit-of-work-with-entity-framework/</link>
+      <pubDate>Wed, 09 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/12/09/asp.net-unit-of-work-with-entity-framework/</guid>
+      <description>I implemented a solution for the ASP.NET Unit Of Work with Entity Framework (see this post) and put all this into a NuGet-Package. And finally: Here it is!
+Code Nuget: UnitOfWork by Offering.Solutions
+Github: OfferingSolutions UnitOfWork with Entity Framework
+This blog post has a sample-solution attached. Feel free to look into it. But before you do let me explain this package a bit. It will use the UnitOfWork, you will be able to use GenericRepositories and Customrepositories and everything is cached so that if you use the repositories in one using they only have to be created once.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Visual Studio Code, AngularJS and Typescript</title>
+      <link>https://offering.solutions/blog/articles/2015/12/03/getting-started-with-visual-studio-code-angularjs-and-typescript/</link>
+      <pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/12/03/getting-started-with-visual-studio-code-angularjs-and-typescript/</guid>
+      <description>This time I want to show you how getting started with Visual Studio Code, AngularJS and Typescript.
+Before we start: A new Typescript version was announced!! You can see whats new here and further information here.
+I always wanted to get to know Typescript and see the advantages of it compared to the &amp;ldquo;normal&amp;rdquo; javascript and so I took my plain old sample application and tried to build it up with Typescript.</description>
+    </item>
+    
+    <item>
+      <title>How to use tag helpers in ASP.NET MVC</title>
+      <link>https://offering.solutions/blog/articles/2015/11/16/how-to-use-tag-helpers-in-asp.net-mvc/</link>
+      <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/11/16/how-to-use-tag-helpers-in-asp.net-mvc/</guid>
+      <description>Hey,
+in this post I want to show you how to use tag helpers in ASP.NET.
+First of all: What are the tag helpers good for?
+If you are coding your links in your MVC-Views with normal strings its really hard to refactor or correct them in case you rename your routing, controller or your action. So you need a kind of generic approach to do this.
+Razor in previous versions had this</description>
+    </item>
+    
+    <item>
+      <title>Talk bei den Microsoft Evolution Days in Zürich</title>
+      <link>https://offering.solutions/blog/articles/2015/11/12/talk-bei-den-microsoft-evolution-days-in-z%C3%BCrich/</link>
+      <pubDate>Thu, 12 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/11/12/talk-bei-den-microsoft-evolution-days-in-z%C3%BCrich/</guid>
+      <description>Am 29. Oktober hielt ich einen Talk bei den Microsoft Evolution Days in Zürich, die Digicomp ausgerichtet hat. Ich habe einen Talk bei den Microsoft Evolution Days in Zürichüber AngularJs &amp;amp; REST mit einer ASP.NET WebAPI gehalten. Die Folien gibts direkt bei Digicomp. Alle Beispiele gibts auch auf Github.
+ Mein erster Vortrag als MVP :-)
+ Früher hatten die Evolution Days keinen Developer-Track. Dieses Jahr war aber einer dabei und ich bin froh, dass ich eingeladen wurde.</description>
+    </item>
+    
+    <item>
+      <title>Zu Gast beim MVP Global Summit bei Microsoft</title>
+      <link>https://offering.solutions/blog/articles/2015/11/04/zu-gast-beim-mvp-global-summit-bei-microsoft/</link>
+      <pubDate>Wed, 04 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/11/04/zu-gast-beim-mvp-global-summit-bei-microsoft/</guid>
+      <description>Hi,
+heute ist Halbzeit. Die Hälfte ist vorbei und ich hab gedacht, dass dies ein guter Zeitpunkt ist um mal das erste Fazit von meinem ersten MVP Global Summit zu ziehen.
+Was ich hier im Global Summit erleben und erfahren darf hätte ich mir so niemals ausgemalt. Der Flug war sehr lang, aber das Event ist es mehr als Wert.
+Es gibt sehr viele Sessions, die während der Woche parallel laufen.</description>
+    </item>
+    
+    <item>
+      <title>Webentwicklung Mit AngularJs &amp; Rest/webapi</title>
+      <link>https://offering.solutions/talks/webentwicklung-mit-angularjs-rest-webapi-55/</link>
+      <pubDate>Thu, 29 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/webentwicklung-mit-angularjs-rest-webapi-55/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebHooks with ASP.NET on Azure - DropBox and GitHub</title>
+      <link>https://offering.solutions/blog/articles/2015/10/18/webhooks-with-asp.net-on-azure-dropbox-and-github/</link>
+      <pubDate>Sun, 18 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/10/18/webhooks-with-asp.net-on-azure-dropbox-and-github/</guid>
+      <description>Hi,
+in this post I want to show you how to use ASP.NET-WebHooks with an example of DropBox and Github. This app will be hostet on Windows-Azure and we&amp;rsquo;ll be using Visual Studio 2015.
+The code in this example will be available on GitHub.
+You can find a great summary here and here of what WebHooks exactly are. In short: You can receive updates from Websites and catch them with your own staying always up to date and seeing what is happening to your subscribed websites like Instagram, DropBox, GitHub etc.</description>
+    </item>
+    
+    <item>
+      <title>Token Authentication with Claims and ASP.NET WebAPI</title>
+      <link>https://offering.solutions/blog/articles/2015/10/03/token-authentication-with-claims-and-asp.net-webapi/</link>
+      <pubDate>Sat, 03 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/10/03/token-authentication-with-claims-and-asp.net-webapi/</guid>
+      <description>In this post I would like to show you the most example about Token Authentication with Claims and ASP.NET WebAPI.
+The sense behind this is:
+ We ask the Server for a token We receive the token, store it client side and&amp;hellip; &amp;hellip;send it in the header on every request  The &amp;ldquo;problem&amp;rdquo; is that we do want to use all build in things Asp.Net WebAPI provides us. Microsoft serves us everything we need.</description>
+    </item>
+    
+    <item>
+      <title>WebAPI with ASP.NET Core 1.0 and ASP.NET</title>
+      <link>https://offering.solutions/blog/articles/2015/09/02/webapi-with-asp.net-core-1.0-and-asp.net/</link>
+      <pubDate>Wed, 02 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/09/02/webapi-with-asp.net-core-1.0-and-asp.net/</guid>
+      <description>I released two sample APIs on Github: WebAPI with ASP.NET Core and ASP.NET
+One of them is done with the &amp;ldquo;old&amp;rdquo; approach but heads in the direction of my understanding of a modern WebAPI using OData and having DTOs instead of delivering the plain entitites down to the client.
+I will cover the most important information now:
+The get method includes odata and is restricting the page-size to 50 to prevent anyone from getting all entries which can cause problems.</description>
+    </item>
+    
+    <item>
+      <title>AngularJS with gulp, wiredep and bower</title>
+      <link>https://offering.solutions/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/</link>
+      <pubDate>Sun, 30 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/</guid>
+      <description>With this blog post I want to show you how to use AngularJS with gulp, wiredep and bower to provide the files to an angular application.
+I introduced Gulp in my AngularJSDemoApp on GitHub.
+Check it out here.
+AngularJS with gulp wiredep and bower gulp.js var gulp = require(&amp;#39;gulp&amp;#39;); var jshint = require(&amp;#39;gulp-jshint&amp;#39;); var jscs = require(&amp;#39;gulp-jscs&amp;#39;); var del = require(&amp;#39;del&amp;#39;); var inject = require(&amp;#39;gulp-inject&amp;#39;); var config = require(&amp;#39;./gulp.config&amp;#39;)(); gulp.task(&amp;#39;vet&amp;#39;, function () { return gulp .</description>
+    </item>
+    
+    <item>
+      <title>AngularJS NgResource Demo with ASP.NET WebAPI</title>
+      <link>https://offering.solutions/blog/articles/2015/08/25/angularjs-ngresource-demo-with-asp.net-webapi/</link>
+      <pubDate>Tue, 25 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/08/25/angularjs-ngresource-demo-with-asp.net-webapi/</guid>
+      <description>In this blog post I want to show an AngularJS NgResource Demo with ASP.NET WebAPI querying data as JSON.
+Code: https://github.com/FabianGosebrink/ASPNET-WebAPI-AngularJs-NgResource-Demo
+NgResource: https://docs.AngularJS.org/api/ngResource/service/$resource
+The application The application follows the &amp;ldquo;normal&amp;rdquo; way of seperating the data access also on client side into services.
+Preparation: Before you can use Angular&amp;rsquo;s ng resource you have to include it into your application like this:
+(function () { &amp;#39;use strict&amp;#39;; angular .module(&amp;#39;AngularJSDemoApp&amp;#39;, [ &amp;#39;ngRoute&amp;#39;, &amp;#39;ngAnimate&amp;#39;, &amp;#39;ngResource&amp;#39;, &amp;#39;ui.</description>
+    </item>
+    
+    <item>
+      <title>How to build a great RESTful Service</title>
+      <link>https://offering.solutions/blog/articles/2015/07/20/how-to-build-a-great-restful-service/</link>
+      <pubDate>Mon, 20 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/07/20/how-to-build-a-great-restful-service/</guid>
+      <description>In this blog post I want to get you an idea of how to build a great RESTful Service. The idea for this blog post came after I spent a whole post about implementing paging in a web API. Paging is a very important feature a REST API should offer. However, there are a lot more. Here I want to mention a few of them hoping to cover as much as you need to build great API’s ;-)</description>
+    </item>
+    
+    <item>
+      <title>Meine ersten Tage mit dem Surface Pro 3</title>
+      <link>https://offering.solutions/blog/articles/2015/07/01/meine-ersten-tage-mit-dem-surface-pro-3/</link>
+      <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/07/01/meine-ersten-tage-mit-dem-surface-pro-3/</guid>
+      <description>Nun ist es endlich da. Das Surface der dritten Generation. Ich habe mich ja schon drauf gefreut aber wenn es dann da ist, ist es natürlich nochmal was ganz anderes. Man hört ja so viel, man liest noch mehr und am Ende schimpfen alle auf die Kacheln. Mir völlig unverständlich, aber trotzdem habe ich gedacht, dass ich das Surface mal einem Review unterziehen kann. Die Ergebnisse davon will ich in diesem Beitrag beschreiben.</description>
+    </item>
+    
+    <item>
+      <title>Paging in einer ASP.Net WebAPI und AngularJS</title>
+      <link>https://offering.solutions/blog/articles/2015/06/09/paging-in-einer-asp.net-webapi-und-angularjs/</link>
+      <pubDate>Tue, 09 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/06/09/paging-in-einer-asp.net-webapi-und-angularjs/</guid>
+      <description>In diesem Blog post will ich zeigen, wie man paging in einer ASP.NET WebAPI und AngularJS realisieren kann.
+Eine gute API sollte mehrere Features anbieten. Eins davon ist Paging. In diesem Beispiel zeige ich Paging mit AngularJS und wie man es auf dem Client konsumieren kann.
+Als erstes sollte man dem Client anbieten per Parameter nur eine bestimmte Anzahl von Einträgen abzurufen.
+[Route(&amp;#34;myRoute&amp;#34;)] public IHttpActionResult Get(int start = 0, int count = 10) { //.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET WebAPI Datashaper to strip your json data</title>
+      <link>https://offering.solutions/blog/articles/2015/05/30/asp.net-webapi-datashaper-to-strip-your-json-data/</link>
+      <pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/05/30/asp.net-webapi-datashaper-to-strip-your-json-data/</guid>
+      <description>With this blog post I want to introduce you the ASP.NET WebAPI Datashaper to strip your json data before sending it back to the client.
+The Datashaper gives you the possibility to strip the data you want to send based on the query of the client if you can not use Odata for a reason.
+GitHub Project-Page NuGet
+Demo
+With this Nuget you can add the fields you want to receive in your request like:</description>
+    </item>
+    
+    <item>
+      <title>Eine REST API ist mehr als eine API – Moderne Architekturen für verteilte Systeme</title>
+      <link>https://offering.solutions/blog/articles/2015/05/01/eine-rest-api-ist-mehr-als-eine-api-moderne-architekturen-f%C3%BCr-verteilte-systeme/</link>
+      <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/05/01/eine-rest-api-ist-mehr-als-eine-api-moderne-architekturen-f%C3%BCr-verteilte-systeme/</guid>
+      <description>In diesem Blog post möchte ich zeigen, wie wichtig eine API heutzutage ist. Frei nach dem Motto: Eine REST API ist mehr als eine API – Moderne Architekturen für verteilte Systeme
+In der heutigen Zeit ist es absolut unabdingbar eine Software, die man für internen oder externen Gebrauch schreibt, auf mehreren Wegen verfügbar bzw. konsumierbar zu machen. Wichtig sind hierbei sicherlich Desktop-PCs, Smartphones und Tablets.
+Völlig unabhängig der eingesetzten Technologie (ASP.</description>
+    </item>
+    
+    <item>
+      <title>MyCSharp.de - Kooperation mit der Basta!</title>
+      <link>https://offering.solutions/blog/articles/2015/04/24/mycsharp.de-kooperation-mit-der-basta/</link>
+      <pubDate>Fri, 24 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/04/24/mycsharp.de-kooperation-mit-der-basta/</guid>
+      <description>MyCSharp.de - Kooperation mit der Basta!
+Ich freue mich wirklich zu sagen, dass das Team von MyCSharp.de und die Basta! eine Kooperation eingegangen sind und MyCSharp.de Partner der Basta! wird.
+Was ist die BASTA!?
+ Die BASTA! ist die führende unabhängige Konferenz für Microsoft-Technologien im deutschsprachigen Raum. Durch ihre einmalige Expertendichte, die Aktualität sowie ausgeprägte Praxisrelevanz gehört sie zu den jährlichen Pflichtterminen für Windows- und .NET-Entwickler, Architekten und Projektleiter. Das Konferenzprogramm umfasst die immer größere werdende Technologieplattform der Microsoft-Welt – und darüber hinaus.</description>
+    </item>
+    
+    <item>
+      <title>Webentwicklung Mit ASP.NET &amp; AngularJs</title>
+      <link>https://offering.solutions/talks/webentwicklung-mit-asp-net-angularjs-56/</link>
+      <pubDate>Thu, 23 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/webentwicklung-mit-asp-net-angularjs-56/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WPF crashes with &#39;OutOfMemoryException&#39; when loading PNGs in Windows 8.1</title>
+      <link>https://offering.solutions/blog/articles/2015/04/22/wpf-crashes-with-outofmemoryexception-when-loading-pngs-in-windows-8.1/</link>
+      <pubDate>Wed, 22 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/04/22/wpf-crashes-with-outofmemoryexception-when-loading-pngs-in-windows-8.1/</guid>
+      <description>I wanted to mention that you can find me on GitHub from now on. I am available on GitHub with my personal profile.
+I want to publish all my repositories I do code like new trials, hands-on-anythings and examples which will kick you off to get started with what the repository is about.
+In every talk I do I will always refer to this repo so that the audience can code what I did in the talk right away.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft TechTalk in Wallisellen</title>
+      <link>https://offering.solutions/blog/articles/2015/04/19/microsoft-techtalk-in-wallisellen/</link>
+      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/04/19/microsoft-techtalk-in-wallisellen/</guid>
+      <description>Hallo zusammen, in diesem Blog will ich kurz den Microsoft TechTalk in Wallisellen zusammenfassen.
+Am 19.03.2015 waren Hans Peter Bornhauser und ich Guestspeaker beim Microsoft Techtalk in Wallisellen. Dass Ereignis war mit mehr als 100 Leuten komplett ausverkauft und drehte sich innerhalb von 3 Vorträgen rund um das Thema ASP.NET und Azure.
+Hans Peter stellte in einer 50-minütigen Session ASP.NET vNext vor. Mit praktischen Beispielen zeigte er, was alles auf Entwickler zukommt mit dem neuen ASP.</description>
+    </item>
+    
+    <item>
+      <title>Webentwicklung Mit ASP.NET &amp; AngularJs</title>
+      <link>https://offering.solutions/talks/webentwicklung-mit-asp-net-angularjs-57/</link>
+      <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/webentwicklung-mit-asp-net-angularjs-57/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to modularize your angular application</title>
+      <link>https://offering.solutions/blog/articles/2015/03/17/how-to-modularize-your-angular-application/</link>
+      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/03/17/how-to-modularize-your-angular-application/</guid>
+      <description>In this blog post I want to show you a way on how to modularize your angular application in a way I did it so far. Enjoy reading :)
+Due to the fact that angular.js gets more and more important you are forced to think about a nice architecture to develop easy. Especially if you develop in mulitple teams.
+Well one of the killer features for me in angular is its modularization.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Helpers by Offering Solutions</title>
+      <link>https://offering.solutions/blog/articles/2015/03/04/asp.net-helpers-by-offering-solutions/</link>
+      <pubDate>Wed, 04 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/03/04/asp.net-helpers-by-offering-solutions/</guid>
+      <description>I released a new version of the ASP.NET Helpers by Offering Solutions:
+Nuget: AspNetHelpers by Offering Solutions
+which includes
+ ViewModelBase SubmitModelBase ModelValidator (for easier validation)  and features like
+ Nullcheck with Exception Nullcheck with returning the type if not null, otherwise exception Return bool value if something is null Checking enumerable if its null or empty Checks if a string is a timespan Checks if a string is an email Converts a string to datetime Converts a string to timespan Checks a string for null, empty or a given length (e.</description>
+    </item>
+    
+    <item>
+      <title>Scrum - Agile Development</title>
+      <link>https://offering.solutions/talks/scrum-agile-development-58/</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/scrum-agile-development-58/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to work with the q promise syntax in AngularJS</title>
+      <link>https://offering.solutions/blog/articles/2015/03/01/how-to-work-with-the-q-promise-syntax-in-angularjs/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/03/01/how-to-work-with-the-q-promise-syntax-in-angularjs/</guid>
+      <description>In this blog post I want to show you how to work with the q promise syntax in AngularJS
+The &amp;ldquo;Then(success/error)&amp;quot;-Syntax If you are developing with angularJs you have to work with promises angular gives to you. Its the syntax you have when you can react with a &amp;ldquo;then(success/error)&amp;rdquo; on it. And if you work with this syntax you will notice that its very mighty because it is one very clean way to react to your server responses or whatever in case of an error.</description>
+    </item>
+    
+    <item>
+      <title>WPF CallMemberName for INotifyPropertyChanged</title>
+      <link>https://offering.solutions/blog/articles/2015/02/08/wpf-callmembername-for-inotifypropertychanged/</link>
+      <pubDate>Sun, 08 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/02/08/wpf-callmembername-for-inotifypropertychanged/</guid>
+      <description>In this blog post I want to show you how to use WPF CallMemberName for INotifyPropertyChanged.
+Regarding to this blog post here I showed up how to implement the INotifyPropertyChanged.
+Well with .Net-Framework 4.5 a new solution came up to make it even more easy:
+Instead of the &amp;ldquo;old&amp;rdquo; (but working) base-class
+public class NotifyPropertyChangedBase : INotifyPropertyChanged { public event PropertyChangedEventHandler PropertyChanged; protected virtual void OnPropertyChanged&amp;lt;T&amp;gt;(Expression&amp;lt;Func&amp;lt;T&amp;gt;&amp;gt; propertyExpression) { MemberExpression memberExpr = propertyExpression.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET - Clientseitige Webarchitekturen mit AngularJS</title>
+      <link>https://offering.solutions/blog/articles/2014/11/02/asp.net-clientseitige-webarchitekturen-mit-angularjs/</link>
+      <pubDate>Sun, 02 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/11/02/asp.net-clientseitige-webarchitekturen-mit-angularjs/</guid>
+      <description>ASP.NET MVC hat, wie der Name schon sagt, die MVC-Struktur auf dem Server etabliert und es ist somit möglich saubere Architekturen auf dem Server zu erstellen.
+Mehr und mehr geht die Richtung jedoch hin zu Mobile-First-Implementierungen. Hierbei spielt der Client, dabei meine ich die Tatsache, dass es ein Client ist, nicht welche Art von Client (Handy, Tablet etc.), eine immer grössere Rolle.
+Wir tragen heute Rechner in unseren Hosentaschen, die stärker sind als die Desktop-Rechner vor 5 Jahren und man findet Rechenpower sehr viel schneller als zu damaliger Zeit.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Repository Pattern und Unit of Work</title>
+      <link>https://offering.solutions/blog/articles/2014/10/06/asp.net-repository-pattern-und-unit-of-work/</link>
+      <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/10/06/asp.net-repository-pattern-und-unit-of-work/</guid>
+      <description>In diesem Blog post möchte ich das ASP.NET Repository Pattern and Unit of Work vorstellen. In einem Informationssystem (z.B. Webapplikation) hat man normalerweise immer dasselbe Problem: Irgendwie muss man Daten persistieren und von der Oberfläche im Browser in die Datenbank hin- und wieder zurückschieben. Und dies findet man beinahe bei jedem Objekt (Person, Artikel, Blogeintrage, etc.). Vor allem fällt nach einer Zeit auf, dass die Operationen immer dieselben sind: Create/Read/Update und Delete geben sich die Klinke in die Hand.</description>
+    </item>
+    
+    <item>
+      <title>Correct implementation of Commands in WPF</title>
+      <link>https://offering.solutions/blog/articles/2014/10/01/correct-implementation-of-commands-in-wpf/</link>
+      <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/10/01/correct-implementation-of-commands-in-wpf/</guid>
+      <description>In this blogost I want to show you the IMHO correct implementation of Commands in WPF. Feel free to discuss :)
+Again we will take the code from the posts before (Wpf Basics I and Wpf Basics II) and make it nicer. Well: What we did was databind a string to the UI. Then we implemented a solution for notify the UI that something changed. Everything triggered with a small timer which was doing the work for &amp;ldquo;I have something new&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>WPF Basics II - The INotifyPropertyChanged Interface</title>
+      <link>https://offering.solutions/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/</link>
+      <pubDate>Sun, 14 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/</guid>
+      <description>UPDATE Check the CallMemberName-Possibility here
+ In the first part I told something about the databinding here. The second part should be something about refreshing the data at the UI. We said that the UI only knows the datacontext and its properties. So far so god. It is binding them at startup and we&amp;rsquo;re done so far.
+To calm down the ones who expect a solution: Can be found in the third article here</description>
+    </item>
+    
+    <item>
+      <title>How to make first steps of Databinding in WPF</title>
+      <link>https://offering.solutions/blog/articles/2014/09/02/how-to-make-first-steps-of-databinding-in-wpf/</link>
+      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/09/02/how-to-make-first-steps-of-databinding-in-wpf/</guid>
+      <description>In this blog post I want to show you how to make first steps of Databinding in WPF.
+I often hear or see that people try to start with WPF but they do not start mit MVVM. Because databinding is frightening them. But why? Databinding is one of the biggest advantages you can have to decouple your logic from your view.
+With this post I want to give you a short introduction about databinding and how to get set up.</description>
+    </item>
+    
+    <item>
+      <title>Impressions of the first ASP.NET MVC workshop</title>
+      <link>https://offering.solutions/blog/articles/2014/08/10/impressions-of-the-first-asp.net-mvc-workshop/</link>
+      <pubDate>Sun, 10 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/08/10/impressions-of-the-first-asp.net-mvc-workshop/</guid>
+      <description>In this blog post I am doing a small recap to give you impressions of the first ASP.NET MVC workshop.
+Even when I am not doing it in my current project at work I am very interested in ASP.NET and the ASP.NET MVC-Framework and everything which is needed to build modern web based applications.
+Last Saturday my preparation for a very special workshop for me ended and I was glad to give five students the first ASP.</description>
+    </item>
+    
+    <item>
+      <title>Clean your viewmodel in WPF and create a facade</title>
+      <link>https://offering.solutions/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/</link>
+      <pubDate>Thu, 03 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/</guid>
+      <description>In this post I want to show you how to Clean your view model in WPF and create a facade.
+We use a facade to get your view model in WPF nice and clean. I want to show you how to get along with the separation of concerns and how to write easy and testable code with data binding and WPF.
+When you want to use a view model for data binding you normally get your public properties on your view model an do a normal binding on your xaml like this:</description>
+    </item>
+    
+    <item>
+      <title>Chat with Node.js, socket.io, AngularJS, flashing title and loading bar</title>
+      <link>https://offering.solutions/blog/articles/2014/07/02/chat-with-node.js-socket.io-angularjs-flashing-title-and-loading-bar/</link>
+      <pubDate>Wed, 02 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/07/02/chat-with-node.js-socket.io-angularjs-flashing-title-and-loading-bar/</guid>
+      <description>In this blog post I want to show you how you can set up a chat with Node.js, socket.io, Angular.js, flashing title and loading bar. We will take a look into the lightweight architecture angular is giving you and how to set up the services and controllers the right way. Additionally we will use the loading-bar-module to give the user information about what his message is doing after sending it and we will flash the homepage title if a new message arrives.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET MVC - Generic Repositories and UnitOfWork</title>
+      <link>https://offering.solutions/blog/articles/2014/07/01/asp.net-mvc-generic-repositories-and-unitofwork/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/07/01/asp.net-mvc-generic-repositories-and-unitofwork/</guid>
+      <description>This is the third and the last blog post regarding ASP.NET MVC Architecture.
+NugetPackage NugetPackage
+Previous Posts ASP.NET MVC Architecture (Part I): Structurize your project with areas and services in ASP.NET MVC
+ASP.NET MVC Architecture (Part II): Creating a business logic in ASP.NET MVC
+Lets go In the first two posts I handled UI things, how to organize your areas (controller-services) and I showed a possibility to create your business-logic regarding area-Services and business-services.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Mvc Workshop</title>
+      <link>https://offering.solutions/talks/asp-net-mvc-workshop-59/</link>
+      <pubDate>Sat, 21 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/asp-net-mvc-workshop-59/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creating a business logic in ASP.NET MVC</title>
+      <link>https://offering.solutions/blog/articles/2014/06/10/creating-a-business-logic-in-asp.net-mvc/</link>
+      <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/06/10/creating-a-business-logic-in-asp.net-mvc/</guid>
+      <description>In this blog post I want to show you one possible way creating a business logic in ASP.NET MVC.
+Okay, referring to my last blog postI want to take you one step further and extend the older post a little bit. In the last post we saw how to build up areas and to get them clean, with separated concerns and nice looking, testable etc.
+But this is worth nothing if the rest you have is not well separated and you have a big mess there.</description>
+    </item>
+    
+    <item>
+      <title>WPF crashes with &#39;OutOfMemoryException&#39; when loading PNGs in Windows 8.1</title>
+      <link>https://offering.solutions/blog/articles/2014/06/04/wpf-crashes-with-outofmemoryexception-when-loading-pngs-in-windows-8.1/</link>
+      <pubDate>Wed, 04 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/06/04/wpf-crashes-with-outofmemoryexception-when-loading-pngs-in-windows-8.1/</guid>
+      <description>In this blog post I want to show you the solution for an error I had today which I spent a lot of time on solving it. it was the case that WPF crashes with OutOfMemoryException when loading PNGs.
+I had Windows 8.1 running as operating system and used pngs in my WPF application. It was all running well until I wanted to display the images. The whole programm froze and was unusable.</description>
+    </item>
+    
+    <item>
+      <title>Why I like SCRUM - Tips which may help you</title>
+      <link>https://offering.solutions/blog/articles/2014/06/03/why-i-like-scrum-tips-which-may-help-you/</link>
+      <pubDate>Tue, 03 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/06/03/why-i-like-scrum-tips-which-may-help-you/</guid>
+      <description>Hi, in this post I want to tell you why I like SCRUM - Tips which may help you
+After I started to be interested in agile management processes, SCRUM took nearly all of my attention and I often hear that people do not understand it or do not know how to get along with it. If your company wants to work with SCRUM you should get an idea of it and learn it.</description>
+    </item>
+    
+    <item>
+      <title>Structure your project with areas and services in ASP.NET MVC</title>
+      <link>https://offering.solutions/blog/articles/2014/06/01/structure-your-project-with-areas-and-services-in-asp.net-mvc/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/06/01/structure-your-project-with-areas-and-services-in-asp.net-mvc/</guid>
+      <description>In this blog post I want to show you one possible way to structurize your project with areas and services in ASP.NET MVC.
+This is the first part of several architecture posts I will publish in the next time.
+The idea to this came up because I noticed that if you are implementing ASP.NET mvc-code you always come to a point where you have to invest some time in the architecture.</description>
+    </item>
+    
+    <item>
+      <title>How to include DotNet.HighCharts in ASP.NET MVC with ViewModels</title>
+      <link>https://offering.solutions/blog/articles/2014/05/09/how-to-include-dotnet.highcharts-in-asp.net-mvc-with-viewmodels/</link>
+      <pubDate>Fri, 09 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/05/09/how-to-include-dotnet.highcharts-in-asp.net-mvc-with-viewmodels/</guid>
+      <description>Hey,
+I want to show you how to include DotNet.HighCharts in ASP.NET MVC working with ViewModels.
+A charting component is always very cool to see on your page and makes normal plain numbers good-looking.
+Highcharts are available on Codeplex: DotNet.HighChartsI will not dive into this whole ViewModel thing. This is something very common in ASP.NET MVC and can also bee seen in the second blog I am working on: How to avoid ViewBag and ViewDataSo, lets start:</description>
+    </item>
+    
+    <item>
+      <title>Deleting a Team Project on Visual Studio Team Services</title>
+      <link>https://offering.solutions/blog/articles/2014/04/14/deleting-a-team-project-on-visual-studio-team-services/</link>
+      <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/04/14/deleting-a-team-project-on-visual-studio-team-services/</guid>
+      <description>In this blog post I want to show you one possibility of deleting a Team Project on Visual Studio Team Services.
+I stumbled over the case that I wanted to delete an old project in my online TFS to keep it clean and up to date. As I noticed that it is not as easy as it sounds I thought about mentioning it here. So here is the walk through:</description>
+    </item>
+    
+    <item>
+      <title>Code-First with Entity Framework n:m relationship with additional information</title>
+      <link>https://offering.solutions/blog/articles/2014/04/06/code-first-with-entity-framework-nm-relationship-with-additional-information/</link>
+      <pubDate>Sun, 06 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/04/06/code-first-with-entity-framework-nm-relationship-with-additional-information/</guid>
+      <description>In this blog post I want to show you a way to realize code First with Entity Framework n:m relationship with additional information.
+a few days ago I faced the problem of having a normal N:M Relationship in EF with additional information in the table which keeps the two entities together.
+Well, without having these additional information this is easy:
+public class User { public int Id { get; set; } public string Username { get; set; } //.</description>
+    </item>
+    
+    <item>
+      <title>How to avoid ViewBag and ViewData in ASP.NET MVC</title>
+      <link>https://offering.solutions/blog/articles/2014/03/08/how-to-avoid-viewbag-and-viewdata-in-asp.net-mvc/</link>
+      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/03/08/how-to-avoid-viewbag-and-viewdata-in-asp.net-mvc/</guid>
+      <description>In this blog post I want to show you How to avoid ViewBag and ViewData in ASP.NET MVC.
+It could be so easy: When passing data from the Controller to the View in MVC one can use
+ViewBag.MyProperty = “ThisIsTheContentOfMyProperty”; or
+ViewData[&amp;#34;MyProperty&amp;#34;] = MyProperty; And in the view you can access the data with:
+@ViewBag.MyProperty or
+ViewData[&amp;#34;MyProperty &amp;#34;] as ... But what about spelling problems? IntelliSense will not correct you if you would miss a character.</description>
+    </item>
+    
+    <item>
+      <title>Lightweight architecture with AngularJS</title>
+      <link>https://offering.solutions/blog/articles/2014/03/05/lightweight-architecture-with-angularjs/</link>
+      <pubDate>Wed, 05 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/03/05/lightweight-architecture-with-angularjs/</guid>
+      <description>During the last past days I have been to a conference in Germany and brought back several interesting things I want to share with you this time. (Here I have to say that my hotel did not have a spa. So everybody who wanted to get the latest hotel and spa tips is wrong here…so in case stop reading)
+Well for me as a software developer it gets interesting every time I hear another company talking about their way of doing work, their kind of projects and their behavior in the market.</description>
+    </item>
+    
+    <item>
+      <title>How to install Ninject in ASP.NET WebAPI</title>
+      <link>https://offering.solutions/blog/articles/2014/03/04/how-to-install-ninject-in-asp.net-webapi/</link>
+      <pubDate>Tue, 04 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/03/04/how-to-install-ninject-in-asp.net-webapi/</guid>
+      <description>In this blog post I want to show you how to install Ninject in ASP.NET WebAPI. Using Dependency-Injection is one of the most important things when implementing software. Code is much more testable and you have clearly ordered dependencies and an overview of what you injected where etc.
+For ASP.NET MVC there are a lot of possibilities which you can use to achieve the DI-Goal. I tried a few (e.g. AutoFaq, Unity, etc.</description>
+    </item>
+    
+    <item>
+      <title>Using the Crypto-Namespace to Generate Salts and Compare Passwords</title>
+      <link>https://offering.solutions/blog/articles/2014/03/03/using-the-crypto-namespace-to-generate-salts-and-compare-passwords/</link>
+      <pubDate>Mon, 03 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/03/03/using-the-crypto-namespace-to-generate-salts-and-compare-passwords/</guid>
+      <description>In this blog post I want to show how to use the Crypto-Namespace to Generate Salts and Compare Passwords
+Crypto.HashPassword MethodIf you are implementing a custom membership- and/or roleprovider (I wont go into custom providers because beside pictures of cats (with or without money or guns) and porn this is one of the most mentioned topics in the web) you should always store passwords with a salt.
+With the crypted password and the salt you can compare the values during the login-process and set it during the registration process easily by using the Crypto-Namespace of ASP.</description>
+    </item>
+    
+    <item>
+      <title>Configure ASP.NET WebAPI to send data as JSON</title>
+      <link>https://offering.solutions/blog/articles/2014/02/26/configure-asp.net-webapi-to-send-data-as-json/</link>
+      <pubDate>Wed, 26 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2014/02/26/configure-asp.net-webapi-to-send-data-as-json/</guid>
+      <description>Hey,
+In this blog post I want to show you how to configure ASP.NET WebAPI to send data as JSON
+ASP.NET WebAPI is normally sending data as XML. The standard data-format in Javascript frameworks like Knockout.js or Angular.js is normally JSON. So to get ASP.NET WebAPI using only JSON can be configured in the Register-Method in WebApiConfig.
+Here in the first part you can see clearing all formatters first and then add the JsonMediaTypeFormatter as the only formatter WebApi knows for my application.</description>
+    </item>
+    
+    <item>
+      <title>Angular Advanced Workshop</title>
+      <link>https://offering.solutions/trainings/angular-advanced/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/trainings/angular-advanced/</guid>
+      <description>This course is the continuation of our Angular Beginner Course. Anyone who has visited this or has already taken the first steps with beginner Angular / Typescript is here repealed.
+You have been working with Angular for some time and have deep experience with the framework. You master basic concepts such as dependency injection, components and services and use Angular every day. You would like to develop yourself and your project, but books and articles are not enough for you - you want to discuss specific approaches directly with experts and find the best solution.</description>
+    </item>
+    
+    <item>
+      <title>Angular Architecture with NX Workshop</title>
+      <link>https://offering.solutions/trainings/angular-architecture-with-nx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/trainings/angular-architecture-with-nx/</guid>
+      <description>To build up scalable, maintainable and extendable architectures with an Angular application working with a nx workspace is the best option to use.
+Nx supports you breaking your application into different parts, reducing the complexity and increasing the maintainability of your application over the whole.
+In this workshop you will learn how to set up your Nx workspace right with the tools you need, using the frameworks which are built in and how to set up and get your Angular Application into shape.</description>
+    </item>
+    
+    <item>
+      <title>Angular Basics Workshop</title>
+      <link>https://offering.solutions/trainings/angular-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/trainings/angular-basics/</guid>
+      <description>You want to leave the jQuery world behind you? Look no further because we have got you covered. In this course you will learn to create Angular applications from scratch.
+ Introduction to Typescript Introduction to Angular CLI Bootstrapping your Application Creating independent web components Architecture with modules Databinding Component Communication Lifecycle hooks Pipes Forms &amp;amp; Validation Routing &amp;amp; Parameters Services Dependency Injection Server communication with HTTP Observables  If you are interested, drop us a line below</description>
+    </item>
+    
+    <item>
+      <title>Angular Testing Workshop</title>
+      <link>https://offering.solutions/trainings/angular-testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/trainings/angular-testing/</guid>
+      <description>This course is a journey through testing with Angular tools and best practices. With the Angular CLI&amp;rsquo;s built in testing tools like Karma and Jasmine the varieties of components and service testing are explored. As a comparison Jest is also used to perform unit tests. To wrap up this course Cypress is used to perform end-to-end testing to ensure the current state-of-the-art.
+Testing will be prepared for:
+ (Async) Pipes Sync/Async and HTTP Services Routing Directives Components with Inline Templates Components with external Templates Components with Input()/Output() Decorators Nested Components End to End Testing &amp;hellip;  If you are interested, drop us a line below</description>
+    </item>
+    
+  </channel>
+</rss>

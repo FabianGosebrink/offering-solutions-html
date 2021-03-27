@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nuget on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/nuget/</link>
+    <description>Recent content in nuget on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/nuget/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASP.NET Helpers by Offering Solutions</title>
+      <link>https://offering.solutions/blog/articles/2015/03/04/asp.net-helpers-by-offering-solutions/</link>
+      <pubDate>Wed, 04 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2015/03/04/asp.net-helpers-by-offering-solutions/</guid>
+      <description>I released a new version of the ASP.NET Helpers by Offering Solutions:
+Nuget: AspNetHelpers by Offering Solutions
+which includes
+ ViewModelBase SubmitModelBase ModelValidator (for easier validation)  and features like
+ Nullcheck with Exception Nullcheck with returning the type if not null, otherwise exception Return bool value if something is null Checking enumerable if its null or empty Checks if a string is a timespan Checks if a string is an email Converts a string to datetime Converts a string to timespan Checks a string for null, empty or a given length (e.</description>
+    </item>
+    
+  </channel>
+</rss>

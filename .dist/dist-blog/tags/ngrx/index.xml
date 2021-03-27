@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ngrx on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/ngrx/</link>
+    <description>Recent content in ngrx on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/ngrx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Auth0 in Angular with NgRx</title>
+      <link>https://offering.solutions/blog/articles/2021/02/01/using-auth0-in-angular-with-ngrx/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2021/02/01/using-auth0-in-angular-with-ngrx/</guid>
+      <description>In this blog post I want to show how we can add Auth0 authentication into an Angular app when using state management with NgRx.
+We are going to look how you can place authentication with Auth0 in an Angular app to provide a login and a logout and going a little beyond the incredibly good tutorial The Complete Guide to Angular User Authentication with Auth0. Also there is already a blog post I am happy to link to: NgRx Authentication Tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Statemanagement in Angular with Ngrx Stores &amp; Effects</title>
+      <link>https://offering.solutions/talks/statemanagement-in-angular-with-ngrx-stores-effects-10/</link>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/statemanagement-in-angular-with-ngrx-stores-effects-10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Authentication in Angular with NgRx and ASP.NET Core</title>
+      <link>https://offering.solutions/blog/articles/2020/05/29/authentication-in-angular-with-ngrx-and-asp.net-core/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/05/29/authentication-in-angular-with-ngrx-and-asp.net-core/</guid>
+      <description>In this blog post I want to describe how you can add authentication and authorization in your Angular app using NgRx. We are using an ASP.NET Core backend to get our secure data from and a custom STS which we use for the authentication and the id token as well as an access token.
+This is a follow up post of Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2 so if you want to get into the complete setup you might give this blog post a shot first :-) We will build this one up on the app which was mentioned in the references blog post.</description>
+    </item>
+    
+    <item>
+      <title>Implement endless scroll with Angular, NgRx and ASP.NET Core WebAPI</title>
+      <link>https://offering.solutions/blog/articles/2020/04/10/implement-endless-scroll-with-angular-ngrx-and-asp.net-core-webapi/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/04/10/implement-endless-scroll-with-angular-ngrx-and-asp.net-core-webapi/</guid>
+      <description>In this blog post I want to show how you can implement an endless scroll feature with Angular, Ngrx and ASP.NET Core in the backend.
+All the code in the repository is only for demo purposes. It shows the concepts however and I hope you can use it in your apps!
+Code is here https://github.com/FabianGosebrink/angular-ngrx-endlessscroll
+Creating the ASP.NET Core backend For the backend we need an ASP.NET Core WebAPI returning a large array of Items in this case.</description>
+    </item>
+    
+    <item>
+      <title>Statemanagement in Angular with Ngrx Stores &amp; Effects Workshop</title>
+      <link>https://offering.solutions/talks/statemanagement-in-angular-with-ngrx-stores-effects-workshop-21/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/statemanagement-in-angular-with-ngrx-stores-effects-workshop-21/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Updating your angular app to NgRx 8</title>
+      <link>https://offering.solutions/blog/articles/2019/07/01/updating-your-angular-app-to-ngrx-8/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2019/07/01/updating-your-angular-app-to-ngrx-8/</guid>
+      <description>In this blog post I want to describe how I updated an Angular Project using ngrx to the latest version ngrx 8.
+Github: angular-ngrx-todo
+You can find the complete update commit here : angular-ngrx-todo update commit
+ Preparations Updating the actions Updating the effects Updating the reducer Updating the components  Preparations I started updating the project with update.angular.io and came to update the store with
+ng update @ngrx/store This will lift your version of @ngrx/store and @ngrx/effects to version 8</description>
+    </item>
+    
+    <item>
+      <title>State Management in Angular with Ngrx Stores and Effects</title>
+      <link>https://offering.solutions/talks/state-management-in-angular-with-ngrx-stores-and-effects-30/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/state-management-in-angular-with-ngrx-stores-and-effects-30/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Separating state into angular modules with ngrx</title>
+      <link>https://offering.solutions/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/</link>
+      <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/</guid>
+      <description>In this blog post I want to give you an explanation of the state tree of ngrx if you are working with a state and how to separate it into different modules.
+In this blog  One state for your entire application with forRoot(&amp;hellip;) Separating state into modules with forFeature(&amp;hellip;) Conclusion  If you are building smaller or large angular applications you will sooner or later face the problem to manage the state of your application.</description>
+    </item>
+    
+  </channel>
+</rss>

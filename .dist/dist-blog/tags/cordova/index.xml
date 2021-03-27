@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cordova on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/cordova/</link>
+    <description>Recent content in cordova on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/cordova/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cross Platform Apps with Cordova, Electron and Angular</title>
+      <link>https://offering.solutions/talks/cross-platform-apps-with-cordova-electron-and-angular-11/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/cross-platform-apps-with-cordova-electron-and-angular-11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Securing a Cordova App Implemented with Angular Using OIDC and OAuth2</title>
+      <link>https://offering.solutions/blog/articles/2020/09/17/securing-a-cordova-app-implemented-with-angular-using-oidc-and-oauth2/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2020/09/17/securing-a-cordova-app-implemented-with-angular-using-oidc-and-oauth2/</guid>
+      <description>In this blog post I want to explain how you can secure a Cordova app written in Angular with OIDC and OAuth2 using IdentityServer4 as the Secure Token Server. We will take a look at an Angular project created with the AngularCLI or the NxDevTools and then turn it into a Cordova app via the Cordova CLI to let it run on the mobile phone and set everything up that we can authenticate to get an identity token and an access token and navigate back to our app to consume a protected API.</description>
+    </item>
+    
+    <item>
+      <title>Mobile &amp; Desktop- Cross-Platform with Electron and Cordova</title>
+      <link>https://offering.solutions/talks/mobile-desktop-cross-platform-with-electron-and-cordova-22/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/mobile-desktop-cross-platform-with-electron-and-cordova-22/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile and Desktop Cross-Plattform with Electron Und Cordova - an Introduction</title>
+      <link>https://offering.solutions/talks/mobile-and-desktop-cross-plattform-with-electron-und-cordova-an-introduction-27/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/mobile-and-desktop-cross-plattform-with-electron-und-cordova-an-introduction-27/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creating Realtime Cross-Platform Applications with Angular, ASP.NET Core &amp; Signalr</title>
+      <link>https://offering.solutions/talks/creating-realtime-cross-platform-applications-with-angular-asp-net-core-signalr-28/</link>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/creating-realtime-cross-platform-applications-with-angular-asp-net-core-signalr-28/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Echte Cross-Plattform-Anwendungen Mit Cordova, Electron Und Angular</title>
+      <link>https://offering.solutions/talks/echte-cross-plattform-anwendungen-mit-cordova-electron-und-angular-32/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/talks/echte-cross-plattform-anwendungen-mit-cordova-electron-und-angular-32/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

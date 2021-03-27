@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>faceapi on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</title>
+    <link>https://offering.solutions/tags/faceapi/</link>
+    <description>Recent content in faceapi on Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/faceapi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Starting with Angular and Microsoft&#39;s Face Recognition API</title>
+      <link>https://offering.solutions/blog/articles/2018/04/23/starting-with-angular-and-microsofts-face-recognition-api/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://offering.solutions/blog/articles/2018/04/23/starting-with-angular-and-microsofts-face-recognition-api/</guid>
+      <description>In this blog post I want to give you a guidance to the first steps of starting with Microsoft&amp;rsquo;s Face Recognition API and using it with Angular and the Angular CLI.
+Preparation The first thing you need is a FaceAPI key which you can get here FaceAPI. You can login with your Microsoft, LinkedIn, GitHub or Facebook account to get one.
+Another useful links are:
+ Obtaining Subscription Keys Face API JavaScript Quickstarts Api Documentation - Face API - V1.</description>
+    </item>
+    
+  </channel>
+</rss>
