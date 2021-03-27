@@ -1,0 +1,17 @@
+ <div style="display: flex; justify-content: space-between">
+    <div style="align-self: flex-start">
+        {{ with .nextPage }}
+            {{ if eq $.categoryToShow $.currentCategory }}
+                <a href="{{ .RelPermalink }}" class="button">« {{ .Params.title  | truncate 40 "..."}} </a>
+            {{ end }}
+        {{ end }}
+    </div>
+
+      <div style="align-self: flex-end">
+        {{ with .previousPage }}
+            {{ if eq $.categoryToShow $.currentCategory }}
+                <a href="{{ .RelPermalink }}" class="button"> {{ .Params.title  | truncate 40 "..."}} » </a>
+            {{ end }}
+        {{ end }}
+    </div>
+</div>

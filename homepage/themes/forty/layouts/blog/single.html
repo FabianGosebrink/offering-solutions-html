@@ -57,6 +57,8 @@
           <div class="divider"></div>
           <div class="inner">
             {{ .Content }}
+
+            {{ partial "nextprevious.html" (dict "context" . "currentCategory" .Params.category "categoryToShow" "blog" "nextPage" .NextInSection "previousPage" .PrevInSection) }}
           </div>
         </section>
 

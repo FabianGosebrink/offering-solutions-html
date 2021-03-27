@@ -34,6 +34,10 @@
         <!-- One -->
         <section id="one">
           <div class="inner">
+            <h2>Event</h2>
+            <p>
+              {{ dateFormat "Monday, Jan 2, 2006" .Date }} - {{ if .Params.link }}<a href="{{.Params.link}}"> {{ .Params.event }}</a>{{ else }} {{ .Params.event }}{{ end }}
+            </p>
             <h2>Slides</h2>
            
             {{ if .Params.dataId }}
@@ -47,18 +51,24 @@
             {{ end }}
 
             {{if (not .Params.dataId) }}
-            {{ if ((not .Params.slides))}}
-              <p>
-                No slides available at present, please check again in the future.<br/>
-              </p>
+              {{ if ((not .Params.slides))}}
+                <p>
+                  No slides available at present, please check again in the future.<br/>
+                </p>
 
-              <p>
-                <a href="https://speakerdeck.com/fabiangosebrink/" target="_blank" class="button">See all slides</a>
-              </p>
+                <p>
+                  <a href="https://speakerdeck.com/fabiangosebrink/" target="_blank" class="button">See all slides</a>
+                </p>
 
+              {{end}}
             {{end}}
-            {{end}}
-          </div>
+
+
+				    {{ partial "nextprevious.html" (dict "context" . "currentCategory" .Params.category "categoryToShow" "talks" "nextPage" .NextInSection "previousPage" .PrevInSection) }}
+           
+          
+        </div>
+
         </section>
 				{{ partial "newsletter.html" . }}
       </div>
