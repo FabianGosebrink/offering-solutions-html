@@ -20,7 +20,7 @@
 		{{ end }}
 	{{ end }}
 	{{ if eq hugo.Environment "production" }}
-		{{ "<!-- inject-style src='.temp/css/all.min.css' -->" | safeHTML }}
+		{{ "<!-- inject-style src='./.temp/css/all.min.css' -->" | safeHTML }}
 	{{ end }}
 
 	<link rel="manifest" href="{{ .Site.Params.baseURLInternal }}manifest.webmanifest">

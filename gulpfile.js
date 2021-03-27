@@ -9,9 +9,9 @@ var stripCssComments = require('gulp-strip-css-comments');
 var buildConfig = require('./gulp.config');
 
 var buildWeb = series(
-  //webMinifyHtml,
   concatCssFiles,
-  webInjectCssInHtml
+  webInjectCssInHtml,
+  webMinifyHtml,
 );
 
 function concatCssFiles() {
