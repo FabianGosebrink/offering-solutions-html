@@ -6,18 +6,21 @@
 	<meta name="description" content="{{ if .Description }}{{ .Description | safeHTML }}{{ else }}{{ .Summary | safeHTML }}{{ end }}">
 	{{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
 	{{ hugo.Generator }}
-	{{ "<!-- Stylesheets -->" | safeHTML }}
-	<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="{{ .Site.Params.cdnbaseurl }}css/main.css"/>
-	<!--[if lte IE 9]><link rel="stylesheet" href="{{ "css/ie9.css" }}"/><![endif]-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="{{ "css/ie8.css" }}"/><![endif]-->
-	<link rel="manifest" href="{{ .Site.Params.baseURLInternal }}manifest.webmanifest">
-	{{ range .Site.Params.custom_css }}
-		<link rel="stylesheet" href="{{ $.Site.Params.cdnbaseurl }}{{ . }}">
-	{{ end }}
 
-	{{ "<!-- Custom Fonts -->" | safeHTML }}
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" type="text/css">
+	{{ "<!-- Stylesheets -->" | safeHTML }}
+	{{ if eq hugo.Environment "development" }}
+		<link rel="stylesheet" href="{{ .Site.Params.cdnbaseurl }}css/fontawesome-all.min.css"/>
+		<link rel="stylesheet" href="{{ .Site.Params.cdnbaseurl }}css/main.css"/>
+		
+		{{ range .Site.Params.custom_css }}
+			<link rel="stylesheet" href="{{ $.Site.Params.cdnbaseurl }}{{ . }}">
+		{{ end }}
+	{{ end }}
+	{{ if eq hugo.Environment "production" }}
+		{{ "<!-- inject-style src='.temp/css/all.min.css' -->" | safeHTML }}
+	{{ end }}
+	
+	<link rel="manifest" href="{{ .Site.Params.baseURLInternal }}manifest.webmanifest">
 
 	{{ with .Site.Params.favicon }}
 	<link rel="shortcut icon" type="image/x-icon" href="/{{ . }}">

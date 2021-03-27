@@ -9,6 +9,7 @@ module.exports = {
             './src/js/loadBlog.js'
         ],
         allCss: [
+            '.temp/css/fontawesome-all.min.css',
             '.temp/css/main.css',
             '.temp/css/custom.css',
             '.temp/css/scrolling.css',

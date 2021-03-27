@@ -1,16 +1,16 @@
- <div style="display: flex; justify-content: space-between">
-    <div style="align-self: flex-start">
+ <div class="nextprevious direction">
+    <div class="next">
         {{ with .nextPage }}
             {{ if eq $.categoryToShow $.currentCategory }}
-                <a href="{{ .RelPermalink }}" class="button">« {{ .Params.title  | truncate 40 "..."}} </a>
+                <a href="{{ .RelPermalink }}" class="button">« {{ .Params.title  | truncate 30 "..."}} </a>
             {{ end }}
         {{ end }}
     </div>
 
-      <div style="align-self: flex-end">
+    <div class="previous">
         {{ with .previousPage }}
             {{ if eq $.categoryToShow $.currentCategory }}
-                <a href="{{ .RelPermalink }}" class="button"> {{ .Params.title  | truncate 40 "..."}} » </a>
+                <a href="{{ .RelPermalink }}" class="button"> {{ .Params.title  | truncate 30 "..."}} » </a>
             {{ end }}
         {{ end }}
     </div>

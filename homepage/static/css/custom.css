@@ -372,3 +372,28 @@ ul.alt li.talk-item .talk-title {
     display: none;
   }
 }
+
+.nextprevious {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nextprevious.direction {
+  flex-direction: row;
+}
+
+.nextprevious.direction .next {
+  align-self: flex-start;
+}
+
+.nextprevious.direction .previous {
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 736px) {
+  .nextprevious.direction {
+    flex-direction: column;
+  }
+}

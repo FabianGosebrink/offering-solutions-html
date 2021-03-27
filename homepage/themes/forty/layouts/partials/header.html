@@ -11,14 +11,19 @@
 
 
 	{{ "<!-- Custom Fonts -->" | safeHTML }}
-	<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="{{ .Site.Params.cdnbaseurl }}css/main.css"/>
-	<!--[if lte IE 9]><link rel="stylesheet" href="{{ "css/ie9.css" }}"/><![endif]-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="{{ "css/ie8.css" }}"/><![endif]-->
-	<link rel="manifest" href="{{ .Site.Params.baseURLInternal }}manifest.webmanifest">
-	{{ range .Site.Params.custom_css }}
-		<link rel="stylesheet" href="{{ $.Site.Params.cdnbaseurl }}{{ . }}">
+	{{ if eq hugo.Environment "development" }}
+		<link rel="stylesheet" href="{{ .Site.Params.cdnbaseurl }}css/fontawesome-all.min.css"/>
+		<link rel="stylesheet" href="{{ .Site.Params.cdnbaseurl }}css/main.css"/>
+
+		{{ range .Site.Params.custom_css }}
+			<link rel="stylesheet" href="{{ $.Site.Params.cdnbaseurl }}{{ . }}">
+		{{ end }}
 	{{ end }}
+	{{ if eq hugo.Environment "production" }}
+		{{ "<!-- inject-style src='.temp/css/all.min.css' -->" | safeHTML }}
+	{{ end }}
+
+	<link rel="manifest" href="{{ .Site.Params.baseURLInternal }}manifest.webmanifest">
 
 	{{ with .Site.Params.favicon }}
 	<link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.baseURLInternal }}{{ . }}">
@@ -28,6 +33,8 @@
 	{{ range .AlternativeOutputFormats -}}
 		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{ end -}}
+
+
 
 	<!-- ios support -->
 	<link rel="apple-touch-icon" href="{{ .Site.Params.cdnbaseurl }}img/icon-72x72.png" />

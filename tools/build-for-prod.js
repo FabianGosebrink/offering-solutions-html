@@ -12,11 +12,7 @@ const distCdnFiles = [
         source: `${OUTPUT_TEMP_PATH}/js`,
         destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_CDN_PATH}`
     },
-     {
-        source: `${OUTPUT_TEMP_PATH}/css`,
-        destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_CDN_PATH}`
-    },
-     {
+    {
         source: `${OUTPUT_TEMP_PATH}/webfonts`,
         destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_CDN_PATH}`
     },
@@ -76,6 +72,10 @@ shell.echo('Deleted dist folders...');
 const buildCommand = `hugo --source=./homepage --destination=../${OUTPUT_TEMP_PATH}`;
 shell.exec(buildCommand);
 
+// MINIFY WITH GULP 
+const gulpBuildWebCommand = `gulp buildWeb`;
+shell.exec(gulpBuildWebCommand);
+
 // COPY DIST CDN
 shell.echo('Copy Dist CDN...');
 distCdnFiles.forEach(({source, destination}) => {
@@ -90,6 +90,3 @@ distBlogFiles.forEach(({source, destination}) => {
     shell.cp('-r', source, destination);
 })
 
-// MINIFY WITH GULP 
-const gulpMinifyCommand = `gulp buildWeb`;
-shell.exec(gulpMinifyCommand);
