@@ -3465,7 +3465,7 @@ body.is-preload #header.alt {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  background-image: url('../../img/banner.jpg');
+  background-image: url('https://cdn.offering.solutions/img/banner.jpg');
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
