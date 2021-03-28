@@ -16,11 +16,13 @@
 
 				{{ partial "logo-bar-1.html" . }}
 
-				{{ partial "newsletter.html" . }}
+				{{ partial "infotext.html" . }}
 				
 				{{ if .Site.Params.Tiles.enable }}
 					{{ partial "tile.html" . }}
 				{{ end }}
+
+				{{ partial "newsletter.html" . }}
 				
 				{{ partial "logo-bar-2.html" . }}
 

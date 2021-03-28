@@ -56,6 +56,10 @@ const distBlogFiles = [
         destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_BLOG_PATH}`
     },
      {
+        source: `${OUTPUT_TEMP_PATH}/development`,
+        destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_BLOG_PATH}`
+    },
+     {
         source: `${OUTPUT_TEMP_PATH}/*.*`,
         destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_BLOG_PATH}`
     }
