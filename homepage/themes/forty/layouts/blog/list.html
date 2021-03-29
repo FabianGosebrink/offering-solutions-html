@@ -28,7 +28,6 @@
         </section>
 
         <section id="two" class="spotlights">
-          {{ partial "newsletter.html" . }}
             <input
                         type="text"
                         name="blogsearch"
@@ -69,9 +68,10 @@
           </section>
           {{ end }}
         </section>
-       
       
         {{ partial "pagination.html" . }}
+
+        {{ partial "newsletter.html" . }}
       </div>
 
       {{ "<!-- Footer -->" | safeHTML}}
