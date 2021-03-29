@@ -135,7 +135,7 @@ disqusShortname = "offeringsolutions"
   [params.two]
     enable = true
     title = "Blog"
-    subtitle = "Latest articles about Angular and ASP.NET Core"
+    subtitle = "Latest articles about Angular and .NET Core"
     buttonText = "To the blog"
     url = "blog"
 
