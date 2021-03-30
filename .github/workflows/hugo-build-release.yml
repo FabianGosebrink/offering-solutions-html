@@ -40,6 +40,11 @@ jobs:
           name: my-artifact
           path: ${{ env.DIST_DIRECTORY }}/dist-blog/ # or path/to/artifact
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact-temp
+          path: .temp/ # or path/to/artifact
+
 
       # - name: 'Deploy Blog to Azure Web App'
       #   uses: azure/webapps-deploy@v2
