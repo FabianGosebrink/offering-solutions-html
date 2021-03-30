@@ -46,7 +46,7 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: my-artifact-temp
+          name: my-artifact-temp3
           path: .temp2/ # or path/to/artifact
 
 
