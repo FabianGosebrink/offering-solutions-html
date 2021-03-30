@@ -17,6 +17,7 @@ module.exports = {
     },
     targets: {
         distributionFolder: '.dist/',
+        root: '',
         tempFolder: '.temp/'
     }
 };

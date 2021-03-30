@@ -27,15 +27,15 @@ function webInjectCssInHtml() {
   return src(path.join(buildConfig.targets.tempFolder, '**/*.html'))
     .pipe(styleInject({
         encapsulated: false,
-        path: './.temp/css/'
+        path: path.join(buildConfig.targets.tempFolder, 'css')
     }))
-    .pipe(dest('./'));
+    .pipe(dest(path.join(buildConfig.targets.root)));
 }
 
 function webMinifyHtml() {
   return src(path.join(buildConfig.targets.tempFolder, '**/*.html'))
     .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
-    .pipe(dest('./'));
+    .pipe(dest(path.join(buildConfig.targets.root)));
 }
 
 
