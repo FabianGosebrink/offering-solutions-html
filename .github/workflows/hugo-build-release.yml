@@ -12,6 +12,7 @@ on:
 env:
   BASE_URL: https://offering.solutions/
   DIST_DIRECTORY: .dist
+  TEMP_DIRECTORY: .temp
 
 jobs:
   build-and-deploy:
@@ -33,12 +34,15 @@ jobs:
         run: sudo npm install
 
       - name: Building Hugo
-        run: sudo npm run build
+        run: sudo npm run build -- --destination=../${{ env.TEMP_DIRECTORY }}
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: ${{ env.DIST_DIRECTORY }}/dist-blog/ # or path/to/artifact
+      - name: Optimizing with gulp
+        run: sudo npm run post-build-gulp
+
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: my-artifact
+      #     path: ${{ env.DIST_DIRECTORY }}/dist-blog/ # or path/to/artifact
 
       - uses: actions/upload-artifact@v2
         with:
