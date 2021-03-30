@@ -47,7 +47,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: my-artifact-temp
-          path: 22222/.temp/ # or path/to/artifact
+          path: .temp2/ # or path/to/artifact
 
 
       # - name: 'Deploy Blog to Azure Web App'
