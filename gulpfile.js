@@ -25,7 +25,10 @@ function concatCssFiles() {
 
 function webInjectCssInHtml() {
   return src(path.join(buildConfig.targets.tempFolder, '**/*.html'))
-    .pipe(styleInject())
+    .pipe(styleInject({
+        encapsulated: false,
+        path: './.temp/css/'
+    }))
     .pipe(dest('./'));
 }
 

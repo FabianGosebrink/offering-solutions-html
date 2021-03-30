@@ -1,7 +1,7 @@
 # Site settings
 baseURL = "https://offering.solutions/"
 languageCode = "en-us"
-title = "Fabian Gosebrink Angular and ASP.NET Core Consulting, Training and Courses"
+title = "Fabian Gosebrink Angular and .NET Core Consulting, Training and Courses"
 theme = "forty"
 
 # Enter your tracking code to enable Google Analytics
@@ -20,7 +20,7 @@ disqusShortname = "offeringsolutions"
 
   # Provide your metadata here.
   name = "Fabian Gosebrink"
-  description = "Angular and ASP.NET Core Consulting, Training and Courses"
+  description = "Angular and .NET Core Consulting, Training and Courses"
   baseURLInternal = "/"
   # cdnbaseurl = "https://cdn.offering.solutions/"
   cdnbaseurl = "http://localhost:1313/"
@@ -101,19 +101,19 @@ disqusShortname = "offeringsolutions"
     
     [[params.tiles.showcase]]
       title = "Development"
-      subtitle = "Offering ASP.NET Core and Angular Development"
+      subtitle = "Offering .NET Core and Angular Development"
       image = "landing/development.jpg"
       url = "/development"
 
     [[params.tiles.showcase]]
       title = "Training & Coaching"
-      subtitle = "Get you and your team up and running in the latest web technologies with Angular, ASP.NET Core, Javascript and Typescript"
+      subtitle = "Get you and your team up and running in the latest web technologies with Angular, .NET Core, Javascript and Typescript"
       image = "landing/training.jpg"
       url = "/trainings"
 
     [[params.tiles.showcase]]
       title = "Consulting"
-      subtitle = "Latest info and Best Practices all around web technologies with Angular, ASP.NET Core, Javascript and Typescript"
+      subtitle = "Latest info and Best Practices all around web technologies with Angular, .NET Core, Javascript and Typescript"
       image = "landing/consulting.jpg"
       url = "#"
 
