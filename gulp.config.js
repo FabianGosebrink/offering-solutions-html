@@ -2,12 +2,6 @@
 
 module.exports = {
     vendor: {
-        allJs: [
-            './src/js/jquery.min.js',
-            './src/js/plugins.js',
-            './src/js/custom.js',
-            './src/js/loadBlog.js'
-        ],
         allCss: [
             '.temp/css/fontawesome-all.min.css',
             '.temp/css/main.css',
@@ -17,7 +11,7 @@ module.exports = {
     },
     targets: {
         distributionFolder: '.dist/',
-        root: '',
+        root: './',
         tempFolder: '.temp/'
     }
 };

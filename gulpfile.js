@@ -24,6 +24,7 @@ function concatCssFiles() {
 
 
 function webInjectCssInHtml() {
+  console.log("webMinifyHtml", path.join(buildConfig.targets.root))
   return src(path.join(buildConfig.targets.tempFolder, '**/*.html'))
     .pipe(styleInject({
         encapsulated: false,
@@ -33,6 +34,7 @@ function webInjectCssInHtml() {
 }
 
 function webMinifyHtml() {
+  console.log("webMinifyHtml", path.join(buildConfig.targets.root))
   return src(path.join(buildConfig.targets.tempFolder, '**/*.html'))
     .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
     .pipe(dest(path.join(buildConfig.targets.root)));
