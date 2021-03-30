@@ -24,34 +24,40 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - name: Setup Node.js 12
-      #   uses: actions/setup-node@v1
+      - name: Setup Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Installing Dependencies
+        run: sudo npm install
+
+      - name: Building Hugo
+        run: sudo npm run build
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: ${{ env.DIST_DIRECTORY }}/dist-blog/ # or path/to/artifact
+
+
+      # - name: 'Deploy Blog to Azure Web App'
+      #   uses: azure/webapps-deploy@v2
       #   with:
-      #     node-version: 12
+      #     app-name: offeringsolutions
+      #     publish-profile: ${{ secrets.AZURE_WEBAPP_OFFERING_SOLUTIONS_BLOG_SECRET }}
+      #     package: '${{ env.DIST_DIRECTORY }}/dist-blog'
 
-      # - name: Installing Dependencies
-      #   run: sudo npm install
+      # - name: Login via Az module
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: ${{secrets.AZURE_CDN_CREDENTIALS}}
+      #     enable-AzPSSession: true
 
-      # - name: Building Hugo
-      #   run: sudo npm run build
-
-      - name: 'Deploy Blog to Azure Web App'
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: offeringsolutions
-          publish-profile: ${{ secrets.AZURE_WEBAPP_OFFERING_SOLUTIONS_BLOG_SECRET }}
-          package: '${{ env.DIST_DIRECTORY }}/dist-blog'
-
-      - name: Login via Az module
-        uses: azure/login@v1
-        with:
-          creds: ${{secrets.AZURE_CDN_CREDENTIALS}}
-          enable-AzPSSession: true
-
-      - name: Reupload all blog items
-        uses: azure/CLI@v1
-        with:
-          azcliversion: 2.0.72
-          inlineScript: |
-            az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
-            az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.DIST_DIRECTORY }}/dist-cdn' --content-cache-control "public, max-age=31556952"
+      # - name: Reupload all blog items
+      #   uses: azure/CLI@v1
+      #   with:
+      #     azcliversion: 2.0.72
+      #     inlineScript: |
+      #       az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
+      #       az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.DIST_DIRECTORY }}/dist-cdn' --content-cache-control "public, max-age=31556952"
