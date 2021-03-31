@@ -17,7 +17,7 @@
 		{{ end }}
 	{{ end }}
 	{{ if eq hugo.Environment "production" }}
-		{{ "<!-- inject-style src='all.min.css' -->" | safeHTML }}
+		<style>{{ readFile "static/css/all.min.css" | safeCSS }}</style>
 	{{ end }}
 	
 	<link rel="manifest" href="{{ .Site.Params.baseURLInternal }}manifest.webmanifest">

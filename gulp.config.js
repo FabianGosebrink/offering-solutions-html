@@ -3,15 +3,15 @@
 module.exports = {
     vendor: {
         allCss: [
-            '.temp/css/fontawesome-all.min.css',
-            '.temp/css/main.css',
-            '.temp/css/custom.css',
-            '.temp/css/scrolling.css',
+            'homepage/themes/forty/static/css/fontawesome-all.min.css',
+            'homepage/themes/forty/static/css/main.css',
+            'homepage/static/css/custom.css',
+            'homepage/static/css/scrolling.css',
         ],
     },
     targets: {
         distributionFolder: '.dist/',
-        root: '.temp2/',
+        hugoFolder: 'homepage/static/',
         tempFolder: '.temp/'
     }
 };

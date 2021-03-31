@@ -10,8 +10,8 @@ var buildConfig = require('./gulp.config');
 
 var buildWeb = series(
   concatCssFiles,
-  webInjectCssInHtml,
-  webMinifyHtml,
+  // webInjectCssInHtml,
+  // webMinifyHtml,
 );
 
 function concatCssFiles() {
@@ -19,7 +19,7 @@ function concatCssFiles() {
     .pipe(stripCssComments({ preserve: false }))
     .pipe(concat('all.min.css'))
     .pipe(cssmin())
-    .pipe(dest(path.join(buildConfig.targets.tempFolder, 'css')));
+    .pipe(dest(path.join(buildConfig.targets.hugoFolder, 'css')));
 }
 
 

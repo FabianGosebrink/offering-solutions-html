@@ -34,21 +34,20 @@ jobs:
         run: sudo npm install
 
       - name: Building Hugo
-        run: sudo npm run build -- --destination=../${{ env.TEMP_DIRECTORY }}
+        run: sudo npm run build-prod
 
-      - name: Optimizing with gulp
-        run: sudo npm run post-build-gulp
-
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: my-artifact
-      #     path: ${{ env.DIST_DIRECTORY }}/dist-blog/ # or path/to/artifact
+      # - name: Optimizing with gulp
+      #   run: sudo npm run post-build-gulp
 
       - uses: actions/upload-artifact@v2
         with:
-          name: my-artifact-temp3
-          path: .temp2/ # or path/to/artifact
+          name: my-artifact-dist
+          path: ${{ env.DIST_DIRECTORY }}
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact-temp
+          path: ${{ env.TEMP_DIRECTORY }}
 
       # - name: 'Deploy Blog to Azure Web App'
       #   uses: azure/webapps-deploy@v2

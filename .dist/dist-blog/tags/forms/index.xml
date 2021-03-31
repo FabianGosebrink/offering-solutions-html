@@ -1,41 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>forms on Fabian Gosebrink Angular and .NET Core Consulting, Training and Courses</title>
-    <link>https://offering.solutions/tags/forms/</link>
-    <description>Recent content in forms on Fabian Gosebrink Angular and .NET Core Consulting, Training and Courses</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 19 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/forms/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Enrich Your Angular App with Angular Forms</title>
-      <link>https://offering.solutions/talks/enrich-your-angular-app-with-angular-forms-5/</link>
-      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://offering.solutions/talks/enrich-your-angular-app-with-angular-forms-5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Enrich Your Angular Apps with Angular Forms</title>
-      <link>https://offering.solutions/talks/enrich-your-angular-apps-with-angular-forms-12/</link>
-      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://offering.solutions/talks/enrich-your-angular-apps-with-angular-forms-12/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Working with Angular Template Forms</title>
-      <link>https://offering.solutions/blog/articles/2017/01/14/working-with-angular-template-forms/</link>
-      <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://offering.solutions/blog/articles/2017/01/14/working-with-angular-template-forms/</guid>
-      <description>In this blog I want explain and show you how to work with Angular&amp;rsquo;s template driven forms.
-The Problem I was recently giving an Angular course to awesome people and I noticed that working with Angular forms seems to be one of the most complicated things in Angular.
-The Situation We will start with an Angular application which has a structure like this:
-app├── app.component.ts├── app.component.html├── form.component.ts├── form.</description>
-    </item>
-    
-  </channel>
-</rss>

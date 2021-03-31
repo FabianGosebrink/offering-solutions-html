@@ -21,11 +21,13 @@
   "scripts": {
     "alex": "alex homepage/content/blog/*.md",
     "start": "cd ./homepage && hugo server -D --config config.dev.toml",
-    "build": "hugo --source=./homepage",
-    "post-build-gulp": "gulp buildWeb",
+    "build-prod": "npm run prepare-talks && npm run pre-build-gulp && npm run build-hugo && npm run copy-dist-blog-cdn",
+    "build-hugo": "hugo --source=./homepage --destination=../.temp --minify",
+    "pre-build-gulp": "gulp buildWeb",
     "prepare-talks": "npm run title-case && npm run convert-talks",
     "title-case": "tsc ./tools/title-case-converter.ts && node ./tools/title-case-converter.js",
-    "convert-talks": "tsc ./tools/convert-talks-json-to-md.ts && node ./tools/convert-talks-json-to-md.js"
+    "convert-talks": "tsc ./tools/convert-talks-json-to-md.ts && node ./tools/convert-talks-json-to-md.js",
+    "copy-dist-blog-cdn": "node ./tools/build-for-prod.js"
   },
   "repository": {
     "type": "git",

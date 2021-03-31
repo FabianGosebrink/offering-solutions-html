@@ -68,17 +68,17 @@ const distBlogFiles = [
 shell.echo('Start building site');
 
 // DELETE TEMP FOLDER
-shell.rm('-rf', `${OUTPUT_TEMP_PATH}`);
+// shell.rm('-rf', `${OUTPUT_TEMP_PATH}`);
 shell.rm('-rf', `${OUTPUT_DIST_PATH}`);
 shell.echo('Deleted dist folders...');
 
 // BUILD 
-const buildCommand = `hugo --source=./homepage --destination=../${OUTPUT_TEMP_PATH}`;
-shell.exec(buildCommand);
+// const buildCommand = `hugo --source=./homepage --destination=../${OUTPUT_TEMP_PATH}`;
+// shell.exec(buildCommand);
 
 // MINIFY WITH GULP 
-const gulpBuildWebCommand = `gulp buildWeb`;
-shell.exec(gulpBuildWebCommand);
+// const gulpBuildWebCommand = `gulp buildWeb`;
+// shell.exec(gulpBuildWebCommand);
 
 // COPY DIST CDN
 shell.echo('Copy Dist CDN...');

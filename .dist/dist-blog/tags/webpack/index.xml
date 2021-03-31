@@ -1,57 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>webpack on Fabian Gosebrink Angular and .NET Core Consulting, Training and Courses</title>
-    <link>https://offering.solutions/tags/webpack/</link>
-    <description>Recent content in webpack on Fabian Gosebrink Angular and .NET Core Consulting, Training and Courses</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 26 Feb 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://offering.solutions/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Moving your Angular application from SystemJS to Webpack</title>
-      <link>https://offering.solutions/blog/articles/2017/02/26/moving-your-angular-application-from-systemjs-to-webpack/</link>
-      <pubDate>Sun, 26 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://offering.solutions/blog/articles/2017/02/26/moving-your-angular-application-from-systemjs-to-webpack/</guid>
-      <description>In this blog post I want to show you how you can move from an existing Angular application using systemjs to an application with webpack.
-Imagine the following application.
-app├── // modules, components and so on├── app.component.ts├── app.component.html├── app.module.ts└── main.ts...systemjs.config.jstsconfig.jsontslint.json...Because we want to get away from systemjs here we will first introduce a webpack.config.js which holds your configuration and which can handle all you files and stuff.</description>
-    </item>
-    
-    <item>
-      <title>Angular Ahead Of Time (AoT) compilation, lazy loading and treeshaking with webpack</title>
-      <link>https://offering.solutions/blog/articles/2017/02/08/angular-ahead-of-time-aot-compilation-lazy-loading-and-treeshaking-with-webpack/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://offering.solutions/blog/articles/2017/02/08/angular-ahead-of-time-aot-compilation-lazy-loading-and-treeshaking-with-webpack/</guid>
-      <description>In this blog post I want to show you how to get Ahead Of Time compilation enabled with lazy loading in combination with webpack 2.
-Code Github - ASPNET-ASPNETCore-AngularJS-Angular
-The Router If you want to enable lazy loading in your application with aot you first have to configure your router to load the module lazy - when it gets requested. You can do that with the loadChildren-attribute.
-export const AppRoutes: Routes = [ // normal routes  { path: &amp;#39;food&amp;#39;, loadChildren: &amp;#39;.</description>
-    </item>
-    
-    <item>
-      <title>How to set up Angular and Webpack in Visual Studio with ASP.NET Core</title>
-      <link>https://offering.solutions/blog/articles/2016/08/27/how-to-set-up-angular-and-webpack-in-visual-studio-with-asp.net-core/</link>
-      <pubDate>Sat, 27 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://offering.solutions/blog/articles/2016/08/27/how-to-set-up-angular-and-webpack-in-visual-studio-with-asp.net-core/</guid>
-      <description>With this blog post I want to show an example of how to set up Angular and Webpack in Visual Studio with ASP.NET Core ready for dev and production builds.
- See also my latest article Angular Ahead Of Time (AoT) compilation, lazy loading and treeshaking with webpack
- If you read this until the end you will have a picture how to enable webpack and webpack-dev-server with npm and how to use webpack to bundle your angular application and inject files into index.</description>
-    </item>
-    
-    <item>
-      <title>Cross Platform Builds with Angular, Gulp and Webpack</title>
-      <link>https://offering.solutions/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/</link>
-      <pubDate>Fri, 17 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://offering.solutions/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/</guid>
-      <description>In this blog post I want to show how to create Cross Platform Builds with Angular, Gulp and Webpack
-WebpackGulpAngularCode can be found here: https://github.com/FabianGosebrink/Foodchooser-ASPNET-Angular-Cross-Platform
-Setting up the folder structure The folder structure is very important but also one of the most discussed in the internet I think ;). Mine looks like the following:
-Whereas &amp;ldquo;app&amp;rdquo; contains my Angular 2 application and the other files and folders speak for theirselves.</description>
-    </item>
-    
-  </channel>
-</rss>
