@@ -1,0 +1,30 @@
+<div class="counter-wrapper">
+    <div id="projectFacts" class="sectionClass">
+        <div class="fullWidth">
+            <div class="projectFactsWrap ">
+                 <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;">
+                    <i class="fa fa-briefcase"></i>
+                    <p id="number1" class="number">115</p>
+                    <span></span>
+                    <p>Projects</p>
+                </div>
+                {{$list := (where .Site.Pages "Params.category" "talks")}}
+                {{$len := (len $list)}}
+                <div class="item wow fadeInUpBig animated animated" data-number="55" style="visibility: visible;">
+                    <i class="fas fa-microphone"></i>
+                    <p id="number2" class="number">{{$len}}</p>
+                    <span></span>
+                    <p>Conferences</p>
+                </div>
+                {{$list := (where .Site.Pages "Params.category" "blog")}}
+                {{$len := (len $list)}}
+                <div class="item wow fadeInUpBig animated animated" data-number="246" style="visibility: visible;">
+                    <i class="fas fa-pencil-alt"></i>
+                    <p id="number4" class="number">{{$len}}</p>
+                    <span></span>
+                    <p>Blogs & Articles</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

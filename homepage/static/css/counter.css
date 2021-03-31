@@ -1,0 +1,105 @@
+.counter-wrapper {
+  width: 100%;
+  min-height: 10rem;
+  padding: 0;
+}
+
+.sectionClass {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.fullWidth {
+  width: 100% !important;
+  display: table;
+  float: none;
+  padding: 0;
+  min-height: 1px;
+  height: 100%;
+  position: relative;
+}
+
+.sectiontitle {
+  background-position: center;
+  margin: 30px 0 0px;
+  text-align: center;
+  min-height: 20px;
+}
+
+.sectiontitle h2 {
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.headerLine {
+  width: 160px;
+  height: 2px;
+  display: inline-block;
+  background: #101f2e;
+}
+
+.projectFactsWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#projectFacts .fullWidth {
+  padding: 0;
+}
+
+.projectFactsWrap .item {
+  width: 33%;
+  padding: 50px 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.projectFactsWrap .item p.number {
+  font-size: 40px;
+  padding: 0;
+  font-weight: bold;
+}
+
+.projectFactsWrap .item p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 28px;
+  margin: 0;
+  padding: 10px;
+}
+
+.projectFactsWrap .item span {
+  width: 60px;
+  background: rgba(255, 255, 255, 0.8);
+  height: 2px;
+  display: block;
+  margin: 0 auto;
+}
+
+.projectFactsWrap .item i {
+  vertical-align: middle;
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.projectFactsWrap .item:hover i,
+.projectFactsWrap .item:hover p {
+  color: white;
+}
+
+.projectFactsWrap .item:hover span {
+  background: white;
+}
+
+@media (max-width: 786px) {
+  .projectFactsWrap .item {
+    flex: 0 0 50%;
+  }
+}
