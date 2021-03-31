@@ -392,6 +392,11 @@ ul.alt li.talk-item .talk-title {
   align-self: flex-end;
 }
 
+img[src$='responsive'] {
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 736px) {
   .nextprevious.direction {
     flex-direction: column;

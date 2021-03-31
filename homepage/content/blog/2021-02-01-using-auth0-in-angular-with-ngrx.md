@@ -13,7 +13,7 @@ We are going to look how you can place authentication with Auth0 in an Angular a
 
 However, let us start.
 
-![Login Logout in the sample app](https://cdn.offering.solutions/img/articles/2021-02-03/login-logout.gif)
+![Login Logout in the sample app](https://cdn.offering.solutions/img/articles/2021-02-03/login-logout.gif#responsive)
 
 Code can be found here [https://github.com/FabianGosebrink/auth0-angular-ngrx/](https://github.com/FabianGosebrink/auth0-angular-ngrx/)
 
@@ -37,11 +37,11 @@ Before we start we should add our new Angular app in the portal of [Auth0](https
 
 First create an account and add your application in the dashboard of Auth0. Be sure to select `Single page Web Application` as we are doing an Angular app next.
 
-![Auth0 creating a single page app](https://cdn.offering.solutions/img/articles/2021-02-03/auth0-app.jpg)
+![Auth0 creating a single page app](https://cdn.offering.solutions/img/articles/2021-02-03/auth0-app.jpg#responsive)
 
 Once this is created and we know that our Angular app will run on the domain `http(s)://localhost:4200` locally be sure to add these urls into the correct fields of Auth0. I am adding both, http and https, here. in case that that I switch to https I do not have to get that entries changed again.
 
-![Auth0 adding all domains](https://cdn.offering.solutions/img/articles/2021-02-03/allowed-urls.jpg)
+![Auth0 adding all domains](https://cdn.offering.solutions/img/articles/2021-02-03/allowed-urls.jpg#responsive)
 
 On the same page where we add the allowed urls on top there is a chapter for the `Basic Information`. We need the values `ClientId` and `Domain` from there and place it in our Angular application next.
 
