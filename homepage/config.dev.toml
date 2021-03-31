@@ -3,7 +3,6 @@ baseURL = "https://offering.solutions/"
 languageCode = "en-us"
 title = "Fabian Gosebrink Angular and .NET Core Consulting, Training and Courses"
 theme = "forty"
-assetDir = "static"
 
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""

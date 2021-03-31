@@ -2,3 +2,4 @@ backups/
 /homepage/public
 /node_modules/
 .temp
+.dist

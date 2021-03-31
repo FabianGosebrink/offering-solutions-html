@@ -7,10 +7,12 @@
             {{ end }}
         </ul>
         <ul class="copyright">
-            <li>&copy; {{ .Site.Params.Footer.copyright }}</li>
+            <li>&copy; {{ now.Format "2006"}} {{ .Site.Params.Footer.copyright }}</li>
             {{ range .Site.Params.Footer.quicklinks}}
                 <li>{{ .text }} <a href="{{ .url | safeHTML }}">{{ .alt }}</a></li>
             {{ end }}
+            <li>Last modified at {{ now.Format "2006-01-02 15:04" }}</li>
         </ul>
+        <ul></ul>
     </div>
 </footer>
