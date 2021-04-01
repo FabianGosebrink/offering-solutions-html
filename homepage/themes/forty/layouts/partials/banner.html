@@ -8,11 +8,11 @@
       <p>{{ .Site.Params.Banner.subtitle }}</p>
     </div>
     <div class="content">
-      <p>{{ .Site.Params.Banner.subtitle2 }}</p>
+      <p>{{ .Site.Params.Banner.subtitle2 }}<br/>{{ .Site.Params.Banner.questionText }}</p>
     </div>
-    
     <ul class="actions">
-      <li><a href="#one" class="button scrolly">{{ .Site.Params.Banner.buttonText }}</a></li>
+      <li><a href="#one" class="button scrolly"><i class="fas fa-briefcase"></i> {{ .Site.Params.Banner.buttonText }}</a></li>
+      <li><a href="#contact" class="button scrolly"><i class="far fa-envelope"></i> {{ .Site.Params.Banner.buttonText2 }}</a></li>
     </ul>
   </div>
 </section>
