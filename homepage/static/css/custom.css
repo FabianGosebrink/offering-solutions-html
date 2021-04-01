@@ -170,7 +170,13 @@ body {
   font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: 0.25em;
-  text-transform: uppercase;
+}
+
+#banner > .inner .content p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 3rem;
 }
 
 header.major-no-line > :first-child:after {
@@ -215,13 +221,6 @@ header.major-no-line > :first-child:after {
   border-bottom: 1px dotted gray;
   margin-left: auto;
   margin-right: auto;
-}
-
-#banner > .inner .content p {
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
 }
 
 .responsive {
