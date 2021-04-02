@@ -117,13 +117,13 @@ disqusShortname = "offeringsolutions"
       title = "Consulting"
       subtitle = "Latest info and Best Practices all around web technologies with Angular, .NET Core, Javascript and Typescript"
       image = "landing/consulting.jpg"
-      url = "#"
+      url = "/consulting"
 
     [[params.tiles.showcase]]
       title = "Code Review"
       subtitle = "Let us discuss and talk about code..."
       image = "landing/review.jpg"
-      url = "#"
+      url = "/review"
     # You can make more showcases by copy and pasting the code above
 
   [params.blog]

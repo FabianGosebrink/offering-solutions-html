@@ -47,11 +47,19 @@ const distBlogFiles = [
         source: `${OUTPUT_TEMP_PATH}/newsletter`,
         destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_BLOG_PATH}`
     },
-     {
+    {
         source: `${OUTPUT_TEMP_PATH}/trainings`,
         destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_BLOG_PATH}`
     },
-     {
+    {
+        source: `${OUTPUT_TEMP_PATH}/consulting`,
+        destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_BLOG_PATH}`
+    },
+    {
+        source: `${OUTPUT_TEMP_PATH}/review`,
+        destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_BLOG_PATH}`
+    },
+    {
         source: `${OUTPUT_TEMP_PATH}/impressum`,
         destination: `${OUTPUT_DIST_PATH}/${OUTPUT_DIST_BLOG_PATH}`
     },

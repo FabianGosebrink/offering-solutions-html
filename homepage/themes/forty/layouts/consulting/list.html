@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  {{ "<!-- Header -->" | safeHTML }}
+  {{ partial "header.html" . }}
+
+  <body>
+    {{ "<!-- Wrapper -->" | safeHTML }}
+    <div id="wrapper">
+      {{ partial "nav.html" . }}
+
+      {{ "<!-- Main -->" | safeHTML }}
+      <div id="main">
+        <section id="banner" class="style2">
+          <div class="inner">
+            {{ if .Params.image }}
+            <span class="image">
+              <img
+                src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}"
+                alt="defaultListImage"
+              />
+            </span>
+            {{ end }}
+            <header class="major">
+              <h1>{{ .Title }}</h1>
+            </header>
+            <div class="content">{{ .Content }}</div>
+          </div>
+        </section>
+
+          <section id="one">
+
+          <div class="inner">
+            <h1>Angular & .NET Core Consulting</h1>
+
+            <p>If you are interested in our service, drop us a line below</p>
+            <hr class="major" />
+
+            {{ partial "contact-full-width.html" . }}
+          </div>
+        
+
+        </section>
+       
+      
+      </div>
+
+      {{ "<!-- Footer -->" | safeHTML}}
+      {{ if .Site.Params.footer.enable }}
+      {{ partial "footer.html" . }}
+      {{ end }}
+    </div>
+
+    {{ "<!-- Scripts -->" | safeHTML}}
+    {{ partial "js.html" . }}
+  </body>
+</html>
