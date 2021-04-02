@@ -400,4 +400,12 @@ img[src$='responsive'] {
   .nextprevious.direction {
     flex-direction: column;
   }
+
+  #banner > .inner .actions {
+    margin-bottom: 70px;
+  }
+
+  #banner > .inner .actions a {
+    margin: 5px;
+  }
 }
