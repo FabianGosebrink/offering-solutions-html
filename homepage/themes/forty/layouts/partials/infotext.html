@@ -11,7 +11,7 @@
         your team, we help you with the technical challenges of your project.
     </p>
 
-     <header class="major">
+    <header class="major">
       <h2>Our Technologies</h2>
     </header>
     <p>We work in the area of web development with Google's Angular Framework as well as with .NET Core and Entity Framework solutions, 
@@ -20,12 +20,13 @@
         .NET Core backend up to Continuous Integration and Continuous Delivery with Azure Devops or Github Actions we support you 
         in implementing your ideas up to the final product.
     </p>
-     <a
-        href="{{ .Site.Params.baseURLInternal }}{{ .Site.Params.Trainings.url }}"
-        class="button"
-        ><i class="fas fa-chalkboard-teacher"></i> {{ .Site.Params.Trainings.buttonText }}</a
-      >
+     <div class="actions">
+      <a
+          href="{{ .Site.Params.baseURLInternal }}{{ .Site.Params.Trainings.url }}"
+          class="button"
+          ><i class="fas fa-chalkboard-teacher"></i> {{ .Site.Params.Trainings.buttonText }}</a
+        >
+        <a href="#one" class="button"><i class="fas fa-briefcase"></i> {{ .Site.Params.Trainings.buttonText2 }}</a>
+      </div>
   </div>
-
- 
 </section>

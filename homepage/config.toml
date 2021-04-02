@@ -144,6 +144,7 @@ disqusShortname = "offeringsolutions"
   [params.trainings]
     enable = true
     buttonText = "To the workshops"
+    buttonText2 = "See our services"
     url = "trainings"
 
   # Contact section
