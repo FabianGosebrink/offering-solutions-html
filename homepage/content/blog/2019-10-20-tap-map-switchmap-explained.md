@@ -9,6 +9,8 @@ image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 With this article I want to briefly and shortly describe the differences between the rxjs operators `tap`, `map` and `switchMap`.
 
+You may also want to have a look at the blog ([switchMap, mergeMap, concatMap & exhaustMap explained](/blog/articles/2021/03/08/switchmap-mergemap-concatmap-exhaustmap-explained/))
+
 There are many blog posts out there which cover those topics already but maybe this helps to understand if the other posts did not help until here :)
 
 Let us start and first create an observable of an array with `from()`
@@ -34,7 +36,7 @@ Let us get to the first operator.
 
 ## Tap
 
-The first one is the `tap` operator and it is used for side effects inside a stream. So this operator can be used to do something inside a stream and returning the same observable as it was used on. It runs a method to emit a plain isolated side effect.
+The first one is the `tap` operator ([docs](https://rxjs.dev/api/operators/tap)) and it is used for side effects inside a stream. So this operator can be used to do something inside a stream and returning the same observable as it was used on. It runs a method to emit a plain isolated side effect.
 
 ```js
 import { from } from "rxjs";
@@ -71,7 +73,7 @@ So the `tap` operator does run the callback for each item it is used on, is used
 
 ## Map
 
-Let us move on and try another operator. Let us take `map` instead of `tap` now.
+Let us move on and try another operator. Let us take `map` ([docs](https://rxjs.dev/api/operators/map)) instead of `tap` now.
 
 So we can take the same situation now and instead of `tap` we use the `map` operator. The code sample looks like this now:
 
@@ -94,7 +96,7 @@ So to manipulate the items in the stream the `map` operator is your friend.
 
 ## SwitchMap
 
-So there is the `switchMap` operator left. I personally needed a little time to get my head around this and I hope to clarify things here now. 😊
+So there is the `switchMap` ([docs](https://rxjs.dev/api/operators/switchMap)) operator left. I personally needed a little time to get my head around this and I hope to clarify things here now. 😊
 
 So let us took a look again at the `map` operator.
 
