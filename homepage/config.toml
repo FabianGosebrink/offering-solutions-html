@@ -90,10 +90,10 @@ disqusShortname = "offeringsolutions"
     # the 'static/img' folder.
     title = "In-Depth Angular, .NET Core & Azure"
     subtitle = "Offering Solutions Software"
-    subtitle2 = "We help you to be successful with Angular and .NET."
-    questionText = "Can we help you too?"
-    buttonText = "See our Services"
-    buttonText2 = "Get in Contact"
+    subtitle2 = "Wir unterstützen im Bereich Angular und .NET Core."
+    questionText = "Können wir auch Ihnen helfen?"
+    buttonText = "Unsere Services"
+    buttonText2 = "Kontakt"
 
 
   # Tiles Section
@@ -144,8 +144,17 @@ disqusShortname = "offeringsolutions"
   [params.trainings]
     enable = true
     buttonText = "Zu den Workshops & Trainings"
-    buttonText2 = "Unsere services"
+    buttonText2 = "Unsere Services"
     url = "trainings"
+    detailText = "Alle Schulungen und Workshops sind Hands-on-Workshops mit professioneller persönlicher Betreuung, Live-Coding und Beispielen auf Folien und live am PC."
+    detailButtonText = "Details"
+
+    headlineAngular = "Angular Trainings"
+
+ [params.newsletter]
+    headline = "Abonnieren Sie unseren Newsletter"
+    subHeadline = "Kein Spam. Versprochen."
+    buttonText = "Abonieren"
 
   # Contact section
   [params.contact]
@@ -178,7 +187,7 @@ disqusShortname = "offeringsolutions"
     phone = "(000) 000-0000 x1234"
 
     [[params.contact.address]]
-    title = "Address"
+    title = "Adresse"
     name = "Offering Solutions Software GmbH"
     street = "Kesselhaldenstrasse 72"
     city = "9016 Sankt Gallen"

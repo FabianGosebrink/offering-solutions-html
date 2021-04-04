@@ -32,10 +32,10 @@
 
           <div class="inner">
             <header class="major">
-              <h1>Angular Trainings</h1>
+              <h1>{{ .Site.Params.trainings.headlineAngular }}</h1>
             </header>
 
-            <p>All trainings and workshops are hands on workshops with professional personal support, live coding and examples on slides and live on the PC.</p>
+            <p>{{ .Site.Params.trainings.detailText }}</p>
 
             <!-- Content -->
               <div class="row">
@@ -49,7 +49,7 @@
                   <span class="image fit"><a href="{{ .RelPermalink }}"><img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" alt="{{ .Title }}" /></a></span>
                   <p>{{ .Description | safeHTML | truncate 170}}</p>
                   <ul class="actions">
-                    <li><a href="{{ .RelPermalink }}" class="button">See Details</a></li>
+                    <li><a href="{{ .RelPermalink }}" class="button">{{ .Site.Params.trainings.detailButtonText }}</a></li>
                   </ul>
                 </div>
                 {{ end }}

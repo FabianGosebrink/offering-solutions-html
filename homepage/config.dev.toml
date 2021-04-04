@@ -144,8 +144,17 @@ disqusShortname = "offeringsolutions"
   [params.trainings]
     enable = true
     buttonText = "Zu den Workshops & Trainings"
-    buttonText2 = "Unsere services"
+    buttonText2 = "Unsere Services"
     url = "trainings"
+    detailText = "Alle Schulungen und Workshops sind Hands-on-Workshops mit professioneller persönlicher Betreuung, Live-Coding und Beispielen auf Folien und live am PC."
+    detailButtonText = "Details"
+
+    headlineAngular = "Angular Trainings"
+
+ [params.newsletter]
+    headline = "Abonnieren Sie unseren Newsletter"
+    subHeadline = "Kein Spam. Versprochen."
+    buttonText = "Abonieren"
 
   # Contact section
   [params.contact]

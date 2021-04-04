@@ -6,4 +6,4 @@ draft: false
 category: noblog
 ---
 
-Sign up for the newsletter. No Spam. Just new articles and announcements.
+Melden Sie sich beim Newsletter an. Kein Spam. Ausschliesslich die neusten Artikel und Ankündigungen.

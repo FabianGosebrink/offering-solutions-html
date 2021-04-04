@@ -7,4 +7,4 @@ draft: false
 category: none
 ---
 
-Check out our Angular and .NET Core Trainings and workshops
+Alle Trainings und Workshops On-Site oder Remote.
