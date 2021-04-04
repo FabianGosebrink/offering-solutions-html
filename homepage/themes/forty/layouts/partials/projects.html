@@ -18,7 +18,7 @@
         <span class="image fit"><a href="{{ .RelPermalink }}"><img src="{{ .Site.Params.cdnbaseurl }}img/{{ .Params.image }}" alt="" /></a></span>
         <p>{{ .Description | safeHTML | truncate 170}}</p>
         <ul class="actions">
-          <li><a href="{{ .RelPermalink }}" class="button">See Details</a></li>
+          <li><a href="{{ .RelPermalink }}" class="button">{{ .Site.Params.projects.detailButtonText }}</a></li>
         </ul>
       </div>
       {{ end }} 

@@ -151,10 +151,13 @@ disqusShortname = "offeringsolutions"
 
     headlineAngular = "Angular Trainings"
 
- [params.newsletter]
+  [params.newsletter]
     headline = "Abonnieren Sie unseren Newsletter"
     subHeadline = "Kein Spam. Versprochen."
     buttonText = "Abonieren"
+
+  [params.projects]
+    detailButtonText = "Details"
 
   # Contact section
   [params.contact]
@@ -257,4 +260,3 @@ disqusShortname = "offeringsolutions"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-
