@@ -37,7 +37,7 @@
         <section id="one">
           <div class="center">
             <span
-              class="image pluralsight-logo"
+              class="image pluralsight-logo "
               title="Check out my pluralsight courses"
             >
               <a
@@ -58,9 +58,22 @@
           <div class="inner">
             {{ .Content }}
 
+            <div class="divider mb-3"></div>
+
+            <h2>Other blogposts</h2>
+            <ul>
+               {{ range first 5 (shuffle (where (where .Site.Pages "Params.category" "blog") "Title" "!=" .Title )) }}
+                  <li><a href="{{ .RelPermalink }}">{{.Title}}</a></li>
+              {{end}}
+            </ul>
+
             {{ partial "nextprevious.html" (dict "context" . "currentCategory" .Params.category "categoryToShow" "blog" "nextPage" .NextInSection "previousPage" .PrevInSection) }}
+            
+           
           </div>
         </section>
+
+       
 
 				{{ partial "newsletter.html" . }}
         
