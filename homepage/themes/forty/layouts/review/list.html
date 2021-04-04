@@ -30,9 +30,9 @@
           <section id="one">
 
           <div class="inner">
-            <h1>Code Review</h1>
+            <h1>{{.Title}}</h1>
 
-            <p>If you are interested in our service, drop us a line below</p>
+            <p>{{ .Params.subtitle}}</p>
             <hr class="major" />
 
             {{ partial "contact-full-width.html" . }}

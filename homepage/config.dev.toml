@@ -88,12 +88,12 @@ disqusShortname = "offeringsolutions"
   [params.banner]
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
-    title = "Angular, .NET Core & Azure"
+    title = "In-Depth Angular, .NET Core & Azure"
     subtitle = "Offering Solutions Software"
-    subtitle2 = "We help you to be successful with Angular and .NET."
-    questionText = "Can we help you too?"
-    buttonText = "See our Services"
-    buttonText2 = "Get in Contact"
+    subtitle2 = "Wir unterstützen im Bereich Angular und .NET Core."
+    questionText = "Können wir auch Ihnen helfen?"
+    buttonText = "Unsere Services"
+    buttonText2 = "Kontakt"
 
 
   # Tiles Section
@@ -102,26 +102,26 @@ disqusShortname = "offeringsolutions"
     # Display your showcases here.
     
     [[params.tiles.showcase]]
-      title = "Development"
-      subtitle = "Offering .NET Core and Angular Development"
+      title = "Entwicklung"
+      subtitle = "Wir helfen Ihnen & ihrem Team bei der Entwickung von Angular und .NET Core, Javascript and Typescript"
       image = "landing/development.jpg"
       url = "/development"
 
     [[params.tiles.showcase]]
       title = "Training & Coaching"
-      subtitle = "Get you and your team up and running in the latest web technologies with Angular, .NET Core, Javascript and Typescript"
+      subtitle = "In-Depth Trainings und Coaching helfen bei den neusten Trends und Best Practices mit Angular, .NET Core, Javascript and Typescript"
       image = "landing/training.jpg"
       url = "/trainings"
 
     [[params.tiles.showcase]]
       title = "Consulting"
-      subtitle = "Latest info and Best Practices all around web technologies with Angular, .NET Core, Javascript and Typescript"
+      subtitle = "WIr beraten Sie gerne bei bestehenden oder zukünftigen Web-Projekten"
       image = "landing/consulting.jpg"
       url = "/consulting"
 
     [[params.tiles.showcase]]
       title = "Code Review"
-      subtitle = "Let us discuss and talk about code..."
+      subtitle = "Wir assistieren gern beim Review von bestehendem Code um ihn zukunftssicher zu gestalten."
       image = "landing/review.jpg"
       url = "/review"
     # You can make more showcases by copy and pasting the code above
@@ -137,21 +137,21 @@ disqusShortname = "offeringsolutions"
   [params.two]
     enable = true
     title = "Blog"
-    subtitle = "Latest articles about Angular and .NET Core"
-    buttonText = "To the blog"
+    subtitle = "Das neuste über Angular und .NET Core"
+    buttonText = "Zum Blog"
     url = "blog"
 
   [params.trainings]
     enable = true
-    buttonText = "To the workshops"
-    buttonText2 = "See our services"
+    buttonText = "Zu den Workshops & Trainings"
+    buttonText2 = "Unsere services"
     url = "trainings"
 
   # Contact section
   [params.contact]
     enable = true
-    buttonSend = "Send message"
-    buttonClear = "Clear"
+    buttonSend = "Nachricht senden"
+    buttonClear = "Zurücksetzen"
 
     # Since this template is static, the contact form uses www.formspree.io as a
     # proxy. The form makes a POST request to their servers to send the actual
@@ -178,7 +178,7 @@ disqusShortname = "offeringsolutions"
     phone = "(000) 000-0000 x1234"
 
     [[params.contact.address]]
-    title = "Address"
+    title = "Adresse"
     name = "Offering Solutions Software GmbH"
     street = "Kesselhaldenstrasse 72"
     city = "9016 Sankt Gallen"
