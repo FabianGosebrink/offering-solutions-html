@@ -7,7 +7,7 @@
                     <h3>{{ .Site.Params.newsletter.subHeadline }}</h3>
                     <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
                     <div class="mc-field-group">
-                        <label for="mce-EMAIL">Email Adresse  <span class="asterisk">*</span>
+                        <label for="mce-EMAIL">{{ .Site.Params.newsletter.fieldDescription }}<span class="asterisk">*</span>
                     </label>
                         <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>

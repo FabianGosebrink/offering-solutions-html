@@ -40,15 +40,15 @@
           <div class="contact-method">
             <span class="icon solid alt fa-envelope"></span>
             {{ range .Site.Params.Contact.email }}
-            <h3>{{ .title }}</h3>
-            <a href="mailto:{{ .email }}">{{ .email }}</a>
+              <h3>{{ .title }}</h3>
+              <a href="mailto:{{ .email }}">{{ .email }}</a>
             {{ end }}
           </div>
         </section>
         <section>
           <div class="contact-method">
             <span class="icon solid alt fa fa-home"></span>
-            <h3>Address</h3>
+            <h3>{{.Site.Params.Contact.addressTitle}}</h3>
             {{ range .Site.Params.Contact.address }}
             <span
               >{{ .name }}<br />{{ .street }}<br />{{ .city }}<br />{{ .country }}</span

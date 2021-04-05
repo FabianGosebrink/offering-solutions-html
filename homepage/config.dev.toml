@@ -154,14 +154,38 @@ disqusShortname = "offeringsolutions"
   [params.newsletter]
     headline = "Abonnieren Sie unseren Newsletter"
     subHeadline = "Kein Spam. Versprochen."
-    buttonText = "Abonieren"
+    buttonText = "Abonnieren"
+    fieldDescription = "E-Mail"
 
   [params.projects]
     detailButtonText = "Details"
 
+  [params.counter]
+    projectTitle = "Projekte"
+    conferencesTitle = "Konferenzen"
+    blogsArticlesTitle = "Blogs & Artikel"
+
+  [params.imageline1]
+    title = "Interessiert mit uns zu arbeiten?"
+    buttonText = "Kontakt"
+
+  [params.infoText]
+    title = "Interessiert mit uns zu arbeiten?"
+    buttonText = "Kontakt"
+
+    [[params.infoText.textPart]]
+    title = "Was wir tun"
+    content = "Wir helfen Software-Entwicklern zu Beginn oder während laufender Projekte mit Coaching, Entwicklung oder mit Reviews, um das ein Projekt erfolgreich zu meistern. Mit jahrelanger Erfahrung, Workshops vor Ort, maßgeschneiderten Schulungen, Beratung und Entwicklung mit Ihrem Team, unterstützen wir Sie bei den technischen Herausforderungen Ihres Projekts."
+   
+    [[params.infoText.textPart]]
+    title = "Unsere Technologien"
+    content = "Wir arbeiten im Bereich der Webentwicklung sowohl mit Googles Angular-Framework als auch mit .NET Core und Entity Framework Lösungen, die auch auf Azure gehostet werden können. Vom Start der Angular-Anwendung mit komponentenbasierter Architektur über Monorepositories mit Bibliotheken und clientseitiger Architektur in NX oder AngularCLI-Workspaces mit einer Kommunikation zu Ihrem .NET Core Backend bis hin zu Continuous Integration und Continuous Delivery mit Azure Devops oder Github-Actions unterstützen wir Sie bei der Umsetzung Ihrer Ideen bis hin zum finalen Produkt."
+
+
   # Contact section
   [params.contact]
     enable = true
+    addressTitle = "Adresse"
     buttonSend = "Nachricht senden"
     buttonClear = "Zurücksetzen"
 
@@ -182,7 +206,7 @@ disqusShortname = "offeringsolutions"
     # You can add multiple emails, phone numbers, or addresses
     # by copying the corresponding map with frontmatter code.
     [[params.contact.email]]
-    title = "Email"
+    title = "E-Mail"
     email = "mail@offering.solutions"
 
     [[params.contact.phone]]
@@ -190,7 +214,6 @@ disqusShortname = "offeringsolutions"
     phone = "(000) 000-0000 x1234"
 
     [[params.contact.address]]
-    title = "Adresse"
     name = "Offering Solutions Software GmbH"
     street = "Kesselhaldenstrasse 72"
     city = "9016 Sankt Gallen"

@@ -1,7 +1,7 @@
 {{ if gt .ReadingTime 1 }}
-{{ .Scratch.Set "readingTime" "minutes" }}
+    {{ .Scratch.Set "readingTime" "minutes" }}
 {{ else }}
-{{ .Scratch.Set "readingTime" "minute" }}
+    {{ .Scratch.Set "readingTime" "minute" }}
 {{ end }}
 
 <p>Reading time: {{ .ReadingTime }} {{ .Scratch.Get "readingTime" }}</p>

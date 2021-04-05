@@ -1,32 +1,20 @@
-
-
-{{ "<!-- Two -->" | safeHTML}}
 <section id="two">
   <div class="inner">
-     <header class="major">
-      <h2>Was wir tun</h2>
-    </header>
-    <p>Wir helfen Software-Entwicklern zu Beginn oder während laufender Projekte mit Coaching, Entwicklung oder mit Reviews, um das 
-        ein Projekt erfolgreich zu meistern. Mit jahrelanger Erfahrung, Workshops vor Ort, maßgeschneiderten Schulungen, Beratung und Entwicklung mit 
-        Ihrem Team, unterstützen wir Sie bei den technischen Herausforderungen Ihres Projekts.
-    </p>
 
-    <header class="major">
-      <h2>Unsere Technologien</h2>
-    </header>
-    <p>Wir arbeiten im Bereich der Webentwicklung sowohl mit Googles Angular-Framework als auch mit .NET Core und Entity Framework Lösungen, 
-        die auch auf Azure gehostet werden können. Vom Start der Angular-Anwendung mit komponentenbasierter Architektur über 
-        Monorepositories mit Bibliotheken und clientseitiger Architektur in NX oder AngularCLI-Workspaces mit einer Kommunikation zu Ihrem 
-        .NET Core Backend bis hin zu Continuous Integration und Continuous Delivery mit Azure Devops oder Github-Actions unterstützen wir Sie 
-        bei der Umsetzung Ihrer Ideen bis hin zum finalen Produkt.
-    </p>
-     <div class="actions">
-      <a
+    {{ range .Site.Params.infoText.textPart }}
+      <header class="major">
+        <h2>{{ .title }}</h2>
+      </header>
+      <p>{{.content}}</p>
+    {{ end }}
+  
+    <div class="actions">
+     <a
           href="{{ .Site.Params.baseURLInternal }}{{ .Site.Params.Trainings.url }}"
           class="button"
           ><i class="fas fa-chalkboard-teacher"></i> {{ .Site.Params.Trainings.buttonText }}</a
         >
         <a href="#one" class="button"><i class="fas fa-briefcase"></i> {{ .Site.Params.Trainings.buttonText2 }}</a>
-      </div>
+    </div>
   </div>
 </section>
