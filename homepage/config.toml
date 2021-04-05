@@ -160,6 +160,12 @@ disqusShortname = "offeringsolutions"
   [params.projects]
     detailButtonText = "Details"
 
+  [params.talks]
+    excerptText = "Auszug aus allen Talks"
+    backText = "Zurück zur Übersicht"
+    noSlides = "Noch keine Slides hinzugefügt. Schauen Sie später nochmal vorbei."
+    allSlides = "Alle Slides"
+
   [params.counter]
     projectTitle = "Projekte"
     conferencesTitle = "Konferenzen"

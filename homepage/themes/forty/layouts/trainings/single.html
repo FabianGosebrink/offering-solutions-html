@@ -20,7 +20,7 @@
               <h1>{{ .Title }}</h1>
             </header>
               <h4>{{ .Params.subhead }}</h4>
-              <a href="{{ .Site.Params.baseURLInternal }}trainings/">back to all trainings</a>
+              <a href="{{ .Site.Params.baseURLInternal }}trainings/">Zurück zur Übersicht</a>
             </p>
           </div>
         </section>
@@ -42,6 +42,13 @@
             {{ end }}
 
             {{ .Content }}
+
+            <h2>Auch interessant</h2>
+            <ul>
+               {{ range first 5 (shuffle (where (where .Site.Pages "Params.category" "training") "Title" "!=" .Title )) }}
+                  <li><a href="{{ .RelPermalink }}">{{.Title}}</a></li>
+              {{end}}
+            </ul>
 
              {{ if .Params.logo2 }}
               <div class="center-space-around">

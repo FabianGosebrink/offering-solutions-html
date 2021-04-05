@@ -1,23 +1,28 @@
 ---
 title: Angular Advanced Workshop
-description: Master the first steps and principles of Angular the client side framework for building modern web applications.
+description: Erweiterte Methoden und Funktionalitäten für Ihre Web-Applikation mit Angular, NgRx und Co.
 image: trainings/angularadvancedngrx.png
 category: training
 logo1: ['trainings/training-small.jpg']
 logo2: ['trainings/angularadvancedngrx.png']
 ---
 
-This course is the continuation of our Angular Beginner Course. Anyone who has visited this or has already taken the first steps with beginner Angular / Typescript is here repealed.
+Dieser Kurs ist die Fortsetzung unseres Angular-Einsteigerkurses. Wer den Einsteigerkurs besucht hat oder bereits die ersten Schritte mit Angular & Typescript gemacht hat, wird mit diesem Angular Advanced Kurs fündig.
+Sie arbeiten bereits seit einiger Zeit mit Angular und haben tiefe Erfahrungen mit dem Framework? Sie beherrschen grundlegende Konzepte wie Dependency Injection, Komponenten und Services und nutzen Angular täglich? Sie möchten sich und Ihr Projekt weiterentwickeln, aber Bücher und Artikel reichen Ihnen nicht aus - Sie möchten konkrete Ansätze direkt mit Experten diskutieren und die beste Lösung finden? In unserem Kurs nehmen wir den nächsten Schritt und behandeln nach den Grundlegenden Themen die Fortgeschrittenen Gebiete.
 
-You have been working with Angular for some time and have deep experience with the framework. You master basic concepts such as dependency injection, components and services and use Angular every day. You would like to develop yourself and your project, but books and articles are not enough for you - you want to discuss specific approaches directly with experts and find the best solution. In our course, we will cover these advanced topics and give you an insight into them.
+In diesem Kurs lernen Sie die erweiterte Kommunikation von Komponenten kennen und Möglichkeiten, wie die Bausteine ihrer Applikation reibungslos miteinander kommunizieren können. Wir beleuchten den Aufbau und die Architektur in einer Angular-Applikation, wann und wie Bibliotheken sinnvoll sind sowie das Abbilden des States der App mittels NgRx. Mit Actions, Reducern, Selectors und Effects kann ihre Applikation sauber und wartbar erstellt werden und wird in diesem Kurs simple erklärt.
+Testing mit Karma, Jasmine und End-To-End-Tests mit Cypress bilden den nächsten Baustein dieses Kurses, bevor wir eine Build Pipeline mit Github-Actions oder Azure-Devops erstellen können, um ein Artefakt zu erstellen, das auf allen ihren Umgebungen läuft, ohne die Anwendung mehrfach zu erstellen. Angular ist eben mehr als nur ein Framework: Es ist eine komplette Plattform! Lernen wir sie gemeinsam kennen.
 
-- Digging into component communication
-- Separate your application in feature modules
-- State Management with redux & NgRx
-- Unit Testing with Jasmine, Karma
-- End-to-end testing with Cypress
-- Create npm libraries with the Angular CLI and consume them in your app
-- Create a build pipeline
-- Deploy your Angular Application to Azure
+Module:
 
-If you are interested, drop us a line below
+- Eintauchen in die Komponentenkommunikation mit Container und Presentational Components.
+- Aufteilung der Anwendung in Module und Komponenten
+- Erstellen von erweiterten Formularen mit Validierung inklusive Cross-Field-Validation
+- Management des States mit NgRx
+- Unit-Tests mit Jasmine, Karma
+- End-to-End-Tests mit Cypress
+- Erstellen Sie npm-Bibliotheken mit dem Angular CLI und konsumieren Sie diese in Ihrer App
+- Erstellen einer Build-Pipeline mit Github Actions oder Azrue DevOps
+- Kundenspezifische Fragen und Antworten
+
+Wenn Sie interessiert sind, schreiben Sie uns [eine Nachricht](#contact)

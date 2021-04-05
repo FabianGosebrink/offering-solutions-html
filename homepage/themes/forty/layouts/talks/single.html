@@ -26,7 +26,7 @@
             </header>
              <h6>{{ dateFormat "Monday, Jan 2, 2006" .Date }} - {{ if .Params.link }}<a href="{{.Params.link}}"> {{ .Params.event }}</a>{{ else }} {{ .Params.event }}{{ end }}</h6>
             <p>
-              <a href="{{ .Site.Params.baseURLInternal }}talks/">back to all talks</a>
+              <a href="{{ .Site.Params.baseURLInternal }}talks/">{{ .Site.Params.talks.backText }}</a>
             </p>
           </div>
         </section>
@@ -46,18 +46,18 @@
 
              {{ if .Params.slides }}
               <p>
-                <a href="{{ .Params.slides }}" target="_blank" class="button">Download slides as pdf</a>
+                <a href="{{ .Params.slides }}" target="_blank" class="button">Slides als pdf</a>
               </p>
             {{ end }}
 
             {{if (not .Params.dataId) }}
               {{ if ((not .Params.slides))}}
                 <p>
-                  No slides available at present, please check again in the future.<br/>
+                  {{ .Site.Params.talks.noSlides }}<br/>
                 </p>
 
                 <p>
-                  <a href="https://speakerdeck.com/fabiangosebrink/" target="_blank" class="button">See all slides</a>
+                  <a href="https://speakerdeck.com/fabiangosebrink/" target="_blank" class="button">{{ .Site.Params.talks.allSlides }}</a>
                 </p>
 
               {{end}}

@@ -35,7 +35,7 @@
                         <div class="col-12">
                             {{$list := (where .Site.Pages "Params.category" "talks")}}
                             {{$len := (len $list)}}
-                            <h2>Excerpt of all given talks ({{ $len }} talks listed here)...</h2>
+                            <h2>{{ .Site.Params.talks.excerptText }} ({{ $len }})</h2>
                             <ul class="alt"> 
                               {{ range ($list) }}
                                 <li class="talk-item">
