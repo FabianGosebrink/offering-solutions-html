@@ -7,4 +7,4 @@ draft: false
 category: none
 ---
 
-Alle Trainings und Workshops On-Site oder Remote.
+Alle Trainings und Workshops On-Site oder Remote sowie in deutscher und englischer Sprache verfügbar.
