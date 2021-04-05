@@ -115,7 +115,7 @@ disqusShortname = "offeringsolutions"
 
     [[params.tiles.showcase]]
       title = "Consulting"
-      subtitle = "WIr beraten Sie gerne bei bestehenden oder zukünftigen Web-Projekten"
+      subtitle = "Wir beraten Sie gerne bei bestehenden oder zukünftigen Web-Projekten"
       image = "landing/consulting.jpg"
       url = "/consulting"
 
