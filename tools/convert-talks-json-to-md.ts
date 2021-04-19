@@ -39,8 +39,9 @@ allTalks.map(({ title, date, event, tags, link, dataId, slides }, index) => {
   });
 
   const fileNameWithoutExt = paramCase(titleLowerCase);
+  const fileIndex = allTalks.length - index;
 
-  const filePath = `${outputPath}/${fileNameWithoutExt}-${index + 1}.md`;
+  const filePath = `${outputPath}/${fileNameWithoutExt}-${fileIndex}.md`;
 
   fs.writeFileSync(filePath, content);
 });

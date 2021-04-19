@@ -35,7 +35,8 @@ allTalks.map(function (_a, index) {
         titleLowerCase = titleLowerCase.replace(from, to);
     });
     var fileNameWithoutExt = change_case_1.paramCase(titleLowerCase);
-    var filePath = outputPath + "/" + fileNameWithoutExt + "-" + (index + 1) + ".md";
+    var fileIndex = allTalks.length - index;
+    var filePath = outputPath + "/" + fileNameWithoutExt + "-" + fileIndex + ".md";
     fs.writeFileSync(filePath, content);
 });
 function addLine(currentText, key, value) {
