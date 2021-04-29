@@ -10,9 +10,11 @@
   },
   {
     "title": "NX-Workspace - Simplified scaling for large Angular Projects",
-    "link": "https://www.web-developer-conference.de/programm/#/talk/nx-workspace-simplified-scaling-for-large-angular-projects-2",
+    "link": "https://www.web-developer-conference.de/history/programm-2021/#/talk/nx-workspace-simplified-scaling-for-large-angular-projects-2",
     "date": "2021-04-27T00:00:00.000Z",
     "event": "Web Developer Conference",
+    "slides": "https://speakerdeck.com/fabiangosebrink/nx-workspace-simplified-scaling-for-large-angular-projects",
+    "dataId": "ca73133ca8b0484e968c9655998dca8a",
     "tags": ["Angular", "Nx"]
   },
   {
