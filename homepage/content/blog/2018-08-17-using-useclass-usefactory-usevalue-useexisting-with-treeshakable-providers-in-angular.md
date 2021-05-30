@@ -1,5 +1,5 @@
 ---
-title: Using UseClass, UseFactory, UseValue & UseExisting with treeshakable providers in Angular
+title: Using UseClass, UseFactory, UseValue & UseExisting with treeshaekable providers in Angular
 date: 2018-08-17
 tags: ['angular']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-In this blog post I want to describe how to use the `useClass`, `useValue`, `useFactory`, `useExisting` providers in the new [treeshakable providers](https://angular.io/guide/providers) from Angular.
+In this blog post I want to describe how to use the `useClass`, `useValue`, `useFactory`, `useExisting` providers in the new [treeshakeable providers](https://angular.io/guide/providers) from Angular.
 
 After this blog post you should have an example how to use those four providers and have an idea what to do with it in case they are a solution to some problems you might face when developing Angular applications.
 
