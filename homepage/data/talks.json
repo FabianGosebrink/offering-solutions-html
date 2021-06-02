@@ -1,5 +1,14 @@
 [
   {
+    "title": "Creating Real Time Cross Platform Applications with Angular, ASP.NET Core and SignalR, Cordova and Electron",
+    "link": "https://geekle.us/angular",
+    "date": "2021-06-02T00:00:00.000Z",
+    "event": "ANGULAR GLOBAL SUMMIT'21",
+    "tags": ["Angular", "ASP.NET Core SignalR"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr",
+    "dataId": "7229760120674a938ef4eae7a48ab01d"
+  },
+  {
     "title": "Workshop - Erstellen von Realtime Cross-Platform-Applikationen",
     "link": "https://www.web-developer-conference.de/history/programm-2021/#/talk/erstellen-von-realtime-cross-platform-applikationen",
     "date": "2021-04-27T00:00:00.000Z",
