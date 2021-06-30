@@ -1,5 +1,21 @@
 [
   {
+    "title": "Detecting and Solving Pain Points in Angular Applications",
+    "link": "https://www.developer-week.de/programm/#/talk/detecting-and-solving-paint-points-in-angular-applications",
+    "date": "2021-06-30T00:00:00.000Z",
+    "event": "Developer Week 21",
+    "tags": ["Angular"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/detecting-and-solving-pain-points-in-angular-applications",
+    "dataId": "35543ddf729f4e4e8ca56397a712e49e"
+  },
+  {
+    "title": "(Workshop) - End-to-End – Moderne Webanwendungen mit Angular und ASP.NET Core",
+    "link": "https://www.digicomp.ch/weiterbildung/development-trainings/web-development/microsoft-web-development-trainings/workshop-end-to-end-moderne-webanwendungen-mit-angular-und-asp-net-core",
+    "date": "2021-06-22T00:00:00.000Z",
+    "event": "Digicomp",
+    "tags": ["Angular", "ASP.NET Core"]
+  },
+  {
     "title": "Creating Real Time Cross Platform Applications with Angular, ASP.NET Core and SignalR, Cordova and Electron",
     "link": "https://geekle.us/angular",
     "date": "2021-06-02T00:00:00.000Z",
