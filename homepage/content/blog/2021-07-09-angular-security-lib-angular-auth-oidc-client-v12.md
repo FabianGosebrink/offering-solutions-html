@@ -163,10 +163,12 @@ Each config gets a `configId` which you can set or wil be set by the lib. This `
 const token = this.oidcSecurityService.getAccessToken('configId');
 ```
 
-### What to expect in future version?
+## What to expect in future version?
 
-Stability
-Taking away complxity
+I think we will first try to see how this lib evolves and try to make it as stable as it can be. We have a good state now imho but with every day we see that the lib is used in another use case or some different way of usage is needed. So stability is one thing we would like to focus at. This is one of the most important things.
+
+We also want to improve the thought of "How to implement a feature" by including the thought of "How do I as a user want to use it in the end" which drives your API design a lot. When designing features I asked myself this question a lot of times. Because I wanted to have it as easy to use as possible. We want to take away complexity and try to do this more and more in the future.
+
 Better documentation If you ahve a question, we forgot to document it
 Better samples
 Improve coverage and testing
