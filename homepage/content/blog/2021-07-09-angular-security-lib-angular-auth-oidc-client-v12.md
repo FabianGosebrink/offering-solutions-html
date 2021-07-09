@@ -17,6 +17,12 @@ The library helps you to implement a complete security feature within your angul
 
 You can configure the lib to your needs and if you change the provider you change the config. Thats it.
 
+## Links
+
+- [npm](https://www.npmjs.com/package/angular-auth-oidc-client)
+- [GitHub](https://github.com/damienbod/angular-auth-oidc-client)
+- [Changelog](https://github.com/damienbod/angular-auth-oidc-client/blob/main/CHANGELOG.md)
+
 ## A few personal words about this
 
 In the last half a year nearly all my free time went into this library. Weekends, mornings and afternoons. Maintaining this library is my biggest way to contribute to OSS. I have written every line of this lib always discussing and reflecting with [Damien Bod](https://github.com/damienbod) who is one of the greatest security experts out there. His knowledge in this topic seems endless and without him I could have never pushed this library as I did in the past. I learned tons about security but still feel that I know nothing at all 😀
@@ -120,11 +126,42 @@ We knew that we would have breaking changes in this version (hence the major ver
 
 You can find the new documentation hosted on an Azure Static App here: [Documentation](https://nice-hill-002425310.azurestaticapps.net/docs/intro). It also has a dark mode 😉
 
-We added a [migration](https://nice-hill-002425310.azurestaticapps.net/docs/migrations/v11-to-v12) chapter to mage the migration easier. Hoping we mentioned every change.
+We added a [migration](https://nice-hill-002425310.azurestaticapps.net/docs/migrations/v11-to-v12) chapter to make the migration easier. Hoping we mentioned every change. We also tried to add [Samples](https://nice-hill-002425310.azurestaticapps.net/docs/samples/samples) for every possible use case.
 
 ### Multiple IDPs
 
-The most important feature for V12 was the support for mutliple IDPs.
+The most important feature for V12 was the support for multiple Identity Providers. So if you have one application and need to handle two or more access tokens because you have to access multiple APIs with different access tokens you can do this now. This was a change which was the biggest and where the most effort went in. We had to rethink every method but as we already did breaking changes and planned V12, we included this one.
+
+So you can pass an array of configs into the `forRoot(...)` method.
+
+```ts
+@NgModule({
+  imports: [
+    AuthModule.forRoot({
+      config: [
+        {
+          // config1...
+        },
+        {
+          // config2...
+        },
+        {
+          // config3...
+        },
+        //...
+      ],
+    }),
+  ],
+  exports: [AuthModule],
+})
+export class AuthConfigModule {}
+```
+
+Each config gets a `configId` which you can set or wil be set by the lib. This `configId` can be used to get the access tokens for example.
+
+```ts
+const token = this.oidcSecurityService.getAccessToken('configId');
+```
 
 ### What to expect in future version?
 
@@ -132,9 +169,5 @@ Stability
 Taking away complxity
 Better documentation If you ahve a question, we forgot to document it
 Better samples
-
-## Links
-
-- [npm](https://www.npmjs.com/package/angular-auth-oidc-client)
-- [GitHub](https://github.com/damienbod/angular-auth-oidc-client)
-- [Changelog](https://github.com/damienbod/angular-auth-oidc-client/blob/main/CHANGELOG.md)
+Improve coverage and testing
+Logo for the lib
