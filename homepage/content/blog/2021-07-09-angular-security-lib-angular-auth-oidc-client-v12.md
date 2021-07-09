@@ -7,7 +7,7 @@ category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-With this blog post I want to share the news that we just released the Angular Security Lib 'angular-auth-oidc-client' in V12.
+With this blog post I want to share the news that we just released the Angular Security Lib [Angular Auth OIDC Client](https://github.com/damienbod/angular-auth-oidc-client) in V12.
 
 {{< tweet 1411759432007049217 >}}
 
@@ -17,15 +17,15 @@ The library helps you to implement a complete security feature within your angul
 
 You can configure the lib to your needs and if you change the provider you change the config. Thats it.
 
-## Links
+## A few personal words about this
 
-- [npm](https://www.npmjs.com/package/angular-auth-oidc-client)
-- [GitHub](https://github.com/damienbod/angular-auth-oidc-client)
-- [Changelog](https://github.com/damienbod/angular-auth-oidc-client/blob/main/CHANGELOG.md)
+In the last half a year nearly all my free time went into this library. Weekends, mornings and afternoons. Maintaining this library is my biggest way to contribute to OSS. I have written every line of this lib always discussing and reflecting with [Damien Bod](https://github.com/damienbod) who is one of the greatest security experts out there. His knowledge in this topic seems endless and without him I could have never pushed this library as I did in the past. I learned tons about security but still feel that I know nothing at all 😀
+
+What I have learned and am still learning is how you manage to do Open Source when it is more than a "fun project". Take care of the release versions, think about what changes mean to your users, how to write documentation, how to write samples, how to do better reviews, PRs etc. All of that improved. Also discussing ideas when you do a public API and not a user interface or software in a "normal" customer project. This different view, the improvement of the technique using issues, PRs, collaborating with the community over GitHub was impressive and helped me so much in my everyday software routine. I wouldn't miss it for the world.
 
 ## What is new in V12
 
-We improved a lot in V12 as you can also see on the [Features for V12](https://github.com/damienbod/angular-auth-oidc-client/issues/1050). I just want to mention the biggest features here
+We improved a lot in V12 as you can also see on the [Features for V12](https://github.com/damienbod/angular-auth-oidc-client/issues/1050). I just want to mention the biggest features here.
 
 ### New Configuration
 
@@ -116,11 +116,15 @@ With this information you have everything you need with one go.
 
 ### Improved the documentation
 
-We knew that we would have breaking changes in this version (hence the major version increase) and we wanted to make the migration from V11 to V12 to be documented as good as we could. Further - although we do the best we can - the complete setup of security on the client side in an SPA is a complex topic.
+We knew that we would have breaking changes in this version (hence the major version increase) and we wanted to make the migration from V11 to V12 to be documented as good as we could. Further - although we do the best we can - the complete setup of security on the client side in an SPA is a complex topic. Every situation is different, every use case seems to be different and every configuration is as well. With the lib we try to cover as much as we can and try to apply a unified interface for this. To help people getting along with the lib and finding help for themselves we moved to documentation to [Docosaurus](https://docusaurus.io/) and fixed all the markdown files that they can be displayed in a way you could read it. We had a big table for the configuration before which we removed and made different chapters out of it for the sake of readability etc.
+
+You can find the new documentation hosted on an Azure Static App here: [Documentation](https://nice-hill-002425310.azurestaticapps.net/docs/intro). It also has a dark mode 😉
+
+We added a [migration](https://nice-hill-002425310.azurestaticapps.net/docs/migrations/v11-to-v12) chapter to mage the migration easier. Hoping we mentioned every change.
 
 ### Multiple IDPs
 
-Supporting multiple IDPs
+The most important feature for V12 was the support for mutliple IDPs.
 
 ### What to expect in future version?
 
@@ -128,3 +132,9 @@ Stability
 Taking away complxity
 Better documentation If you ahve a question, we forgot to document it
 Better samples
+
+## Links
+
+- [npm](https://www.npmjs.com/package/angular-auth-oidc-client)
+- [GitHub](https://github.com/damienbod/angular-auth-oidc-client)
+- [Changelog](https://github.com/damienbod/angular-auth-oidc-client/blob/main/CHANGELOG.md)
