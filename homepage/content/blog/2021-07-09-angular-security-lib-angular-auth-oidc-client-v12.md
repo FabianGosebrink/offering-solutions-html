@@ -7,7 +7,7 @@ category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-With this blog post I want to share the news that we just released the Angular Security Lib [Angular Auth OIDC Client](https://github.com/damienbod/angular-auth-oidc-client) in V12.
+With this blog post I want to share the news that we released the Angular Security Lib [Angular Auth OIDC Client](https://github.com/damienbod/angular-auth-oidc-client) in V12.
 
 {{< tweet 1411759432007049217 >}}
 
@@ -25,17 +25,17 @@ You can configure the lib to your needs and if you change the provider you chang
 
 ## A few personal words about this
 
-In the last half a year nearly all my free time went into this library. Weekends, mornings and afternoons. Maintaining this library is my biggest way to contribute to OSS. I have written every line of this lib always discussing and reflecting with [Damien Bod](https://github.com/damienbod) who is one of the greatest security experts out there. His knowledge in this topic seems endless and without him I could have never pushed this library as I did in the past. I learned tons about security but still feel that I know nothing at all 😀
+In the last half a year nearly all my free time went into this library. Weekends, mornings and afternoons. Maintaining this library is my biggest way to contribute to OSS. I have written every line of this lib always discussing and reflecting with [Damien Bod](https://github.com/damienbod) who is one of the greatest security experts out there. Damien's knowledge in this topic seems endless and without Damien I could have never pushed this library as I did in the past. I learned tons about security but still feel that I know nothing at all 😀
 
 What I have learned and am still learning is how you manage to do Open Source when it is more than a "fun project". Take care of the release versions, think about what changes mean to your users, how to write documentation, how to write samples, how to do better reviews, PRs etc. All of that improved. Also discussing ideas when you do a public API and not a user interface or software in a "normal" customer project. For Example: If you want to fix a typo in a property which is public - this is a breaking change 😀 In a closed source project for a customer you would fix it and move along. This different view, the improvement of the technique using issues, PRs, collaborating with the community over GitHub was impressive and helped me so much in my everyday software routine. I wouldn't miss it for the world.
 
 ## What is new in V12
 
-We improved a lot in V12 as you can also see on the [Features for V12](https://github.com/damienbod/angular-auth-oidc-client/issues/1050). I just want to mention the biggest features here.
+We improved a lot in V12 as you can also see on the [Features for V12](https://github.com/damienbod/angular-auth-oidc-client/issues/1050). I only want to mention the biggest features here.
 
 ### New Configuration
 
-As libraries normally get configured with the `forRoot(...)` method until V12 we have not supported this configuration method. As the library supports having a static config you can just pass into the `forRoot(...)` method, getting your configuration from an http source is supported as well. You can not pass a config in the `forRoot(...)` method if you do not have it at the app start, so we moved the [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER) into the library and wrapped it in loaders. So with the `StsConfigHttpLoader` passing a promise you can load your configuration from an HTTP source and map it and with the classic `forRoot(...)` method you can pass any static config you like or multiple ones.
+As libraries normally get configured with the `forRoot(...)` method until V12 we have not supported this configuration method. As the library supports having a static config you can pass into the `forRoot(...)` method, getting your configuration from an http source is supported as well. You can not pass a config in the `forRoot(...)` method if you do not have it at the app start, so we moved the [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER) into the library and wrapped it in loaders. So with the `StsConfigHttpLoader` passing a promise you can load your configuration from an HTTP source and map it and with the classic `forRoot(...)` method you can pass any static config you like or multiple ones.
 
 ```ts
 import { NgModule } from '@angular/core';
@@ -122,7 +122,7 @@ With this information you have everything you need with one go.
 
 ### Improved the documentation
 
-We knew that we would have breaking changes in this version (hence the major version increase) and we wanted to make the migration from V11 to V12 to be documented as good as we could. Further - although we do the best we can - the complete setup of security on the client side in an SPA is a complex topic. Every situation is different, every use case seems to be different and every configuration is as well. With the lib we try to cover as much as we can and try to apply a unified interface for this. To help people getting along with the lib and finding help for themselves we moved to documentation to [Docosaurus](https://docusaurus.io/) and fixed all the markdown files that they can be displayed in a way you could read it. We had a big table for the configuration before which we removed and made different chapters out of it for the sake of readability etc.
+We knew that we would have breaking changes in this version (hence the major version increase) and we wanted to make the migration from V11 to V12 to be documented as good as we could. Further - although we do the best we can - the complete setup of security on the client side in an Single Page Applications is a complex topic. Every situation is different, every use case seems to be different and every configuration is as well. With the lib we try to cover as much as we can and try to apply a unified interface for this. To help people getting along with the lib and finding help for themselves we moved to documentation to [Docosaurus](https://docusaurus.io/) and fixed all the markdown files that they can be displayed in a way you could read it. We had a big table for the configuration before which we removed and made different chapters out of it for the sake of readability etc.
 
 You can find the new documentation hosted on an Azure Static App here: [Documentation](https://nice-hill-002425310.azurestaticapps.net/docs/intro). It also has a dark mode 😉
 
@@ -167,7 +167,7 @@ const token = this.oidcSecurityService.getAccessToken('configId');
 
 I think we will first try to see how this lib evolves and try to make it as stable as it can be. We have a good state now imho but with every day we see that the lib is used in another use case or some different way of usage is needed. So stability is one thing we would like to focus at. This is one of the most important things.
 
-We also want to improve the thought of "How to implement a feature" by including the thought of "How do I as a user want to use it in the end" which drives your API design a lot. When designing features I asked myself this question a lot of times. Because I wanted to have it as easy to use as possible. We want to take away complexity and try to improve this more and more in the future.
+We also want to improve the thought of "How to implement a feature" by including the thought of "How do I as a user want to use it in the end" which drives your API design a lot. When designing features I asked myself this question a lot of times. Because I wanted to have it as uncomplicated to use as possible. We want to take away complexity and try to improve this more and more in the future.
 
 We want to improve the documentation as well. If there is an issue which could be solved with better documentation we have to do a task for improving this or improve the documentation right away.
 
