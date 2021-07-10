@@ -175,4 +175,10 @@ The samples could need a brush. This is not on top of my list but it is on my li
 
 Further we are currently at 94% coverage with testing. This is a good number but we would like to improve it more and more. Without starting a discussion about how this number is used we are really taking care that all code paths are being tested, and this number or the coverage with the tools helps us a lot to see what is untested.
 
-Last but not least maybe
+Last but not least maybe we should think about a logo for the lib. Maybe I will get to this in the future, but seeing a visual logo for this lib would be really nice.
+
+I will leave you with that thoughts and hope this helped.
+
+Thanks
+
+Fabian
