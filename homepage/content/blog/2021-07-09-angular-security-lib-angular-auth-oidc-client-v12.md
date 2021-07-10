@@ -13,7 +13,7 @@ With this blog post I want to share the news that we just released the Angular S
 
 ## What is the lib about
 
-The library helps you to implement a complete security feature within your angular application by encapsulating all important aspects when it comes to handle the tokens and provide them to your app. Further the app provides functionality to manage your tokens and your logins. The library is not limited to one specific security token service but supports all modern OIDC providers such as [Identity Server](https://duendesoftware.com/), [Auth0](https://auth0.com/), [Keycloak](https://www.keycloak.org/), [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/), etc. It also cares about the silent renew of the token either with an iFrame (nay) or with refresh tokens in case your TOken Server supports this (yay).
+The library helps you to implement a complete security feature within your angular application by encapsulating all important aspects when it comes to handle the tokens and provide them to your app. Further the library provides functionality to manage your tokens and your logins. The library is not limited to one specific security token service but supports all modern OIDC providers such as [Identity Server](https://duendesoftware.com/), [Auth0](https://auth0.com/), [Keycloak](https://www.keycloak.org/), [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/), etc. It also cares about the silent renew of the token either with an iFrame (nay) or with refresh tokens in case your TOken Server supports this (yay).
 
 You can configure the lib to your needs and if you change the provider you change the config. Thats it.
 
@@ -163,13 +163,14 @@ Each config gets a `configId` which you can set or wil be set by the lib. This `
 const token = this.oidcSecurityService.getAccessToken('configId');
 ```
 
-## What to expect in future version?
+## What to expect in future versions?
 
 I think we will first try to see how this lib evolves and try to make it as stable as it can be. We have a good state now imho but with every day we see that the lib is used in another use case or some different way of usage is needed. So stability is one thing we would like to focus at. This is one of the most important things.
 
-We also want to improve the thought of "How to implement a feature" by including the thought of "How do I as a user want to use it in the end" which drives your API design a lot. When designing features I asked myself this question a lot of times. Because I wanted to have it as easy to use as possible. We want to take away complexity and try to do this more and more in the future.
+We also want to improve the thought of "How to implement a feature" by including the thought of "How do I as a user want to use it in the end" which drives your API design a lot. When designing features I asked myself this question a lot of times. Because I wanted to have it as easy to use as possible. We want to take away complexity and try to improve this more and more in the future.
 
-Better documentation If you ahve a question, we forgot to document it
+We want to improve the documentation as well. If there is an issue which could be solved with better documentation we have to do a task for improving this or improve the documentation right away.
+
 Better samples
 Improve coverage and testing
 Logo for the lib
