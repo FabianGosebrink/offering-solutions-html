@@ -163,6 +163,14 @@ Each config gets a `configId` which you can set or wil be set by the lib. This `
 const token = this.oidcSecurityService.getAccessToken('configId');
 ```
 
+### What else?
+
+We also improved the logging messages in the console to make it easier to see _which_ config is logging some information and we also unified the return type of the `isAuthenticated$` and `userData$` streams to not being confused when you run with single or multiple configs.
+
+Also we realized that the auto login is a feature which is heavily used. So we improved the samples there.
+
+You can get all changes from the changelog on [GitHub](https://github.com/damienbod/angular-auth-oidc-client/blob/main/CHANGELOG.md).
+
 ## What to expect in future versions?
 
 I think we will first try to see how this lib evolves and try to make it as stable as it can be. We have a good state now imho but with every day we see that the lib is used in another use case or some different way of usage is needed. So stability is one thing we would like to focus at. This is one of the most important things.
