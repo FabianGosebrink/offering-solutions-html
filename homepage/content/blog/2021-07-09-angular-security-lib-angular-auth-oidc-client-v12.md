@@ -13,7 +13,7 @@ With this blog post I want to share the news that we just released the Angular S
 
 ## What is the lib about
 
-The library helps you to implement a complete security feature within your angular application by encapsulating all important aspects when it comes to handle the tokens and provide them to your app. Further the library provides functionality to handle your tokens and your logins. The library is not limited to one specific security token service but supports all modern OIDC providers such as [Identity Server](https://duendesoftware.com/), [Auth0](https://auth0.com/), [Keycloak](https://www.keycloak.org/), [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/), etc. It also cares about the silent renew of the token either with an iFrame (nay) or with refresh tokens in case your TOken Server supports this (yay).
+The library helps you to implement a complete security feature within your angular application by encapsulating all important aspects when it comes to handle the tokens and provide them to your app. Further the library provides functionality to handle your tokens and your logins. The library is not limited to one specific security token service but supports all modern OIDC providers such as [Identity Server](https://duendesoftware.com/), [Auth0](https://auth0.com/), [Keycloak](https://www.keycloak.org/), [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/), etc. It also cares about the silent renew of the token either with an iFrame (nay) or with refresh tokens in case your Token Server supports this (yay).
 
 You can configure the lib to your needs and if you change the provider you change the config. Thats it.
 
