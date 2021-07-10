@@ -13,7 +13,7 @@ With this blog post I want to share the news that we just released the Angular S
 
 ## What is the lib about
 
-The library helps you to implement a complete security feature within your angular application by encapsulating all important aspects when it comes to handle the tokens and provide them to your app. Further the library provides functionality to manage your tokens and your logins. The library is not limited to one specific security token service but supports all modern OIDC providers such as [Identity Server](https://duendesoftware.com/), [Auth0](https://auth0.com/), [Keycloak](https://www.keycloak.org/), [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/), etc. It also cares about the silent renew of the token either with an iFrame (nay) or with refresh tokens in case your TOken Server supports this (yay).
+The library helps you to implement a complete security feature within your angular application by encapsulating all important aspects when it comes to handle the tokens and provide them to your app. Further the library provides functionality to handle your tokens and your logins. The library is not limited to one specific security token service but supports all modern OIDC providers such as [Identity Server](https://duendesoftware.com/), [Auth0](https://auth0.com/), [Keycloak](https://www.keycloak.org/), [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/), etc. It also cares about the silent renew of the token either with an iFrame (nay) or with refresh tokens in case your TOken Server supports this (yay).
 
 You can configure the lib to your needs and if you change the provider you change the config. Thats it.
 
@@ -171,6 +171,8 @@ We also want to improve the thought of "How to implement a feature" by including
 
 We want to improve the documentation as well. If there is an issue which could be solved with better documentation we have to do a task for improving this or improve the documentation right away.
 
-Better samples
-Improve coverage and testing
-Logo for the lib
+The samples could need a brush. This is not on top of my list but it is on my list to put the samples in a better shape. Visually and code-based.
+
+Further we are currently at 94% coverage with testing. This is a good number but we would like to improve it more and more. Without starting a discussion about how this number is used we are really taking care that all code paths are being tested, and this number or the coverage with the tools helps us a lot to see what is untested.
+
+Last but not least maybe
