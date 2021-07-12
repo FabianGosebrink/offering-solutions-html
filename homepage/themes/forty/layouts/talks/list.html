@@ -35,18 +35,35 @@
                         <div class="col-12">
                             {{$list := (where .Site.Pages "Params.category" "talks")}}
                             {{$len := (len $list)}}
+
                             <h2>{{ .Site.Params.talks.excerptText }} ({{ $len }})</h2>
                             <ul class="alt"> 
                               {{ range ($list) }}
-                                <li class="talk-item">
-                                   <span class="talk-title">
+
+                                {{ if gt .Date now.UTC  }}
+                                  <li class="talk-item">
+                                    <span class="talk-title">
+                                      Upcoming: {{ .Title }}
+                                    </span>    
+                                    <br/>
+                                    {{ dateFormat "Monday, Jan 2, 2006" .Date }} - {{ if .Params.link }}<a href="{{.Params.link}}"> {{ .Params.event }}</a>{{ else }} {{ .Params.event }}{{ end }}<br/>
+                                    Tags: {{ delimit .Params.tags ", " }}
+                                  </li>
+                                {{end}}
+
+                                {{ if lt .Date now.UTC  }}
+                                  <li class="talk-item">
+                                    <span class="talk-title">
                                       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                                     </span>    
                                     <br/>
                                     {{ dateFormat "Monday, Jan 2, 2006" .Date }} - {{ if .Params.link }}<a href="{{.Params.link}}"> {{ .Params.event }}</a>{{ else }} {{ .Params.event }}{{ end }}<br/>
                                     Tags: {{ delimit .Params.tags ", " }}
-                                </li>
-                                {{ end }} 
+                                  </li>
+                                {{end}}
+
+
+                              {{ end }} 
                             </ul>
 
                         </div>

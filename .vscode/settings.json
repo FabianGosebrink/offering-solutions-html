@@ -1,11 +1,30 @@
 {
-    "cSpell.words": [
-        "HATEOAS",
-        "OIDC",
-        "Pluralsight",
-        "aspnetcore",
-        "crossplatform",
-        "dotnetcore",
-        "publishsettings"
-    ]
+  "cSpell.words": [
+    "HATEOAS",
+    "OIDC",
+    "Pluralsight",
+    "aspnetcore",
+    "crossplatform",
+    "dotnetcore",
+    "publishsettings"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
