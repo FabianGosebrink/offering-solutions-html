@@ -38,15 +38,21 @@
             <p>
               {{ dateFormat "Monday, Jan 2, 2006" .Date }} - {{ if .Params.link }}<a href="{{.Params.link}}"> {{ .Params.event }}</a>{{ else }} {{ .Params.event }}{{ end }}
             </p>
-            <h2>Slides</h2>
-           
             {{ if .Params.dataId }}
+              <h2>Slides</h2>
               <script async class="speakerdeck-embed" data-id="{{.Params.dataId}}" data-ratio="1.37081659973226" src="///speakerdeck.com/assets/embed.js"></script>
             {{ end }}
 
-             {{ if .Params.slides }}
+            {{ if .Params.slides }}
               <p>
                 <a href="{{ .Params.slides }}" target="_blank" class="button">Slides als pdf</a>
+              </p>
+            {{ end }}
+
+            {{ if .Params.youtube }}
+              <h2>Video</h2>
+              <p>
+                <iframe width="800" height="600" src="{{ .Params.youtube }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </p>
             {{ end }}
 
