@@ -33,7 +33,7 @@ ng new <my-project>
 
 Doing this brings us the following folder structure:
 
-```
+```cmd
 ├── src
 │   └── ...
 ├── .browserslistrc
@@ -61,7 +61,7 @@ Also this video helps a lot when migrating or adding [ESLint](https://eslint.org
 
 You can add [ESLint](https://eslint.org/) by using the schematics with
 
-```
+```cmd
 ng add @angular-eslint/schematics
 ```
 
@@ -69,7 +69,7 @@ ng add @angular-eslint/schematics
 
 After you have done this your `package.json` is showing those changes
 
-```
+```json
 {
   "name": "angular-eslint-cypress",
   "version": "0.0.0",
@@ -82,25 +82,24 @@ After you have done this your `package.json` is showing those changes
     // ...
   },
   "devDependencies": {
-     // ...
+    // ...
     "@angular-eslint/builder": "12.5.0",
     "@angular-eslint/eslint-plugin": "12.5.0",
     "@angular-eslint/eslint-plugin-template": "12.5.0",
     "@angular-eslint/schematics": "12.5.0",
     "@angular-eslint/template-parser": "12.5.0",
-     // ...
+    // ...
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
-    "eslint": "^7.26.0",
+    "eslint": "^7.26.0"
     // ...
   }
 }
-
 ```
 
 (I pointed out only the changes here).
 
-The `angular.json` has changes as well.
+The `angular.json` has changes as well. A `lint` property was added with the appropriate builders.
 
 ```json
 {
@@ -137,7 +136,9 @@ The `angular.json` has changes as well.
 }
 ```
 
-```
+In the end a new `.eslintrc.json` was added as well containing all the rules.
+
+```cmd
 .
 ├── src
 │   └── ...
@@ -155,28 +156,68 @@ The `angular.json` has changes as well.
 └── tsconfig.spec.json
 ```
 
-## Speeding up the process
+You can now apply rules from `@angular-eslint/`, `@typescript-eslint/...` or the standard rules from ESLint.
 
-FOR ME
+```json
+{
+  // ...
+    "rules": {
+        "@angular-eslint/...": [...],
+        "@typescript-eslint/...": [...],
+        "newline-before-return": "error",
+        "max-len": "off",
+        "no-useless-constructor": "off",
+    }
 
-tsconfig.eslint.json
+  // ...
+}
 
 ```
+
+## Speeding up the process
+
+In a project I found the speed of ESLint pretty slow so I searched around and found the recommendation to introduce a special `tsconfig.eslint.json` extending the normal `tsconfig.json` and only including the ts files.
+
+`tsconfig.eslint.json`
+
+```json
 {
   "extends": "./tsconfig.json",
   "include": ["src/**/*.ts"]
 }
 ```
 
-I
+In the `.eslintrc.json` you can now use this file instead of the current one:
 
-### Removing TsLint
+```json
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.eslint.json"],
+        "createDefaultProgram": true
+      }
+      // ...
+    }
+    // ...
+  ]
+}
+```
+
+### Removing TsSLint
+
+If you have [TSLint](https://palantir.github.io/tslint/) in your project you can remove or migrate as mentioned in the video above. This is the cmd to do it. The specific parameters are explained on the [GitHub Repo](https://github.com/angular-eslint/angular-eslint)
 
 ```
 ng g @angular-eslint/schematics:convert-tslint-to-eslint --remove-tslint-if-no-more-tslint-targets --ignore-existing-tslint-config
 ```
 
 ## Adding Cypress to a project
+
+S
 
 https://www.npmjs.com/package/@cypress/schematic
 
