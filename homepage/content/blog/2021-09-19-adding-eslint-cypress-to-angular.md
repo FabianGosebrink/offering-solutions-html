@@ -65,11 +65,9 @@ You can add [ESLint](https://eslint.org/) by using the schematics with
 ng add @angular-eslint/schematics
 ```
 
-![Screenshot of console creating an nx workspace](https://cdn.offering.solutions/img/articles/2021-01-27/console.jpg)
+![Screenshot of console adding eslint initially](https://cdn.offering.solutions/img/articles/2021-09-30/1.jpg)
 
-Screenshot 1
-
-package.json
+After you have done this your `package.json` is showing those changes
 
 ```
 {
@@ -100,7 +98,9 @@ package.json
 
 ```
 
-angular.json
+(I pointed out only the changes here).
+
+The `angular.json` has changes as well.
 
 ```json
 {
