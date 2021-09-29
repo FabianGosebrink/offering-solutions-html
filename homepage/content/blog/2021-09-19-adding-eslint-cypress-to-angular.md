@@ -67,7 +67,7 @@ ng add @angular-eslint/schematics
 
 ![Screenshot of console adding eslint initially](https://cdn.offering.solutions/img/articles/2021-09-30/1.jpg)
 
-After you have done this your `package.json` is showing those changes
+After you have done this your `package.json` is showing those changes. An `lint` script and the dependencies have been added.
 
 ```json
 {
@@ -174,6 +174,10 @@ You can now apply rules from `@angular-eslint/`, `@typescript-eslint/...` or the
 
 ```
 
+If we now execute the `npm run lint` command we can see that [ESLint](https://eslint.org/) is being executed.
+
+![Screenshot of console adding eslint initially](https://cdn.offering.solutions/img/articles/2021-09-30/1.jpg)
+
 ## Speeding up the process
 
 In a project I found the speed of ESLint pretty slow so I searched around and found the recommendation to introduce a special `tsconfig.eslint.json` extending the normal `tsconfig.json` and only including the ts files.
@@ -207,6 +211,8 @@ In the `.eslintrc.json` you can now use this file instead of the current one:
 }
 ```
 
+If we now execute
+
 ### Removing TsSLint
 
 If you have [TSLint](https://palantir.github.io/tslint/) in your project you can remove or migrate as mentioned in the video above. This is the cmd to do it. The specific parameters are explained on the [GitHub Repo](https://github.com/angular-eslint/angular-eslint)
@@ -217,7 +223,7 @@ ng g @angular-eslint/schematics:convert-tslint-to-eslint --remove-tslint-if-no-m
 
 ## Adding Cypress to a project
 
-S
+So there
 
 https://www.npmjs.com/package/@cypress/schematic
 
