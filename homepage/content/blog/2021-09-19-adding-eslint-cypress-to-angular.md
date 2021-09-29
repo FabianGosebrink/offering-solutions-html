@@ -176,7 +176,7 @@ You can now apply rules from `@angular-eslint/`, `@typescript-eslint/...` or the
 
 If we now execute the `npm run lint` command we can see that [ESLint](https://eslint.org/) is being executed.
 
-![Screenshot of console adding eslint initially](https://cdn.offering.solutions/img/articles/2021-09-30/1.jpg)
+![Screenshot of console executing eslint](https://cdn.offering.solutions/img/articles/2021-09-30/2.jpg)
 
 ## Speeding up the process
 
@@ -211,9 +211,7 @@ In the `.eslintrc.json` you can now use this file instead of the current one:
 }
 ```
 
-If we now execute
-
-### Removing TsSLint
+### Removing TSLint
 
 If you have [TSLint](https://palantir.github.io/tslint/) in your project you can remove or migrate as mentioned in the video above. This is the cmd to do it. The specific parameters are explained on the [GitHub Repo](https://github.com/angular-eslint/angular-eslint)
 
@@ -223,15 +221,25 @@ ng g @angular-eslint/schematics:convert-tslint-to-eslint --remove-tslint-if-no-m
 
 ## Adding Cypress to a project
 
-So there
+So there is the end to end testing left. For this we will introduce and use [Cypress](https://docs.cypress.io/guides/overview/why-cypress) to rely on the latest toolset and best integration.
 
-https://www.npmjs.com/package/@cypress/schematic
+We can find the schematic to add [Cypress](https://docs.cypress.io/guides/overview/why-cypress) on [npm](https://www.npmjs.com/package/@cypress/schematic) and/or [GitHub](https://github.com/cypress-io/cypress)
 
-`ng add @cypress/schematic`
+We add cypress by executing
 
-pacakge.json
-
+```cmd
+ng add @cypress/schematic
 ```
+
+![Screenshot of console adding cypress](https://cdn.offering.solutions/img/articles/2021-09-30/3.jpg)
+
+After having done this we find the following changes in our repo:
+
+The `package.json` has been updated in the `scripts` and `dependencies` sections.
+
+`package.json`
+
+```json
 {
   "name": "angular-eslint-cypress",
   "version": "0.0.0",
@@ -243,7 +251,7 @@ pacakge.json
   },
   "private": true,
   "dependencies": {
-   // ...
+    // ...
   },
   "devDependencies": {
     // ...
@@ -253,10 +261,11 @@ pacakge.json
     "cypress": "8.5.0"
   }
 }
-
 ```
 
-angular.json
+In the `angular.json` the `cypress-run`/`cypress-open` properties have been added as well.
+
+`angular.json`
 
 ```json
 {
@@ -322,7 +331,9 @@ angular.json
 }
 ```
 
-```
+If we look at the folder structure a complete `cypress` folder was added, where our tests can take place, and a `cypress.json` for the configuration has been added.
+
+```cmd
 .
 ├── cypress  // <-- Complete Folder was added!
 │   ├── integration
@@ -350,13 +361,16 @@ angular.json
 └── tsconfig.spec.json
 ```
 
-###Finishing touches for cypress
+### Finishing touches for cypress
 
-https://www.npmjs.com/package/http-server
-https://www.npmjs.com/package/concurrently
+To execute cypress we have to start the local Angular application on `http://localhost:4200` as well and in parallel start the cypress runner to reach the site under where it is living.
 
-```
-"cypress:open": "cypress open",
+We can do this by installing a small `http-server` [https://www.npmjs.com/package/http-server](https://www.npmjs.com/package/http-server) and execute it in parallel to either the dist build (`cypress:run`) or the dev build (`cypress:open`). To execute commands in parallel we can install the package [concurrently](https://www.npmjs.com/package/concurrently). Now we can modify the commands as below:
+
+`package.json`
+
+```json
+"cypress:open": "concurrently \"npm start\" \"cypress open\"",
 "cypress:run": "npm run build && concurrently \"npm run serve:dist\" \"cypress run\"",
 "serve:dist": "http-server ./dist/angular-eslint-cypress -a localhost -p 4200 -c-1"
 ```
