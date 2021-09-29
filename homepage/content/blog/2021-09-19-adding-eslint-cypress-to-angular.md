@@ -7,9 +7,31 @@ category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
+In this blog post I want to describe how [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and [ESLint](https://eslint.org/) can be added to a new Angular project.
+
+Angular currently comes without any linting tool and without an end to end testing tool as [protractor](https://github.com/angular/protractor/issues/5502) is not included in Angular anymore and [TSLint](https://palantir.github.io/tslint/) is marked as deprecated.
+
+As a replacement [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and [ESLint](https://eslint.org/) jump into place to fill this gap. [Cypress](https://docs.cypress.io/guides/overview/why-cypress) is the go to tool for end to end testing here and [ESLint](https://eslint.org/) can replace the deprecated [TSLint](https://palantir.github.io/tslint/).
+
+In this article we will cover how we can [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and [ESLint](https://eslint.org/) to a new Angular Project. We will also briefly cover a migration from [TSLint](https://palantir.github.io/tslint/) to [ESLint](https://eslint.org/).
+
 ## Creating a new project
 
+{{< tweet 1438590511137366018 >}}
+
+With this tweet from Stephen Fluin I learned that if you always want to have the latest version of Angular when starting a new project, you can use
+
+```cmd
 npx @angular/cli new <my-project>
+```
+
+instead of the standard
+
+```cmd
+ng new <my-project>
+```
+
+Doing this brings us the following folder structure:
 
 ```
 ├── src
@@ -27,13 +49,23 @@ npx @angular/cli new <my-project>
 └── tsconfig.spec.json
 ```
 
+At the time of writing the Angular Version is `12.2.0`. So we will ride with that for this post.
+
 ## Adding ESLint to an Angular Project
 
-https://github.com/angular-eslint/angular-eslint
+Adding [ESLint](https://eslint.org/) is done easy by using the schematics [James Henry](https://twitter.com/MrJamesHenry) is doing on GitHub: [https://github.com/angular-eslint/angular-eslint](https://github.com/angular-eslint/angular-eslint)
+
+Also this video helps a lot when migrating or adding [ESLint](https://eslint.org/) to your Angular project.
+
+{{< youtube IDBdtQlugtw >}}
+
+You can add [ESLint](https://eslint.org/) by using the schematics with
 
 ```
 ng add @angular-eslint/schematics
 ```
+
+![Screenshot of console creating an nx workspace](https://cdn.offering.solutions/img/articles/2021-01-27/console.jpg)
 
 Screenshot 1
 
@@ -269,4 +301,15 @@ angular.json
 ├── tsconfig.app.json
 ├── tsconfig.json
 └── tsconfig.spec.json
+```
+
+###Finishing touches for cypress
+
+https://www.npmjs.com/package/http-server
+https://www.npmjs.com/package/concurrently
+
+```
+"cypress:open": "cypress open",
+"cypress:run": "npm run build && concurrently \"npm run serve:dist\" \"cypress run\"",
+"serve:dist": "http-server ./dist/angular-eslint-cypress -a localhost -p 4200 -c-1"
 ```
