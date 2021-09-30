@@ -53,7 +53,7 @@ At the time of writing the Angular Version is `12.2.0`. So we will ride with tha
 
 ## Adding ESLint to an Angular Project
 
-Adding [ESLint](https://eslint.org/) is done easy by using the schematics [James Henry](https://twitter.com/MrJamesHenry) is doing on GitHub: [https://github.com/angular-eslint/angular-eslint](https://github.com/angular-eslint/angular-eslint)
+Adding [ESLint](https://eslint.org/) is done by using the schematics [James Henry](https://twitter.com/MrJamesHenry) is doing on GitHub: [https://github.com/angular-eslint/angular-eslint](https://github.com/angular-eslint/angular-eslint)
 
 Also this video helps a lot when migrating or adding [ESLint](https://eslint.org/) to your Angular project.
 
@@ -174,13 +174,13 @@ You can now apply rules from `@angular-eslint/`, `@typescript-eslint/...` or the
 
 ```
 
-If we now execute the `npm run lint` command we can see that [ESLint](https://eslint.org/) is being executed.
+If we now run the `npm run lint` command we can see that [ESLint](https://eslint.org/) is being run.
 
 ![Screenshot of console executing eslint](https://cdn.offering.solutions/img/articles/2021-09-30/2.jpg)
 
 ## Speeding up the process
 
-In a project I found the speed of ESLint pretty slow so I searched around and found the recommendation to introduce a special `tsconfig.eslint.json` extending the normal `tsconfig.json` and only including the ts files.
+In a project I found the speed of ESLint pretty slow so I searched around and found the recommendation to introduce a separate `tsconfig.eslint.json` extending the normal `tsconfig.json` and only including the ts files.
 
 `tsconfig.eslint.json`
 
@@ -363,9 +363,9 @@ If we look at the folder structure a complete `cypress` folder was added, where 
 
 ### Finishing touches for cypress
 
-To execute cypress we have to start the local Angular application on `http://localhost:4200` as well and in parallel start the cypress runner to reach the site under where it is living.
+To run cypress we have to start the local Angular application on `http://localhost:4200` as well and in parallel start the cypress runner to reach the site under where it is living.
 
-We can do this by installing a small `http-server` [https://www.npmjs.com/package/http-server](https://www.npmjs.com/package/http-server) and execute it in parallel to either the dist build (`cypress:run`) or the dev build (`cypress:open`). To execute commands in parallel we can install the package [concurrently](https://www.npmjs.com/package/concurrently). Now we can modify the commands as below:
+We can do this by installing a small `http-server` [https://www.npmjs.com/package/http-server](https://www.npmjs.com/package/http-server) and run it in parallel to either the dist build (`cypress:run`) or the dev build (`cypress:open`). To run commands in parallel we can install the package [concurrently](https://www.npmjs.com/package/concurrently). Now we can modify the commands as below:
 
 `package.json`
 
