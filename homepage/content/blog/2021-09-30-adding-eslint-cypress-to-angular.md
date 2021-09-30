@@ -15,6 +15,16 @@ As a replacement [Cypress](https://docs.cypress.io/guides/overview/why-cypress) 
 
 In this article we will cover how we can add [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and [ESLint](https://eslint.org/) to a new Angular Project. We will also briefly cover a migration from [TSLint](https://palantir.github.io/tslint/) to [ESLint](https://eslint.org/).
 
+## TOC
+
+- [Creating a new project](#creating-a-new-project)
+- [Adding ESLint to an Angular Project](#adding-eslint-to-an-angular-project)
+- [Speeding up the process](#speeding-up-the-process)
+  - [Removing TSLint](#removing-tslint)
+- [Adding Cypress to a project](#adding-cypress-to-a-project)
+  - [Finishing touches for cypress](#finishing-touches-for-cypress)
+- [Summary](#summary)
+
 ## Creating a new project
 
 {{< tweet 1438590511137366018 >}}
@@ -374,3 +384,11 @@ We can do this by installing a small `http-server` [https://www.npmjs.com/packag
 "cypress:run": "npm run build && concurrently \"npm run serve:dist\" \"cypress run\"",
 "serve:dist": "http-server ./dist/angular-eslint-cypress -a localhost -p 4200 -c-1"
 ```
+
+## Summary
+
+In this blog post we saw how we can start an Angular application and add the latest tools of end to end testing and linting to it.
+
+I hope this helped!
+
+Fabian
