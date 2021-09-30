@@ -1,6 +1,6 @@
 ---
-title: Adding ESLint and Cypress to a new Angular Project
-date: 2021-09-19
+title: Adding ESLint and Cypress to a New Angular Project
+date: 2021-09-30
 tags: ["angular", "eslint", "cypress"]
 draft: false
 category: blog
