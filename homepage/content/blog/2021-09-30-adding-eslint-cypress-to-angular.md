@@ -13,7 +13,7 @@ Angular currently comes without any linting tool and without an end to end testi
 
 As a replacement [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and [ESLint](https://eslint.org/) jump into place to fill this gap. [Cypress](https://docs.cypress.io/guides/overview/why-cypress) is the go to tool for end to end testing here and [ESLint](https://eslint.org/) can replace the deprecated [TSLint](https://palantir.github.io/tslint/).
 
-In this article we will cover how we can [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and [ESLint](https://eslint.org/) to a new Angular Project. We will also briefly cover a migration from [TSLint](https://palantir.github.io/tslint/) to [ESLint](https://eslint.org/).
+In this article we will cover how we can add [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and [ESLint](https://eslint.org/) to a new Angular Project. We will also briefly cover a migration from [TSLint](https://palantir.github.io/tslint/) to [ESLint](https://eslint.org/).
 
 ## Creating a new project
 
@@ -31,7 +31,7 @@ instead of the standard
 ng new <my-project>
 ```
 
-Doing this brings us the following folder structure:
+Doing this brings us the following folder structure with the latest versios:
 
 ```cmd
 ├── src
@@ -53,7 +53,7 @@ At the time of writing the Angular Version is `12.2.0`. So we will ride with tha
 
 ## Adding ESLint to an Angular Project
 
-Adding [ESLint](https://eslint.org/) is done by using the schematics [James Henry](https://twitter.com/MrJamesHenry) is doing on GitHub: [https://github.com/angular-eslint/angular-eslint](https://github.com/angular-eslint/angular-eslint)
+Adding [ESLint](https://eslint.org/) is done by using the schematics [James Henry](https://twitter.com/MrJamesHenry) is maintaining on GitHub: [https://github.com/angular-eslint/angular-eslint](https://github.com/angular-eslint/angular-eslint)
 
 Also this video helps a lot when migrating or adding [ESLint](https://eslint.org/) to your Angular project.
 
@@ -67,7 +67,7 @@ ng add @angular-eslint/schematics
 
 ![Screenshot of console adding eslint initially](https://cdn.offering.solutions/img/articles/2021-09-30/1.jpg)
 
-After you have done this your `package.json` is showing those changes. An `lint` script and the dependencies have been added.
+After you have done this your `package.json` is showing those changes. A `lint` script and the dependencies have been added.
 
 ```json
 {
@@ -180,7 +180,7 @@ If we now run the `npm run lint` command we can see that [ESLint](https://eslint
 
 ## Speeding up the process
 
-In a project I found the speed of ESLint pretty slow so I searched around and found the recommendation to introduce a separate `tsconfig.eslint.json` extending the normal `tsconfig.json` and only including the ts files.
+In a project I am working on I found the speed of ESLint pretty slow so I searched around and found the recommendation to introduce a separate `tsconfig.eslint.json` extending the normal `tsconfig.json` and only including the ts files.
 
 `tsconfig.eslint.json`
 
@@ -263,7 +263,7 @@ The `package.json` has been updated in the `scripts` and `dependencies` sections
 }
 ```
 
-In the `angular.json` the `cypress-run`/`cypress-open` properties have been added as well.
+In the `angular.json` the `cypress-run`, `cypress-open` and `e2e` properties have been added as well.
 
 `angular.json`
 
