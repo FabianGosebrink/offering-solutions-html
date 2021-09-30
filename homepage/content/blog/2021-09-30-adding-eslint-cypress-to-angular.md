@@ -75,7 +75,7 @@ You can add [ESLint](https://eslint.org/) by using the schematics with
 ng add @angular-eslint/schematics
 ```
 
-![Screenshot of console adding eslint initially](https://cdn.offering.solutions/img/articles/2021-09-30/1.jpg)
+![Screenshot of console adding eslint initially](https://cdn.offering.solutions/img/articles/2021-09-30/1.png)
 
 After you have done this your `package.json` is showing those changes. A `lint` script and the dependencies have been added.
 
@@ -186,7 +186,7 @@ You can now apply rules from `@angular-eslint/`, `@typescript-eslint/...` or the
 
 If we now run the `npm run lint` command we can see that [ESLint](https://eslint.org/) is being run.
 
-![Screenshot of console executing eslint](https://cdn.offering.solutions/img/articles/2021-09-30/2.jpg)
+![Screenshot of console executing eslint](https://cdn.offering.solutions/img/articles/2021-09-30/2.png)
 
 ## Speeding up the process
 
@@ -241,7 +241,7 @@ We add cypress by executing
 ng add @cypress/schematic
 ```
 
-![Screenshot of console adding cypress](https://cdn.offering.solutions/img/articles/2021-09-30/3.jpg)
+![Screenshot of console adding cypress](https://cdn.offering.solutions/img/articles/2021-09-30/3.png)
 
 After having done this we find the following changes in our repo:
 
