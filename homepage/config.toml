@@ -90,8 +90,8 @@ disqusShortname = "offeringsolutions"
     # the 'static/img' folder.
     title = "In-Depth Angular, .NET Core & Azure"
     subtitle = "Offering Solutions Software"
-    subtitle2 = "Wir unterstützen im Bereich Angular und .NET Core."
-    questionText = "Können wir auch Ihnen helfen?"
+    subtitle2 = "Wir helfen durch Beratung und Entwicklung mit Angular und .NET Core."
+    questionText = "Auch in Ihrem Projekt?"
     buttonText = "Unsere Services"
     buttonText2 = "Kontakt"
 
