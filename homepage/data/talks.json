@@ -1,5 +1,14 @@
 [
   {
+    "title": "Angular Reactive Forms Developing Forms and Validation with Angular",
+    "link": "https://javascript-days.de/angular/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln/",
+    "date": "2021-10-05T00:00:00.000Z",
+    "event": "Angular Days Berlin",
+    "tags": ["Angular", "Reactive Forms"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular",
+    "dataId": "eedabd0f0d2c4525b62886011097886b"
+  },
+  {
     "title": "Realtime Cross Plattform Apps with Angular, ASP.NET Core and SignalR",
     "link": "https://basta.net/web-development/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr/",
     "date": "2021-09-23T00:00:00.000Z",
