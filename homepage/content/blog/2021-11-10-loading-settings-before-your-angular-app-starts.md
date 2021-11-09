@@ -7,7 +7,7 @@ category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-In this blogpost I want to describe two different way how to load your settings before your Angular application starts. Although there has been articles already about this I want to point out two different ways of solving the issue as I see this as an reappearing issue in the Angular world.
+In this blogpost I want to describe two different ways how to load your settings before your Angular application starts. Although there already have been articles about this [Tim Deschryver's Blog Post 'Build once deploy to multiple environments'](https://timdeschryver.dev/blog/angular-build-once-deploy-to-multiple-environments#platformbrowserdynamic) I want to point out two different ways of solving the issue as I see this as an reappearing issue in the Angular world.
 
 ## The Problem
 
@@ -46,4 +46,61 @@ The problem with this approach is that when you have a module in the `imports` a
 
 ## Using the fetch api
 
-Let's get a step back and see what we want to do. So before the complete app starts we want to ask for our data to have them present and the time angular kicks in and bootstraps. This is
+Let's get a step back and see what we want to do. So before the complete app starts we want to ask for our data to have them present and the time angular kicks in and bootstraps. The place which bootstraps the app is the `main.ts` file.
+
+```ts
+import { enableProdMode } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { environment } from "@environments/environment";
+import { AppModule } from "./app/app.module";
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
+
+[Tim Deschryver's Blog Post 'Build once deploy to multiple environments'](https://timdeschryver.dev/blog/angular-build-once-deploy-to-multiple-environments#platformbrowserdynamic) describes the solution very well.
+
+Angulars [platformBrowserDynamic()](https://angular.io/api/platform-browser-dynamic/platformBrowserDynamic) takes an optional parameter called `extraProviders?: StaticProvider[]` which we can use to pass extra providers. In combination with the [InjectionToken](https://angular.io/guide/dependency-injection-providers#using-an-injectiontoken-object) we can provide the config through an [InjectionToken](https://angular.io/guide/dependency-injection-providers#using-an-injectiontoken-object). We can use the [Fetch](https://fetch.spec.whatwg.org/) api to load our data and when it is loaded, bootstrap our application and provide the config.
+
+```ts
+import { enableProdMode } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { environment } from "./environments/environment";
+import { AppConfig, APP_CONFIG } from "...";
+import { AppModule } from "./app/app.module";
+
+fetch("<your-config-json-or-url>")
+  .then((res) => res.json())
+  .then((config) => {
+    if (environment.production) {
+      enableProdMode();
+    }
+
+    platformBrowserDynamic([{ provide: APP_CONFIG, useValue: config }])
+      .bootstrapModule(AppModule)
+      .catch((err) => console.error(err));
+  });
+```
+
+In your app you can provide the [InjectionToken](https://angular.io/guide/dependency-injection-providers#using-an-injectiontoken-object) like
+
+```ts
+import { InjectionToken } from "@angular/core";
+
+export const APP_CONFIG = new InjectionToken<AppConfig>("app.config");
+```
+
+After this you can inject the `APP_CONFIG` like
+
+```ts
+constructor(@Inject(APP_CONFIG) config: AppConfig) {
+  // use your config
+}
+```
+
+And you do not need to care about where the data is coming from and the data is present when you need it.
+
+Thanks to [Tim Deschryver's Blog Post Build once deploy to multiple environments](https://timdeschryver.dev/blog/angular-build-once-deploy-to-multiple-environments#platformbrowserdynamic) for the inspiration to write this two methods together.
