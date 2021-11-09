@@ -101,6 +101,16 @@ constructor(@Inject(APP_CONFIG) config: AppConfig) {
 }
 ```
 
-And you do not need to care about where the data is coming from and the data is present when you need it.
+In your custom libraries, you do not need the `forRoot()` method for the data which gets resolved by the app start. You can provide the [InjectionToken](https://angular.io/guide/dependency-injection-providers#using-an-injectiontoken-object) through a common library and then use the `@Inject(APP_CONFIG) config: AppConfig` whereever you need it.
 
-Thanks to [Tim Deschryver's Blog Post Build once deploy to multiple environments](https://timdeschryver.dev/blog/angular-build-once-deploy-to-multiple-environments#platformbrowserdynamic) for the inspiration to write this two methods together.
+## Third Party Libs
+
+As this runs good for your internal libraries you have control over, this may not work for third party libraries, which _need_ a `forRoot()` with some data. In our security library we solved this with an [StsConfigHttpLoader](https://github.com/damienbod/angular-auth-oidc-client/blob/main/projects/angular-auth-oidc-client/src/lib/config/loader/config-loader.ts#L28) which provides to load the data over http (which is using an [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER) internally). If you have to pass data to start which should be replaced later, you can also pass default data to let the lib start and then replace it and provide it through a provider like described in my blogpost [Configuring Angular libraries](https://offering.solutions/blog/articles/2019/12/31/configuring-angular-libraries/)
+
+## Thanks
+
+Thanks to [Tim Deschryver's Blog Post Build once deploy to multiple environments](https://timdeschryver.dev/blog/angular-build-once-deploy-to-multiple-environments#platformbrowserdynamic) for the inspiration to write this two (and a half) methods together.
+
+Hope this helps
+
+Fabian
