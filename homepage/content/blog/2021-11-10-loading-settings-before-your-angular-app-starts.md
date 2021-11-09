@@ -42,11 +42,11 @@ function initializeAppFactory(httpClient: HttpClient): () => Observable<any> {
 export class AppModule {}
 ```
 
-The problem with this approach is that when you have a module in the `imports` array which has a `forRoot(...)` method and you want to pass some data into it which is loaded in the [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER) you have a chicken-egg-problem: The `AppModule` needs to gather all modules in the `imports` array, and therefore also execute the `forRoot(...)`s, if any, but the info to pass into the `forRoot(...)`s can only be gatherred when the [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER) has fired. But to fire this, the `forRoot(...)` has to have the info first, etc.
+The problem with this approach is that when you have a module in the `imports` array which has a `forRoot(...)` method and you want to pass some data into it which is loaded in the [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER) you have a chicken-egg-problem: The `AppModule` needs to gather all modules in the `imports` array, and therefore also runs the `forRoot(...)`s, if any, but the info to pass into the `forRoot(...)`s can only be gatherred when the [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER) has been called. But to call this, the `forRoot(...)` has to have the info first, etc.
 
 ## Using the fetch api
 
-Let's get a step back and see what we want to do. So before the complete app starts we want to ask for our data to have them present and the time angular kicks in and bootstraps. The place which bootstraps the app is the `main.ts` file.
+Let's get a step back and see what we want to do. So before the complete app starts we want to ask for our data to have it present and the time angular kicks in and bootstraps. The place which bootstraps the app is the `main.ts` file.
 
 ```ts
 import { enableProdMode } from "@angular/core";
