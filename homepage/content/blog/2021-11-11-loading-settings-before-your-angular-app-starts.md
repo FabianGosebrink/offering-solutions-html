@@ -1,6 +1,6 @@
 ---
 title: Loading configuration before your angular App Starts
-date: 2021-11-10
+date: 2021-11-11
 tags: ["angular"]
 draft: false
 category: blog
@@ -11,7 +11,7 @@ In this blogpost I want to describe two different ways how to load your settings
 
 ## The Problem
 
-The problem comes with the apporach of building your application once and deploying it everywhere, which means to all stages you are working with. Let this be DEV, STAGE and PROD for this case. What we NOT want to do is using the `environment.xxx.ts` files for building our application for each stage explicitly. That would mean that we have different builds on each environment and with this the issue that we might see errors on the stages which we have not seen on the stages before. This is why it is so important to build one artifact and deploy it everywhere.
+The problem comes with the apporach of building your application once and deploying it everywhere, which means to all stages you are working with. Let this be DEV, STAGE and PROD for this case. What we NOT want to do is using the `environment.stage.ts`, `environment.prod.ts`, `environment.<my-env>.ts` files for building our application for each stage explicitly. That would mean that we have different builds on each environment and with this the issue that we might see errors on the stages which we have not seen on the stages before. This is why it is so important to build one artifact and deploy it everywhere.
 
 But the different stages need different settings. On DEV maybe I want to have a different loglevel than on STAGE or PROD. So how to achieve this when implementing the Angular app only once?
 
@@ -105,7 +105,9 @@ In your custom libraries, you do not need the `forRoot()` method for the data wh
 
 ## Third Party Libs
 
-As this runs good for your internal libraries you have control over, this may not work for third party libraries, which _need_ a `forRoot()` with some data. In our security library we solved this with an [StsConfigHttpLoader](https://github.com/damienbod/angular-auth-oidc-client/blob/main/projects/angular-auth-oidc-client/src/lib/config/loader/config-loader.ts#L28) which provides to load the data over http (which is using an [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER) internally). If you have to pass data to start which should be replaced later, you can also pass default data to let the lib start and then replace it and provide it through a provider like described in my blogpost [Configuring Angular libraries](https://offering.solutions/blog/articles/2019/12/31/configuring-angular-libraries/)
+As this runs good for your internal libraries you have control over, this may not work for third party libraries, which _need_ a `forRoot()` with some data. In our security library we solved this with an [StsConfigHttpLoader](https://github.com/damienbod/angular-auth-oidc-client/blob/main/projects/angular-auth-oidc-client/src/lib/config/loader/config-loader.ts#L28) or `loaders` in general [config-loader.ts](https://github.com/damienbod/angular-auth-oidc-client/blob/main/projects/angular-auth-oidc-client/src/lib/config/loader/config-loader.ts) which are used in an internal `APP_INITIALIZER` in the [auth module](https://github.com/damienbod/angular-auth-oidc-client/blob/main/projects/angular-auth-oidc-client/src/lib/auth.module.ts#L92-L100). The loader either provides the data over http or gets it statically wrapped in a promise.
+
+Another approach would be that you pass data at the start which can be replaced later, like default data to let the lib start and then replace it and provide it through a provider like described in my blogpost [Configuring Angular libraries](https://offering.solutions/blog/articles/2019/12/31/configuring-angular-libraries/)
 
 ## Thanks
 
