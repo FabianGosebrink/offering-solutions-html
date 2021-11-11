@@ -1,6 +1,6 @@
 <head>
 	<meta charset="utf-8" />
-	<title>{{ if .IsHome }} {{ .Site.Title }} {{ else }}{{ .Title }}{{ end }}</title>
+	<title>{{ if .IsHome }} {{ title .Site.Title }} {{ else }}{{ title .Title }}{{ end }}</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="{{ if .Description }}{{ .Description | safeHTML }}{{ else }}{{ .Summary | safeHTML }}{{ end }}">
