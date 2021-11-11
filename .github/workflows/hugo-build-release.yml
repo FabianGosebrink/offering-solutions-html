@@ -67,6 +67,6 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-            az account set --subscription ${{secrets.AZURE_SUBSCRIPTION_ID}}
+            az account set --subscription '${{secrets.AZURE_SUBSCRIPTION_ID}}'
             az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
             az storage blob upload-batch --account-name 'offeringsolutionscdn' --destination '$web' --source '${{ env.DIST_DIRECTORY }}/dist-cdn' --content-cache-control "public, max-age=31556952"
