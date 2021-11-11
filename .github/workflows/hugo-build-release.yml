@@ -63,9 +63,8 @@ jobs:
           enable-AzPSSession: true
 
       - name: Reupload all blog items
-        uses: azure/CLI@v1
+        uses: Azure/cli@v1
         with:
-          azcliversion: 2.0.72
           inlineScript: |
             az account set --subscription '${{secrets.AZURE_SUBSCRIPTION_ID}}'
             az storage blob delete-batch --account-name 'offeringsolutionscdn' --source '$web'
