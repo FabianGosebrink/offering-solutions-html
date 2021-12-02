@@ -1,5 +1,14 @@
 [
   {
+    "title": "Creating Real Time Cross Platform Applications with Angular, ASP.NET Core and Signalr",
+    "link": "https://www.dotnet-developer-conference.de/programm/#/talk/realtime-cross-platform-applikationen-mit-angular-asp-net-core-and-signalr",
+    "date": "2021-12-01T00:00:00.000Z",
+    "event": ".NET Developer Conference",
+    "tags": ["Angular", "ASP.NET Core SignalR"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr",
+    "dataId": "7229760120674a938ef4eae7a48ab01d"
+  },
+  {
     "title": "Angular Testing with Jasmine, Karma and Cypress",
     "link": "https://javascript-conference.com/angular/angular-testing-made-easy-with-jasmine-karma-and-cypress/",
     "date": "2021-10-26T00:00:00.000Z",
