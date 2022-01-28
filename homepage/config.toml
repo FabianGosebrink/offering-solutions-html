@@ -232,45 +232,49 @@ disqusShortname = "" #"offeringsolutions"
 
     # Uses font awesome icons
     [[params.footer.social]]
-      icon = "fa-twitter"
+      icon = "fab fa-twitter"
       url= "https://twitter.com/FabianGosebrink"
       label = "Twitter"
 
     [[params.footer.social]]
-      icon = "fa-twitter"
+      icon = "fab fa-twitter"
       url= "https://twitter.com/OfferingSolu"
       label = "Twitter"
 
    [[params.footer.social]]
-      icon = "fa-github"
+      icon = "fab fa-github"
       url= "https://github.com/FabianGosebrink"
       label = "GitHub"
     
     [[params.footer.social]]
-      icon = "fa-github"
+      icon = "fab fa-github"
       url= "https://github.com/OfferingSolutions"
       label = "GitHub"
 
     [[params.footer.social]]
-      icon = "fa-linkedin"
+      icon = "fab fa-linkedin"
       url= "https://www.linkedin.com/in/fabian-gosebrink-71023a88"
       label = "LinkedIn"
 
     [[params.footer.social]]
-      icon = "fa-xing"
+      icon = "fab fa-xing"
       url= "https://www.xing.com/profile/Fabian_Gosebrink"
       label = "Xing"
 
     [[params.footer.social]]
-      icon = "fa-windows"
+      icon = "fab fa-windows"
       url= "https://mvp.microsoft.com/en-us/PublicProfile/5001666?fullName=Fabian%20%20Gosebrink"
       label = "Microsoft"
 
     [[params.footer.social]]
-      icon = "fa-google"
+      icon = "fas fa-rss"
+      url = "https://offering.solutions/blog/index.xml"
+      label = "RSS"
+
+    [[params.footer.social]]
+      icon = "fab fa-google"
       url= "https://developers.google.com/community/experts/directory/profile/profile-fabian_gosebrink"
       label = "Google"
-
     [[params.footer.quicklinks]]
       text = "Design: "
       url= "https://www.html5up.net"

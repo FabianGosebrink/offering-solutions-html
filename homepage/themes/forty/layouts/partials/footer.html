@@ -3,7 +3,11 @@
     <div class="inner">
         <ul class="icons">
             {{ range .Site.Params.Footer.social }}
-                <li><a href="{{ .url | safeHTML }}" rel="noreferrer" class="icon brands alt {{ .icon }}" aria-label="{{ .label }}" target="_blank"><span class="label">{{ .label }}</span></a></li>
+                <li>
+                    <a href="{{ .url | safeHTML }}" rel="noreferrer" class="icon alt" aria-label="{{ .label }}" target="_blank">
+                        <i class="{{ .icon }}"></i>
+                    </a>
+                </li>
             {{ end }}
         </ul>
         <ul class="copyright">
