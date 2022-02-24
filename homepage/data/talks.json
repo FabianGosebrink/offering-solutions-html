@@ -1,1 +1,492 @@
-[{"title":"Creating Real Time Cross Platform Applications with Angular, ASP.NET Core and Signalr","link":"https://www.dotnet-developer-conference.de/programm/#/talk/realtime-cross-platform-applikationen-mit-angular-asp-net-core-and-signalr","date":"2021-12-01T00:00:00.000Z","event":".NET Developer Conference","tags":["Angular","ASP.NET Core SignalR"],"slides":"https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr","dataId":"7229760120674a938ef4eae7a48ab01d"},{"title":"Angular Testing with Jasmine, Karma and Cypress","link":"https://javascript-conference.com/angular/angular-testing-made-easy-with-jasmine-karma-and-cypress/","date":"2021-10-26T00:00:00.000Z","event":"International Javascript Conference Munich","tags":["Angular","Jasmine","Karma"],"slides":"https://speakerdeck.com/fabiangosebrink/angular-testing-with-jasmine-karma-and-cypress","dataId":"072279e4c1444effa2a191ba4471953b"},{"title":"Angular Reactive Forms - Developing Forms and Validation with Angular","link":"https://javascript-days.de/angular/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln/","date":"2021-10-05T00:00:00.000Z","event":"Angular Days Berlin","tags":["Angular","Reactive Forms"],"slides":"https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular","dataId":"eedabd0f0d2c4525b62886011097886b"},{"title":"Realtime Cross Plattform Apps with Angular, ASP.NET Core and Signalr","link":"https://basta.net/web-development/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr/","date":"2021-09-23T00:00:00.000Z","event":"BASTA! 2021 Mainz","tags":["Angular","SignalR"],"slides":"https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr","dataId":"7229760120674a938ef4eae7a48ab01d"},{"title":"Angular Testing with Jasmine, Karma and Cypress","link":"https://basta.net/web-development/angular-testing-mit-jasmine-karma-und-cypress/","date":"2021-09-22T00:00:00.000Z","event":"BASTA! 2021 Mainz","tags":["Angular","Jasmine","Karma"],"slides":"https://speakerdeck.com/fabiangosebrink/angular-testing-with-jasmine-karma-and-cypress","dataId":"072279e4c1444effa2a191ba4471953b"},{"title":"Angular Architectures with Ngrx Stores & Effects","link":"https://ngrome.io/agenda","date":"2021-07-09T00:00:00.000Z","event":"NG Rome MMXXI","youtube":"https://www.youtube.com/embed/Suq507TcoVA?start=1770","tags":["Angular"]},{"title":"Detecting and Solving Pain Points in Angular Applications","link":"https://www.developer-week.de/programm/#/talk/detecting-and-solving-paint-points-in-angular-applications","date":"2021-06-30T00:00:00.000Z","event":"Developer Week 21","tags":["Angular"],"slides":"https://speakerdeck.com/fabiangosebrink/detecting-and-solving-pain-points-in-angular-applications","dataId":"35543ddf729f4e4e8ca56397a712e49e"},{"title":"(Workshop) - End-to-End – Moderne Webanwendungen Mit Angular Und ASP.NET Core","link":"https://www.digicomp.ch/weiterbildung/development-trainings/web-development/microsoft-web-development-trainings/workshop-end-to-end-moderne-webanwendungen-mit-angular-und-asp-net-core","date":"2021-06-22T00:00:00.000Z","event":"Digicomp","tags":["Angular","ASP.NET Core"]},{"title":"Creating Real Time Cross Platform Applications with Angular, ASP.NET Core and Signalr, Cordova and Electron","link":"https://geekle.us/angular","date":"2021-06-02T00:00:00.000Z","event":"ANGULAR GLOBAL SUMMIT'21","tags":["Angular","ASP.NET Core SignalR"],"slides":"https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr","dataId":"7229760120674a938ef4eae7a48ab01d"},{"title":"Workshop - Erstellen Von Realtime Cross-Platform-Applikationen","link":"https://www.web-developer-conference.de/history/programm-2021/#/talk/erstellen-von-realtime-cross-platform-applikationen","date":"2021-04-27T00:00:00.000Z","event":"Web Developer Conference","tags":["Angular","ASP.NET Core SignalR"],"slides":"https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr","dataId":"7229760120674a938ef4eae7a48ab01d"},{"title":"Nx-Workspace - Simplified Scaling for Large Angular Projects","link":"https://www.web-developer-conference.de/history/programm-2021/#/talk/nx-workspace-simplified-scaling-for-large-angular-projects-2","date":"2021-04-27T00:00:00.000Z","event":"Web Developer Conference","slides":"https://speakerdeck.com/fabiangosebrink/nx-workspace-simplified-scaling-for-large-angular-projects","dataId":"ca73133ca8b0484e968c9655998dca8a","tags":["Angular","Nx"]},{"title":"Detecting and Solving Pain Points in Angular Applications","link":"https://javascript-conference.com/angular/detecting-and-solving-pain-points-in-angular-applications/","date":"2021-04-19T00:00:00.000Z","event":"International Javascript Conference","tags":["Angular"],"slides":"https://speakerdeck.com/fabiangosebrink/detecting-and-solving-pain-points-in-angular-applications","dataId":"35543ddf729f4e4e8ca56397a712e49e"},{"title":"Angular Reactive Forms – Formulare Und Validierung Mit Angular Entwickeln","link":"https://javascript-days.de/angular/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln/","date":"2021-03-25T00:00:00.000Z","event":"Angular Days","tags":["Angular"],"slides":"https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular","dataId":"eedabd0f0d2c4525b62886011097886b"},{"title":"Realtime Cross-Plattform-Applikationen Mit Angular, ASP.NET Core Und Signalr","link":"https://basta.net/user-interface/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr/","date":"2021-02-16T00:00:00.000Z","event":"BASTA!","tags":["Angular","ASP.NET Core","SignalR"],"slides":"https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr","dataId":"7229760120674a938ef4eae7a48ab01d"},{"title":"Architecting Angular Applications with Angular Libraries","link":"https://www.meetup.com/de-DE/GDGWestSweden/events/275821898/","date":"2021-01-28T00:00:00.000Z","event":"GDG West Sweden","tags":["Angular","Libraries"]},{"title":"End-to-End – Moderne Webanwendungen Mit Angular Und ASP.NET Core","link":"https://www.digicomp.ch/weiterbildung/development-trainings/web-development/microsoft-web-development-trainings/workshop-end-to-end-moderne-webanwendungen-mit-angular-und-asp-net-core","date":"2021-01-27T00:00:00.000Z","event":"Digicomp","tags":["Angular","ASP.NET Core"]},{"title":"Enrich Your Angular App with Angular Forms","link":"https://ng-poland.pl/","date":"2020-11-19T00:00:00.000Z","event":"Ng Poland","tags":["Angular","Forms"]},{"title":"Angular Testing Made Easy with Jasmine, Karma and Cypress","link":"https://javascript-conference.com/angular/angular-testing-made-easy-with-jasmine-karma-and-cypress/","date":"2020-10-28T00:00:00.000Z","event":"International Javascript Conference 2020","tags":["Angular","Testing"]},{"title":"Architecting Angular Applications with Angular Libraries","link":"https://javascript-conference.com/angular/architecting-angular-applications-and-angular-libraries/","date":"2020-10-28T00:00:00.000Z","event":"International Javascript Conference 2020","tags":["Angular","Libraries","architecture"]},{"title":"Architecting Angular Applications with Angular Libraries","date":"2020-10-17T00:00:00.000Z","event":"DevFest UK & Ireland","tags":["Angular","Libraries","architecture"]},{"title":"Testing Using Angular","date":"2020-10-13T00:00:00.000Z","event":"Web developer Conference","tags":["Angular","Testing"]},{"title":"Statemanagement in Angular with Ngrx Stores & Effects","date":"2020-10-12T00:00:00.000Z","event":"Web developer Conference","tags":["Angular","ngrx"]},{"title":"Cross Platform Apps with Cordova, Electron and Angular","date":"2020-09-24T00:00:00.000Z","event":"BASTA! Mainz","slides":"https://speakerdeck.com/fabiangosebrink/cross-platform-apps-with-cordova-electron-and-angular","link":"https://basta.net/web-development/cross-plattform-apps-fuer-desktop-mobile-und-web-mit-electron-cordova-angular/","dataId":"f34dac631bc44967a14586eebc5f4ab3","tags":["Angular","ASP.NET Core","SignalR","Cordova","Electron"]},{"title":"Enrich Your Angular Apps with Angular Forms","date":"2020-09-03T00:00:00.000Z","event":"iJS London","tags":["Angular","forms"]},{"title":"Architecting Angular Applications with Angular Libraries","date":"2020-07-15T00:00:00.000Z","event":"NG-Poland","tags":["Angular","Libraries","architecture"]},{"title":"Erstellen Von Modernen Web-Apis Mit ASP.NET Core 3","date":"2020-02-25T00:00:00.000Z","event":"BASTA! Frankfurt","tags":["Angular","Libraries","architecture"]},{"title":"Better Angular Architectures with Libraries","date":"2019-11-27T00:00:00.000Z","event":"Web Zurich UG Meetup","tags":["Angular","Libraries","architecture"]},{"title":"End-to-End : Distributed Systems with ASP.NET Core and Angular - Workshop","date":"2019-11-25T00:00:00.000Z","event":"DDC Köln (Workshop)","tags":["Angular","ASP.NET Core"]},{"title":"End-to-End : Real Time Messaging with Angular and ASP.NET Core Signalr","date":"2019-11-21T00:00:00.000Z","event":"NgPoland Warsaw","tags":["Angular","ASP.NET Core SignalR"]},{"title":"End-to-End : Distributed Systems with ASP.NET Core and Angular - Workshop","date":"2019-11-20T00:00:00.000Z","event":"NgPoland Warsaw (Workshop)","tags":["Angular","ASP.NET Core"]},{"title":"Real Time Messaging with Angular and ASP.NET Core Signalr","date":"2019-10-27T00:00:00.000Z","event":"Google GDE Summit - Silicon Valley","tags":["Angular","ASP.NET Core SignalR"]},{"title":"Professional Angular Architectures with Angular Libraries","date":"2019-10-23T00:00:00.000Z","event":"iJS Munich","tags":["Angular","Libraries","Architecture"]},{"title":"Statemanagement in Angular with Ngrx Stores & Effects Workshop","date":"2019-10-16T00:00:00.000Z","event":"Web Developer Conference (WDC) Hamburg","tags":["Angular","ngrx"]},{"title":"Mobile & Desktop: Cross-Platform with Electron and Cordova","date":"2019-10-15T00:00:00.000Z","event":"Web Developer Conference (WDC) Hamburg","tags":["Angular","ASP.NET","SignalR","Cordova","Electron"]},{"title":"Angular Architectures with Angular Libraries","date":"2019-10-15T00:00:00.000Z","event":"Web Developer Conference (WDC) Hamburg","tags":["Angular","Libraries","Architecture"]},{"title":"Testing Made Easy","date":"2019-10-09T00:00:00.000Z","event":"AngularDays in Berlin Workshop","tags":["Angular","Testing"]},{"title":"Architecting Angular Apps with Angular Libraries","date":"2019-10-07T00:00:00.000Z","event":"NgRome","tags":["Angular","Libraries","Architecture"]},{"title":"What Is New in ASP.NET Core 3.0","date":"2019-10-04T00:00:00.000Z","event":".NET Conf Zurich","tags":["ASP.NET Core"]},{"title":"Mobile and Desktop Cross-Plattform with Electron Und Cordova - an Introduction","date":"2019-09-25T00:00:00.000Z","event":"BASTA! Mainz","tags":["Angular","ASP.NET Core","SignalR","Cordova","Electron"]},{"title":"Creating Realtime Cross-Platform Applications with Angular, ASP.NET Core & Signalr","date":"2019-06-25T00:00:00.000Z","event":"DWX Nürnberg","tags":["Angular","ASP.NET","SignalR","Cordova","Electron"]},{"title":"ASP.NET Core Signalr Azure Signalr Service Scale Out","date":"2019-05-23T00:00:00.000Z","event":"Noser Team Day Bern","tags":["ASP.NET SignalR"]},{"title":"State Management in Angular with Ngrx Stores and Effects","date":"2019-05-14T00:00:00.000Z","event":"International Javascript Conference","tags":["Angular","ngrx"]},{"title":"Javascript Testing Leicht Gemacht Am Beispiel Von Angular","date":"2019-02-27T00:00:00.000Z","event":"BASTA! - Frankfurt","tags":["Angular","Javascript","testing"]},{"title":"Echte Cross-Plattform-Anwendungen Mit Cordova, Electron Und Angular","date":"2018-09-27T00:00:00.000Z","event":"BASTA! - Mainz","tags":["Angular","cordova","Electron","Web","cross platform"]},{"title":"Die Moderne Web-Toolchain: Webpack, Npm Und Yarn, Linting Und Co.","date":"2018-09-26T00:00:00.000Z","event":"BASTA! - Mainz","tags":["Web","Development","tools"]},{"title":"Modern Webapis with ASP.NET Core","date":"2018-06-25T00:00:00.000Z","event":"DWX - Nürnberg","tags":["ASP.NET Core","Web","Development"]},{"title":"Real Time Web Applications with Angular and ASP.NET Core Signalr","date":"2018-06-22T00:00:00.000Z","event":"WebZurich meetup - Zürich","tags":["ASP.NET Core","Web","Development","SignalR"]},{"title":"Angular Testing Made Easy","date":"2018-03-21T00:00:00.000Z","event":"Angular Days - Munich","tags":["Angular","testing","Javascript","Web","Development"]},{"title":"From Zero to Azure with Angular","date":"2018-03-01T00:00:00.000Z","event":"Microsoft TechSummit Switzerland","tags":["Javascript","Web","Development","Azure"]},{"title":"Mehr Als Nur Web: Cross-Plattform-Anwendungen Mit Angular, Electron Und Cordova","date":"2018-02-21T00:00:00.000Z","event":"BASTA! Spring 2018","tags":["Javascript","Web","Development"]},{"title":"Modern Web Toolchain","date":"2018-02-21T00:00:00.000Z","event":"BASTA! Spring 2018","tags":["Javascript","Web","Development"]},{"title":"Modern Web Toolchain","date":"2017-10-23T00:00:00.000Z","event":"Dev-Day Digicomp - Zürich","tags":["Javascript","Web","Development"]},{"title":"Angular Testing Von a Bis Z","date":"2017-10-11T00:00:00.000Z","event":"Angular Days - Berlin","tags":["Angular","testing","Javascript","Web","Development"]},{"title":"Fenster Überall: Desktopanwendungen Mit Angular Und Electron","date":"2017-09-28T00:00:00.000Z","event":"BASTA! - Mainz","tags":["Angular","Electron","Javascript","Web","Development"]},{"title":"Webentwicklung Mit ASP.NET Core Webapi & Angular","date":"2017-09-19T00:00:00.000Z","event":"Advanced Developers Conference - Köln","tags":["Angular","ASP.NET Core","Web","Development"]},{"title":"Cross-Plattform Webapis Mit ASP.NET Core","date":"2017-09-19T00:00:00.000Z","event":"Advanced Developers Conference - Köln","tags":["ASP.NET Core","Web","Development"]},{"title":"Businessanwendungen Für Jedes System Mit ASP.NET Core Und Angular","date":"2017-05-23T00:00:00.000Z","event":".NET-Day Schweiz","tags":["Angular","ASP.NET Core","Web","Development"]},{"title":"Angular Mit ASP.NET Core Webapi","date":"2017-04-25T00:00:00.000Z","event":" Sarganserland GR Softwareentwickler Meetup","tags":["Angular","ASP.NET Core","Web","Development"]},{"title":"Cross-Platform Webapis Mit Der Dotnet Cli Und ASP.NET Core","date":"2017-03-30T00:00:00.000Z","event":"Microsoft Solutions User Group Switzerland","tags":["ASP.NET Core","Web","Development","dotnet cli"]},{"title":"Angular and C# .Net as Backend","date":"2017-02-28T00:00:00.000Z","event":"Angular Basel","tags":["Angular","ASP.NET Core","Web","Development"]},{"title":"ASP.NET Core & Angular in Business Applications","date":"2017-01-31T00:00:00.000Z","event":"Microsoft TechDays 2017","tags":["Angular","ASP.NET Core","Web","SignalR","Development"]},{"title":"Moderne Webentwicklung Mit Component Based Design","date":"2017-01-17T00:00:00.000Z","event":"Noser Engineering","tags":["Angular","ASP.NET","Web","Development"]},{"title":"How to Write a Webapi with ASP.NET Core","date":"2016-11-28T00:00:00.000Z","event":"Basel .NET User Group","tags":["ASP.NET Core","Web","Development"]},{"title":"Webentwicklung Mit Angular Und ASP.NET Core","date":"2016-06-02T00:00:00.000Z","event":"Noser Engineering","tags":["Angular","ASP.NET Core","Web","Development"]},{"title":"Webentwicklung Mit Angular, Signalr Und ASP.NET Core","date":"2016-03-01T00:00:00.000Z","event":"Microsoft TechDays 2016","tags":["Angular","ASP.NET Core","Web","SignalR","Development"]},{"title":"AngularJs & Rest/webapi (with X-Platform Development)","date":"2016-01-13T00:00:00.000Z","tags":["Angular","ASP.NET","Web","Development","x-platform"]},{"title":"Webentwicklung Mit AngularJs & Rest/webapi","date":"2015-10-29T00:00:00.000Z","event":"Microsoft Evolution Day","tags":["Angular","ASP.NET","Web","Development"]},{"title":"Webentwicklung Mit ASP.NET & AngularJs","date":"2015-04-23T00:00:00.000Z","event":" Microsoft Techtalk (Bern)","tags":["Angular","ASP.NET","Web","Development"]},{"title":"Webentwicklung Mit ASP.NET & AngularJs","date":"2015-03-19T00:00:00.000Z","event":"Microsoft Techtalk (Wallisellen)","tags":["Angular","ASP.NET","Web","Development"]},{"title":"Scrum - Agile Development","date":"2015-03-02T00:00:00.000Z","event":"Hochschule Rapperswil","tags":["agile","Development","scrum"]},{"title":"ASP.NET Mvc Workshop","date":"2014-06-21T00:00:00.000Z","event":"Hochschule Albstadt-Sigmaringen","tags":["Web","Development","ASP.NET MVC"]}]
+[
+  {
+    "title": "Better Angular Apps with Angular Reactive Forms",
+    "link": "https://basta.net/web-development/bessere-angular-applikationen-mit-angular-reactive-forms/",
+    "date": "2022-02-24T00:00:00.000Z",
+    "event": "BASTA! 2021 Frankfurt",
+    "tags": ["Angular", "Reactive Forms"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular",
+    "dataId": "eedabd0f0d2c4525b62886011097886b"
+  },
+  {
+    "title": "Angular Testing with Jest and Cypress",
+    "link": "https://basta.net/web-development/angular-testing-mit-jest-und-cypress/",
+    "date": "2022-02-23T00:00:00.000Z",
+    "event": "BASTA! 2021 Frankfurt",
+    "tags": ["Angular", "ASP.NET Core SignalR"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-testing-with-jest-and-cypress",
+    "dataId": "8cad900b8d1a44429993b794cf4bd0b6"
+  },
+  {
+    "title": "Creating Real Time Cross Platform Applications with Angular, ASP.NET Core and Signalr",
+    "link": "https://www.dotnet-developer-conference.de/programm/#/talk/realtime-cross-platform-applikationen-mit-angular-asp-net-core-and-signalr",
+    "date": "2021-12-01T00:00:00.000Z",
+    "event": ".NET Developer Conference",
+    "tags": ["Angular", "ASP.NET Core SignalR"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr",
+    "dataId": "7229760120674a938ef4eae7a48ab01d"
+  },
+  {
+    "title": "Angular Testing with Jasmine, Karma and Cypress",
+    "link": "https://javascript-conference.com/angular/angular-testing-made-easy-with-jasmine-karma-and-cypress/",
+    "date": "2021-10-26T00:00:00.000Z",
+    "event": "International Javascript Conference Munich",
+    "tags": ["Angular", "Jasmine", "Karma"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-testing-with-jasmine-karma-and-cypress",
+    "dataId": "072279e4c1444effa2a191ba4471953b"
+  },
+  {
+    "title": "Angular Reactive Forms - Developing Forms and Validation with Angular",
+    "link": "https://javascript-days.de/angular/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln/",
+    "date": "2021-10-05T00:00:00.000Z",
+    "event": "Angular Days Berlin",
+    "tags": ["Angular", "Reactive Forms"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular",
+    "dataId": "eedabd0f0d2c4525b62886011097886b"
+  },
+  {
+    "title": "Realtime Cross Plattform Apps with Angular, ASP.NET Core and Signalr",
+    "link": "https://basta.net/web-development/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr/",
+    "date": "2021-09-23T00:00:00.000Z",
+    "event": "BASTA! 2021 Mainz",
+    "tags": ["Angular", "SignalR"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr",
+    "dataId": "7229760120674a938ef4eae7a48ab01d"
+  },
+  {
+    "title": "Angular Testing with Jasmine, Karma and Cypress",
+    "link": "https://basta.net/web-development/angular-testing-mit-jasmine-karma-und-cypress/",
+    "date": "2021-09-22T00:00:00.000Z",
+    "event": "BASTA! 2021 Mainz",
+    "tags": ["Angular", "Jasmine", "Karma"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-testing-with-jasmine-karma-and-cypress",
+    "dataId": "072279e4c1444effa2a191ba4471953b"
+  },
+  {
+    "title": "Angular Architectures with Ngrx Stores & Effects",
+    "link": "https://ngrome.io/agenda",
+    "date": "2021-07-09T00:00:00.000Z",
+    "event": "NG Rome MMXXI",
+    "youtube": "https://www.youtube.com/embed/Suq507TcoVA?start=1770",
+    "tags": ["Angular"]
+  },
+  {
+    "title": "Detecting and Solving Pain Points in Angular Applications",
+    "link": "https://www.developer-week.de/programm/#/talk/detecting-and-solving-paint-points-in-angular-applications",
+    "date": "2021-06-30T00:00:00.000Z",
+    "event": "Developer Week 21",
+    "tags": ["Angular"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/detecting-and-solving-pain-points-in-angular-applications",
+    "dataId": "35543ddf729f4e4e8ca56397a712e49e"
+  },
+  {
+    "title": "(Workshop) - End-to-End – Moderne Webanwendungen Mit Angular Und ASP.NET Core",
+    "link": "https://www.digicomp.ch/weiterbildung/development-trainings/web-development/microsoft-web-development-trainings/workshop-end-to-end-moderne-webanwendungen-mit-angular-und-asp-net-core",
+    "date": "2021-06-22T00:00:00.000Z",
+    "event": "Digicomp",
+    "tags": ["Angular", "ASP.NET Core"]
+  },
+  {
+    "title": "Creating Real Time Cross Platform Applications with Angular, ASP.NET Core and Signalr, Cordova and Electron",
+    "link": "https://geekle.us/angular",
+    "date": "2021-06-02T00:00:00.000Z",
+    "event": "ANGULAR GLOBAL SUMMIT'21",
+    "tags": ["Angular", "ASP.NET Core SignalR"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr",
+    "dataId": "7229760120674a938ef4eae7a48ab01d"
+  },
+  {
+    "title": "Workshop - Erstellen Von Realtime Cross-Platform-Applikationen",
+    "link": "https://www.web-developer-conference.de/history/programm-2021/#/talk/erstellen-von-realtime-cross-platform-applikationen",
+    "date": "2021-04-27T00:00:00.000Z",
+    "event": "Web Developer Conference",
+    "tags": ["Angular", "ASP.NET Core SignalR"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr",
+    "dataId": "7229760120674a938ef4eae7a48ab01d"
+  },
+  {
+    "title": "Nx-Workspace - Simplified Scaling for Large Angular Projects",
+    "link": "https://www.web-developer-conference.de/history/programm-2021/#/talk/nx-workspace-simplified-scaling-for-large-angular-projects-2",
+    "date": "2021-04-27T00:00:00.000Z",
+    "event": "Web Developer Conference",
+    "slides": "https://speakerdeck.com/fabiangosebrink/nx-workspace-simplified-scaling-for-large-angular-projects",
+    "dataId": "ca73133ca8b0484e968c9655998dca8a",
+    "tags": ["Angular", "Nx"]
+  },
+  {
+    "title": "Detecting and Solving Pain Points in Angular Applications",
+    "link": "https://javascript-conference.com/angular/detecting-and-solving-pain-points-in-angular-applications/",
+    "date": "2021-04-19T00:00:00.000Z",
+    "event": "International Javascript Conference",
+    "tags": ["Angular"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/detecting-and-solving-pain-points-in-angular-applications",
+    "dataId": "35543ddf729f4e4e8ca56397a712e49e"
+  },
+  {
+    "title": "Angular Reactive Forms – Formulare Und Validierung Mit Angular Entwickeln",
+    "link": "https://javascript-days.de/angular/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln/",
+    "date": "2021-03-25T00:00:00.000Z",
+    "event": "Angular Days",
+    "tags": ["Angular"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular",
+    "dataId": "eedabd0f0d2c4525b62886011097886b"
+  },
+  {
+    "title": "Realtime Cross-Plattform-Applikationen Mit Angular, ASP.NET Core Und Signalr",
+    "link": "https://basta.net/user-interface/realtime-cross-plattform-applikationen-mit-angular-asp-net-core-und-signalr/",
+    "date": "2021-02-16T00:00:00.000Z",
+    "event": "BASTA!",
+    "tags": ["Angular", "ASP.NET Core", "SignalR"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/realtime-cross-plattform-apps-with-angular-asp-dot-net-core-and-signalr",
+    "dataId": "7229760120674a938ef4eae7a48ab01d"
+  },
+  {
+    "title": "Architecting Angular Applications with Angular Libraries",
+    "link": "https://www.meetup.com/de-DE/GDGWestSweden/events/275821898/",
+    "date": "2021-01-28T00:00:00.000Z",
+    "event": "GDG West Sweden",
+    "tags": ["Angular", "Libraries"]
+  },
+  {
+    "title": "End-to-End – Moderne Webanwendungen Mit Angular Und ASP.NET Core",
+    "link": "https://www.digicomp.ch/weiterbildung/development-trainings/web-development/microsoft-web-development-trainings/workshop-end-to-end-moderne-webanwendungen-mit-angular-und-asp-net-core",
+    "date": "2021-01-27T00:00:00.000Z",
+    "event": "Digicomp",
+    "tags": ["Angular", "ASP.NET Core"]
+  },
+  {
+    "title": "Enrich Your Angular App with Angular Forms",
+    "link": "https://ng-poland.pl/",
+    "date": "2020-11-19T00:00:00.000Z",
+    "event": "Ng Poland",
+    "tags": ["Angular", "Forms"]
+  },
+  {
+    "title": "Angular Testing Made Easy with Jasmine, Karma and Cypress",
+    "link": "https://javascript-conference.com/angular/angular-testing-made-easy-with-jasmine-karma-and-cypress/",
+    "date": "2020-10-28T00:00:00.000Z",
+    "event": "International Javascript Conference 2020",
+    "tags": ["Angular", "Testing"]
+  },
+  {
+    "title": "Architecting Angular Applications with Angular Libraries",
+    "link": "https://javascript-conference.com/angular/architecting-angular-applications-and-angular-libraries/",
+    "date": "2020-10-28T00:00:00.000Z",
+    "event": "International Javascript Conference 2020",
+    "tags": ["Angular", "Libraries", "architecture"]
+  },
+  {
+    "title": "Architecting Angular Applications with Angular Libraries",
+    "date": "2020-10-17T00:00:00.000Z",
+    "event": "DevFest UK & Ireland",
+    "tags": ["Angular", "Libraries", "architecture"]
+  },
+  {
+    "title": "Testing Using Angular",
+    "date": "2020-10-13T00:00:00.000Z",
+    "event": "Web developer Conference",
+    "tags": ["Angular", "Testing"]
+  },
+  {
+    "title": "Statemanagement in Angular with Ngrx Stores & Effects",
+    "date": "2020-10-12T00:00:00.000Z",
+    "event": "Web developer Conference",
+    "tags": ["Angular", "ngrx"]
+  },
+  {
+    "title": "Cross Platform Apps with Cordova, Electron and Angular",
+    "date": "2020-09-24T00:00:00.000Z",
+    "event": "BASTA! Mainz",
+    "slides": "https://speakerdeck.com/fabiangosebrink/cross-platform-apps-with-cordova-electron-and-angular",
+    "link": "https://basta.net/web-development/cross-plattform-apps-fuer-desktop-mobile-und-web-mit-electron-cordova-angular/",
+    "dataId": "f34dac631bc44967a14586eebc5f4ab3",
+    "tags": ["Angular", "ASP.NET Core", "SignalR", "Cordova", "Electron"]
+  },
+  {
+    "title": "Enrich Your Angular Apps with Angular Forms",
+    "date": "2020-09-03T00:00:00.000Z",
+    "event": "iJS London",
+    "tags": ["Angular", "forms"]
+  },
+  {
+    "title": "Architecting Angular Applications with Angular Libraries",
+    "date": "2020-07-15T00:00:00.000Z",
+    "event": "NG-Poland",
+    "tags": ["Angular", "Libraries", "architecture"]
+  },
+  {
+    "title": "Erstellen Von Modernen Web-Apis Mit ASP.NET Core 3",
+    "date": "2020-02-25T00:00:00.000Z",
+    "event": "BASTA! Frankfurt",
+    "tags": ["Angular", "Libraries", "architecture"]
+  },
+  {
+    "title": "Better Angular Architectures with Libraries",
+    "date": "2019-11-27T00:00:00.000Z",
+    "event": "Web Zurich UG Meetup",
+    "tags": ["Angular", "Libraries", "architecture"]
+  },
+  {
+    "title": "End-to-End : Distributed Systems with ASP.NET Core and Angular - Workshop",
+    "date": "2019-11-25T00:00:00.000Z",
+    "event": "DDC Köln (Workshop)",
+    "tags": ["Angular", "ASP.NET Core"]
+  },
+  {
+    "title": "End-to-End : Real Time Messaging with Angular and ASP.NET Core Signalr",
+    "date": "2019-11-21T00:00:00.000Z",
+    "event": "NgPoland Warsaw",
+    "tags": ["Angular", "ASP.NET Core SignalR"]
+  },
+  {
+    "title": "End-to-End : Distributed Systems with ASP.NET Core and Angular - Workshop",
+    "date": "2019-11-20T00:00:00.000Z",
+    "event": "NgPoland Warsaw (Workshop)",
+    "tags": ["Angular", "ASP.NET Core"]
+  },
+  {
+    "title": "Real Time Messaging with Angular and ASP.NET Core Signalr",
+    "date": "2019-10-27T00:00:00.000Z",
+    "event": "Google GDE Summit - Silicon Valley",
+    "tags": ["Angular", "ASP.NET Core SignalR"]
+  },
+  {
+    "title": "Professional Angular Architectures with Angular Libraries",
+    "date": "2019-10-23T00:00:00.000Z",
+    "event": "iJS Munich",
+    "tags": ["Angular", "Libraries", "Architecture"]
+  },
+  {
+    "title": "Statemanagement in Angular with Ngrx Stores & Effects Workshop",
+    "date": "2019-10-16T00:00:00.000Z",
+    "event": "Web Developer Conference (WDC) Hamburg",
+    "tags": ["Angular", "ngrx"]
+  },
+  {
+    "title": "Mobile & Desktop: Cross-Platform with Electron and Cordova",
+    "date": "2019-10-15T00:00:00.000Z",
+    "event": "Web Developer Conference (WDC) Hamburg",
+    "tags": ["Angular", "ASP.NET", "SignalR", "Cordova", "Electron"]
+  },
+  {
+    "title": "Angular Architectures with Angular Libraries",
+    "date": "2019-10-15T00:00:00.000Z",
+    "event": "Web Developer Conference (WDC) Hamburg",
+    "tags": ["Angular", "Libraries", "Architecture"]
+  },
+  {
+    "title": "Testing Made Easy",
+    "date": "2019-10-09T00:00:00.000Z",
+    "event": "AngularDays in Berlin Workshop",
+    "tags": ["Angular", "Testing"]
+  },
+  {
+    "title": "Architecting Angular Apps with Angular Libraries",
+    "date": "2019-10-07T00:00:00.000Z",
+    "event": "NgRome",
+    "tags": ["Angular", "Libraries", "Architecture"]
+  },
+  {
+    "title": "What Is New in ASP.NET Core 3.0",
+    "date": "2019-10-04T00:00:00.000Z",
+    "event": ".NET Conf Zurich",
+    "tags": ["ASP.NET Core"]
+  },
+  {
+    "title": "Mobile and Desktop Cross-Plattform with Electron Und Cordova - an Introduction",
+    "date": "2019-09-25T00:00:00.000Z",
+    "event": "BASTA! Mainz",
+    "tags": ["Angular", "ASP.NET Core", "SignalR", "Cordova", "Electron"]
+  },
+  {
+    "title": "Creating Realtime Cross-Platform Applications with Angular, ASP.NET Core & Signalr",
+    "date": "2019-06-25T00:00:00.000Z",
+    "event": "DWX Nürnberg",
+    "tags": ["Angular", "ASP.NET", "SignalR", "Cordova", "Electron"]
+  },
+  {
+    "title": "ASP.NET Core Signalr Azure Signalr Service Scale Out",
+    "date": "2019-05-23T00:00:00.000Z",
+    "event": "Noser Team Day Bern",
+    "tags": ["ASP.NET SignalR"]
+  },
+  {
+    "title": "State Management in Angular with Ngrx Stores and Effects",
+    "date": "2019-05-14T00:00:00.000Z",
+    "event": "International Javascript Conference",
+    "tags": ["Angular", "ngrx"]
+  },
+  {
+    "title": "Javascript Testing Leicht Gemacht Am Beispiel Von Angular",
+    "date": "2019-02-27T00:00:00.000Z",
+    "event": "BASTA! - Frankfurt",
+    "tags": ["Angular", "Javascript", "testing"]
+  },
+  {
+    "title": "Echte Cross-Plattform-Anwendungen Mit Cordova, Electron Und Angular",
+    "date": "2018-09-27T00:00:00.000Z",
+    "event": "BASTA! - Mainz",
+    "tags": ["Angular", "cordova", "Electron", "Web", "cross platform"]
+  },
+  {
+    "title": "Die Moderne Web-Toolchain: Webpack, Npm Und Yarn, Linting Und Co.",
+    "date": "2018-09-26T00:00:00.000Z",
+    "event": "BASTA! - Mainz",
+    "tags": ["Web", "Development", "tools"]
+  },
+  {
+    "title": "Modern Webapis with ASP.NET Core",
+    "date": "2018-06-25T00:00:00.000Z",
+    "event": "DWX - Nürnberg",
+    "tags": ["ASP.NET Core", "Web", "Development"]
+  },
+  {
+    "title": "Real Time Web Applications with Angular and ASP.NET Core Signalr",
+    "date": "2018-06-22T00:00:00.000Z",
+    "event": "WebZurich meetup - Zürich",
+    "tags": ["ASP.NET Core", "Web", "Development", "SignalR"]
+  },
+  {
+    "title": "Angular Testing Made Easy",
+    "date": "2018-03-21T00:00:00.000Z",
+    "event": "Angular Days - Munich",
+    "tags": ["Angular", "testing", "Javascript", "Web", "Development"]
+  },
+  {
+    "title": "From Zero to Azure with Angular",
+    "date": "2018-03-01T00:00:00.000Z",
+    "event": "Microsoft TechSummit Switzerland",
+    "tags": ["Javascript", "Web", "Development", "Azure"]
+  },
+  {
+    "title": "Mehr Als Nur Web: Cross-Plattform-Anwendungen Mit Angular, Electron Und Cordova",
+    "date": "2018-02-21T00:00:00.000Z",
+    "event": "BASTA! Spring 2018",
+    "tags": ["Javascript", "Web", "Development"]
+  },
+  {
+    "title": "Modern Web Toolchain",
+    "date": "2018-02-21T00:00:00.000Z",
+    "event": "BASTA! Spring 2018",
+    "tags": ["Javascript", "Web", "Development"]
+  },
+  {
+    "title": "Modern Web Toolchain",
+    "date": "2017-10-23T00:00:00.000Z",
+    "event": "Dev-Day Digicomp - Zürich",
+    "tags": ["Javascript", "Web", "Development"]
+  },
+  {
+    "title": "Angular Testing Von a Bis Z",
+    "date": "2017-10-11T00:00:00.000Z",
+    "event": "Angular Days - Berlin",
+    "tags": ["Angular", "testing", "Javascript", "Web", "Development"]
+  },
+  {
+    "title": "Fenster Überall: Desktopanwendungen Mit Angular Und Electron",
+    "date": "2017-09-28T00:00:00.000Z",
+    "event": "BASTA! - Mainz",
+    "tags": ["Angular", "Electron", "Javascript", "Web", "Development"]
+  },
+  {
+    "title": "Webentwicklung Mit ASP.NET Core Webapi & Angular",
+    "date": "2017-09-19T00:00:00.000Z",
+    "event": "Advanced Developers Conference - Köln",
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
+  },
+  {
+    "title": "Cross-Plattform Webapis Mit ASP.NET Core",
+    "date": "2017-09-19T00:00:00.000Z",
+    "event": "Advanced Developers Conference - Köln",
+    "tags": ["ASP.NET Core", "Web", "Development"]
+  },
+  {
+    "title": "Businessanwendungen Für Jedes System Mit ASP.NET Core Und Angular",
+    "date": "2017-05-23T00:00:00.000Z",
+    "event": ".NET-Day Schweiz",
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
+  },
+  {
+    "title": "Angular Mit ASP.NET Core Webapi",
+    "date": "2017-04-25T00:00:00.000Z",
+    "event": " Sarganserland GR Softwareentwickler Meetup",
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
+  },
+  {
+    "title": "Cross-Platform Webapis Mit Der Dotnet Cli Und ASP.NET Core",
+    "date": "2017-03-30T00:00:00.000Z",
+    "event": "Microsoft Solutions User Group Switzerland",
+    "tags": ["ASP.NET Core", "Web", "Development", "dotnet cli"]
+  },
+  {
+    "title": "Angular and C# .Net as Backend",
+    "date": "2017-02-28T00:00:00.000Z",
+    "event": "Angular Basel",
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
+  },
+  {
+    "title": "ASP.NET Core & Angular in Business Applications",
+    "date": "2017-01-31T00:00:00.000Z",
+    "event": "Microsoft TechDays 2017",
+    "tags": ["Angular", "ASP.NET Core", "Web", "SignalR", "Development"]
+  },
+  {
+    "title": "Moderne Webentwicklung Mit Component Based Design",
+    "date": "2017-01-17T00:00:00.000Z",
+    "event": "Noser Engineering",
+    "tags": ["Angular", "ASP.NET", "Web", "Development"]
+  },
+  {
+    "title": "How to Write a Webapi with ASP.NET Core",
+    "date": "2016-11-28T00:00:00.000Z",
+    "event": "Basel .NET User Group",
+    "tags": ["ASP.NET Core", "Web", "Development"]
+  },
+  {
+    "title": "Webentwicklung Mit Angular Und ASP.NET Core",
+    "date": "2016-06-02T00:00:00.000Z",
+    "event": "Noser Engineering",
+    "tags": ["Angular", "ASP.NET Core", "Web", "Development"]
+  },
+  {
+    "title": "Webentwicklung Mit Angular, Signalr Und ASP.NET Core",
+    "date": "2016-03-01T00:00:00.000Z",
+    "event": "Microsoft TechDays 2016",
+    "tags": ["Angular", "ASP.NET Core", "Web", "SignalR", "Development"]
+  },
+  {
+    "title": "AngularJs & Rest/webapi (with X-Platform Development)",
+    "date": "2016-01-13T00:00:00.000Z",
+    "tags": ["Angular", "ASP.NET", "Web", "Development", "x-platform"]
+  },
+  {
+    "title": "Webentwicklung Mit AngularJs & Rest/webapi",
+    "date": "2015-10-29T00:00:00.000Z",
+    "event": "Microsoft Evolution Day",
+    "tags": ["Angular", "ASP.NET", "Web", "Development"]
+  },
+  {
+    "title": "Webentwicklung Mit ASP.NET & AngularJs",
+    "date": "2015-04-23T00:00:00.000Z",
+    "event": " Microsoft Techtalk (Bern)",
+    "tags": ["Angular", "ASP.NET", "Web", "Development"]
+  },
+  {
+    "title": "Webentwicklung Mit ASP.NET & AngularJs",
+    "date": "2015-03-19T00:00:00.000Z",
+    "event": "Microsoft Techtalk (Wallisellen)",
+    "tags": ["Angular", "ASP.NET", "Web", "Development"]
+  },
+  {
+    "title": "Scrum - Agile Development",
+    "date": "2015-03-02T00:00:00.000Z",
+    "event": "Hochschule Rapperswil",
+    "tags": ["agile", "Development", "scrum"]
+  },
+  {
+    "title": "ASP.NET Mvc Workshop",
+    "date": "2014-06-21T00:00:00.000Z",
+    "event": "Hochschule Albstadt-Sigmaringen",
+    "tags": ["Web", "Development", "ASP.NET MVC"]
+  }
+]
