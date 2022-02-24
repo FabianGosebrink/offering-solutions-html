@@ -13,7 +13,7 @@
     "link": "https://basta.net/web-development/angular-testing-mit-jest-und-cypress/",
     "date": "2022-02-23T00:00:00.000Z",
     "event": "BASTA! 2021 Frankfurt",
-    "tags": ["Angular", "ASP.NET Core SignalR"],
+    "tags": ["Angular", "Jest", "Cypress"],
     "slides": "https://speakerdeck.com/fabiangosebrink/angular-testing-with-jest-and-cypress",
     "dataId": "8cad900b8d1a44429993b794cf4bd0b6"
   },
