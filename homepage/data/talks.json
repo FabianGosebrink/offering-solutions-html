@@ -18,6 +18,15 @@
     "dataId": "8cad900b8d1a44429993b794cf4bd0b6"
   },
   {
+    "title": "Enrich your Angular App with Angular Forms",
+    "link": "https://ng-poland.pl/angular-fabian-gosebrink.html",
+    "date": "2022-01-25T00:00:00.000Z",
+    "event": "NG Poland 2022",
+    "tags": ["Angular", "Reactive Forms"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular",
+    "dataId": "eedabd0f0d2c4525b62886011097886b"
+  },
+  {
     "title": "Creating Real Time Cross Platform Applications with Angular, ASP.NET Core and Signalr",
     "link": "https://www.dotnet-developer-conference.de/programm/#/talk/realtime-cross-platform-applikationen-mit-angular-asp-net-core-and-signalr",
     "date": "2021-12-01T00:00:00.000Z",
