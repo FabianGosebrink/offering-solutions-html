@@ -31,18 +31,38 @@ I copied that two arrays, merged them into a single array and saved it into a fi
 
 > Yes, I know that when wordle changes this, my suggestions won't work anymore. But like already mentioned, this is not what it is about currently 🙂
 
+## Creating the Angular App
+
+So I ran
+
+```
+npx @angular/cli new wordle-helper
+```
+
+to create a new project and did run
+
+```
+ng add @angular/material
+```
+
+to add [Angular Material](https://material.angular.io/) to the page.
+
+Then I did `ng generate @angular/material:navigation shell` to create a shell component giving me a starting point with the menu and some content area.
+
+That is it for the basic layout.
+
 ## Creating the filter service
 
 So when we see what we can provide wordle and what wordle does is: We provide characters, and wordle says:
 
 - What carrecter is NOT in the word
-- What character IS in the word
+- What character IS in the word but on the wrong index
 - What character is at the correct index of the word
 
 So the first two points can be solved with a simple `string[]`. The third one needs a type with a character and an index.
 
 ```ts
-export interface CharacterIndexIncludes {
+export interface IndexCharacter {
   character: string;
   index: number;
 }
@@ -95,3 +115,81 @@ export class WordleHelperService {
   //.. more code
 }
 ```
+
+In the `excludeChars(...)` method I pass in all of the words and the chars to exclude as a `string[]`. Then I check if a words does not contain any of the chars provided and filter by it. Of course I have to split the word into an array of chars with the `split()` method.
+
+```ts
+private excludeChars(words: string[], excludeChars: string[]): string[] {
+    if (excludeChars.length === 0) {
+        return words;
+    }
+
+    return words.filter(
+        (word) => !this.wordContainsAnyOfChars(word, excludeChars)
+    );
+}
+
+private wordContainsAnyOfChars(word: string, exludedChars: string[]) {
+    return exludedChars.some((x) => this.wordContainsChar(word, x));
+}
+
+private wordContainsChar(word: string, char: string): boolean {
+    return word.split('').includes(char);
+}
+```
+
+The `includeChars(...)` method is also getting passed the list of all words and the characters to include. But here ALL include chars have to be present in the word.
+
+```ts
+private includeChars(words: string[], includeChars: string[]) {
+    if (includeChars.length === 0) {
+        return words;
+    }
+
+    return words.filter((word) =>
+        this.wordContainsAllOfChars(word, includeChars)
+    );
+}
+
+private wordContainsAllOfChars(word: string, exludedChars: string[]) {
+    return exludedChars.every((x) => this.wordContainsChar(word, x));
+}
+
+...
+
+private wordContainsChar(word: string, char: string): boolean {
+    return word.split('').includes(char);
+}
+
+```
+
+The next method is checking if a specific character is on a specific index. In the wordle this would be the green char. So the method takes all the words and an array of the `CharacterIndexIncludes` interface and then proceeds with that. The outcome should be an array of words which are then the result to display at the end.
+
+```ts
+  private filterWordByCharsOnCorrectPlace(
+    filteredWords: string[],
+    includeLettersOnCorrectPlace: CharacterIndexIncludes[]
+  ): string[] {
+
+    const filtered = filteredWords.map((word) => {
+      const wordContainsEveryCharAtIndex = includeLettersOnCorrectPlace.every(
+        ({ character, index }) =>
+          this.containsCharAtIndex(word, character, index)
+      );
+
+      return wordContainsEveryCharAtIndex ? word : null;
+    });
+
+    return filtered.filter(Boolean);
+  }
+
+  private containsCharAtIndex(word: string, character: string, index: number) {
+    const allCharsOfWord = word.split('');
+
+    return allCharsOfWord[index] === character;
+  }
+```
+
+The words are mapped into a new array containing either the word itself or null, if the word does not contain the char at the index. THe null values are filtered at the end with `return filtered.filter(Boolean);`.
+
+And thats it. That is the logic to filter to wordle word list.
