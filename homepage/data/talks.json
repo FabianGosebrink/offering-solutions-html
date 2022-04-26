@@ -20,7 +20,7 @@
   {
     "title": "Business Architectures with Angular Libraries, NX and Monorepos ",
     "link": "https://geekle.us/schedule/angular22",
-    "date": "2021-03-30T00:00:00.000Z",
+    "date": "2022-03-30T00:00:00.000Z",
     "event": "Global Angular Summit",
     "tags": ["Angular", "Nx", "Monorepos"],
     "slides": "https://speakerdeck.com/fabiangosebrink/business-architectures-with-angular-libraries-nx-and-monorepos",
@@ -29,7 +29,7 @@
   {
     "title": "Angular Architectures with NgRx Stores & Effects",
     "link": "https://geekle.us/schedule/angular22",
-    "date": "2021-03-29T00:00:00.000Z",
+    "date": "2022-03-29T00:00:00.000Z",
     "event": "Global Angular Summit",
     "tags": ["Angular", "NgRx"],
     "slides": "https://speakerdeck.com/fabiangosebrink/angular-architectures-with-ngrx-stores-and-effects",
