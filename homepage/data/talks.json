@@ -1,5 +1,41 @@
 [
   {
+    "title": "Angular Architectures with NgRx Stores & Effects",
+    "link": "https://javascript-conference.com/angular/angular-architectures-with-ngrx-stores-effects/",
+    "date": "2022-04-26T00:00:00.000Z",
+    "event": "International Javascript Conference London",
+    "tags": ["Angular", "NgRx"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-architectures-with-ngrx-stores-and-effects",
+    "dataId": "c128c659b3a2421a9f1b066bce55c089"
+  },
+  {
+    "title": "Angular Testing with Jasmine, Karma and Cypress",
+    "link": "https://javascript-conference.com/angular/angular-testing-made-easy-with-jasmine-karma-and-cypress/",
+    "date": "2022-04-26T00:00:00.000Z",
+    "event": "International Javascript Conference London",
+    "tags": ["Angular", "Jasmine", "Karma"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-testing-with-jasmine-karma-and-cypress",
+    "dataId": "072279e4c1444effa2a191ba4471953b"
+  },
+  {
+    "title": "Business Architectures with Angular Libraries, NX and Monorepos ",
+    "link": "https://geekle.us/schedule/angular22",
+    "date": "2021-03-30T00:00:00.000Z",
+    "event": "Global Angular Summit",
+    "tags": ["Angular", "Nx", "Monorepos"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/business-architectures-with-angular-libraries-nx-and-monorepos",
+    "dataId": "9da0183f84fd446e89bd6d5d6a012ef3"
+  },
+  {
+    "title": "Angular Architectures with NgRx Stores & Effects",
+    "link": "https://geekle.us/schedule/angular22",
+    "date": "2021-03-29T00:00:00.000Z",
+    "event": "Global Angular Summit",
+    "tags": ["Angular", "NgRx"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-architectures-with-ngrx-stores-and-effects",
+    "dataId": "c128c659b3a2421a9f1b066bce55c089"
+  },
+  {
     "title": "Angular Reactive Forms - Developing Forms and Validation with Angular Workshop",
     "link": "https://javascript-days.de/angular/angular-reactive-forms-formulare-und-validierung-mit-angular-entwickeln/",
     "date": "2022-03-24T00:00:00.000Z",
@@ -12,7 +48,7 @@
     "title": "Better Angular Apps with Angular Reactive Forms",
     "link": "https://basta.net/web-development/bessere-angular-applikationen-mit-angular-reactive-forms/",
     "date": "2022-02-24T00:00:00.000Z",
-    "event": "BASTA! 2021 Frankfurt",
+    "event": "BASTA! 2022 Frankfurt",
     "tags": ["Angular", "Reactive Forms"],
     "slides": "https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular",
     "dataId": "eedabd0f0d2c4525b62886011097886b"
@@ -21,7 +57,7 @@
     "title": "Angular Testing with Jest and Cypress",
     "link": "https://basta.net/web-development/angular-testing-mit-jest-und-cypress/",
     "date": "2022-02-23T00:00:00.000Z",
-    "event": "BASTA! 2021 Frankfurt",
+    "event": "BASTA! 2022 Frankfurt",
     "tags": ["Angular", "Jest", "Cypress"],
     "slides": "https://speakerdeck.com/fabiangosebrink/angular-testing-with-jest-and-cypress",
     "dataId": "8cad900b8d1a44429993b794cf4bd0b6"
