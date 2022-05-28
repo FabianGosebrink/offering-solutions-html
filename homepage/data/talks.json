@@ -1,5 +1,14 @@
 [
   {
+    "title": "Angular Reactive Forms - Developing Forms and Validation with Angular",
+    "link": "https://voxxeddays.com/zurich/schedule/talk/?id=4053",
+    "date": "2022-05-17T00:00:00.000Z",
+    "event": "Voxxed Days Zurich",
+    "tags": ["Angular", "Reactive Forms"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-reactive-forms-developing-forms-and-validation-with-angular",
+    "dataId": "eedabd0f0d2c4525b62886011097886b"
+  },
+  {
     "title": "Angular Architectures with NgRx Stores & Effects",
     "link": "https://javascript-conference.com/angular/angular-architectures-with-ngrx-stores-effects/",
     "date": "2022-04-26T00:00:00.000Z",
@@ -18,7 +27,7 @@
     "dataId": "072279e4c1444effa2a191ba4471953b"
   },
   {
-    "title": "Business Architectures with Angular Libraries, NX and Monorepos ",
+    "title": "Business Architectures with Angular Libraries, NX and Monorepos",
     "link": "https://geekle.us/schedule/angular22",
     "date": "2022-03-30T00:00:00.000Z",
     "event": "Global Angular Summit",
