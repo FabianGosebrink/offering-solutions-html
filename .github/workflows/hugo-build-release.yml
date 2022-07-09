@@ -36,6 +36,12 @@ jobs:
       - name: Prepare Talks
         run: npm run prepare-talks
 
+      - name: Pre build Gulp
+        run: npm run pre-build-gulp
+
+      - name: Building Hugo
+        run: npm run build-hugo
+
       # - name: Building Hugo
       #   run: sudo npm run build-prod
 
