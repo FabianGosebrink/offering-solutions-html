@@ -1,13 +1,13 @@
 ---
 title: ASP.NET WebAPI Datashaper to strip your json data
 date: 2015-05-30
-tags: ['datashaping', 'aspnet']
+tags: ["datashaping", "aspnet"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2015/05/30/asp-net-webapi-datashaper-to-strip-your-json-data/',
+    "/blog/articles/2015/05/30/asp-net-webapi-datashaper-to-strip-your-json-data/",
   ]
 ---
 

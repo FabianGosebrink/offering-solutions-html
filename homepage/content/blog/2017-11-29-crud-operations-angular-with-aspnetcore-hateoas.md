@@ -1,12 +1,12 @@
 ---
 title: CRUD operations in Angular with ASP.NET Core and HATEOAS
 date: 2017-11-29
-tags: ['aspnetcore', 'angular', 'hateoas']
+tags: ["aspnetcore", "angular", "hateoas"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2017/11/29/crud-operations-angular-with-aspnetcore-hateoas/']
+  ["/blog/articles/2017/11/29/crud-operations-angular-with-aspnetcore-hateoas/"]
 ---
 
 This blog post shows how to implement CRUD operations in Angular which are driven by an ASP.NET Core Web API using HATEOAS.
@@ -394,13 +394,13 @@ export class CustomerDataService extends HttpBaseService {
       : null;
 
     switch (method) {
-      case 'DELETE': {
+      case "DELETE": {
         return super.delete(links.href);
       }
-      case 'POST': {
+      case "POST": {
         return super.add < Customer > customer;
       }
-      case 'PUT': {
+      case "PUT": {
         return super.update < Customer > (links.href, customer);
       }
       default: {

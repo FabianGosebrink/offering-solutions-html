@@ -1,7 +1,7 @@
 ---
 title: Upcoming speaking activities
 date: 2019-10-03
-tags: ['publicspeaking']
+tags: ["publicspeaking"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg

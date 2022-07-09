@@ -1,7 +1,7 @@
 ---
 title: Getting Started With Angular Strictly Typed Reactive Forms
-date: 2022-07-08
-tags: ["angular"]
+date: 2022-07-09
+tags: ["angular", "reactiveforms"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg

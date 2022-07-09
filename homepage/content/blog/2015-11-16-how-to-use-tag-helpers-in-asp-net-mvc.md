@@ -1,11 +1,11 @@
 ---
 title: How to use tag helpers in ASP.NET MVC
 date: 2015-11-16
-tags: ['aspnetmvc', 'taghelpers']
+tags: ["aspnetmvc", "taghelpers"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ['/blog/articles/2015/11/16/how-to-use-tag-helpers-in-asp-net-mvc/']
+aliases: ["/blog/articles/2015/11/16/how-to-use-tag-helpers-in-asp-net-mvc/"]
 ---
 
 Hey,

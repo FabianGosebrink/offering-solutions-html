@@ -1,12 +1,12 @@
 ---
 title: Microsoft TechDays 2016
 date: 2016-02-20
-tags: ['microsoft', 'speaking']
+tags: ["microsoft", "speaking"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2016/02/20/talk-on-the-microsoft-techdays-2016-in-baden/']
+  ["/blog/articles/2016/02/20/talk-on-the-microsoft-techdays-2016-in-baden/"]
 ---
 
 [TechDays 2016 Baden](https://www.microsoft.com/de-ch/events/techdays)

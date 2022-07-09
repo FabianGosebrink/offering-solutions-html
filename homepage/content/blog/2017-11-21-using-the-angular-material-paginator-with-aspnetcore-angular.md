@@ -1,13 +1,13 @@
 ---
 title: Using the Angular Material Paginator with ASP.NET Core and Angular
 date: 2017-11-21
-tags: ['angular', 'material', 'aspnetcore']
+tags: ["angular", "material", "aspnetcore"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2017/11/21/using-the-angular-material-paginator-with-aspnetcore-angular/',
+    "/blog/articles/2017/11/21/using-the-angular-material-paginator-with-aspnetcore-angular/",
   ]
 ---
 
@@ -184,8 +184,8 @@ export class HttpBaseService {
     private httpClient: HttpClient,
     private paginationService: PaginationService
   ) {
-    this.headers = this.headers.set('Content-Type', 'application/json');
-    this.headers = this.headers.set('Accept', 'application/json');
+    this.headers = this.headers.set("Content-Type", "application/json");
+    this.headers = this.headers.set("Accept", "application/json");
   }
 
   getAll<T>() {
@@ -193,7 +193,7 @@ export class HttpBaseService {
       `${this.endpoint}` +
       `?page=${this.paginationService.page}&pageCount=${this.paginationService.pageCount}`;
 
-    return this.httpClient.get<T>(mergedUrl, { observe: 'response' });
+    return this.httpClient.get<T>(mergedUrl, { observe: "response" });
   }
 
   getSingle<T>(id: number) {
@@ -248,9 +248,9 @@ The `pageSize` and `pageSizeOptions` come from the `PaginationService` which we 
 ```ts
 export class ListComponent {
   dataSource = new MatTableDataSource<Customer>();
-  displayedColumns = ['id', 'name', 'created', 'actions'];
+  displayedColumns = ["id", "name", "created", "actions"];
 
-  @Input('dataSource')
+  @Input("dataSource")
   set allowDay(value: Customer[]) {
     this.dataSource = new MatTableDataSource<Customer>(value);
   }
@@ -296,7 +296,7 @@ export class OverviewComponent implements OnInit {
   }
 
   delete(customer: Customer) {
-    this.customerDataService.fireRequest(customer, 'DELETE').subscribe(() => {
+    this.customerDataService.fireRequest(customer, "DELETE").subscribe(() => {
       this.dataSource = this.dataSource.filter((x) => x.id !== customer.id);
     });
   }
@@ -304,7 +304,7 @@ export class OverviewComponent implements OnInit {
   getAllCustomers() {
     this.customerDataService.getAll<Customer[]>().subscribe((result: any) => {
       this.totalCount = JSON.parse(
-        result.headers.get('X-Pagination')
+        result.headers.get("X-Pagination")
       ).totalCount;
       this.dataSource = result.body.value;
     });

@@ -1,7 +1,7 @@
 ---
 title: switchMap, mergeMap, concatMap & exhaustMap explained
 date: 2021-03-08
-tags: ['rxjs', 'switchMap', 'mergeMap', 'concatMap', 'exhaustMap']
+tags: ["rxjs", "switchMap", "mergeMap", "concatMap", "exhaustMap"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -52,7 +52,7 @@ Using this method would be like
 ```ts
 // ...
 
-anyLongRunningOp('value').subscribe((result) => {
+anyLongRunningOp("value").subscribe((result) => {
   // after two seconds we get our subscribe called
   console.log(result); // <<<< logs 'value'
 });

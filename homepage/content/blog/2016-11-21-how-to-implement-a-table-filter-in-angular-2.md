@@ -1,12 +1,12 @@
 ---
 title: How to implement a table filter in Angular
 date: 2016-11-21
-tags: ['angular', 'filter']
+tags: ["angular", "filter"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2016/11/21/how-to-implement-a-table-filter-in-angular-2/']
+  ["/blog/articles/2016/11/21/how-to-implement-a-table-filter-in-angular-2/"]
 ---
 
 In this post I want to show you how to implement a table filter in Angular.
@@ -31,11 +31,11 @@ As the described way to use a pipe here is rather outdated in my opinion I updat
 When using reactive forms we have to import the `ReactiveFormsModule` in the `app.component.ts`
 
 ```ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { ReactiveFormsModule } from "@angular/forms";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule],
@@ -86,10 +86,10 @@ and in the table we can add one column which can be extended as you like:
 In the components ts code we can now create the form and ask for the source. We register on the event when a value from the input changes and evaluate the client side food we have already loaded to filter it based on what the user typed.
 
 ```ts
-import { Component, VERSION } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { map, withLatestFrom, startWith, tap } from 'rxjs/operators';
-import { of, Observable } from 'rxjs';
+import { Component, VERSION } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { map, withLatestFrom, startWith, tap } from "rxjs/operators";
+import { of, Observable } from "rxjs";
 
 @Component({
   /* */
@@ -101,12 +101,12 @@ export class AppComponent {
   formGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
-    this.formGroup = formBuilder.group({ filter: [''] });
+    this.formGroup = formBuilder.group({ filter: [""] });
 
     this.foods$ = this.getFoods();
 
-    this.filteredFoods$ = this.formGroup.get('filter').valueChanges.pipe(
-      startWith(''),
+    this.filteredFoods$ = this.formGroup.get("filter").valueChanges.pipe(
+      startWith(""),
       withLatestFrom(this.foods$),
       map(([val, foods]) =>
         !val ? foods : foods.filter((x) => x.name.toLowerCase().includes(val))
@@ -115,7 +115,7 @@ export class AppComponent {
   }
 
   private getFoods() {
-    return of([{ name: 'Food1' }, { name: 'Food2' }]).pipe(tap(console.log));
+    return of([{ name: "Food1" }, { name: "Food2" }]).pipe(tap(console.log));
   }
 }
 
@@ -129,21 +129,21 @@ We are creating a form with one filter input and bind it to the input we already
 Then we use RxJS to react on the event a value changes in the input control `filter`
 
 ```ts
-this.filteredFoods$ = this.formGroup.get('filter').valueChanges.pipe();
+this.filteredFoods$ = this.formGroup.get("filter").valueChanges.pipe();
 ```
 
 and when this event happens, we combine it with the latest in the `foods$` we already have
 
 ```ts
 this.filteredFoods$ = this.formGroup
-  .get('filter')
+  .get("filter")
   .valueChanges.pipe(withLatestFrom(this.foods$));
 ```
 
 After this we are taking the both values (searchValue and the foods list) out of the stream and can filter
 
 ```ts
-this.filteredFoods$ = this.formGroup.get('filter').valueChanges.pipe(
+this.filteredFoods$ = this.formGroup.get("filter").valueChanges.pipe(
   withLatestFrom(this.foods$),
   map(([val, foods]) =>
     !val
@@ -156,8 +156,8 @@ this.filteredFoods$ = this.formGroup.get('filter').valueChanges.pipe(
 As this observable only starts when something happens in the input box as it is `valueChanges` but we want to have an initial value we can use the `startsWith` operator to kick of the first run
 
 ```ts
-this.filteredFoods$ = this.formGroup.get('filter').valueChanges.pipe(
-  startWith(''),
+this.filteredFoods$ = this.formGroup.get("filter").valueChanges.pipe(
+  startWith(""),
   withLatestFrom(this.foods$),
   map(([val, foods]) =>
     !val ? foods : foods.filter((x) => x.name.toLowerCase().includes(val))
@@ -182,10 +182,10 @@ Code: [https://github.com/FabianGosebrink/ASPNETCore-Angular-Ngrx/blob/master/c
 You can achieve this using a pipe:
 
 ```javascript
-import { Pipe, PipeTransform, Injectable } from '@angular/core';
+import { Pipe, PipeTransform, Injectable } from "@angular/core";
 
 @Pipe({
-  name: 'filter',
+  name: "filter",
 })
 @Injectable()
 export class FilterPipe implements PipeTransform {
@@ -211,10 +211,10 @@ The Pipe is available through the name "filter".
 After implementing this the pipe has to be registered on a module to make it available in our application. Could be your application module or if you have one, a shared module. In case of the shared one: Do not forget to export it. ;-)
 
 ```javascript
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 // ...
-import { FilterPipe } from '../pipes/filter.pipe';
+import { FilterPipe } from "../pipes/filter.pipe";
 
 @NgModule({
   imports: [
@@ -242,10 +242,10 @@ export class SharedModule {}
 AppModule:
 
 ```javascript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 // ...
-import { SharedModule } from './modules/shared.module';
+import { SharedModule } from "./modules/shared.module";
 
 // ...
 
@@ -263,13 +263,13 @@ export class AppModule {}
 In the template you have to add a input to a form to display a field to the user where the searchstring can be typed. After this the pipe has to be applied and the searchstring has to be databound in the template.
 
 ```javascript
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 // ...
 
 @Component({
-  selector: 'app-foodlist',
-  templateUrl: './food-list.component.html',
-  styleUrls: ['./food-list.component.css'],
+  selector: "app-foodlist",
+  templateUrl: "./food-list.component.html",
+  styleUrls: ["./food-list.component.css"],
 })
 export class FoodListComponent {
   foodItem: FoodItem;

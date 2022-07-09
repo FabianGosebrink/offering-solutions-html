@@ -18,7 +18,9 @@
     "title-case": "^3.0.3",
     "typescript": "^4.3.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
   "scripts": {
     "tsc": "tsc",
     "alex": "alex homepage/content/blog/*.md",
@@ -29,7 +31,8 @@
     "prepare-talks": "npm run title-case && npm run convert-talks",
     "title-case": "tsc ./tools/title-case-converter.ts && node ./tools/title-case-converter.js",
     "convert-talks": "tsc ./tools/convert-talks-json-to-md.ts && node ./tools/convert-talks-json-to-md.js",
-    "copy-dist-blog-cdn": "node ./tools/build-for-prod.js"
+    "copy-dist-blog-cdn": "node ./tools/build-for-prod.js",
+    "format": "prettier --write \"homepage/content/blog/**/*.md\""
   },
   "repository": {
     "type": "git",

@@ -1,12 +1,12 @@
 ---
 title: Zu Gast beim MVP Global Summit bei Microsoft
 date: 2015-11-04
-tags: ['microsoft', 'mvpsummit']
+tags: ["microsoft", "mvpsummit"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2015/11/04/zu-gast-beim-mvp-global-summit-bei-microsoft/']
+  ["/blog/articles/2015/11/04/zu-gast-beim-mvp-global-summit-bei-microsoft/"]
 ---
 
 Hi,

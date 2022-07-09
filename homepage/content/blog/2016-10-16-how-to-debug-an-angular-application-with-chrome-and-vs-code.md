@@ -1,13 +1,13 @@
 ---
 title: How to debug an Angular application with Chrome and VS Code
 date: 2016-10-16
-tags: ['angular', 'chrome', 'vscode']
+tags: ["angular", "chrome", "vscode"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2016/10/16/how-to-debug-an-angular-application-with-chrome-and-vs-code/',
+    "/blog/articles/2016/10/16/how-to-debug-an-angular-application-with-chrome-and-vs-code/",
   ]
 ---
 

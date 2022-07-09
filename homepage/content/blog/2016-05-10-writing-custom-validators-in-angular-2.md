@@ -1,11 +1,11 @@
 ---
 title: Writing custom validators in Angular
 date: 2016-05-10
-tags: ['angular']
+tags: ["angular"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ['/blog/articles/2016/05/10/writing-custom-validators-in-angular-2/']
+aliases: ["/blog/articles/2016/05/10/writing-custom-validators-in-angular-2/"]
 ---
 
 In this blog post I want to show you how you are writing custom validators in Angular.
@@ -49,12 +49,12 @@ We see a form which has a variable "f" representing the form with which we can a
 So lets write a validator which exactly checks for that:
 
 ```javascript
-import { Directive, forwardRef, Attribute } from '@angular/core';
-import { Validator, FormControl, NG_VALIDATORS } from '@angular/forms';
+import { Directive, forwardRef, Attribute } from "@angular/core";
+import { Validator, FormControl, NG_VALIDATORS } from "@angular/forms";
 
 @Directive({
   selector:
-    '[isNumber][formControlName],[isNumber][formControl],[isNumber][ngModel]',
+    "[isNumber][formControlName],[isNumber][formControl],[isNumber][ngModel]",
   providers: [
     {
       provide: NG_VALIDATORS,
@@ -85,11 +85,11 @@ This validator is named "IsNumberValidator" and has a function with a FormContro
 Before we can use it in our form we have to include it in our module. I built a shared module which I include in my app.module.
 
 ```javascript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { IsNumberValidator } from '../validators/isNumber.validator';
-import { IsInRangeValidator } from '../validators/isInRange.validator';
+import { IsNumberValidator } from "../validators/isNumber.validator";
+import { IsInRangeValidator } from "../validators/isInRange.validator";
 
 @NgModule({
   imports: [
@@ -118,7 +118,7 @@ and in our app.module:
 ```javascript
 // ...
 
-import { SharedModule } from './modules/shared.module';
+import { SharedModule } from "./modules/shared.module";
 
 @NgModule({
   imports: [

@@ -1,12 +1,12 @@
 ---
 title: Moving your Angular application from SystemJS to Webpack
 date: 2017-02-26
-tags: ['angular', 'systemjs', 'webpack']
+tags: ["angular", "systemjs", "webpack"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2017/02/26/moving-from-systemjs-to-webpack-angular-2/']
+  ["/blog/articles/2017/02/26/moving-from-systemjs-to-webpack-angular-2/"]
 ---
 
 In this blog post I want to show you how you can move from an existing Angular application using systemjs to an application with webpack.
@@ -105,28 +105,28 @@ tslint.json
 The file could look like this:
 
 ```javascript
-import 'ie-shim'; // Internet Explorer 9 support.
+import "ie-shim"; // Internet Explorer 9 support.
 
-import 'core-js/es6/symbol';
-import 'core-js/es6/object';
-import 'core-js/es6/function';
-import 'core-js/es6/parse-int';
-import 'core-js/es6/parse-float';
-import 'core-js/es6/number';
-import 'core-js/es6/math';
-import 'core-js/es6/string';
-import 'core-js/es6/date';
-import 'core-js/es6/array';
-import 'core-js/es6/regexp';
-import 'core-js/es6/map';
-import 'core-js/es6/set';
-import 'core-js/es6/weak-map';
-import 'core-js/es6/weak-set';
-import 'core-js/es6/typed';
-import 'core-js/es6/reflect';
-import 'core-js/es7/reflect';
+import "core-js/es6/symbol";
+import "core-js/es6/object";
+import "core-js/es6/function";
+import "core-js/es6/parse-int";
+import "core-js/es6/parse-float";
+import "core-js/es6/number";
+import "core-js/es6/math";
+import "core-js/es6/string";
+import "core-js/es6/date";
+import "core-js/es6/array";
+import "core-js/es6/regexp";
+import "core-js/es6/map";
+import "core-js/es6/set";
+import "core-js/es6/weak-map";
+import "core-js/es6/weak-set";
+import "core-js/es6/typed";
+import "core-js/es6/reflect";
+import "core-js/es7/reflect";
 
-import 'zone.js/dist/zone';
+import "zone.js/dist/zone";
 ```
 
 > Notice that when you import things you also have to install them via npm which also should be reflected in you package.json
@@ -155,11 +155,11 @@ tslint.json
 Which could look like this
 
 ```javascript
-import 'jquery/dist/jquery';
-import 'bootstrap/dist/js/bootstrap';
+import "jquery/dist/jquery";
+import "bootstrap/dist/js/bootstrap";
 
-import 'bootstrap/dist/css/bootstrap.css';
-import '../css/custom.css';
+import "bootstrap/dist/css/bootstrap.css";
+import "../css/custom.css";
 
 // import everything else here!!!
 ```
@@ -204,12 +204,12 @@ module.exports = {
 or you import the two files in you main.ts like:
 
 ```javascript
-import './polyfills';
-import './vendor';
+import "./polyfills";
+import "./vendor";
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
-import { AppModule } from './app.module';
+import { AppModule } from "./app.module";
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 ```

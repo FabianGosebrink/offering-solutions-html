@@ -1,13 +1,13 @@
 ---
 title: Announcing 'Getting started with Angular and ASP.NET Core' blog post for ng book
 date: 2018-08-09
-tags: ['angular', 'aspnetcore']
+tags: ["angular", "aspnetcore"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2018/08/09/announcing-getting-started-with-angular-and-asp.net-core-blog post-for-ng-book/',
+    "/blog/articles/2018/08/09/announcing-getting-started-with-angular-and-asp.net-core-blog post-for-ng-book/",
   ]
 ---
 

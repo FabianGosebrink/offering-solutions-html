@@ -1,13 +1,13 @@
 ---
 title: Chat with Node.js, socket.io, AngularJS, flashing title and loading bar
 date: 2014-07-02
-tags: ['angularjs', 'nodejs', 'socketio']
+tags: ["angularjs", "nodejs", "socketio"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2014/07/03/chat-with-node-js-socket-io-angular-js-flashing-title-and-loading-bar/',
+    "/blog/articles/2014/07/03/chat-with-node-js-socket-io-angular-js-flashing-title-and-loading-bar/",
   ]
 ---
 
@@ -48,19 +48,19 @@ Lets digg deeper and see the underlying controller. but before we do this, we ha
 ### App.js
 
 ```javascript
-var app = angular.module('MessengerApp', [
-  'ngRoute',
-  'ngResource',
-  'ui.bootstrap',
-  'chieffancypants.loadingBar',
+var app = angular.module("MessengerApp", [
+  "ngRoute",
+  "ngResource",
+  "ui.bootstrap",
+  "chieffancypants.loadingBar",
 ]);
 app.config(function ($routeProvider) {
   $routeProvider
-    .when('', {
-      controller: 'DemoController',
-      templateUrl: './views/index.html',
+    .when("", {
+      controller: "DemoController",
+      templateUrl: "./views/index.html",
     })
-    .otherwise({ redirectTo: '/' });
+    .otherwise({ redirectTo: "/" });
 });
 ```
 
@@ -72,32 +72,32 @@ As mentioned in the view we have a controller called "DemoController". And becau
 
 ```javascript
 app.controller(
-  'DemoController',
+  "DemoController",
   function ($scope, chatService, cfpLoadingBar, flashService) {
     var _messages = [];
 
     cfpLoadingBar.start();
-    var socket = io.connect('MyIp:MyPort');
+    var socket = io.connect("MyIp:MyPort");
 
     var _sendMessage = function () {
       cfpLoadingBar.start();
       chatService.sendMessage(socket, $scope.name, $scope.messageText);
-      $scope.messageText = '';
+      $scope.messageText = "";
     };
 
-    socket.on('chat', function (data) {
-      $scope.messages.push(data.name + ': ' + data.text);
+    socket.on("chat", function (data) {
+      $scope.messages.push(data.name + ": " + data.text);
       $scope.$apply();
 
-      flashService.flashWindow(data.name + ': ' + data.text, 10);
-      $('body').scrollTop($('body')[0].scrollHeight);
+      flashService.flashWindow(data.name + ": " + data.text, 10);
+      $("body").scrollTop($("body")[0].scrollHeight);
       cfpLoadingBar.complete();
     });
 
     $scope.sendMessage = _sendMessage;
     $scope.messages = _messages;
-    $scope.messageText = '';
-    $scope.name = '';
+    $scope.messageText = "";
+    $scope.name = "";
   }
 );
 ```
@@ -119,8 +119,8 @@ After we created all our stuf we are ready to fill the scope-object which is giv
 ```javascript
 $scope.sendMessage = _sendMessage;
 $scope.messages = _messages;
-$scope.messageText = '';
-$scope.name = '';
+$scope.messageText = "";
+$scope.name = "";
 ```
 
 This is the whole controller which is stored under the "Controllers"-folder and included in the view.
@@ -130,8 +130,8 @@ This is the whole controller which is stored under the "Controllers"-folder and 
 The services are like the base of our application because they are doing the real hard work. Lets take a closer look what these services we included are really doing:
 
 ```javascript
-'use strict';
-app.factory('chatService', function (chatDataService) {
+"use strict";
+app.factory("chatService", function (chatDataService) {
   var chatService = {};
 
   var _sendMessage = function (socket, name, stringToSend) {
@@ -144,11 +144,11 @@ app.factory('chatService', function (chatDataService) {
   return chatService;
 });
 
-app.factory('chatDataService', function ($http) {
+app.factory("chatDataService", function ($http) {
   var chatDataService = {};
 
   var _sendMessage = function (socket, name, stringToSend) {
-    socket.emit('chat', { name: name, text: stringToSend });
+    socket.emit("chat", { name: name, text: stringToSend });
   };
 
   chatDataService.sendMessage = _sendMessage;
@@ -161,7 +161,7 @@ And here you can see the seperattion of concerns which I am a big fan of. I divi
 So we have the "ChatService" and a "ChatDataService". We want to look at the real work in the "ChatDataService" which is really sending the messages by calling the method:
 
 ```javascript
-socket.emit('chat', { name: name, text: stringToSend });
+socket.emit("chat", { name: name, text: stringToSend });
 ```
 
 This line is like doing all the magic using socket.io to send messages to the Server which is described [here](http://blog.noser.com/node-js-chat-server/). We are generating a new object with the properties "name" and "text" and are sending what the user entered.
@@ -169,8 +169,8 @@ This line is like doing all the magic using socket.io to send messages to the Se
 Due to the fact that the FlashService is only a nice2have-thing I will not refer to it in detail but I want to mention it.
 
 ```javascript
-'use strict';
-app.factory('flashService', function () {
+"use strict";
+app.factory("flashService", function () {
   var flashService = {};
   var original = document.title;
   var timeout;

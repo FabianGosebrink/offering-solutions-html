@@ -1,13 +1,13 @@
 ---
 title: Automatically reload typed configuration in ASP.NET Core
 date: 2017-02-17
-tags: ['aspnetcore', 'configuration']
+tags: ["aspnetcore", "configuration"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2017/02/17/automatically-reload-typed-configuration-in-asp-net-core/',
+    "/blog/articles/2017/02/17/automatically-reload-typed-configuration-in-asp-net-core/",
   ]
 ---
 

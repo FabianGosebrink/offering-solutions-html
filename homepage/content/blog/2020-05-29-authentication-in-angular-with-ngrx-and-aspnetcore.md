@@ -1,7 +1,7 @@
 ---
 title: Authentication in Angular with NgRx and ASP.NET Core
 date: 2020-05-29
-tags: ['angular', 'authentication', 'authorization', 'ngrx', 'aspnetcore']
+tags: ["angular", "authentication", "authorization", "ngrx", "aspnetcore"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -58,20 +58,20 @@ Both folders get a barrel file `index.ts` to export what is needed. And the main
 We will add a few actions here to get along with the authentication. To keep it easy we will add actions for `checkAuth`, `login` and `logout` with the appropriate complete actions.
 
 ```ts
-import { createAction, props } from '@ngrx/store';
+import { createAction, props } from "@ngrx/store";
 
-export const checkAuth = createAction('[Auth] checkAuth');
+export const checkAuth = createAction("[Auth] checkAuth");
 export const checkAuthComplete = createAction(
-  '[Auth] checkAuthComplete',
+  "[Auth] checkAuthComplete",
   props<{ isLoggedIn: boolean }>()
 );
-export const login = createAction('[Auth] login');
+export const login = createAction("[Auth] login");
 export const loginComplete = createAction(
-  '[Auth] loginComplete',
+  "[Auth] loginComplete",
   props<{ profile: any; isLoggedIn: boolean }>()
 );
-export const logout = createAction('[Auth] logout');
-export const logoutComplete = createAction('[Auth] logoutComplete');
+export const logout = createAction("[Auth] logout");
+export const logoutComplete = createAction("[Auth] logoutComplete");
 ```
 
 These are the actions we are gonna use. `loginComplete` is carrying the profile as well as if the user is logged in or not and if the `checkAuthComplete` kicks in we provide the value if the user is logged in or not.
@@ -83,7 +83,7 @@ The actions are placed in a file `auth.actions.ts` lying in the `store/auth` fol
 Before we can define the reducer we have to define the state which holds the properties for authentication we need in our app. To keep it easy we start with a `isLoggedIn` property and a property holding the userProfile `profile`. The name of the feature is called `auth` and so is the property on the state object of our app. We will expose this as a variable here as well.
 
 ```ts
-export const authFeatureName = 'auth';
+export const authFeatureName = "auth";
 
 export interface AuthState {
   profile: any;
@@ -101,10 +101,10 @@ Now we can build the reducer right underneath this code and place it in a file c
 We change our state when the login is complete (action `loginComplete`) and when the user wants to logout (action `logout`).
 
 ```ts
-import { createReducer, on, Action } from '@ngrx/store';
-import * as authActions from './auth.actions';
+import { createReducer, on, Action } from "@ngrx/store";
+import * as authActions from "./auth.actions";
 
-export const authFeatureName = 'auth';
+export const authFeatureName = "auth";
 
 export interface AuthState {
   profile: any;
@@ -155,11 +155,11 @@ npm install angular-auth-oidc-client
 Having done this we can create an `auth.service.ts` file in a `services` folder and abstract the usage of the library.
 
 ```ts
-import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { Injectable } from "@angular/core";
+import { of } from "rxjs";
+import { OidcSecurityService } from "angular-auth-oidc-client";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class AuthService {
   constructor(private oidcSecurityService: OidcSecurityService) {}
 
@@ -326,7 +326,7 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(fromAuthActions.logoutComplete),
-        tap(() => this.router.navigate(['/']))
+        tap(() => this.router.navigate(["/"]))
       ),
     { dispatch: false }
   );
@@ -340,8 +340,8 @@ So we have everything prepared now! What is missing are the selectors to get a n
 We have two properties to provide here and we will wrap them in their according selectors. Place them in a file called `auth.selectors.ts` in the `store/auth` folder. We are using the `authFeatureName` variable now exposed by the reducer to create a featureSelector returning the auth part of the state we are interested in and then create the selectors for the specific properties.
 
 ```ts
-import { AuthState, authFeatureName } from './auth.reducer';
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { AuthState, authFeatureName } from "./auth.reducer";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 
 export const getAuthFeatureState = createFeatureSelector(authFeatureName);
 
@@ -359,10 +359,10 @@ export const selectUserInfo = createSelector(
 The `index.ts` file is exporting all the stuff we did.
 
 ```ts
-export * from './auth.actions';
-export * from './auth.effects';
-export * from './auth.reducer';
-export * from './auth.selectors';
+export * from "./auth.actions";
+export * from "./auth.effects";
+export * from "./auth.reducer";
+export * from "./auth.selectors";
 ```
 
 ```
@@ -386,11 +386,11 @@ export * from './auth.selectors';
 We are using the same files and techniques for getting the data from the server in the end using a `data.service.ts` which is also placed in the `services` folder. We are adding only one (two with the complete action) action inside the action file, a reducer, the effect for getting the http data and the selector for selecting the data from the state.
 
 ```ts
-import { createAction, props } from '@ngrx/store';
+import { createAction, props } from "@ngrx/store";
 
-export const getData = createAction('[Data] getData');
+export const getData = createAction("[Data] getData");
 export const getDataComplete = createAction(
-  '[Data] getDataComplete',
+  "[Data] getDataComplete",
   props<{ data: any }>()
 );
 ```
@@ -413,7 +413,7 @@ export class DataEffects {
 ```
 
 ```ts
-export const dataFeatureName = 'data';
+export const dataFeatureName = "data";
 
 export interface DataState {
   data: any;
@@ -451,13 +451,13 @@ export const selectData = createSelector(
 and the `data.service.ts` is throwing the http request and returning the observable.
 
 ```ts
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class DataService {
   constructor(private httpClient: HttpClient) {}
 
   getData() {
     return this.httpClient
-      .get('https://localhost:5001/api/securevalues')
+      .get("https://localhost:5001/api/securevalues")
       .pipe(catchError((error) => of(error)));
   }
 }
@@ -489,11 +489,11 @@ export class DataService {
 The main barrel file `store/index.ts` is used to gather all the states and effects and to provide an app state to the `AppModule` which we can register.
 
 ```ts
-import { authReducer, AuthEffects } from './auth';
-import { DataEffects, dataReducer } from './data';
+import { authReducer, AuthEffects } from "./auth";
+import { DataEffects, dataReducer } from "./data";
 
-export * from './auth';
-export * from './data';
+export * from "./auth";
+export * from "./data";
 
 export const appReducer = {
   auth: authReducer,
@@ -558,14 +558,14 @@ We can connect them with this routes
 
 ```ts
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "home", component: HomeComponent },
   {
-    path: 'protected',
+    path: "protected",
     component: ProtectedComponent,
     canActivate: [AuthorizationGuard],
   },
-  { path: 'unauthorized', component: UnauthorizedComponent },
+  { path: "unauthorized", component: UnauthorizedComponent },
 ];
 ```
 
@@ -623,7 +623,7 @@ The `ProtectedComponent` can only be accessed when the user is authenticated and
 
 ```ts
 /* imports */
-import { selectuserInfo, getData, selectData } from '../store';
+import { selectuserInfo, getData, selectData } from "../store";
 
 export class ProtectedComponent implements OnInit {
   secretData$: Observable<any>;
@@ -659,7 +659,7 @@ To save the `protected` route with a guard we can use the `AuthService` again as
 ```ts
 /* imports */
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class AuthorizationGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -670,7 +670,7 @@ export class AuthorizationGuard implements CanActivate {
     return this.authService.isLoggedIn.pipe(
       map((isAuthorized: boolean) => {
         if (!isAuthorized) {
-          this.router.navigate(['/unauthorized']);
+          this.router.navigate(["/unauthorized"]);
           return false;
         }
 
@@ -700,7 +700,7 @@ We added the interceptor in the last post already, but for completeness we will 
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  private secureRoutes = ['https://localhost:5001/api'];
+  private secureRoutes = ["https://localhost:5001/api"];
 
   constructor(private authService: AuthService) {}
 
@@ -716,7 +716,7 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     request = request.clone({
-      headers: request.headers.set('Authorization', 'Bearer ' + token),
+      headers: request.headers.set("Authorization", "Bearer " + token),
     });
 
     return next.handle(request);

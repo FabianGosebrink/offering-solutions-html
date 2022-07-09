@@ -1,14 +1,14 @@
 ---
 title: ASP.NET Core and Angular with Webpack and Visual Studio
 date: 2016-06-12
-tags: ['angular', 'aspnetcore']
+tags: ["angular", "aspnetcore"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2016/06/12/asp-net-core-angular-webpack-visual-studio/',
-    '/blog/articles/2016/06/12/asp-net-core-angular-2-webpack-visual-studio/',
+    "/blog/articles/2016/06/12/asp-net-core-angular-webpack-visual-studio/",
+    "/blog/articles/2016/06/12/asp-net-core-angular-2-webpack-visual-studio/",
   ]
 ---
 
@@ -151,54 +151,54 @@ The Webpack config file was created using the excellent github repository [https
 ```javascript
 /// <binding ProjectOpened='Run - Development' />
 
-var environment = (process.env.NODE_ENV || 'development').trim();
+var environment = (process.env.NODE_ENV || "development").trim();
 
-if (environment === 'development') {
-  module.exports = require('./webpack.dev.js');
+if (environment === "development") {
+  module.exports = require("./webpack.dev.js");
 } else {
-  module.exports = require('./webpack.prod.js');
+  module.exports = require("./webpack.prod.js");
 }
 ```
 
 **webpack.dev.js**
 
 ```javascript
-var path = require('path');
+var path = require("path");
 
-var webpack = require('webpack');
+var webpack = require("webpack");
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var helpers = require('./webpack.helpers');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var CopyWebpackPlugin = require("copy-webpack-plugin");
+var CleanWebpackPlugin = require("clean-webpack-plugin");
+var helpers = require("./webpack.helpers");
 
-console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
+console.log("@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@");
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: "source-map",
   performance: {
     hints: false,
   },
   entry: {
-    polyfills: './angularApp/polyfills.ts',
-    vendor: './angularApp/vendor.ts',
-    app: './angularApp/main.ts',
+    polyfills: "./angularApp/polyfills.ts",
+    vendor: "./angularApp/vendor.ts",
+    app: "./angularApp/main.ts",
   },
 
   output: {
-    path: __dirname + '/wwwroot/',
-    filename: 'dist/[name].bundle.js',
-    chunkFilename: 'dist/[id].chunk.js',
-    publicPath: '/',
+    path: __dirname + "/wwwroot/",
+    filename: "dist/[name].bundle.js",
+    chunkFilename: "dist/[id].chunk.js",
+    publicPath: "/",
   },
 
   resolve: {
-    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
+    extensions: [".ts", ".js", ".json", ".css", ".scss", ".html"],
   },
 
   devServer: {
     historyApiFallback: true,
-    contentBase: path.join(__dirname, '/wwwroot/'),
+    contentBase: path.join(__dirname, "/wwwroot/"),
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000,
@@ -210,50 +210,50 @@ module.exports = {
       {
         test: /\.ts$/,
         loaders: [
-          'awesome-typescript-loader',
-          'angular-router-loader',
-          'angular2-template-loader',
-          'source-map-loader',
-          'tslint-loader',
+          "awesome-typescript-loader",
+          "angular-router-loader",
+          "angular2-template-loader",
+          "source-map-loader",
+          "tslint-loader",
         ],
       },
       {
         test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
-        loader: 'file-loader?name=assets/[name]-[hash:6].[ext]',
+        loader: "file-loader?name=assets/[name]-[hash:6].[ext]",
       },
       {
         test: /favicon.ico$/,
-        loader: 'file-loader?name=/[name].[ext]',
+        loader: "file-loader?name=/[name].[ext]",
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader',
+        loader: "style-loader!css-loader",
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        loaders: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.html$/,
-        loader: 'raw-loader',
+        loader: "raw-loader",
       },
     ],
     exprContextCritical: false,
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'polyfills'] }),
+    new webpack.optimize.CommonsChunkPlugin({ name: ["app", "polyfills"] }),
 
-    new CleanWebpackPlugin(['./wwwroot/dist', './wwwroot/assets']),
+    new CleanWebpackPlugin(["./wwwroot/dist", "./wwwroot/assets"]),
 
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      inject: 'body',
-      template: 'angularApp/index.html',
+      filename: "index.html",
+      inject: "body",
+      template: "angularApp/index.html",
     }),
 
     new CopyWebpackPlugin([
-      { from: './angularApp/images/*.*', to: 'assets/', flatten: true },
+      { from: "./angularApp/images/*.*", to: "assets/", flatten: true },
     ]),
   ],
 };
@@ -262,39 +262,39 @@ module.exports = {
 **webpack.prod.js**
 
 ```javascript
-var path = require('path');
+var path = require("path");
 
-var webpack = require('webpack');
+var webpack = require("webpack");
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var helpers = require('./webpack.helpers');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var CopyWebpackPlugin = require("copy-webpack-plugin");
+var CleanWebpackPlugin = require("clean-webpack-plugin");
+var helpers = require("./webpack.helpers");
 
-console.log('@@@@@@@@@ USING PRODUCTION @@@@@@@@@@@@@@@');
+console.log("@@@@@@@@@ USING PRODUCTION @@@@@@@@@@@@@@@");
 
 module.exports = {
   entry: {
-    vendor: './angularApp/vendor.ts',
-    polyfills: './angularApp/polyfills.ts',
-    app: './angularApp/main-aot.ts', // AoT compilation
+    vendor: "./angularApp/vendor.ts",
+    polyfills: "./angularApp/polyfills.ts",
+    app: "./angularApp/main-aot.ts", // AoT compilation
   },
 
   output: {
-    path: './wwwroot/',
-    filename: 'dist/[name].[hash].bundle.js',
-    chunkFilename: 'dist/[id].[hash].chunk.js',
-    publicPath: '/',
+    path: "./wwwroot/",
+    filename: "dist/[name].[hash].bundle.js",
+    chunkFilename: "dist/[id].[hash].chunk.js",
+    publicPath: "/",
   },
 
   resolve: {
-    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
+    extensions: [".ts", ".js", ".json", ".css", ".scss", ".html"],
   },
 
   devServer: {
     historyApiFallback: true,
-    stats: 'minimal',
-    outputPath: path.join(__dirname, 'wwwroot/'),
+    stats: "minimal",
+    outputPath: path.join(__dirname, "wwwroot/"),
   },
 
   module: {
@@ -302,37 +302,37 @@ module.exports = {
       {
         test: /\.ts$/,
         loaders: [
-          'awesome-typescript-loader',
-          'angular-router-loader?aot=true&genDir=aot/',
+          "awesome-typescript-loader",
+          "angular-router-loader?aot=true&genDir=aot/",
         ],
       },
       {
         test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
-        loader: 'file-loader?name=assets/[name]-[hash:6].[ext]',
+        loader: "file-loader?name=assets/[name]-[hash:6].[ext]",
       },
       {
         test: /favicon.ico$/,
-        loader: 'file-loader?name=/[name].[ext]',
+        loader: "file-loader?name=/[name].[ext]",
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader',
+        loader: "style-loader!css-loader",
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        loaders: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.html$/,
-        loader: 'raw-loader',
+        loader: "raw-loader",
       },
     ],
     exprContextCritical: false,
   },
 
   plugins: [
-    new CleanWebpackPlugin(['./wwwroot/dist', './wwwroot/assets']),
+    new CleanWebpackPlugin(["./wwwroot/dist", "./wwwroot/assets"]),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -344,17 +344,17 @@ module.exports = {
       sourceMap: false,
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor', 'polyfills'],
+      name: ["vendor", "polyfills"],
     }),
 
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      inject: 'body',
-      template: 'angularApp/index.html',
+      filename: "index.html",
+      inject: "body",
+      template: "angularApp/index.html",
     }),
 
     new CopyWebpackPlugin([
-      { from: './angularApp/images/*.*', to: 'assets/', flatten: true },
+      { from: "./angularApp/images/*.*", to: "assets/", flatten: true },
     ]),
   ],
 };
@@ -413,13 +413,13 @@ Lets dive into the webpack.dev.js a bit:
 Firstly, all plugins are loaded which are required to process all the js, ts, ... files which are included, or used in the project.
 
 ```javascript
-var path = require('path');
+var path = require("path");
 
-var webpack = require('webpack');
+var webpack = require("webpack");
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var CopyWebpackPlugin = require("copy-webpack-plugin");
+var CleanWebpackPlugin = require("clean-webpack-plugin");
 ```
 
 The npm environment variable NODE_ENV is used to define the type of build, either a development build or a production build. The entries are configured depending on this parameter.
@@ -597,7 +597,7 @@ See: [https://damienbod.com/2016/10/14/using-sass-with-webpack-angular2-and-visu
 The clean task can be configured as follows:
 
 ```javascript
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+var CleanWebpackPlugin = require("clean-webpack-plugin");
 ```
 
 And used in Webpack.

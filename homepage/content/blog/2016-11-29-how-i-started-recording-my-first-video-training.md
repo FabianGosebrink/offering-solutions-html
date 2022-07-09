@@ -1,12 +1,12 @@
 ---
 title: How I started recording my first Video training
 date: 2016-11-29
-tags: ['recording', 'training']
+tags: ["recording", "training"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2016/11/29/how-i-started-recording-my-first-video-training/']
+  ["/blog/articles/2016/11/29/how-i-started-recording-my-first-video-training/"]
 ---
 
 In this blog post I want to describe how I started recording my first Video training and tell you about the experiences I made during the recording.

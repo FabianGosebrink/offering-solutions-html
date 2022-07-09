@@ -1,7 +1,7 @@
 ---
 title: Starting Angular Projects with Nx
 date: 2021-01-27
-tags: ['nx', 'angular']
+tags: ["nx", "angular"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg

@@ -1,14 +1,14 @@
 ---
 title: Cross Platform Builds with Angular, Gulp and Webpack
 date: 2016-06-17
-tags: ['angular', 'gulp', 'webpack']
+tags: ["angular", "gulp", "webpack"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/',
-    '/blog/articles/2016/06/17/cross-platform-builds-with-angular-2-gulp-and-webpack/',
+    "/blog/articles/2016/06/17/cross-platform-builds-with-angular-gulp-and-webpack/",
+    "/blog/articles/2016/06/17/cross-platform-builds-with-angular-2-gulp-and-webpack/",
   ]
 ---
 
@@ -51,60 +51,60 @@ Now I want to show you the files which can make this whole thing possible. See t
 ### webpack.config.js
 
 ```javascript
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack = require("webpack");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    polyfills: './app/polyfills.ts',
-    vendor: './app/vendor.ts',
-    app: './app/main.ts',
+    polyfills: "./app/polyfills.ts",
+    vendor: "./app/vendor.ts",
+    app: "./app/main.ts",
   },
   resolve: {
-    extensions: ['', '.ts', '.js', '.css', '.html'],
+    extensions: ["", ".ts", ".js", ".css", ".html"],
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: "[name].bundle.js",
   },
   module: {
     loaders: [
       {
         test: /\.ts$/,
-        loader: 'ts',
+        loader: "ts",
       },
       {
         test: /\.html$/,
-        loader: 'html',
+        loader: "html",
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file?name=fonts/[name].[hash].[ext]',
+        loader: "file?name=fonts/[name].[hash].[ext]",
       },
       {
         test: /\.css$/,
-        exclude: './app',
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap'),
+        exclude: "./app",
+        loader: ExtractTextPlugin.extract("style", "css?sourceMap"),
       },
       {
         test: /\.css$/,
-        include: './app',
-        loader: 'raw',
+        include: "./app",
+        loader: "raw",
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('[name].bundle.css'),
+    new ExtractTextPlugin("[name].bundle.css"),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills'],
+      name: ["app", "vendor", "polyfills"],
     }),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: "./index.html",
     }),
   ],
   devServer: {
     historyApiFallback: true,
-    stats: 'minimal',
+    stats: "minimal",
   },
 };
 ```
@@ -144,11 +144,11 @@ The plugins section then sticks together every operation we do with the files. S
 But how to deal with gulp? Well...there is an npm package...;) It's called `webpack-stream` and allows us to do tasks like this:
 
 ```javascript
-gulp.task('web-compile-with-webpack', function () {
+gulp.task("web-compile-with-webpack", function () {
   return gulp
-    .src('./app/main.js')
-    .pipe(webpack(require('../webpack.config.js')))
-    .pipe(gulp.dest('../.temp/webapp/'));
+    .src("./app/main.js")
+    .pipe(webpack(require("../webpack.config.js")))
+    .pipe(gulp.dest("../.temp/webapp/"));
 });
 ```
 
@@ -200,14 +200,14 @@ Because we also have a dev-server from webpack in the repository above we will h
 The complete tasks for the web solution are:
 
 ```javascript
-gulp.task('build:web:prod', function (done) {
+gulp.task("build:web:prod", function (done) {
   runSeq(
-    'web-clean-temp-folder', // cleans the temp folder
-    'web-compile-with-webpack', // compiles the sources with webpack
-    'web-copy-index-to-webapp-temp-folder', // copies the index.html to the temp folder
-    'web-inject-in-html', // injects the webpack-output into the index.html with gulp
-    'web-clean-dist-folder', // clean the dist folder first...
-    'web-copy-to-dist', // copy it
+    "web-clean-temp-folder", // cleans the temp folder
+    "web-compile-with-webpack", // compiles the sources with webpack
+    "web-copy-index-to-webapp-temp-folder", // copies the index.html to the temp folder
+    "web-inject-in-html", // injects the webpack-output into the index.html with gulp
+    "web-clean-dist-folder", // clean the dist folder first...
+    "web-copy-to-dist", // copy it
     done
   );
 });
@@ -265,14 +265,14 @@ With this approach we can go ahead as usual when building electron or cordova-th
 See the required steps fo r e.g. a cordova-build here:
 
 ```javascript
-gulp.task('build:electron:prod', function (done) {
+gulp.task("build:electron:prod", function (done) {
   runSeq(
-    'electron-clean-temp',
-    'electron-compile-with-webpack',
-    'electron-copy-index-to-temp-folder',
-    'electron-inject-in-html',
-    'electron-copy-assets-to-temp-folder',
-    'electron-build-win',
+    "electron-clean-temp",
+    "electron-compile-with-webpack",
+    "electron-copy-index-to-temp-folder",
+    "electron-inject-in-html",
+    "electron-copy-assets-to-temp-folder",
+    "electron-build-win",
     done
   );
 });

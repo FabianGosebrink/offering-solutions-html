@@ -1,13 +1,13 @@
 ---
 title: Get started with ASP.NET Core and Entity Framework 6
 date: 2015-12-13
-tags: ['aspnetcore', 'entityframework']
+tags: ["aspnetcore", "entityframework"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2015/12/13/get-started-with-asp-net-core-and-entity-framework-6/',
+    "/blog/articles/2015/12/13/get-started-with-asp-net-core-and-entity-framework-6/",
   ]
 ---
 

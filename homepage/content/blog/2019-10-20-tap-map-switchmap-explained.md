@@ -1,7 +1,7 @@
 ---
 title: tap, map & switchMap explained
 date: 2019-10-20
-tags: ['rxjs', 'tap', 'map', 'switchmap']
+tags: ["rxjs", "tap", "map", "switchmap"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -16,7 +16,7 @@ There are many blog posts out there which cover those topics already but maybe t
 Let us start and first create an observable of an array with `from()`
 
 ```js
-import { from } from 'rxjs';
+import { from } from "rxjs";
 
 const observable$ = from([1, 2, 3]);
 ```
@@ -24,7 +24,7 @@ const observable$ = from([1, 2, 3]);
 If we now subscribe to it we could do something with the values which get emitted
 
 ```js
-import { from } from 'rxjs';
+import { from } from "rxjs";
 
 const observable$ = from([1, 2, 3]);
 observable$.subscribe((item) => console.log(item));
@@ -53,12 +53,12 @@ Let us use reference types inside a `tap` operator. When using reference types t
 
 ```js
 const objects = [
-  { id: 1, name: 'Fabian' },
-  { id: 2, name: 'Jan-Niklas' },
+  { id: 1, name: "Fabian" },
+  { id: 2, name: "Jan-Niklas" },
 ];
 
 const source$ = from(objects)
-  .pipe(tap((item) => (item.name = item.name + '_2')))
+  .pipe(tap((item) => (item.name = item.name + "_2")))
   .subscribe((x) => console.log(x));
 ```
 
@@ -78,8 +78,8 @@ Let us move on and try another operator. Let us take `map` ([docs](https://rxjs.
 So we can take the same situation now and instead of `tap` we use the `map` operator. The code sample looks like this now:
 
 ```js
-import { from } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { from } from "rxjs";
+import { map } from "rxjs/operators";
 
 from([1, 2, 3])
   .pipe(map((item) => item + 2))
@@ -112,8 +112,8 @@ from([1, 2, 3])
 Now let us write the result of each line in a comment:
 
 ```js
-import { from } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { from } from "rxjs";
+import { map } from "rxjs/operators";
 
 // returns an observable
 from([1, 2, 3])
@@ -132,8 +132,8 @@ Let us now face a situation like this: You have a stream of a specific type, let
 If you would use the `map` operator here lets play that through and write the output in comments again:
 
 ```js
-import { from } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { from } from "rxjs";
+import { map } from "rxjs/operators";
 
 // returns an observable
 from([1, 2, 3])

@@ -1,7 +1,7 @@
 ---
 title: How I started with Home Automation
 date: 2020-11-30
-tags: ['homeassistant']
+tags: ["homeassistant"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg

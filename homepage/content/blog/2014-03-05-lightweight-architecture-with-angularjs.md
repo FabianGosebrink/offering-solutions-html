@@ -1,11 +1,11 @@
 ---
 title: Lightweight architecture with AngularJS
 date: 2014-03-05
-tags: ['angularjs']
+tags: ["angularjs"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ['/blog/articles/2014/03/05/lightweight-architecture-with-angularjs/']
+aliases: ["/blog/articles/2014/03/05/lightweight-architecture-with-angularjs/"]
 ---
 
 During the last past days I have been to a conference in Germany and brought back several interesting things I want to share with you this time. (Here I have to say that my hotel did not have a spa. So everybody who wanted to get the latest hotel and spa tips is wrong here&#8230;so in case stop reading)

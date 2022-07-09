@@ -1,11 +1,11 @@
 ---
 title: Meine ersten Tage mit dem Surface Pro 3
 date: 2015-07-01
-tags: ['surface3', 'microsoft']
+tags: ["surface3", "microsoft"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ['/blog/articles/2015/07/01/meine-ersten-tage-mit-dem-surface-3/']
+aliases: ["/blog/articles/2015/07/01/meine-ersten-tage-mit-dem-surface-3/"]
 ---
 
 Nun ist es endlich da. Das Surface der dritten Generation. Ich habe mich ja schon drauf gefreut aber wenn es dann da ist, ist es natürlich nochmal was ganz anderes. Man hört ja so viel, man liest noch mehr und am Ende schimpfen alle auf die Kacheln. Mir völlig unverständlich, aber trotzdem habe ich gedacht, dass ich das Surface mal einem Review unterziehen kann. Die Ergebnisse davon will ich in diesem Beitrag beschreiben.

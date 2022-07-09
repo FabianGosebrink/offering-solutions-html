@@ -1,12 +1,12 @@
 ---
 title: WPF CallMemberName for INotifyPropertyChanged
 date: 2015-02-08
-tags: ['wpf']
+tags: ["wpf"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2015/02/08/wpf-callmembername-for-inotifypropertychanged/']
+  ["/blog/articles/2015/02/08/wpf-callmembername-for-inotifypropertychanged/"]
 ---
 
 In this blog post I want to show you how to use WPF CallMemberName for INotifyPropertyChanged.

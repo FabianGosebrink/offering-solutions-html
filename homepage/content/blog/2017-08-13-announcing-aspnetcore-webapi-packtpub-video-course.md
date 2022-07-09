@@ -1,13 +1,13 @@
 ---
 title: Announcing ASP.NET Core WebAPI PacktPub Video Course
 date: 2017-08-13
-tags: ['aspnetcore', 'recording']
+tags: ["aspnetcore", "recording"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2017/08/13/announcing-aspnetcore-webapi-packtpub-video-course/',
+    "/blog/articles/2017/08/13/announcing-aspnetcore-webapi-packtpub-video-course/",
   ]
 ---
 

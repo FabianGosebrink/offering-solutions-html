@@ -1,12 +1,12 @@
 ---
 title: How you can organise gulp in your applications
 date: 2016-05-16
-tags: ['angular', 'gulp']
+tags: ["angular", "gulp"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/']
+  ["/blog/articles/2016/05/16/how-you-can-organise-gulp-in-your-applications/"]
 ---
 
 In this blog post I want to show one possibility of organising your gulp tasks in a way that you as a developer can find them quickly and print them to the console in an ordered way.
@@ -31,7 +31,7 @@ I think the best practice here is to seperate gulp itself on the one hand and th
 
 The `gulpfile.js` only contains the tasks whereas a file named like `gulp.config.js` is containing all your files, (temp-)paths, ... .
 
-![How you can organise gulp in your applications](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/gulpAndConfigFile.png 'gulptask folder')
+![How you can organise gulp in your applications](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/gulpAndConfigFile.png "gulptask folder")
 
 You can include your config file in the gulpfile like this:
 
@@ -90,7 +90,7 @@ It is only containing all the files, paths and general information you want to u
 The gulp-file itself is now only containing the tasks and is consuming the config file.
 
 ```javascript
-gulp.task('web-copy-index-to-webapp-folder', function (done) {
+gulp.task("web-copy-index-to-webapp-folder", function (done) {
   return gulp
     .src(buildConfig.general.indexHtml)
     .pipe(gulp.dest(buildConfig.targets.webAppOutputPath));
@@ -103,7 +103,7 @@ This makes the gulp tasks more generic.
 
 I've seen many ways how people organise the gulp tasks but it turned out for me it was the best way to have a folder called "gulpTasks" (or similar) where I put all my gulptasks in. I've seen this on many other repositories and also on conferences etc. It's always good to have a folder encapsulating all your gulpTasks like this:
 
-![alt text](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/folderGulpTasks.png 'gulptask folder')
+![alt text](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/folderGulpTasks.png "gulptask folder")
 
 Here I seperate all the different systems I want to have an output for.
 
@@ -120,16 +120,16 @@ Getting an app ready for distribution or even for development purposes is more t
 Therefore you need to install a `run-sequence`-plugin available [here](https://www.npmjs.com/package/run-sequence). With this you can divide your tasks and seperate the responsibilities in your web gulpfile (e.g.) like this:
 
 ```javascript
-var gulp = require('gulp');
-var runSeq = require('run-sequence');
+var gulp = require("gulp");
+var runSeq = require("run-sequence");
 
-gulp.task('build:web:prod', function (done) {
+gulp.task("build:web:prod", function (done) {
   runSeq(
-    'web-clean-webapp',
-    'web-copy-index-to-webapp-folder',
-    'web-copy-images-to-webapp-folder',
-    'web-copy-css-to-webapp-folder',
-    'web-concat-uglify-and-copy-vendor-scripts',
+    "web-clean-webapp",
+    "web-copy-index-to-webapp-folder",
+    "web-copy-images-to-webapp-folder",
+    "web-copy-css-to-webapp-folder",
+    "web-concat-uglify-and-copy-vendor-scripts",
     // all the other tasks
     done
   );
@@ -143,11 +143,11 @@ I think this is a very good and clear documentation of what is done if I call th
 What we also did in this step is: We defined a _main task_! This task can be referenced and executed from the main gulp file.
 
 ```javascript
-require('./gulpTasks/web');
+require("./gulpTasks/web");
 //...
-gulp.task('build:all', function (done) {
+gulp.task("build:all", function (done) {
   runSeq(
-    'build:web:prod',
+    "build:web:prod",
     // maybe other main build tasks
     done
   );
@@ -183,23 +183,23 @@ For the task-listing feature there is also an npm package available [here](https
 You can define filters to define which one is a main task and which one is a child task.
 
 ```javascript
-var taskListing = require('gulp-task-listing');
+var taskListing = require("gulp-task-listing");
 //...
-gulp.task('help', taskListing.withFilters(/-/));
+gulp.task("help", taskListing.withFilters(/-/));
 ```
 
 Everything we need to do now is to point the default task on this help task to list all the tasks:
 
 ```javascript
-var taskListing = require('gulp-task-listing');
+var taskListing = require("gulp-task-listing");
 //...
-gulp.task('default', ['help']);
-gulp.task('help', taskListing.withFilters(/-/));
+gulp.task("default", ["help"]);
+gulp.task("help", taskListing.withFilters(/-/));
 ```
 
 Which brings the following output:
 
-![tasks output](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/gulpTasks.png 'gulp task output')
+![tasks output](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/05/gulpTasks.png "gulp task output")
 
 ## Further steps
 
@@ -218,7 +218,7 @@ function copySourcesTo(targetFolder) {
 
 function copyFromTo(sourceFolder, targetFolder) {
   return gulp
-    .src(path.join(sourceFolder, '**', '*.*'))
+    .src(path.join(sourceFolder, "**", "*.*"))
     .pipe(gulp.dest(targetFolder));
 }
 

@@ -1,13 +1,13 @@
 ---
 title: Consuming a REST API with Angular Http-Service in Typescript
 date: 2016-02-01
-tags: ['angular', 'aspnetcore']
+tags: ["angular", "aspnetcore"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2016/02/01/consuming-a-rest-api-with-angular-http-service-in-typescript/',
+    "/blog/articles/2016/02/01/consuming-a-rest-api-with-angular-http-service-in-typescript/",
   ]
 ---
 

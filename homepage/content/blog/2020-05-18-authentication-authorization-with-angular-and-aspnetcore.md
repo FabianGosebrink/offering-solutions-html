@@ -1,7 +1,7 @@
 ---
 title: Authentication and Authorization with Angular and ASP.NET Core using OIDC and OAuth2
 date: 2020-05-18
-tags: ['angular', 'authentication', 'authorization', 'aspnetcore']
+tags: ["angular", "authentication", "authorization", "aspnetcore"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -233,25 +233,25 @@ npm install angular-auth-oidc-client
 After having done that in our `app.module.ts` we have to provide a configuration to configure our app matching the config on the STS
 
 ```ts
-import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { AuthModule, OidcConfigService } from 'angular-auth-oidc-client';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './auth.interceptor';
+import { APP_INITIALIZER, NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
+import { AuthModule, OidcConfigService } from "angular-auth-oidc-client";
+import { AppComponent } from "./app.component";
+import { HomeComponent } from "./home/home.component";
+import { UnauthorizedComponent } from "./unauthorized/unauthorized.component";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AuthInterceptor } from "./auth.interceptor";
 
 export function configureAuth(oidcConfigService: OidcConfigService) {
   return () =>
     oidcConfigService.withConfig({
-      stsServer: 'https://offeringsolutions-sts.azurewebsites.net',
+      stsServer: "https://offeringsolutions-sts.azurewebsites.net",
       redirectUrl: window.location.origin,
       postLogoutRedirectUri: window.location.origin,
-      clientId: 'angularClientForHoorayApi',
-      scope: 'openid profile email offline_access hooray_Api',
-      responseType: 'code',
+      clientId: "angularClientForHoorayApi",
+      scope: "openid profile email offline_access hooray_Api",
+      responseType: "code",
       silentRenew: true,
       useRefreshToken: true,
     });
@@ -262,9 +262,9 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'unauthorized', component: UnauthorizedComponent },
+      { path: "", redirectTo: "home", pathMatch: "full" },
+      { path: "home", component: HomeComponent },
+      { path: "unauthorized", component: UnauthorizedComponent },
     ]),
     AuthModule.forRoot(),
     HttpClientModule,
@@ -293,11 +293,11 @@ We have activated the silent renew here using refresh tokens. So the token renew
 I made myself an `auth.service.ts` which is encapsulating the `OidcSecurityService` from the lib
 
 ```ts
-import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { Injectable } from "@angular/core";
+import { of } from "rxjs";
+import { OidcSecurityService } from "angular-auth-oidc-client";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class AuthService {
   constructor(private oidcSecurityService: OidcSecurityService) {}
 
@@ -330,12 +330,12 @@ export class AuthService {
 In the `AppComponent`, because we redirect to it after the login, we have to call the `checkAuth()` method. I am doing this in the `OnInit()`.
 
 ```ts
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from "./auth.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: "app-root",
+  templateUrl: "app.component.html",
 })
 export class AppComponent implements OnInit {
   constructor(private authService: AuthService) {}
@@ -344,7 +344,7 @@ export class AppComponent implements OnInit {
     this.authService
       .checkAuth()
       .subscribe((isAuthenticated) =>
-        console.log('app authenticated', isAuthenticated)
+        console.log("app authenticated", isAuthenticated)
       );
   }
 }
@@ -359,15 +359,15 @@ export class AppComponent implements OnInit {
 In the `HomeComponent` we are showing the information, handle the login and call the API.
 
 ```ts
-import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { AuthService } from '../auth.service';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from "@angular/core";
+import { Observable, of } from "rxjs";
+import { catchError } from "rxjs/operators";
+import { AuthService } from "../auth.service";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.component.html',
+  selector: "app-home",
+  templateUrl: "home.component.html",
 })
 export class HomeComponent implements OnInit {
   userData$: Observable<any>;
@@ -384,7 +384,7 @@ export class HomeComponent implements OnInit {
     this.isAuthenticated$ = this.authService.isLoggedIn;
 
     this.secretData$ = this.httpClient
-      .get('https://localhost:5001/api/securevalues')
+      .get("https://localhost:5001/api/securevalues")
       .pipe(catchError((error) => of(error)));
   }
 
@@ -437,13 +437,13 @@ import {
   HttpInterceptor,
   HttpRequest,
   HttpHandler,
-} from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { AuthService } from './auth.service';
+} from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { AuthService } from "./auth.service";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  private secureRoutes = ['https://localhost:5001/api'];
+  private secureRoutes = ["https://localhost:5001/api"];
 
   constructor(private authService: AuthService) {}
 
@@ -459,7 +459,7 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     request = request.clone({
-      headers: request.headers.set('Authorization', 'Bearer ' + token),
+      headers: request.headers.set("Authorization", "Bearer " + token),
     });
 
     return next.handle(request);

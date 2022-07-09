@@ -1,7 +1,7 @@
 ---
 title: Securing an Electron App Implemented with Angular Using OIDC and OAuth2
 date: 2020-10-06
-tags: ['aspnetcore', 'angular', 'electron', 'crossplatform']
+tags: ["aspnetcore", "angular", "electron", "crossplatform"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -28,7 +28,7 @@ main process file could be like:
 `index.js`
 
 ```ts
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow } = require("electron");
 
 function createWindow() {
   // Create the browser window.
@@ -41,7 +41,7 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  win.loadFile('index.html');
+  win.loadFile("index.html");
 }
 
 app.whenReady().then(createWindow);
@@ -127,7 +127,7 @@ export function authFactory(
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
   useFactory: authFactory,
   deps: [PlatformInformationService, OidcSecurityService],
 })
@@ -166,7 +166,7 @@ export abstract class AuthBaseService {
 export class DesktopAuthService extends AuthBaseService {
   doLogin() {
     const urlHandler = (authUrl) => {
-      this.modal = window.open(authUrl, '_blank', 'nodeIntegration=no');
+      this.modal = window.open(authUrl, "_blank", "nodeIntegration=no");
     };
 
     return of(this.oidcSecurityService.authorize({ urlHandler }));
@@ -178,7 +178,7 @@ We are checking if we are in an electron environment with the `PlatformInformati
 
 ```ts
 const urlHandler = (authUrl) => {
-  this.modal = window.open(authUrl, '_blank', 'nodeIntegration=no');
+  this.modal = window.open(authUrl, "_blank", "nodeIntegration=no");
 };
 ```
 
@@ -191,7 +191,7 @@ The request will be made with the library and a modal pops up to login according
 In the main process `index.js` we can "intercept" all calls going in and out and checking if the url contains the `redirectUrl` we provided.
 
 ```ts
-const { app, BrowserWindow, globalShortcut, ipcMain } = require('electron');
+const { app, BrowserWindow, globalShortcut, ipcMain } = require("electron");
 
 let mainWindow = null;
 
@@ -202,13 +202,13 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: true,
     },
-    icon: __dirname + '/icon.ico',
+    icon: __dirname + "/icon.ico",
   });
 
-  mainWindow.loadFile('index.html');
+  mainWindow.loadFile("index.html");
 
   const filter = {
-    urls: ['https://localhost/callback*'],
+    urls: ["https://localhost/callback*"],
   };
 
   const {
@@ -216,18 +216,18 @@ const createWindow = () => {
   } = mainWindow.webContents;
 
   webRequest.onBeforeRequest(filter, ({ url }) => {
-    mainWindow.webContents.send('authEvent', url);
+    mainWindow.webContents.send("authEvent", url);
   });
 };
 
-app.isReady() ? createWindow() : app.on('ready', createWindow);
+app.isReady() ? createWindow() : app.on("ready", createWindow);
 ```
 
 In the main process `index.js` we are defining an array which we will react to
 
 ```ts
 const filter = {
-  urls: ['https://localhost/callback*'],
+  urls: ["https://localhost/callback*"],
 };
 ```
 
@@ -237,7 +237,7 @@ const {
 } = mainWindow.webContents;
 
 webRequest.onBeforeRequest(filter, ({ url }) => {
-  mainWindow.webContents.send('authEvent', url);
+  mainWindow.webContents.send("authEvent", url);
 });
 ```
 

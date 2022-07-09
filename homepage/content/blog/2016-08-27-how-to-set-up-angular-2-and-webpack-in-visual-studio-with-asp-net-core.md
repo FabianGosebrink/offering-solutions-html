@@ -1,13 +1,13 @@
 ---
 title: How to set up Angular and Webpack in Visual Studio with ASP.NET Core
 date: 2016-08-27
-tags: ['aspnetcore', 'visualstudio', 'webpack']
+tags: ["aspnetcore", "visualstudio", "webpack"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2016/08/27/how-to-set-up-angular-2-and-webpack-in-visual-studio-with-asp-net-core/',
+    "/blog/articles/2016/08/27/how-to-set-up-angular-2-and-webpack-in-visual-studio-with-asp-net-core/",
   ]
 ---
 
@@ -183,23 +183,23 @@ I reduced the vendor.ts and polyfills.ts to store only the things we need
 polyfills.ts
 
 ```javascript
-import 'core-js/es6/reflect';
-import 'core-js/es7/reflect';
-import 'zone.js/dist/zone';
+import "core-js/es6/reflect";
+import "core-js/es7/reflect";
+import "zone.js/dist/zone";
 ```
 
 vendor.ts
 
 ```javascript
-import 'jquery/dist/jquery';
-import 'bootstrap/dist/js/bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+import "jquery/dist/jquery";
+import "bootstrap/dist/js/bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
 
-import 'angular2-toaster/toaster.css';
-import 'angular2-toaster/angular2-toaster';
+import "angular2-toaster/toaster.css";
+import "angular2-toaster/angular2-toaster";
 
-import 'ng2-slim-loading-bar';
-import 'ng2-slim-loading-bar/style.css';
+import "ng2-slim-loading-bar";
+import "ng2-slim-loading-bar/style.css";
 ```
 
 Why did we all this and if the wwwroot-folder is the one to be served to the client...why are we doing all this?
@@ -211,26 +211,26 @@ Lets add a webpack.config.js file to the root of the project. (Make sure you hav
 So...you added the file: Paste the following content:
 
 ```javascript
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   entry: {
-    app: './angularApp/app/main.ts',
+    app: "./angularApp/app/main.ts",
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: "cheap-module-eval-source-map",
   performance: {
     hints: false,
   },
   resolve: {
-    extensions: ['.ts', '.js', '.json'],
+    extensions: [".ts", ".js", ".json"],
   },
   output: {
-    path: path.join(__dirname, 'wwwroot'),
-    filename: 'js/[name].bundle.js',
+    path: path.join(__dirname, "wwwroot"),
+    filename: "js/[name].bundle.js",
   },
 
   module: {
@@ -238,55 +238,55 @@ module.exports = {
       {
         test: /\.ts$/,
         use: [
-          'awesome-typescript-loader',
-          'angular-router-loader',
-          'angular2-template-loader',
-          'source-map-loader',
-          'tslint-loader',
+          "awesome-typescript-loader",
+          "angular-router-loader",
+          "angular2-template-loader",
+          "source-map-loader",
+          "tslint-loader",
         ],
       },
       {
         test: /\.html$/,
-        use: 'html-loader',
+        use: "html-loader",
       },
       {
         test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$/,
-        use: 'file-loader?name=assets/[name].[ext]',
+        use: "file-loader?name=assets/[name].[ext]",
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
+          fallback: "style-loader",
+          use: "css-loader",
         }),
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('css/[name].bundle.css'),
+    new ExtractTextPlugin("css/[name].bundle.css"),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills'],
+      name: ["app", "vendor", "polyfills"],
     }),
     new CleanWebpackPlugin([
-      './wwwroot/js/',
-      './wwwroot/css/',
-      './wwwroot/assets/',
-      './wwwroot/index.html',
+      "./wwwroot/js/",
+      "./wwwroot/css/",
+      "./wwwroot/assets/",
+      "./wwwroot/index.html",
     ]),
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
-      path.resolve(__dirname, '../src')
+      path.resolve(__dirname, "../src")
     ),
     new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery',
-      jquery: 'jquery',
+      jQuery: "jquery",
+      $: "jquery",
+      jquery: "jquery",
     }),
   ],
   devServer: {
     historyApiFallback: true,
-    stats: 'minimal',
+    stats: "minimal",
   },
 };
 ```
@@ -554,18 +554,18 @@ Copy the whole content from the webpack.dev.json to the prod.json and add the ug
 ```javascript
 // AoT plugin.
 new ngToolsWebpack.AotPlugin({
-  tsConfigPath: './tsconfig-aot.json',
+  tsConfigPath: "./tsconfig-aot.json",
 }),
-  new ExtractTextPlugin('css/[name]-[hash:6].bundle.css'),
+  new ExtractTextPlugin("css/[name]-[hash:6].bundle.css"),
   new webpack.optimize.ModuleConcatenationPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
-    name: ['app', 'vendor', 'polyfills'],
+    name: ["app", "vendor", "polyfills"],
   }),
   // inject in index.html
   new HtmlWebpackPlugin({
-    template: './angularApp/index.html',
-    inject: 'body',
-    filename: 'index.html',
+    template: "./angularApp/index.html",
+    inject: "body",
+    filename: "index.html",
   }),
   new webpack.optimize.UglifyJsPlugin({
     compress: {
@@ -577,9 +577,9 @@ new ngToolsWebpack.AotPlugin({
     sourceMap: true,
   }),
   new webpack.ProvidePlugin({
-    jQuery: 'jquery',
-    $: 'jquery',
-    jquery: 'jquery',
+    jQuery: "jquery",
+    $: "jquery",
+    jquery: "jquery",
   });
 ```
 

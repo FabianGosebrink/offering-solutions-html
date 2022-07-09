@@ -1,12 +1,12 @@
 ---
 title: ASP.NET MVC - Generic Repositories and UnitOfWork
 date: 2014-07-01
-tags: ['aspnet', 'mvc']
+tags: ["aspnet", "mvc"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2014/07/01/asp-net-mvc-generic-repositories-and-unitofwork/']
+  ["/blog/articles/2014/07/01/asp-net-mvc-generic-repositories-and-unitofwork/"]
 ---
 
 This is the third and the last blog post regarding ASP.NET MVC Architecture.

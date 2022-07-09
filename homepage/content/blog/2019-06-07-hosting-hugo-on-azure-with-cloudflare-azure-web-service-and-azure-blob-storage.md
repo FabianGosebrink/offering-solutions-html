@@ -1,7 +1,7 @@
 ---
 title: Hosting Hugo on Azure with Cloudflare, Azure Web Service and Azure Blob Storage
 date: 2019-06-07
-tags: ['cloudflare', 'azure', 'hugo']
+tags: ["cloudflare", "azure", "hugo"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -73,7 +73,7 @@ new (hugo)
 ---
 title: Refactoring Container Components to Fetch Data With Route Resolvers
 date: 2019-02-27
-tags: ['angular', 'routeresolvers', 'components']
+tags: ["angular", "routeresolvers", "components"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog

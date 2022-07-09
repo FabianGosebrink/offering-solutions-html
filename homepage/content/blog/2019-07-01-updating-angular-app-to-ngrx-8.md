@@ -1,7 +1,7 @@
 ---
 title: Updating your angular app to NgRx 8
 date: 2019-07-01
-tags: ['ngrx', 'angular']
+tags: ["ngrx", "angular"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg

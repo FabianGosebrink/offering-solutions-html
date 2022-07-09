@@ -1,13 +1,13 @@
 ---
 title: Code-First with Entity Framework n:m relationship with additional information
 date: 2014-04-06
-tags: ['aspnet', 'entityframework']
+tags: ["aspnet", "entityframework"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2014/04/06/code-first-with-entity-framework-nm-relationship-with-additional-information/',
+    "/blog/articles/2014/04/06/code-first-with-entity-framework-nm-relationship-with-additional-information/",
   ]
 ---
 

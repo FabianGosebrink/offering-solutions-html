@@ -1,7 +1,7 @@
 ---
 title: Building a Sample Todo App with Signalr Using Blazor WebAssembly
 date: 2020-06-05
-tags: ['blazor', 'webassembly', 'aspnetcore']
+tags: ["blazor", "webassembly", "aspnetcore"]
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg

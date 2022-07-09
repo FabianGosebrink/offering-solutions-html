@@ -1,12 +1,12 @@
 ---
 title: Separating state into angular modules with ngrx
 date: 2018-02-10
-tags: ['angular', 'ngrx']
+tags: ["angular", "ngrx"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ['/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/']
+  ["/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/"]
 ---
 
 In this blog post I want to give you an explanation of the state tree of ngrx if you are working with a state and how to separate it into different modules.
@@ -207,7 +207,7 @@ customer.module.ts
 ```javascript
 @NgModule({
   imports: [
-    StoreModule.forFeature('customerFeature', {
+    StoreModule.forFeature("customerFeature", {
       customer: customerReducer,
     }),
   ],
@@ -223,7 +223,7 @@ The customer reducer - customer is a feature module name here - manipulates the 
 The interesting part is the `forFeature` method above. Let's take a look at this:
 
 ```javascript
-StoreModule.forFeature('customerFeature', {
+StoreModule.forFeature("customerFeature", {
   customer: customerReducer,
 });
 ```

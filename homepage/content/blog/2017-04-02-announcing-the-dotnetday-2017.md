@@ -1,11 +1,11 @@
 ---
 title: Announcing the .NET Day 2017
 date: 2017-04-02
-tags: ['angular', 'azure', 'conference', 'speaking']
+tags: ["angular", "azure", "conference", "speaking"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ['/blog/articles/2017/04/02/announcing-the-dotnetday-2017/']
+aliases: ["/blog/articles/2017/04/02/announcing-the-dotnetday-2017/"]
 ---
 
 I am very happy to announce the .NET Day 2017 in Switzerland! In this blog post I want to give you a small background information on this, how this idea came up and about the current status.

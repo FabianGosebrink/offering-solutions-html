@@ -1,11 +1,11 @@
 ---
 title: How to build a great RESTful Service
 date: 2015-07-20
-tags: ['webapi', 'aspnet']
+tags: ["webapi", "aspnet"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ['/blog/articles/2015/07/20/how-to-build-a-great-restful-service/']
+aliases: ["/blog/articles/2015/07/20/how-to-build-a-great-restful-service/"]
 ---
 
 In this blog post I want to get you an idea of how to build a great RESTful Service. The idea for this blog post came after I spent a whole [post](http://blog.noser.com/implementieren-von-paging-in-einer-asp-net-webapi-mitangularjs/) about implementing paging in a web API. Paging is a very important feature a REST API should offer. However, there are a lot more. Here I want to mention a few of them hoping to cover as much as you need to build great API’s ;-)

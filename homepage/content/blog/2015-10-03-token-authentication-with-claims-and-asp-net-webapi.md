@@ -1,13 +1,13 @@
 ---
 title: Token Authentication with Claims and ASP.NET WebAPI
 date: 2015-10-03
-tags: ['aspnet', 'authentication']
+tags: ["aspnet", "authentication"]
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    '/blog/articles/2015/10/03/token-authentication-with-claims-and-asp-net-webapi/',
+    "/blog/articles/2015/10/03/token-authentication-with-claims-and-asp-net-webapi/",
   ]
 ---
 
