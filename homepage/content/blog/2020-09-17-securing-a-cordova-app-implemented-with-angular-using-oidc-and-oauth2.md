@@ -1,7 +1,7 @@
 ---
 title: Securing a Cordova App Implemented with Angular Using OIDC and OAuth2
 date: 2020-09-17
-tags: ["aspnetcore", "angular", "cordova", "crossplatform"]
+tags: ['aspnetcore', 'angular', 'cordova', 'crossplatform']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -42,12 +42,12 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
     let postLogoutRedirectUri = window.location.origin;
 
     oidcConfigService.withConfig({
-      stsServer: "https://my-super-security-token-service.net",
+      stsServer: 'https://my-super-security-token-service.net',
       redirectUrl,
       postLogoutRedirectUri,
-      clientId: "mysupercoolapp",
-      scope: "openid profile email offline_access xyz_api",
-      responseType: "code",
+      clientId: 'mysupercoolapp',
+      scope: 'openid profile email offline_access xyz_api',
+      responseType: 'code',
       silentRenew: true,
       useRefreshToken: true,
       renewTimeBeforeTokenExpiresInSeconds: 30,
@@ -166,17 +166,17 @@ export function configureAuth(
     let postLogoutRedirectUri = window.location.origin;
 
     if (deviceService.isMobile()) {
-      redirectUrl = "mytestapp://callback";
-      postLogoutRedirectUri = "mytestapp://callback";
+      redirectUrl = 'mytestapp://callback';
+      postLogoutRedirectUri = 'mytestapp://callback';
     }
 
     oidcConfigService.withConfig({
-      stsServer: "https://my-super-security-token-service.net",
+      stsServer: 'https://my-super-security-token-service.net',
       redirectUrl,
       postLogoutRedirectUri,
-      clientId: "mysupercoolapp",
-      scope: "openid profile email offline_access xyz_api",
-      responseType: "code",
+      clientId: 'mysupercoolapp',
+      scope: 'openid profile email offline_access xyz_api',
+      responseType: 'code',
       silentRenew: true,
       useRefreshToken: true,
       renewTimeBeforeTokenExpiresInSeconds: 30,
@@ -200,7 +200,7 @@ export function authFactory(
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
   useFactory: authFactory,
   deps: [DeviceDetectorService, OidcSecurityService],
 })
@@ -225,7 +225,7 @@ export abstract class AuthBaseService {
 export class MobileAuthService extends AuthBaseService {
   doLogin() {
     const urlHandler = (authUrl) => {
-      this.modal = window.open(authUrl, "_blank");
+      this.modal = window.open(authUrl, '_blank');
     };
 
     return of(this.oidcSecurityService.authorize({ urlHandler }));

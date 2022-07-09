@@ -1,11 +1,11 @@
 ---
 title: Working with Angular Template Forms
 date: 2017-01-14
-tags: ["angular", "forms"]
+tags: ['angular', 'forms']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2017/01/14/working-with-angular-2-template-forms/"]
+aliases: ['/blog/articles/2017/01/14/working-with-angular-2-template-forms/']
 ---
 
 In this blog I want explain and show you how to work with Angular's template driven forms.

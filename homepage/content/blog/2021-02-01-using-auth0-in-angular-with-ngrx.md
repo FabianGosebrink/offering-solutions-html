@@ -1,7 +1,7 @@
 ---
 title: Using Auth0 in Angular with NgRx
 date: 2021-02-01
-tags: ["auth", "angular", "ngrx"]
+tags: ['auth', 'angular', 'ngrx']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -77,12 +77,12 @@ So we can add a file called `auth.service.ts` and place it in root (or where eve
 ```
 
 ```ts
-import { Injectable } from "@angular/core";
-import { AuthService } from "@auth0/auth0-angular";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class AuthenticationService {
   constructor(public authService: AuthService) {}
@@ -168,17 +168,17 @@ After having done this we can create a folder in the root called `store` where w
 For the actions we will create a file called `auth.actions.ts` and add the first action to trigger the login called `login`, a corresponding action for completeness called `loginComplete`, same for `logout` and `logoutComplete`. When Auth0 redirects back to our application we need a trigger to tell the state that is must be changed, where an action `checkAuth` is introduced for.
 
 ```ts
-import { createAction, props } from "@ngrx/store";
+import { createAction, props } from '@ngrx/store';
 
-export const checkAuth = createAction("[Auth] checkAuth");
-export const login = createAction("[Auth] login");
+export const checkAuth = createAction('[Auth] checkAuth');
+export const login = createAction('[Auth] login');
 export const loginComplete = createAction(
-  "[Auth] loginComplete",
+  '[Auth] loginComplete',
   props<{ profile: any; isLoggedIn: boolean }>()
 );
 
-export const logout = createAction("[Auth] logout");
-export const logoutComplete = createAction("[Auth] logoutComplete");
+export const logout = createAction('[Auth] logout');
+export const logoutComplete = createAction('[Auth] logoutComplete');
 ```
 
 ```
@@ -218,7 +218,7 @@ To build that into code we can define an interface in the reducer file we have t
 ```
 
 ```ts
-import { Action, createReducer, on } from "@ngrx/store";
+import { Action, createReducer, on } from '@ngrx/store';
 
 export interface AuthState {
   userProfile: any;
@@ -250,8 +250,8 @@ We are setting the `initialState` and create the reducer getting passed the `ini
 If the login is completed with the action `loginComplete` we want to add the profile we received and the `isLoggedIn` is set, too. When the action `logoutComplete` is being thrown, we reset `userProfile` to `null` and `isLoggedIn` to `false`.
 
 ```ts
-import { Action, createReducer, on } from "@ngrx/store";
-import * as authActions from "./auth.actions";
+import { Action, createReducer, on } from '@ngrx/store';
+import * as authActions from './auth.actions';
 
 // all states and interfaces
 
@@ -375,11 +375,11 @@ Until here we have not told our application module about our state yet. Like sai
 Which is exactly what we provide our `StoreModule.forRoot()` in the `forRoot()` method:
 
 ```ts
-import { NgModule } from "@angular/core";
-import { EffectsModule } from "@ngrx/effects";
-import { StoreModule } from "@ngrx/store";
-import { AuthEffects } from "./store/auth.effects";
-import { authReducer } from "./store/auth.reducer";
+import { NgModule } from '@angular/core';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { AuthEffects } from './store/auth.effects';
+import { authReducer } from './store/auth.reducer';
 
 @NgModule({
   imports: [
@@ -413,11 +413,11 @@ To make the consumption in the component clear we can build selectors which sele
 We need to create a selector for the `isloggedIn` and for the `userProfile` property as well as getting the first step: the `auth` property from the state object we described.
 
 ```ts
-import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { AuthState } from "./auth.reducer";
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { AuthState } from './auth.reducer';
 
 // get the `auth` property from the state object
-export const getAuthFeatureState = createFeatureSelector<AuthState>("auth");
+export const getAuthFeatureState = createFeatureSelector<AuthState>('auth');
 
 // get the userProfile from the auth state
 export const selectCurrentUserProfile = createSelector(
@@ -437,18 +437,18 @@ export const selectIsLoggedIn = createSelector(
 The component consumes the selectors to consume the values in the state and dispatches the action `checkAuth()` when it is loaded to update the information in the state
 
 ```ts
-import { select, Store } from "@ngrx/store";
-import { checkAuth, login, logout } from "./store/auth.actions";
+import { select, Store } from '@ngrx/store';
+import { checkAuth, login, logout } from './store/auth.actions';
 import {
   selectCurrentUserProfile,
   selectIsLoggedIn,
-} from "./store/auth.selectors";
+} from './store/auth.selectors';
 
 @Component({
   /* */
 })
 export class AppComponent implements OnInit {
-  title = "auth0-angular-ngrx";
+  title = 'auth0-angular-ngrx';
 
   loggedIn$: Observable<boolean>;
   profile$: Observable<any>;

@@ -1,13 +1,13 @@
 ---
 title: Angular Ahead Of Time (AoT) compilation, lazy loading and treeshaking with webpack
 date: 2017-02-08
-tags: ["angular", "webpack", "lazyloading", "treeshaking", "aot"]
+tags: ['angular', 'webpack', 'lazyloading', 'treeshaking', 'aot']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2017/02/08/angular-2-ahead-of-time-aot-compilation-lazy-loading-treeshaking-webpack/",
+    '/blog/articles/2017/02/08/angular-2-ahead-of-time-aot-compilation-lazy-loading-treeshaking-webpack/',
   ]
 ---
 
@@ -24,10 +24,10 @@ If you want to enable lazy loading in your application with aot you first have t
 ```javascript
 export const AppRoutes: Routes = [
   // normal routes
-  { path: "food", loadChildren: "./path/to/module.file#ModuleName" },
+  { path: 'food', loadChildren: './path/to/module.file#ModuleName' },
   {
-    path: "**",
-    redirectTo: "home",
+    path: '**',
+    redirectTo: 'home',
   },
 ];
 ```
@@ -124,9 +124,9 @@ Also as an entry point we specify the file(s) we have but the main file is diffe
 We can do that by adding a new main.ts file called "main-aot.ts" and add the following into it:
 
 ```javascript
-import { platformBrowser } from "@angular/platform-browser";
-import { enableProdMode } from "@angular/core";
-import { AppModuleNgFactory } from "../aot/app/app.module.ngfactory";
+import { platformBrowser } from '@angular/platform-browser';
+import { enableProdMode } from '@angular/core';
+import { AppModuleNgFactory } from '../aot/app/app.module.ngfactory';
 
 enableProdMode();
 

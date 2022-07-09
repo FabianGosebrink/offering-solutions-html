@@ -1,13 +1,13 @@
 ---
 title: Angular, ASP.NET WebAPI, Azure & Cordova, Cross Platform – My Private Hackathon Part 1
 date: 2016-04-19
-tags: ["angular", "aspnet", "crossplatform"]
+tags: ['angular', 'aspnet', 'crossplatform']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2016/04/19/angular-asp-net-webapi-azure-cordova-cross-platform-2/",
+    '/blog/articles/2016/04/19/angular-asp-net-webapi-azure-cordova-cross-platform-2/',
   ]
 ---
 

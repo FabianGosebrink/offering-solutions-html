@@ -1,13 +1,13 @@
 ---
 title: WPF Basics II - The INotifyPropertyChanged Interface
 date: 2014-09-14
-tags: ["databinding", "wpf"]
+tags: ['databinding', 'wpf']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/",
+    '/blog/articles/2014/09/14/wpf-basics-ii-the-inotifypropertychanged-interface/',
   ]
 ---
 

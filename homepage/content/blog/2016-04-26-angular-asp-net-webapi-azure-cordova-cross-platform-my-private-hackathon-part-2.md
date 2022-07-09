@@ -1,13 +1,13 @@
 ---
 title: Angular, ASP.NET WebAPI, Azure & Cordova, Cross Platform – My Private Hackathon Part 2
 date: 2016-04-26
-tags: ["angular", "aspnet", "crossplatform"]
+tags: ['angular', 'aspnet', 'crossplatform']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2016/04/26/angular-asp-net-webapi-azure-cordova-cross-platform-my-private-hackathon-part-2/",
+    '/blog/articles/2016/04/26/angular-asp-net-webapi-azure-cordova-cross-platform-my-private-hackathon-part-2/',
   ]
 ---
 
@@ -163,23 +163,23 @@ import {
   CanActivate,
   ComponentInstruction,
   Router,
-} from "@angular/router-deprecated";
-import { Injector } from "@angular/core";
-import { appInjector } from "../shared/services/appInjector";
-import { StorageService } from "../shared/services/storage.service";
+} from '@angular/router-deprecated';
+import { Injector } from '@angular/core';
+import { appInjector } from '../shared/services/appInjector';
+import { StorageService } from '../shared/services/storage.service';
 
 export const NeedsAuthentication = () => {
   return CanActivate(
-    (to: ComponentInstruction, from: ComponentInstruction, target = ["/"]) => {
+    (to: ComponentInstruction, from: ComponentInstruction, target = ['/']) => {
       let injector: Injector = appInjector();
       let router: Router = injector.get(Router);
       let storageService: StorageService = injector.get(StorageService);
 
-      if (storageService.getItem("auth")) {
+      if (storageService.getItem('auth')) {
         return true;
       }
 
-      router.navigate(["/Login", { target }]);
+      router.navigate(['/Login', { target }]);
 
       return false;
     }
@@ -223,31 +223,31 @@ To give this whole thing a go as an exe and as an app on mobile devices I used 
 I separated all the files in the tasks for "electron", "cordova" and "web". In the main gulp file I am gathering all the information and point the default task only to list all available tasks to \_not- start something the developer does not know when he only types "gulp" without a specific command.
 
 ```javascript
-var buildConfig = require("./gulp.config");
+var buildConfig = require('./gulp.config');
 
-gulp.task("default", ["help"]);
-gulp.task("help", taskListing.withFilters(/-/));
+gulp.task('default', ['help']);
+gulp.task('help', taskListing.withFilters(/-/));
 
-require("./gulpTasks/web");
-require("./gulpTasks/electron");
-require("./gulpTasks/cordova");
+require('./gulpTasks/web');
+require('./gulpTasks/electron');
+require('./gulpTasks/cordova');
 
-gulp.task("build:all", function (done) {
-  runSeq("build:web:prod", "build:electron:prod", "build:apps", done);
+gulp.task('build:all', function (done) {
+  runSeq('build:web:prod', 'build:electron:prod', 'build:apps', done);
 });
 ```
 
 For example here is the electron gulp file, which turns this application into an exe
 
 ```javascript
-gulp.task("build:electron:prod", function (done) {
+gulp.task('build:electron:prod', function (done) {
   runSeq(
-    "electron-clean-temp",
-    "electron-compile-with-webpack",
-    "electron-copy-index-to-temp-folder",
-    "electron-inject-in-html",
-    "electron-copy-assets-to-temp-folder",
-    "electron-build-win",
+    'electron-clean-temp',
+    'electron-compile-with-webpack',
+    'electron-copy-index-to-temp-folder',
+    'electron-inject-in-html',
+    'electron-copy-assets-to-temp-folder',
+    'electron-build-win',
     done
   );
 });
@@ -256,18 +256,18 @@ gulp.task("build:electron:prod", function (done) {
 For cordova
 
 ```javascript
-gulp.task("build:apps", function (done) {
+gulp.task('build:apps', function (done) {
   runSeq(
-    "cordova-clean-temp",
-    "cordova-copy-config-to-temp",
-    "cordova-copy-winstore-to-temp",
-    "cordova-copy-index-to-temp-folder",
-    "cordova-copy-images-to-temp-folder",
-    "cordova-compile-with-webpack",
-    "cordova-inject-in-html",
-    "cordova-build-windows", //  'cordova-build-android',
-    "cordova-clean-dist",
-    "cordova-copy-to-dist",
+    'cordova-clean-temp',
+    'cordova-copy-config-to-temp',
+    'cordova-copy-winstore-to-temp',
+    'cordova-copy-index-to-temp-folder',
+    'cordova-copy-images-to-temp-folder',
+    'cordova-compile-with-webpack',
+    'cordova-inject-in-html',
+    'cordova-build-windows', //  'cordova-build-android',
+    'cordova-clean-dist',
+    'cordova-copy-to-dist',
     done
   );
 });

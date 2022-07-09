@@ -1,7 +1,7 @@
 ---
 title: Cross Field Validation Using Angular Reactive Forms
 date: 2020-05-03
-tags: ["angular", "reactiveforms", "validation"]
+tags: ['angular', 'reactiveforms', 'validation']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -29,22 +29,22 @@ We are starting off with a form looking like this
 
 ```ts
 export class AppComponent implements OnInit {
-  title = "forms-cross-field-validation";
+  title = 'forms-cross-field-validation';
   profileForm: FormGroup;
 
   rooms: Room[] = [
-    { text: "room 1", value: "room-1" },
-    { text: "room 2", value: "room-2" },
-    { text: "room 3", value: "room-3" },
+    { text: 'room 1', value: 'room-1' },
+    { text: 'room 2', value: 'room-2' },
+    { text: 'room 3', value: 'room-3' },
   ];
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.profileForm = this.formBuilder.group({
-      firstName: ["", Validators.required],
-      lastName: ["", Validators.required],
-      age: ["", Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      age: ['', Validators.required],
       room: [{}, Validators.required],
     });
   }
@@ -122,7 +122,7 @@ There are a lot of blog posts out there telling you how to write a custom valida
 So basically a custom validator could look like this:
 
 ```ts
-import { AbstractControl } from "@angular/forms";
+import { AbstractControl } from '@angular/forms';
 
 export function NoNegativeNumbers(control: AbstractControl) {
   return control.value < 0 ? { negativeNumber: true } : null;
@@ -134,7 +134,7 @@ And we pass it to the control like:
 ```ts
 this.profileForm = this.formBuilder.group({
   // ...
-  age: ["", [Validators.required, NoNegativeNumbers]],
+  age: ['', [Validators.required, NoNegativeNumbers]],
   // ...
 });
 ```
@@ -164,7 +164,7 @@ and as the error holds an object with properties on it which we can control with
 This is why we can ask for it now in the control.
 
 ```ts
-profileForm.get("age").errors?.negativeNumber;
+profileForm.get('age').errors?.negativeNumber;
 ```
 
 ## Errors on `FormControl` vs. `FormGroup`
@@ -182,10 +182,10 @@ The validators we wrote until here are all directly applied to the control. The 
 So let us start off writing the validator. The basic of this validator looks like this
 
 ```ts
-import { Injectable } from "@angular/core";
-import { FormGroup, ValidatorFn } from "@angular/forms";
+import { Injectable } from '@angular/core';
+import { FormGroup, ValidatorFn } from '@angular/forms';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class RoomOver18Validator {
   public onlyAccessRoomsOver18(): ValidatorFn {
     return (formGroup: FormGroup) => {
@@ -203,8 +203,8 @@ Inside this method we can ask for the controls inside of the group. If they are 
 export class RoomOver18Validator {
   public onlyAccessRoomsOver18(): ValidatorFn {
     return (formGroup: FormGroup) => {
-      const ageControl = formGroup.get("age");
-      const roomControl = formGroup.get("room");
+      const ageControl = formGroup.get('age');
+      const roomControl = formGroup.get('room');
 
       if (!ageControl || !roomControl) {
         return null;
@@ -220,8 +220,8 @@ If the age value is not given at all or over 18, we do not need to do something 
 export class RoomOver18Validator {
   public onlyAccessRoomsOver18(): ValidatorFn {
     return (formGroup: FormGroup) => {
-      const ageControl = formGroup.get("age");
-      const roomControl = formGroup.get("room");
+      const ageControl = formGroup.get('age');
+      const roomControl = formGroup.get('room');
 
       if (!ageControl || !roomControl) {
         return null;
@@ -247,8 +247,8 @@ If the value of the room control is not existing yet we are returning null again
 export class RoomOver18Validator {
   public onlyAccessRoomsOver18(): ValidatorFn {
     return (formGroup: FormGroup) => {
-      const ageControl = formGroup.get("age");
-      const roomControl = formGroup.get("room");
+      const ageControl = formGroup.get('age');
+      const roomControl = formGroup.get('room');
 
       if (!ageControl || !roomControl) {
         return null;
@@ -280,8 +280,8 @@ Now we can check if the rooms is room #2 or room # 3 and return an object which 
 export class RoomOver18Validator {
   public onlyAccessRoomsOver18(): ValidatorFn {
     return (formGroup: FormGroup) => {
-      const ageControl = formGroup.get("age");
-      const roomControl = formGroup.get("room");
+      const ageControl = formGroup.get('age');
+      const roomControl = formGroup.get('room');
 
       if (!ageControl || !roomControl) {
         return null;
@@ -303,7 +303,7 @@ export class RoomOver18Validator {
         return null;
       }
 
-      if (roomsValue.value === "room-2" || roomsValue.value === "room-3") {
+      if (roomsValue.value === 'room-2' || roomsValue.value === 'room-3') {
         return { roomOnlyWith18: true }; // This is our error!
       }
 

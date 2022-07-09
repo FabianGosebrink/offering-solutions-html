@@ -1,11 +1,11 @@
 ---
 title: WebAPI with ASP.NET Core 1.0 and ASP.NET
 date: 2015-09-02
-tags: ["aspnetcore"]
+tags: ['aspnetcore']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2015/09/02/webapi-with-asp-net-core-1-0-and-asp-net/"]
+aliases: ['/blog/articles/2015/09/02/webapi-with-asp-net-core-1-0-and-asp-net/']
 ---
 
 I released two sample APIs on Github: WebAPI with ASP.NET Core and ASP.NET

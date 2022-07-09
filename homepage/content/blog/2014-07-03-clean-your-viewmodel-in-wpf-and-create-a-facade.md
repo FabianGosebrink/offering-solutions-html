@@ -1,12 +1,12 @@
 ---
 title: Clean your viewmodel in WPF and create a facade
 date: 2014-07-03
-tags: ["wpf"]
+tags: ['wpf']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ["/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/"]
+  ['/blog/articles/2014/07/03/clean-your-viewmodel-in-wpf-and-create-a-facade/']
 ---
 
 In this post I want to show you how to Clean your view model in WPF and create a facade.

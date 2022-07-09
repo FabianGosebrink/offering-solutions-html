@@ -1,13 +1,13 @@
 ---
 title: ASP.NET - Clientseitige Webarchitekturen mit AngularJS
 date: 2014-11-02
-tags: ["angularjs", "aspnet"]
+tags: ['angularjs', 'aspnet']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2014/11/02/asp-net-clientseitige-webarchitekturen-mit-angularjs/",
+    '/blog/articles/2014/11/02/asp-net-clientseitige-webarchitekturen-mit-angularjs/',
   ]
 ---
 
@@ -38,10 +38,10 @@ Die Services bieten eine Abstrahierung von etwaigen Aufgaben. Hier können Busin
 App.js bietet uns den Start unserer Anwendung. Hier wird die App erstellt und einer Variable zugewiesen, auf der die Controller, Services etc. in Zukunft registriert werden.
 
 ```javascript
-var firstApp = angular.module("firstApp", [
-  "ngRoute",
-  "ngResource",
-  "ui.bootstrap",
+var firstApp = angular.module('firstApp', [
+  'ngRoute',
+  'ngResource',
+  'ui.bootstrap',
 ]);
 ```
 
@@ -62,26 +62,26 @@ Hierbei kommen die oben genannten Aufgaben zum Tragen.
 Der Todo-Service beispielsweise bietet die Funktionen zum Abrufen, Löschen und Hinzufügen an:
 
 ```javascript
-"use strict";
-firstApp.factory("todoService", function ($http) {
+'use strict';
+firstApp.factory('todoService', function ($http) {
   var todoService = {};
 
-  var urlPrefix = "/api/Todo/";
+  var urlPrefix = '/api/Todo/';
 
   var _addTodo = function (todoName) {
     var data = { Name: todoName };
-    var promise = $http.post(urlPrefix + "AddTodoItem", data);
+    var promise = $http.post(urlPrefix + 'AddTodoItem', data);
     return promise;
   };
 
   var _deleteTodo = function (item) {
-    var promise = $http.post(urlPrefix + "RemoveTodoItem", item);
+    var promise = $http.post(urlPrefix + 'RemoveTodoItem', item);
     return promise;
   };
 
   var _getTodoItems = function () {
     var promise = $http
-      .get(urlPrefix + "GetAllTodoItems")
+      .get(urlPrefix + 'GetAllTodoItems')
       .then(function (results) {
         //console.log(results);
         return results.data;
@@ -100,14 +100,14 @@ firstApp.factory("todoService", function ($http) {
 Durch die Registrierung auf der App-Variable „firstApp“ steht nun die Dependency Injection zur Verfügung, die es möglich macht, den Service im Controller zu injecten. Der Controller kann nun die Methoden in Anspruch nehmen.
 
 ```javascript
-firstApp.controller("todoController", function ($scope, todoService) {
+firstApp.controller('todoController', function ($scope, todoService) {
   var _addTodo = function () {
     todoService.addTodo($scope.TodoItem).then(
       function () {
         _getTodoItemAndSetOnScope();
       },
       function () {
-        alert("Error occured");
+        alert('Error occured');
       }
     );
   };
@@ -126,7 +126,7 @@ firstApp.controller("todoController", function ($scope, todoService) {
 
   _getTodoItemAndSetOnScope();
 
-  $scope.TodoItem = "";
+  $scope.TodoItem = '';
   $scope.AddTodo = _addTodo;
   $scope.DeleteTodo = _deleteTodo;
 });

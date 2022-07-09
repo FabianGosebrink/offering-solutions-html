@@ -1,14 +1,14 @@
 ---
 title: Angular and ASP.NET Core Starter
 date: 2016-01-25
-tags: ["angular", "aspnetcore"]
+tags: ['angular', 'aspnetcore']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2016/01/25/angular-2-asp-net-core-starter/",
-    "/blog/articles/2016/01/25/angular-and-asp-net-core-starter/",
+    '/blog/articles/2016/01/25/angular-2-asp-net-core-starter/',
+    '/blog/articles/2016/01/25/angular-and-asp-net-core-starter/',
   ]
 ---
 
@@ -281,26 +281,26 @@ After this you can install Angular and all other dependencies via "npm install" 
 Now we have to configure the webpack as so:
 
 ```javascript
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const path = require("path");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: {
-    app: "./angularApp/app/main.ts",
+    app: './angularApp/app/main.ts',
   },
-  devtool: "cheap-module-eval-source-map",
+  devtool: 'cheap-module-eval-source-map',
   performance: {
     hints: false,
   },
   resolve: {
-    extensions: [".ts", ".js", ".json"],
+    extensions: ['.ts', '.js', '.json'],
   },
   output: {
-    path: path.join(__dirname, "wwwroot"),
-    filename: "js/[name].bundle.js",
+    path: path.join(__dirname, 'wwwroot'),
+    filename: 'js/[name].bundle.js',
   },
 
   module: {
@@ -308,61 +308,61 @@ module.exports = {
       {
         test: /\.ts$/,
         use: [
-          "awesome-typescript-loader",
-          "angular-router-loader",
-          "angular2-template-loader",
-          "source-map-loader",
-          "tslint-loader",
+          'awesome-typescript-loader',
+          'angular-router-loader',
+          'angular2-template-loader',
+          'source-map-loader',
+          'tslint-loader',
         ],
       },
       {
         test: /\.html$/,
-        use: "html-loader",
+        use: 'html-loader',
       },
       {
         test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$/,
-        use: "file-loader?name=assets/[name].[ext]",
+        use: 'file-loader?name=assets/[name].[ext]',
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader",
+          fallback: 'style-loader',
+          use: 'css-loader',
         }),
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin("css/[name].bundle.css"),
+    new ExtractTextPlugin('css/[name].bundle.css'),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ["app", "vendor", "polyfills"],
+      name: ['app', 'vendor', 'polyfills'],
     }),
     new CleanWebpackPlugin([
-      "./wwwroot/js/",
-      "./wwwroot/css/",
-      "./wwwroot/assets/",
-      "./wwwroot/index.html",
+      './wwwroot/js/',
+      './wwwroot/css/',
+      './wwwroot/assets/',
+      './wwwroot/index.html',
     ]),
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
-      path.resolve(__dirname, "../src")
+      path.resolve(__dirname, '../src')
     ),
     // inject in index.html
     new HtmlWebpackPlugin({
-      template: "./angularApp/index.html",
-      inject: "body",
-      filename: "index.html",
+      template: './angularApp/index.html',
+      inject: 'body',
+      filename: 'index.html',
     }),
     new webpack.ProvidePlugin({
-      jQuery: "jquery",
-      $: "jquery",
-      jquery: "jquery",
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery',
     }),
   ],
   devServer: {
     historyApiFallback: true,
-    stats: "minimal",
+    stats: 'minimal',
   },
 };
 ```

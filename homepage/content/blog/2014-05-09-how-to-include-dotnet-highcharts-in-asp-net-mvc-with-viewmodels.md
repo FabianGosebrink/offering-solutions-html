@@ -1,13 +1,13 @@
 ---
 title: How to include DotNet.HighCharts in ASP.NET MVC with ViewModels
 date: 2014-05-09
-tags: ["aspnet", "highcharts", "mvc"]
+tags: ['aspnet', 'highcharts', 'mvc']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2014/05/09/how-to-include-dotnet-highcharts-in-asp-net-mvc-with-viewmodels/",
+    '/blog/articles/2014/05/09/how-to-include-dotnet-highcharts-in-asp-net-mvc-with-viewmodels/',
   ]
 ---
 

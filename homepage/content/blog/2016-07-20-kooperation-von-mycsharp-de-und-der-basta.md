@@ -1,12 +1,12 @@
 ---
 title: Kooperation von MyCSharp.de und der BASTA!
 date: 2016-07-20
-tags: ["basta", "mycsharp"]
+tags: ['basta', 'mycsharp']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ["/blog/articles/2016/07/20/kooperation-von-mycsharp-de-und-der-basta/"]
+  ['/blog/articles/2016/07/20/kooperation-von-mycsharp-de-und-der-basta/']
 ---
 
 Ich freue mich wieder sehr anzukündigen, dass es erneut zu einer Kooperation von MyCSharp.de und der BASTA! gekommen ist. Die zweite dieses Jahr :)

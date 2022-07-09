@@ -1,13 +1,13 @@
 ---
 title: Structure your project with areas and services in ASP.NET MVC
 date: 2014-06-01
-tags: ["aspnet", "areas", "mvc"]
+tags: ['aspnet', 'areas', 'mvc']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2014/06/01/structurize-your-project-with-areas-and-services-in-asp-net-mvc/",
+    '/blog/articles/2014/06/01/structurize-your-project-with-areas-and-services-in-asp-net-mvc/',
   ]
 ---
 

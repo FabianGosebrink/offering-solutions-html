@@ -1,11 +1,11 @@
 ---
 title: ASP.NET Helpers by Offering Solutions
 date: 2015-03-04
-tags: ["nuget"]
+tags: ['nuget']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2015/03/04/asp-net-helpers-by-offering-solutions/"]
+aliases: ['/blog/articles/2015/03/04/asp-net-helpers-by-offering-solutions/']
 ---
 
 I released a new version of the ASP.NET Helpers by Offering Solutions:

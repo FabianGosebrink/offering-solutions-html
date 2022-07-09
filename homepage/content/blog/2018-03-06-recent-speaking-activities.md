@@ -1,11 +1,11 @@
 ---
 title: Recent Speaking Activities
 date: 2018-03-06
-tags: ["speaking"]
+tags: ['speaking']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2018/03/06/recent-speaking-activities/"]
+aliases: ['/blog/articles/2018/03/06/recent-speaking-activities/']
 ---
 
 In this blog post I want to recap my recent speaking activities and provide you some short information and slides to have it all in a go.

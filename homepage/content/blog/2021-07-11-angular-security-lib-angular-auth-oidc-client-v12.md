@@ -1,7 +1,7 @@
 ---
 title: Angular Security Lib angular-auth-oidc-client Released in V12
 date: 2021-07-11
-tags: ["angular", "security"]
+tags: ['angular', 'security']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -38,8 +38,8 @@ We improved a lot in V12 as you can also see on the [Features for V12](https://g
 As libraries normally get configured with the `forRoot(...)` method until V12 we have not supported this configuration method. As the library supports having a static config you can pass into the `forRoot(...)` method, getting your configuration from an http source is supported as well. You can not pass a config in the `forRoot(...)` method if you do not have it at the app start, so we moved the [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER) into the library and wrapped it in loaders. So with the `StsConfigHttpLoader` passing a promise you can load your configuration from an HTTP source and map it and with the classic `forRoot(...)` method you can pass any static config you like or multiple ones.
 
 ```ts
-import { NgModule } from "@angular/core";
-import { AuthModule } from "angular-auth-oidc-client";
+import { NgModule } from '@angular/core';
+import { AuthModule } from 'angular-auth-oidc-client';
 // ...
 
 @NgModule({
@@ -60,14 +60,14 @@ export class AppModule {}
 or
 
 ```ts
-import { HttpClient } from "@angular/common/http";
-import { NgModule } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import {
   AuthModule,
   StsConfigHttpLoader,
   StsConfigLoader,
-} from "angular-auth-oidc-client";
-import { map } from "rxjs/operators";
+} from 'angular-auth-oidc-client';
+import { map } from 'rxjs/operators';
 
 export const httpLoaderFactory = (httpClient: HttpClient) => {
   const config$ = httpClient
@@ -160,7 +160,7 @@ export class AuthConfigModule {}
 Each config gets a `configId` which you can set or wil be set by the lib. This `configId` can be used to get the access tokens for example.
 
 ```ts
-const token = this.oidcSecurityService.getAccessToken("configId");
+const token = this.oidcSecurityService.getAccessToken('configId');
 ```
 
 ### What else?

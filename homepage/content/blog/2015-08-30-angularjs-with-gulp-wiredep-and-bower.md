@@ -1,11 +1,11 @@
 ---
 title: AngularJS with gulp, wiredep and bower
 date: 2015-08-30
-tags: ["angularjs", "bower", "gulp", "wiredep"]
+tags: ['angularjs', 'bower', 'gulp', 'wiredep']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/"]
+aliases: ['/blog/articles/2015/08/30/angularjs-with-gulp-wiredep-and-bower/']
 ---
 
 With this blog post I want to show you how to use AngularJS with gulp, wiredep and bower to provide the files to an angular application.
@@ -19,24 +19,24 @@ Check it out [here](https://github.com/FabianGosebrink/ASPNET-WebAPI-AngularJs).
 #### gulp.js
 
 ```javascript
-var gulp = require("gulp");
-var jshint = require("gulp-jshint");
-var jscs = require("gulp-jscs");
-var del = require("del");
-var inject = require("gulp-inject");
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
+var jscs = require('gulp-jscs');
+var del = require('del');
+var inject = require('gulp-inject');
 
-var config = require("./gulp.config")();
+var config = require('./gulp.config')();
 
-gulp.task("vet", function () {
+gulp.task('vet', function () {
   return gulp
     .src(config.srcJSFiles)
     .pipe(jscs())
     .pipe(jshint())
-    .pipe(jshint.reporter("jshint-stylish", { verbose: true }));
+    .pipe(jshint.reporter('jshint-stylish', { verbose: true }));
 });
 
-gulp.task("injectJsIntoIndex", ["vet"], function () {
-  var wiredep = require("wiredep").stream;
+gulp.task('injectJsIntoIndex', ['vet'], function () {
+  var wiredep = require('wiredep').stream;
   var options = config.getWiredepDefaultOptions();
 
   var target = gulp.src(config.targetIndexHtmlFile);
@@ -63,18 +63,18 @@ The gulp-config is seperated:
 module.exports = function () {
   var config = {
     srcJSFiles: [
-      "./app/*.js",
-      "./app/*/*.js",
-      "./app/*/*/*.js",
-      "!./node_modules/**/*.js",
+      './app/*.js',
+      './app/*/*.js',
+      './app/*/*/*.js',
+      '!./node_modules/**/*.js',
     ],
-    targetIndexHtmlFile: "index.html",
-    root: "./",
+    targetIndexHtmlFile: 'index.html',
+    root: './',
 
     bower: {
-      json: require("./bower.json"),
-      directory: "./libs",
-      ignorePath: "../..",
+      json: require('./bower.json'),
+      directory: './libs',
+      ignorePath: '../..',
     },
   };
 

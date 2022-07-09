@@ -1,12 +1,12 @@
 ---
 title: How to modularize your angular application
 date: 2015-03-17
-tags: ["angularjs", "modules"]
+tags: ['angularjs', 'modules']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ["/blog/articles/2015/03/17/how-to-modularize-your-angular-application/"]
+  ['/blog/articles/2015/03/17/how-to-modularize-your-angular-application/']
 ---
 
 In this blog post I want to show you a way on how to modularize your angular application in a way I did it so far. Enjoy reading :)
@@ -16,7 +16,7 @@ Due to the fact that angular.js gets more and more important you are forced to t
 Well one of the killer features for me in angular is its modularization. Even when you are starting an app you realize that the whole app is nothing else than a module.
 
 ```javascript
-var app = angular.module("TestApp", [
+var app = angular.module('TestApp', [
   //...
 ]);
 ```
@@ -34,25 +34,25 @@ Go and build a folder for every Module you want to create:
 And register your services on these modules.
 
 ```javascript
-var homeModule = angular.module("home.homeModule", ["ngRoute"]);
+var homeModule = angular.module('home.homeModule', ['ngRoute']);
 
 homeModule.config(function ($routeProvider) {
   $routeProvider
-    .when("/", {
-      controller: "home.controllers.homeController",
-      templateUrl: "/app/Home/Templates/overview.html",
+    .when('/', {
+      controller: 'home.controllers.homeController',
+      templateUrl: '/app/Home/Templates/overview.html',
     })
-    .otherwise({ redirectTo: "/" });
+    .otherwise({ redirectTo: '/' });
 });
 ```
 
 ```javascript
-"use strict";
-homeModule.controller("home.controllers.homeController", [
-  "$scope",
-  "home.services.peopleService",
-  "toaster",
-  "cfpLoadingBar",
+'use strict';
+homeModule.controller('home.controllers.homeController', [
+  '$scope',
+  'home.services.peopleService',
+  'toaster',
+  'cfpLoadingBar',
   function ($scope, peopleService, toaster, cfpLoadingBar) {
     //...
   },
@@ -62,14 +62,14 @@ homeModule.controller("home.controllers.homeController", [
 Then you have to load your modules in your app like this:
 
 ```javascript
-var app = angular.module("TestApp", [
-  "ngRoute",
-  "ngResource",
-  "toaster",
-  "chieffancypants.loadingBar",
+var app = angular.module('TestApp', [
+  'ngRoute',
+  'ngResource',
+  'toaster',
+  'chieffancypants.loadingBar',
 
-  "home.homeModule",
-  "contact.contactModule",
+  'home.homeModule',
+  'contact.contactModule',
 ]);
 ```
 

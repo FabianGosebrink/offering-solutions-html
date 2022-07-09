@@ -1,12 +1,12 @@
 ---
 title: ASP.NET Unit Of Work with Entity Framework
 date: 2015-12-09
-tags: ["aspnet", "entityframework", "unitofwork"]
+tags: ['aspnet', 'entityframework', 'unitofwork']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ["/blog/articles/2015/12/09/asp-net-unit-of-work-with-entity-framework/"]
+  ['/blog/articles/2015/12/09/asp-net-unit-of-work-with-entity-framework/']
 ---
 
 I implemented a solution for the ASP.NET Unit Of Work with Entity Framework (see [this](http://offering.solutions/blog/articles/2014/07/01/asp-net-mvc-generic-repositories-and-unitofwork/) post) and put all this into a NuGet-Package. And finally: Here it is!

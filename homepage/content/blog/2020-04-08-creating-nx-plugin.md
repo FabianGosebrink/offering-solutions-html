@@ -1,7 +1,7 @@
 ---
 title: Creating an Angular schematic and turn it into an nx plugin
 date: 2020-04-08
-tags: ["nx", "plugin"]
+tags: ['nx', 'plugin']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -90,7 +90,7 @@ import {
   SchematicContext,
   Tree,
   chain,
-} from "@angular-devkit/schematics";
+} from '@angular-devkit/schematics';
 
 export function myFirst(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
@@ -128,8 +128,8 @@ Now let us extract the inner code into a method to the new created `actions/inde
 Code of `my-first/index.ts`
 
 ```js
-import { Rule, Tree, SchematicContext } from "@angular-devkit/schematics";
-import { executeSchematic } from "./actions";
+import { Rule, Tree, SchematicContext } from '@angular-devkit/schematics';
+import { executeSchematic } from './actions';
 
 export function myFirst(_options: any): Rule {
   return (host: Tree, context: SchematicContext) => {
@@ -146,7 +146,7 @@ import {
   SchematicContext,
   Rule,
   chain,
-} from "@angular-devkit/schematics";
+} from '@angular-devkit/schematics';
 
 export function executeSchematic(host: Tree, context: SchematicContext): Rule {
   const arrayOfRules: Rule[] = [];
@@ -231,8 +231,8 @@ and in the `project-actions/index.ts` file we give it a place where all the acti
 Code of `project-actions/index.ts`
 
 ```js
-import { Rule } from "@angular-devkit/schematics";
-import { deleteProjectFiles } from "./delete-project-files";
+import { Rule } from '@angular-devkit/schematics';
+import { deleteProjectFiles } from './delete-project-files';
 
 export function getRulesForProjects() {
   let projectRules: Rule[] = [];
@@ -252,8 +252,8 @@ Let us do the same with the `root-actions` and the `update-angularjson.ts`. This
 Code of `update-angularjson.ts`
 
 ```js
-import { experimental } from "@angular-devkit/core";
-import { Rule, SchematicContext, Tree } from "@angular-devkit/schematics";
+import { experimental } from '@angular-devkit/core';
+import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 
 export function updateAngularJson(
   workspace: experimental.workspace.WorkspaceSchema /* CUSTOM PARAM*/
@@ -261,7 +261,7 @@ export function updateAngularJson(
   return (tree: Tree, _context: SchematicContext) => {
     // Modify workspace like you want
     // tree, _context and workspace are available here
-    tree.overwrite(`angular.json`, JSON.stringify(workspace, null, "  "));
+    tree.overwrite(`angular.json`, JSON.stringify(workspace, null, '  '));
     return tree;
   };
 }
@@ -272,9 +272,9 @@ The code of the corresponding index file is closely the same
 Code of `project-actions/index.ts`
 
 ```js
-import { experimental } from "@angular-devkit/core";
-import { Rule } from "@angular-devkit/schematics";
-import { updateAngularJson } from "./update-angularjson";
+import { experimental } from '@angular-devkit/core';
+import { Rule } from '@angular-devkit/schematics';
+import { updateAngularJson } from './update-angularjson';
 
 export function getRulesForWorkspaceRoot(
   workspace: experimental.workspace.WorkspaceSchema
@@ -296,9 +296,9 @@ import {
   SchematicContext,
   Tree,
   SchematicsException,
-} from "@angular-devkit/schematics";
-import { getRulesForProjects } from "./project-actions";
-import { getRulesForWorkspaceRoot } from "./root-actions";
+} from '@angular-devkit/schematics';
+import { getRulesForProjects } from './project-actions';
+import { getRulesForWorkspaceRoot } from './root-actions';
 
 export function executeSchematic(host: Tree, context: SchematicContext) {
   const workspace = getAngularWorkspace(host);
@@ -315,7 +315,7 @@ export function getAngularWorkspace(tree: Tree) {
 
   if (!workspaceConfig) {
     throw new SchematicsException(
-      "Could not find Angular workspace configuration"
+      'Could not find Angular workspace configuration'
     );
   }
 
@@ -331,8 +331,8 @@ and from the `my-first/index.ts` file we only have to pass the corresponding arg
 Code of `my-first/index.ts`
 
 ```js
-import { Rule, Tree, SchematicContext } from "@angular-devkit/schematics";
-import { executeSchematic } from "./actions";
+import { Rule, Tree, SchematicContext } from '@angular-devkit/schematics';
+import { executeSchematic } from './actions';
 export function myFirst(_options: any): Rule {
   return (host: Tree, context: SchematicContext) => {
     return executeSchematic(host, context);
@@ -523,9 +523,9 @@ import {
   SchematicContext,
   Tree,
   SchematicsException,
-} from "@angular-devkit/schematics";
-import { getRulesForProjects } from "./project-actions";
-import { getRulesForWorkspaceRoot } from "./root-actions";
+} from '@angular-devkit/schematics';
+import { getRulesForProjects } from './project-actions';
+import { getRulesForWorkspaceRoot } from './root-actions';
 
 export function executeSchematic(host: Tree, context: SchematicContext) {
   const workspace = getAngularWorkspace(host);
@@ -542,7 +542,7 @@ export function getAngularWorkspace(tree: Tree) {
 
   if (!workspaceConfig) {
     throw new SchematicsException(
-      "Could not find Angular workspace configuration"
+      'Could not find Angular workspace configuration'
     );
   }
 
@@ -558,9 +558,9 @@ We can call that one from the default function from our nx plugin.
 Code of `libs\my-first-plugin\src\schematics\my-first-plugin\schematic.ts`
 
 ```js
-import { Tree, Rule, SchematicContext } from "@angular-devkit/schematics";
-import { MyFirstPluginSchematicSchema } from "./schema";
-import { executeSchematic } from "./actions";
+import { Tree, Rule, SchematicContext } from '@angular-devkit/schematics';
+import { MyFirstPluginSchematicSchema } from './schema';
+import { executeSchematic } from './actions';
 
 export default function (options: MyFirstPluginSchematicSchema): Rule {
   return (host: Tree, context: SchematicContext) => {

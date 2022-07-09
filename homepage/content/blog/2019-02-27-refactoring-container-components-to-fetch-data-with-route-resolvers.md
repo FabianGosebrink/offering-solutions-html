@@ -1,13 +1,13 @@
 ---
 title: Refactoring Container Components to Fetch Data With Route Resolvers
 date: 2019-02-27
-tags: ["angular", "routeresolvers", "components"]
+tags: ['angular', 'routeresolvers', 'components']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/",
+    '/blog/articles/2019/02/27/refactoring-container-components-to-fetch-data-with-route-resolvers/',
   ]
 ---
 
@@ -36,16 +36,16 @@ The sample application is to be found here [https://github.com/FabianGosebrink/a
 If we fetch data in a container component and pass it down to the presentational component, the component displaying the data is already shown with all its content but not the data itself as the data has a small delay (like with an http request for example). We can get over that issue with an `ngIf` directive.
 
 ```ts
-import { HttpClient } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: "app-container",
+  selector: 'app-container',
   template: `
     <app-presentational [data]="data$ | async"></app-presentational>
   `,
-  styleUrls: ["./container.component.css"],
+  styleUrls: ['./container.component.css'],
 })
 export class ContainerComponent implements OnInit {
   data$: Observable<any>;
@@ -53,7 +53,7 @@ export class ContainerComponent implements OnInit {
   constructor(private readonly httpClient: HttpClient) {}
 
   ngOnInit() {
-    this.data$ = this.httpClient.get("https://swapi.co/api/people/1");
+    this.data$ = this.httpClient.get('https://swapi.co/api/people/1');
   }
 }
 ```
@@ -61,10 +61,10 @@ export class ContainerComponent implements OnInit {
 here our container component is hosting the presentational component and fetches the data, passing it into the presentational component with an async directive.
 
 ```ts
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-presentational",
+  selector: 'app-presentational',
   template: `
     <p *ngIf="data; else nodata">
       {{ data | json }}
@@ -72,7 +72,7 @@ import { Component, Input, OnInit } from "@angular/core";
 
     <ng-template #nodata>no data received yet</ng-template>
   `,
-  styleUrls: ["./presentational.component.css"],
+  styleUrls: ['./presentational.component.css'],
 })
 export class PresentationalComponent implements OnInit {
   @Input() data: any;
@@ -103,15 +103,15 @@ If we want to change that the component the route is referring to is displayed w
 For this first we have to introduce a route resolver
 
 ```ts
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   Resolve,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-} from "@angular/router";
-import { Observable } from "rxjs";
+} from '@angular/router';
+import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class DataResolver implements Resolve<any> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return null; // to be added
@@ -124,20 +124,20 @@ The Resolver is a class implementing the interface `Resolve<T>` which forces you
 Let us improve the resolver by letting it fetch some data
 
 ```ts
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   Resolve,
   RouterStateSnapshot,
-} from "@angular/router";
+} from '@angular/router';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class DataResolver implements Resolve<any> {
   constructor(private readonly httpClient: HttpClient) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return this.httpClient.get("https://swapi.co/api/people/1");
+    return this.httpClient.get('https://swapi.co/api/people/1');
   }
 }
 ```
@@ -181,13 +181,13 @@ The difference now is that the `ContainerComponent` is only displayed when the d
 
 ```ts
 @Component({
-  selector: "app-presentational",
+  selector: 'app-presentational',
   template: `
     <p *ngIf="data">
       {{ data | json }}
     </p>
   `,
-  styleUrls: ["./presentational.component.css"],
+  styleUrls: ['./presentational.component.css'],
 })
 export class PresentationalComponent {
   @Input() data: any;
@@ -199,7 +199,7 @@ export class PresentationalComponent {
 This is fine for now, but how can the user see that something is happening if the resolver is currently fetching some data? It would be nice to display the user a loading indicator. We can introduce a service for that listening to some `RouterEvents` like this
 
 ```ts
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class LoadingIndicatorService {
   isLoading$: Observable<boolean>;
 
@@ -221,7 +221,7 @@ In our app component we can inject this service and use the `isLoading$` to show
 
 ```ts
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   template: `
     <a [routerLink]="['home']">Home</a> |
     <a [routerLink]="['container']">Container</a>
@@ -232,10 +232,10 @@ In our app component we can inject this service and use the `isLoading$` to show
       *ngIf="!(loadingIndicatorService.isLoading$ | async); else loading"
     ></router-outlet>
   `,
-  styleUrls: ["./app.component.css"],
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = "route-resolvers";
+  title = 'route-resolvers';
 
   constructor(public loadingIndicatorService: LoadingIndicatorService) {}
 }

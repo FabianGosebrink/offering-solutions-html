@@ -1,13 +1,13 @@
 ---
 title: How to work with the q promise syntax in AngularJS
 date: 2015-03-01
-tags: ["angularjs"]
+tags: ['angularjs']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2015/03/01/how-to-work-with-the-q-promise-syntax-in-angularjs/",
+    '/blog/articles/2015/03/01/how-to-work-with-the-q-promise-syntax-in-angularjs/',
   ]
 ---
 
@@ -20,7 +20,7 @@ If you are developing with **angularJs** you have to work with promises angular
 Very cool, hm?
 
 ```javascript
-$http.get("/here/goes/my/Api").then(
+$http.get('/here/goes/my/Api').then(
   function (result) {
     // Success
   },
@@ -41,14 +41,14 @@ An example:
 Repository:
 
 ```javascript
-$http.get("/here/goes/my/Api").then(
+$http.get('/here/goes/my/Api').then(
   function (result) {
     // Success
-    return "good";
+    return 'good';
   },
   function () {
     // Error
-    return "bad";
+    return 'bad';
   }
 );
 ```
@@ -59,10 +59,10 @@ and your controller could be like:
 function loadMyData() {
   var result = myRepository.getSomeData($routeParams.id);
 
-  if (result == "good") {
+  if (result == 'good') {
     //Success
   }
-  if (result == "bad") {
+  if (result == 'bad') {
     //Error
   }
 }

@@ -1,7 +1,7 @@
 ---
 title: Implement endless scroll with Angular, NgRx and ASP.NET Core WebAPI
 date: 2020-04-10
-tags: ["angular", "ngrx", "aspnetcore"]
+tags: ['angular', 'ngrx', 'aspnetcore']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -149,10 +149,10 @@ export interface ItemFilter {
 As the data- or api-service we will create an `ItemsApiService` which will do the communication for us to the backend. First we have to include the `HttpClientModule` into the `AppModule`
 
 ```ts
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { HttpClientModule } from "@angular/common/http";
-import { AppComponent } from "./app.component";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -168,16 +168,16 @@ export class AppModule {}
 and then use the `HttpClient` in the `ItemsApiService`
 
 ```ts
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { ItemFilter, Item } from "../item";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ItemFilter, Item } from '../item';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class ItemsApiService {
   constructor(private http: HttpClient) {}
 
   getAllItems(filterDto?: ItemFilter) {
-    const url = "https://localhost:5001/api/values";
+    const url = 'https://localhost:5001/api/values';
     const filter = this.turnFilterIntoUrl(filterDto);
 
     return this.http.get<Item[]>(`${url}${filter}`);
@@ -185,14 +185,14 @@ export class ItemsApiService {
 
   private turnFilterIntoUrl(filterDto?: ItemFilter) {
     if (!filterDto) {
-      return "";
+      return '';
     }
 
     if (!Object.entries(filterDto).length) {
-      return "";
+      return '';
     }
 
-    let urlFilter = "?";
+    let urlFilter = '?';
 
     for (const [key, value] of Object.entries(filterDto)) {
       urlFilter += `${key}=${value}&`;
@@ -218,8 +218,8 @@ ng add @ngrx/store && ng add @ngrx/effects
 it will add the ngrx store and the effects for us. They will be added to the `AppModule` automatically.
 
 ```ts
-import { StoreModule } from "@ngrx/store";
-import { EffectsModule } from "@ngrx/effects";
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -276,8 +276,8 @@ to the folder.
 Let us first define the actions we can dispatch to the store. First of all we need an action to get all items `getItems`. So far so good. We will define one more action to separate the call when more actions should be loaded to the initial call, let us call it `getMoreItems`. We will need an action for successful completion with a payload and an error action. That's it. Here we go!
 
 ```ts
-import { createAction, props } from "@ngrx/store";
-import { Item } from "../item";
+import { createAction, props } from '@ngrx/store';
+import { Item } from '../item';
 
 const prefix = `[Home]`;
 
@@ -405,9 +405,9 @@ export class ItemEffects {
 The reducer makes it pretty easy to combine the items we already have with the new ones which were coming. This is one of the reasons I think ngrx fits very well to the solve of the problem of an endless scroll here.
 
 ```ts
-import { createReducer, on } from "@ngrx/store";
-import * as appActions from "./item.actions";
-import { Item } from "../item";
+import { createReducer, on } from '@ngrx/store';
+import * as appActions from './item.actions';
+import { Item } from '../item';
 
 export interface AppState {
   itemState: ItemState;
@@ -478,8 +478,8 @@ export const selectItemState = (state: fromReducer.AppState) => state.itemState;
 We can use this one to ask for allItems, for the length of all items (because our effects need it, remember?) and we can ask for the `loading` property.
 
 ```ts
-import * as fromReducer from "./item.reducer";
-import { createSelector } from "@ngrx/store";
+import * as fromReducer from './item.reducer';
+import { createSelector } from '@ngrx/store';
 
 export const selectItemState = (state: fromReducer.AppState) => state.itemState;
 
@@ -506,12 +506,12 @@ In the `index.ts` file can prepare the array which we have to register in the `E
 So this is what the file is looking like
 
 ```ts
-import { ItemEffects } from "./item.effects";
-import { ActionReducerMap } from "@ngrx/store";
-import { AppState, itemReducer } from "./item.reducer";
+import { ItemEffects } from './item.effects';
+import { ActionReducerMap } from '@ngrx/store';
+import { AppState, itemReducer } from './item.reducer';
 
-export * from "./item.selectors";
-export * from "./item.actions";
+export * from './item.selectors';
+export * from './item.actions';
 
 export const appEffects = [ItemEffects];
 export const appReducers: ActionReducerMap<AppState> = {
@@ -526,13 +526,13 @@ Alright, we are almost done.
 Basically we have two things to consider here: The `StoreModule` and the `EffectsModule`. Because we prepared everything in the `store/index.ts` file we can make our lives very easy here:
 
 ```ts
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { HttpClientModule } from "@angular/common/http";
-import { AppComponent } from "./app.component";
-import { StoreModule } from "@ngrx/store";
-import { EffectsModule } from "@ngrx/effects";
-import { itemEffects, appReducers } from "./store";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { itemEffects, appReducers } from './store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -552,21 +552,21 @@ export class AppModule {}
 The component is the part where we get to our selectors and dispatch the actions in this case.
 
 ```ts
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
-import { Item } from "./item";
-import { Store, select } from "@ngrx/store";
-import { selectAllItems, selectIsLoading, getItems } from "./store";
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Item } from './item';
+import { Store, select } from '@ngrx/store';
+import { selectAllItems, selectIsLoading, getItems } from './store';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   items$: Observable<Item[]>;
   isloading$: Observable<boolean>;
-  title = "endlessscrollngrx";
+  title = 'endlessscrollngrx';
 
   constructor(private store: Store<any>) {}
 
@@ -584,26 +584,26 @@ We expose two properties `items$` and `isloading$` here. Both of them are receiv
 Now if we want to check if the user scrolled we can use the `window.onscroll` event and calculate if we have to load more items. If yes we dispatch the action of `getMoreItems()` which then uses the length of the items in the store in the effects etc. You get the idea. 😀
 
 ```ts
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
-import { Item } from "./item";
-import { Store, select } from "@ngrx/store";
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Item } from './item';
+import { Store, select } from '@ngrx/store';
 import {
   selectAllItems,
   selectIsLoading,
   getItems,
   getMoreItems,
-} from "./store";
+} from './store';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   items$: Observable<Item[]>;
   isloading$: Observable<boolean>;
-  title = "endlessscrollngrx";
+  title = 'endlessscrollngrx';
 
   constructor(private store: Store<any>) {}
 

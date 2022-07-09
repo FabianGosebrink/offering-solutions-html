@@ -1,11 +1,11 @@
 ---
 title: WPF crashes with 'OutOfMemoryException' when loading PNGs in Windows 8.1
 date: 2015-04-22
-tags: ["github"]
+tags: ['github']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2015/04/22/find-me-on-github/"]
+aliases: ['/blog/articles/2015/04/22/find-me-on-github/']
 ---
 
 I wanted to mention that you can find me on GitHub from now on. I am available on GitHub with my personal profile.

@@ -1,12 +1,12 @@
 ---
 title: Impressions of the first ASP.NET MVC workshop
 date: 2014-08-10
-tags: ["aspnet", "workshop"]
+tags: ['aspnet', 'workshop']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ["/blog/articles/2014/08/10/impressions-of-the-first-asp-net-mvc-workshop/"]
+  ['/blog/articles/2014/08/10/impressions-of-the-first-asp-net-mvc-workshop/']
 ---
 
 In this blog post I am doing a small recap to give you impressions of the first ASP.NET MVC workshop.

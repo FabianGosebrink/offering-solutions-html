@@ -1,11 +1,11 @@
 ---
 title: Neue Angular-Kurstermine angekündigt
 date: 2016-08-17
-tags: ["angularjs", "courses"]
+tags: ['angularjs', 'courses']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2016/08/17/neue-angular-kurstermine-angekundigt/"]
+aliases: ['/blog/articles/2016/08/17/neue-angular-kurstermine-angekundigt/']
 ---
 
 In diesem blog post möchte ich bekanntgeben, dass [Digicomp](https://www.digicomp.ch/) neue Kurstermine angekündigt hat, die ich als Trainer betreuen und durchführen darf :) . Die Kurse finden in Bern statt, je nach Teilnehmern auch in Basel und Zürich.

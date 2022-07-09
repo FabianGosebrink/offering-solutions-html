@@ -1,7 +1,7 @@
 ---
 title: Setting Windows Terminal as Default External Terminal in Visual Studio Code
 date: 2020-03-24
-tags: ["vscode"]
+tags: ['vscode']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg

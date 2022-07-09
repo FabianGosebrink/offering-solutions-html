@@ -1,11 +1,11 @@
 ---
 title: Testing an Angular Http Service
 date: 2017-10-02
-tags: ["angular", "testing"]
+tags: ['angular', 'testing']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2017/10/02/testing-angular-2-http-service/"]
+aliases: ['/blog/articles/2017/10/02/testing-angular-2-http-service/']
 ---
 
 In this blog post I want to show you how you can test the new HttpClient introduced with the version 4.2 of angular.
@@ -48,12 +48,12 @@ Here we are injecting the httpClient and using it firing a http request to an ap
 At first we have to include the `HttpClientTestingModule` and our `CustomHttpService` in our testbed like so:
 
 ```javascript
-import { HttpClientTestingModule } from "@angular/common/http/testing";
-import { TestBed } from "@angular/core/testing";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
 
-import { CustomHttpService } from "./http.service";
+import { CustomHttpService } from './http.service';
 
-describe("CustomHttpService", () => {
+describe('CustomHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -69,12 +69,12 @@ The next step is to hold the `CustomHttpService` itself and the `HttpTestingCont
 import {
   HttpClientTestingModule,
   HttpTestingController,
-} from "@angular/common/http/testing";
-import { TestBed } from "@angular/core/testing";
+} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
 
-import { CustomHttpService } from "./http.service";
+import { CustomHttpService } from './http.service';
 
-describe("CustomHttpService", () => {
+describe('CustomHttpService', () => {
   let service: CustomHttpService;
   let httpMock: HttpTestingController;
 
@@ -162,56 +162,56 @@ Thats it for the GET request. We can fire up the other (POST/PUT/DELETE) request
 Lets do this:
 
 ```javascript
-it("should post the correct data", () => {
+it('should post the correct data', () => {
   service.post <
     any >
-    { firstname: "firstname" }.subscribe((data: any) => {
-      expect(data.firstname).toBe("firstname");
+    { firstname: 'firstname' }.subscribe((data: any) => {
+      expect(data.firstname).toBe('firstname');
     });
 
   const req = httpMock.expectOne(
     `http://replace.with.api/anything`,
-    "post to api"
+    'post to api'
   );
-  expect(req.request.method).toBe("POST");
+  expect(req.request.method).toBe('POST');
 
   req.flush({
-    firstname: "firstname",
+    firstname: 'firstname',
   });
 
   httpMock.verify();
 });
 
-it("should put the correct data", () => {
+it('should put the correct data', () => {
   service.put <
     any >
-    (3, { firstname: "firstname" }).subscribe((data: any) => {
-      expect(data.firstname).toBe("firstname");
+    (3, { firstname: 'firstname' }).subscribe((data: any) => {
+      expect(data.firstname).toBe('firstname');
     });
 
   const req = httpMock.expectOne(
     `http://replace.with.api/anything/3`,
-    "put to api"
+    'put to api'
   );
-  expect(req.request.method).toBe("PUT");
+  expect(req.request.method).toBe('PUT');
 
   req.flush({
-    firstname: "firstname",
+    firstname: 'firstname',
   });
 
   httpMock.verify();
 });
 
-it("should delete the correct data", () => {
+it('should delete the correct data', () => {
   service.delete(3).subscribe((data: any) => {
     expect(data).toBe(3);
   });
 
   const req = httpMock.expectOne(
     `http://replace.with.api/anything/3`,
-    "delete to api"
+    'delete to api'
   );
-  expect(req.request.method).toBe("DELETE");
+  expect(req.request.method).toBe('DELETE');
 
   req.flush(3);
 

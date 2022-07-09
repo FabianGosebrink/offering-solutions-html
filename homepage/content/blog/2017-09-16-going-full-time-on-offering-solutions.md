@@ -1,11 +1,11 @@
 ---
 title: Going full time on offering solutions
 date: 2017-09-16
-tags: ["offeringsolutions"]
+tags: ['offeringsolutions']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2017/09/16/going-full-time-on-offering-solutions/"]
+aliases: ['/blog/articles/2017/09/16/going-full-time-on-offering-solutions/']
 ---
 
 I am delighted and excited to announce that at the end of September, I will end my employment with my current company and will work full time for my own company "Offering Solutions Software GmbH". Read reasons and thoughts below.

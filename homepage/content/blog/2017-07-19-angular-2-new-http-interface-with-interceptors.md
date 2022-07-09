@@ -1,12 +1,12 @@
 ---
 title: Angular - New HTTP interface with interceptors
 date: 2017-07-19
-tags: ["angular", "http"]
+tags: ['angular', 'http']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ["/blog/articles/2017/07/19/angular-2-new-http-interface-with-interceptors/"]
+  ['/blog/articles/2017/07/19/angular-2-new-http-interface-with-interceptors/']
 ---
 
 In this blog post I want to explore the latest HTTP interface from angular which was introduced in Angular 4.3.
@@ -142,13 +142,13 @@ From AngularJS we know HTTP interceptors as a great and very mighty way to obser
 Let us add an interceptor which is logging the requests. This is a class tagged with the `@Injectable` decorator implementing and interface `HttpInterceptor`. It gets passed an `HttpHeader` which provides us the `handle(...)` method to not cancel the request but hook 'between' the application and the outgoing or incoming request. So we have to give the request further to be handled from the enxt interceptor (chaining) or the backend.
 
 ```javascript
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   HttpEvent,
   HttpInterceptor,
   HttpHandler,
   HttpRequest,
-} from "@angular/common/http";
+} from '@angular/common/http';
 
 @Injectable()
 export class MyFirstInterceptor implements HttpInterceptor {

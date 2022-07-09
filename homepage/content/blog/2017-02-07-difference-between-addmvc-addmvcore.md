@@ -1,11 +1,11 @@
 ---
 title: The difference between AddMvc() and AddMvcCore()
 date: 2017-02-07
-tags: ["aspnet", "aspnetcore"]
+tags: ['aspnet', 'aspnetcore']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2017/02/07/difference-between-addmvc-addmvcore/"]
+aliases: ['/blog/articles/2017/02/07/difference-between-addmvc-addmvcore/']
 ---
 
 In this blog post I want to show you difference between the ASP.NET Core methods `AddMvc()` and `AddMvcCore()` when working with ASP.NET Core.
@@ -44,26 +44,26 @@ brings
 [
   {
     id: 1,
-    street: "Street1",
-    city: "Town1",
+    street: 'Street1',
+    city: 'Town1',
     zipCode: 1234,
   },
   {
     id: 2,
-    street: "Street2",
-    city: "Town2",
+    street: 'Street2',
+    city: 'Town2',
     zipCode: 1234,
   },
   {
     id: 3,
-    street: "Street3",
-    city: "Town3",
+    street: 'Street3',
+    city: 'Town3',
     zipCode: 1234,
   },
   {
     id: 4,
-    street: "Street4",
-    city: "Town4",
+    street: 'Street4',
+    city: 'Town4',
     zipCode: 1234,
   },
 ];

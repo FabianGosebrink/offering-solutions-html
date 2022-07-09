@@ -1,7 +1,7 @@
 ---
 title: Moving from TravisCI to GitHub Actions
 date: 2021-01-05
-tags: ["hugo", "github"]
+tags: ['hugo', 'github']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -181,8 +181,8 @@ module.exports = function (config) {
     // ...
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
-        base: "ChromeHeadless",
-        flags: ["--no-sandbox"],
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox'],
       },
     },
     // ...
@@ -252,12 +252,12 @@ module.exports = function (config) {
   config.set({
     //..
     coverageReporter: {
-      dir: require("path").join(
+      dir: require('path').join(
         __dirname,
-        "../../coverage/angular-auth-oidc-client"
+        '../../coverage/angular-auth-oidc-client'
       ),
-      subdir: ".",
-      reporters: [{ type: "html" }, { type: "text-summary" }, { type: "lcov" }],
+      subdir: '.',
+      reporters: [{ type: 'html' }, { type: 'text-summary' }, { type: 'lcov' }],
     },
     //..
   });

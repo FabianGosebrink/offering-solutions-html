@@ -1,13 +1,13 @@
 ---
 title: Using the Crypto-Namespace to Generate Salts and Compare Passwords
 date: 2014-03-03
-tags: ["aspnet"]
+tags: ['aspnet']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2014/03/03/using-crypto-namespace-to-generate-salts-and-compare-passwords/",
+    '/blog/articles/2014/03/03/using-crypto-namespace-to-generate-salts-and-compare-passwords/',
   ]
 ---
 

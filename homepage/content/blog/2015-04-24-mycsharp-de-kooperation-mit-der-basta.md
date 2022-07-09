@@ -1,11 +1,11 @@
 ---
 title: MyCSharp.de - Kooperation mit der Basta!
 date: 2015-04-24
-tags: ["basta", "mycsharp"]
+tags: ['basta', 'mycsharp']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2015/04/24/mycsharp-de-kooperation-mit-der-basta/"]
+aliases: ['/blog/articles/2015/04/24/mycsharp-de-kooperation-mit-der-basta/']
 ---
 
 MyCSharp.de - Kooperation mit der Basta!

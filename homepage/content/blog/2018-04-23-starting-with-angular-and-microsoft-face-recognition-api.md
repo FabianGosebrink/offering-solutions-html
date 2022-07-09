@@ -1,13 +1,13 @@
 ---
 title: Starting with Angular and Microsoft's Face Recognition API
 date: 2018-04-23
-tags: ["angular", "microsoft", "faceapi"]
+tags: ['angular', 'microsoft', 'faceapi']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2018/04/23/starting-with-angular-and-microsoft-face-recognition-api/",
+    '/blog/articles/2018/04/23/starting-with-angular-and-microsoft-face-recognition-api/',
   ]
 ---
 
@@ -44,31 +44,31 @@ The first thing I took a look at was the communication with the API. If we see t
 
 ```javascript
 var uriBase =
-  "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
+  'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect';
 
 // Request parameters.
 var params = {
-  returnFaceId: "true",
-  returnFaceLandmarks: "false",
+  returnFaceId: 'true',
+  returnFaceLandmarks: 'false',
   returnFaceAttributes:
-    "age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise",
+    'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise',
 };
 
 // Display the image.
-var sourceImageUrl = document.getElementById("inputImage").value;
-document.querySelector("#sourceImage").src = sourceImageUrl;
+var sourceImageUrl = document.getElementById('inputImage').value;
+document.querySelector('#sourceImage').src = sourceImageUrl;
 
 // Perform the REST API call.
 $.ajax({
-  url: uriBase + "?" + $.param(params),
+  url: uriBase + '?' + $.param(params),
 
   // Request headers.
   beforeSend: function (xhrObj) {
-    xhrObj.setRequestHeader("Content-Type", "application/json");
-    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+    xhrObj.setRequestHeader('Content-Type', 'application/json');
+    xhrObj.setRequestHeader('Ocp-Apim-Subscription-Key', subscriptionKey);
   },
 
-  type: "POST",
+  type: 'POST',
 
   // Request body.
   data: '{"url": ' + '"' + sourceImageUrl + '"}',
@@ -103,7 +103,7 @@ const httpParams = new HttpParams()
 But if we take a picture with a service from the camera we do not save it and have it as a image directly but instead we have a base64 representation of this image.
 
 ```javascript
-const context = canvasElement.getContext("2d");
+const context = canvasElement.getContext('2d');
 context.drawImage(
   videoElement,
   0,
@@ -112,7 +112,7 @@ context.drawImage(
   videoElement.videoHeight
 );
 
-const url = canvasElement.toDataURL("image/png"); // base64 here
+const url = canvasElement.toDataURL('image/png'); // base64 here
 ```
 
 so the challenge here was to not send the URL in the body to the face api but taking the base64 image representation. We can send blobs to an API which is not difficult through the new HttpClient Angular provides us. I tried and searched a bit and found the SO answers which I shared in the "links" section at the end of this article. I modified them a bit and covered them in a service so this method here takes care of generating the correct blob:

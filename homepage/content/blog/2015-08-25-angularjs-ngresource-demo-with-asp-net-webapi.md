@@ -1,12 +1,12 @@
 ---
 title: AngularJS NgResource Demo with ASP.NET WebAPI
 date: 2015-08-25
-tags: ["angularjs", "aspnet"]
+tags: ['angularjs', 'aspnet']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ["/blog/articles/2015/08/25/angularjs-ngresource-demo-with-asp-net-webapi/"]
+  ['/blog/articles/2015/08/25/angularjs-ngresource-demo-with-asp-net-webapi/']
 ---
 
 In this blog post I want to show an AngularJS NgResource Demo with ASP.NET WebAPI querying data as JSON.
@@ -27,21 +27,21 @@ Before you can use Angular's ng resource you have to include it into your applic
 
 ```javascript
 (function () {
-  "use strict";
+  'use strict';
   angular
-    .module("AngularJSDemoApp", [
-      "ngRoute",
-      "ngAnimate",
-      "ngResource",
-      "ui.bootstrap",
-      "angular-loading-bar",
-      "toastr",
+    .module('AngularJSDemoApp', [
+      'ngRoute',
+      'ngAnimate',
+      'ngResource',
+      'ui.bootstrap',
+      'angular-loading-bar',
+      'toastr',
 
-      "home.homeModule",
-      "contact.contactModule",
+      'home.homeModule',
+      'contact.contactModule',
     ])
     .config([
-      "cfpLoadingBarProvider",
+      'cfpLoadingBarProvider',
       function (cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = false;
       },
@@ -55,13 +55,13 @@ After this you can inject the ngResource service provided by angular into your s
 
 ```javascript
 (function () {
-  "use strict";
-  angular.module("home.homeModule").factory("home.services.peopleService", [
-    "$resource",
+  'use strict';
+  angular.module('home.homeModule').factory('home.services.peopleService', [
+    '$resource',
     function ($resource) {
-      return $resource("api/home/:id", null, {
+      return $resource('api/home/:id', null, {
         update: {
-          method: "PUT",
+          method: 'PUT',
         },
       });
     },

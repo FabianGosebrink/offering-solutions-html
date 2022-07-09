@@ -1,12 +1,12 @@
 ---
 title: Paging in einer ASP.Net WebAPI und AngularJS
 date: 2015-06-09
-tags: ["angularjs", "aspnet"]
+tags: ['angularjs', 'aspnet']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ["/blog/articles/2015/06/09/paging-in-einer-asp-net-webapi-und-angularjs/"]
+  ['/blog/articles/2015/06/09/paging-in-einer-asp-net-webapi-und-angularjs/']
 ---
 
 In diesem Blog post will ich zeigen, wie man paging in einer ASP.NET WebAPI und AngularJS realisieren kann.
@@ -106,9 +106,9 @@ Html:
 Hierbei wird die Leiste zum navigieren nur angezeigt, wenn die Anzahl der Items grösser ist als die, die maximal auf einer Seite angezeigt werden sollen.
 
 ```javascript
-myModule.controller("myController", [
-  "$scope",
-  "myRepository",
+myModule.controller('myController', [
+  '$scope',
+  'myRepository',
   function ($scope, myRepository) {
     $scope.currentPage = 1;
     $scope.maximalItemsPerPage = 5;
@@ -117,7 +117,7 @@ myModule.controller("myController", [
       myRepository.getAllItems(start, count).then(
         function (result) {
           //Success
-          var totalPagesObject = JSON.parse(result.headers()["x-pagination"]);
+          var totalPagesObject = JSON.parse(result.headers()['x-pagination']);
           $scope.totalItems = totalPagesObject.totalCount;
         },
         function () {
@@ -129,7 +129,7 @@ myModule.controller("myController", [
     //...
 
     $scope.pageChanged = function () {
-      console.log("Page changed to: " + $scope.currentPage);
+      console.log('Page changed to: ' + $scope.currentPage);
       getMyItems(
         ($scope.currentPage - 1) * $scope.maximalItemsPerPage,
         $scope.maximalItemsPerPage

@@ -1,11 +1,11 @@
 ---
 title: Creating a business logic in ASP.NET MVC
 date: 2014-06-10
-tags: ["aspnet", "mvc"]
+tags: ['aspnet', 'mvc']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2014/06/10/creating-a-business-logic-in-asp-net-mvc/"]
+aliases: ['/blog/articles/2014/06/10/creating-a-business-logic-in-asp-net-mvc/']
 ---
 
 In this blog post I want to show you one possible way creating a business logic in ASP.NET MVC.

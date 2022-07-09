@@ -1,11 +1,11 @@
 ---
 title: Online and Offline Sync with Angular and IndexedDb
 date: 2018-11-21
-tags: ["angular", "indexeddb"]
+tags: ['angular', 'indexeddb']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2018/11/21/online-offline-sync-angular-indexeddb/"]
+aliases: ['/blog/articles/2018/11/21/online-offline-sync-angular-indexeddb/']
 ---
 
 In this blog post I want to describe how to develop a todo application which stores the items in the IndexedDb and synchronises it later if the app gets back online.
@@ -110,19 +110,19 @@ export class Todo {
 
 ```javascript
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = "Angular-Online-Offline-Sync";
+  title = 'Angular-Online-Offline-Sync';
   form: FormGroup;
 
   todos: Todo[] = [];
 
   constructor() {
     this.form = new FormGroup({
-      value: new FormControl("", Validators.required),
+      value: new FormControl('', Validators.required),
     });
   }
 

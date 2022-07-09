@@ -1,7 +1,7 @@
 ---
 title: Configuring Angular libraries
 date: 2019-12-31
-tags: ["angular", "libraries", "configuration"]
+tags: ['angular', 'libraries', 'configuration']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -42,9 +42,9 @@ We now have a `projects` folder created with two applications in it.
 In the `lib-to-configure` library we will find a scaffolded module like this:
 
 ```js
-import { CommonModule } from "@angular/common";
-import { ModuleWithProviders, NgModule } from "@angular/core";
-import { LibToConfigureComponent } from "./lib-to-configure.component";
+import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { LibToConfigureComponent } from './lib-to-configure.component';
 
 @NgModule({
   declarations: [LibToConfigureComponent],
@@ -57,9 +57,9 @@ export class LibToConfigureModule {}
 If we want to use the library we have to import this module into our `consumerApp`s `AppModule` by adding it to the `imports` array of the `app.module.ts`.
 
 ```js
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from "./app.component";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -78,7 +78,7 @@ If you now want to pass configuration to your library you have two ways: First o
 
 ```js
 const config = {
-  name: "Fabian",
+  name: 'Fabian',
 };
 ```
 
@@ -99,10 +99,10 @@ export class LibToConfigureConfiguration {
 In the `public-api` export the file to make it visible to the outside world:
 
 ```js
-export * from "./lib/lib-configuration"; // <-- Add this line
-export * from "./lib/lib-to-configure.component";
-export * from "./lib/lib-to-configure.module";
-export * from "./lib/lib-to-configure.service";
+export * from './lib/lib-configuration'; // <-- Add this line
+export * from './lib/lib-to-configure.component';
+export * from './lib/lib-to-configure.module';
+export * from './lib/lib-to-configure.service';
 ```
 
 > The `public-api.ts` is like an interface to the consuming applications. Everything you export here can be imported from the library in a consuming app via ES6 `import` statement. if you do not export it via this file, it will be private.
@@ -110,7 +110,7 @@ export * from "./lib/lib-to-configure.service";
 Having done that we need to configure our lib to receive the config from the outside. For this, we will add a `forRoot(...)` method to the libraries module which will return the configured module and expect the static configuration object.
 
 ```js
-import { LibToConfigureConfiguration } from "./lib-configuration";
+import { LibToConfigureConfiguration } from './lib-configuration';
 
 @NgModule({
   /*...*/
@@ -168,14 +168,14 @@ which will print the current configuration to the console.
 As the last step we have to call the `forRoot()` method in the `consumerApp` and pass it some configuration. So in the `consumerApp` we will change the `app.module.ts` to
 
 ```js
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { LibToConfigureModule } from "lib-to-configure";
-import { AppComponent } from "./app.component";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { LibToConfigureModule } from 'lib-to-configure';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, LibToConfigureModule.forRoot({ name: "Fabian" })],
+  imports: [BrowserModule, LibToConfigureModule.forRoot({ name: 'Fabian' })],
   providers: [],
   bootstrap: [AppComponent],
 })
@@ -311,7 +311,7 @@ Now let us tweak our consuming application to pass the correct configuration dow
 ```js
 export class ConfigFromApp implements LibConfigurationProvider {
   get config(): LibToConfigureConfiguration {
-    return { name: "Fabian" };
+    return { name: 'Fabian' };
   }
 }
 ```
@@ -319,18 +319,18 @@ export class ConfigFromApp implements LibConfigurationProvider {
 Now we are passing down this configuration in the `forRoot` as a parameter
 
 ```js
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import {
   LibConfigurationProvider,
   LibToConfigureConfiguration,
   LibToConfigureModule,
-} from "lib-to-configure";
-import { AppComponent } from "./app.component";
+} from 'lib-to-configure';
+import { AppComponent } from './app.component';
 
 export class ConfigFromApp implements LibConfigurationProvider {
   get config(): LibToConfigureConfiguration {
-    return { name: "Fabian" };
+    return { name: 'Fabian' };
   }
 }
 
@@ -439,21 +439,21 @@ export class AppModule {}
 Next we add a init method which is getting called at the beginning of our app. The method has the store as dependency and sets the configuration when it gets it from a specific endpoint, in our case it is a promise which gets resolved after two seconds:
 
 ```js
-import { NgModule, APP_INITIALIZER, Injectable } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { NgModule, APP_INITIALIZER, Injectable } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import {
   LibConfigurationProvider,
   LibToConfigureConfiguration,
   LibToConfigureModule,
-} from "lib-to-configure";
-import { AppComponent } from "./app.component";
+} from 'lib-to-configure';
+import { AppComponent } from './app.component';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class ConfigurationStore {
   // ...
 }
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class ConfigFromApp implements LibConfigurationProvider {
   // ...
 }
@@ -462,7 +462,7 @@ export function initApp(configurationStore: ConfigurationStore) {
   return () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        configurationStore.setConfig({ name: "Fabian" });
+        configurationStore.setConfig({ name: 'Fabian' });
         resolve();
       }, 2000);
     });
@@ -480,21 +480,21 @@ export class AppModule {}
 If we now add the `APP_INITIALIZER` to the providers array we will use the `initApp` method and pass the `ConfigurationStore` as a dependency
 
 ```js
-import { NgModule, APP_INITIALIZER, Injectable } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { NgModule, APP_INITIALIZER, Injectable } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import {
   LibConfigurationProvider,
   LibToConfigureConfiguration,
   LibToConfigureModule,
-} from "lib-to-configure";
-import { AppComponent } from "./app.component";
+} from 'lib-to-configure';
+import { AppComponent } from './app.component';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class ConfigurationStore {
   // ...
 }
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class ConfigFromApp implements LibConfigurationProvider {
   // ...
 }
@@ -541,7 +541,7 @@ through the component in the library.
 To get this scenario more real world we can add the `HttpClient` as a dependency as well
 
 ```js
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 // ...
 
 export function initAppWithHttp(
@@ -550,7 +550,7 @@ export function initAppWithHttp(
 ) {
   return () => {
     return httpClient
-      .get("https://my-super-url-to-get-the-config-from")
+      .get('https://my-super-url-to-get-the-config-from')
       .toPromise()
       .then((config) => {
         configurationStore.setConfig(config);

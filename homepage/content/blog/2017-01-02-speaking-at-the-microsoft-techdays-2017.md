@@ -1,11 +1,11 @@
 ---
 title: Speaking at the Microsoft TechDays 2017
 date: 2017-01-02
-tags: ["speaking", "microsoft"]
+tags: ['speaking', 'microsoft']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2017/01/02/speaking-at-the-microsoft-techdays-2017/"]
+aliases: ['/blog/articles/2017/01/02/speaking-at-the-microsoft-techdays-2017/']
 ---
 
 I am very proud to announce that I will be speaking at the Microsoft TechDays 2017 about Angular and ASP.NET Core.

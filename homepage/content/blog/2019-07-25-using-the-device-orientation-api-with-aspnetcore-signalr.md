@@ -1,7 +1,7 @@
 ---
 title: Using the Device Orientation API with ASP.NET Core SignalR
 date: 2019-07-25
-tags: ["aspnetcore", "signalr", "javascript"]
+tags: ['aspnetcore', 'signalr', 'javascript']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -119,12 +119,12 @@ npm install @aspnet/signalr
 So the first thing was to check if the browser supports the device motion or not.
 
 ```js
-if ("DeviceOrientationEvent" in window) {
-  window.addEventListener("deviceorientation", deviceOrientationHandler, false);
+if ('DeviceOrientationEvent' in window) {
+  window.addEventListener('deviceorientation', deviceOrientationHandler, false);
   // establishing SignalR Connection
 } else {
-  document.getElementById("logoContainer").innerText =
-    "Device Orientation API not supported.";
+  document.getElementById('logoContainer').innerText =
+    'Device Orientation API not supported.';
 }
 ```
 
@@ -138,13 +138,13 @@ function deviceOrientationHandler(eventData) {
 
   if (signalrConnectionExists()) {
     signalRConnection
-      .invoke("MySuperDuperAction", { alpha, beta, gamma })
+      .invoke('MySuperDuperAction', { alpha, beta, gamma })
       .catch((err) => console.error(err.toString()));
   }
 
-  setTextOnElement("gamma", Math.round(gamma));
-  setTextOnElement("beta", Math.round(beta));
-  setTextOnElement("alpha", Math.round(alpha));
+  setTextOnElement('gamma', Math.round(gamma));
+  setTextOnElement('beta', Math.round(beta));
+  setTextOnElement('alpha', Math.round(alpha));
 }
 ```
 
@@ -155,22 +155,22 @@ So in beside adding the orientationhandler I also added and called a method to e
 ```js
 var signalRConnection = null;
 
-if ("DeviceOrientationEvent" in window) {
-  window.addEventListener("deviceorientation", deviceOrientationHandler, false);
+if ('DeviceOrientationEvent' in window) {
+  window.addEventListener('deviceorientation', deviceOrientationHandler, false);
   establishSignalR();
 } else {
-  document.getElementById("logoContainer").innerText =
-    "Device Orientation API not supported.";
+  document.getElementById('logoContainer').innerText =
+    'Device Orientation API not supported.';
 }
 
 // ...
 
 function establishSignalR() {
   signalRConnection = createSignalConnection(
-    "https://motiondevice.azurewebsites.net/motion"
+    'https://motiondevice.azurewebsites.net/motion'
   );
 
-  signalRConnection.on("motionUpdated", (data) => {
+  signalRConnection.on('motionUpdated', (data) => {
     console.log(data);
 
     if (!freezeMyself) {
@@ -179,7 +179,7 @@ function establishSignalR() {
   });
 
   signalRConnection.start().then(function () {
-    console.log("connected");
+    console.log('connected');
     console.log(signalRConnection.state);
   });
 }
@@ -187,10 +187,10 @@ function establishSignalR() {
 function turnLogo(beta, gamma) {
   var logo = document.getElementById(logoId);
   logo.style.webkitTransform =
-    "rotate(" + gamma + "deg) rotate3d(1,0,0, " + beta * -1 + "deg)";
-  logo.style.MozTransform = "rotate(" + gamma + "deg)";
+    'rotate(' + gamma + 'deg) rotate3d(1,0,0, ' + beta * -1 + 'deg)';
+  logo.style.MozTransform = 'rotate(' + gamma + 'deg)';
   logo.style.transform =
-    "rotate(" + gamma + "deg) rotate3d(1,0,0, " + beta * -1 + "deg)";
+    'rotate(' + gamma + 'deg) rotate3d(1,0,0, ' + beta * -1 + 'deg)';
 }
 ```
 

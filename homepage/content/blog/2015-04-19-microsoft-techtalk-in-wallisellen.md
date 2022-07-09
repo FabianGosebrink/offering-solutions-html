@@ -1,11 +1,11 @@
 ---
 title: Microsoft TechTalk in Wallisellen
 date: 2015-04-19
-tags: ["speaking"]
+tags: ['speaking']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
-aliases: ["/blog/articles/2015/04/19/microsoft-techtalk-in-wallisellen/"]
+aliases: ['/blog/articles/2015/04/19/microsoft-techtalk-in-wallisellen/']
 ---
 
 Hallo zusammen, in diesem Blog will ich kurz den Microsoft TechTalk in Wallisellen zusammenfassen.

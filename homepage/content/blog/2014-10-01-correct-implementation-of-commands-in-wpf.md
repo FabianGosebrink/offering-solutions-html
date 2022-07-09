@@ -1,12 +1,12 @@
 ---
 title: Correct implementation of Commands in WPF
 date: 2014-10-01
-tags: ["commands", "wpf"]
+tags: ['commands', 'wpf']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
-  ["/blog/articles/2014/10/01/correct-implementation-of-commands-in-wpf/"]
+  ['/blog/articles/2014/10/01/correct-implementation-of-commands-in-wpf/']
 ---
 
 In this blogost I want to show you the IMHO correct implementation of Commands in WPF. Feel free to discuss :)

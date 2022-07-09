@@ -1,7 +1,7 @@
 ---
 title: Uploading Files to Azure Blob Storage with Angular and ASP.NET Core
 date: 2020-08-09
-tags: ["aspnetcore", "angular", "azure"]
+tags: ['aspnetcore', 'angular', 'azure']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -213,16 +213,16 @@ The Angular app is pretty straight forward. First let us create an `UploadServic
 ## The UploadService
 
 ```ts
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class UploadService {
   constructor(private http: HttpClient) {}
 
   upload(formData: FormData) {
     return this.http.post<{ path: string }>(
-      "https://localhost:5001/api/upload",
+      'https://localhost:5001/api/upload',
       formData
     );
   }
@@ -232,10 +232,10 @@ export class UploadService {
 In the `app.module.ts` the `HttpClientModule` has to be added to the `imports` as well.
 
 ```ts
-import { HttpClientModule } from "@angular/common/http";
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from "./app.component";
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [BrowserModule, HttpClientModule],
@@ -268,18 +268,18 @@ In the components template we use a button to open a hidden file input and we ar
 The component class gets injected the `UploadService` and calls the `upload` method passing the form data. When the call comes back we are extracting the `path` property and setting it as image source to display the picture we uploaded.
 
 ```ts
-import { Component } from "@angular/core";
-import { UploadService } from "./upload.service";
+import { Component } from '@angular/core';
+import { UploadService } from './upload.service';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  filename = "";
+  filename = '';
 
-  imageSource = "";
+  imageSource = '';
 
   constructor(private uploadService: UploadService) {}
 

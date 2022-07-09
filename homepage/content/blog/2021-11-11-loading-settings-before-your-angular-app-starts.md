@@ -1,7 +1,7 @@
 ---
 title: Loading configuration before your angular App Starts
 date: 2021-11-11
-tags: ["angular"]
+tags: ['angular']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -49,10 +49,10 @@ The problem with this approach is that when you have a module in the `imports` a
 Let's get a step back and see what we want to do. So before the complete app starts we want to ask for our data to have it present and the time angular kicks in and bootstraps. The place which bootstraps the app is the `main.ts` file.
 
 ```ts
-import { enableProdMode } from "@angular/core";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { environment } from "@environments/environment";
-import { AppModule } from "./app/app.module";
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { environment } from '@environments/environment';
+import { AppModule } from './app/app.module';
 
 if (environment.production) {
   enableProdMode();
@@ -66,13 +66,13 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 Angulars [platformBrowserDynamic()](https://angular.io/api/platform-browser-dynamic/platformBrowserDynamic) takes an optional parameter called `extraProviders?: StaticProvider[]` which we can use to pass extra providers. In combination with the [InjectionToken](https://angular.io/guide/dependency-injection-providers#using-an-injectiontoken-object) we can provide the config through an [InjectionToken](https://angular.io/guide/dependency-injection-providers#using-an-injectiontoken-object). We can use the [Fetch](https://fetch.spec.whatwg.org/) api to load our data and when it is loaded, bootstrap our application and provide the config.
 
 ```ts
-import { enableProdMode } from "@angular/core";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { environment } from "./environments/environment";
-import { AppConfig, APP_CONFIG } from "...";
-import { AppModule } from "./app/app.module";
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { environment } from './environments/environment';
+import { AppConfig, APP_CONFIG } from '...';
+import { AppModule } from './app/app.module';
 
-fetch("<your-config-json-or-url>")
+fetch('<your-config-json-or-url>')
   .then((res) => res.json())
   .then((config) => {
     if (environment.production) {
@@ -88,9 +88,9 @@ fetch("<your-config-json-or-url>")
 In your app you can provide the [InjectionToken](https://angular.io/guide/dependency-injection-providers#using-an-injectiontoken-object) like
 
 ```ts
-import { InjectionToken } from "@angular/core";
+import { InjectionToken } from '@angular/core';
 
-export const APP_CONFIG = new InjectionToken<AppConfig>("app.config");
+export const APP_CONFIG = new InjectionToken<AppConfig>('app.config');
 ```
 
 After this you can inject the `APP_CONFIG` like

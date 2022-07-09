@@ -1,13 +1,13 @@
 ---
 title: Using UseClass, UseFactory, UseValue & UseExisting with treeshakeable providers in Angular
 date: 2018-08-17
-tags: ["angular"]
+tags: ['angular']
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 draft: false
 category: blog
 aliases:
   [
-    "/blog/articles/2018/08/17/using-useclass-usefactory-usevalue-useexisting-with-treeshakable-providers-in-angular/",
+    '/blog/articles/2018/08/17/using-useclass-usefactory-usevalue-useexisting-with-treeshakable-providers-in-angular/',
   ]
 ---
 
@@ -33,7 +33,7 @@ Let us start having the [AngularCLI](https://cli.angular.io/) installed and scaf
 
 ```javascript
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class TestService {
   constructor() {}
@@ -46,7 +46,7 @@ Lets modify the service like this
 
 ```javascript
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class TestService {
   sayHello() {
@@ -110,7 +110,7 @@ export class TestService2 {
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
   useClass: TestService2, // <-- add this line
 })
 export class TestService {
@@ -154,7 +154,7 @@ export class TestService2 {
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
   useFactory: xyzFactory,
 })
 export class TestService {
@@ -195,7 +195,7 @@ export class TestService2 {
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
   useFactory: xyzFactory,
   deps: [HttpClient],
 })
@@ -225,10 +225,10 @@ To test the service now - remember we did not change our app.component at all un
 
 ```javascript
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
   useValue: {
     sayHello: function () {
-      console.log("whuuuut??");
+      console.log('whuuuut??');
     },
   },
 })
@@ -257,7 +257,7 @@ We already know `useClass`. You could easily provide a `ServiceB` and everybody 
 
 ```javascript
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class ServiceB {
   sayHello() {
@@ -266,7 +266,7 @@ export class ServiceB {
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
   useClass: ServiceB,
 })
 export class ServiceA {
@@ -280,7 +280,7 @@ will create two instances of your `ServiceB` class which might not be what you w
 
 ```javascript
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class TestService2 {
   sayHello() {
@@ -289,7 +289,7 @@ export class TestService2 {
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
   useExisting: TestService2,
 })
 export class TestService {
@@ -316,18 +316,18 @@ When it comes to testing you do not need to provide the services in the testing 
 Out of the box the AngularCLI creates a unit test for you looking like this.
 
 ```javascript
-import { TestBed, inject } from "@angular/core/testing";
+import { TestBed, inject } from '@angular/core/testing';
 
-import { TestService } from "./test.service";
+import { TestService } from './test.service';
 
-describe("TestService", () => {
+describe('TestService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [TestService],
     });
   });
 
-  it("should be created", inject([TestService], (service: TestService) => {
+  it('should be created', inject([TestService], (service: TestService) => {
     expect(service).toBeTruthy();
   }));
 });
@@ -336,15 +336,15 @@ describe("TestService", () => {
 Thanks to the treeshakeable providers we can refactor this one to the following
 
 ```javascript
-import { TestBed } from "@angular/core/testing";
-import { TestService } from "./test.service";
+import { TestBed } from '@angular/core/testing';
+import { TestService } from './test.service';
 
-describe("TestService", () => {
+describe('TestService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
   });
 
-  it("should be created", () => {
+  it('should be created', () => {
     const service = TestBed.get(TestService);
     expect(service).toBeTruthy();
   });
@@ -404,7 +404,7 @@ See the `@Optional()` decorator we use in the `ServiceToTest`? So the `ServiceTo
 Our test looks like this:
 
 ```javascript
-describe("ServiceToTest", () => {
+describe('ServiceToTest', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -417,7 +417,7 @@ describe("ServiceToTest", () => {
     });
   });
 
-  it("should be created", () => {
+  it('should be created', () => {
     const serviceToTest: ServiceToTest = TestBed.get(ServiceToTest);
     expect(serviceToTest).toBeTruthy();
   });
@@ -437,7 +437,7 @@ But why is that? We do not want to mock anything Http specific here and exactly 
 So it turns out that Angular searches for the optional dependencies as well and the `OptionalServiceWithHttp` also uses Http. As we do not provide the `HttpClientTestingModule` in the test, because our test should not rely on Http, the test blows up. We can solve the issue by mocking our optional dependencies as well.
 
 ```javascript
-describe("ServiceToTest", () => {
+describe('ServiceToTest', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -451,7 +451,7 @@ describe("ServiceToTest", () => {
     });
   });
 
-  it("should be created", () => {
+  it('should be created', () => {
     const serviceToTest: ServiceToTest = TestBed.get(ServiceToTest);
     expect(serviceToTest).toBeTruthy();
   });

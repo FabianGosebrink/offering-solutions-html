@@ -1,7 +1,7 @@
 ---
 title: Getting Started With Angular Strictly Typed Reactive Forms
 date: 2022-07-09
-tags: ["angular", "reactiveforms"]
+tags: ['angular', 'reactiveforms']
 draft: false
 category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
@@ -22,8 +22,8 @@ export class FormSimpleGroupComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      firstName: "",
-      lastName: "",
+      firstName: '',
+      lastName: '',
       age: 0,
     });
   }
@@ -63,8 +63,8 @@ export class FormSimpleGroupComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      firstName: "",
-      lastName: "",
+      firstName: '',
+      lastName: '',
       age: 0,
     });
   }
@@ -98,8 +98,8 @@ export class FormSimpleGroupComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      firstName: "",
-      lastName: "",
+      firstName: '',
+      lastName: '',
       age: 0,
     });
   }
@@ -148,8 +148,8 @@ export class FormSimpleGroupComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      firstName: "",
-      lastName: "",
+      firstName: '',
+      lastName: '',
       age: 0,
     });
   }
@@ -165,8 +165,8 @@ And suddenly Angular can now check if the controls inside your form
 
 ```ts
 this.myForm = this.formBuilder.group({
-  firstName: "",
-  lastName: "",
+  firstName: '',
+  lastName: '',
   age: 0,
 });
 ```
@@ -223,8 +223,8 @@ export class FormSimpleGroupComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      firstName: "",
-      lastName: "",
+      firstName: '',
+      lastName: '',
       age: 0,
     });
   }
@@ -256,8 +256,8 @@ export class FormSimpleGroupComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      firstName: "",
-      lastName: "",
+      firstName: '',
+      lastName: '',
       age: 0,
     });
   }
