@@ -7,7 +7,7 @@ category: blog
 image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 ---
 
-With Angular 14 the Angular Team provided a new very demanded feature: [Strictly Typed Reactive Forms](https://blog.angular.io/angular-v14-is-now-available-391a6db736af). That solves a lot of problems when interacting with Angular Forms, as we have the type of the model we are representing with the form now, instead of an `any` "type" we had before. But let's dive into this step by step.
+With Angular 14 the Angular Team provided a new very demanded feature: [Strictly Typed Reactive Forms](https://blog.angular.io/angular-v14-is-now-available-391a6db736af). That solves a lot of problems when interacting with Angular Forms, as we have the type of the model we are representing with the form now, instead of an `any` "type" we had before. But let's have a look at this step by step.
 
 ## The Problem
 
@@ -38,13 +38,13 @@ export class FormSimpleGroupComponent implements OnInit {
 
 We are creating a `FormGroup` which displays a `firstName`, a `lastName` and an `age` value. The type of `firstName` and `lastName` surely is a string, and the `age` would have the best fit with a number. Although we know the type here in this very basic example we have no control over the type of the value, the `this.myForm.value` provides us.
 
-This of course also provides us the possibility to use wrong properties, something like
+This also provides us the possibility to use wrong properties, something like
 
 ```
 const title = this.myForm.value.firstName.title;
 ```
 
-Which is obviously wrong, because the `title` form does not exist on the `firstName`.
+Which is wrong, because the `title` form does not exist on the `firstName`.
 
 To solve this issue, Angular provided us types in Reactive Forms.
 
@@ -191,7 +191,7 @@ this.myForm = this.formBuilder.group({
     });
 ```
 
-Now, if you want to get the forms value including all fields, which means also the disabled controls, you can get the value with the `getRawValue()` method, which also has the types now and provides intellisense. You can also use the `value` property provided by the form group, which provides the value as well but does not contain possibly disabled controls or undefined fields.
+Now, if you want to get the forms value including all fields, which means also the not enabled controls, you can get the value with the `getRawValue()` method, which also has the types now and provides intellisense. You can also use the `value` property provided by the form group, which provides the value as well but does not contain possibly not enabled controls or undefined fields.
 
 ```ts
  onSubmit() {
