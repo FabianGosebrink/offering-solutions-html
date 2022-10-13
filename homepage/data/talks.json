@@ -1,5 +1,23 @@
 [
   {
+    "title": "Better Angular Architectures With Angular Libraries",
+    "link": "https://basta.net/web-development/bessere-angular-architekturen-mit-angular-libraries/",
+    "date": "2022-10-13T00:00:00.000Z",
+    "event": "BASTA! 2022 - Mainz",
+    "tags": ["Angular", "Libraries"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/better-angular-architectures-with-angular-libraries",
+    "dataId": "5db246531e71455487135d4c94b235d1"
+  },
+  {
+    "title": "Better Apps with Angular Reactive Forms",
+    "link": "https://basta.net/web-development/bessere-angular-applikationen-mit-angular-reactive-forms/",
+    "date": "2022-10-12T00:00:00.000Z",
+    "event": "BASTA! 2022 - Mainz",
+    "tags": ["Angular", "Reactive Forms"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/better-apps-with-angular-reactive-forms",
+    "dataId": "f8461ae22cff4b6b96bc5a982ec89009"
+  },
+  {
     "title": "Angular Architectures with Ngrx Stores & Effects",
     "link": "https://www.web-developer-conference.de/programm/#/talk/statemanagement-in-angular-mit-ngrx-stores-effects-3",
     "date": "2022-09-26T00:00:00.000Z",
