@@ -1,5 +1,23 @@
 [
   {
+    "title": "Better Apps with Angular Reactive Forms",
+    "link": "https://javascript-days.de/angular/formulare-und-validierungen-mit-typed-angular-forms-entwickeln/",
+    "date": "2022-10-20T00:00:00.000Z",
+    "event": "Angular Days 2022",
+    "tags": ["Angular", "Reactive Forms"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/better-apps-with-angular-reactive-forms",
+    "dataId": "f8461ae22cff4b6b96bc5a982ec89009"
+  },
+  {
+    "title": "Angular Architectures with Ngrx Stores & Effects",
+    "link": "https://javascript-days.de/angular/state-management-mit-ngrx/",
+    "date": "2022-10-19T00:00:00.000Z",
+    "event": "Angular Days 2022",
+    "tags": ["Angular", "NgRx"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-architectures-with-ngrx-stores-and-effects",
+    "dataId": "c128c659b3a2421a9f1b066bce55c089"
+  },
+  {
     "title": "Better Angular Architectures With Angular Libraries",
     "link": "https://basta.net/web-development/bessere-angular-architekturen-mit-angular-libraries/",
     "date": "2022-10-13T00:00:00.000Z",
@@ -24,7 +42,7 @@
     "event": "Web Developer Conference (WDC) Hamburg",
     "tags": ["Angular", "NgRx"],
     "slides": "https://speakerdeck.com/fabiangosebrink/angular-architectures-with-ngrx-stores-and-effects",
-    "dataId": "eedabd0f0d2c4525b62886011097886b"
+    "dataId": "c128c659b3a2421a9f1b066bce55c089"
   },
   {
     "title": "Angular Reactive Forms - Developing Forms and Validation with Angular",
