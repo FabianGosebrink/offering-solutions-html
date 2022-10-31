@@ -1,5 +1,23 @@
 [
   {
+    "title": "Securing your Angular App with Auth0",
+    "link": "https://javascript-conference.com/angular/securing-your-angular-app-with-auth0/",
+    "date": "2022-10-27T00:00:00.000Z",
+    "event": "iJS Munich 2022",
+    "tags": ["Angular", "Auth0"],
+    "slides": "https://speakerdeck.com/dotnetday/securing-your-angular-app-with-auth0",
+    "dataId": "51c022d8c2cc4aa8a1f04c81770ba9d1"
+  },
+  {
+    "title": "Angular Architectures with Ngrx Stores & Effects",
+    "link": "https://javascript-conference.com/angular/angular-architectures-with-ngrx-stores-effects/",
+    "date": "2022-10-26T00:00:00.000Z",
+    "event": "iJS Munich 2022",
+    "tags": ["Angular", "NgRx"],
+    "slides": "https://speakerdeck.com/fabiangosebrink/angular-architectures-with-ngrx-stores-and-effects",
+    "dataId": "c128c659b3a2421a9f1b066bce55c089"
+  },
+  {
     "title": "Better Apps with Angular Reactive Forms",
     "link": "https://javascript-days.de/angular/formulare-und-validierungen-mit-typed-angular-forms-entwickeln/",
     "date": "2022-10-20T00:00:00.000Z",
