@@ -5,8 +5,8 @@
     "date": "2022-10-27T00:00:00.000Z",
     "event": "iJS Munich 2022",
     "tags": ["Angular", "Auth0"],
-    "slides": "https://speakerdeck.com/dotnetday/securing-your-angular-app-with-auth0",
-    "dataId": "51c022d8c2cc4aa8a1f04c81770ba9d1"
+    "slides": "https://speakerdeck.com/fabiangosebrink/securing-your-angular-app-with-auth0",
+    "dataId": "0799b74d32364204adef98ffd14e8c75"
   },
   {
     "title": "Angular Architectures with Ngrx Stores & Effects",
@@ -29,7 +29,7 @@
   {
     "title": "Angular Architectures with Ngrx Stores & Effects",
     "link": "https://javascript-days.de/angular/state-management-mit-ngrx/",
-    "date": "2022-10-19T00:00:00.000Z",
+    "date": "2022-10-18T00:00:00.000Z",
     "event": "Angular Days 2022",
     "tags": ["Angular", "NgRx"],
     "slides": "https://speakerdeck.com/fabiangosebrink/angular-architectures-with-ngrx-stores-and-effects",
