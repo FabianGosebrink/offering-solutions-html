@@ -1,20 +1,20 @@
-name: Latest blog post workflow
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    # workflow runs every hour
-    - cron: '0 * * * *'
+# name: Latest blog post workflow
+# on:
+#   push:
+#     branches:
+#       - main
+#   schedule:
+#     # workflow runs every hour
+#     - cron: '0 * * * *'
 
-jobs:
-  update-readme-with-blog:
-    name: Update this repo's README with latest blog posts
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: gautamkrishnar/blog-post-workflow@master
-        with:
-          feed_list: 'https://offering.solutions/index.xml'
-          user_agent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
-          accept_header: 'text/xml'
+# jobs:
+#   update-readme-with-blog:
+#     name: Update this repo's README with latest blog posts
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: gautamkrishnar/blog-post-workflow@master
+#         with:
+#           feed_list: 'https://offering.solutions/index.xml'
+#           user_agent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+#           accept_header: 'text/xml'

@@ -22,7 +22,7 @@ disqusShortname = "" #"offeringsolutions"
   name = "Fabian Gosebrink"
   description = "Angular and .NET Core Consulting, Training and Courses"
   baseURLInternal = "/"
-  cdnbaseurl = "https://cdn.offering.solutions/"
+  cdnbaseurl = "https://offeringsolutionscdn.blob.core.windows.net/$web/"
   # cdnbaseurl = "http://localhost:1313/"
 
   # Link custom assets relative to /static

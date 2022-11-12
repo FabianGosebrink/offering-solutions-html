@@ -125,7 +125,7 @@ fireEvents() {
 
 The `switchMap` operator takes the first value in the stream `first` and calls the `anyLongRunningOp` with it. _Right after_ it did this it receives the second emit with the value `second`. Now it forgets about the response of the first request. It is not waiting for it. It calls the `anyLongRunningOp` with the `second` parameter and waits for _that one_'s answer. And so with multiple ones, it is only interested in the response of the _last_ one it fired. Everything before got ignored.
 
-![SwitchMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/switchmap.gif)
+![SwitchMap operator](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2021-03-07/switchmap.gif)
 
 In the animation you can see that only the value `second` is printed. This is the last one which got fired. The first response is ignored by the `switchMap` operator when a second one comes in and the first one is not finished yet.
 
@@ -160,7 +160,7 @@ fireEvents() {
 
 We know that the `switchMap` operator is only interested in the most recent value which came in. It does not build a relation between everything which comes in and puts them in a queue. This is what the `concatMap` operator is for. It has a queue and stores the incoming calls and emits the next one when the previous one came back! So when it receives the value with `first` it calls `anyLongRunningOp` with `first`, then the `second` value comes in. The `concatMap` operator now holds this call back until the `anyLongRunningOp` method comes back with the result of the call with `first` and _then_ the next call with `second` as parameter is being fired. It concatenates the calls and emits them one after another. As a side effect it builds a relation between the calls because it has to look wether the first one came back before it can emit the next one.
 
-![ConcatMap operator](https://cdn.offering.solutions/img/articles/2021-03-07/concatmap.gif)
+![ConcatMap operator](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2021-03-07/concatmap.gif)
 
 In the animation you can see that `first` and `second` got emitted and after two seconds the `first` call comes back and after another two seconds the `second` call comes back. `concatMap` here queues the requests and emits them when the previous one has finished.
 
@@ -195,7 +195,7 @@ fireEvents() {
 
 The `mergeMap` ([docs](https://rxjs.dev/api/operators/mergeMap)) operator does _not_ ignore the result of the previous emits and does _not_ wait for the second one to emit until the first one finished. It emits both calls _as they come in_. So if we emit `first` the operator calls the `anyLongRunningOp` with `first` and right after that it calls the `anyLongRunningOp` with `second`. It also listens to _both_ answers when they come back. When the `anyLongRunningOp` method comes back the first time with `first` we print out that result and right after this with `second` we print out this. These operations run in parallel. The operator does _not_ build a relation between these two calls. The first one which comes back gets processed first, the second one which comes back gets processed second. So the order of the return values is not guaranteed to be the order of the requests as they were sent out.
 
-![mergemap operator](https://cdn.offering.solutions/img/articles/2021-03-07/mergemap.gif)
+![mergemap operator](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2021-03-07/mergemap.gif)
 
 In the animation you can see that both values `first` and `second` get emitted and they come back almost at the same time. `mergeMap` emits them as they come in, both need two seconds to be processed and come back then. The operator `mergeMap` does not wait for the first one to complete (like `concatMap`) and nothing gets ignored (like `switchMap`).
 
@@ -230,7 +230,7 @@ fireEvents() {
 
 The `exhaustMap` operator takes care of the first request which comes in and ignores everything which comes in afterwards _until the first one came back_. So it is called with the value `first` and then with the value `second` which is ignored because the first one has not completed yet. So it ignores everything until the first value comes back.
 
-![exhaustmap operator](https://cdn.offering.solutions/img/articles/2021-03-07/exhaustmap.gif)
+![exhaustmap operator](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2021-03-07/exhaustmap.gif)
 
 In the animation you can see it gets emitted with `first` and `second` but only the `first` emission is being processed. The `exhaustMap` ignored everything which comes after this until the `first` call came back after two seconds. Then it is ready to process the next value when it gets emitted again. Everything during the procedure of the first call gets ignored. So only the value `first` is printed in the example.
 

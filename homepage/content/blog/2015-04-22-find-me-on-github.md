@@ -18,7 +18,7 @@ Feel free to do pull requests and contribute on what I coded.
 
 [https://github.com/FabianGosebrink](https://github.com/FabianGosebrink)
 
-![Find me on GitHub](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/04/FabianGosebrinkGithub.jpg)
+![Find me on GitHub](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/04/FabianGosebrinkGithub.jpg)
 
 Sometimes you will find a "\_gitAssets"-Folder in my repos which are not for holding anything code specific but they hold pictures or anything used in the readme markdown. To ensure the repository is complete I would like to host them directly within the repository.
 

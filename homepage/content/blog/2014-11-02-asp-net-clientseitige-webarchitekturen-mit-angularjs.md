@@ -25,11 +25,11 @@ Im Folgenden möchte ich eine beispielhafte Architektur aufzeigen und erläutern
 
 Die Struktur bzw Architektur der Client-Applikation liegt in einem Verzeichnis „app“ im root-Verzeichnis der Anwendung.
 
-![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://cdn.offering.solutions/img/articles/2014-11-02/01.png)
+![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2014-11-02/01.png)
 
 In ihr enthalten ist ein Ordner für Bilder und Scripts, einer für Styles (css-Dateien) und für die Views. Der Skript-Ordner beinhaltet die eigentliche Applikation:
 
-![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://cdn.offering.solutions/img/articles/2014-11-02/adasdasdasd.jpg)
+![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2014-11-02/adasdasdasd.jpg)
 
 Hier kann man auch schon die clientseitige Architektur bzw. deren Ansatz erkennen: der controllers-Folder bildet den „Namespace“ für Controller ab, der die gleiche Rolle spielt wie in ASP.NET-Anwendungen auch: Er nimmt die Anfragen vom UI entgegen und verarbeitet diese. Dazu arbeitet er mit dem Viewmodel, dass in Angular „\$scope“ getauft wurde.
 
@@ -51,11 +51,11 @@ Die Controller bieten nun die Möglichkeit, direkt mit dem Viewmodel zu arbeiten
 
 Der Controller versorgt den Scope und empfängt seinerseits Daten aus einem Repository, einem Service etc. Die Datenquelle kann beliebig sein, eben auch eine REST-Schnittstelle. Hierbei würde wiederum ASP.NET WebAPI zum Zuge kommen können.
 
-![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://cdn.offering.solutions/img/articles/2014-11-02/10.png)
+![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2014-11-02/10.png)
 
 Die Controller bei der Beispiel-Todo-App im Anhang befinden sich in einem seperaten Namespace „controllers“, die Services dazu in einem Namespace „services“.
 
-![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://cdn.offering.solutions/img/articles/2014-11-02/03.png)
+![ASP.NET - Clientseitige Webarchitekturen mit AngularJS](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2014-11-02/03.png)
 
 Hierbei kommen die oben genannten Aufgaben zum Tragen.
 

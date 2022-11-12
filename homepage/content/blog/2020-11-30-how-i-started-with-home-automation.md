@@ -46,11 +46,11 @@ Then I bought a humidity sensor to get the humidity in my bathroom and I needed 
 - [Amazon Raspberry Pi](https://www.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/ref=pd_sbs_147_1/138-0884345-6996938)
 - [Amazon Raspberry Pi Touchscreen](https://www.amazon.com/Raspberry-Pi-7-Touchscreen-Display/dp/B0153R2A9I)
 
-![Tweet 1](https://cdn.offering.solutions/img/articles/2020-11-30/tweet1.png)
+![Tweet 1](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/tweet1.png)
 
 [https://twitter.com/FabianGosebrink/status/1287416630247673856](https://twitter.com/FabianGosebrink/status/1287416630247673856)
 
-![Humidity Sensor in Shower](https://cdn.offering.solutions/img/articles/2020-11-30/IMG_20201129_173137.jpg)
+![Humidity Sensor in Shower](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/IMG_20201129_173137.jpg)
 
 ## What I learned so far about...
 
@@ -58,7 +58,7 @@ Then I bought a humidity sensor to get the humidity in my bathroom and I needed 
 
 So I started with downloading the [Home Assistant](https://www.home-assistant.io/getting-started/) and assembling the Raspberry and the touchscreen.
 
-![Tweet 2](https://cdn.offering.solutions/img/articles/2020-11-30/tweet2.png)
+![Tweet 2](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/tweet2.png)
 
 [https://twitter.com/FabianGosebrink/status/1288848695925055488](https://twitter.com/FabianGosebrink/status/1288848695925055488)
 
@@ -67,10 +67,10 @@ Then I flashed the Home Assistant on the SD Card and saw...nothing. No Ui. A con
 What I could have done is running the Home Assistant on my first Raspberry (with the Pi-Hole in parallel) in a docker container. Then I would not have needed any of the new Raspberry OR the touchscreen. However, I have it running on two separate Raspberries now. My bad.
 
 This is the Raspberry Pi where I have the Browser UI for the Pi-Hole and the Home Assistant always open. Pi-Hole is running on that Raspberry, the Home Assistant itself runs on a separate Raspberry Pi shown in the picture below.
-![Raspberry pi with touchscreen and two tabs one with Home Assistant and one with the Pi Hole](https://cdn.offering.solutions/img/articles/2020-11-30/IMG_20201129_172738.jpg)
+![Raspberry pi with touchscreen and two tabs one with Home Assistant and one with the Pi Hole](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/IMG_20201129_172738.jpg)
 
 And this is the Pi the Home Assistant is always running on
-![Case of a Raspberry Pi](https://cdn.offering.solutions/img/articles/2020-11-30/IMG_20201129_172750.jpg)
+![Case of a Raspberry Pi](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/IMG_20201129_172750.jpg)
 
 Alright...I have a touchscreen left over now for future projects. All good 😀
 
@@ -130,11 +130,11 @@ So once configured and added the [integration for the Shelly](https://www.home-a
 
 Then I added the [Mi Home Aqara Integration](https://www.home-assistant.io/integrations/xiaomi_aqara/).
 
-![Home Assistant integrations](https://cdn.offering.solutions/img/articles/2020-11-30/integrations-home-assistant.png)
+![Home Assistant integrations](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/integrations-home-assistant.png)
 
 And suddenly the devices were found and added! And inside those `devices` the Home Assistant shows `entities`. And those entities are providing the functionalities you search for for this device. So for example my Aqara Humidity and Temperature Sensor device (!) has the entities(!) for `humidity` and one for `temperature`.
 
-![Home Assistant device and entities](https://cdn.offering.solutions/img/articles/2020-11-30/home-assistant-device.png)
+![Home Assistant device and entities](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/home-assistant-device.png)
 
 In the `automation` part in the Home Assistant you can now use those devices/entities and create rules which are for example:
 
@@ -169,9 +169,9 @@ was new
 
 So what do to? how to detect motion? You buy a motion detector [Aqara motion detector](https://www.aqara.com/us/motion_sensor.html). You add it like the previous items and extend your automation with "Turn of the light when humidity is below 60% AND there is no motion detected". Problem solved 😊 I had this moment a few times that when I added a rule I was forgetting about some situations. Like "Only turn on the lights at evening _when somebody is at home_" and stuff. This and seeing all the possibilities is how you sloooowly get into the rabbit hole of home automation.
 
-![Motion Sensor 1](https://cdn.offering.solutions/img/articles/2020-11-30/IMG_20201129_140444.jpg)
+![Motion Sensor 1](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/IMG_20201129_140444.jpg)
 
-![Motion Sensor 2](https://cdn.offering.solutions/img/articles/2020-11-30/IMG_20201129_140510.jpg)
+![Motion Sensor 2](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/IMG_20201129_140510.jpg)
 
 ## Current situation
 
@@ -195,7 +195,7 @@ It is so much fun! When you see the possibilities you can do. Maybe a pressure s
 
 I am using several apps which I need to control all the things.
 
-![All smart home apps](https://cdn.offering.solutions/img/articles/2020-11-30/Screenshot_20201129-140357.jpg)
+![All smart home apps](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/Screenshot_20201129-140357.jpg)
 
 1. "Shelly" to add, and control all the Shelly devices. (I only need them for adding the Shellies, controlling is over Home Assistant App)
 2. "Mi Home" to start my vacuum cleaner and control all my Aqara devices (I only need them to add the new devices, controlling is over the Home Assistant App)
@@ -205,13 +205,13 @@ I am using several apps which I need to control all the things.
 6. "Home Assistant" is THE MAIN app where I control everything with, add actions etc.
 7. "ReoLink" for my security camera which is running in my flat as well
 
-![Home Assistant App I](https://cdn.offering.solutions/img/articles/2020-11-30/Screenshot_20201129-140422.jpg)
+![Home Assistant App I](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/Screenshot_20201129-140422.jpg)
 
-![Home Assistant App II](https://cdn.offering.solutions/img/articles/2020-11-30/Screenshot_20201129-140431.jpg)
+![Home Assistant App II](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/Screenshot_20201129-140431.jpg)
 
 Here we are controlling the light with Home Assistant App which uses the Shelly integration of the Home Assistant running on a Raspberry Pi to switch the light on or off.
 
-![Controlling the shelly with the Home Assistant App](https://cdn.offering.solutions/img/articles/2020-11-30/VID-20201129-WA0000.gif)
+![Controlling the shelly with the Home Assistant App](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2020-11-30/VID-20201129-WA0000.gif)
 
 ## Amazon Alexa
 

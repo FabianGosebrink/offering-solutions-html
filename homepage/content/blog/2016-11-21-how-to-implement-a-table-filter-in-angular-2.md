@@ -177,7 +177,7 @@ In the template we bind to the `this.filteredFoods$` with the `async` pipe
 
 Code: [https://github.com/FabianGosebrink/ASPNETCore-Angular-Ngrx/blob/master/client/src/app/food/pipes/filter.pipe.ts](https://github.com/FabianGosebrink/ASPNETCore-Angular-Ngrx/blob/master/client/src/app/food/pipes/filter.pipe.ts)
 
-![In this post I want to show you how to implement a table filter in Angular](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/filter-1024x133.jpg)
+![In this post I want to show you how to implement a table filter in Angular](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2016/11/filter-1024x133.jpg)
 
 You can achieve this using a pipe:
 
@@ -314,7 +314,7 @@ export class FoodListComponent {
 
 Now the table is filtered after the field "name" by the string which is typed into the searchString-input.
 
-![In this post I want to show you how to implement a table filter in Angular](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/searchFilter-1024x316.gif)
+![In this post I want to show you how to implement a table filter in Angular](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2016/11/searchFilter-1024x316.gif)
 
 HTH
 

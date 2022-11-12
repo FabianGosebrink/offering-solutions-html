@@ -51,7 +51,7 @@ command. We can choose the Angular template which will add one app automatically
 
 After answering a few questions
 
-![Screenshot of console creating an nx workspace](https://cdn.offering.solutions/img/articles/2021-01-27/console.jpg)
+![Screenshot of console creating an nx workspace](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2021-01-27/console.jpg)
 
 We are facing an empty workspace like this.
 

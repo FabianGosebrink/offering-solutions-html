@@ -10,7 +10,7 @@ aliases: ['/blog/articles/2016/05/25/kurs-frontend-entwicklung-mit-angularjs/']
 
 In diesem blog post stelle ich meinen Kurs: _Frontend-Entwicklung mit AngularJS_ vor.
 
-![Angular_With_Digicomp](https://cdn.offering.solutions/img/articles/2016-08-17/Angular_With_Digicomp.png)
+![Angular_With_Digicomp](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2016-08-17/Angular_With_Digicomp.png)
 
 Anfang dieses Jahres kam Digicomp auf mich zu und hat mich gefragt ob ich neben meinen Talks auch mal einen Kurs geben möchte. Natürlich habe ich nicht "Nein" gesagt.
 

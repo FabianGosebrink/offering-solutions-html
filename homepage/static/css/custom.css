@@ -305,7 +305,7 @@ header.major-no-line > :first-child:after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url('https://cdn.offering.solutions/img/20191120_160016-e1613416406528.jpg');
+  background-image: url('https://offeringsolutionscdn.blob.core.windows.net/$web/img/20191120_160016-e1613416406528.jpg');
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;

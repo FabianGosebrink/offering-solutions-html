@@ -11,7 +11,7 @@ aliases:
 
 Ich freue mich wieder sehr anzukündigen, dass es erneut zu einer Kooperation von MyCSharp.de und der BASTA! gekommen ist. Die zweite dieses Jahr :)
 
-<a href="http://www.basta.net" target="_blank">![Kooperation von MyCSharp.de und der Basta](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/07/BASTA_SE_2016_Leaderboard_32115_v3.gif)</a>
+<a href="http://www.basta.net" target="_blank">![Kooperation von MyCSharp.de und der Basta](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2016/07/BASTA_SE_2016_Leaderboard_32115_v3.gif)</a>
 
 ### Was ist die BASTA!?
 

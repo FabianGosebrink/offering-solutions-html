@@ -9,7 +9,7 @@ image: blog/aerial-view-of-laptop-and-notebook_bw_osc.jpg
 
 In this blog post I want to describe how I used plain Javascript and ASP.NET Core SignalR to broadcast the device orientation values over HTTP.
 
-![device-orientation-video](https://cdn.offering.solutions/img/articles/2019-07-25/video.gif)
+![device-orientation-video](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2019-07-25/video.gif)
 
 You can find the whole code on github here: [https://github.com/FabianGosebrink/device-orientation-signalr
 ](https://github.com/FabianGosebrink/device-orientation-signalr)
@@ -247,4 +247,4 @@ The only thing that is missing now is the `index.html` part. This is perhaps the
 
 I also installed a lightweight webserver to make this all hosting. If you upload that and access it with your mobile phone you can move the picture with your phone like that :)
 
-![device-orientation-video](https://cdn.offering.solutions/img/articles/2019-07-25/video.gif)
+![device-orientation-video](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2019-07-25/video.gif)

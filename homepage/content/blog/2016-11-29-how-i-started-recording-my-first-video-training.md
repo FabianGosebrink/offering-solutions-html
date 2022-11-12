@@ -23,15 +23,15 @@ So...I first bought a microphone. I went for this one:
 
 [https://www.digitec.ch/de/s1/product/rode-nt-usb-mono-mikrofon-3450705](https://www.digitec.ch/de/s1/product/rode-nt-usb-mono-mikrofon-3450705)
 
-![img_20161015_141224_01](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/IMG_20161015_141224_01-1024x576.jpg)
+![img_20161015_141224_01](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2016/11/IMG_20161015_141224_01-1024x576.jpg)
 
-![img_20161015_141515](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/IMG_20161015_141515-e1480155685781-1024x576.jpg)
+![img_20161015_141515](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2016/11/IMG_20161015_141515-e1480155685781-1024x576.jpg)
 
 The installation (on a windows 10 computer) was easy. Plugged in USB and it was recognized by my computer immediately.
 
 Next thing was to get Camtasia as a screen recording software. I downloaded it and used it without having seen a screen recording software ever. Like I said: This was the beginning - I never got in touch with this kind of doing tutorials. But Camtasia is massive but also very easy to use.
 
-![img_20161018_115456](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/IMG_20161018_115456-1024x576.jpg)
+![img_20161018_115456](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2016/11/IMG_20161018_115456-1024x576.jpg)
 
 You should give it a try. Even if you do not have Camtasia experience you can get started in a few steps.
 
@@ -39,7 +39,7 @@ You should give it a try. Even if you do not have Camtasia experience you can ge
 
 After I took a session I replayed it and heard my voice for the first time recorded by a better microphone. If you do so: be prepared. I thought I was but as I heard my voice I knew: I was not. I hate my voice. How can people listen to me with such a horrible voice? That is incredible! But you can not change that. So I kept going. People are used to your voice. They don't know you in sounding different. So this is okay. It has to be. You got nothing else to offer regarding to your own sound of your voice. ;-)
 
-![How I started recording my first Video training](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/IMG_20161015_150039-1024x576.jpg)
+![How I started recording my first Video training](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2016/11/IMG_20161015_150039-1024x576.jpg)
 
 ### Technique of recording
 
@@ -59,7 +59,7 @@ In the beginning I was impressed that Camstasia could handle the two video input
 
 With all the experience I made recording a video this whole thing is a lot of work. It takes a lot if time and I am sure I will make a lot more experiences in the future when it comes to record a video. It takes massive time to prepare a video, record it and work on it when you finished the recording. I dont know how the others feel but I have the feeling I recorded this video about 5 times in a whole to get the output I got now. And I think it is far away from being perfect. But I think with the time you can learn from others, from your own experience and do some things better right from the start. But I am also sure that other problems will appear then.
 
-![How I started recording my first Video training](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/11/IMG_20161020_103819-1024x576.jpg)
+![How I started recording my first Video training](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2016/11/IMG_20161020_103819-1024x576.jpg)
 
 ### The result
 

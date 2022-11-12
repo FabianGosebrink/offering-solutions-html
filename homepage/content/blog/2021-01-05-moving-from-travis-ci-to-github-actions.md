@@ -19,7 +19,7 @@ In this blog post I want to write about how you can move from TravisCI to GitHub
 - [Adding Code Coverage](#adding-code-coverage)
 - [Complete Example](#complete-example)
 
-![github actions animation](https://cdn.offering.solutions/img/articles/2021-01-05/Github-action-3.gif)
+![github actions animation](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2021-01-05/Github-action-3.gif)
 
 ## TL;DR
 

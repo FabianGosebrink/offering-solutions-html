@@ -14,15 +14,15 @@ For ASP.NET MVC there are a lot of possibilities which you can use to achieve th
 
 NuGet is one of our best friends, so first of all try to search after "Ninject" and install the NuGet-Package for this (Dont worry, this MVC3 stuff also works for 4 and 5 😉 ):
 
-![How to install Ninject in ASP.NET WebAPI](https://cdn.offering.solutions/img/articles/2014-03-04/b5b4e8c9-24ed-40f7-a37c-56ab94796006.png)After this you will get a generated class in your App_Start-Folder which is exactly offering you the registration-place you are looking for (aren't you ? 😉 )
+![How to install Ninject in ASP.NET WebAPI](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2014-03-04/b5b4e8c9-24ed-40f7-a37c-56ab94796006.png)After this you will get a generated class in your App_Start-Folder which is exactly offering you the registration-place you are looking for (aren't you ? 😉 )
 
-![How to install Ninject in ASP.NET WebAPI](https://cdn.offering.solutions/img/articles/2014-03-04/2f654046-db9b-4b3d-a9a7-942053c18ba0.png)
+![How to install Ninject in ASP.NET WebAPI](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2014-03-04/2f654046-db9b-4b3d-a9a7-942053c18ba0.png)
 
 There you can go ahead and register your services and/or repositories with your associated interface. (Of course you do implement an interface on every service/repo/etc. you do 😉 )
 
 The "Start()"-Method is called while Bootstraping your application and your services will be registered.
 
-![How to install Ninject in ASP.NET WebAPI](https://cdn.offering.solutions/img/articles/2014-03-04/5802028b-ce79-48df-bbd9-34bd6663d18c.png)
+![How to install Ninject in ASP.NET WebAPI](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/2014-03-04/5802028b-ce79-48df-bbd9-34bd6663d18c.png)
 
 This was the first part. The second part means enjoying the service Ninject offers to you:
 

@@ -85,7 +85,7 @@ public IHttpActionResult Get(int start = 0, int count = 10)
 
 Im Response-Header steht nun die Anzahl der kompletten Items:
 
-![Paging in einer ASP.Net WebAPI und AngularJS](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/06/1.png)
+![Paging in einer ASP.Net WebAPI und AngularJS](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/06/1.png)
 
 Diese brauchen wir dann nur noch im Client parsen bzw. lesen.
 
@@ -141,7 +141,7 @@ myModule.controller('myController', [
 
 Hier werden die Standardwerte gesetzt und beim erfolgreichen Abrufen der Items wird der Header ausgelesen und die Variable "totalItems" gesetzt, auf die dann gebunden wird.
 
-![Paging in einer ASP.Net WebAPI und AngularJS](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/06/2.png)
+![Paging in einer ASP.Net WebAPI und AngularJS](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/06/2.png)
 
 Grüsse
 

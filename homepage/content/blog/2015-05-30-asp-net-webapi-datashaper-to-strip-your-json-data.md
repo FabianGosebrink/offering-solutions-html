@@ -78,13 +78,13 @@ public IHttpActionResult Get(string fields = null)
 }
 ```
 
-![ASP.NET WebAPI Datashaper to strip your json data](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/05/datashaper_1.png)
+![ASP.NET WebAPI Datashaper to strip your json data](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/05/datashaper_1.png)
 
-![ASP.NET WebAPI Datashaper to strip your json data](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/05/datashaper_2.png)
+![ASP.NET WebAPI Datashaper to strip your json data](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/05/datashaper_2.png)
 
-![ASP.NET WebAPI Datashaper to strip your json data](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/05/datashaper_3.png)
+![ASP.NET WebAPI Datashaper to strip your json data](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/05/datashaper_3.png)
 
-![ASP.NET WebAPI Datashaper to strip your json data](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/05/datashaper_4.png)
+![ASP.NET WebAPI Datashaper to strip your json data](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/05/datashaper_4.png)
 
 Regards & HTH
 

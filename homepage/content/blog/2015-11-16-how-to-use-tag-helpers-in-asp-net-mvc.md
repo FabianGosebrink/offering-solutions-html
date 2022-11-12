@@ -32,12 +32,12 @@ Getting started:
 
 First make sure you included a reference to the tag helpers in your project.json
 
-![TagHelpers_1](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/TagHelpers_1.png)
+![TagHelpers_1](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/11/TagHelpers_1.png)
 
 And Because tag helpers do not throw an exception if you use them and they do not work you should also include a \_ViewImports.cshtml which is responsible to load all extra functionality to your views. You can add it via the context menu Add --> New Item.
 
-![TagHelpers_2](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/TagHelpers_2.png)
-![TagHelpers_3](https://cdn.offering.solutions/img/articles/wp-content/uploads/2015/11/TagHelpers_3.png)
+![TagHelpers_2](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/11/TagHelpers_2.png)
+![TagHelpers_3](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2015/11/TagHelpers_3.png)
 
 Now all the cshtml files are able to handle ASP.NET-TagHelpers which get easily in your html like this:
 

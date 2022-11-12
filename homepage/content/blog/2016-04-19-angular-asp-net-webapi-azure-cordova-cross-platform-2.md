@@ -11,7 +11,7 @@ aliases:
   ]
 ---
 
-![foodchooser](https://cdn.offering.solutions/img/articles/wp-content/uploads/2016/04/foodchooser.jpg)
+![foodchooser](https://offeringsolutionscdn.blob.core.windows.net/$web/img/articles/wp-content/uploads/2016/04/foodchooser.jpg)
 
 ### Motivation
 
